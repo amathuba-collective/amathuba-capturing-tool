@@ -1,0 +1,20 @@
+.leftContent{
+    max-width: 20rem;
+    flex-wrap: wrap;
+    object-fit:cover;
+}
+
+.youthReflection{
+    max-width: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1px !important;
+}
+
+.leftContent{
+	height: 100vh;
+	overflow-y: scroll;
+}
+.leftContent::-webkit-scrollbar{
+	display: none;
+}
