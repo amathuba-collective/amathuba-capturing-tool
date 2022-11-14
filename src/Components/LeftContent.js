@@ -106,8 +106,8 @@ export default function LeftContent(props) {
 						<h4>Next appoinment</h4>
 						<p>{props.date}</p>
 					</div> : null}
-					
-			    </p>
+
+				</p>
 			</div>
 		</div>
 	);

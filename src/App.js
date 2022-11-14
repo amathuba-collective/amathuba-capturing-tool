@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./Styles/App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -8,23 +8,23 @@ import RightContent from "./Components/RightContent";
 
 
 export default function App() {
-	const [question, setQuestion] = useState()
+	const [question, setQuestion] = useState("")
 	const [data, updateData] = useState("");
 	const [printData, setPrintData] = useState("")
 	const [happy, setHappy] = useState("")
-	const [angry, setAngry] = useState("angry");
-	const [confused, setConfused] = useState("confused");
-	const [bad, setBad] = useState("bad");
-	const [sad, setSad] = useState("sad");
+	const [angry, setAngry] = useState("");
+	const [confused, setConfused] = useState("");
+	const [bad, setBad] = useState("");
+	const [sad, setSad] = useState("");
 	// 
 	const [openingEmotion, updateOpeningEmotion] = useState("");
-	const [openingEmotionQuestion, setOpeningEmotionQuestion] = useState();
-	const [youthData, setYouthData] = useState();
+	const [openingEmotionQuestion, setOpeningEmotionQuestion] = useState("");
+	const [youthData, setYouthData] = useState("");
 	const [agentData, setAgentData] = useState("");
 	const [printYouthData, setPrintYouthData] = useState("");
 	const [printAgentData, setPrintAgentData] = useState("");
 	// const [date, setDate] = React.useState(dayjs());
-	//   const [answer, setAnswer] = useState('');
+	const [answer, setAnswer] = useState('');
 	// const toggleHappy = (e) =>{
 	// 	setHappy(happy => !happy)
 
@@ -42,12 +42,12 @@ export default function App() {
 						agentData={agentData}
 						printYouthData={printYouthData}
 						printAgentData={printAgentData}
-						// answer={answer}
+						answer={answer}
 					/>
 				</div>
 				<div className='bg-2 col-6 text-dark'>
 					<CenterContent
-					question={question}
+						question={question}
 						data={data}
 						setPrintData={setPrintData}
 						openingEmotion={openingEmotion}
@@ -62,7 +62,7 @@ export default function App() {
 						setPrintYouthData={setPrintYouthData}
 						setPrintAgentData={setPrintAgentData}
 						// setAnswer={setAnswer}
-						// answer={answer}
+						answer={answer}
 					/>
 				</div>
 				<div className='bg-3 col'>
@@ -77,11 +77,13 @@ export default function App() {
 						confused={confused}
 						bad={bad}
 						sad={sad}
-						// date={date}
+						setAnswer={setAnswer}
+						answer={answer}
+					// date={date}
 					/>
 				</div>
 			</div>
-		
+
 		</div>
 
 
@@ -89,4 +91,3 @@ export default function App() {
 }
 
 
-	

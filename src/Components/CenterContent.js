@@ -16,7 +16,7 @@ export default function CenterContent(props) {
 
 	const [nextSession, setNextSession] = useState("newAppoinment");
 
-	
+
 	const onHappyClicked = (e) => {
 		props.updateOpeningEmotion(emotionWheel[0]);
 		props.setHappy(happy => !happy)
@@ -24,22 +24,22 @@ export default function CenterContent(props) {
 
 	function onAngryClicked(e) {
 		props.updateOpeningEmotion(emotionWheel[1]);
-		// setEmotions(2);
+		props.setAngry(angry => !angry)
 	}
 
 	function onConfusedClicked(e) {
 		props.updateOpeningEmotion(emotionWheel[2]);
-		// setEmotions(3);
+		props.setConfused(confused => !confused)
 	}
 
 	function onBadClicked(e) {
 		props.updateOpeningEmotion(emotionWheel[3]);
-		// setEmotions(4);
+		props.setBad(bad => !bad)
 	}
 
 	function onSadClicked(e) {
 		props.updateOpeningEmotion(emotionWheel[4]);
-		// setEmotions(5);
+		props.setSad(sad => !sad)
 	}
 
 	function getYouthReflection(val) {
@@ -54,8 +54,9 @@ export default function CenterContent(props) {
 
 	const entireForm = [
 		{ OpeningQuestion: props.data },
-		{ OpeningEmotion: props.emotion },
+		{ OpeningEmotion: props.openingEmotion },
 	];
+
 	function onFormSubmit(e) {
 		e.preventDefault();
 		alert("Form Submitted");
@@ -109,7 +110,9 @@ export default function CenterContent(props) {
 			{/* Body section starts */}
 			<div className='body mt-5' id='scrollable'>
 				<div className='emptyDivForEmotoinKeyWords mt-5 mb-5  text-center'>
-					{onHappyClicked()}
+					{props.answer ? <div>
+						<p>OverJoyed</p>
+					</div> : null}
 				</div>
 			</div>
 			{/* body section ends */}
