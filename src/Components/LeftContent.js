@@ -37,10 +37,10 @@ export default function LeftContent(props) {
 				</div>
 				<div>
 					<p className='fw-semilight fs-3'>
-						{props.emotion ? (
+						{props.openingEmotion ? (
 							<div>
 								<h4>Opening emotion</h4>
-								<p className="fs-5">{props.emotion}</p>
+								<p className="fs-5">{props.openingEmotion}</p>
 							</div>
 						) : null}
 					</p>

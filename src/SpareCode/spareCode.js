@@ -243,3 +243,217 @@
 	// 	{emotionState === "mad" && <h1>This is mad</h1>}
 	// 	{emotionState === "sad" && <h1>This is sad</h1>}
 	// </div>
+
+
+
+
+
+
+
+      {/* <div>
+			<h2 className='RecommendedQuestions text-center mt-4 fs-2 fw-bold'>
+				Recommended Questions
+			</h2>
+			<hr className='border border-2 border-secondary opacity-50 rounded' />
+      </div>
+      <div>
+     <section>
+			<p className='text-center fs-3 fw-semibold mt-4 mb-3'>
+				Opening Questions
+			</p>
+			{/* static opening questions 
+			<div className='questions mt-4'>
+				<button
+					className=' bg-transparent border-3 border-secondary rounded p-2 fw-semibold fs-5 w-100'
+					onClick={(e) => props.updateData(openingQuestions[0])}> {openingQuestions[0]}
+					{" "}
+				</button>
+				<button
+					className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5 w-100 '
+					onClick={(e) => props.updateData(openingQuestions[1])}>
+						{openingQuestions[1]}
+				</button>
+				<button
+					className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
+					onClick={(e) => props.updateData(openingQuestions[2])}>
+					{openingQuestions[2]}
+				</button>
+				<button
+					className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
+					onClick={(e) => props.updateData(openingQuestions[3])}>
+					{openingQuestions[3]}
+				</button></div>
+        </section>
+				
+				
+				{props.happy ? <section className="mb-5">
+        <p className='text-center fs-3 fw-semibold mt-4 mb-3'>
+          Opening Emotion Questions
+        </p>
+        <div className='questions mt-4'>
+          <button
+            className=' bg-transparent border-3 border-secondary rounded p-2 fw-semibold fs-5 w-100'
+			onClick={onQuestionOneClicked}>
+            So tell me about your happiness ?
+          </button>
+          <button
+            className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5 w-100 '
+            onClick={onQuestionTwoClicked}>
+            Why are you this happy ?
+          </button>
+          <button
+            className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
+            onClick={onQuestionThreeClicked}>
+            what makes you this happy ?
+          </button>
+          <button
+            className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
+			onClick={onQuestionFourClicked}>
+            what caused you to be this happy ?
+          </button></div>
+          </section> : null}
+		
+		  {props.angry ? <section className="mb-5">
+        <p className='text-center fs-3 fw-semibold mt-4 mb-3'>
+          Opening Emotion Questions
+        </p>
+        <div className='questions mt-4'>
+          <button
+            className=' bg-transparent border-3 border-secondary rounded p-2 fw-semibold fs-5 w-100'
+			onClick={onQuestionOneClicked}>
+            So tell me why your angry ?
+          </button>
+          <button
+            className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5 w-100 '
+            onClick={onQuestionTwoClicked}>
+            Why are you this angry?
+          </button>
+          <button
+            className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
+            onClick={onQuestionThreeClicked}>
+            what made you this angry ?
+          </button>
+          <button
+            className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
+			onClick={onQuestionFourClicked}>
+            what caused you to be this angry ?
+          </button></div>
+          </section> : null}
+
+		  {props.confused ? <section className="mb-5">
+        <p className='text-center fs-3 fw-semibold mt-4 mb-3'>
+          Opening Emotion Questions
+        </p>
+        <div className='questions mt-4'>
+          <button
+            className=' bg-transparent border-3 border-secondary rounded p-2 fw-semibold fs-5 w-100'
+			onClick={onQuestionOneClicked}>
+            So tell me why your confused ?
+          </button>
+          <button
+            className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5 w-100 '
+            onClick={onQuestionTwoClicked}>
+            Why are you this confused?
+          </button>
+          <button
+            className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
+            onClick={onQuestionThreeClicked}>
+            what made you this confused ?
+          </button>
+          <button
+            className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
+			onClick={onQuestionFourClicked}>
+            what caused you to be this confused ?
+          </button></div>
+          </section> : null}
+
+		  
+		  {props.bad ? <section className="mb-5">
+        <p className='text-center fs-3 fw-semibold mt-4 mb-3'>
+          Opening Emotion Questions
+        </p>
+        <div className='questions mt-4'>
+          <button
+            className=' bg-transparent border-3 border-secondary rounded p-2 fw-semibold fs-5 w-100'
+			onClick={onQuestionOneClicked}>
+            So tell me why you feeling bad ?
+          </button>
+          <button
+            className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5 w-100 '
+            onClick={onQuestionTwoClicked}>
+            What makes you so bad?
+          </button>
+          <button
+            className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
+            onClick={onQuestionThreeClicked}>
+            what made you this bad ?
+          </button>
+          <button
+            className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
+			onClick={onQuestionFourClicked}>
+            what caused you to be this bad?
+          </button></div>
+          </section> : null}
+
+
+
+
+		  {props.sad ? <section className="mb-5">
+        <p className='text-center fs-3 fw-semibold mt-4 mb-3'>
+          Opening Emotion Questions
+        </p>
+        <div className='questions mt-4'>
+          <button
+            className=' bg-transparent border-3 border-secondary rounded p-2 fw-semibold fs-5 w-100'
+			onClick={onQuestionOneClicked}>
+            So tell me why your sad ?
+          </button>
+          <button
+            className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5 w-100 '
+            onClick={onQuestionTwoClicked}>
+            Why are you this sad?
+          </button>
+          <button
+            className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
+            onClick={onQuestionThreeClicked}>
+            what made you this sad?
+          </button>
+          <button
+            className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
+			onClick={onQuestionFourClicked}>
+            what caused you to be this sad ?
+          </button></div>
+          </section> : null}
+			</div>  */}
+
+
+	// 		<button
+	// 		onClick={onHappyClicked}
+	// 		className='bg-transparent border-0 fs-1 d-flex flex-column align-items-center'>
+	// 		<Icon icon='emojione:grinning-face-with-smiling-eyes' />
+	// 		<span className='fs-5'>Happy</span>
+	// 	</button>
+	// <button 
+	// onClick={onAngryClicked}
+	// className='bg-transparent border-0 fs-1 d-flex flex-column align-items-center'>
+	// 	<Icon icon='emojione:pouting-face' />
+	// 	<span className='fs-5'>Angry</span>
+	// </button>
+	// <button
+	// onClick={onConfusedClicked}
+	//  className='bg-transparent border-0 fs-1 d-flex flex-column align-items-center'>
+	// 	<Icon icon='emojione:sad-but-relieved-face' />
+	// 	<span className='fs-5'>Confused</span>
+	// </button>
+	// <button
+	// onClick={onBadClicked}
+	//  className='bg-transparent border-0 fs-1 d-flex flex-column align-items-center'>
+	// 	<Icon icon='emojione:confounded-face' />
+	// 	<span className='fs-5'>Bad</span>
+	// </button>
+	// <button
+	// onClick={onSadClicked}
+	//  className='bg-transparent border-0 fs-1 d-flex flex-column align-items-center'>
+	// 	<Icon icon='emojione:crying-face' />
+	// 	<span className='fs-5'>Sad</span>
+	// </button>

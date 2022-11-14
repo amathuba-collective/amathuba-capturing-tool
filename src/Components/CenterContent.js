@@ -1,36 +1,45 @@
 import React, { useState } from "react";
 import { Icon } from "@iconify/react";
 import Calender from "./Calender";
+// import WordCloud from "../Modules/WordCloud";
+// import WordCloudData from "../Assets/Data/data.json"
 import "../Styles/CenterContent.css";
 
 export default function CenterContent(props) {
-	const emotionWheel = [<Icon icon='emojione:grinning-face-with-smiling-eyes' />, <Icon icon='emojione:pouting-face' />, 	<Icon icon='emojione:sad-but-relieved-face' />, <Icon icon='emojione:confounded-face' />, <Icon icon='emojione:crying-face' />];
+	const emotionWheel = [
+		<Icon icon='emojione:grinning-face-with-smiling-eyes' />,
+		<Icon icon='emojione:pouting-face' />,
+		<Icon icon='emojione:sad-but-relieved-face' />,
+		<Icon icon='emojione:confounded-face' />,
+		<Icon icon='emojione:crying-face' />,
+	];
 
 	const [nextSession, setNextSession] = useState("newAppoinment");
 
+	
 	const onHappyClicked = (e) => {
-		props.updateEmotion(emotionWheel[0]);
-		props.setHappy(happy => !happy);
+		props.updateOpeningEmotion(emotionWheel[0]);
+		props.setHappy(happy => !happy)
 	};
 
 	function onAngryClicked(e) {
-		props.updateEmotion(emotionWheel[1]);
-		props.setAngry((angry) => !angry);
+		props.updateOpeningEmotion(emotionWheel[1]);
+		// setEmotions(2);
 	}
 
 	function onConfusedClicked(e) {
-		props.updateEmotion(emotionWheel[2]);
-		props.setConfused((confused) => !confused);
+		props.updateOpeningEmotion(emotionWheel[2]);
+		// setEmotions(3);
 	}
 
 	function onBadClicked(e) {
-		props.updateEmotion(emotionWheel[3]);
-		props.setBad((bad) => !bad);
+		props.updateOpeningEmotion(emotionWheel[3]);
+		// setEmotions(4);
 	}
 
 	function onSadClicked(e) {
-		props.updateEmotion(emotionWheel[4]);
-		props.setSad((sad) => !sad);
+		props.updateOpeningEmotion(emotionWheel[4]);
+		// setEmotions(5);
 	}
 
 	function getYouthReflection(val) {
@@ -43,7 +52,10 @@ export default function CenterContent(props) {
 		// props.setPrintData(false)
 	}
 
-	const entireForm = [{ OpeningQuestion: props.data },{OpeningEmotion : props.emotion}];
+	const entireForm = [
+		{ OpeningQuestion: props.data },
+		{ OpeningEmotion: props.emotion },
+	];
 	function onFormSubmit(e) {
 		e.preventDefault();
 		alert("Form Submitted");
@@ -60,33 +72,33 @@ export default function CenterContent(props) {
 				</div>
 				{/*  */}
 				<div className='emotion-emojies d-flex justify-content-around mt-5 '>
-						<button
-							onClick={onHappyClicked}
-							className='bg-transparent border-0 fs-1 d-flex flex-column align-items-center'>
-							<Icon icon='emojione:grinning-face-with-smiling-eyes' />
-							<span className='fs-5'>Happy</span>
-						</button>
-					<button 
-					onClick={onAngryClicked}
-					className='bg-transparent border-0 fs-1 d-flex flex-column align-items-center'>
+					<button
+						onClick={onHappyClicked}
+						className='bg-transparent border-0 fs-1 d-flex flex-column align-items-center'>
+						<Icon icon='emojione:grinning-face-with-smiling-eyes' />
+						<span className='fs-5'>Happy</span>
+					</button>
+					<button
+						onClick={onAngryClicked}
+						className='bg-transparent border-0 fs-1 d-flex flex-column align-items-center'>
 						<Icon icon='emojione:pouting-face' />
 						<span className='fs-5'>Angry</span>
 					</button>
 					<button
-					onClick={onConfusedClicked}
-					 className='bg-transparent border-0 fs-1 d-flex flex-column align-items-center'>
+						onClick={onConfusedClicked}
+						className='bg-transparent border-0 fs-1 d-flex flex-column align-items-center'>
 						<Icon icon='emojione:sad-but-relieved-face' />
 						<span className='fs-5'>Confused</span>
 					</button>
 					<button
-					onClick={onBadClicked}
-					 className='bg-transparent border-0 fs-1 d-flex flex-column align-items-center'>
+						onClick={onBadClicked}
+						className='bg-transparent border-0 fs-1 d-flex flex-column align-items-center'>
 						<Icon icon='emojione:confounded-face' />
 						<span className='fs-5'>Bad</span>
 					</button>
 					<button
-					onClick={onSadClicked}
-					 className='bg-transparent border-0 fs-1 d-flex flex-column align-items-center'>
+						onClick={onSadClicked}
+						className='bg-transparent border-0 fs-1 d-flex flex-column align-items-center'>
 						<Icon icon='emojione:crying-face' />
 						<span className='fs-5'>Sad</span>
 					</button>
@@ -97,81 +109,7 @@ export default function CenterContent(props) {
 			{/* Body section starts */}
 			<div className='body mt-5' id='scrollable'>
 				<div className='emptyDivForEmotoinKeyWords mt-5 mb-5  text-center'>
-					<p>
-						{/* {happy ?
-							<div className='row'>
-								<div className='p-5 col-4 bg-secondary border-1 border-secondary'>
-									<button className="bg-transparent border-0">Happy</button>
-								</div>
-								<div className="col-4">
-
-								</div>
-								<div className=' p-5 col-4 bg-secondary border-2 border-secondary '>
-									<button className="bg-transparent border-0">Happy</button>
-								</div>
-							</div>
-						: null}
-
-						{angry ?
-							<div className='row'>
-							<div className='p-5 col-4 bg-secondary border-1 border-secondary'>
-								<button className="bg-transparent border-0">angry</button>
-							</div>
-							<div className="col-4">
-
-							</div>
-							<div className=' p-5 col-4 bg-secondary border-2 border-secondary '>
-								<button className="bg-transparent border-0">angry</button>
-							</div>
-						</div>
-						:
-						null }
-
-
-						{confused ? 
-							<div className='row'>
-							<div className='p-5 col-4 bg-secondary border-1 border-secondary'>
-								<button className="bg-transparent border-0">confused</button>
-							</div>
-							<div className="col-4">
-
-							</div>
-							<div className=' p-5 col-4 bg-secondary border-2 border-secondary '>
-								<button className="bg-transparent border-0">confused</button>
-							</div>
-						</div>
-						:
-						null }
-
-						{bad ? 
-							<div className='row'>
-							<div className='p-5 col-4 bg-secondary border-1 border-secondary'>
-								<button className="bg-transparent border-0">bad</button>
-							</div>
-							<div className="col-4">
-
-							</div>
-							<div className=' p-5 col-4 bg-secondary border-2 border-secondary '>
-								<button className="bg-transparent border-0">bad</button>
-							</div>
-						</div>
-						: 
-						null }
-						{sad ?
-							<div className='row'>
-							<div className='p-5 col-4 bg-secondary border-1 border-secondary'>
-								<button className="bg-transparent border-0">sad</button>
-							</div>
-							<div className="col-4">
-
-							</div>
-							<div className=' p-5 col-4 bg-secondary border-2 border-secondary '>
-								<button className="bg-transparent border-0 text-light">sad</button>
-							</div>
-						</div>
-						:
-						null } */}
-					</p>
+					{onHappyClicked()}
 				</div>
 			</div>
 			{/* body section ends */}
@@ -185,6 +123,9 @@ export default function CenterContent(props) {
 						</h2>
 					</div>
 					<label className='fw-semibold fs-3 mb-3'>Youth Reflection</label>
+					<button className='sm bg-transparent border border-2 rounded mx-2'>
+						Get recommended question
+					</button>
 					<textarea
 						className='textArea form-control'
 						onChange={getYouthReflection}
@@ -192,7 +133,7 @@ export default function CenterContent(props) {
 						id='#'></textarea>
 					<button
 						onClick={() => props.setPrintYouthData(true)}
-						className='sm bg-transparent border border-2'>
+						className='sm bg-transparent border border-2 rounded '>
 						Store
 					</button>
 				</div>
@@ -204,6 +145,9 @@ export default function CenterContent(props) {
 						</h2>
 					</div>
 					<label className='fw-semibold fs-3 mb-2'>Agent Reflection</label>
+					<button className='sm bg-transparent border border-2 rounded mx-2'>
+						Get recommended question
+					</button>
 					<textarea
 						className='textArea form-control'
 						onChange={getAgentReflection}
@@ -211,7 +155,7 @@ export default function CenterContent(props) {
 						id='#'></textarea>
 					<button
 						onClick={() => props.setPrintAgentData(true)}
-						className='sm bg-transparent border border-2'>
+						className='sm bg-transparent border border-2 rounded'>
 						Store
 					</button>
 				</div>
@@ -221,20 +165,36 @@ export default function CenterContent(props) {
 				<div className='nextCall'>
 					<h2 className='title'>Session Bookings</h2>
 					<div>
-					<nav className="">                               
-					<button className="btn-secondary" onClick={(e) => setNextSession("newAppoinment")}>New Appoinment</button>
-					{nextSession === "newAppoinment" && <div className='react-calendar mt-5 '>
-						<Calender className="Calender"/>
-					</div>}
-					
+						<nav className=''>
+							<button
+								className='btn-secondary'
+								onClick={(e) => setNextSession("newAppoinment")}>
+								New Appoinment
+							</button>
+							{nextSession === "newAppoinment" && (
+								<div className='react-calendar mt-5 '>
+									<Calender className='Calender' />
+								</div>
+							)}
 
-					<button className="btn-secondary2" onClick={(e) => setNextSession("endReason")}>End Reason</button>
-					{nextSession === "endReason" && <section className="mt-5"><label className='fw-semibold fs-3 mt-5'>End reason</label>
-					<textarea
-						className='textArea form-control '
-						placeholder='End Reason'
-						id='#'></textarea></section>}
-					</nav>
+							<button
+								className='btn-secondary2'
+								onClick={(e) => setNextSession("endReason")}>
+								End Reason
+							</button>
+							{nextSession === "endReason" && (
+								<section className='mt-5'>
+									<label className='fw-semibold fs-3 mt-5'>End reason</label>
+									<textarea
+										className='textArea form-control '
+										placeholder='End Reason'
+										id='#'></textarea>
+									<div className='d-grid'>
+										<button className='btn btn-secondary'>Save</button>
+									</div>
+								</section>
+							)}
+						</nav>
 					</div>
 					{/*                                      */}
 				</div>

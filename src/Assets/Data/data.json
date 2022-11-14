@@ -1,0 +1,52 @@
+[
+	{
+		"id": 1,
+		"Emoji": "😄",
+		"span": "happy",
+		"question1": "something",
+		"question2": "what makes you happy",
+        
+		"Answer1": "Joyful",
+		"Answer2": "OverJoyed"
+	},
+	{
+		"id": 2,
+		"Emoji": "🤬",
+		"span": "angry",
+		"question1": "why are you angry",
+		"question2": "what makes you angry",
+
+		"Answer1": "upset",
+		"Answer2": "frustrated"
+	},
+	{
+		"id": 3,
+		"Emoji": "🤔",
+		"span": "confused",
+		"question1": "why are you Confused",
+		"question2": "what makes you Confused",
+
+		"Answer1": "Unsure",
+		"Answer2": "Lost"
+	},
+	{
+		"id": 4,
+		"Emoji": "😖",
+		"span": "bad",
+		"question1": "why are you Confused",
+		"question2": "what makes you Confused",
+
+		"Answer1": "Regret",
+		"Answer2": "Regret"
+	},
+	{
+		"id": 5,
+		"Emoji": "🙁",
+		"span": "sad",
+		"question1": "why are you Confused",
+		"question2": "what makes you Confused",
+
+		"Answer1": "hurt",
+		"Answer2": "Broken"
+	}
+]

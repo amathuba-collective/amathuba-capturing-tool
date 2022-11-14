@@ -1,6 +1,5 @@
 import React from "react";
 import "../Styles/RightContent.css"
-
 export default function RightContent(props) {
 	// const [question, setQuestion] = useState()
 
@@ -44,7 +43,7 @@ const onQuestionFourClicked = (e) =>{
 			<p className='text-center fs-3 fw-semibold mt-4 mb-3'>
 				Opening Questions
 			</p>
-			{/* static opening questions */}
+			 {/* static opening questions  */}
 			<div className='questions mt-4'>
 				<button
 					className=' bg-transparent border-3 border-secondary rounded p-2 fw-semibold fs-5 w-100'
@@ -67,7 +66,6 @@ const onQuestionFourClicked = (e) =>{
 					{openingQuestions[3]}
 				</button></div>
         </section>
-				
 				
 				{props.happy ? <section className="mb-5">
         <p className='text-center fs-3 fw-semibold mt-4 mb-3'>
@@ -95,8 +93,8 @@ const onQuestionFourClicked = (e) =>{
             what caused you to be this happy ?
           </button></div>
           </section> : null}
-			{/*                                                                       */}
-		  {props.angry ? <section className="mb-5">
+		
+		  {props.angry === "angry" && <section className="mb-5">
         <p className='text-center fs-3 fw-semibold mt-4 mb-3'>
           Opening Emotion Questions
         </p>
@@ -121,12 +119,9 @@ const onQuestionFourClicked = (e) =>{
 			onClick={onQuestionFourClicked}>
             what caused you to be this angry ?
           </button></div>
-          </section> : null}
-		  {/*                                                             */}
-        
-		{/*                                                                                          */}
+          </section> }
 
-		  {props.confused ? <section className="mb-5">
+		  {props.confused === "confused" && <section className="mb-5">
         <p className='text-center fs-3 fw-semibold mt-4 mb-3'>
           Opening Emotion Questions
         </p>
@@ -151,11 +146,10 @@ const onQuestionFourClicked = (e) =>{
 			onClick={onQuestionFourClicked}>
             what caused you to be this confused ?
           </button></div>
-          </section> : null}
+          </section> }
 
-		  {/*                                                                                     */}
 		  
-		  {props.bad ? <section className="mb-5">
+		  {props.bad === "bad" && <section className="mb-5">
         <p className='text-center fs-3 fw-semibold mt-4 mb-3'>
           Opening Emotion Questions
         </p>
@@ -180,13 +174,12 @@ const onQuestionFourClicked = (e) =>{
 			onClick={onQuestionFourClicked}>
             what caused you to be this bad?
           </button></div>
-          </section> : null}
+          </section> }
 
 
-		  {/*                                                       */}
 
 
-		  {props.sad ? <section className="mb-5">
+		  {props.sad === "sad" &&  <section className="mb-5">
         <p className='text-center fs-3 fw-semibold mt-4 mb-3'>
           Opening Emotion Questions
         </p>
@@ -211,7 +204,7 @@ const onQuestionFourClicked = (e) =>{
 			onClick={onQuestionFourClicked}>
             what caused you to be this sad ?
           </button></div>
-          </section> : null}
+          </section> }
 			</div> 
 		</div>
   

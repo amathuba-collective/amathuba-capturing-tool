@@ -1,41 +1,42 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import "./Styles/App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+
 import LeftContent from "./Components/LeftContent";
 import CenterContent from "./Components/CenterContent";
 import RightContent from "./Components/RightContent";
+
 
 export default function App() {
 	const [question, setQuestion] = useState()
 	const [data, updateData] = useState("");
 	const [printData, setPrintData] = useState("")
-	const [happy, setHappy] = useState(false);
-	const [angry, setAngry] = useState(false);
-	const [confused, setConfused] = useState(false);
-	const [bad, setBad] = useState(false);
-	const [sad, setSad] = useState(false);;
+	const [happy, setHappy] = useState("")
+	const [angry, setAngry] = useState("angry");
+	const [confused, setConfused] = useState("confused");
+	const [bad, setBad] = useState("bad");
+	const [sad, setSad] = useState("sad");
 	// 
-	const [emotion, updateEmotion] = useState("");
+	const [openingEmotion, updateOpeningEmotion] = useState("");
 	const [openingEmotionQuestion, setOpeningEmotionQuestion] = useState();
 	const [youthData, setYouthData] = useState();
 	const [agentData, setAgentData] = useState("");
 	const [printYouthData, setPrintYouthData] = useState("");
 	const [printAgentData, setPrintAgentData] = useState("");
 	// const [date, setDate] = React.useState(dayjs());
-	// //   const [answer, setAnswer] = useState('');
-	// // const toggleHappy = (e) =>{
-	// // 	setHappy(happy => !happy)
-	// }
+	//   const [answer, setAnswer] = useState('');
+	// const toggleHappy = (e) =>{
+	// 	setHappy(happy => !happy)
+
 
 	return (
 		<div className='container-fluid bg-light'>
-
 			<div className='row'>
 				<div className='bg-1 col '>
 					<LeftContent
 						data={data}
 						printData={printData}
-						emotion={emotion}
+						openingEmotion={openingEmotion}
 						openingEmotionQuestion={openingEmotionQuestion}
 						youthData={youthData}
 						agentData={agentData}
@@ -49,8 +50,8 @@ export default function App() {
 					question={question}
 						data={data}
 						setPrintData={setPrintData}
-						emotion={emotion}
-						updateEmotion={updateEmotion}
+						openingEmotion={openingEmotion}
+						updateOpeningEmotion={updateOpeningEmotion}
 						setHappy={setHappy}
 						setAngry={setAngry}
 						setConfused={setConfused}
@@ -82,6 +83,8 @@ export default function App() {
 			</div>
 		
 		</div>
+
+
 	);
 }
 
