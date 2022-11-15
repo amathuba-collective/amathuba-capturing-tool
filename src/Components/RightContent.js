@@ -39,7 +39,22 @@ export default function RightContent(props) {
     " what makes you this Sad ?",
     "what caused you to be this Sad ?",
   ];
+  const youthReflectionQuestions = [
+    " So tell me how will u go forward?",
+    " What do you choose to do next ?",
+    " what is your next choice ?",
+    "what caused you to be this youth ?",
+  ];
+  const agentReflectionQuestions = [
+    " So tell me about your youth ?",
+    " Why is your youth Sad ?",
+    " what makes you this youth ?",
+    "what caused you to be this youth?",
+  ];
 
+  const getOtherOpeningQuestion = (e) => {
+    props.setOtherOpeningQuestion(e.target.value);
+  }
 
   const onHappyQuestion1Clicked = (e) => {
     props.setOpeningEmotionQuestion(openingHappyEmotionQuestions[0])
@@ -58,7 +73,7 @@ export default function RightContent(props) {
     props.setOpeningEmotionQuestion(openingHappyEmotionQuestions[3])
     props.setHappyAnswers(happyAnswers => !happyAnswers)
   }
- 
+
 
   const onAngryQuestion1Clicked = (e) => {
     props.setOpeningEmotionQuestion(openingAngryEmotionQuestions[0])
@@ -120,6 +135,32 @@ export default function RightContent(props) {
     props.setOpeningEmotionQuestion(openingSadEmotionQuestions[3])
   }
 
+  const onYouthReflectionQ1Clicked = (e) => {
+    props.setYouthQuestions(youthReflectionQuestions[0])
+  }
+  const onYouthReflectionQ2Clicked = (e) => {
+    props.setYouthQuestions(youthReflectionQuestions[1])
+  }
+  const onYouthReflectionQ3Clicked = (e) => {
+    props.setYouthQuestions(youthReflectionQuestions[2])
+  }
+  const onYouthReflectionQ4Clicked = (e) => {
+    props.setYouthQuestions(youthReflectionQuestions[3])
+  }
+
+  const onAgentReflectionQ1Clicked = (e) => {
+    props.setAgentQuestions(agentReflectionQuestions[0])
+  }
+  const onAgentReflectionQ2Clicked = (e) => {
+    props.setAgentQuestions(agentReflectionQuestions[1])
+  }
+  const onAgentReflectionQ3Clicked = (e) => {
+    props.setAgentQuestions(agentReflectionQuestions[2])
+  }
+  const onAgentReflectionQ4Clicked = (e) => {
+    props.setAgentQuestions(agentReflectionQuestions[3])
+  }
+
   return (
     <div className='container-fluid'>
       <div>
@@ -152,17 +193,19 @@ export default function RightContent(props) {
             </button>
             <button
               className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
-              onClick={(e) => props.setOpeningQuestion(openingQuestions[3])}>
+              onClick={(e) => props.setOpeningQuestion(openingQuestions[3])}
+            >
               {openingQuestions[3]}
             </button>
             {/* other field input */}
             <div className="text-center mt-3 d-flex align-items-center">
-            <div className="input-group mb-3">
-  <input type="text" className="otherInput form-control" placeholder="Other"  />
-  </div>
-  <button className="otherBtn border-secondary border-2 text-dark rounded" onClick={(e) => props.updateData(openingQuestions.push("other question"))}>save</button>
-          </div>
-          {/*  */}
+              <div className="input-group mb-3">
+                <input type="text" className="otherInput form-control" placeholder="Other"
+                  onChange={getOtherOpeningQuestion} />
+              </div>
+              <button className="otherBtn border-secondary border-2 text-dark rounded" onClick={() => props.setPrintOtherOpeningQuestion(true)}>save</button>
+            </div>
+            {/*  */}
           </div>
         </section>
 
@@ -305,21 +348,67 @@ export default function RightContent(props) {
             </button></div>
         </section> : null}
 
-        <div className="agent&YouthQuestions">
+        <div className="agent&YouthQuestions mb-4 mt-4">
           {
             props.youthQuestions ?
-            <div>
-              <p>Youth question</p>
-            </div>
-            :null
+              <div className="mb-4">
+                <button
+                  className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
+                  onClick={onYouthReflectionQ1Clicked}
+                >
+                  {youthReflectionQuestions[0]}
+                </button>
+                <button
+                  className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
+                  onClick={onYouthReflectionQ2Clicked}
+                >
+                  {youthReflectionQuestions[1]}
+                </button>
+                <button
+                  className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
+                  onClick={onYouthReflectionQ3Clicked}
+                >
+                  {youthReflectionQuestions[2]}
+                </button>
+                <button
+                  className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
+                  onClick={onYouthReflectionQ4Clicked}
+                >
+                  {youthReflectionQuestions[3]}
+                </button>
+              </div>
+              : null
           }
 
           {
             props.agentQuestions ?
-            <div>
-              <p>Agent Questions</p>
-            </div>
-             :null
+              <div className="mb-5">
+                <button
+                  className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
+                  onClick={onAgentReflectionQ1Clicked}
+                >
+                  {agentReflectionQuestions[0]}
+                </button>
+                <button
+                  className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
+                  onClick={onAgentReflectionQ2Clicked}
+                >
+                  {agentReflectionQuestions[1]}
+                </button>
+                <button
+                  className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
+                  onClick={onAgentReflectionQ3Clicked}
+                >
+                  {agentReflectionQuestions[2]}
+                </button>
+                <button
+                  className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
+                  onClick={onAgentReflectionQ4Clicked}
+                >
+                  {agentReflectionQuestions[3]}
+                </button>
+              </div>
+              : null
           }
         </div>
       </div>

@@ -16,6 +16,7 @@ export default function CenterContent(props) {
 
 	const [nextSession, setNextSession] = useState("newAppoinment");
 
+
 	const onHappyClicked = (e) => {
 		props.updateOpeningEmotion(emotionWheel[0]);
 		props.setHappy((happy) => !happy);
@@ -26,7 +27,7 @@ export default function CenterContent(props) {
 		props.setAngry((angry) => !angry);
 	}
 
-	function toggleAnswers (e){
+	function toggleAnswers(e) {
 		alert("working on")
 	}
 
@@ -45,10 +46,10 @@ export default function CenterContent(props) {
 		props.setSad((sad) => !sad);
 	}
 
-	function getYouthQuestions(e){
+	function getYouthQuestions(e) {
 		props.setYouthQuestions(youthQuestions => !youthQuestions)
 	}
-	function getAgentQuestions(e){
+	function getAgentQuestions(e) {
 		props.setAgentQuestions(agentQuestions => !agentQuestions)
 	}
 
@@ -81,6 +82,8 @@ export default function CenterContent(props) {
 			<div className='header'>
 				<div className='openingQuestion text-center mt-5'>
 					<p className='fs-2 fw-semibold'>{props.openingQuestion}</p>
+
+					<p>{props.otherOpeningQuestion}</p>
 				</div>
 				{/* Clickable emojis to detec opening emotion of call */}
 				<div className='emotion-emojies d-flex justify-content-around mt-5 '>
@@ -161,18 +164,19 @@ export default function CenterContent(props) {
 							</div>
 							{/*  */}
 							<div className='otherAnswer mt-5 d-flex '>
-									<div className='input-group mb-3 w-75'>
-										<input
-											type='text'
-											className='otherInput form-control w-75'
-											placeholder='Other'
-										/>
-									</div>
-									<button className='otherAnswerBtn border-secondary border-2 text-dark rounded '>
-										save
-									</button>
-								</div> 
-								{/*  */}
+								<div className='input-group mb-3 w-75'>
+									<input
+										type='text'
+										className='otherInput form-control w-75'
+										placeholder='Other'
+									/>
+								</div>
+								<button className='otherAnswerBtn border-secondary border-2 text-dark rounded '
+								>
+									save
+								</button>
+							</div>
+							{/*  */}
 						</div>
 					) : null}
 
@@ -218,18 +222,18 @@ export default function CenterContent(props) {
 							</div>
 							{/*  */}
 							<div className='otherAnswer mt-5 d-flex '>
-									<div className='input-group mb-3 w-75'>
-										<input
-											type='text'
-											className='otherInput form-control w-75'
-											placeholder='Other'
-										/>
-									</div>
-									<button className='otherAnswerBtn border-secondary border-2 text-dark rounded '>
-										save
-									</button>
-								</div> 
-								{/*  */}
+								<div className='input-group mb-3 w-75'>
+									<input
+										type='text'
+										className='otherInput form-control w-75'
+										placeholder='Other'
+									/>
+								</div>
+								<button className='otherAnswerBtn border-secondary border-2 text-dark rounded '>
+									save
+								</button>
+							</div>
+							{/*  */}
 						</div>
 					) : null}
 					{/*  */}
@@ -273,18 +277,18 @@ export default function CenterContent(props) {
 							</div>
 							{/*  */}
 							<div className='otherAnswer mt-5 d-flex '>
-									<div className='input-group mb-3 w-75'>
-										<input
-											type='text'
-											className='otherInput form-control w-75'
-											placeholder='Other'
-										/>
-									</div>
-									<button className='otherAnswerBtn border-secondary border-2 text-dark rounded '>
-										save
-									</button>
-								</div> 
-								{/*  */}
+								<div className='input-group mb-3 w-75'>
+									<input
+										type='text'
+										className='otherInput form-control w-75'
+										placeholder='Other'
+									/>
+								</div>
+								<button className='otherAnswerBtn border-secondary border-2 text-dark rounded '>
+									save
+								</button>
+							</div>
+							{/*  */}
 						</div>
 					) : null}
 
@@ -329,18 +333,18 @@ export default function CenterContent(props) {
 							</div>
 							{/*  */}
 							<div className='otherAnswer mt-5 d-flex '>
-									<div className='input-group mb-3 w-75'>
-										<input
-											type='text'
-											className='otherInput form-control w-75'
-											placeholder='Other'
-										/>
-									</div>
-									<button className='otherAnswerBtn border-secondary border-2 text-dark rounded '>
-										save
-									</button>
-								</div> 
-								{/*  */}
+								<div className='input-group mb-3 w-75'>
+									<input
+										type='text'
+										className='otherInput form-control w-75'
+										placeholder='Other'
+									/>
+								</div>
+								<button className='otherAnswerBtn border-secondary border-2 text-dark rounded '>
+									save
+								</button>
+							</div>
+							{/*  */}
 						</div>
 					) : null}
 
@@ -384,35 +388,22 @@ export default function CenterContent(props) {
 							</div>
 							{/*  */}
 							<div className='otherAnswer mt-5 d-flex '>
-									<div className='input-group mb-3 w-75'>
-										<input
-											type='text'
-											className='otherInput form-control w-75'
-											placeholder='Other'
-										/>
-									</div>
-									<button className='otherAnswerBtn border-secondary border-2 text-dark rounded '>
-										save
-									</button>
-								</div> 
-								{/*  */}
-						 </div>
+								<div className='input-group mb-3 w-75'>
+									<input
+										type='text'
+										className='otherInput form-control w-75'
+										placeholder='Other'
+									/>
+								</div>
+								<button className='otherAnswerBtn border-secondary border-2 text-dark rounded '>
+									save
+								</button>
+							</div>
+							{/*  */}
+						</div>
 					) : null}
 
-					{/* <div className="otherAnswer mt-5 d-flex ">
-					<div className='input-group mb-3 w-75'>
-						<input
-							type='text'
-							className='otherInput form-control w-75'
-							placeholder='Other'
-						/>
-					</div>
-					<button
-						className='otherAnswerBtn border-secondary border-2 text-dark rounded '
-						>
-						save
-					</button>
-					</div> */}
+
 				</div>
 			</div>
 			{/* body section ends */}
@@ -423,7 +414,7 @@ export default function CenterContent(props) {
 				<div className='mt-5'>
 					<div className='recommended question for youth reflection'>
 						<h2 className='recommendedQuestion mb-3 text-center fs-4 fw-semilight'>
-							{props.data}
+							{props.youthQuestions}
 						</h2>
 					</div>
 					<label className='fw-semibold fs-3 mb-3'>Youth Reflection</label>
@@ -446,7 +437,7 @@ export default function CenterContent(props) {
 				<div className='mt-5 mb-5'>
 					<div className='recommended question for agent reflection'>
 						<h2 className='recommendedQuestion mb-2 text-center fs-4 fw-semilight'>
-							{props.data}
+							{props.agentQuestions}
 						</h2>
 					</div>
 					<label className='fw-semibold fs-3 mb-2'>Agent Reflection</label>

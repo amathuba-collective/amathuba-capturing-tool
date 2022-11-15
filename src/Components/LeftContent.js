@@ -33,6 +33,11 @@ export default function LeftContent(props) {
 								<p className="fs-5">{props.openingQuestion}</p>
 							</div>
 						) : null}
+						{
+							props.printOtherOpeningQuestion ? <div>
+								<h4>Opening Question</h4>
+								<p>{props.otherOpeningQuestion}</p></div> : null
+						}
 					</p>
 				</div>
 				<div>
@@ -49,30 +54,15 @@ export default function LeftContent(props) {
 					<p className='fw-semilight fs-3'>
 						{props.openingEmotionQuestion ? (
 							<div>
-								<h4>Opening emotion question</h4>
+								<h4>Opening Emotion question</h4>
 								<p className="fs-5">{props.openingEmotionQuestion}</p>
 							</div>
 						) : null}
 					</p>
 				</div>
 
-				{/* <div>
-				<h4>Opening emotion question</h4>
-				<p>answer</p>
-				<p>answer</p>
-				<p>answer</p>
-				</div>
 
-				<div>
-				<h4>Opening emotion question</h4>
-				<p>answer</p>
-				<p>answer</p>
-				<p>answer</p>
-				</div>  */}
 				{/* 
-		</div>
-	<p className="fw-semilight fs-2">{props.emotion}</p>
-	{/* 
 	
 	this space is for emotion recommended questions an triggerd an reason key word answers
 
@@ -80,24 +70,45 @@ export default function LeftContent(props) {
 
 				{/* <p className="fw-semilight fs-2">{props.answer}</p> */}
 				{/* <p className="youthReflection fw-semilight fs-4">{props.printYouthData ? <p>{props.youthData}</p> : null}</p> */}
-				<div>
-					<p className='agentReflection fw-semilight fs-4'>
-						{props.printYouthData ? (
+				<div className='agentReflection fw-semilight fs-4 mt-4'>
+					{/* {props.printYouthData ? (
+						<div>
+							<h4>Youth Reflection</h4>
+							<p>{props.youthData}</p>
+						</div>
+					) : null} */}
+
+					{
+						props.youthQuestions ? (
 							<div>
-								<h4>Youth Reflection</h4>
-								<p>{props.youthData}</p>
+								<h4>{props.youthQuestions}</h4>
+
+								{props.printYouthData ? (
+									<div>
+										<h5>Youth Reflection</h5>
+										<p className="fs-5">{props.youthData}</p>
+									</div>
+								) : null}
 							</div>
-						) : null}
-					</p>
+						) : null
+					}
 				</div>
 				<div>
 					<p className='agentReflection fw-semilight fs-4'>
-						{props.printAgentData ? (
-							<div>
-								<h4>Agent Reflection</h4>
-								<p>{props.agentData}</p>
-							</div>
-						) : null}
+						{
+							props.agentQuestions ?
+								<div>
+									<h4>{props.agentQuestions}</h4>
+									{props.printAgentData ? (
+										<div>
+											<h5>Agent Reflection</h5>
+											<p className="fs-5">{props.agentData}</p>
+										</div>
+									) : null}
+								</div>
+
+								: null
+						}
 					</p>
 				</div>
 
