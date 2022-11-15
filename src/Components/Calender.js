@@ -20,9 +20,8 @@ export default function Calender() {
     <StaticDatePicker
       orientation='portrait'
       onChange={(newValue) => setDate(newValue)}
-    value={date}
+      value={date}
       renderInput={(params) => <TextField {...params} />}
-     
     />
   </LocalizationProvider>
  );

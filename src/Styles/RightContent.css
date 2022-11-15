@@ -5,3 +5,13 @@
 .container-fluid::-webkit-scrollbar{
 	display: none;
 }
+
+.otherInput{
+}
+
+.otherBtn{
+	position: relative;
+	bottom: 0.5rem;
+	left: 0.3rem;
+	padding: 0.2rem;
+}

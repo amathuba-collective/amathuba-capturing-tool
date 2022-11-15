@@ -1,7 +1,4 @@
 import React from "react";
-import { Input } from "@nextui-org/react";
-import SendButton from "../Modules/SendButton";
-import { SendIcon } from "../Modules/SendIcon"
 import "../Styles/RightContent.css"
 export default function RightContent(props) {
   // const [question, setQuestion] = useState()
@@ -18,21 +15,109 @@ export default function RightContent(props) {
     " what makes you this happy ?",
     "what caused you to be this happy ?",
   ];
+  const openingAngryEmotionQuestions = [
+    " So tell me about your Angry ?",
+    " Why are you this Angry ?",
+    " what makes you this Angry ?",
+    "what caused you to be this Angry ?",
+  ];
+  const openingConfusedEmotionQuestions = [
+    " So tell me about your Confused ?",
+    " Why are you this Confused ?",
+    " what makes you this Confused ?",
+    "what caused you to be this Confused ?",
+  ];
+  const openingBadEmotionQuestions = [
+    " So tell me about your Bad ?",
+    " Why are you this Bad ?",
+    " what makes you this Bad ?",
+    "what caused you to be this Bad ?",
+  ];
+  const openingSadEmotionQuestions = [
+    " So tell me about your Sad ?",
+    " Why are you this Sad ?",
+    " what makes you this Sad ?",
+    "what caused you to be this Sad ?",
+  ];
 
 
-  const onQuestionOneClicked = (e) => {
+  const onHappyQuestion1Clicked = (e) => {
     props.setOpeningEmotionQuestion(openingHappyEmotionQuestions[0])
-    props.setAnswer(answer => !answer)
+    props.setHappyAnswers(happyAnswers => !happyAnswers)
     // alert("answer created")
   }
-  const onQuestionTwoClicked = (e) => {
+  const onHappyQuestion2Clicked = (e) => {
     props.setOpeningEmotionQuestion(openingHappyEmotionQuestions[1])
+    props.setHappyAnswers(happyAnswers => !happyAnswers)
   }
-  const onQuestionThreeClicked = (e) => {
+  const onHappyQuestion3Clicked = (e) => {
     props.setOpeningEmotionQuestion(openingHappyEmotionQuestions[2])
+    props.setHappyAnswers(happyAnswers => !happyAnswers)
   }
-  const onQuestionFourClicked = (e) => {
-    props.setOpeningEmotionQuestion(openingQuestions[3])
+  const onHappyQuestion4Clicked = (e) => {
+    props.setOpeningEmotionQuestion(openingHappyEmotionQuestions[3])
+    props.setHappyAnswers(happyAnswers => !happyAnswers)
+  }
+ 
+
+  const onAngryQuestion1Clicked = (e) => {
+    props.setOpeningEmotionQuestion(openingAngryEmotionQuestions[0])
+    props.setAngryAnswers(angryAnswers => !angryAnswers)
+  }
+  const onAngryQuestion2Clicked = (e) => {
+    props.setOpeningEmotionQuestion(openingAngryEmotionQuestions[1])
+  }
+  const onAngryQuestion3Clicked = (e) => {
+    props.setOpeningEmotionQuestion(openingAngryEmotionQuestions[2])
+  }
+  const onAngryQuestion4Clicked = (e) => {
+    props.setOpeningEmotionQuestion(openingAngryEmotionQuestions[3])
+    // props.setAnswer(answer => !answer)
+    // alert("answer created")
+  }
+
+  const onConfusedQuestion1Clicked = (e) => {
+    props.setOpeningEmotionQuestion(openingConfusedEmotionQuestions[0])
+    props.setConfusedAnswers(confusedAnswers => !confusedAnswers)
+  }
+  const onConfusedQuestion2Clicked = (e) => {
+    props.setOpeningEmotionQuestion(openingConfusedEmotionQuestions[1])
+  }
+  const onConfusedQuestion3Clicked = (e) => {
+    props.setOpeningEmotionQuestion(openingConfusedEmotionQuestions[2])
+  }
+  const onConfusedQuestion4Clicked = (e) => {
+    props.setOpeningEmotionQuestion(openingConfusedEmotionQuestions[3])
+    // alert("answer created")
+  }
+
+  const onBadQuestion1Clicked = (e) => {
+    props.setOpeningEmotionQuestion(openingBadEmotionQuestions[0])
+    props.setBadAnswers(badAnswers => !badAnswers)
+  }
+  const onBadQuestion2Clicked = (e) => {
+    props.setOpeningEmotionQuestion(openingBadEmotionQuestions[1])
+  }
+  const onBadQuestion3Clicked = (e) => {
+    props.setOpeningEmotionQuestion(openingBadEmotionQuestions[2])
+  }
+  const onBadQuestion4Clicked = (e) => {
+    props.setOpeningEmotionQuestion(openingBadEmotionQuestions[3])
+    // alert("answer created")
+  }
+
+  const onSadQuestion1Clicked = (e) => {
+    props.setOpeningEmotionQuestion(openingSadEmotionQuestions[0])
+    props.setSadAnswers(sadAnswers => !sadAnswers)
+  }
+  const onSadQuestion2Clicked = (e) => {
+    props.setOpeningEmotionQuestion(openingSadEmotionQuestions[1])
+  }
+  const onSadQuestion3Clicked = (e) => {
+    props.setOpeningEmotionQuestion(openingSadEmotionQuestions[2])
+  }
+  const onSadQuestion4Clicked = (e) => {
+    props.setOpeningEmotionQuestion(openingSadEmotionQuestions[3])
   }
 
   return (
@@ -52,38 +137,32 @@ export default function RightContent(props) {
           <div className='questions mt-4'>
             <button
               className=' bg-transparent border-3 border-secondary rounded p-2 fw-semibold fs-5 w-100'
-              onClick={(e) => props.updateData(openingQuestions[0])}> {openingQuestions[0]}
+              onClick={(e) => props.setOpeningQuestion(openingQuestions[0])}> {openingQuestions[0]}
               {" "}
             </button>
             <button
               className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5 w-100 '
-              onClick={(e) => props.updateData(openingQuestions[1])}>
+              onClick={(e) => props.setOpeningQuestion(openingQuestions[1])}>
               {openingQuestions[1]}
             </button>
             <button
               className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
-              onClick={(e) => props.updateData(openingQuestions[2])}>
+              onClick={(e) => props.setOpeningQuestion(openingQuestions[2])}>
               {openingQuestions[2]}
             </button>
             <button
               className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
-              onClick={(e) => props.updateData(openingQuestions[3])}>
+              onClick={(e) => props.setOpeningQuestion(openingQuestions[3])}>
               {openingQuestions[3]}
             </button>
-            <div className="text-center mt-3 ">
-              <Input
-                clearable
-                underlined
-                initialValue="Other"
-                css={{ width: "100%" }}
-                contentRight={
-                  <SendButton>
-                    <SendIcon />
-                  </SendButton>
-                }
-              />
-            </div>
-
+            {/* other field input */}
+            <div className="text-center mt-3 d-flex align-items-center">
+            <div className="input-group mb-3">
+  <input type="text" className="otherInput form-control" placeholder="Other"  />
+  </div>
+  <button className="otherBtn border-secondary border-2 text-dark rounded" onClick={(e) => props.updateData(openingQuestions.push("other question"))}>save</button>
+          </div>
+          {/*  */}
           </div>
         </section>
 
@@ -94,22 +173,22 @@ export default function RightContent(props) {
           <div className='questions mt-4'>
             <button
               className=' bg-transparent border-3 border-secondary rounded p-2 fw-semibold fs-5 w-100'
-              onClick={onQuestionOneClicked}>
+              onClick={onHappyQuestion1Clicked}>
               So tell me about your happiness ?
             </button>
             <button
               className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5 w-100 '
-              onClick={onQuestionTwoClicked}>
+              onClick={onHappyQuestion2Clicked}>
               Why are you this happy ?
             </button>
             <button
               className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
-              onClick={onQuestionThreeClicked}>
+              onClick={onHappyQuestion3Clicked}>
               what makes you this happy ?
             </button>
             <button
               className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
-              onClick={onQuestionFourClicked}>
+              onClick={onHappyQuestion4Clicked}>
               what caused you to be this happy ?
             </button></div>
         </section> : null}
@@ -121,22 +200,22 @@ export default function RightContent(props) {
           <div className='questions mt-4'>
             <button
               className=' bg-transparent border-3 border-secondary rounded p-2 fw-semibold fs-5 w-100'
-              onClick={onQuestionOneClicked}>
+              onClick={onAngryQuestion1Clicked}>
               So tell me why your angry ?
             </button>
             <button
               className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5 w-100 '
-              onClick={onQuestionTwoClicked}>
+              onClick={onAngryQuestion2Clicked}>
               Why are you this angry?
             </button>
             <button
               className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
-              onClick={onQuestionThreeClicked}>
+              onClick={onAngryQuestion3Clicked}>
               what made you this angry ?
             </button>
             <button
               className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
-              onClick={onQuestionFourClicked}>
+              onClick={onAngryQuestion4Clicked}>
               what caused you to be this angry ?
             </button></div>
         </section> : null}
@@ -148,22 +227,22 @@ export default function RightContent(props) {
           <div className='questions mt-4'>
             <button
               className=' bg-transparent border-3 border-secondary rounded p-2 fw-semibold fs-5 w-100'
-              onClick={onQuestionOneClicked}>
+              onClick={onConfusedQuestion1Clicked}>
               So tell me why your confused ?
             </button>
             <button
               className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5 w-100 '
-              onClick={onQuestionTwoClicked}>
+              onClick={onConfusedQuestion2Clicked}>
               Why are you this confused?
             </button>
             <button
               className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
-              onClick={onQuestionThreeClicked}>
+              onClick={onConfusedQuestion3Clicked}>
               what made you this confused ?
             </button>
             <button
               className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
-              onClick={onQuestionFourClicked}>
+              onClick={onConfusedQuestion4Clicked}>
               what caused you to be this confused ?
             </button></div>
         </section> : null}
@@ -176,22 +255,22 @@ export default function RightContent(props) {
           <div className='questions mt-4'>
             <button
               className=' bg-transparent border-3 border-secondary rounded p-2 fw-semibold fs-5 w-100'
-              onClick={onQuestionOneClicked}>
+              onClick={onBadQuestion1Clicked}>
               So tell me why you feeling bad ?
             </button>
             <button
               className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5 w-100 '
-              onClick={onQuestionTwoClicked}>
+              onClick={onBadQuestion2Clicked}>
               What makes you so bad?
             </button>
             <button
               className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
-              onClick={onQuestionThreeClicked}>
+              onClick={onBadQuestion3Clicked}>
               what made you this bad ?
             </button>
             <button
               className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
-              onClick={onQuestionFourClicked}>
+              onClick={onBadQuestion4Clicked}>
               what caused you to be this bad?
             </button></div>
         </section> : null}
@@ -206,25 +285,43 @@ export default function RightContent(props) {
           <div className='questions mt-4'>
             <button
               className=' bg-transparent border-3 border-secondary rounded p-2 fw-semibold fs-5 w-100'
-              onClick={onQuestionOneClicked}>
+              onClick={onSadQuestion1Clicked}>
               So tell me why your sad ?
             </button>
             <button
               className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5 w-100 '
-              onClick={onQuestionTwoClicked}>
+              onClick={onSadQuestion2Clicked}>
               Why are you this sad?
             </button>
             <button
               className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
-              onClick={onQuestionThreeClicked}>
+              onClick={onSadQuestion3Clicked}>
               what made you this sad?
             </button>
             <button
               className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
-              onClick={onQuestionFourClicked}>
+              onClick={onSadQuestion4Clicked}>
               what caused you to be this sad ?
             </button></div>
         </section> : null}
+
+        <div className="agent&YouthQuestions">
+          {
+            props.youthQuestions ?
+            <div>
+              <p>Youth question</p>
+            </div>
+            :null
+          }
+
+          {
+            props.agentQuestions ?
+            <div>
+              <p>Agent Questions</p>
+            </div>
+             :null
+          }
+        </div>
       </div>
     </div>
 

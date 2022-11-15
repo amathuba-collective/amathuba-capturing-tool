@@ -16,30 +16,40 @@ export default function CenterContent(props) {
 
 	const [nextSession, setNextSession] = useState("newAppoinment");
 
-
 	const onHappyClicked = (e) => {
 		props.updateOpeningEmotion(emotionWheel[0]);
-		props.setHappy(happy => !happy)
+		props.setHappy((happy) => !happy);
 	};
 
 	function onAngryClicked(e) {
 		props.updateOpeningEmotion(emotionWheel[1]);
-		props.setAngry(angry => !angry)
+		props.setAngry((angry) => !angry);
+	}
+
+	function toggleAnswers (e){
+		alert("working on")
 	}
 
 	function onConfusedClicked(e) {
 		props.updateOpeningEmotion(emotionWheel[2]);
-		props.setConfused(confused => !confused)
+		props.setConfused((confused) => !confused);
 	}
 
 	function onBadClicked(e) {
 		props.updateOpeningEmotion(emotionWheel[3]);
-		props.setBad(bad => !bad)
+		props.setBad((bad) => !bad);
 	}
 
 	function onSadClicked(e) {
 		props.updateOpeningEmotion(emotionWheel[4]);
-		props.setSad(sad => !sad)
+		props.setSad((sad) => !sad);
+	}
+
+	function getYouthQuestions(e){
+		props.setYouthQuestions(youthQuestions => !youthQuestions)
+	}
+	function getAgentQuestions(e){
+		props.setAgentQuestions(agentQuestions => !agentQuestions)
 	}
 
 	function getYouthReflection(val) {
@@ -53,7 +63,7 @@ export default function CenterContent(props) {
 	}
 
 	const entireForm = [
-		{ OpeningQuestion: props.data },
+		{ OpeningQuestion: props.openingQuestion },
 		{ OpeningEmotion: props.openingEmotion },
 	];
 
@@ -67,11 +77,12 @@ export default function CenterContent(props) {
 	return (
 		<div className='container'>
 			{/* header section starts */}
+			{/* opening question section */}
 			<div className='header'>
 				<div className='openingQuestion text-center mt-5'>
-					<p className='fs-2 fw-semibold'>{props.data}</p>
+					<p className='fs-2 fw-semibold'>{props.openingQuestion}</p>
 				</div>
-				{/*  */}
+				{/* Clickable emojis to detec opening emotion of call */}
 				<div className='emotion-emojies d-flex justify-content-around mt-5 '>
 					<button
 						onClick={onHappyClicked}
@@ -108,16 +119,306 @@ export default function CenterContent(props) {
 			{/* Header section ends */}
 
 			{/* Body section starts */}
+			{/* section for triggerd an reason keyword answers */}
 			<div className='body mt-5' id='scrollable'>
 				<div className='emptyDivForEmotoinKeyWords mt-5 mb-5  text-center'>
-					{props.answer ? <div>
-						<p>OverJoyed</p>
-					</div> : null}
+					{props.happyAnswers ? (
+						<div className='section d-flex flex-column justify-content-center'>
+							<div className='triggerdAnswers'>
+								<div className='d-flex justify-content-around mb-2'>
+									<button className='btn-sm' onClick={toggleAnswers}>happyAnswers</button>
+								</div>
+								<div className='d-flex justify-content-around mb-2'>
+									<button className='btn-sm' onClick={toggleAnswers}>happyAnswers</button>
+									<button className='btn-sm' onClick={toggleAnswers}>happyAnswers</button>
+								</div>
+								<div className='d-flex justify-content-around mb-5'>
+									<button className='btn-sm'>happyAnswers</button>
+									<button className='btn-sm'>
+										<span className='fw-bold fs-5'>Triggers</span>
+									</button>
+									<button className='btn-sm'>happyAnswers</button>
+								</div>
+							</div>
+							{/*                                         */}
+							{/*
+							 */}
+							<div className='ReasonAnswers'>
+								<div className='d-flex justify-content-around mb-2'>
+									<button className='btn-sm'>happyAnswers</button>
+									<button className='btn-sm'>
+										<span className='fw-bold fs-5'>Reasons</span>
+									</button>
+									<button className='btn-sm'>happyAnswers</button>
+								</div>
+								<div className='d-flex justify-content-around mb-2'>
+									<button className='btn-sm'>happyAnswers</button>
+									<button className='btn-sm'>happyAnswers</button>
+								</div>
+								<div className='d-flex justify-content-around'>
+									<button className='btn-sm'>happyAnswers</button>
+								</div>
+							</div>
+							{/*  */}
+							<div className='otherAnswer mt-5 d-flex '>
+									<div className='input-group mb-3 w-75'>
+										<input
+											type='text'
+											className='otherInput form-control w-75'
+											placeholder='Other'
+										/>
+									</div>
+									<button className='otherAnswerBtn border-secondary border-2 text-dark rounded '>
+										save
+									</button>
+								</div> 
+								{/*  */}
+						</div>
+					) : null}
+
+					{/*      */}
+					{/* 
+					// 
+					
+					*/}
+					{props.angryAnswers ? (
+						<div className='section d-flex flex-column justify-content-center'>
+							<div className='triggerdAnswers'>
+								<div className='d-flex justify-content-around mb-2'>
+									<button className='btn-sm'>angryAnswers</button>
+								</div>
+								<div className='d-flex justify-content-around mb-2'>
+									<button className='btn-sm'>angryAnswers</button>
+									<button className='btn-sm'>angryAnswers</button>
+								</div>
+								<div className='d-flex justify-content-around mb-5'>
+									<button className='btn-sm'>angryAnswers</button>
+									<button className='btn-sm'>
+										<span className='fw-bold fs-5'>Triggers</span>
+									</button>
+									<button className='btn-sm'>angryAnswers</button>
+								</div>
+							</div>
+							{/*                                         */}
+							<div className='ReasonAnswers'>
+								<div className='d-flex justify-content-around mb-2'>
+									<button className='btn-sm'>angryAnswers</button>
+									<button className='btn-sm'>
+										<span className='fw-bold fs-5'>Reasons</span>
+									</button>
+									<button className='btn-sm'>angryAnswers</button>
+								</div>
+								<div className='d-flex justify-content-around mb-2'>
+									<button className='btn-sm'>angryAnswers</button>
+									<button className='btn-sm'>angryAnswers</button>
+								</div>
+								<div className='d-flex justify-content-around'>
+									<button className='btn-sm'>angryAnswers</button>
+								</div>
+							</div>
+							{/*  */}
+							<div className='otherAnswer mt-5 d-flex '>
+									<div className='input-group mb-3 w-75'>
+										<input
+											type='text'
+											className='otherInput form-control w-75'
+											placeholder='Other'
+										/>
+									</div>
+									<button className='otherAnswerBtn border-secondary border-2 text-dark rounded '>
+										save
+									</button>
+								</div> 
+								{/*  */}
+						</div>
+					) : null}
+					{/*  */}
+					{/* 
+					// 
+					 */}
+					{props.confusedAnswers ? (
+						<div className='section d-flex flex-column justify-content-center'>
+							<div className='triggerdAnswers'>
+								<div className='d-flex justify-content-around mb-2'>
+									<button className='btn-sm'>confusedAnswers</button>
+								</div>
+								<div className='d-flex justify-content-around mb-2'>
+									<button className='btn-sm'>confusedAnswers</button>
+									<button className='btn-sm'>confusedAnswers</button>
+								</div>
+								<div className='d-flex justify-content-around mb-5'>
+									<button className='btn-sm'>confusedAnswers</button>
+									<button className='btn-sm'>
+										<span className='fw-bold fs-5'>Triggers</span>
+									</button>
+									<button className='btn-sm'>confusedAnswers</button>
+								</div>
+							</div>
+							{/*                                         */}
+							<div className='ReasonAnswers'>
+								<div className='d-flex justify-content-around mb-2'>
+									<button className='btn-sm'>confusedAnswers</button>
+									<button className='btn-sm'>
+										<span className='fw-bold fs-5'>Reasons</span>
+									</button>
+									<button className='btn-sm'>confusedAnswers</button>
+								</div>
+								<div className='d-flex justify-content-around mb-2'>
+									<button className='btn-sm'>confusedAnswers</button>
+									<button className='btn-sm'>confusedAnswers</button>
+								</div>
+								<div className='d-flex justify-content-around'>
+									<button className='btn-sm'>confusedAnswers</button>
+								</div>
+							</div>
+							{/*  */}
+							<div className='otherAnswer mt-5 d-flex '>
+									<div className='input-group mb-3 w-75'>
+										<input
+											type='text'
+											className='otherInput form-control w-75'
+											placeholder='Other'
+										/>
+									</div>
+									<button className='otherAnswerBtn border-secondary border-2 text-dark rounded '>
+										save
+									</button>
+								</div> 
+								{/*  */}
+						</div>
+					) : null}
+
+					{/*  */}
+					{/*  */}
+
+					{/*  */}
+					{props.badAnswers ? (
+						<div className='section d-flex flex-column justify-content-center'>
+							<div className='triggerdAnswers'>
+								<div className='d-flex justify-content-around mb-2'>
+									<button className='btn-sm'>badAnswers</button>
+								</div>
+								<div className='d-flex justify-content-around mb-2'>
+									<button className='btn-sm'>badAnswers</button>
+									<button className='btn-sm'>badAnswers</button>
+								</div>
+								<div className='d-flex justify-content-around mb-5'>
+									<button className='btn-sm'>badAnswers</button>
+									<button className='btn-sm'>
+										<span className='fw-bold fs-5'>Triggers</span>
+									</button>
+									<button className='btn-sm'>badAnswers</button>
+								</div>
+							</div>
+							{/*                                         */}
+							<div className='ReasonAnswers'>
+								<div className='d-flex justify-content-around mb-2'>
+									<button className='btn-sm'>badAnswers</button>
+									<button className='btn-sm'>
+										<span className='fw-bold fs-5'>Reasons</span>
+									</button>
+									<button className='btn-sm'>badAnswers</button>
+								</div>
+								<div className='d-flex justify-content-around mb-2'>
+									<button className='btn-sm'>badAnswers</button>
+									<button className='btn-sm'>badAnswers</button>
+								</div>
+								<div className='d-flex justify-content-around'>
+									<button className='btn-sm'>badAnswers</button>
+								</div>
+							</div>
+							{/*  */}
+							<div className='otherAnswer mt-5 d-flex '>
+									<div className='input-group mb-3 w-75'>
+										<input
+											type='text'
+											className='otherInput form-control w-75'
+											placeholder='Other'
+										/>
+									</div>
+									<button className='otherAnswerBtn border-secondary border-2 text-dark rounded '>
+										save
+									</button>
+								</div> 
+								{/*  */}
+						</div>
+					) : null}
+
+					{/*  */}
+					{/*  */}
+					{/*  */}
+					{props.sadAnswers ? (
+						<div className='section d-flex flex-column justify-content-center'>
+							<div className='triggerdAnswers'>
+								<div className='d-flex justify-content-around mb-2'>
+									<button className='btn-sm'>sadAnswers</button>
+								</div>
+								<div className='d-flex justify-content-around mb-2'>
+									<button className='btn-sm'>sadAnswers</button>
+									<button className='btn-sm'>sadAnswers</button>
+								</div>
+								<div className='d-flex justify-content-around mb-5'>
+									<button className='btn-sm'>sadAnswers</button>
+									<button className='btn-sm'>
+										<span className='fw-bold fs-5'>Triggers</span>
+									</button>
+									<button className='btn-sm'>sadAnswers</button>
+								</div>
+							</div>
+							{/*                                         */}
+							<div className='ReasonAnswers'>
+								<div className='d-flex justify-content-around mb-2'>
+									<button className='btn-sm'>sadAnswers</button>
+									<button className='btn-sm'>
+										<span className='fw-bold fs-5'>Reasons</span>
+									</button>
+									<button className='btn-sm'>sadAnswers</button>
+								</div>
+								<div className='d-flex justify-content-around mb-2'>
+									<button className='btn-sm'>sadAnswers</button>
+									<button className='btn-sm'>sadAnswers</button>
+								</div>
+								<div className='d-flex justify-content-around'>
+									<button className='btn-sm'>sadAnswers</button>
+								</div>
+							</div>
+							{/*  */}
+							<div className='otherAnswer mt-5 d-flex '>
+									<div className='input-group mb-3 w-75'>
+										<input
+											type='text'
+											className='otherInput form-control w-75'
+											placeholder='Other'
+										/>
+									</div>
+									<button className='otherAnswerBtn border-secondary border-2 text-dark rounded '>
+										save
+									</button>
+								</div> 
+								{/*  */}
+						 </div>
+					) : null}
+
+					{/* <div className="otherAnswer mt-5 d-flex ">
+					<div className='input-group mb-3 w-75'>
+						<input
+							type='text'
+							className='otherInput form-control w-75'
+							placeholder='Other'
+						/>
+					</div>
+					<button
+						className='otherAnswerBtn border-secondary border-2 text-dark rounded '
+						>
+						save
+					</button>
+					</div> */}
 				</div>
 			</div>
 			{/* body section ends */}
 
 			{/* Footer section starst */}
+			{/* Youth reflection input */}
 			<div className='footer'>
 				<div className='mt-5'>
 					<div className='recommended question for youth reflection'>
@@ -126,7 +427,7 @@ export default function CenterContent(props) {
 						</h2>
 					</div>
 					<label className='fw-semibold fs-3 mb-3'>Youth Reflection</label>
-					<button className='sm bg-transparent border border-2 rounded mx-2'>
+					<button className='sm bg-transparent border border-2 rounded mx-2' onClick={getYouthQuestions}>
 						Get recommended question
 					</button>
 					<textarea
@@ -140,7 +441,8 @@ export default function CenterContent(props) {
 						Store
 					</button>
 				</div>
-				{/*                                        */}
+
+				{/*       Agent Reflection Inputs                                  */}
 				<div className='mt-5 mb-5'>
 					<div className='recommended question for agent reflection'>
 						<h2 className='recommendedQuestion mb-2 text-center fs-4 fw-semilight'>
@@ -148,7 +450,7 @@ export default function CenterContent(props) {
 						</h2>
 					</div>
 					<label className='fw-semibold fs-3 mb-2'>Agent Reflection</label>
-					<button className='sm bg-transparent border border-2 rounded mx-2'>
+					<button className='sm bg-transparent border border-2 rounded mx-2' onClick={getAgentQuestions}>
 						Get recommended question
 					</button>
 					<textarea
@@ -164,7 +466,7 @@ export default function CenterContent(props) {
 				</div>
 				{/*                                            */}
 
-				{/* need to sort out design build */}
+				{/* calender section                       */}
 				<div className='nextCall'>
 					<h2 className='title'>Session Bookings</h2>
 					<div>
@@ -202,7 +504,7 @@ export default function CenterContent(props) {
 					{/*                                      */}
 				</div>
 
-				{/* 											 */}
+				{/* 		button to submit capturing tool									 */}
 				<div className='d-grid  mb-5'>
 					<button
 						type='submit'

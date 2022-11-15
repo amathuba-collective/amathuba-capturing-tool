@@ -8,25 +8,33 @@ import RightContent from "./Components/RightContent";
 
 
 export default function App() {
-	const [question, setQuestion] = useState("")
-	const [data, updateData] = useState("");
-	const [printData, setPrintData] = useState("")
+	const [openingQuestion, setOpeningQuestion] = useState("");
+	const [otherOpeningQuestion, setOtherOpeningQuestion] = useState("")
+	// const [printData, setPrintData] = useState("")
 	const [happy, setHappy] = useState("")
 	const [angry, setAngry] = useState("");
 	const [confused, setConfused] = useState("");
 	const [bad, setBad] = useState("");
 	const [sad, setSad] = useState("");
-	// 
 	const [openingEmotion, updateOpeningEmotion] = useState("");
-	const [openingEmotionQuestion, setOpeningEmotionQuestion] = useState("");
+	const [openingEmotionQuestion, setOpeningEmotionQuestion] = useState
+	("");
 	const [youthData, setYouthData] = useState("");
+	const [youthQuestions, setYouthQuestions] = useState("")
 	const [agentData, setAgentData] = useState("");
-	const [printYouthData, setPrintYouthData] = useState("");
-	const [printAgentData, setPrintAgentData] = useState("");
+	const [agentQuestions, setAgentQuestions] = useState("")
+	const [happyAnswers, setHappyAnswers] = useState('');
+	const [angryAnswers, setAngryAnswers] = useState('');
+	const [confusedAnswers, setConfusedAnswers] = useState('');
+	const [badAnswers, setBadAnswers] = useState('');
+	const [sadAnswers, setSadAnswers] = useState('');
+	const [happyAnswersQuestions, setHappyAnswersQuestions] = useState('');
+	const [angryAnswersQuestions, setAngryAnswersQuestions] = useState('');
+	const [confusedAnswersQuestions, setConfusedAnswersQuestions] = useState('');
+	const [badAnswersQuestions, setBadAnswersQuestions] = useState('');
+	const [sadAnswersQuestions, setSadAnswersQuestions] = useState('');
 	// const [date, setDate] = React.useState(dayjs());
-	const [answer, setAnswer] = useState('');
-	// const toggleHappy = (e) =>{
-	// 	setHappy(happy => !happy)
+	
 
 
 	return (
@@ -34,22 +42,30 @@ export default function App() {
 			<div className='row'>
 				<div className='bg-1 col '>
 					<LeftContent
-						data={data}
-						printData={printData}
+						openingQuestion={openingQuestion}
+						otherOpeningQuestion={otherOpeningQuestion}
 						openingEmotion={openingEmotion}
 						openingEmotionQuestion={openingEmotionQuestion}
 						youthData={youthData}
 						agentData={agentData}
-						printYouthData={printYouthData}
-						printAgentData={printAgentData}
-						answer={answer}
+						happyAnswers={happyAnswers}
+						angryAnswers={happyAnswers}
+						confusedAnswers={happyAnswers}
+						badAnswers={happyAnswers}
+						sadAnswers={happyAnswers}
+						happyAnswersQuestions={happyAnswersQuestions}
+						angryAnswersQuestions={angryAnswersQuestions}
+						confusedAnswersQuestions={confusedAnswersQuestions}
+						badAnswersQuestions={badAnswersQuestions}
+						sadAnswersQuestions={sadAnswersQuestions}
+						youthQuestions={youthQuestions}
+						agentQuestions={agentQuestions}
 					/>
 				</div>
 				<div className='bg-2 col-6 text-dark'>
 					<CenterContent
-						question={question}
-						data={data}
-						setPrintData={setPrintData}
+						openingQuestion={openingQuestion}
+						otherOpeningQuestion={setOtherOpeningQuestion}
 						openingEmotion={openingEmotion}
 						updateOpeningEmotion={updateOpeningEmotion}
 						setHappy={setHappy}
@@ -58,18 +74,27 @@ export default function App() {
 						setBad={setBad}
 						setSad={setSad}
 						setYouthData={setYouthData}
+						setYouthQuestions={setYouthQuestions}
+						setAgentQuestions={setAgentQuestions}
+						youthQuestions={youthQuestions}
+						agentQuestions={agentQuestions}
 						setAgentData={setAgentData}
-						setPrintYouthData={setPrintYouthData}
-						setPrintAgentData={setPrintAgentData}
-						// setAnswer={setAnswer}
-						answer={answer}
+						happyAnswers={happyAnswers}
+						angryAnswers={angryAnswers}
+						confusedAnswers={confusedAnswers}
+						badAnswers={badAnswers}
+						sadAnswers={sadAnswers}
+						setHappyAnswersQuestions={setHappyAnswersQuestions}
+						setAngryAnswersQuestions={setAngryAnswersQuestions}
+						setConfusedAnswersQuestions={setConfusedAnswersQuestions}
+						setBadAnswersQuestions={setBadAnswersQuestions}
+						setSadAnswersQuestions={setSadAnswersQuestions}
 					/>
 				</div>
 				<div className='bg-3 col'>
 					<RightContent
-						updateData={updateData}
-						setPrintData={setPrintData}
-						setQuestion={setQuestion}
+						setOpeningQuestion={setOpeningQuestion}
+						otherOpeningQuestion={setOtherOpeningQuestion}
 						setOpeningEmotionQuestion={setOpeningEmotionQuestion}
 						openingEmotionQuestion={openingEmotionQuestion}
 						happy={happy}
@@ -77,9 +102,18 @@ export default function App() {
 						confused={confused}
 						bad={bad}
 						sad={sad}
-						setAnswer={setAnswer}
-						answer={answer}
-					// date={date}
+						setHappyAnswers={setHappyAnswers}
+						setAngryAnswers={setAngryAnswers}
+						setConfusedAnswers={setConfusedAnswers}
+						setBadAnswers={setBadAnswers}
+						setSadAnswers={setSadAnswers}
+						happyAnswers={happyAnswers}
+						angryAnswers={angryAnswers}
+						confusedAnswers={confusedAnswers}
+						badAnswers={badAnswers}
+						sadAnswers={sadAnswers}
+						youthQuestions={youthQuestions}
+						agentQuestions={agentQuestions}
 					/>
 				</div>
 			</div>

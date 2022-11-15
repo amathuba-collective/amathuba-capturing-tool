@@ -6,7 +6,7 @@ import "../Styles/LeftContent.css";
 export default function LeftContent(props) {
 	return (
 		<div className='leftContent container'>
-			<Grid.Container className='d-flex justify-content-center'>
+			<Grid.Container className='d-flex justify-content-center align-items-center'>
 				<Grid className='d-flex flex-column align-items-center'>
 					<Avatar
 						src={ProfileImage}
@@ -27,10 +27,10 @@ export default function LeftContent(props) {
 			<div className='summaryData d-flex flex-column justify-content-start align-items-start'>
 				<div>
 					<p className='fw-semilight fs-5'>
-						{props.data ? (
+						{props.openingQuestion ? (
 							<div>
 								<h4>Opening Question</h4>
-								<p className="fs-5">{props.data}</p>
+								<p className="fs-5">{props.openingQuestion}</p>
 							</div>
 						) : null}
 					</p>
