@@ -55,7 +55,17 @@ export default function LeftContent(props) {
 						{props.openingEmotionQuestion ? (
 							<div>
 								<h4>Opening Emotion question</h4>
-								<p className="fs-5">{props.openingEmotionQuestion}</p>
+								<p className="fs-4">{props.openingEmotionQuestion}</p>
+
+								<div className="fs-5">
+									{
+										props.printOtherAnswer ?
+											<div>
+												<p>{props.otherAnswer}</p>
+											</div>
+											: null
+									}
+								</div>
 							</div>
 						) : null}
 					</p>
@@ -68,16 +78,8 @@ export default function LeftContent(props) {
 
 	*/}
 
-				{/* <p className="fw-semilight fs-2">{props.answer}</p> */}
-				{/* <p className="youthReflection fw-semilight fs-4">{props.printYouthData ? <p>{props.youthData}</p> : null}</p> */}
-				<div className='agentReflection fw-semilight fs-4 mt-4'>
-					{/* {props.printYouthData ? (
-						<div>
-							<h4>Youth Reflection</h4>
-							<p>{props.youthData}</p>
-						</div>
-					) : null} */}
 
+				<div className='agentReflection fw-semilight fs-4 mt-4'>
 					{
 						props.youthQuestions ? (
 							<div>

@@ -35,6 +35,8 @@ export default function App() {
 	const [confusedAnswersQuestions, setConfusedAnswersQuestions] = useState('');
 	const [badAnswersQuestions, setBadAnswersQuestions] = useState('');
 	const [sadAnswersQuestions, setSadAnswersQuestions] = useState('');
+	const [otherAnswer, setOtherAnswer] = useState("")
+	const [printOtherAnswer, setPrintOtherAnswer] = useState("");
 	// const [date, setDate] = React.useState(dayjs());
 
 
@@ -63,6 +65,8 @@ export default function App() {
 						confusedAnswersQuestions={confusedAnswersQuestions}
 						badAnswersQuestions={badAnswersQuestions}
 						sadAnswersQuestions={sadAnswersQuestions}
+						otherAnswer={otherAnswer}
+						printOtherAnswer={printOtherAnswer}
 						youthQuestions={youthQuestions}
 						agentQuestions={agentQuestions}
 					/>
@@ -97,6 +101,8 @@ export default function App() {
 						setConfusedAnswersQuestions={setConfusedAnswersQuestions}
 						setBadAnswersQuestions={setBadAnswersQuestions}
 						setSadAnswersQuestions={setSadAnswersQuestions}
+						setOtherAnswer={setOtherAnswer}
+						setPrintOtherAnswer={setPrintOtherAnswer}
 					/>
 				</div>
 				<div className='bg-3 col'>

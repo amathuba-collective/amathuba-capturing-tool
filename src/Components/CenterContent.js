@@ -30,6 +30,9 @@ export default function CenterContent(props) {
 	function toggleAnswers(e) {
 		alert("working on")
 	}
+	function getOtherAnswer(e) {
+		props.setOtherAnswer(e.target.value)
+	}
 
 	function onConfusedClicked(e) {
 		props.updateOpeningEmotion(emotionWheel[2]);
@@ -169,9 +172,11 @@ export default function CenterContent(props) {
 										type='text'
 										className='otherInput form-control w-75'
 										placeholder='Other'
+										onChange={getOtherAnswer}
 									/>
 								</div>
 								<button className='otherAnswerBtn border-secondary border-2 text-dark rounded '
+									onClick={(e) => props.setPrintOtherAnswer(true)}
 								>
 									save
 								</button>
@@ -227,9 +232,12 @@ export default function CenterContent(props) {
 										type='text'
 										className='otherInput form-control w-75'
 										placeholder='Other'
+										onChange={getOtherAnswer}
 									/>
 								</div>
-								<button className='otherAnswerBtn border-secondary border-2 text-dark rounded '>
+								<button className='otherAnswerBtn border-secondary border-2 text-dark rounded '
+									onClick={(e) => props.setPrintOtherAnswer(true)}
+								>
 									save
 								</button>
 							</div>
@@ -282,9 +290,12 @@ export default function CenterContent(props) {
 										type='text'
 										className='otherInput form-control w-75'
 										placeholder='Other'
+										onChange={getOtherAnswer}
 									/>
 								</div>
-								<button className='otherAnswerBtn border-secondary border-2 text-dark rounded '>
+								<button className='otherAnswerBtn border-secondary border-2 text-dark rounded '
+									onClick={(e) => props.setPrintOtherAnswer(true)}
+								>
 									save
 								</button>
 							</div>
@@ -338,9 +349,12 @@ export default function CenterContent(props) {
 										type='text'
 										className='otherInput form-control w-75'
 										placeholder='Other'
+										onChange={getOtherAnswer}
 									/>
 								</div>
-								<button className='otherAnswerBtn border-secondary border-2 text-dark rounded '>
+								<button className='otherAnswerBtn border-secondary border-2 text-dark rounded '
+									onClick={(e) => props.setPrintOtherAnswer(true)}
+								>
 									save
 								</button>
 							</div>
@@ -393,9 +407,12 @@ export default function CenterContent(props) {
 										type='text'
 										className='otherInput form-control w-75'
 										placeholder='Other'
+										onChange={getOtherAnswer}
 									/>
 								</div>
-								<button className='otherAnswerBtn border-secondary border-2 text-dark rounded '>
+								<button className='otherAnswerBtn border-secondary border-2 text-dark rounded '
+									onClick={(e) => props.setPrintOtherAnswer(true)}
+								>
 									save
 								</button>
 							</div>
