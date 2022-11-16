@@ -209,6 +209,13 @@ export default function RightContent(props) {
           </div>
         </section>
 
+        <div>
+          <h2 className='RecommendedQuestions text-center mt-4 fs-2 fw-bold'>
+            Prompted Questions
+          </h2>
+          <hr className='border border-2 border-secondary opacity-50 rounded' />
+        </div>
+
         {props.happy ? <section className="mb-5">
           <p className='text-center fs-3 fw-semibold mt-4 mb-3'>
             Opening Emotion Questions
@@ -233,7 +240,15 @@ export default function RightContent(props) {
               className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
               onClick={onHappyQuestion4Clicked}>
               what caused you to be this happy ?
-            </button></div>
+            </button>
+            <div className="text-center mt-3 d-flex align-items-center">
+              <div className="input-group mb-3">
+                <input type="text" className="otherInput form-control" placeholder="Other"
+                  onChange={getOtherOpeningQuestion} />
+              </div>
+              <button className="otherBtn border-secondary border-2 text-dark rounded" onClick={() => props.setPrintOtherOpeningQuestion(true)}>save</button>
+            </div>
+          </div>
         </section> : null}
 
         {props.angry ? <section className="mb-5">
@@ -260,7 +275,14 @@ export default function RightContent(props) {
               className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
               onClick={onAngryQuestion4Clicked}>
               what caused you to be this angry ?
-            </button></div>
+            </button>
+            <div className="text-center mt-3 d-flex align-items-center">
+              <div className="input-group mb-3">
+                <input type="text" className="otherInput form-control" placeholder="Other"
+                  onChange={getOtherOpeningQuestion} />
+              </div>
+              <button className="otherBtn border-secondary border-2 text-dark rounded" onClick={() => props.setPrintOtherOpeningQuestion(true)}>save</button>
+            </div></div>
         </section> : null}
 
         {props.confused ? <section className="mb-5">
@@ -287,7 +309,14 @@ export default function RightContent(props) {
               className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
               onClick={onConfusedQuestion4Clicked}>
               what caused you to be this confused ?
-            </button></div>
+            </button>
+            <div className="text-center mt-3 d-flex align-items-center">
+              <div className="input-group mb-3">
+                <input type="text" className="otherInput form-control" placeholder="Other"
+                  onChange={getOtherOpeningQuestion} />
+              </div>
+              <button className="otherBtn border-secondary border-2 text-dark rounded" onClick={() => props.setPrintOtherOpeningQuestion(true)}>save</button>
+            </div></div>
         </section> : null}
 
 
@@ -315,7 +344,14 @@ export default function RightContent(props) {
               className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
               onClick={onBadQuestion4Clicked}>
               what caused you to be this bad?
-            </button></div>
+            </button>
+            <div className="text-center mt-3 d-flex align-items-center">
+              <div className="input-group mb-3">
+                <input type="text" className="otherInput form-control" placeholder="Other"
+                  onChange={getOtherOpeningQuestion} />
+              </div>
+              <button className="otherBtn border-secondary border-2 text-dark rounded" onClick={() => props.setPrintOtherOpeningQuestion(true)}>save</button>
+            </div></div>
         </section> : null}
 
 
@@ -345,13 +381,21 @@ export default function RightContent(props) {
               className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
               onClick={onSadQuestion4Clicked}>
               what caused you to be this sad ?
-            </button></div>
+            </button>
+            <div className="text-center mt-3 d-flex align-items-center">
+              <div className="input-group mb-3">
+                <input type="text" className="otherInput form-control" placeholder="Other"
+                  onChange={getOtherOpeningQuestion} />
+              </div>
+              <button className="otherBtn border-secondary border-2 text-dark rounded" onClick={() => props.setPrintOtherOpeningQuestion(true)}>save</button>
+            </div></div>
         </section> : null}
 
         <div className="agent&YouthQuestions mb-4 mt-4">
           {
             props.youthQuestions ?
               <div className="mb-4">
+                <h2 className="text-center">Youth  questions</h2>
                 <button
                   className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
                   onClick={onYouthReflectionQ1Clicked}
@@ -383,6 +427,7 @@ export default function RightContent(props) {
           {
             props.agentQuestions ?
               <div className="mb-5">
+                <h2 className="text-center">Agent  questions</h2>
                 <button
                   className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
                   onClick={onAgentReflectionQ1Clicked}

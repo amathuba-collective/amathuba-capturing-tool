@@ -27,9 +27,9 @@ export default function CenterContent(props) {
 		props.setAngry((angry) => !angry);
 	}
 
-	function toggleAnswers(e) {
-		alert("working on")
-	}
+	// function toggleAnswers(e) {
+	// 	alert("working on")
+	// }
 	function getOtherAnswer(e) {
 		props.setOtherAnswer(e.target.value)
 	}
@@ -106,7 +106,7 @@ export default function CenterContent(props) {
 						onClick={onConfusedClicked}
 						className='bg-transparent border-0 fs-1 d-flex flex-column align-items-center'>
 						<Icon icon='emojione:sad-but-relieved-face' />
-						<span className='fs-5'>Confused</span>
+						<span className='fs-5'>Anxious</span>
 					</button>
 					<button
 						onClick={onBadClicked}
@@ -128,54 +128,52 @@ export default function CenterContent(props) {
 			{/* section for triggerd an reason keyword answers */}
 			<div className='body mt-5' id='scrollable'>
 				<div className='emptyDivForEmotoinKeyWords mt-5 mb-5  text-center'>
+					{/* Happy question answers */}
 					{props.happyAnswers ? (
-						<div className='section d-flex flex-column justify-content-center'>
-							<div className='triggerdAnswers'>
-								<div className='d-flex justify-content-around mb-2'>
-									<button className='btn-sm' onClick={toggleAnswers}>happyAnswers</button>
+						<div className='section d-flex flex-column justify-content-around'>
+							<div className="d-flex justify-content-between">
+								<div className='TriggersAnswers'>
+									<div className='d-flex flex-column justify-content-around mb-2'>
+										<button className='btn-sm'>
+											happyAnswers
+										</button>
+										<button className='btn-sm'>happyAnswers</button>
+										<button className='btn-sm'>happyAnswers</button>
+										<button className='btn-sm'>happyAnswers</button>
+
+										<button className='btn-sm'>happyAnswers</button>
+									</div>
 								</div>
-								<div className='d-flex justify-content-around mb-2'>
-									<button className='btn-sm' onClick={toggleAnswers}>happyAnswers</button>
-									<button className='btn-sm' onClick={toggleAnswers}>happyAnswers</button>
-								</div>
-								<div className='d-flex justify-content-around mb-5'>
+								<div className='d-flex flex-column justify-content-around mb-2'>
 									<button className='btn-sm'>happyAnswers</button>
-									<button className='btn-sm'>
-										<span className='fw-bold fs-5'>Triggers</span>
-									</button>
 									<button className='btn-sm'>happyAnswers</button>
-								</div>
-							</div>
-							{/*                                         */}
-							{/*
-							 */}
-							<div className='ReasonAnswers'>
-								<div className='d-flex justify-content-around mb-2'>
 									<button className='btn-sm'>happyAnswers</button>
-									<button className='btn-sm'>
-										<span className='fw-bold fs-5'>Reasons</span>
-									</button>
+
 									<button className='btn-sm'>happyAnswers</button>
 								</div>
-								<div className='d-flex justify-content-around mb-2'>
-									<button className='btn-sm'>happyAnswers</button>
-									<button className='btn-sm'>happyAnswers</button>
-								</div>
-								<div className='d-flex justify-content-around'>
-									<button className='btn-sm'>happyAnswers</button>
+								<div className='ReasonAnswers'>
+									<div className='d-flex flex-column mb-2'>
+										<button className='btn-sm'>happyAnswers</button>
+										<button className='btn-sm'>
+											happyAnswers
+										</button>
+										<button className='btn-sm'>happyAnswers</button>
+										<button className='btn-sm'>happyAnswers</button>
+										<button className='btn-sm'>happyAnswers</button>
+									</div>
 								</div>
 							</div>
 							{/*  */}
-							<div className='otherAnswer mt-5 d-flex '>
-								<div className='input-group mb-3 w-75'>
+							<div className='otherAnswer mt-5 d-flex w-75'>
+								<div className='input-group mb-3'>
 									<input
 										type='text'
-										className='otherInput form-control w-75'
+										className='otherInput form-control'
 										placeholder='Other'
 										onChange={getOtherAnswer}
 									/>
 								</div>
-								<button className='otherAnswerBtn border-secondary border-2 text-dark rounded '
+								<button className='otherAnswerBtn border-secondary border-2 text-dark rounded'
 									onClick={(e) => props.setPrintOtherAnswer(true)}
 								>
 									save
@@ -191,51 +189,50 @@ export default function CenterContent(props) {
 					
 					*/}
 					{props.angryAnswers ? (
-						<div className='section d-flex flex-column justify-content-center'>
-							<div className='triggerdAnswers'>
-								<div className='d-flex justify-content-around mb-2'>
-									<button className='btn-sm'>angryAnswers</button>
+						<div className='section d-flex flex-column justify-content-around'>
+							<div className="d-flex justify-content-between">
+								<div className='TriggersAnswers'>
+									<div className='d-flex flex-column justify-content-around mb-2'>
+										<button className='btn-sm'>
+											happyAnswers
+										</button>
+										<button className='btn-sm'>happyAnswers</button>
+										<button className='btn-sm'>happyAnswers</button>
+										<button className='btn-sm'>happyAnswers</button>
+
+										<button className='btn-sm'>happyAnswers</button>
+									</div>
 								</div>
-								<div className='d-flex justify-content-around mb-2'>
-									<button className='btn-sm'>angryAnswers</button>
-									<button className='btn-sm'>angryAnswers</button>
+								<div className='d-flex flex-column justify-content-around mb-2'>
+									<button className='btn-sm'>happyAnswers</button>
+									<button className='btn-sm'>happyAnswers</button>
+									<button className='btn-sm'>happyAnswers</button>
+
+									<button className='btn-sm'>happyAnswers</button>
 								</div>
-								<div className='d-flex justify-content-around mb-5'>
-									<button className='btn-sm'>angryAnswers</button>
-									<button className='btn-sm'>
-										<span className='fw-bold fs-5'>Triggers</span>
-									</button>
-									<button className='btn-sm'>angryAnswers</button>
-								</div>
-							</div>
-							{/*                                         */}
-							<div className='ReasonAnswers'>
-								<div className='d-flex justify-content-around mb-2'>
-									<button className='btn-sm'>angryAnswers</button>
-									<button className='btn-sm'>
-										<span className='fw-bold fs-5'>Reasons</span>
-									</button>
-									<button className='btn-sm'>angryAnswers</button>
-								</div>
-								<div className='d-flex justify-content-around mb-2'>
-									<button className='btn-sm'>angryAnswers</button>
-									<button className='btn-sm'>angryAnswers</button>
-								</div>
-								<div className='d-flex justify-content-around'>
-									<button className='btn-sm'>angryAnswers</button>
+								<div className='ReasonAnswers'>
+									<div className='d-flex flex-column mb-2'>
+										<button className='btn-sm'>happyAnswers</button>
+										<button className='btn-sm'>
+											happyAnswers
+										</button>
+										<button className='btn-sm'>happyAnswers</button>
+										<button className='btn-sm'>happyAnswers</button>
+										<button className='btn-sm'>happyAnswers</button>
+									</div>
 								</div>
 							</div>
 							{/*  */}
-							<div className='otherAnswer mt-5 d-flex '>
-								<div className='input-group mb-3 w-75'>
+							<div className='otherAnswer mt-5 d-flex w-75'>
+								<div className='input-group mb-3'>
 									<input
 										type='text'
-										className='otherInput form-control w-75'
+										className='otherInput form-control'
 										placeholder='Other'
 										onChange={getOtherAnswer}
 									/>
 								</div>
-								<button className='otherAnswerBtn border-secondary border-2 text-dark rounded '
+								<button className='otherAnswerBtn border-secondary border-2 text-dark rounded'
 									onClick={(e) => props.setPrintOtherAnswer(true)}
 								>
 									save
@@ -249,51 +246,50 @@ export default function CenterContent(props) {
 					// 
 					 */}
 					{props.confusedAnswers ? (
-						<div className='section d-flex flex-column justify-content-center'>
-							<div className='triggerdAnswers'>
-								<div className='d-flex justify-content-around mb-2'>
-									<button className='btn-sm'>confusedAnswers</button>
+						<div className='section d-flex flex-column justify-content-around'>
+							<div className="d-flex justify-content-between">
+								<div className='TriggersAnswers'>
+									<div className='d-flex flex-column justify-content-around mb-2'>
+										<button className='btn-sm'>
+											happyAnswers
+										</button>
+										<button className='btn-sm'>happyAnswers</button>
+										<button className='btn-sm'>happyAnswers</button>
+										<button className='btn-sm'>happyAnswers</button>
+
+										<button className='btn-sm'>happyAnswers</button>
+									</div>
 								</div>
-								<div className='d-flex justify-content-around mb-2'>
-									<button className='btn-sm'>confusedAnswers</button>
-									<button className='btn-sm'>confusedAnswers</button>
+								<div className='d-flex flex-column justify-content-around mb-2'>
+									<button className='btn-sm'>happyAnswers</button>
+									<button className='btn-sm'>happyAnswers</button>
+									<button className='btn-sm'>happyAnswers</button>
+
+									<button className='btn-sm'>happyAnswers</button>
 								</div>
-								<div className='d-flex justify-content-around mb-5'>
-									<button className='btn-sm'>confusedAnswers</button>
-									<button className='btn-sm'>
-										<span className='fw-bold fs-5'>Triggers</span>
-									</button>
-									<button className='btn-sm'>confusedAnswers</button>
-								</div>
-							</div>
-							{/*                                         */}
-							<div className='ReasonAnswers'>
-								<div className='d-flex justify-content-around mb-2'>
-									<button className='btn-sm'>confusedAnswers</button>
-									<button className='btn-sm'>
-										<span className='fw-bold fs-5'>Reasons</span>
-									</button>
-									<button className='btn-sm'>confusedAnswers</button>
-								</div>
-								<div className='d-flex justify-content-around mb-2'>
-									<button className='btn-sm'>confusedAnswers</button>
-									<button className='btn-sm'>confusedAnswers</button>
-								</div>
-								<div className='d-flex justify-content-around'>
-									<button className='btn-sm'>confusedAnswers</button>
+								<div className='ReasonAnswers'>
+									<div className='d-flex flex-column mb-2'>
+										<button className='btn-sm'>happyAnswers</button>
+										<button className='btn-sm'>
+											happyAnswers
+										</button>
+										<button className='btn-sm'>happyAnswers</button>
+										<button className='btn-sm'>happyAnswers</button>
+										<button className='btn-sm'>happyAnswers</button>
+									</div>
 								</div>
 							</div>
 							{/*  */}
-							<div className='otherAnswer mt-5 d-flex '>
-								<div className='input-group mb-3 w-75'>
+							<div className='otherAnswer mt-5 d-flex w-75'>
+								<div className='input-group mb-3'>
 									<input
 										type='text'
-										className='otherInput form-control w-75'
+										className='otherInput form-control'
 										placeholder='Other'
 										onChange={getOtherAnswer}
 									/>
 								</div>
-								<button className='otherAnswerBtn border-secondary border-2 text-dark rounded '
+								<button className='otherAnswerBtn border-secondary border-2 text-dark rounded'
 									onClick={(e) => props.setPrintOtherAnswer(true)}
 								>
 									save
@@ -308,51 +304,50 @@ export default function CenterContent(props) {
 
 					{/*  */}
 					{props.badAnswers ? (
-						<div className='section d-flex flex-column justify-content-center'>
-							<div className='triggerdAnswers'>
-								<div className='d-flex justify-content-around mb-2'>
-									<button className='btn-sm'>badAnswers</button>
+						<div className='section d-flex flex-column justify-content-around'>
+							<div className="d-flex justify-content-between">
+								<div className='TriggersAnswers'>
+									<div className='d-flex flex-column justify-content-around mb-2'>
+										<button className='btn-sm'>
+											happyAnswers
+										</button>
+										<button className='btn-sm'>happyAnswers</button>
+										<button className='btn-sm'>happyAnswers</button>
+										<button className='btn-sm'>happyAnswers</button>
+
+										<button className='btn-sm'>happyAnswers</button>
+									</div>
 								</div>
-								<div className='d-flex justify-content-around mb-2'>
-									<button className='btn-sm'>badAnswers</button>
-									<button className='btn-sm'>badAnswers</button>
+								<div className='d-flex flex-column justify-content-around mb-2'>
+									<button className='btn-sm'>happyAnswers</button>
+									<button className='btn-sm'>happyAnswers</button>
+									<button className='btn-sm'>happyAnswers</button>
+
+									<button className='btn-sm'>happyAnswers</button>
 								</div>
-								<div className='d-flex justify-content-around mb-5'>
-									<button className='btn-sm'>badAnswers</button>
-									<button className='btn-sm'>
-										<span className='fw-bold fs-5'>Triggers</span>
-									</button>
-									<button className='btn-sm'>badAnswers</button>
-								</div>
-							</div>
-							{/*                                         */}
-							<div className='ReasonAnswers'>
-								<div className='d-flex justify-content-around mb-2'>
-									<button className='btn-sm'>badAnswers</button>
-									<button className='btn-sm'>
-										<span className='fw-bold fs-5'>Reasons</span>
-									</button>
-									<button className='btn-sm'>badAnswers</button>
-								</div>
-								<div className='d-flex justify-content-around mb-2'>
-									<button className='btn-sm'>badAnswers</button>
-									<button className='btn-sm'>badAnswers</button>
-								</div>
-								<div className='d-flex justify-content-around'>
-									<button className='btn-sm'>badAnswers</button>
+								<div className='ReasonAnswers'>
+									<div className='d-flex flex-column mb-2'>
+										<button className='btn-sm'>happyAnswers</button>
+										<button className='btn-sm'>
+											happyAnswers
+										</button>
+										<button className='btn-sm'>happyAnswers</button>
+										<button className='btn-sm'>happyAnswers</button>
+										<button className='btn-sm'>happyAnswers</button>
+									</div>
 								</div>
 							</div>
 							{/*  */}
-							<div className='otherAnswer mt-5 d-flex '>
-								<div className='input-group mb-3 w-75'>
+							<div className='otherAnswer mt-5 d-flex w-75'>
+								<div className='input-group mb-3'>
 									<input
 										type='text'
-										className='otherInput form-control w-75'
+										className='otherInput form-control'
 										placeholder='Other'
 										onChange={getOtherAnswer}
 									/>
 								</div>
-								<button className='otherAnswerBtn border-secondary border-2 text-dark rounded '
+								<button className='otherAnswerBtn border-secondary border-2 text-dark rounded'
 									onClick={(e) => props.setPrintOtherAnswer(true)}
 								>
 									save
@@ -366,51 +361,50 @@ export default function CenterContent(props) {
 					{/*  */}
 					{/*  */}
 					{props.sadAnswers ? (
-						<div className='section d-flex flex-column justify-content-center'>
-							<div className='triggerdAnswers'>
-								<div className='d-flex justify-content-around mb-2'>
-									<button className='btn-sm'>sadAnswers</button>
+						<div className='section d-flex flex-column justify-content-around'>
+							<div className="d-flex justify-content-between">
+								<div className='TriggersAnswers'>
+									<div className='d-flex flex-column justify-content-around mb-2'>
+										<button className='btn-sm'>
+											happyAnswers
+										</button>
+										<button className='btn-sm'>happyAnswers</button>
+										<button className='btn-sm'>happyAnswers</button>
+										<button className='btn-sm'>happyAnswers</button>
+
+										<button className='btn-sm'>happyAnswers</button>
+									</div>
 								</div>
-								<div className='d-flex justify-content-around mb-2'>
-									<button className='btn-sm'>sadAnswers</button>
-									<button className='btn-sm'>sadAnswers</button>
+								<div className='d-flex flex-column justify-content-around mb-2'>
+									<button className='btn-sm'>happyAnswers</button>
+									<button className='btn-sm'>happyAnswers</button>
+									<button className='btn-sm'>happyAnswers</button>
+
+									<button className='btn-sm'>happyAnswers</button>
 								</div>
-								<div className='d-flex justify-content-around mb-5'>
-									<button className='btn-sm'>sadAnswers</button>
-									<button className='btn-sm'>
-										<span className='fw-bold fs-5'>Triggers</span>
-									</button>
-									<button className='btn-sm'>sadAnswers</button>
-								</div>
-							</div>
-							{/*                                         */}
-							<div className='ReasonAnswers'>
-								<div className='d-flex justify-content-around mb-2'>
-									<button className='btn-sm'>sadAnswers</button>
-									<button className='btn-sm'>
-										<span className='fw-bold fs-5'>Reasons</span>
-									</button>
-									<button className='btn-sm'>sadAnswers</button>
-								</div>
-								<div className='d-flex justify-content-around mb-2'>
-									<button className='btn-sm'>sadAnswers</button>
-									<button className='btn-sm'>sadAnswers</button>
-								</div>
-								<div className='d-flex justify-content-around'>
-									<button className='btn-sm'>sadAnswers</button>
+								<div className='ReasonAnswers'>
+									<div className='d-flex flex-column mb-2'>
+										<button className='btn-sm'>happyAnswers</button>
+										<button className='btn-sm'>
+											happyAnswers
+										</button>
+										<button className='btn-sm'>happyAnswers</button>
+										<button className='btn-sm'>happyAnswers</button>
+										<button className='btn-sm'>happyAnswers</button>
+									</div>
 								</div>
 							</div>
 							{/*  */}
-							<div className='otherAnswer mt-5 d-flex '>
-								<div className='input-group mb-3 w-75'>
+							<div className='otherAnswer mt-5 d-flex w-75'>
+								<div className='input-group mb-3'>
 									<input
 										type='text'
-										className='otherInput form-control w-75'
+										className='otherInput form-control'
 										placeholder='Other'
 										onChange={getOtherAnswer}
 									/>
 								</div>
-								<button className='otherAnswerBtn border-secondary border-2 text-dark rounded '
+								<button className='otherAnswerBtn border-secondary border-2 text-dark rounded'
 									onClick={(e) => props.setPrintOtherAnswer(true)}
 								>
 									save
