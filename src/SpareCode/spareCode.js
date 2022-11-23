@@ -457,3 +457,239 @@
 	// 	<Icon icon='emojione:crying-face' />
 	// 	<span className='fs-5'>Sad</span>
 	// </button>
+
+
+
+	// const onHappyClicked = (e) => {
+	// 	props.updateOpeningEmotion(emotionWheel[0]);
+	// 	props.setHappy((happy) => !happy);
+	// };
+
+	// function onAngryClicked(e) {
+	// 	props.updateOpeningEmotion(emotionWheel[1]);
+	// 	props.setAngry((angry) => !angry);
+	// }
+
+
+	// function onConfusedClicked(e) {
+	// 	props.updateOpeningEmotion(emotionWheel[2]);
+	// 	props.setConfused((confused) => !confused);
+	// }
+
+	// function onBadClicked(e) {
+	// 	props.updateOpeningEmotion(emotionWheel[3]);
+	// 	props.setBad((bad) => !bad);
+	// }
+
+	// function onSadClicked(e) {
+	// 	props.updateOpeningEmotion(emotionWheel[4]);
+	// 	props.setSad((sad) => !sad);
+	// }
+
+
+	// <button
+	// 					onClick={onHappyClicked}
+	// 					className='bg-transparent border-0 fs-1 d-flex flex-column align-items-center'>
+	// 					<Icon icon='emojione:grinning-face-with-smiling-eyes' />
+	// 					<span className='fs-5'>Happy</span>
+	// 				</button>
+	// 				<button
+	// 					onClick={onAngryClicked}
+	// 					className='bg-transparent border-0 fs-1 d-flex flex-column align-items-center'>
+	// 					<Icon icon='emojione:pouting-face' />
+	// 					<span className='fs-5'>Angry</span>
+	// 				</button>
+	// 				<button
+	// 					onClick={onConfusedClicked}
+	// 					className='bg-transparent border-0 fs-1 d-flex flex-column align-items-center'>
+	// 					<Icon icon='emojione:sad-but-relieved-face' />
+	// 					<span className='fs-5'>Anxious</span>
+	// 				</button>
+	// 				<button
+	// 					onClick={onBadClicked}
+	// 					className='bg-transparent border-0 fs-1 d-flex flex-column align-items-center'>
+	// 					<Icon icon='emojione:confounded-face' />
+	// 					<span className='fs-5'>Bad</span>
+	// 				</button>
+	// 				<button
+	// 					onClick={onSadClicked}
+	// 					className='bg-transparent border-0 fs-1 d-flex flex-column align-items-center'>
+	// 					<Icon icon='emojione:crying-face' />
+	// 					<span className='fs-5'>Sad</span>
+	// 				</button>
+
+
+	 {/* {props.happy ? <section className="mb-5">
+          <p className='text-center fs-3 fw-semibold mt-4 mb-3'>
+            Opening Emotion Questions
+          </p>
+          <div className='questions mt-4'>
+            <button
+              className=' bg-transparent border-3 border-secondary rounded p-2 fw-semibold fs-5 w-100'
+              onClick={onHappyQuestion1Clicked}>
+              So tell me about your happiness ?
+            </button>
+            <button
+              className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5 w-100 '
+              onClick={onHappyQuestion2Clicked}>
+              Why are you this happy ?
+            </button>
+            <button
+              className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
+              onClick={onHappyQuestion3Clicked}>
+              what makes you this happy ?
+            </button>
+            <button
+              className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
+              onClick={onHappyQuestion4Clicked}>
+              what caused you to be this happy ?
+            </button>
+            <div className="text-center mt-3 d-flex align-items-center">
+              <div className="input-group mb-3">
+                <input type="text" className="otherInput form-control" placeholder="Other"
+                  onChange={getOtherOpeningQuestion} />
+              </div>
+              <button className="otherBtn border-secondary border-2 text-dark rounded" onClick={() => props.setPrintOtherOpeningQuestion(true)}>save</button>
+            </div>
+          </div>
+        </section> : null}
+
+        {props.angry ? <section className="mb-5">
+          <p className='text-center fs-3 fw-semibold mt-4 mb-3'>
+            Opening Emotion Questions
+          </p>
+          <div className='questions mt-4'>
+            <button
+              className=' bg-transparent border-3 border-secondary rounded p-2 fw-semibold fs-5 w-100'
+              onClick={onAngryQuestion1Clicked}>
+              So tell me why your angry ?
+            </button>
+            <button
+              className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5 w-100 '
+              onClick={onAngryQuestion2Clicked}>
+              Why are you this angry?
+            </button>
+            <button
+              className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
+              onClick={onAngryQuestion3Clicked}>
+              what made you this angry ?
+            </button>
+            <button
+              className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
+              onClick={onAngryQuestion4Clicked}>
+              what caused you to be this angry ?
+            </button>
+            <div className="text-center mt-3 d-flex align-items-center">
+              <div className="input-group mb-3">
+                <input type="text" className="otherInput form-control" placeholder="Other"
+                  onChange={getOtherOpeningQuestion} />
+              </div>
+              <button className="otherBtn border-secondary border-2 text-dark rounded" onClick={() => props.setPrintOtherOpeningQuestion(true)}>save</button>
+            </div></div>
+        </section> : null}
+
+        {props.confused ? <section className="mb-5">
+          <p className='text-center fs-3 fw-semibold mt-4 mb-3'>
+            Opening Emotion Questions
+          </p>
+          <div className='questions mt-4'>
+            <button
+              className=' bg-transparent border-3 border-secondary rounded p-2 fw-semibold fs-5 w-100'
+              onClick={onConfusedQuestion1Clicked}>
+              So tell me why your confused ?
+            </button>
+            <button
+              className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5 w-100 '
+              onClick={onConfusedQuestion2Clicked}>
+              Why are you this confused?
+            </button>
+            <button
+              className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
+              onClick={onConfusedQuestion3Clicked}>
+              what made you this confused ?
+            </button>
+            <button
+              className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
+              onClick={onConfusedQuestion4Clicked}>
+              what caused you to be this confused ?
+            </button>
+            <div className="text-center mt-3 d-flex align-items-center">
+              <div className="input-group mb-3">
+                <input type="text" className="otherInput form-control" placeholder="Other"
+                  onChange={getOtherOpeningQuestion} />
+              </div>
+              <button className="otherBtn border-secondary border-2 text-dark rounded" onClick={() => props.setPrintOtherOpeningQuestion(true)}>save</button>
+            </div></div>
+        </section> : null}
+
+
+        {props.bad ? <section className="mb-5">
+          <p className='text-center fs-3 fw-semibold mt-4 mb-3'>
+            Opening Emotion Questions
+          </p>
+          <div className='questions mt-4'>
+            <button
+              className=' bg-transparent border-3 border-secondary rounded p-2 fw-semibold fs-5 w-100'
+              onClick={onBadQuestion1Clicked}>
+              So tell me why you feeling bad ?
+            </button>
+            <button
+              className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5 w-100 '
+              onClick={onBadQuestion2Clicked}>
+              What makes you so bad?
+            </button>
+            <button
+              className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
+              onClick={onBadQuestion3Clicked}>
+              what made you this bad ?
+            </button>
+            <button
+              className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
+              onClick={onBadQuestion4Clicked}>
+              what caused you to be this bad?
+            </button>
+            <div className="text-center mt-3 d-flex align-items-center">
+              <div className="input-group mb-3">
+                <input type="text" className="otherInput form-control" placeholder="Other"
+                  onChange={getOtherOpeningQuestion} />
+              </div>
+              <button className="otherBtn border-secondary border-2 text-dark rounded" onClick={() => props.setPrintOtherOpeningQuestion(true)}>save</button>
+            </div></div>
+        </section> : null}
+
+
+
+
+        {props.sad ? <section className="mb-5">
+          <p className='text-center fs-3 fw-semibold mt-4 mb-3'>
+            Opening Emotion Questions
+          </p>
+          <div className='questions mt-4'>
+            <button
+              className=' bg-transparent border-3 border-secondary rounded p-2 fw-semibold fs-5 w-100'
+              onClick={onSadQuestion1Clicked}>
+              So tell me why your sad ?
+            </button>
+            <button
+              className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5 w-100 '
+              onClick={onSadQuestion2Clicked}>
+              Why are you this sad?
+            </button>
+            <button
+              className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
+              onClick={onSadQuestion3Clicked}>
+              what made you this sad?
+            </button>
+            <button
+              className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
+              onClick={onSadQuestion4Clicked}>
+              what caused you to be this sad ?
+            </button>
+            <div className="text-center mt-3 d-flex align-items-center">
+              <div className="input-group mb-3">
+                <input type="text" className="otherInput form-control" placeholder="Other"
+                  onChange={getOtherOpeningQuestion} />
+              </div>
+              <button className="otherBtn border-secondary border-2 text-dark rounded" onClick={() => props.setPrintOtherOpeningQuestion(true)}>save</button>
+            </div></div>
+        </section> : null} */}

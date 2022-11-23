@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
 import Calender from "./Calender";
 // import WordCloud from "../Modules/WordCloud";
@@ -6,55 +6,42 @@ import Calender from "./Calender";
 import "../Styles/CenterContent.css";
 
 export default function CenterContent(props) {
-	const emotionWheel = [
-		<Icon icon='emojione:grinning-face-with-smiling-eyes' />,
-		<Icon icon='emojione:pouting-face' />,
-		<Icon icon='emojione:sad-but-relieved-face' />,
-		<Icon icon='emojione:confounded-face' />,
-		<Icon icon='emojione:crying-face' />,
+	const happyAnswers = [
+		"Amazing",
+		"Joyful",
+		"Excited",
+		"Awsome"
 	];
 
 	const [nextSession, setNextSession] = useState("newAppoinment");
-
-
-	const onHappyClicked = (e) => {
-		props.updateOpeningEmotion(emotionWheel[0]);
-		props.setHappy((happy) => !happy);
-	};
-
-	function onAngryClicked(e) {
-		props.updateOpeningEmotion(emotionWheel[1]);
-		props.setAngry((angry) => !angry);
-	}
-
-	// function toggleAnswers(e) {
-	// 	alert("working on")
-	// }
-	function getOtherAnswer(e) {
+function getOtherAnswer(e) {
 		props.setOtherAnswer(e.target.value)
 	}
 
-	function onConfusedClicked(e) {
-		props.updateOpeningEmotion(emotionWheel[2]);
-		props.setConfused((confused) => !confused);
-	}
+	useEffect(() => {
+		// props.openingQuestion === "openingQuestion" ? props.setGetOpeningQuestion(true) : props.setGetOpeningQuestion(false)
+		props.emotion === "happy" ? props.setHappy(true) : props.setHappy(false);
+		props.emotion === "angry" ? props.setAngry(true) : props.setAngry(false);
+		props.emotion === "confused" ? props.setConfused(true) : props.setConfused(false);
+		props.emotion === "anxious" ? props.setAnxious(true) : props.setAnxious(false);
+		props.emotion === "sad" ? props.setSad(true) : props.setSad(false);
+	}, [props.emotion, props, props.openingQuestion]);
 
-	function onBadClicked(e) {
-		props.updateOpeningEmotion(emotionWheel[3]);
-		props.setBad((bad) => !bad);
-	}
+	const handleOnEmotionChange = (e) => {
+		props.setEmotion(e.target.value);//reason for this having the setEmotion function cause its the only way i could get it to appear on the same spot as emotion questions
+	};
 
-	function onSadClicked(e) {
-		props.updateOpeningEmotion(emotionWheel[4]);
-		props.setSad((sad) => !sad);
+	function handleEmotionAnswer (e)  {
+		props.setHappyAnswersQuestions(happyAnswerQuestions => !happyAnswerQuestions)
 	}
-
 	function getYouthQuestions(e) {
 		props.setYouthQuestions(youthQuestions => !youthQuestions)
 	}
 	function getAgentQuestions(e) {
 		props.setAgentQuestions(agentQuestions => !agentQuestions)
 	}
+
+
 
 	function getYouthReflection(val) {
 		props.setYouthData(val.target.value);
@@ -84,41 +71,27 @@ export default function CenterContent(props) {
 			{/* opening question section */}
 			<div className='header'>
 				<div className='openingQuestion text-center mt-5'>
+					{/* <p>{props.otherOpeningQuestion}</p>  */}
 					<p className='fs-2 fw-semibold'>{props.openingQuestion}</p>
-
-					<p>{props.otherOpeningQuestion}</p>
 				</div>
 				{/* Clickable emojis to detec opening emotion of call */}
-				<div className='emotion-emojies d-flex justify-content-around mt-5 '>
-					<button
-						onClick={onHappyClicked}
-						className='bg-transparent border-0 fs-1 d-flex flex-column align-items-center'>
-						<Icon icon='emojione:grinning-face-with-smiling-eyes' />
-						<span className='fs-5'>Happy</span>
+				<div
+					value={props.emotion}
+					className='emotion-emojies d-flex justify-content-around mt-5 '>
+					<button value='happy' className='border-0 fs-1 bg-transparent' onClick={handleOnEmotionChange}>
+                        😄
 					</button>
-					<button
-						onClick={onAngryClicked}
-						className='bg-transparent border-0 fs-1 d-flex flex-column align-items-center'>
-						<Icon icon='emojione:pouting-face' />
-						<span className='fs-5'>Angry</span>
+					<button value='angry' className='border-0 fs-1 bg-transparent' onClick={handleOnEmotionChange}>
+                        🤬
 					</button>
-					<button
-						onClick={onConfusedClicked}
-						className='bg-transparent border-0 fs-1 d-flex flex-column align-items-center'>
-						<Icon icon='emojione:sad-but-relieved-face' />
-						<span className='fs-5'>Anxious</span>
+					<button value='confused' className='border-0 fs-1 bg-transparent' onClick={handleOnEmotionChange}>
+                        🤔
 					</button>
-					<button
-						onClick={onBadClicked}
-						className='bg-transparent border-0 fs-1 d-flex flex-column align-items-center'>
-						<Icon icon='emojione:confounded-face' />
-						<span className='fs-5'>Bad</span>
+					<button value='anxious' className='border-0 fs-1 bg-transparent' onClick={handleOnEmotionChange}>
+                        😰
 					</button>
-					<button
-						onClick={onSadClicked}
-						className='bg-transparent border-0 fs-1 d-flex flex-column align-items-center'>
-						<Icon icon='emojione:crying-face' />
-						<span className='fs-5'>Sad</span>
+					<button value='sad' className='border-0 fs-1 bg-transparent' onClick={handleOnEmotionChange}>
+                        🙁
 					</button>
 				</div>
 			</div>
@@ -134,12 +107,12 @@ export default function CenterContent(props) {
 							<div className="d-flex justify-content-between">
 								<div className='TriggersAnswers'>
 									<div className='d-flex flex-column justify-content-around mb-2'>
-										<button className='btn-sm'>
-											happyAnswers
+										<button className='btn-sm' onClick={handleEmotionAnswer}>
+											{happyAnswers[0]}
 										</button>
-										<button className='btn-sm'>happyAnswers</button>
-										<button className='btn-sm'>happyAnswers</button>
-										<button className='btn-sm'>happyAnswers</button>
+										<button className='btn-sm' onClick={handleEmotionAnswer}>{happyAnswers[1]}</button>
+										<button className='btn-sm' onClick={handleEmotionAnswer}>{happyAnswers[2]}</button>
+										<button className='btn-sm' onClick={handleEmotionAnswer}>{happyAnswers[3]}</button>
 
 										<button className='btn-sm'>happyAnswers</button>
 									</div>
