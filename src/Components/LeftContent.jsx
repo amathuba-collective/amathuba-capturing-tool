@@ -64,13 +64,33 @@ export default function LeftContent(props) {
 								<h4>Opening Emotion question</h4>
 								<p className="fs-4">{props.openingEmotionQuestion}</p>
 
-								<div>
-									{
-										props.happyAnswersQuestions ? <div>
-											<p>{props.happyAnswersQuestions}</p>
+								<div className="d-flex justify-content-between">
+									<p>{
+										props.happyAnswersCapture1 ? <div>
+											<p className="fs-5">{props.happyAnswersCapture1}</p>
 										</div>
 										: null 
-									}
+									}</p>
+									<p>{
+										props.happyAnswersCapture2 ? <div>
+											<p className="fs-5">{props.happyAnswersCapture2}</p>
+										</div>
+										: null 
+									}</p>
+									</div>
+									<div className="d-flex justify-content-between">
+									<p>{
+										props.happyAnswersCapture3 ? <div>
+											<p className="fs-5">{props.happyAnswersCapture3}</p>
+										</div>
+										: null 
+									}</p>
+									<p>{
+										props.happyAnswersCapture4 ? <div>
+											<p className="fs-5">{props.happyAnswersCapture4}</p>
+										</div>
+										: null 
+									}</p>
 								</div>
 
 								<div className="fs-5">
@@ -131,10 +151,8 @@ export default function LeftContent(props) {
 				</div>
 
 				<p className="agentReflection fw-semilight fs-4">
-					{props.date ? <div>
 						<h4>Next appoinment</h4>
 						<p>{props.date}</p>
-					</div> : null}
 
 				</p>
 			</div>

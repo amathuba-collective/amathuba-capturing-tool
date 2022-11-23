@@ -2,6 +2,7 @@ import React from "react"
 import LeftContent from "../Components/LeftContent";
 import CenterContent from "../Components/CenterContent";
 import RightContent from "../Components/RightContent";
+import dayjs from "dayjs";
 
 export default function WellnessForm(){
     const [openingQuestion, setOpeningQuestion] = React.useState("");
@@ -25,15 +26,21 @@ export default function WellnessForm(){
 	const [happyAnswers, setHappyAnswers] = React.useState('');
 	const [angryAnswers, setAngryAnswers] = React.useState('');
 	const [confusedAnswers, setConfusedAnswers] = React.useState('');
-	const [badAnswers, setBadAnswers] = React.useState('');
+	const [anxiousAnswers, setAnxiousAnswers] = React.useState('');
 	const [sadAnswers, setSadAnswers] = React.useState('');
-	const [happyAnswersQuestions, setHappyAnswersQuestions] = React.useState('');
-	const [angryAnswersQuestions, setAngryAnswersQuestions] = React.useState('');
-	const [confusedAnswersQuestions, setConfusedAnswersQuestions] = React.useState('');
-	const [badAnswersQuestions, setBadAnswersQuestions] = React.useState('');
-	const [sadAnswersQuestions, setSadAnswersQuestions] = React.useState('');
+	const [happyAnswersCapture1, setHappyAnswersCapture1] = React.useState('');
+	const [happyAnswersCapture2, setHappyAnswersCapture2] = React.useState('');
+	const [happyAnswersCapture3, setHappyAnswersCapture3] = React.useState('');
+	const [happyAnswersCapture4, setHappyAnswersCapture4] = React.useState('');
+	const [angryAnswersCapture, setAngryAnswersCapture] = React.useState('');
+	const [confusedAnswersCapture, setConfusedAnswersCapture] = React.useState('');
+	const [anxiousAnswersCapture, setAnxiousAnswersCapture] = React.useState('');
+	const [sadAnswersCapture, setSadAnswersCapture] = React.useState('');
 	const [otherAnswer, setOtherAnswer] = React.useState("")
 	const [printOtherAnswer, setPrintOtherAnswer] = React.useState("");
+    const [date, setDate] = React.useState(dayjs());
+
+
     return(
         <div className='container-fluid bg-light'>
         <div className='row'>
@@ -52,17 +59,21 @@ export default function WellnessForm(){
                     happyAnswers={happyAnswers}
                     angryAnswers={happyAnswers}
                     confusedAnswers={happyAnswers}
-                    badAnswers={happyAnswers}
+                    anxiousAnswers={happyAnswers}
                     sadAnswers={happyAnswers}
-                    happyAnswersQuestions={happyAnswersQuestions}
-                    angryAnswersQuestions={angryAnswersQuestions}
-                    confusedAnswersQuestions={confusedAnswersQuestions}
-                    badAnswersQuestions={badAnswersQuestions}
-                    sadAnswersQuestions={sadAnswersQuestions}
+                    happyAnswersCapture1={happyAnswersCapture1}
+                    happyAnswersCapture2={happyAnswersCapture2}
+                    happyAnswersCapture3={happyAnswersCapture3}
+                    happyAnswersCapture4={happyAnswersCapture4}
+                    angryAnswersCapture={angryAnswersCapture}
+                    confusedAnswersCapture={confusedAnswersCapture}
+                    anxiousAnswersCapture={anxiousAnswersCapture}
+                    sadAnswersCapture={sadAnswersCapture}
                     otherAnswer={otherAnswer}
                     printOtherAnswer={printOtherAnswer}
                     youthQuestions={youthQuestions}
                     agentQuestions={agentQuestions}
+                    // date={date}
                 />
             </div>
             <div className='bg-2 col-6 text-dark'>
@@ -90,15 +101,20 @@ export default function WellnessForm(){
                     happyAnswers={happyAnswers}
                     angryAnswers={angryAnswers}
                     confusedAnswers={confusedAnswers}
-                    badAnswers={badAnswers}
+                    anxiousAnswers={anxiousAnswers}
                     sadAnswers={sadAnswers}
-                    setHappyAnswersQuestions={setHappyAnswersQuestions}
-                    setAngryAnswersQuestions={setAngryAnswersQuestions}
-                    setConfusedAnswersQuestions={setConfusedAnswersQuestions}
-                    setBadAnswersQuestions={setBadAnswersQuestions}
-                    setSadAnswersQuestions={setSadAnswersQuestions}
+                    setHappyAnswersCapture1={setHappyAnswersCapture1}
+                    setHappyAnswersCapture2={setHappyAnswersCapture2}
+                    setHappyAnswersCapture3={setHappyAnswersCapture3}
+                    setHappyAnswersCapture4={setHappyAnswersCapture4}
+                    setAngryAnswersCapture={setAngryAnswersCapture}
+                    setConfusedAnswersCapture={setConfusedAnswersCapture}
+                    setAnxiousAnswersCapture={setAnxiousAnswersCapture}
+                    setSadAnswersCapture={setSadAnswersCapture}
                     setOtherAnswer={setOtherAnswer}
                     setPrintOtherAnswer={setPrintOtherAnswer}
+                    date={date}
+                    setDate={setDate}
                 />
             </div>
             <div className='bg-3 col'>
@@ -116,12 +132,12 @@ export default function WellnessForm(){
                     setHappyAnswers={setHappyAnswers}
                     setAngryAnswers={setAngryAnswers}
                     setConfusedAnswers={setConfusedAnswers}
-                    setBadAnswers={setBadAnswers}
+                    setanxiousAnswers={setAnxiousAnswers}
                     setSadAnswers={setSadAnswers}
                     happyAnswers={happyAnswers}
                     angryAnswers={angryAnswers}
                     confusedAnswers={confusedAnswers}
-                    badAnswers={badAnswers}
+                    anxiousAnswers={anxiousAnswers}
                     sadAnswers={sadAnswers}
                     setYouthQuestions={setYouthQuestions}
                     setAgentQuestions={setAgentQuestions}

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Icon } from "@iconify/react";
-import Calender from "./Calender";
+import ReactCalender from "./ReactCalender";
+import "../Styles/CenterContent.css";
 // import WordCloud from "../Modules/WordCloud";
 // import WordCloudData from "../Assets/Data/data.json"
-import "../Styles/CenterContent.css";
+
 
 export default function CenterContent(props) {
 	const happyAnswers = [
@@ -31,9 +31,20 @@ function getOtherAnswer(e) {
 		props.setEmotion(e.target.value);//reason for this having the setEmotion function cause its the only way i could get it to appear on the same spot as emotion questions
 	};
 
-	function handleEmotionAnswer (e)  {
-		props.setHappyAnswersQuestions(happyAnswerQuestions => !happyAnswerQuestions)
+	function handleEmotionAnswer1 (e)  {
+		props.setHappyAnswersCapture1(happyAnswers[0])
 	}
+	function handleEmotionAnswer2 (e)  {
+		props.setHappyAnswersCapture2(happyAnswers[1])
+	}
+	function handleEmotionAnswer3 (e)  {
+		props.setHappyAnswersCapture3(happyAnswers[2])
+	}
+	function handleEmotionAnswer4 (e)  {
+		props.setHappyAnswersCapture4(happyAnswers[3])
+	}
+
+
 	function getYouthQuestions(e) {
 		props.setYouthQuestions(youthQuestions => !youthQuestions)
 	}
@@ -107,12 +118,12 @@ function getOtherAnswer(e) {
 							<div className="d-flex justify-content-between">
 								<div className='TriggersAnswers'>
 									<div className='d-flex flex-column justify-content-around mb-2'>
-										<button className='btn-sm' onClick={handleEmotionAnswer}>
+										<button className='btn-sm' onClick={handleEmotionAnswer1}>
 											{happyAnswers[0]}
 										</button>
-										<button className='btn-sm' onClick={handleEmotionAnswer}>{happyAnswers[1]}</button>
-										<button className='btn-sm' onClick={handleEmotionAnswer}>{happyAnswers[2]}</button>
-										<button className='btn-sm' onClick={handleEmotionAnswer}>{happyAnswers[3]}</button>
+										<button className='btn-sm' onClick={handleEmotionAnswer2}>{happyAnswers[1]}</button>
+										<button className='btn-sm' onClick={handleEmotionAnswer3}>{happyAnswers[2]}</button>
+										<button className='btn-sm' onClick={handleEmotionAnswer4}>{happyAnswers[3]}</button>
 
 										<button className='btn-sm'>happyAnswers</button>
 									</div>
@@ -453,7 +464,7 @@ function getOtherAnswer(e) {
 							</button>
 							{nextSession === "newAppoinment" && (
 								<div className='react-calendar mt-5 '>
-									<Calender className='Calender' />
+									<ReactCalender />
 								</div>
 							)}
 
