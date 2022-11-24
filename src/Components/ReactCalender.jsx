@@ -7,33 +7,35 @@ function ReactCalendar() {
   const [value, OnValueChange] = useState(new Date());
 
 
-  const SplitDate = (defaultValue) => {
-    const arrayDate = defaultValue.toLocaleDateString().split("/");
-    document.writeln(
-      "\n Day : " +
-        arrayDate[0] +
-        "\n Month : " +
-        arrayDate[1] +
-        "\n Year : " +
-        arrayDate[2]
-    );
-  };
+  // const SplitDate = (defaultValue) => {
+  //   const arrayDate = defaultValue.toLocaleDateString().split("/");
+  //   document.writeln(
+  //     "\n Day : " +
+  //       arrayDate[0] +
+  //       "\n Month : " +
+  //       arrayDate[1] +
+  //       "\n Year : " +
+  //       arrayDate[2]
+  //   );
+  // };
   return (
-    <div className="calendar_container">
+    <>
       <Calendar
-      className="calender"
+      className="react-calendar"
         minDetail="year"
         // maxDate={new Date(2022, 10, 28)}
         value={value}
         onChange={OnValueChange}
       />
-      <button className="calendar_button" onClick={() => SplitDate(value)}>
-        Split
+      <div className="d-grid mt-1">
+      <button className="calendar_button" >
+        Save Date
       </button>
+      </div>
 
-      {value && <h3> {value.toLocaleDateString()} </h3>}
-      {value && <h3> {String(value)} </h3>}
-    </div>
+      {/* {value && <h3> {value.toLocaleDateString()} </h3>}
+      {value && <h3> {String(value)} </h3>} */}
+      </>
   );
 }
 export default ReactCalendar;

@@ -456,23 +456,25 @@ function getOtherAnswer(e) {
 				<div className='nextCall'>
 					<h2 className='title'>Session Bookings</h2>
 					<div>
-						<nav className=''>
+						<nav className='mt-5'>
+							<div className="d-flex justify-content-between">
 							<button
-								className='btn-secondary'
+								className='navBtns btn-secondary'
 								onClick={(e) => setNextSession("newAppoinment")}>
 								New Appoinment
 							</button>
-							{nextSession === "newAppoinment" && (
-								<div className='react-calendar mt-5 '>
+							<button
+								className='navBtns btn-secondary'
+								onClick={(e) => setNextSession("endReason")}>
+								End Reason
+							</button></div>
+
+							
+								{nextSession === "newAppoinment" && (
+								<div>
 									<ReactCalender />
 								</div>
 							)}
-
-							<button
-								className='btn-secondary2'
-								onClick={(e) => setNextSession("endReason")}>
-								End Reason
-							</button>
 							{nextSession === "endReason" && (
 								<section className='mt-5'>
 									<label className='fw-semibold fs-3 mt-5'>End reason</label>
@@ -480,7 +482,7 @@ function getOtherAnswer(e) {
 										className='textArea form-control '
 										placeholder='End Reason'
 										id='#'></textarea>
-									<div className='d-grid'>
+									<div className='d-grid mt-5'>
 										<button className='btn btn-secondary'>Save</button>
 									</div>
 								</section>
@@ -491,11 +493,11 @@ function getOtherAnswer(e) {
 				</div>
 
 				{/* 		button to submit capturing tool									 */}
-				<div className='d-grid  mb-5'>
+				<div className='d-grid mt-5'>
 					<button
 						type='submit'
 						onClick={onFormSubmit}
-						className='btn text-light fs-5 p-4'>
+						className='btn text-light fs-5 p-4 mb-5'>
 						Submit
 					</button>
 				</div>
