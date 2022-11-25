@@ -14,12 +14,14 @@ import "../Styles/Calender.css"
 
 export default function Calender() {
 
-    const [date, setDate] = React.useState(dayjs());  //dayjs('2019-01-25').toDate()
+    const [date] = React.useState(dayjs());  //dayjs('2019-01-25').toDate()
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
     <StaticDatePicker
       orientation='portrait'
-      onChange={(newValue) => setDate(newValue)}
+      onChange={(value) => {
+        console.log("1",value.$d);
+      }}
       value={date}
       renderInput={(params) => <TextField {...params} />}
     />

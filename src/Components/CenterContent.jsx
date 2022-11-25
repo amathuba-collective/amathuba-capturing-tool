@@ -1,47 +1,71 @@
-import React, { useState, useEffect } from "react";
-import { Icon } from "@iconify/react";
+import React, { useState } from "react";
+// import { Icon } from "@iconify/react";
 import Calender from "./Calender";
 // import WordCloud from "../Modules/WordCloud";
 // import WordCloudData from "../Assets/Data/data.json"
 import "../Styles/CenterContent.css";
 
 export default function CenterContent(props) {
-	const happyAnswers = [
-		"Amazing",
-		"Joyful",
-		"Excited",
-		"Awsome"
-	];
+	const happyAnswers = ["Amazing", "Joyful", "Excited", "Awsome"];
 
 	const [nextSession, setNextSession] = useState("newAppoinment");
-function getOtherAnswer(e) {
-		props.setOtherAnswer(e.target.value)
+	function getOtherAnswer(e) {
+		props.setOtherAnswer(e.target.value);
 	}
 
-	useEffect(() => {
-		// props.openingQuestion === "openingQuestion" ? props.setGetOpeningQuestion(true) : props.setGetOpeningQuestion(false)
-		props.emotion === "happy" ? props.setHappy(true) : props.setHappy(false);
-		props.emotion === "angry" ? props.setAngry(true) : props.setAngry(false);
-		props.emotion === "confused" ? props.setConfused(true) : props.setConfused(false);
-		props.emotion === "anxious" ? props.setAnxious(true) : props.setAnxious(false);
-		props.emotion === "sad" ? props.setSad(true) : props.setSad(false);
-	}, [props.emotion, props, props.openingQuestion]);
+	// useEffect(() => {
+		// props.openingQuestion === "openingQuestion" ? props.
+		const id = props.emotion;
+		switch (id) {
+			case "happy" :
+				props.setHappy(happy => !happy);
+				// props.setHappy(false);
+				break;
+			case "angry":
+				props.setAngry(angry => !angry);
+				// props.setAngry(false)
+				break;
+			case "confused":
+				props.setConfused(confused => !confused);
+				// props.setConfused(false)
+				break;
+			case "anxious":
+				props.setAnxious(anxious => !anxious);
+				// props.setAnxious(false)
+				break;
+			case "sad":
+				props.setSad(sad => !sad);
+				// props.setSad(false);
+				break;
+			default:
+				break;
+		}
+		// props.emotion === "happy" ? props.setHappy(true) : props.setHappy(false)
+		// props.emotion === "angry" ? props.setAngry(true) : props.setAngry(false)
+		// props.emotion === "confused"
+		// 	? props.setConfused(true)
+		// 	: props.setConfused(false)
+		// props.emotion === "anxious"
+		// 	? props.setAnxious(true)
+		// 	: props.setAnxious(false)
+		// props.emotion === "sad" ? props.setSad(true) : props.setSad(false);
+	// }, [props.emotion, props, props.openingQuestion]);
 
 	const handleOnEmotionChange = (e) => {
-		props.setEmotion(e.target.value);//reason for this having the setEmotion function cause its the only way i could get it to appear on the same spot as emotion questions
+		props.setEmotion(e.target.value); //reason for this having the setEmotion function cause its the only way i could get it to appear on the same spot as emotion questions
 	};
 
-	function handleEmotionAnswer (e)  {
-		props.setHappyAnswersQuestions(happyAnswerQuestions => !happyAnswerQuestions)
+	function handleEmotionAnswer(e) {
+		props.setHappyAnswersQuestions(
+			(happyAnswerQuestions) => !happyAnswerQuestions,
+		);
 	}
 	function getYouthQuestions(e) {
-		props.setYouthQuestions(youthQuestions => !youthQuestions)
+		props.setYouthQuestions((youthQuestions) => !youthQuestions);
 	}
 	function getAgentQuestions(e) {
-		props.setAgentQuestions(agentQuestions => !agentQuestions)
+		props.setAgentQuestions((agentQuestions) => !agentQuestions);
 	}
-
-
 
 	function getYouthReflection(val) {
 		props.setYouthData(val.target.value);
@@ -78,20 +102,35 @@ function getOtherAnswer(e) {
 				<div
 					value={props.emotion}
 					className='emotion-emojies d-flex justify-content-around mt-5 '>
-					<button value='happy' className='border-0 fs-1 bg-transparent' onClick={handleOnEmotionChange}>
-                        😄
+					<button
+						value='happy'
+						className='border-0 fs-1 bg-transparent'
+						onClick={handleOnEmotionChange}>
+						😄
 					</button>
-					<button value='angry' className='border-0 fs-1 bg-transparent' onClick={handleOnEmotionChange}>
-                        🤬
+					<button
+						value='angry'
+						className='border-0 fs-1 bg-transparent'
+						onClick={handleOnEmotionChange}>
+						🤬
 					</button>
-					<button value='confused' className='border-0 fs-1 bg-transparent' onClick={handleOnEmotionChange}>
-                        🤔
+					<button
+						value='confused'
+						className='border-0 fs-1 bg-transparent'
+						onClick={handleOnEmotionChange}>
+						🤔
 					</button>
-					<button value='anxious' className='border-0 fs-1 bg-transparent' onClick={handleOnEmotionChange}>
-                        😰
+					<button
+						value='anxious'
+						className='border-0 fs-1 bg-transparent'
+						onClick={handleOnEmotionChange}>
+						😰
 					</button>
-					<button value='sad' className='border-0 fs-1 bg-transparent' onClick={handleOnEmotionChange}>
-                        🙁
+					<button
+						value='sad'
+						className='border-0 fs-1 bg-transparent'
+						onClick={handleOnEmotionChange}>
+						🙁
 					</button>
 				</div>
 			</div>
@@ -104,15 +143,21 @@ function getOtherAnswer(e) {
 					{/* Happy question answers */}
 					{props.happyAnswers ? (
 						<div className='section d-flex flex-column justify-content-around'>
-							<div className="d-flex justify-content-between">
+							<div className='d-flex justify-content-between'>
 								<div className='TriggersAnswers'>
 									<div className='d-flex flex-column justify-content-around mb-2'>
 										<button className='btn-sm' onClick={handleEmotionAnswer}>
 											{happyAnswers[0]}
 										</button>
-										<button className='btn-sm' onClick={handleEmotionAnswer}>{happyAnswers[1]}</button>
-										<button className='btn-sm' onClick={handleEmotionAnswer}>{happyAnswers[2]}</button>
-										<button className='btn-sm' onClick={handleEmotionAnswer}>{happyAnswers[3]}</button>
+										<button className='btn-sm' onClick={handleEmotionAnswer}>
+											{happyAnswers[1]}
+										</button>
+										<button className='btn-sm' onClick={handleEmotionAnswer}>
+											{happyAnswers[2]}
+										</button>
+										<button className='btn-sm' onClick={handleEmotionAnswer}>
+											{happyAnswers[3]}
+										</button>
 
 										<button className='btn-sm'>happyAnswers</button>
 									</div>
@@ -127,9 +172,7 @@ function getOtherAnswer(e) {
 								<div className='ReasonAnswers'>
 									<div className='d-flex flex-column mb-2'>
 										<button className='btn-sm'>happyAnswers</button>
-										<button className='btn-sm'>
-											happyAnswers
-										</button>
+										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
@@ -146,9 +189,9 @@ function getOtherAnswer(e) {
 										onChange={getOtherAnswer}
 									/>
 								</div>
-								<button className='otherAnswerBtn border-secondary border-2 text-dark rounded'
-									onClick={(e) => props.setPrintOtherAnswer(true)}
-								>
+								<button
+									className='otherAnswerBtn border-secondary border-2 text-dark rounded'
+									onClick={(e) => props.setPrintOtherAnswer(true)}>
 									save
 								</button>
 							</div>
@@ -163,12 +206,10 @@ function getOtherAnswer(e) {
 					*/}
 					{props.angryAnswers ? (
 						<div className='section d-flex flex-column justify-content-around'>
-							<div className="d-flex justify-content-between">
+							<div className='d-flex justify-content-between'>
 								<div className='TriggersAnswers'>
 									<div className='d-flex flex-column justify-content-around mb-2'>
-										<button className='btn-sm'>
-											happyAnswers
-										</button>
+										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
@@ -186,9 +227,7 @@ function getOtherAnswer(e) {
 								<div className='ReasonAnswers'>
 									<div className='d-flex flex-column mb-2'>
 										<button className='btn-sm'>happyAnswers</button>
-										<button className='btn-sm'>
-											happyAnswers
-										</button>
+										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
@@ -205,9 +244,9 @@ function getOtherAnswer(e) {
 										onChange={getOtherAnswer}
 									/>
 								</div>
-								<button className='otherAnswerBtn border-secondary border-2 text-dark rounded'
-									onClick={(e) => props.setPrintOtherAnswer(true)}
-								>
+								<button
+									className='otherAnswerBtn border-secondary border-2 text-dark rounded'
+									onClick={(e) => props.setPrintOtherAnswer(true)}>
 									save
 								</button>
 							</div>
@@ -220,12 +259,10 @@ function getOtherAnswer(e) {
 					 */}
 					{props.confusedAnswers ? (
 						<div className='section d-flex flex-column justify-content-around'>
-							<div className="d-flex justify-content-between">
+							<div className='d-flex justify-content-between'>
 								<div className='TriggersAnswers'>
 									<div className='d-flex flex-column justify-content-around mb-2'>
-										<button className='btn-sm'>
-											happyAnswers
-										</button>
+										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
@@ -243,9 +280,7 @@ function getOtherAnswer(e) {
 								<div className='ReasonAnswers'>
 									<div className='d-flex flex-column mb-2'>
 										<button className='btn-sm'>happyAnswers</button>
-										<button className='btn-sm'>
-											happyAnswers
-										</button>
+										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
@@ -262,9 +297,9 @@ function getOtherAnswer(e) {
 										onChange={getOtherAnswer}
 									/>
 								</div>
-								<button className='otherAnswerBtn border-secondary border-2 text-dark rounded'
-									onClick={(e) => props.setPrintOtherAnswer(true)}
-								>
+								<button
+									className='otherAnswerBtn border-secondary border-2 text-dark rounded'
+									onClick={(e) => props.setPrintOtherAnswer(true)}>
 									save
 								</button>
 							</div>
@@ -278,12 +313,10 @@ function getOtherAnswer(e) {
 					{/*  */}
 					{props.badAnswers ? (
 						<div className='section d-flex flex-column justify-content-around'>
-							<div className="d-flex justify-content-between">
+							<div className='d-flex justify-content-between'>
 								<div className='TriggersAnswers'>
 									<div className='d-flex flex-column justify-content-around mb-2'>
-										<button className='btn-sm'>
-											happyAnswers
-										</button>
+										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
@@ -301,9 +334,7 @@ function getOtherAnswer(e) {
 								<div className='ReasonAnswers'>
 									<div className='d-flex flex-column mb-2'>
 										<button className='btn-sm'>happyAnswers</button>
-										<button className='btn-sm'>
-											happyAnswers
-										</button>
+										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
@@ -320,9 +351,9 @@ function getOtherAnswer(e) {
 										onChange={getOtherAnswer}
 									/>
 								</div>
-								<button className='otherAnswerBtn border-secondary border-2 text-dark rounded'
-									onClick={(e) => props.setPrintOtherAnswer(true)}
-								>
+								<button
+									className='otherAnswerBtn border-secondary border-2 text-dark rounded'
+									onClick={(e) => props.setPrintOtherAnswer(true)}>
 									save
 								</button>
 							</div>
@@ -335,12 +366,10 @@ function getOtherAnswer(e) {
 					{/*  */}
 					{props.sadAnswers ? (
 						<div className='section d-flex flex-column justify-content-around'>
-							<div className="d-flex justify-content-between">
+							<div className='d-flex justify-content-between'>
 								<div className='TriggersAnswers'>
 									<div className='d-flex flex-column justify-content-around mb-2'>
-										<button className='btn-sm'>
-											happyAnswers
-										</button>
+										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
@@ -358,9 +387,7 @@ function getOtherAnswer(e) {
 								<div className='ReasonAnswers'>
 									<div className='d-flex flex-column mb-2'>
 										<button className='btn-sm'>happyAnswers</button>
-										<button className='btn-sm'>
-											happyAnswers
-										</button>
+										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
@@ -377,17 +404,15 @@ function getOtherAnswer(e) {
 										onChange={getOtherAnswer}
 									/>
 								</div>
-								<button className='otherAnswerBtn border-secondary border-2 text-dark rounded'
-									onClick={(e) => props.setPrintOtherAnswer(true)}
-								>
+								<button
+									className='otherAnswerBtn border-secondary border-2 text-dark rounded'
+									onClick={(e) => props.setPrintOtherAnswer(true)}>
 									save
 								</button>
 							</div>
 							{/*  */}
 						</div>
 					) : null}
-
-
 				</div>
 			</div>
 			{/* body section ends */}
@@ -402,7 +427,9 @@ function getOtherAnswer(e) {
 						</h2>
 					</div>
 					<label className='fw-semibold fs-3 mb-3'>Youth Reflection</label>
-					<button className='sm bg-transparent border border-2 rounded mx-2' onClick={getYouthQuestions}>
+					<button
+						className='sm bg-transparent border border-2 rounded mx-2'
+						onClick={getYouthQuestions}>
 						Get recommended question
 					</button>
 					<textarea
@@ -425,7 +452,9 @@ function getOtherAnswer(e) {
 						</h2>
 					</div>
 					<label className='fw-semibold fs-3 mb-2'>Agent Reflection</label>
-					<button className='sm bg-transparent border border-2 rounded mx-2' onClick={getAgentQuestions}>
+					<button
+						className='sm bg-transparent border border-2 rounded mx-2'
+						onClick={getAgentQuestions}>
 						Get recommended question
 					</button>
 					<textarea
@@ -491,5 +520,5 @@ function getOtherAnswer(e) {
 			</div>
 			{/* footer section ends */}
 		</div>
-	);
+	)
 }
