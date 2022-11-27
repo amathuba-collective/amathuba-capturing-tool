@@ -1,9 +1,8 @@
-import React, { useState } from "react";
-// import { Icon } from "@iconify/react";
-import Calender from "./Calender";
+import React, { useState, useEffect } from "react";
+import ReactCalender from "./Calender";
 // import WordCloud from "../Modules/WordCloud";
 // import WordCloudData from "../Assets/Data/data.json"
-import "../Styles/CenterContent.css";
+
 
 export default function CenterContent(props) {
 	const happyAnswers = ["Amazing", "Joyful", "Excited", "Awsome"];
@@ -13,7 +12,7 @@ export default function CenterContent(props) {
 		props.setOtherAnswer(e.target.value);
 	}
 
-	// useEffect(() => {
+	useEffect(() => {
 		// props.openingQuestion === "openingQuestion" ? props.
 		const id = props.emotion;
 		switch (id) {
@@ -49,17 +48,17 @@ export default function CenterContent(props) {
 		// 	? props.setAnxious(true)
 		// 	: props.setAnxious(false)
 		// props.emotion === "sad" ? props.setSad(true) : props.setSad(false);
-	// }, [props.emotion, props, props.openingQuestion]);
+	}, [props.emotion, props, props.openingQuestion]);
 
 	const handleOnEmotionChange = (e) => {
 		props.setEmotion(e.target.value); //reason for this having the setEmotion function cause its the only way i could get it to appear on the same spot as emotion questions
 	};
 
-	function handleEmotionAnswer(e) {
-		props.setHappyAnswersQuestions(
-			(happyAnswerQuestions) => !happyAnswerQuestions,
-		);
+	function handleEmotionAnswer1(e)  {
+		props.setHappyAnswersQuestions(happyAnswerQuestions => !happyAnswerQuestions)
 	}
+
+
 	function getYouthQuestions(e) {
 		props.setYouthQuestions((youthQuestions) => !youthQuestions);
 	}
@@ -146,18 +145,12 @@ export default function CenterContent(props) {
 							<div className='d-flex justify-content-between'>
 								<div className='TriggersAnswers'>
 									<div className='d-flex flex-column justify-content-around mb-2'>
-										<button className='btn-sm' onClick={handleEmotionAnswer}>
+										<button className='btn-sm' onClick={handleEmotionAnswer1}>
 											{happyAnswers[0]}
 										</button>
-										<button className='btn-sm' onClick={handleEmotionAnswer}>
-											{happyAnswers[1]}
-										</button>
-										<button className='btn-sm' onClick={handleEmotionAnswer}>
-											{happyAnswers[2]}
-										</button>
-										<button className='btn-sm' onClick={handleEmotionAnswer}>
-											{happyAnswers[3]}
-										</button>
+										<button className='btn-sm' onClick={handleEmotionAnswer1}>{happyAnswers[1]}</button>
+										<button className='btn-sm' onClick={handleEmotionAnswer1}>{happyAnswers[2]}</button>
+										<button className='btn-sm' onClick={handleEmotionAnswer1}>{happyAnswers[3]}</button>
 
 										<button className='btn-sm'>happyAnswers</button>
 									</div>
@@ -474,23 +467,25 @@ export default function CenterContent(props) {
 				<div className='nextCall'>
 					<h2 className='title'>Session Bookings</h2>
 					<div>
-						<nav className=''>
+						<nav className='mt-5'>
+							<div className="d-flex justify-content-between">
 							<button
-								className='btn-secondary'
+								className='navBtns btn-secondary'
 								onClick={(e) => setNextSession("newAppoinment")}>
 								New Appoinment
 							</button>
-							{nextSession === "newAppoinment" && (
-								<div className='react-calendar mt-5 '>
-									<Calender className='Calender' />
-								</div>
-							)}
-
 							<button
-								className='btn-secondary2'
+								className='navBtns btn-secondary'
 								onClick={(e) => setNextSession("endReason")}>
 								End Reason
-							</button>
+							</button></div>
+
+							
+								{nextSession === "newAppoinment" && (
+								<div>
+									<ReactCalender />
+								</div>
+							)}
 							{nextSession === "endReason" && (
 								<section className='mt-5'>
 									<label className='fw-semibold fs-3 mt-5'>End reason</label>
@@ -498,7 +493,7 @@ export default function CenterContent(props) {
 										className='textArea form-control '
 										placeholder='End Reason'
 										id='#'></textarea>
-									<div className='d-grid'>
+									<div className='d-grid mt-5'>
 										<button className='btn btn-secondary'>Save</button>
 									</div>
 								</section>
@@ -509,11 +504,11 @@ export default function CenterContent(props) {
 				</div>
 
 				{/* 		button to submit capturing tool									 */}
-				<div className='d-grid  mb-5'>
+				<div className='d-grid mt-5'>
 					<button
 						type='submit'
 						onClick={onFormSubmit}
-						className='btn text-light fs-5 p-4'>
+						className='btn text-light fs-5 p-4 mb-5'>
 						Submit
 					</button>
 				</div>
