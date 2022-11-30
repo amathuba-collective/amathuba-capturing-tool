@@ -21,24 +21,24 @@ export default function RightContent(props) {
 		" what makes you this Angry ?",
 		"what caused you to be this Angry ?",
 	];
-	// const confusedQuestions = [
-	// 	" So tell me about your Confused ?",
-	// 	" Why are you this Confused ?",
-	// 	" what makes you this Confused ?",
-	// 	"what caused you to be this Confused ?",
-	// ];
-	// const anxiosQuestions = [
-	// 	" So tell me about your Bad ?",
-	// 	" Why are you this Bad ?",
-	// 	" what makes you this Bad ?",
-	// 	"what caused you to be this Bad ?",
-	// ];
-	// const sadQuestions = [
-	// 	" So tell me about your Sad ?",
-	// 	" Why are you this Sad ?",
-	// 	" what makes you this Sad ?",
-	// 	"what caused you to be this Sad ?",
-	// ];
+	const confusedQuestions = [
+		" So tell me about your Confused ?",
+		" Why are you this Confused ?",
+		" what makes you this Confused ?",
+		"what caused you to be this Confused ?",
+	];
+	const anxiosQuestions = [
+		" So tell me about your anxios ?",
+		" Why are you this anxios ?",
+		" what makes you this anxios ?",
+		"what caused you to be this anxios ?",
+	];
+	const sadQuestions = [
+		" So tell me about your Sad ?",
+		" Why are you this Sad ?",
+		" what makes you this Sad ?",
+		"what caused you to be this Sad ?",
+	];
 	const youthReflectionQuestions = [
 		" So tell me how will u go forward?",
 		" What do you choose to do next ?",
@@ -86,7 +86,6 @@ export default function RightContent(props) {
 	};
 	const onAngryQuestion4Clicked = (e) => {
 		props.setOpeningEmotionQuestion(angryQuestions[3]);
-		
 	};
 
 	const onConfusedQuestion1Clicked = (e) => {
@@ -217,163 +216,297 @@ export default function RightContent(props) {
 					{props.happy && (
 						<div className='d-flex flex-column mt-4'>
 							{" "}
-							<button className='border-1 border-secondary rounded mb-2 p-1' onClick={onHappyQuestion1Clicked}>
+							<h2 className='text-center'>Emotion questions</h2>
+							<button
+								className='border-1 border-secondary rounded mb-2 p-1'
+								onClick={onHappyQuestion1Clicked}>
 								{happyQuestions[0]}
 							</button>
-							<button className='border-1 border-secondary rounded mb-2 p-1'  onClick={onHappyQuestion2Clicked}>
+							<button
+								className='border-1 border-secondary rounded mb-2 p-1'
+								onClick={onHappyQuestion2Clicked}>
 								{happyQuestions[1]}
 							</button>
-							<button className='border-1 border-secondary rounded mb-2 p-1'  onClick={onHappyQuestion3Clicked}>
+							<button
+								className='border-1 border-secondary rounded mb-2 p-1'
+								onClick={onHappyQuestion3Clicked}>
 								{happyQuestions[2]}
 							</button>
-							<button className='border-1 border-secondary rounded mb-2 p-1'  onClick={onHappyQuestion4Clicked}>
+							<button
+								className='border-1 border-secondary rounded mb-2 p-1'
+								onClick={onHappyQuestion4Clicked}>
 								{happyQuestions[3]}
 							</button>
-              <div className='text-center mt-3 d-flex align-items-center'>
-							<div className='input-group mb-3'>
-								<input
-									type='text'
-									className='otherInput form-control'
-									placeholder='Other'
-									onChange={getOtherOpeningQuestion}
-								/>
+							<div className='text-center mt-3 d-flex align-items-center'>
+								<div className='input-group mb-3'>
+									<input
+										type='text'
+										className='otherInput form-control'
+										placeholder='Other'
+										onChange={getOtherOpeningQuestion}
+									/>
+								</div>
+								<button
+									className='otherBtn border-secondary border-2 text-dark rounded'
+									onClick={() => props.setPrintOtherOpeningQuestion(true)}>
+									save
+								</button>
 							</div>
-							<button
-								className='otherBtn border-secondary border-2 text-dark rounded'
-								onClick={() => props.setPrintOtherOpeningQuestion(true)}>
-								save
-							</button>
-						</div>
 						</div>
 					)}
 					{props.angry && (
 						<div className='d-flex flex-column mt-4'>
 							{" "}
-							<button className='border-1 border-secondary rounded mb-2 p-1' onClick={onHappyQuestion1Clicked}>
-								{/* {AngryQuestions[0]} */}
-							</button>
-							<button className='border-1 border-secondary rounded mb-2 p-1' onClick={onHappyQuestion1Clicked}>
-								{/* {AngryQuestions[1]} */}
-							</button>
-							<button className='border-1 border-secondary rounded mb-2 p-1' onClick={onHappyQuestion1Clicked}>
-								{/* {AngryQuestions[2]} */}
-							</button>
-							<button className='border-1 border-secondary rounded mb-2 p-1' onClick={onHappyQuestion1Clicked}>
-								{/* {AngryQuestions[2]} */}
-							</button>
-              <div className='text-center mt-3 d-flex align-items-center'>
-							<div className='input-group mb-3'>
-								<input
-									type='text'
-									className='otherInput form-control'
-									placeholder='Other'
-									onChange={getOtherOpeningQuestion}
-								/>
-							</div>
+							<h2 className='text-center'>Emotion questions</h2>
 							<button
-								className='otherBtn border-secondary border-2 text-dark rounded'
-								onClick={() => props.setPrintOtherOpeningQuestion(true)}>
-								save
+								className='border-1 border-secondary rounded mb-2 p-1'
+								onClick={onHappyQuestion1Clicked}>
+								{angryQuestions[0]}
 							</button>
-						</div>
+							<button
+								className='border-1 border-secondary rounded mb-2 p-1'
+								onClick={onHappyQuestion1Clicked}>
+								{angryQuestions[1]}
+							</button>
+							<button
+								className='border-1 border-secondary rounded mb-2 p-1'
+								onClick={onHappyQuestion1Clicked}>
+								{angryQuestions[2]}
+							</button>
+							<button
+								className='border-1 border-secondary rounded mb-2 p-1'
+								onClick={onHappyQuestion1Clicked}>
+								{angryQuestions[3]}
+							</button>
+							<div className='text-center mt-3 d-flex align-items-center'>
+								<div className='input-group mb-3'>
+									<input
+										type='text'
+										className='otherInput form-control'
+										placeholder='Other'
+										onChange={getOtherOpeningQuestion}
+									/>
+								</div>
+								<button
+									className='otherBtn border-secondary border-2 text-dark rounded'
+									onClick={() => props.setPrintOtherOpeningQuestion(true)}>
+									save
+								</button>
+							</div>
 						</div>
 					)}
 					{props.confused && (
 						<div className='d-flex flex-column mt-4'>
 							{" "}
-							<button className='border-1 border-secondary rounded mb-2 p-1' onClick={onHappyQuestion1Clicked}>
-								{/* {ConfusedQuestions[0]} */}
-							</button>
-							<button className='border-1 border-secondary rounded mb-2 p-1' onClick={onHappyQuestion1Clicked}>
-								{/* {ConfusedQuestions[1]} */}
-							</button>
-							<button className='border-1 border-secondary rounded mb-2 p-1' onClick={onHappyQuestion1Clicked}>
-								{/* {ConfusedQuestions[2]} */}
-							</button>
-							<button className='border-1 border-secondary rounded mb-2 p-1' onClick={onHappyQuestion1Clicked}>
-								{/* {ConfusedQuestions[2]} */}
-							</button>
-              <div className='text-center mt-3 d-flex align-items-center'onClick={onHappyQuestion1Clicked}>
-							<div className='input-group mb-3'>
-								<input
-									type='text'
-									className='otherInput form-control'
-									placeholder='Other'
-									onChange={getOtherOpeningQuestion}
-								/>
-							</div>
+							<h2 className='text-center'>Emotion questions</h2>
 							<button
-								className='otherBtn border-secondary border-2 text-dark rounded'
-								onClick={() => props.setPrintOtherOpeningQuestion(true)}>
-								save
+								className='border-1 border-secondary rounded mb-2 p-1'
+								onClick={onHappyQuestion1Clicked}>
+								{confusedQuestions[0]}
 							</button>
-						</div>
+							<button
+								className='border-1 border-secondary rounded mb-2 p-1'
+								onClick={onHappyQuestion1Clicked}>
+								{confusedQuestions[1]}
+							</button>
+							<button
+								className='border-1 border-secondary rounded mb-2 p-1'
+								onClick={onHappyQuestion1Clicked}>
+								{confusedQuestions[2]}
+							</button>
+							<button
+								className='border-1 border-secondary rounded mb-2 p-1'
+								onClick={onHappyQuestion1Clicked}>
+								{confusedQuestions[2]}
+							</button>
+							<div
+								className='text-center mt-3 d-flex align-items-center'
+								onClick={onHappyQuestion1Clicked}>
+								<div className='input-group mb-3'>
+									<input
+										type='text'
+										className='otherInput form-control'
+										placeholder='Other'
+										onChange={getOtherOpeningQuestion}
+									/>
+								</div>
+								<button
+									className='otherBtn border-secondary border-2 text-dark rounded'
+									onClick={() => props.setPrintOtherOpeningQuestion(true)}>
+									save
+								</button>
+							</div>
 						</div>
 					)}
 					{props.anxious && (
 						<div className='d-flex flex-column mt-4'>
 							{" "}
-							<button className='border-1 border-secondary rounded mb-2 p-1' onClick={onHappyQuestion1Clicked}>
-								{/* {AnxiosQuestions[0]} */}
-							</button>
-							<button className='border-1 border-secondary rounded mb-2 p-1' onClick={onHappyQuestion1Clicked}>
-								{/* {AnxiosQuestions[1]} */}
-							</button>
-							<button className='border-1 border-secondary rounded mb-2 p-1' onClick={onHappyQuestion1Clicked}>
-								{/* {AnxiosQuestions[2]} */}
-							</button>
-							<button className='border-1 border-secondary rounded mb-2 p-1' onClick={onHappyQuestion1Clicked}>
-								{/* {AnxiosQuestions[3]} */}
-							</button>
-              <div className='text-center mt-3 d-flex align-items-center'>
-							<div className='input-group mb-3'>
-								<input
-									type='text'
-									className='otherInput form-control'
-									placeholder='Other'
-									onChange={getOtherOpeningQuestion}
-								/>
-							</div>
+							<h2 className='text-center'>Emotion questions</h2>
 							<button
-								className='otherBtn border-secondary border-2 text-dark rounded'
-								onClick={() => props.setPrintOtherOpeningQuestion(true)}>
-								save
+								className='border-1 border-secondary rounded mb-2 p-1'
+								onClick={onHappyQuestion1Clicked}>
+								{anxiosQuestions[0]}
 							</button>
-						</div>
+							<button
+								className='border-1 border-secondary rounded mb-2 p-1'
+								onClick={onHappyQuestion1Clicked}>
+								{anxiosQuestions[1]}
+							</button>
+							<button
+								className='border-1 border-secondary rounded mb-2 p-1'
+								onClick={onHappyQuestion1Clicked}>
+								{anxiosQuestions[2]}
+							</button>
+							<button
+								className='border-1 border-secondary rounded mb-2 p-1'
+								onClick={onHappyQuestion1Clicked}>
+								{anxiosQuestions[3]}
+							</button>
+							<div className='text-center mt-3 d-flex align-items-center'>
+								<div className='input-group mb-3'>
+									<input
+										type='text'
+										className='otherInput form-control'
+										placeholder='Other'
+										onChange={getOtherOpeningQuestion}
+									/>
+								</div>
+								<button
+									className='otherBtn border-secondary border-2 text-dark rounded'
+									onClick={() => props.setPrintOtherOpeningQuestion(true)}>
+									save
+								</button>
+							</div>
 						</div>
 					)}
 					{props.sad && (
 						<div className='d-flex flex-column mt-4'>
 							{" "}
-							<button className='border-1 border-secondary rounded mb-2 p-1' onClick={onHappyQuestion1Clicked}>
-								{/* {SadQuestions[0]} */}
-							</button>
-							<button className='border-1 border-secondary rounded mb-2 p-1' onClick={onHappyQuestion1Clicked}>
-								{/* {SadQuestions[1]} */}
-							</button>
-							<button className='border-1 border-secondary rounded mb-2 p-1' onClick={onHappyQuestion1Clicked}>
-								{/* {SadQuestions[2]} */}
-							</button>
-							<button className='border-1 border-secondary rounded mb-2 p-1' onClick={onHappyQuestion1Clicked}>
-								{/* {SadQuestions[3]}s */}
-							</button>
-              <div className='text-center mt-3 d-flex align-items-center'>
-							<div className='input-group mb-3'>
-								<input
-									type='text'
-									className='otherInput form-control'
-									placeholder='Other'
-									onChange={getOtherOpeningQuestion}
-								/>
-							</div>
+							<h2 className='text-center'>Emotion questions</h2>
 							<button
-								className='otherBtn border-secondary border-2 text-dark rounded'
-								onClick={() => props.setPrintOtherOpeningQuestion(true)}>
-								save
+								className='border-1 border-secondary rounded mb-2 p-1'
+								onClick={onHappyQuestion1Clicked}>
+								{sadQuestions[0]}
 							</button>
-						</div>
+							<button
+								className='border-1 border-secondary rounded mb-2 p-1'
+								onClick={onHappyQuestion1Clicked}>
+								{sadQuestions[1]}
+							</button>
+							<button
+								className='border-1 border-secondary rounded mb-2 p-1'
+								onClick={onHappyQuestion1Clicked}>
+								{sadQuestions[2]}
+							</button>
+							<button
+								className='border-1 border-secondary rounded mb-2 p-1'
+								onClick={onHappyQuestion1Clicked}>
+								{sadQuestions[3]}s
+							</button>
+							<div className='text-center mt-3 d-flex align-items-center'>
+								<div className='input-group mb-3'>
+									<input
+										type='text'
+										className='otherInput form-control'
+										placeholder='Other'
+										onChange={getOtherOpeningQuestion}
+									/>
+								</div>
+								<button
+									className='otherBtn border-secondary border-2 text-dark rounded'
+									onClick={() => props.setPrintOtherOpeningQuestion(true)}>
+									save
+								</button>
+							</div>
 						</div>
 					)}
+					<div className='d-flex flex-column mt-4'>
+						{props.youthQuestions ? (
+							<div className='mb-4 d-flex flex-column mt-4'>
+								<h2 className='text-center'>Youth questions</h2>
+								<button
+									className='border-1 border-secondary rounded mb-2 p-1'
+									onClick={onYouthReflectionQ1Clicked}>
+									{youthReflectionQuestions[0]}
+								</button>
+								<button
+									className='border-1 border-secondary rounded mb-2 p-1'
+									onClick={onYouthReflectionQ2Clicked}>
+									{youthReflectionQuestions[1]}
+								</button>
+								<button
+									className='border-1 border-secondary rounded mb-2 p-1'
+									onClick={onYouthReflectionQ3Clicked}>
+									{youthReflectionQuestions[2]}
+								</button>
+								<button
+									className='border-1 border-secondary rounded mb-2 p-1'
+									onClick={onYouthReflectionQ4Clicked}>
+									{youthReflectionQuestions[3]}
+								</button>
+								{/* other field input */}
+								<div className='text-center mt-3 d-flex align-items-center'>
+									<div className='input-group mb-3'>
+										<input
+											type='text'
+											className='otherInput form-control'
+											placeholder='Other'
+											onChange={getOtherOpeningQuestion}
+										/>
+									</div>
+									<button
+										className='otherBtn border-secondary border-2 text-dark rounded'
+										onClick={() => props.setPrintOtherOpeningQuestion(true)}>
+										save
+									</button>
+								</div>
+								{/*  */}
+							</div>
+						) : null}
+
+						{props.agentQuestions ? (
+							<div className='mb-5 d-flex flex-column mt-4'>
+								<h2 className='text-center'>Agent questions</h2>
+								<button
+									className='border-1 border-secondary rounded mb-2 p-1'
+									onClick={onAgentReflectionQ1Clicked}>
+									{agentReflectionQuestions[0]}
+								</button>
+								<button
+									className='border-1 border-secondary rounded mb-2 p-1'
+									onClick={onAgentReflectionQ2Clicked}>
+									{agentReflectionQuestions[1]}
+								</button>
+								<button
+									className='border-1 border-secondary rounded mb-2 p-1'
+									onClick={onAgentReflectionQ3Clicked}>
+									{agentReflectionQuestions[2]}
+								</button>
+								<button
+									className='border-1 border-secondary rounded mb-2 p-1'
+									onClick={onAgentReflectionQ4Clicked}>
+									{agentReflectionQuestions[3]}
+								</button>
+								{/* other field input */}
+								<div className='text-center mt-3 d-flex align-items-center'>
+									<div className='input-group mb-3'>
+										<input
+											type='text'
+											className='otherInput form-control'
+											placeholder='Other'
+											onChange={getOtherOpeningQuestion}
+										/>
+									</div>
+									<button
+										className='otherBtn border-secondary border-2 text-dark rounded'
+										onClick={() => props.setPrintOtherOpeningQuestion(true)}>
+										save
+									</button>
+								</div>
+								{/*  */}
+							</div>
+						) : null}
+					</div>
 				</section>
 
 				<div>
@@ -381,60 +514,6 @@ export default function RightContent(props) {
 						Prompted Questions
 					</h2>
 					<hr className='border border-2 border-secondary opacity-50 rounded' />
-				</div>
-
-				<div className='agent&YouthQuestions mb-4 mt-4'>
-					{props.youthQuestions ? (
-						<div className='mb-4'>
-							<h2 className='text-center'>Youth questions</h2>
-							<button
-								className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
-								onClick={onYouthReflectionQ1Clicked}>
-								{youthReflectionQuestions[0]}
-							</button>
-							<button
-								className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
-								onClick={onYouthReflectionQ2Clicked}>
-								{youthReflectionQuestions[1]}
-							</button>
-							<button
-								className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
-								onClick={onYouthReflectionQ3Clicked}>
-								{youthReflectionQuestions[2]}
-							</button>
-							<button
-								className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
-								onClick={onYouthReflectionQ4Clicked}>
-								{youthReflectionQuestions[3]}
-							</button>
-						</div>
-					) : null}
-
-					{props.agentQuestions ? (
-						<div className='mb-5'>
-							<h2 className='text-center'>Agent questions</h2>
-							<button
-								className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
-								onClick={onAgentReflectionQ1Clicked}>
-								{agentReflectionQuestions[0]}
-							</button>
-							<button
-								className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
-								onClick={onAgentReflectionQ2Clicked}>
-								{agentReflectionQuestions[1]}
-							</button>
-							<button
-								className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
-								onClick={onAgentReflectionQ3Clicked}>
-								{agentReflectionQuestions[2]}
-							</button>
-							<button
-								className=' bg-transparent border-3 border-secondary rounded p-2 mt-3 fw-semibold fs-5  w-100'
-								onClick={onAgentReflectionQ4Clicked}>
-								{agentReflectionQuestions[3]}
-							</button>
-						</div>
-					) : null}
 				</div>
 			</div>
 		</div>

@@ -33,8 +33,8 @@ function ReactCalendar() {
       </button>
       </div>
 
-      {/* {value && <h3> {value.toLocaleDateString()} </h3>}
-      {value && <h3> {String(value)} </h3>} */}
+      {value && <h3> {value.toLocaleDateString()} </h3>}
+      {value && <h3> {String(value)} </h3>}
       </>
   );
 }
