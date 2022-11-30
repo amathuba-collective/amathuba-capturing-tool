@@ -1,60 +1,94 @@
 import React, { useState, useEffect } from "react";
+import ReactCalender from "./ReactCalender";
 import "../Styles/CenterContent.css";
-import Calendar from "react-calendar";
-import "../Components/ReactCalender.css";
-import "react-calendar/dist/Calendar.css";
 // import WordCloud from "../Modules/WordCloud";
 // import WordCloudData from "../Assets/Data/data.json"
 
-
 export default function CenterContent(props) {
-	const happyAnswers = [
-		"Amazing",
-		"Joyful",
-		"Excited",
-		"Awsome"
-	];
+	const happyAnswers = ["Amazing", "Joyful", "Excited", "Awsome"];
 
 	const [nextSession, setNextSession] = useState("newAppoinment");
-function getOtherAnswer(e) {
-		props.setOtherAnswer(e.target.value)
+	function getOtherAnswer(e) {
+		props.setOtherAnswer(e.target.value);
 	}
 
 	useEffect(() => {
-		// props.openingQuestion === "openingQuestion" ? props.setGetOpeningQuestion(true) : props.setGetOpeningQuestion(false)
+		// props.openingQuestion === "openingQuestion" ? props.
+		// const id = props.emotion;
+		// switch (id) {
+		// 	case "happy" :
+		// 		props.setHappy(happy => !happy);
+		// 		// props.setHappy(false);
+		// 		break;
+		// 	case "angry":
+		// 		props.setAngry(angry => !angry);
+		// 		// props.setAngry(false)
+		// 		break;
+		// 	case "confused":
+		// 		props.setConfused(confused => !confused);
+		// 		// props.setConfused(false)
+		// 		break;
+		// 	case "anxious":
+		// 		props.setAnxious(anxious => !anxious);
+		// 		// props.setAnxious(false)
+		// 		break;
+		// 	case "sad":
+		// 		props.setSad(sad => !sad);
+		// 		// props.setSad(false);
+		// 		break;
+		// 	default:
+		// 		break;
+		// }
 		props.emotion === "happy" ? props.setHappy(true) : props.setHappy(false);
 		props.emotion === "angry" ? props.setAngry(true) : props.setAngry(false);
-		props.emotion === "confused" ? props.setConfused(true) : props.setConfused(false);
-		props.emotion === "anxious" ? props.setAnxious(true) : props.setAnxious(false);
+		props.emotion === "confused"
+			? props.setConfused(true)
+			: props.setConfused(false);
+		props.emotion === "anxious"
+			? props.setAnxious(true)
+			: props.setAnxious(false);
 		props.emotion === "sad" ? props.setSad(true) : props.setSad(false);
 	}, [props.emotion, props, props.openingQuestion]);
 
 	const handleOnEmotionChange = (e) => {
-		props.setEmotion(e.target.value);//reason for this having the setEmotion function cause its the only way i could get it to appear on the same spot as emotion questions
+		props.setEmotion(e.target.value); //reason for this having the setEmotion function cause its the only way i could get it to appear on the same spot as emotion questions
 	};
 
-	function handleEmotionAnswer1 (e)  {
-		props.setHappyAnswersCapture1(happyAnswers[0])
+	function handleEmotionAnswer1(e) {
+		props.setHappyAnswersCapture1(happyAnswers[0]);
 	}
-	function handleEmotionAnswer2 (e)  {
-		props.setHappyAnswersCapture2(happyAnswers[1])
+	function handleEmotionAnswer2(e) {
+		props.setHappyAnswersCapture2(happyAnswers[1]);
 	}
-	function handleEmotionAnswer3 (e)  {
-		props.setHappyAnswersCapture3(happyAnswers[2])
+	function handleEmotionAnswer3(e) {
+		props.setHappyAnswersCapture3(happyAnswers[2]);
 	}
-	function handleEmotionAnswer4 (e)  {
-		props.setHappyAnswersCapture4(happyAnswers[3])
+	function handleEmotionAnswer4(e) {
+		props.setHappyAnswersCapture4(happyAnswers[3]);
 	}
 
+	// useEffect(() => {
+	// 	props.closingQuestions1 === "youthQuestions"
+	// 		? props.setYouthQuestions(true)
+	// 		: props.setYouthQuestions(false);
+	// 	props.closingQuestions2 === "agentQuestions"
+	// 		? props.setAgentQuestions(true)
+	// 		: props.setAgentQuestions(false);
+	// }, [props, props.closingQuestions1, props.closingQuestions2]);
+
+	// function handleClosingQuestion1(e) {
+	// 	props.setClosingQuestions1(e.target.value);
+	// }
+	// function handleClosingQuestion2(e) {
+	// 	props.setClosingQuestions2(e.target.value);
+	// }
 
 	function getYouthQuestions(e) {
-		props.setYouthQuestions(youthQuestions => !youthQuestions)
+		props.setYouthQuestions((youthQuestions) => !youthQuestions);
 	}
 	function getAgentQuestions(e) {
-		props.setAgentQuestions(agentQuestions => !agentQuestions)
+		props.setAgentQuestions((agentQuestions) => !agentQuestions);
 	}
-
-
 
 	function getYouthReflection(val) {
 		props.setYouthData(val.target.value);
@@ -66,16 +100,8 @@ function getOtherAnswer(e) {
 		// props.setPrintData(false)
 	}
 
-	const entireForm = [
-		{ OpeningQuestion: props.openingQuestion },
-		{ OpeningEmotion: props.openingEmotion },
-	];
-
-	function onFormSubmit(e) {
-		e.preventDefault();
-		alert("Form Submitted");
-
-		localStorage.setItem("wellBieng", JSON.stringify(entireForm));
+	function submitForm() {
+		props.submitContent();
 	}
 
 	return (
@@ -90,21 +116,41 @@ function getOtherAnswer(e) {
 				{/* Clickable emojis to detec opening emotion of call */}
 				<div
 					value={props.emotion}
-					className='emotion-emojies d-flex justify-content-around mt-5 '>
-					<button value='happy' className='border-0 fs-1 bg-transparent' onClick={handleOnEmotionChange}>
-                        😄
+					className='emotion-emojies d-flex justify-content-around mt-5 p-5'>
+					<button
+						value='happy'
+						className='border-0 fs-1 bg-transparent'
+						onClick={handleOnEmotionChange}>
+						😄
+						<span className='fs-4'>Happy</span>
 					</button>
-					<button value='angry' className='border-0 fs-1 bg-transparent' onClick={handleOnEmotionChange}>
-                        🤬
+					<button
+						value='angry'
+						className='border-0 fs-1 bg-transparent'
+						onClick={handleOnEmotionChange}>
+						🤬
+						<span className='fs-4'>Angry</span>
 					</button>
-					<button value='confused' className='border-0 fs-1 bg-transparent' onClick={handleOnEmotionChange}>
-                        🤔
+					<button
+						value='confused'
+						className='border-0 fs-1 bg-transparent'
+						onClick={handleOnEmotionChange}>
+						🤔
+						<span className='fs-4'>Confused</span>
 					</button>
-					<button value='anxious' className='border-0 fs-1 bg-transparent' onClick={handleOnEmotionChange}>
-                        😰
+					<button
+						value='anxious'
+						className='border-0 fs-1 bg-transparent'
+						onClick={handleOnEmotionChange}>
+						😰
+						<span className='fs-4'>Anxious</span>
 					</button>
-					<button value='sad' className='border-0 fs-1 bg-transparent' onClick={handleOnEmotionChange}>
-                        🙁
+					<button
+						value='sad'
+						className='border-0 fs-1 bg-transparent'
+						onClick={handleOnEmotionChange}>
+						🙁
+						<span className='fs-4'>Sad</span>
 					</button>
 				</div>
 			</div>
@@ -113,19 +159,25 @@ function getOtherAnswer(e) {
 			{/* Body section starts */}
 			{/* section for triggerd an reason keyword answers */}
 			<div className='body mt-5' id='scrollable'>
-				<div className='emptyDivForEmotoinKeyWords mt-5 mb-5  text-center'>
+				<div className='emptyDivForEmotoinKeyWords  mb-5  text-center'>
 					{/* Happy question answers */}
 					{props.happyAnswers ? (
 						<div className='section d-flex flex-column justify-content-around'>
-							<div className="d-flex justify-content-between">
+							<div className='d-flex justify-content-between'>
 								<div className='TriggersAnswers'>
 									<div className='d-flex flex-column justify-content-around mb-2'>
 										<button className='btn-sm' onClick={handleEmotionAnswer1}>
 											{happyAnswers[0]}
 										</button>
-										<button className='btn-sm' onClick={handleEmotionAnswer2}>{happyAnswers[1]}</button>
-										<button className='btn-sm' onClick={handleEmotionAnswer3}>{happyAnswers[2]}</button>
-										<button className='btn-sm' onClick={handleEmotionAnswer4}>{happyAnswers[3]}</button>
+										<button className='btn-sm' onClick={handleEmotionAnswer2}>
+											{happyAnswers[1]}
+										</button>
+										<button className='btn-sm' onClick={handleEmotionAnswer3}>
+											{happyAnswers[2]}
+										</button>
+										<button className='btn-sm' onClick={handleEmotionAnswer4}>
+											{happyAnswers[3]}
+										</button>
 
 										<button className='btn-sm'>happyAnswers</button>
 									</div>
@@ -140,9 +192,7 @@ function getOtherAnswer(e) {
 								<div className='ReasonAnswers'>
 									<div className='d-flex flex-column mb-2'>
 										<button className='btn-sm'>happyAnswers</button>
-										<button className='btn-sm'>
-											happyAnswers
-										</button>
+										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
@@ -159,9 +209,9 @@ function getOtherAnswer(e) {
 										onChange={getOtherAnswer}
 									/>
 								</div>
-								<button className='otherAnswerBtn border-secondary border-2 text-dark rounded'
-									onClick={(e) => props.setPrintOtherAnswer(true)}
-								>
+								<button
+									className='otherAnswerBtn border-secondary border-2 text-dark rounded'
+									onClick={(e) => props.setPrintOtherAnswer(true)}>
 									save
 								</button>
 							</div>
@@ -176,12 +226,10 @@ function getOtherAnswer(e) {
 					*/}
 					{props.angryAnswers ? (
 						<div className='section d-flex flex-column justify-content-around'>
-							<div className="d-flex justify-content-between">
+							<div className='d-flex justify-content-between'>
 								<div className='TriggersAnswers'>
 									<div className='d-flex flex-column justify-content-around mb-2'>
-										<button className='btn-sm'>
-											happyAnswers
-										</button>
+										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
@@ -199,9 +247,7 @@ function getOtherAnswer(e) {
 								<div className='ReasonAnswers'>
 									<div className='d-flex flex-column mb-2'>
 										<button className='btn-sm'>happyAnswers</button>
-										<button className='btn-sm'>
-											happyAnswers
-										</button>
+										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
@@ -218,9 +264,9 @@ function getOtherAnswer(e) {
 										onChange={getOtherAnswer}
 									/>
 								</div>
-								<button className='otherAnswerBtn border-secondary border-2 text-dark rounded'
-									onClick={(e) => props.setPrintOtherAnswer(true)}
-								>
+								<button
+									className='otherAnswerBtn border-secondary border-2 text-dark rounded'
+									onClick={(e) => props.setPrintOtherAnswer(true)}>
 									save
 								</button>
 							</div>
@@ -233,12 +279,10 @@ function getOtherAnswer(e) {
 					 */}
 					{props.confusedAnswers ? (
 						<div className='section d-flex flex-column justify-content-around'>
-							<div className="d-flex justify-content-between">
+							<div className='d-flex justify-content-between'>
 								<div className='TriggersAnswers'>
 									<div className='d-flex flex-column justify-content-around mb-2'>
-										<button className='btn-sm'>
-											happyAnswers
-										</button>
+										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
@@ -256,9 +300,7 @@ function getOtherAnswer(e) {
 								<div className='ReasonAnswers'>
 									<div className='d-flex flex-column mb-2'>
 										<button className='btn-sm'>happyAnswers</button>
-										<button className='btn-sm'>
-											happyAnswers
-										</button>
+										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
@@ -275,9 +317,9 @@ function getOtherAnswer(e) {
 										onChange={getOtherAnswer}
 									/>
 								</div>
-								<button className='otherAnswerBtn border-secondary border-2 text-dark rounded'
-									onClick={(e) => props.setPrintOtherAnswer(true)}
-								>
+								<button
+									className='otherAnswerBtn border-secondary border-2 text-dark rounded'
+									onClick={(e) => props.setPrintOtherAnswer(true)}>
 									save
 								</button>
 							</div>
@@ -291,12 +333,10 @@ function getOtherAnswer(e) {
 					{/*  */}
 					{props.badAnswers ? (
 						<div className='section d-flex flex-column justify-content-around'>
-							<div className="d-flex justify-content-between">
+							<div className='d-flex justify-content-between'>
 								<div className='TriggersAnswers'>
 									<div className='d-flex flex-column justify-content-around mb-2'>
-										<button className='btn-sm'>
-											happyAnswers
-										</button>
+										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
@@ -314,9 +354,7 @@ function getOtherAnswer(e) {
 								<div className='ReasonAnswers'>
 									<div className='d-flex flex-column mb-2'>
 										<button className='btn-sm'>happyAnswers</button>
-										<button className='btn-sm'>
-											happyAnswers
-										</button>
+										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
@@ -333,9 +371,9 @@ function getOtherAnswer(e) {
 										onChange={getOtherAnswer}
 									/>
 								</div>
-								<button className='otherAnswerBtn border-secondary border-2 text-dark rounded'
-									onClick={(e) => props.setPrintOtherAnswer(true)}
-								>
+								<button
+									className='otherAnswerBtn border-secondary border-2 text-dark rounded'
+									onClick={(e) => props.setPrintOtherAnswer(true)}>
 									save
 								</button>
 							</div>
@@ -348,12 +386,10 @@ function getOtherAnswer(e) {
 					{/*  */}
 					{props.sadAnswers ? (
 						<div className='section d-flex flex-column justify-content-around'>
-							<div className="d-flex justify-content-between">
+							<div className='d-flex justify-content-between'>
 								<div className='TriggersAnswers'>
 									<div className='d-flex flex-column justify-content-around mb-2'>
-										<button className='btn-sm'>
-											happyAnswers
-										</button>
+										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
@@ -371,9 +407,7 @@ function getOtherAnswer(e) {
 								<div className='ReasonAnswers'>
 									<div className='d-flex flex-column mb-2'>
 										<button className='btn-sm'>happyAnswers</button>
-										<button className='btn-sm'>
-											happyAnswers
-										</button>
+										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
 										<button className='btn-sm'>happyAnswers</button>
@@ -390,17 +424,15 @@ function getOtherAnswer(e) {
 										onChange={getOtherAnswer}
 									/>
 								</div>
-								<button className='otherAnswerBtn border-secondary border-2 text-dark rounded'
-									onClick={(e) => props.setPrintOtherAnswer(true)}
-								>
+								<button
+									className='otherAnswerBtn border-secondary border-2 text-dark rounded'
+									onClick={(e) => props.setPrintOtherAnswer(true)}>
 									save
 								</button>
 							</div>
 							{/*  */}
 						</div>
 					) : null}
-
-
 				</div>
 			</div>
 			{/* body section ends */}
@@ -415,7 +447,9 @@ function getOtherAnswer(e) {
 						</h2>
 					</div>
 					<label className='fw-semibold fs-3 mb-3'>Youth Reflection</label>
-					<button className='sm bg-transparent border border-2 rounded mx-2' onClick={getYouthQuestions}>
+					<button
+						className='sm bg-transparent border border-2 rounded mx-2'
+						onClick={getYouthQuestions}>
 						Get recommended question
 					</button>
 					<textarea
@@ -438,7 +472,9 @@ function getOtherAnswer(e) {
 						</h2>
 					</div>
 					<label className='fw-semibold fs-3 mb-2'>Agent Reflection</label>
-					<button className='sm bg-transparent border border-2 rounded mx-2' onClick={getAgentQuestions}>
+					<button
+						className='sm bg-transparent border border-2 rounded mx-2'
+						onClick={getAgentQuestions}>
 						Get recommended question
 					</button>
 					<textarea
@@ -459,36 +495,22 @@ function getOtherAnswer(e) {
 					<h2 className='title'>Session Bookings</h2>
 					<div>
 						<nav className='mt-5'>
-							<div className="d-flex justify-content-between">
-							<button
-								className='navBtns btn-secondary'
-								onClick={(e) => setNextSession("newAppoinment")}>
-								New Appoinment
-							</button>
-							<button
-								className='navBtns btn-secondary'
-								onClick={(e) => setNextSession("endReason")}>
-								End Reason
-							</button></div>
+							<div className='d-flex justify-content-between'>
+								<button
+									className='navBtns btn-secondary'
+									onClick={(e) => setNextSession("newAppoinment")}>
+									New Appoinment
+								</button>
+								<button
+									className='navBtns btn-secondary'
+									onClick={(e) => setNextSession("endReason")}>
+									End Reason
+								</button>
+							</div>
 
-							
-								{nextSession === "newAppoinment" && (
-									<div>
-      <Calendar
-      className="react-calendar"
-        minDetail="year"
-        // maxDate={new Date(2022, 10, 28)}
-        value={props.date}
-        onChange={props.setDate}
-      />
-      <div className="d-grid mt-3">
-      <button className="calendar_button" >
-        Save Date
-      </button>
-      </div>
-
-      {/* {value && <h3> {value.toLocaleDateString()} </h3>}
-      {value && <h3> {String(value)} </h3>} */}
+							{nextSession === "newAppoinment" && (
+								<div>
+									<ReactCalender />
 								</div>
 							)}
 							{nextSession === "endReason" && (
@@ -512,8 +534,8 @@ function getOtherAnswer(e) {
 				<div className='d-grid mt-5'>
 					<button
 						type='submit'
-						onClick={onFormSubmit}
-						className='btn text-light fs-5 p-4 mb-5'>
+						className='btn text-light fs-5 p-4 mb-5'
+						onClick={submitForm}>
 						Submit
 					</button>
 				</div>

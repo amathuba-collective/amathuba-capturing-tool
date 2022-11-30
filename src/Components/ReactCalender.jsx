@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Calendar from "react-calendar";
-import "../Components/ReactCalender.css";
+import "../Styles/ReactCalender.css";
 import "react-calendar/dist/Calendar.css";
 
 function ReactCalendar(props) {
@@ -33,8 +33,8 @@ function ReactCalendar(props) {
       </button>
       </div>
 
-      {/* {value && <h3> {value.toLocaleDateString()} </h3>}
-      {value && <h3> {String(value)} </h3>} */}
+      {value && <h3> {value.toLocaleDateString()} </h3>}
+      {value && <h3> {String(value)} </h3>}
       </>
   );
 }
