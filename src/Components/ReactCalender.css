@@ -12,11 +12,9 @@
 }
 
 
-
-
  .react-calendar {
   width: 100% !important;
-  height: 25rem !important;
+  height: 28rem !important;
   margin-top: 7rem;
   max-width: 100%;
   background: white;
@@ -100,8 +98,7 @@
 .react-calendar__year-view .react-calendar__tile,
 .react-calendar__decade-view .react-calendar__tile,
 .react-calendar__century-view .react-calendar__tile {
-  padding: 2em 0.5em;
-  background-color: pink !important;
+  padding: 1.1em !important;
   height: 1rem !important;
 }
 .react-calendar__tile {

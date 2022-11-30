@@ -2,7 +2,6 @@ import React from "react"
 import LeftContent from "../Components/LeftContent";
 import CenterContent from "../Components/CenterContent";
 import RightContent from "../Components/RightContent";
-import dayjs from "dayjs";
 
 export default function WellnessForm(){
     const [openingQuestion, setOpeningQuestion] = React.useState("");
@@ -38,7 +37,7 @@ export default function WellnessForm(){
 	const [sadAnswersCapture, setSadAnswersCapture] = React.useState('');
 	const [otherAnswer, setOtherAnswer] = React.useState("")
 	const [printOtherAnswer, setPrintOtherAnswer] = React.useState("");
-    const [date, setDate] = React.useState(dayjs());
+    const [date, setDate] = React.useState("");
 
 
     return(
@@ -73,7 +72,7 @@ export default function WellnessForm(){
                     printOtherAnswer={printOtherAnswer}
                     youthQuestions={youthQuestions}
                     agentQuestions={agentQuestions}
-                    // date={date}
+                    date={date}
                 />
             </div>
             <div className='bg-2 col-6 text-dark'>

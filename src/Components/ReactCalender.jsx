@@ -3,8 +3,8 @@ import Calendar from "react-calendar";
 import "../Components/ReactCalender.css";
 import "react-calendar/dist/Calendar.css";
 
-function ReactCalendar() {
-  const [value, OnValueChange] = useState(new Date());
+function ReactCalendar(props) {
+  // const [value, OnValueChange] = useState(new Date());
 
 
   // const SplitDate = (defaultValue) => {
@@ -24,10 +24,10 @@ function ReactCalendar() {
       className="react-calendar"
         minDetail="year"
         // maxDate={new Date(2022, 10, 28)}
-        value={value}
-        onChange={OnValueChange}
+        value={props.date}
+        onChange={props.setDate}
       />
-      <div className="d-grid mt-1">
+      <div className="d-grid mt-3">
       <button className="calendar_button" >
         Save Date
       </button>

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
-import ReactCalender from "./ReactCalender";
 import "../Styles/CenterContent.css";
+import Calendar from "react-calendar";
+import "../Components/ReactCalender.css";
+import "react-calendar/dist/Calendar.css";
 // import WordCloud from "../Modules/WordCloud";
 // import WordCloudData from "../Assets/Data/data.json"
 
@@ -471,8 +473,22 @@ function getOtherAnswer(e) {
 
 							
 								{nextSession === "newAppoinment" && (
-								<div>
-									<ReactCalender />
+									<div>
+      <Calendar
+      className="react-calendar"
+        minDetail="year"
+        // maxDate={new Date(2022, 10, 28)}
+        value={props.date}
+        onChange={props.setDate}
+      />
+      <div className="d-grid mt-3">
+      <button className="calendar_button" >
+        Save Date
+      </button>
+      </div>
+
+      {/* {value && <h3> {value.toLocaleDateString()} </h3>}
+      {value && <h3> {String(value)} </h3>} */}
 								</div>
 							)}
 							{nextSession === "endReason" && (
