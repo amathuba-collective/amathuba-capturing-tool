@@ -1,0 +1,22 @@
+.leftDashboard{
+    background-color: #EFE5FF !important;
+    height: 100vh !important;
+    
+}
+.rightDashboard{
+    background-color: #F8F8FF !important;
+    height: 100vh !important;
+    overflow-y: scroll;
+}
+.rightDashboard::-webkit-scrollbar{
+	display: none;
+}
+
+.btn{
+    background-color: 
+    #2B3542 !important;
+    color: #EFE5FF !important;
+}
+.card-img-top{
+    width: 10rem;
+} 

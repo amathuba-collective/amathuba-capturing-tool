@@ -2,7 +2,6 @@ import React from "react";
 import LeftContent from "../Components/LeftContent";
 import CenterContent from "../Components/CenterContent";
 import RightContent from "../Components/RightContent";
-import dayjs from "dayjs";
 
 export default function WellnessForm() {
 	const [openingQuestion, setOpeningQuestion] = React.useState("");
@@ -52,7 +51,7 @@ export default function WellnessForm() {
 	const [sadAnswersCapture, setSadAnswersCapture] = React.useState("");
 	const [otherAnswer, setOtherAnswer] = React.useState("");
 	const [printOtherAnswer, setPrintOtherAnswer] = React.useState("");
-	const [date, setDate] = React.useState(dayjs());
+	const [value, onValueChange] = React.useState(false);
 
 	const entireForm = [
 		{ openingQuestion: openingQuestion },
@@ -70,7 +69,8 @@ export default function WellnessForm() {
 		{ newAppointment: value },
 	];
 	const submitContent = () => {
-		document.write(JSON.stringify(entireForm));
+		// document.write(JSON.stringify(entireForm));
+		localStorage.setItem("WellnessForm", JSON.stringify(entireForm));
 	};
 
 	return (
@@ -105,7 +105,7 @@ export default function WellnessForm() {
 						printOtherAnswer={printOtherAnswer}
 						youthQuestions={youthQuestions}
 						agentQuestions={agentQuestions}
-						// date={date}
+						value={value}
 					/>
 				</div>
 				<div className='bg-2 col-6 text-dark'>
@@ -145,8 +145,9 @@ export default function WellnessForm() {
 						setSadAnswersCapture={setSadAnswersCapture}
 						setOtherAnswer={setOtherAnswer}
 						setPrintOtherAnswer={setPrintOtherAnswer}
-						date={date}
-						setDate={setDate}
+						value={value}
+						onValueChange={onValueChange}
+						submitContent={submitContent}
 					/>
 				</div>
 				<div className='bg-3 col'>

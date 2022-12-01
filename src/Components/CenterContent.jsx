@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from "react";
-import ReactCalender from "./ReactCalender";
+import { useNavigate } from "react-router-dom";
+import Calendar from "react-calendar";
+import "../Styles/ReactCalender.css";
+import "react-calendar/dist/Calendar.css";
 import "../Styles/CenterContent.css";
 // import WordCloud from "../Modules/WordCloud";
 // import WordCloudData from "../Assets/Data/data.json"
 
 export default function CenterContent(props) {
+	const navigate = useNavigate();
+
 	const happyAnswers = ["Amazing", "Joyful", "Excited", "Awsome"];
 
 	const [nextSession, setNextSession] = useState("newAppoinment");
@@ -102,6 +107,7 @@ export default function CenterContent(props) {
 
 	function submitForm() {
 		props.submitContent();
+		navigate("/Dashboard");
 	}
 
 	return (
@@ -510,7 +516,16 @@ export default function CenterContent(props) {
 
 							{nextSession === "newAppoinment" && (
 								<div>
-									<ReactCalender />
+									<Calendar
+										className='react-calendar'
+										minDetail='year'
+										// maxDate={new Date(2022, 10, 28)}
+										value={props.value}
+										onChange={props.onValueChange}
+									/>
+									<div className='d-grid mt-3'>
+										<button className='calendar_button'>Save Date</button>
+									</div>
 								</div>
 							)}
 							{nextSession === "endReason" && (
