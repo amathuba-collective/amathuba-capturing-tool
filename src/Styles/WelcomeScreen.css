@@ -1,0 +1,19 @@
+.leftWelcomeScreen{
+    background-color: #F8F8FF !important;
+    height: 100vh !important;
+}
+
+.rightWelcomeScreen{
+    background-color: #2B0076 !important;
+    height: 100vh !important;
+}
+
+.LeftText{
+    position: relative;
+    left: 2rem;
+}
+
+.welcomeBtn{
+ background-color:  #2B0076 !important;
+ color: #F8F8FF !important;   
+}

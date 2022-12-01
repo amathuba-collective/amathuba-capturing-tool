@@ -57,7 +57,7 @@ export default function Dashboard() {
 									<div className='d-grid'>
 										<button
 											href='/#'
-											class='btn fs-5'
+											class='callBtn fs-5'
 											onClick={openWellBiengForm}>
 											Call
 										</button>
@@ -77,7 +77,7 @@ export default function Dashboard() {
 									<p class='card-text fw-semibold fs-4'>18/10/2022</p>
 									<p class='card-text fw-bold fs-5 text-primary'>Well-being</p>
 									<div className='d-grid'>
-										<button href='/#' class='btn fs-5'>
+										<button href='/#' class='callBtn fs-5'>
 											Call
 										</button>
 									</div>
@@ -96,7 +96,7 @@ export default function Dashboard() {
 									<p class='card-text fw-semibold fs-4'>18/10/2022</p>
 									<p class='card-text fw-bold fs-5 text-primary'>Well-being</p>
 									<div className='d-grid'>
-										<button href='/#' class='btn fs-5'>
+										<button href='/#' class='callBtn fs-5'>
 											Call
 										</button>
 									</div>
@@ -115,7 +115,7 @@ export default function Dashboard() {
 									<p class='card-text fw-semibold fs-4'>18/10/2022</p>
 									<p class='card-text fw-bold fs-5 text-primary'>Well-being</p>
 									<div className='d-grid'>
-										<button href='/#' class='btn fs-5'>
+										<button href='/#' class='callBtn fs-5'>
 											Call
 										</button>
 									</div>
@@ -134,7 +134,7 @@ export default function Dashboard() {
 									<p class='card-text fw-semibold fs-4'>18/10/2022</p>
 									<p class='card-text fw-bold fs-5 text-primary'>Well-being</p>
 									<div className='d-grid'>
-										<button href='/#' class='btn fs-5'>
+										<button href='/#' class='callBtn fs-5'>
 											Call
 										</button>
 									</div>
@@ -153,7 +153,7 @@ export default function Dashboard() {
 									<p class='card-text fw-semibold fs-4'>18/10/2022</p>
 									<p class='card-text fw-bold fs-5 text-primary'>Well-being</p>
 									<div className='d-grid'>
-										<button href='/#' class='btn fs-5'>
+										<button href='/#' class='callBtn fs-5'>
 											Call
 										</button>
 									</div>
@@ -172,7 +172,7 @@ export default function Dashboard() {
 									<p class='card-text fw-semibold fs-4'>18/10/2022</p>
 									<p class='card-text fw-bold fs-5 text-primary'>Well-being</p>
 									<div className='d-grid'>
-										<button href='/#' class='btn fs-5'>
+										<button href='/#' class='callBtn fs-5'>
 											Call
 										</button>
 									</div>
@@ -191,7 +191,7 @@ export default function Dashboard() {
 									<p class='card-text fw-semibold fs-4'>18/10/2022</p>
 									<p class='card-text fw-bold fs-5 text-primary'>Well-being</p>
 									<div className='d-grid'>
-										<button href='/#' class='btn fs-5'>
+										<button href='/#' class='callBtn fs-5'>
 											Call
 										</button>
 									</div>
@@ -210,7 +210,7 @@ export default function Dashboard() {
 									<p class='card-text fw-semibold fs-4'>18/10/2022</p>
 									<p class='card-text fw-bold fs-5 text-primary'>Well-being</p>
 									<div className='d-grid'>
-										<button href='/#' class='btn fs-5'>
+										<button href='/#' class='callBtn fs-5'>
 											Call
 										</button>
 									</div>
@@ -229,7 +229,7 @@ export default function Dashboard() {
 									<p class='card-text fw-semibold fs-4'>18/10/2022</p>
 									<p class='card-text fw-bold fs-5 text-primary'>Well-being</p>
 									<div className='d-grid'>
-										<button href='/#' class='btn fs-5'>
+										<button href='/#' class='callBtn fs-5'>
 											Call
 										</button>
 									</div>
@@ -248,7 +248,7 @@ export default function Dashboard() {
 									<p class='card-text fw-semibold fs-4'>18/10/2022</p>
 									<p class='card-text fw-bold fs-5 text-primary'>Well-being</p>
 									<div className='d-grid'>
-										<button href='/#' class='btn fs-5'>
+										<button href='/#' class='callBtn fs-5'>
 											Call
 										</button>
 									</div>
@@ -267,7 +267,7 @@ export default function Dashboard() {
 									<p class='card-text fw-semibold fs-4'>18/10/2022</p>
 									<p class='card-text fw-bold fs-5 text-primary'>Well-being</p>
 									<div className='d-grid'>
-										<button href='/#' class='btn fs-5'>
+										<button href='/#' class='callBtn fs-5'>
 											Call
 										</button>
 									</div>

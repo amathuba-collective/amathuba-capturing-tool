@@ -1,9 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import SignInImage from "../Assets/Welcome 1.png";
+import { useNavigate } from "react-router-dom";
 import "../Styles/Signupscreen.css";
 import { Link } from "react-router-dom";
+// import Select from "@mui/material/Select";
+// import MenuItem from "@mui/material/MenuItem";
+// import InputLabel from "@mui/material/InputLabel";
 
 export default function Signupscreen() {
+	const [workEmail, setWorkEmail] = useState("");
+	const [firstName, setFirstName] = useState("");
+	const [lastName, setLastName] = useState("");
+	const [password, setPassword] = useState("");
+
+	// const [age, setAge] = React.useState("");
+
+	// const handleChange = (event) => {
+	// 	setAge(event.target.value);
+	// };
+
+	const navigate = useNavigate();
+
+	function getSignedIn(e) {
+		e.preventDefault();
+		navigate("/Loginscreen");
+	}
 	return (
 		<div className='container-fluid'>
 			<div className='row'>
@@ -18,7 +39,7 @@ export default function Signupscreen() {
 				</div>
 				<div className='rightSide2 col-6 d-flex justify-content-center'>
 					<div className='form-container w-75 '>
-						<form className='row g-3 mt-5 text-start'>
+						<form className='row g-3 mt-5 text-start' onSubmit={getSignedIn}>
 							<h1 className='signUpTitle'>Sign up</h1>
 							<div className='col-12 mt-5'>
 								<label className='form-label fw-semibold fs-5'>
@@ -26,6 +47,8 @@ export default function Signupscreen() {
 								</label>
 								<input
 									type='email'
+									value={workEmail}
+									onChange={(e) => setWorkEmail(e.target.value)}
 									className='form-control border border-1 border-secondary p-3'
 									id='inputAddress'
 									placeholder='Email'
@@ -41,6 +64,8 @@ export default function Signupscreen() {
 								</label>
 								<input
 									type='text'
+									value={firstName}
+									onChange={(e) => setFirstName(e.target.value)}
 									className='form-control border border-1 border-secondary p-3'
 									id='inputEmail4'
 									placeholder='Name'
@@ -55,6 +80,8 @@ export default function Signupscreen() {
 								</label>
 								<input
 									type='text'
+									value={lastName}
+									onChange={(e) => setLastName(e.target.value)}
 									className='form-control border border-1 border-secondary p-3'
 									id='inputPassword4'
 									placeholder='Surname'
@@ -70,12 +97,31 @@ export default function Signupscreen() {
 								</label>
 								<input
 									type='password'
+									value={password}
+									onChange={(e) => setPassword(e.target.value)}
 									className='form-control border border-1 border-secondary p-3'
 									id='inputAddress2'
 									placeholder='Password'
 									required
 								/>
 							</div>
+							{/*  */}
+							{/* <InputLabel id='demo-simple-select-standard-label'>
+								Job role ?
+							</InputLabel>
+							<Select
+								labelId='demo-simple-select-standard-label'
+								id='demo-simple-select-standard'
+								value={age}
+								onChange={handleChange}
+								label='Age'>
+								<MenuItem value=''>
+									<em>None</em>
+								</MenuItem>
+								<MenuItem value={10}>Super Agent</MenuItem>
+								<MenuItem value={20}>Quality assurance</MenuItem>
+								<MenuItem value={30}>Agent</MenuItem>
+							</Select> */}
 							{/*  */}
 							<div className='col-12'>
 								<div className='form-check'>
