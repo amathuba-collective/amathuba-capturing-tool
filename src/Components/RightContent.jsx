@@ -56,9 +56,6 @@ export default function RightContent(props) {
 		"So tell me more about your weekend ?",
 		"What stood out to you during the weekend ?",
 	];
-	const openingPromptQuestions2 = [
-		"what do u think made u feel this way today ?",
-	];
 
 	const getOtherOpeningQuestion = (e) => {
 		props.setOtherOpeningQuestion(e.target.value);
@@ -183,13 +180,6 @@ export default function RightContent(props) {
 			(openingPromptQuestions) => !openingPromptQuestions,
 		);
 		props.setOpeningQuestion(openingPromptQuestions[0]);
-	};
-
-	const secondPromptQuestion = () => {
-		props.setOpeningPromptQuestions(
-			(openingPromptQuestions) => !openingPromptQuestions,
-		);
-		props.setOpeningQuestion(openingPromptQuestions2[0]);
 	};
 
 	return (
