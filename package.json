@@ -16,6 +16,7 @@
     "axios": "^1.2.0",
     "bootstrap": "^5.2.2",
     "dayjs": "^1.11.6",
+    "netlify-lambda": "^2.0.15",
     "react": "^18.2.0",
     "react-calendar": "^4.0.0",
     "react-dom": "^18.2.0",
@@ -25,9 +26,12 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "develop": "react-scripts start",
     "build": "react-scripts build",
+    "prod": "npm run build; npm run build:lambda",
     "test": "react-scripts test",
+    "start:lambda": "netlify-lambda serve functions",
+    "build:lambda": "netlify-lambda build functions",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
