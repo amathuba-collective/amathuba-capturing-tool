@@ -18,17 +18,6 @@ export default function WellnessForm() {
 	const [openingEmotionQuestion, setOpeningEmotionQuestion] =
 		React.useState("");
 
-	// const [content,setContent] = useState({
-	//     openingQuestion:"",
-	//     otherOpeningQuestion:"",
-	//     awe: {
-	//         dont: "",
-	//     }
-	// })
-	// setAngry({
-	//     key: value,
-	//     ...content
-	// })
 	const [youthData, setYouthData] = React.useState("");
 	const [printYouthData, setPrintYouthData] = React.useState("");
 	const [youthQuestions, setYouthQuestions] = React.useState("");
