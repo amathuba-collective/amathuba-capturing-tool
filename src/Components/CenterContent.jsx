@@ -97,6 +97,7 @@ export default function CenterContent(props) {
 
 	function getYouthReflection(val) {
 		props.setYouthData(val.target.value);
+		// props.setYouthData("");
 		// props.setPrintYouthData(false)
 	}
 
@@ -235,28 +236,28 @@ export default function CenterContent(props) {
 							<div className='d-flex justify-content-between'>
 								<div className='TriggersAnswers'>
 									<div className='d-flex flex-column justify-content-around mb-2'>
-										<button className='btn-sm'>happyAnswers</button>
-										<button className='btn-sm'>happyAnswers</button>
-										<button className='btn-sm'>happyAnswers</button>
-										<button className='btn-sm'>happyAnswers</button>
+										<button className='btn-sm'>angryAnswers</button>
+										<button className='btn-sm'>angryAnswers</button>
+										<button className='btn-sm'>angryAnswers</button>
+										<button className='btn-sm'>angryAnswers</button>
 
-										<button className='btn-sm'>happyAnswers</button>
+										<button className='btn-sm'>angryAnswers</button>
 									</div>
 								</div>
 								<div className='d-flex flex-column justify-content-around mb-2'>
-									<button className='btn-sm'>happyAnswers</button>
-									<button className='btn-sm'>happyAnswers</button>
-									<button className='btn-sm'>happyAnswers</button>
+									<button className='btn-sm'>angryAnswers</button>
+									<button className='btn-sm'>angryAnswers</button>
+									<button className='btn-sm'>angryAnswers</button>
 
-									<button className='btn-sm'>happyAnswers</button>
+									<button className='btn-sm'>angryAnswers</button>
 								</div>
 								<div className='ReasonAnswers'>
 									<div className='d-flex flex-column mb-2'>
-										<button className='btn-sm'>happyAnswers</button>
-										<button className='btn-sm'>happyAnswers</button>
-										<button className='btn-sm'>happyAnswers</button>
-										<button className='btn-sm'>happyAnswers</button>
-										<button className='btn-sm'>happyAnswers</button>
+										<button className='btn-sm'>angryAnswers</button>
+										<button className='btn-sm'>angryAnswers</button>
+										<button className='btn-sm'>angryAnswers</button>
+										<button className='btn-sm'>angryAnswers</button>
+										<button className='btn-sm'>angryAnswers</button>
 									</div>
 								</div>
 							</div>
@@ -288,28 +289,28 @@ export default function CenterContent(props) {
 							<div className='d-flex justify-content-between'>
 								<div className='TriggersAnswers'>
 									<div className='d-flex flex-column justify-content-around mb-2'>
-										<button className='btn-sm'>happyAnswers</button>
-										<button className='btn-sm'>happyAnswers</button>
-										<button className='btn-sm'>happyAnswers</button>
-										<button className='btn-sm'>happyAnswers</button>
+										<button className='btn-sm'>confusedAnswers</button>
+										<button className='btn-sm'>confusedAnswers</button>
+										<button className='btn-sm'>confusedAnswers</button>
+										<button className='btn-sm'>confusedAnswers</button>
 
-										<button className='btn-sm'>happyAnswers</button>
+										<button className='btn-sm'>confusedAnswers</button>
 									</div>
 								</div>
 								<div className='d-flex flex-column justify-content-around mb-2'>
-									<button className='btn-sm'>happyAnswers</button>
-									<button className='btn-sm'>happyAnswers</button>
-									<button className='btn-sm'>happyAnswers</button>
+									<button className='btn-sm'>confusedAnswers</button>
+									<button className='btn-sm'>confusedAnswers</button>
+									<button className='btn-sm'>confusedAnswers</button>
 
-									<button className='btn-sm'>happyAnswers</button>
+									<button className='btn-sm'>confusedAnswers</button>
 								</div>
 								<div className='ReasonAnswers'>
 									<div className='d-flex flex-column mb-2'>
-										<button className='btn-sm'>happyAnswers</button>
-										<button className='btn-sm'>happyAnswers</button>
-										<button className='btn-sm'>happyAnswers</button>
-										<button className='btn-sm'>happyAnswers</button>
-										<button className='btn-sm'>happyAnswers</button>
+										<button className='btn-sm'>confusedAnswers</button>
+										<button className='btn-sm'>confusedAnswers</button>
+										<button className='btn-sm'>confusedAnswers</button>
+										<button className='btn-sm'>confusedAnswers</button>
+										<button className='btn-sm'>confusedAnswers</button>
 									</div>
 								</div>
 							</div>
@@ -337,33 +338,33 @@ export default function CenterContent(props) {
 					{/*  */}
 
 					{/*  */}
-					{props.badAnswers ? (
+					{props.anxiousAnswers ? (
 						<div className='section d-flex flex-column justify-content-around'>
 							<div className='d-flex justify-content-between'>
 								<div className='TriggersAnswers'>
 									<div className='d-flex flex-column justify-content-around mb-2'>
-										<button className='btn-sm'>happyAnswers</button>
-										<button className='btn-sm'>happyAnswers</button>
-										<button className='btn-sm'>happyAnswers</button>
-										<button className='btn-sm'>happyAnswers</button>
+										<button className='btn-sm'>anxiousAnswers</button>
+										<button className='btn-sm'>anxiousAnswers</button>
+										<button className='btn-sm'>anxiousAnswers</button>
+										<button className='btn-sm'>anxiousAnswers</button>
 
-										<button className='btn-sm'>happyAnswers</button>
+										<button className='btn-sm'>anxiousAnswers</button>
 									</div>
 								</div>
 								<div className='d-flex flex-column justify-content-around mb-2'>
-									<button className='btn-sm'>happyAnswers</button>
-									<button className='btn-sm'>happyAnswers</button>
-									<button className='btn-sm'>happyAnswers</button>
+									<button className='btn-sm'>anxiousAnswers</button>
+									<button className='btn-sm'>anxiousAnswers</button>
+									<button className='btn-sm'>anxiousAnswers</button>
 
-									<button className='btn-sm'>happyAnswers</button>
+									<button className='btn-sm'>anxiousAnswers</button>
 								</div>
 								<div className='ReasonAnswers'>
 									<div className='d-flex flex-column mb-2'>
-										<button className='btn-sm'>happyAnswers</button>
-										<button className='btn-sm'>happyAnswers</button>
-										<button className='btn-sm'>happyAnswers</button>
-										<button className='btn-sm'>happyAnswers</button>
-										<button className='btn-sm'>happyAnswers</button>
+										<button className='btn-sm'>anxiousAnswers</button>
+										<button className='btn-sm'>anxiousAnswers</button>
+										<button className='btn-sm'>anxiousAnswers</button>
+										<button className='btn-sm'>anxiousAnswers</button>
+										<button className='btn-sm'>anxiousAnswers</button>
 									</div>
 								</div>
 							</div>
@@ -395,28 +396,28 @@ export default function CenterContent(props) {
 							<div className='d-flex justify-content-between'>
 								<div className='TriggersAnswers'>
 									<div className='d-flex flex-column justify-content-around mb-2'>
-										<button className='btn-sm'>happyAnswers</button>
-										<button className='btn-sm'>happyAnswers</button>
-										<button className='btn-sm'>happyAnswers</button>
-										<button className='btn-sm'>happyAnswers</button>
+										<button className='btn-sm'>sadAnswers</button>
+										<button className='btn-sm'>sadAnswers</button>
+										<button className='btn-sm'>sadAnswers</button>
+										<button className='btn-sm'>sadAnswers</button>
 
-										<button className='btn-sm'>happyAnswers</button>
+										<button className='btn-sm'>sadAnswers</button>
 									</div>
 								</div>
 								<div className='d-flex flex-column justify-content-around mb-2'>
-									<button className='btn-sm'>happyAnswers</button>
-									<button className='btn-sm'>happyAnswers</button>
-									<button className='btn-sm'>happyAnswers</button>
+									<button className='btn-sm'>sadAnswers</button>
+									<button className='btn-sm'>sadAnswers</button>
+									<button className='btn-sm'>sadAnswers</button>
 
-									<button className='btn-sm'>happyAnswers</button>
+									<button className='btn-sm'>sadAnswers</button>
 								</div>
 								<div className='ReasonAnswers'>
 									<div className='d-flex flex-column mb-2'>
-										<button className='btn-sm'>happyAnswers</button>
-										<button className='btn-sm'>happyAnswers</button>
-										<button className='btn-sm'>happyAnswers</button>
-										<button className='btn-sm'>happyAnswers</button>
-										<button className='btn-sm'>happyAnswers</button>
+										<button className='btn-sm'>sadAnswers</button>
+										<button className='btn-sm'>sadAnswers</button>
+										<button className='btn-sm'>sadAnswers</button>
+										<button className='btn-sm'>sadAnswers</button>
+										<button className='btn-sm'>sadAnswers</button>
 									</div>
 								</div>
 							</div>

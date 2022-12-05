@@ -27,7 +27,7 @@ export default function RightContent(props) {
 		" what makes you this Confused ?",
 		"what caused you to be this Confused ?",
 	];
-	const anxiosQuestions = [
+	const anxiousQuestions = [
 		" So tell me about your anxios ?",
 		" Why are you this anxios ?",
 		" what makes you this anxios ?",
@@ -50,6 +50,14 @@ export default function RightContent(props) {
 		" Why is your youth Sad ?",
 		" what makes you this youth ?",
 		"what caused you to be this youth?",
+	];
+
+	const openingPromptQuestions = [
+		"So tell me more about your weekend ?",
+		"What stood out to you during the weekend ?",
+	];
+	const openingPromptQuestions2 = [
+		"what do u think made u feel this way today ?",
 	];
 
 	const getOtherOpeningQuestion = (e) => {
@@ -79,57 +87,69 @@ export default function RightContent(props) {
 		props.setAngryAnswers((angryAnswers) => !angryAnswers);
 	};
 	const onAngryQuestion2Clicked = (e) => {
+		props.setAngryAnswers((angryAnswers) => !angryAnswers);
 		props.setOpeningEmotionQuestion(angryQuestions[1]);
 	};
 	const onAngryQuestion3Clicked = (e) => {
+		props.setAngryAnswers((angryAnswers) => !angryAnswers);
 		props.setOpeningEmotionQuestion(angryQuestions[2]);
 	};
 	const onAngryQuestion4Clicked = (e) => {
+		props.setAngryAnswers((angryAnswers) => !angryAnswers);
 		props.setOpeningEmotionQuestion(angryQuestions[3]);
 	};
 
 	const onConfusedQuestion1Clicked = (e) => {
-		props.setOpeningEmotionQuestion(happyQuestions[0]);
+		props.setOpeningEmotionQuestion(confusedQuestions[0]);
 		props.setConfusedAnswers((confusedAnswers) => !confusedAnswers);
 	};
 	const onConfusedQuestion2Clicked = (e) => {
-		props.setOpeningEmotionQuestion(happyQuestions[0]);
+		props.setOpeningEmotionQuestion(confusedQuestions[1]);
+		props.setConfusedAnswers((confusedAnswers) => !confusedAnswers);
 	};
 	const onConfusedQuestion3Clicked = (e) => {
-		props.setOpeningEmotionQuestion(happyQuestions[0]);
+		props.setOpeningEmotionQuestion(confusedQuestions[2]);
+		props.setConfusedAnswers((confusedAnswers) => !confusedAnswers);
 	};
 	const onConfusedQuestion4Clicked = (e) => {
-		props.setOpeningEmotionQuestion(happyQuestions[0]);
+		props.setOpeningEmotionQuestion(confusedQuestions[3]);
+		props.setConfusedAnswers((confusedAnswers) => !confusedAnswers);
 		// alert("answer created")
 	};
 
 	const onAnxiousQuestion1Clicked = (e) => {
-		props.setOpeningEmotionQuestion(happyQuestions[0]);
-		props.setBadAnswers((badAnswers) => !badAnswers);
+		props.setOpeningEmotionQuestion(anxiousQuestions[0]);
+		props.setAnxiousAnswers((anxiousAnswers) => !anxiousAnswers);
 	};
 	const onAnxiousQuestion2Clicked = (e) => {
-		props.setOpeningEmotionQuestion(happyQuestions[0]);
+		props.setOpeningEmotionQuestion(anxiousQuestions[1]);
+		props.setAnxiousAnswers((anxiousAnswers) => !anxiousAnswers);
 	};
 	const onAnxiousQuestion3Clicked = (e) => {
-		props.setOpeningEmotionQuestion(happyQuestions[0]);
+		props.setOpeningEmotionQuestion(anxiousQuestions[2]);
+		props.setAnxiousAnswers((anxiousAnswers) => !anxiousAnswers);
 	};
 	const onAnxiousQuestion4Clicked = (e) => {
-		props.setOpeningEmotionQuestion(happyQuestions[0]);
+		props.setOpeningEmotionQuestion(anxiousQuestions[3]);
+		props.setAnxiousAnswers((anxiousAnswers) => !anxiousAnswers);
 		// alert("answer created")
 	};
 
 	const onSadQuestion1Clicked = (e) => {
-		props.setOpeningEmotionQuestion(happyQuestions[0]);
+		props.setOpeningEmotionQuestion(sadQuestions[0]);
 		props.setSadAnswers((sadAnswers) => !sadAnswers);
 	};
 	const onSadQuestion2Clicked = (e) => {
-		props.setOpeningEmotionQuestion(happyQuestions[0]);
+		props.setOpeningEmotionQuestion(sadQuestions[1]);
+		props.setSadAnswers((sadAnswers) => !sadAnswers);
 	};
 	const onSadQuestion3Clicked = (e) => {
-		props.setOpeningEmotionQuestion(happyQuestions[0]);
+		props.setOpeningEmotionQuestion(sadQuestions[2]);
+		props.setSadAnswers((sadAnswers) => !sadAnswers);
 	};
 	const onSadQuestion4Clicked = (e) => {
-		props.setOpeningEmotionQuestion(happyQuestions[0]);
+		props.setOpeningEmotionQuestion(sadQuestions[3]);
+		props.setSadAnswers((sadAnswers) => !sadAnswers);
 	};
 
 	const onYouthReflectionQ1Clicked = (e) => {
@@ -158,6 +178,20 @@ export default function RightContent(props) {
 		props.setAgentQuestions(agentReflectionQuestions[3]);
 	};
 
+	const createPromptOpeningQuestions = (e) => {
+		props.setOpeningPromptQuestions(
+			(openingPromptQuestions) => !openingPromptQuestions,
+		);
+		props.setOpeningQuestion(openingPromptQuestions[0]);
+	};
+
+	const secondPromptQuestion = () => {
+		props.setOpeningPromptQuestions(
+			(openingPromptQuestions) => !openingPromptQuestions,
+		);
+		props.setOpeningQuestion(openingPromptQuestions2[0]);
+	};
+
 	return (
 		<div className='container-fluid'>
 			<div>
@@ -175,7 +209,7 @@ export default function RightContent(props) {
 					<div className='d-flex flex-column mt-4'>
 						<button
 							className=' border-1 border-secondary rounded mb-2 p-1'
-							onClick={(e) => props.setOpeningQuestion(openingQuestions[0])}>
+							onClick={createPromptOpeningQuestions}>
 							{" "}
 							{openingQuestions[0]}
 						</button>
@@ -260,22 +294,22 @@ export default function RightContent(props) {
 							<h2 className='text-center'>Emotion questions</h2>
 							<button
 								className='border-1 border-secondary rounded mb-2 p-1'
-								onClick={onHappyQuestion1Clicked}>
+								onClick={onAngryQuestion1Clicked}>
 								{angryQuestions[0]}
 							</button>
 							<button
 								className='border-1 border-secondary rounded mb-2 p-1'
-								onClick={onHappyQuestion1Clicked}>
+								onClick={onAngryQuestion2Clicked}>
 								{angryQuestions[1]}
 							</button>
 							<button
 								className='border-1 border-secondary rounded mb-2 p-1'
-								onClick={onHappyQuestion1Clicked}>
+								onClick={onAngryQuestion3Clicked}>
 								{angryQuestions[2]}
 							</button>
 							<button
 								className='border-1 border-secondary rounded mb-2 p-1'
-								onClick={onHappyQuestion1Clicked}>
+								onClick={onAngryQuestion4Clicked}>
 								{angryQuestions[3]}
 							</button>
 							<div className='text-center mt-3 d-flex align-items-center'>
@@ -301,27 +335,27 @@ export default function RightContent(props) {
 							<h2 className='text-center'>Emotion questions</h2>
 							<button
 								className='border-1 border-secondary rounded mb-2 p-1'
-								onClick={onHappyQuestion1Clicked}>
+								onClick={onConfusedQuestion1Clicked}>
 								{confusedQuestions[0]}
 							</button>
 							<button
 								className='border-1 border-secondary rounded mb-2 p-1'
-								onClick={onHappyQuestion1Clicked}>
+								onClick={onConfusedQuestion2Clicked}>
 								{confusedQuestions[1]}
 							</button>
 							<button
 								className='border-1 border-secondary rounded mb-2 p-1'
-								onClick={onHappyQuestion1Clicked}>
+								onClick={onConfusedQuestion3Clicked}>
 								{confusedQuestions[2]}
 							</button>
 							<button
 								className='border-1 border-secondary rounded mb-2 p-1'
-								onClick={onHappyQuestion1Clicked}>
+								onClick={onConfusedQuestion4Clicked}>
 								{confusedQuestions[2]}
 							</button>
 							<div
 								className='text-center mt-3 d-flex align-items-center'
-								onClick={onHappyQuestion1Clicked}>
+								onChange={getOtherOpeningQuestion}>
 								<div className='input-group mb-3'>
 									<input
 										type='text'
@@ -344,23 +378,23 @@ export default function RightContent(props) {
 							<h2 className='text-center'>Emotion questions</h2>
 							<button
 								className='border-1 border-secondary rounded mb-2 p-1'
-								onClick={onHappyQuestion1Clicked}>
-								{anxiosQuestions[0]}
+								onClick={onAnxiousQuestion1Clicked}>
+								{anxiousQuestions[0]}
 							</button>
 							<button
 								className='border-1 border-secondary rounded mb-2 p-1'
-								onClick={onHappyQuestion1Clicked}>
-								{anxiosQuestions[1]}
+								onClick={onAnxiousQuestion2Clicked}>
+								{anxiousQuestions[1]}
 							</button>
 							<button
 								className='border-1 border-secondary rounded mb-2 p-1'
-								onClick={onHappyQuestion1Clicked}>
-								{anxiosQuestions[2]}
+								onClick={onAnxiousQuestion3Clicked}>
+								{anxiousQuestions[2]}
 							</button>
 							<button
 								className='border-1 border-secondary rounded mb-2 p-1'
-								onClick={onHappyQuestion1Clicked}>
-								{anxiosQuestions[3]}
+								onClick={onAnxiousQuestion4Clicked}>
+								{anxiousQuestions[3]}
 							</button>
 							<div className='text-center mt-3 d-flex align-items-center'>
 								<div className='input-group mb-3'>
@@ -385,23 +419,23 @@ export default function RightContent(props) {
 							<h2 className='text-center'>Emotion questions</h2>
 							<button
 								className='border-1 border-secondary rounded mb-2 p-1'
-								onClick={onHappyQuestion1Clicked}>
+								onClick={onSadQuestion1Clicked}>
 								{sadQuestions[0]}
 							</button>
 							<button
 								className='border-1 border-secondary rounded mb-2 p-1'
-								onClick={onHappyQuestion1Clicked}>
+								onClick={onSadQuestion2Clicked}>
 								{sadQuestions[1]}
 							</button>
 							<button
 								className='border-1 border-secondary rounded mb-2 p-1'
-								onClick={onHappyQuestion1Clicked}>
+								onClick={onSadQuestion3Clicked}>
 								{sadQuestions[2]}
 							</button>
 							<button
 								className='border-1 border-secondary rounded mb-2 p-1'
-								onClick={onHappyQuestion1Clicked}>
-								{sadQuestions[3]}s
+								onClick={onSadQuestion4Clicked}>
+								{sadQuestions[3]}
 							</button>
 							<div className='text-center mt-3 d-flex align-items-center'>
 								<div className='input-group mb-3'>
@@ -514,6 +548,19 @@ export default function RightContent(props) {
 						Prompted Questions
 					</h2>
 					<hr className='border border-2 border-secondary opacity-50 rounded' />
+
+					<div>
+						{props.openingPromptQuestions ? (
+							<div className='mb-5 d-flex flex-column mt-4'>
+								<button className='border-1 border-secondary rounded mb-2 p-1'>
+									{openingPromptQuestions[0]}
+								</button>
+								<button className='border-1 border-secondary rounded mb-2 p-1'>
+									{openingPromptQuestions[1]}
+								</button>
+							</div>
+						) : null}
+					</div>
 				</div>
 			</div>
 		</div>

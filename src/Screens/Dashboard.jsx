@@ -2,7 +2,7 @@ import React from "react";
 import { Grid, Avatar, Text } from "@nextui-org/react";
 import { useNavigate } from "react-router-dom";
 import ProfileImage from "../Assets/AgentProfile.png";
-import YouthImage from "../Assets/png-clipart-iphone-world-emoji-day-man-iphone-electronics-face.png";
+import YouthImage from "../Assets/21-211191_demo-founder-anonymous-png-transparent-png.png";
 import "../Styles/Dashboard.css";
 
 export default function Dashboard() {
@@ -28,7 +28,7 @@ export default function Dashboard() {
 						<Grid className='d-flex flex-column align-items-center'>
 							<Avatar
 								src={ProfileImage}
-								css={{ size: "7rem" }}
+								css={{ size: "8rem" }}
 								className='mt-4'
 								bordered
 								color='primary'
@@ -46,8 +46,12 @@ export default function Dashboard() {
 					<div className='row mt-5'>
 						{/*  */}
 						<div className='col-sm-3 mb-5'>
-							<div class='card'>
-								<img src={YouthImage} class='card-img-top' alt='...' />
+							<div class='card text-center'>
+								<img
+									src={YouthImage}
+									class='card-img-top d-flex align-items-center'
+									alt='...'
+								/>
 								<div class='card-body'>
 									<h5 class='card-title mt-2 mb-1 fw-bold fs-3'>
 										Ronnnie Hand
@@ -57,7 +61,7 @@ export default function Dashboard() {
 									<div className='d-grid'>
 										<button
 											href='/#'
-											class='callBtn fs-5'
+											class='callBtn fs-5 rounded border border-1 border-transparent p-1'
 											onClick={openWellBiengForm}>
 											Call
 										</button>
@@ -68,8 +72,12 @@ export default function Dashboard() {
 						{/*  */}
 						{/*  */}
 						<div className='col-sm-3 mb-5'>
-							<div class='card'>
-								<img src={YouthImage} class='card-img-top' alt='...' />
+							<div class='card text-center'>
+								<img
+									src={YouthImage}
+									class='card-img-top d-flex align-items-center'
+									alt='...'
+								/>
 								<div class='card-body'>
 									<h5 class='card-title mt-2 mb-1 fw-bold fs-3'>
 										Ronnnie Hand
@@ -77,7 +85,10 @@ export default function Dashboard() {
 									<p class='card-text fw-semibold fs-4'>18/10/2022</p>
 									<p class='card-text fw-bold fs-5 text-primary'>Well-being</p>
 									<div className='d-grid'>
-										<button href='/#' class='callBtn fs-5'>
+										<button
+											href='/#'
+											class='callBtn fs-5 rounded border border-1 border-transparent p-1'
+											onClick={openWellBiengForm}>
 											Call
 										</button>
 									</div>
@@ -87,8 +98,12 @@ export default function Dashboard() {
 						{/*  */}
 						{/*  */}
 						<div className='col-sm-3 mb-5'>
-							<div class='card'>
-								<img src={YouthImage} class='card-img-top' alt='...' />
+							<div class='card text-center'>
+								<img
+									src={YouthImage}
+									class='card-img-top d-flex align-items-center'
+									alt='...'
+								/>
 								<div class='card-body'>
 									<h5 class='card-title mt-2 mb-1 fw-bold fs-3'>
 										Ronnnie Hand
@@ -96,7 +111,10 @@ export default function Dashboard() {
 									<p class='card-text fw-semibold fs-4'>18/10/2022</p>
 									<p class='card-text fw-bold fs-5 text-primary'>Well-being</p>
 									<div className='d-grid'>
-										<button href='/#' class='callBtn fs-5'>
+										<button
+											href='/#'
+											class='callBtn fs-5 rounded border border-1 border-transparent p-1'
+											onClick={openWellBiengForm}>
 											Call
 										</button>
 									</div>
@@ -106,8 +124,12 @@ export default function Dashboard() {
 						{/*  */}
 						{/*  */}
 						<div className='col-sm-3 mb-5'>
-							<div class='card'>
-								<img src={YouthImage} class='card-img-top' alt='...' />
+							<div class='card text-center'>
+								<img
+									src={YouthImage}
+									class='card-img-top d-flex align-items-center'
+									alt='...'
+								/>
 								<div class='card-body'>
 									<h5 class='card-title mt-2 mb-1 fw-bold fs-3'>
 										Ronnnie Hand
@@ -115,159 +137,10 @@ export default function Dashboard() {
 									<p class='card-text fw-semibold fs-4'>18/10/2022</p>
 									<p class='card-text fw-bold fs-5 text-primary'>Well-being</p>
 									<div className='d-grid'>
-										<button href='/#' class='callBtn fs-5'>
-											Call
-										</button>
-									</div>
-								</div>
-							</div>
-						</div>
-						{/*  */}
-						{/*  */}
-						<div className='col-sm-3 mb-5'>
-							<div class='card'>
-								<img src={YouthImage} class='card-img-top' alt='...' />
-								<div class='card-body'>
-									<h5 class='card-title mt-2 mb-1 fw-bold fs-3'>
-										Ronnnie Hand
-									</h5>
-									<p class='card-text fw-semibold fs-4'>18/10/2022</p>
-									<p class='card-text fw-bold fs-5 text-primary'>Well-being</p>
-									<div className='d-grid'>
-										<button href='/#' class='callBtn fs-5'>
-											Call
-										</button>
-									</div>
-								</div>
-							</div>
-						</div>
-						{/*  */}
-						{/*  */}
-						<div className='col-sm-3 mb-5'>
-							<div class='card'>
-								<img src={YouthImage} class='card-img-top' alt='...' />
-								<div class='card-body'>
-									<h5 class='card-title mt-2 mb-1 fw-bold fs-3'>
-										Ronnnie Hand
-									</h5>
-									<p class='card-text fw-semibold fs-4'>18/10/2022</p>
-									<p class='card-text fw-bold fs-5 text-primary'>Well-being</p>
-									<div className='d-grid'>
-										<button href='/#' class='callBtn fs-5'>
-											Call
-										</button>
-									</div>
-								</div>
-							</div>
-						</div>
-						{/*  */}
-						{/*  */}
-						<div className='col-sm-3 mb-5'>
-							<div class='card'>
-								<img src={YouthImage} class='card-img-top' alt='...' />
-								<div class='card-body'>
-									<h5 class='card-title mt-2 mb-1 fw-bold fs-3'>
-										Ronnnie Hand
-									</h5>
-									<p class='card-text fw-semibold fs-4'>18/10/2022</p>
-									<p class='card-text fw-bold fs-5 text-primary'>Well-being</p>
-									<div className='d-grid'>
-										<button href='/#' class='callBtn fs-5'>
-											Call
-										</button>
-									</div>
-								</div>
-							</div>
-						</div>
-						{/*  */}
-						{/*  */}
-						<div className='col-sm-3 mb-5'>
-							<div class='card'>
-								<img src={YouthImage} class='card-img-top' alt='...' />
-								<div class='card-body'>
-									<h5 class='card-title mt-2 mb-1 fw-bold fs-3'>
-										Ronnnie Hand
-									</h5>
-									<p class='card-text fw-semibold fs-4'>18/10/2022</p>
-									<p class='card-text fw-bold fs-5 text-primary'>Well-being</p>
-									<div className='d-grid'>
-										<button href='/#' class='callBtn fs-5'>
-											Call
-										</button>
-									</div>
-								</div>
-							</div>
-						</div>
-						{/*  */}
-						{/*  */}
-						<div className='col-sm-3 mb-5'>
-							<div class='card'>
-								<img src={YouthImage} class='card-img-top' alt='...' />
-								<div class='card-body'>
-									<h5 class='card-title mt-2 mb-1 fw-bold fs-3'>
-										Ronnnie Hand
-									</h5>
-									<p class='card-text fw-semibold fs-4'>18/10/2022</p>
-									<p class='card-text fw-bold fs-5 text-primary'>Well-being</p>
-									<div className='d-grid'>
-										<button href='/#' class='callBtn fs-5'>
-											Call
-										</button>
-									</div>
-								</div>
-							</div>
-						</div>
-						{/*  */}
-						{/*  */}
-						<div className='col-sm-3 mb-5'>
-							<div class='card'>
-								<img src={YouthImage} class='card-img-top' alt='...' />
-								<div class='card-body'>
-									<h5 class='card-title mt-2 mb-1 fw-bold fs-3'>
-										Ronnnie Hand
-									</h5>
-									<p class='card-text fw-semibold fs-4'>18/10/2022</p>
-									<p class='card-text fw-bold fs-5 text-primary'>Well-being</p>
-									<div className='d-grid'>
-										<button href='/#' class='callBtn fs-5'>
-											Call
-										</button>
-									</div>
-								</div>
-							</div>
-						</div>
-						{/*  */}
-						{/*  */}
-						<div className='col-sm-3 mb-5'>
-							<div class='card'>
-								<img src={YouthImage} class='card-img-top' alt='...' />
-								<div class='card-body'>
-									<h5 class='card-title mt-2 mb-1 fw-bold fs-3'>
-										Ronnnie Hand
-									</h5>
-									<p class='card-text fw-semibold fs-4'>18/10/2022</p>
-									<p class='card-text fw-bold fs-5 text-primary'>Well-being</p>
-									<div className='d-grid'>
-										<button href='/#' class='callBtn fs-5'>
-											Call
-										</button>
-									</div>
-								</div>
-							</div>
-						</div>
-						{/*  */}
-						{/*  */}
-						<div className='col-sm-3 mb-5'>
-							<div class='card'>
-								<img src={YouthImage} class='card-img-top' alt='...' />
-								<div class='card-body'>
-									<h5 class='card-title mt-2 mb-1 fw-bold fs-3'>
-										Ronnnie Hand
-									</h5>
-									<p class='card-text fw-semibold fs-4'>18/10/2022</p>
-									<p class='card-text fw-bold fs-5 text-primary'>Well-being</p>
-									<div className='d-grid'>
-										<button href='/#' class='callBtn fs-5'>
+										<button
+											href='/#'
+											class='callBtn fs-5 rounded border border-1 border-transparent p-1'
+											onClick={openWellBiengForm}>
 											Call
 										</button>
 									</div>

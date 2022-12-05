@@ -12,18 +12,25 @@ export default function Signupscreen() {
 	const [firstName, setFirstName] = useState("");
 	const [lastName, setLastName] = useState("");
 	const [password, setPassword] = useState("");
+	const [password2, setPassword2] = useState("");
 
 	// const [age, setAge] = React.useState("");
 
 	// const handleChange = (event) => {
 	// 	setAge(event.target.value);
 	// };
+	const signupform = [workEmail, firstName, lastName, password, password2];
 
 	const navigate = useNavigate();
 
 	function getSignedIn(e) {
 		e.preventDefault();
-		navigate("/Loginscreen");
+		if (password !== password2) {
+			alert("Passwords do not match");
+		} else {
+			navigate("/Loginscreen");
+			console.log(signupform);
+		}
 	}
 	return (
 		<div className='container-fluid'>
@@ -99,6 +106,22 @@ export default function Signupscreen() {
 									type='password'
 									value={password}
 									onChange={(e) => setPassword(e.target.value)}
+									className='form-control border border-1 border-secondary p-3'
+									id='inputAddress2'
+									placeholder='Password'
+									required
+								/>
+							</div>
+							<div className='col-12'>
+								<label
+									for='inputAddress2'
+									className='form-label fw-semibold fs-5'>
+									Confirm Password
+								</label>
+								<input
+									type='password'
+									value={password2}
+									onChange={(e) => setPassword2(e.target.value)}
 									className='form-control border border-1 border-secondary p-3'
 									id='inputAddress2'
 									placeholder='Password'

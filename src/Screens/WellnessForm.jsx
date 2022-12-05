@@ -36,6 +36,8 @@ export default function WellnessForm() {
 	const [printAgentData, setPrintAgentData] = React.useState("");
 	const [agentQuestions, setAgentQuestions] = React.useState("");
 	const [happyAnswers, setHappyAnswers] = React.useState("");
+	const [openingPromptQuestions, setOpeningPromptQuestions] =
+		React.useState("");
 	const [angryAnswers, setAngryAnswers] = React.useState("");
 	const [confusedAnswers, setConfusedAnswers] = React.useState("");
 	const [anxiousAnswers, setAnxiousAnswers] = React.useState("");
@@ -89,10 +91,10 @@ export default function WellnessForm() {
 						agentData={agentData}
 						printAgentData={printAgentData}
 						happyAnswers={happyAnswers}
-						angryAnswers={happyAnswers}
-						confusedAnswers={happyAnswers}
-						anxiousAnswers={happyAnswers}
-						sadAnswers={happyAnswers}
+						angryAnswers={angryAnswers}
+						confusedAnswers={confusedAnswers}
+						anxiousAnswers={anxiousAnswers}
+						sadAnswers={sadAnswers}
 						happyAnswersCapture1={happyAnswersCapture1}
 						happyAnswersCapture2={happyAnswersCapture2}
 						happyAnswersCapture3={happyAnswersCapture3}
@@ -106,6 +108,7 @@ export default function WellnessForm() {
 						youthQuestions={youthQuestions}
 						agentQuestions={agentQuestions}
 						value={value}
+						openingPromptQuestions={openingPromptQuestions}
 					/>
 				</div>
 				<div className='bg-2 col-6 text-dark'>
@@ -176,6 +179,8 @@ export default function WellnessForm() {
 						setAgentQuestions={setAgentQuestions}
 						youthQuestions={youthQuestions}
 						agentQuestions={agentQuestions}
+						setOpeningPromptQuestions={setOpeningPromptQuestions}
+						openingPromptQuestions={openingPromptQuestions}
 					/>
 				</div>
 			</div>
