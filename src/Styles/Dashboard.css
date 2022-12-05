@@ -19,3 +19,11 @@
 /* .card-img-top{
     width: 15rem;
 }  */
+
+.cutOff-text{
+    /* --max-lines : 15;
+    --line-height: 1.4;
+    max-height: calc(var(--max-lines) * 1em * var (var(--line-height)));
+    line-height: var(--line-height); */
+    max-height: 70vh !important;
+}

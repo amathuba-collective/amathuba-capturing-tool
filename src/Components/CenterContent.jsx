@@ -524,9 +524,6 @@ export default function CenterContent(props) {
 										value={props.value}
 										onChange={props.onValueChange}
 									/>
-									<div className='d-grid mt-3'>
-										<button className='calendar_button'>Save Date</button>
-									</div>
 								</div>
 							)}
 							{nextSession === "endReason" && (
