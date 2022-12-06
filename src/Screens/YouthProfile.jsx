@@ -59,7 +59,7 @@ export default function YouthProfile() {
 							</Grid>
 						</Grid.Container>
 						<p className='mt-3 fs-5'>
-							Current Status : <span className='text-primary'>Well Bieng</span>
+							Current Status : <span className='text-primary'>Well Being</span>
 						</p>
 						<div className='informationContent'>
 							<h3>Basic Information</h3>
