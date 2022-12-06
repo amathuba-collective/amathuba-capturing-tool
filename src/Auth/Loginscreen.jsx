@@ -4,15 +4,27 @@ import { Link, useNavigate } from "react-router-dom";
 import "../Styles/Loginscreen.css";
 
 export default function Loginscreen() {
+	const [loginFormData, setLoginFormData] = useState({
+		email: "",
+		password: "",
+	});
+
+	const { email, password } = loginFormData;
+
+	const onInputChange = (e) => {
+		setLoginFormData({
+			...loginFormData,
+			[e.target.name]: e.target.value,
+		});
+	};
+
 	const navigate = useNavigate();
 
 	function onLogin(e) {
 		e.preventDefault();
 		navigate("/WelcomeScreen");
+		alert(JSON.stringify(loginFormData));
 	}
-
-	const [email, setEmail] = useState();
-	const [password, setPassword] = useState();
 	return (
 		<div className='container-fluid'>
 			<div className='row'>
@@ -26,10 +38,10 @@ export default function Loginscreen() {
 								</label>
 								<input
 									type='email'
+									name='email'
 									value={email}
-									onChange={(e) => setEmail(e.target.value)}
+									onChange={onInputChange}
 									className='form-control border border-1 border-secondary p-3'
-									id='inputAddress'
 									placeholder='Email'
 									required
 								/>
@@ -43,10 +55,10 @@ export default function Loginscreen() {
 								</label>
 								<input
 									type='password'
+									name='password'
 									value={password}
-									onChange={(e) => setPassword(e.target.value)}
+									onChange={onInputChange}
 									className='form-control border border-1 border-secondary p-3'
-									id='inputAddress2'
 									placeholder='Password'
 									required
 								/>
