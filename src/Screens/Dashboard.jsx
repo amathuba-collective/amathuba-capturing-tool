@@ -1,15 +1,13 @@
 import React from "react";
 import { Grid, Avatar, Text } from "@nextui-org/react";
 import { useNavigate } from "react-router-dom";
-import ProfileImage from "../Assets/AgentProfile.png";
-import YouthImage from "../Assets/demoYouthImage.jpg";
 import "../Styles/Dashboard.css";
 import differentYouth from "../Data/dashBoard.json";
 import AgentData from "../Data/agentProfile.json";
 
 export default function Dashboard() {
 	const navigate = useNavigate();
-	function openWellBiengForm(e) {
+	function openWellBiengForm(e, youth) {
 		e.preventDefault();
 		navigate("/WellnessForm");
 	}
@@ -31,7 +29,7 @@ export default function Dashboard() {
 							<Grid.Container className='d-flex justify-content-center align-items-center'>
 								<Grid className='d-flex flex-column align-items-center'>
 									<Avatar
-										src={ProfileImage}
+										src={agent.imgUrl}
 										css={{ size: "8rem" }}
 										className='mt-4'
 										bordered
@@ -60,7 +58,7 @@ export default function Dashboard() {
 								<div className='col-sm-3 mb-5' key={youth.id}>
 									<div class='cutOff-text card text-center'>
 										<img
-											src={YouthImage}
+											src={youth.imgUrl}
 											class='card-img-top d-flex align-items-center'
 											alt='...'
 										/>
@@ -74,7 +72,6 @@ export default function Dashboard() {
 											</p>
 											<div className='d-grid'>
 												<button
-													href='/#'
 													class='callBtn fs-5 rounded border border-1 border-transparent p-1'
 													onClick={openWellBiengForm}>
 													Call

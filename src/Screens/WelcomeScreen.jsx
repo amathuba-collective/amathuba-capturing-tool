@@ -13,7 +13,7 @@ export default function WelcomeScreen() {
 				<div className='leftWelcomeScreen col-9 d-flex align-items-center'>
 					<div className='LeftText'>
 						<p className='fs-1 fw-semibold'>
-							Welcome Agent 👋
+							Welcome Tristan 👋
 							<br />
 							Go and change the world !<br />
 							And Dont forget to have fun
