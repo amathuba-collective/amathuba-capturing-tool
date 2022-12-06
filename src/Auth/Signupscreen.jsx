@@ -1,4 +1,5 @@
-import React, { Fragment, useState } from "react";
+import { Axios } from "axios";
+import React, { Fragment, useState, useEffect } from "react";
 import SignInImage from "../Assets/Welcome 1.png";
 import { useNavigate } from "react-router-dom";
 import "../Styles/Signupscreen.css";
@@ -18,6 +19,21 @@ export default function Signupscreen() {
 
 	const { workEmail, firstName, lastName, password, password2 } =
 		signUpFormData;
+
+	// useEffect(() => {
+	// 	Axios({
+	// 		statusCode: 200,
+	// 		method: "Post",
+	// 		url: "https://amathuba-collective.netlify.app/netlify/function/login",
+	// 		body: JSON.parse({ message: "lets" }),
+	// 	})
+	// 		.then((respnse) => {
+	// 			console.log(respnse);
+	// 		})
+	// 		.catch((err) => {
+	// 			console.log(err.message);
+	// 		});
+	// });
 
 	const onChange = (e) =>
 		setSignUpFormData({

@@ -13,7 +13,6 @@ export default function LeftContent(props) {
 						css={{ size: "7rem" }}
 						className='mt-4'
 						bordered
-						color='primary'
 					/>
 					<Text className='mt-2 mb-1 fw-bold fs-3'>Ronnnie Hand</Text>
 					<Text className='mb-2 fw-semibold fs-4'>18/10/2022</Text>

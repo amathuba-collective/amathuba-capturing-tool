@@ -78,6 +78,14 @@ export default function Loginscreen() {
 									</Link>
 								</p>
 							</div>
+							<div className='col-12'>
+								<p className='fs-5 text'>
+									forgot
+									<Link to='#/' className='links'>
+										password ?
+									</Link>
+								</p>
+							</div>
 						</form>
 					</div>
 				</div>

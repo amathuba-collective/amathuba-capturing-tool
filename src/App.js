@@ -7,6 +7,7 @@ import Signupscreen from "./Auth/Signupscreen";
 import Loginscreen from "./Auth/Loginscreen";
 import WelcomeScreen from "./Screens/WelcomeScreen";
 import Dashboard from "./Screens/Dashboard";
+import YouthProfile from "./Screens/YouthProfile";
 
 export default function App() {
 	return (
@@ -16,6 +17,7 @@ export default function App() {
 				<Route path='/Loginscreen' element={<Loginscreen />} />
 				<Route path='/WelcomeScreen' element={<WelcomeScreen />} />
 				<Route path='/Dashboard' element={<Dashboard />} />
+				<Route path='/YouthProfile' element={<YouthProfile />} />
 				<Route path='/WellnessForm' element={<WellnessForm />} />
 			</Routes>
 		</BrowserRouter>

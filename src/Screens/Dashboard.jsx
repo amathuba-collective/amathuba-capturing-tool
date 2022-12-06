@@ -7,9 +7,9 @@ import AgentData from "../Data/agentProfile.json";
 
 export default function Dashboard() {
 	const navigate = useNavigate();
-	function openWellBiengForm(e, youth) {
+	function openYouthProfile(e) {
 		e.preventDefault();
-		navigate("/WellnessForm");
+		navigate("/YouthProfile");
 	}
 
 	function onLogOut() {
@@ -33,7 +33,6 @@ export default function Dashboard() {
 										css={{ size: "8rem" }}
 										className='mt-4'
 										bordered
-										color='primary'
 									/>
 									<Text className='mt-2 mb-1 fw-bold fs-3'>
 										{agent.agentName}
@@ -73,8 +72,8 @@ export default function Dashboard() {
 											<div className='d-grid'>
 												<button
 													class='callBtn fs-5 rounded border border-1 border-transparent p-1'
-													onClick={openWellBiengForm}>
-													Call
+													onClick={openYouthProfile}>
+													View Profile
 												</button>
 											</div>
 										</div>

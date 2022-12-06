@@ -1,0 +1,30 @@
+.left{
+    background-color: #F8F8FF !important;
+    height: 100vh !important;
+    border-right : 1px solid black
+}
+
+.right{
+    background-color: #F8F8FF !important;
+    height: 100vh !important;
+}
+
+.leftcontent{
+    position: relative;
+    top: 6rem;
+    left: 2rem;
+}
+
+.wellBeingBtn{
+    padding: 0.4rem;
+    border : 1px solid transparent;
+    border-radius: 8px;
+    background-color: #2B0076 !important;
+    color: #F8F8FF;
+    width: 10rem;
+}
+
+.fa-phone{
+    color: #F8F8FF;
+    padding: 0.2rem;
+}
