@@ -4,7 +4,7 @@ exports.handler = async (event, context) => {
   Axios({
     method: "post",
     url: "",
-    data: { name: "imiss you alcharne😀" },
+    data: { name: "imiss" },
   })
     .then((response) => {
       console.log(response);
