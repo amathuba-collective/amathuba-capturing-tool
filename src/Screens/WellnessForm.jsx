@@ -61,9 +61,9 @@ export default function WellnessForm() {
 		{ emotion: emotion },
 		{ openingEmotionQuestion: openingEmotionQuestion },
 		{ emotionAnswer1: happyAnswersCapture1 },
-		{ emotionAnswer1: happyAnswersCapture2 },
-		{ emotionAnswer1: happyAnswersCapture3 },
-		{ emotionAnswer1: happyAnswersCapture4 },
+		{ emotionAnswer2: happyAnswersCapture2 },
+		{ emotionAnswer3: happyAnswersCapture3 },
+		{ emotionAnswer4: happyAnswersCapture4 },
 		{ youthQuestions: youthQuestions },
 		{ youthData: youthData },
 		{ agentQuestions: agentQuestions },
@@ -73,6 +73,7 @@ export default function WellnessForm() {
 	const submitContent = () => {
 		// document.write(JSON.stringify(entireForm));
 		localStorage.setItem("WellnessForm", JSON.stringify(entireForm));
+		alert(JSON.stringify(entireForm));
 	};
 
 	return (
