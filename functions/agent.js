@@ -1,3 +1,5 @@
+// const mongoose = require('mongoose');
+
 exports.handler = async (event, context) => {
   return {
     statusCode: 200,
