@@ -1,5 +1,4 @@
-import { Axios } from "axios";
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment, useState } from "react";
 import SignInImage from "../Assets/Welcome 1.png";
 import { useNavigate } from "react-router-dom";
 import "../Styles/Signupscreen.css";
@@ -168,7 +167,7 @@ export default function Signupscreen() {
 								</div>
 								<div className='col-12'>
 									<p className='fs-5 text'>
-										By singning in, you agree to the
+										By signing in, you agree to the
 										<span className='links'>terms an conditions</span>
 									</p>
 								</div>

@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Grid, Avatar, Text } from "@nextui-org/react";
+import { Grid, Avatar } from "@nextui-org/react";
 import YouthProfileImage from "../Assets/demoYouthImage.jpg";
 import "../Styles/YouthProfile.css";
 
@@ -15,7 +15,7 @@ export default function YouthProfile() {
 		<div className='container-fluid'>
 			<div className='row'>
 				<div className='left col-3'>
-					<div className='leftContent d-flex flex-column justify-content-start'>
+					<div className='leftcontent d-flex flex-column justify-content-start'>
 						<div>
 							<p className='m-1'>
 								<span>
