@@ -40,7 +40,7 @@ export default function Dashboard() {
 									<Text className='mb-2 fw-semibold fs-4'>
 										{agent.jobDescription}
 									</Text>
-									<Text className='fw-bold fs-5' color='primary' size='$md'>
+									<Text className='agentCompany fw-bold fs-5' size='$md'>
 										{agent.Company}
 									</Text>
 								</Grid>
@@ -66,7 +66,7 @@ export default function Dashboard() {
 												{youth.youthName}
 											</h5>
 											<p class='card-text fw-semibold fs-4'>{youth.callDate}</p>
-											<p class='card-text fw-bold fs-5 text-primary'>
+											<p class='card-text fw-bold fs-5 callTypeColor'>
 												{youth.callType}
 											</p>
 											<div className='d-grid'>

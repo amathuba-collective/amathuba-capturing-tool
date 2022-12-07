@@ -1,11 +1,10 @@
 .left{
     background-color: #F8F8FF !important;
     height: 100vh !important;
-    border-right : 1px solid black
 }
 
 .right{
-    background-color: #F8F8FF !important;
+    background-color: #EFE5FF !important;
     height: 100vh !important;
 }
 
@@ -18,13 +17,37 @@
 .wellBeingBtn{
     padding: 0.4rem;
     border : 1px solid transparent;
-    border-radius: 8px;
+    border-radius: 5px;
     background-color: #2B0076 !important;
     color: #F8F8FF;
-    width: 10rem;
+    width: 12rem;
 }
 
 .fa-phone{
     color: #F8F8FF;
     padding: 0.2rem;
+    margin-right: 1rem;
+}
+
+.alert{
+    padding: 0.2rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 20px;
+    width: 7.5rem;
+    color: #14532D
+}
+
+.fa-period{
+    font-size: 10rem !important;
+    color: red !important;
+}
+
+.statusTitle{
+    font-size: 1.2rem !important;
+    font-weight: 500 !important;
+}
+
+.recordCard{
+    width: 20rem;
 }

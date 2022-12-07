@@ -1,6 +1,6 @@
 import React from "react";
 import "./Styles/App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/css/bootstrap.css";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import WellnessForm from "./Screens/WellnessForm";
 import Signupscreen from "./Auth/Signupscreen";

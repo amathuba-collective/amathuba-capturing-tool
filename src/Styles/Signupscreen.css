@@ -10,6 +10,7 @@
     position: relative;
     right: 2rem;
     bottom: 4.5rem;
+    height: 70vh !important;
 }
 .signUpTitle{
     position: relative;
@@ -41,6 +42,7 @@ input:checked{
 .signupBtn{
     background-color: #2B0076 !important;
     color: #EFE5FF !important;
+    border-radius: 10px;
 }
 
 .rightSide2{

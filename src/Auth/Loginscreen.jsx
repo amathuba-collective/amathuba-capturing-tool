@@ -66,7 +66,7 @@ export default function Loginscreen() {
 							{/*  */}
 
 							<div className='col-12 d-grid mt-4'>
-								<button type='submit' className='loginBtn btn fs-4 p-3'>
+								<button type='submit' className='loginBtn  fs-4 p-3'>
 									Login
 								</button>
 							</div>

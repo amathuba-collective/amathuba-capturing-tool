@@ -172,7 +172,7 @@ export default function Signupscreen() {
 									</p>
 								</div>
 								<div className='col-12 d-grid'>
-									<button type='submit' className='signupBtn btn fs-4 p-3'>
+									<button type='submit' className='signupBtn fs-5 p-3'>
 										Sign up
 									</button>
 								</div>

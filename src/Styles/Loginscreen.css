@@ -48,6 +48,7 @@ input:checked{
 .loginBtn{
     background-color: #2B0076 !important;
     color: #EFE5FF !important;
+    border-radius: 10px;
 }
 
 

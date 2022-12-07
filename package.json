@@ -1,59 +1,59 @@
 {
-  "name": "amathuba-capturing-tool",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@emotion/react": "^11.10.5",
-    "@emotion/styled": "^11.10.5",
-    "@iconify/react": "^4.0.0",
-    "@mui/material": "^5.10.13",
-    "@mui/styled-engine-sc": "^5.10.6",
-    "@mui/x-date-pickers": "^5.0.7",
-    "@nextui-org/react": "^1.0.0-beta.10",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "axios": "^1.2.1",
-    "bootstrap": "^5.2.2",
-    "dayjs": "^1.11.6",
-    "mongoose": "^6.8.0",
-    "netlify-lambda": "^2.0.15",
-    "react": "^18.2.0",
-    "react-calendar": "^4.0.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.4.3",
-    "react-scripts": "5.0.1",
-    "styled-components": "^5.3.6",
-    "web-vitals": "^2.1.4"
-  },
-  "scripts": {
-    "develop": "react-scripts start",
-    "build": "react-scripts build",
-    "prod": "npm run build; npm run build:lambda",
-    "test": "react-scripts test",
-    "start:lambda": "netlify-lambda serve functions",
-    "build:lambda": "netlify-lambda build functions",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "joi": "^17.7.0"
-  }
+	"name": "amathuba-capturing-tool",
+	"version": "0.1.0",
+	"private": true,
+	"dependencies": {
+		"@emotion/react": "^11.10.5",
+		"@emotion/styled": "^11.10.5",
+		"@iconify/react": "^4.0.0",
+		"@mui/material": "^5.10.13",
+		"@mui/styled-engine-sc": "^5.10.6",
+		"@mui/x-date-pickers": "^5.0.7",
+		"@nextui-org/react": "^1.0.0-beta.10",
+		"@testing-library/jest-dom": "^5.16.5",
+		"@testing-library/react": "^13.4.0",
+		"@testing-library/user-event": "^13.5.0",
+		"axios": "^1.2.1",
+		"bootstrap": "^5.2.2",
+		"dayjs": "^1.11.6",
+		"mongoose": "^6.8.0",
+		"netlify-lambda": "^2.0.15",
+		"react": "^18.2.0",
+		"react-calendar": "^4.0.0",
+		"react-dom": "^18.2.0",
+		"react-router-dom": "^6.4.3",
+		"react-scripts": "5.0.1",
+		"styled-components": "^5.3.6",
+		"web-vitals": "^2.1.4"
+	},
+	"scripts": {
+		"develop": "react-scripts start",
+		"build": "react-scripts build",
+		"prod": "npm run build; npm run build:lambda",
+		"test": "react-scripts test",
+		"start:lambda": "netlify-lambda serve functions",
+		"build:lambda": "netlify-lambda build functions",
+		"eject": "react-scripts eject"
+	},
+	"eslintConfig": {
+		"extends": [
+			"react-app",
+			"react-app/jest"
+		]
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	},
+	"devDependencies": {
+		"joi": "^17.7.0"
+	}
 }
