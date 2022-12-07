@@ -1,5 +1,4 @@
-import { Axios } from "axios";
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment, useState } from "react";
 import SignInImage from "../Assets/Welcome 1.png";
 import { useNavigate } from "react-router-dom";
 import "../Styles/Signupscreen.css";
@@ -173,7 +172,7 @@ export default function Signupscreen() {
 									</p>
 								</div>
 								<div className='col-12 d-grid'>
-									<button type='submit' className='signupBtn btn fs-4 p-3'>
+									<button type='submit' className='signupBtn fs-5 p-3'>
 										Sign up
 									</button>
 								</div>

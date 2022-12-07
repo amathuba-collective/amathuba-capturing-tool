@@ -3,6 +3,9 @@
     height: 100vh !important;
     
 }
+.agentCompany{
+    color: #2B0076 !important;
+}
 .rightDashboard{
     background-color: #F8F8FF !important;
     height: 100vh !important;
@@ -11,9 +14,12 @@
 .rightDashboard::-webkit-scrollbar{
 	display: none;
 }
+.callTypeColor{
+    color: #2B0076 !important;}
 
 .callBtn{
-    background-color:#2B0076 !important;
+    background-color: 
+    #2B3542 !important;
     color: #EFE5FF !important;
 }
 /* .card-img-top{

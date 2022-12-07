@@ -25,7 +25,7 @@ export default function WelcomeScreen() {
 						</div>
 					</div>
 				</div>
-				<div className='rightWelcomeScreen col-3'>asdas</div>
+				<div className='rightWelcomeScreen col-3'></div>
 			</div>
 		</div>
 	);
