@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import youthBasicInformation from "../Data/youthBasicInformation.json";
+import recentRecords from "../Data/recentRecords.json";
 import "../Styles/YouthProfile.css";
 
 export default function YouthProfile() {

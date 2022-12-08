@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "../Styles/Dashboard.css";
 import differentYouth from "../Data/dashBoard.json";
 import AgentData from "../Data/agentProfile.json";
+import TopNavbar from "../Components/TopNavbar";
 
 export default function Dashboard() {
 	const navigate = useNavigate();
@@ -17,6 +18,9 @@ export default function Dashboard() {
 	}
 	return (
 		<div className='container-fluid'>
+			<>
+				<TopNavbar />
+			</>
 			<div className='row'>
 				{AgentData.map((agent) => {
 					return (
