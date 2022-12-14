@@ -1,185 +1,421 @@
 import React from "react";
 import "../Styles/RightContent.css";
+import OpeniningStateQuestions from "../Data/OpeningQuestion.json";
+import HappyStateQuestions from "../Data/HappyQuestions.json";
+import AngryStateQuestions from "../Data/AngryQuestions.json";
+import ConfusedStateQuestions from "../Data/ConfusedQuestions.json";
+import AnxiousStateQuestions from "../Data/AnxiousQuestions.json";
+import SadStateQuestions from "../Data/SadQuestions.json";
+import YouthReflectionStateQuestions from "../Data/YouthReflectionQuestions.json";
+import AgentReflectionStateQuestions from "../Data/AgentReflectionQuestions.json";
+
 export default function RightContent(props) {
-	// const [question, setQuestion] = useState()
-
-	const openingQuestions = [
-		"How was your weekend ?",
-		"How are you feeling today ?",
-		"How have you been since our last call ?",
-		"So how are you on this fine morning ?",
-	];
-	const happyQuestions = [
-		" So tell me about your happiness ?",
-		" Why are you this happy ?",
-		" what makes you this happy ?",
-		"what caused you to be this happy ?",
-	];
-	const angryQuestions = [
-		" So tell me about your Angry ?",
-		" Why are you this Angry ?",
-		" what makes you this Angry ?",
-		"what caused you to be this Angry ?",
-	];
-	const confusedQuestions = [
-		" So tell me about your Confused ?",
-		" Why are you this Confused ?",
-		" what makes you this Confused ?",
-		"what caused you to be this Confused ?",
-	];
-	const anxiousQuestions = [
-		" So tell me about your anxios ?",
-		" Why are you this anxios ?",
-		" what makes you this anxios ?",
-		"what caused you to be this anxios ?",
-	];
-	const sadQuestions = [
-		" So tell me about your Sad ?",
-		" Why are you this Sad ?",
-		" what makes you this Sad ?",
-		"what caused you to be this Sad ?",
-	];
-	const youthReflectionQuestions = [
-		" So tell me how will u go forward?",
-		" What do you choose to do next ?",
-		" what is your next choice ?",
-		"what caused you to be this youth ?",
-	];
-	const agentReflectionQuestions = [
-		" So tell me about your youth ?",
-		" Why is your youth Sad ?",
-		" what makes you this youth ?",
-		"what caused you to be this youth?",
-	];
-
-	const openingPromptQuestions = [
-		"So tell me more about your weekend ?",
-		"What stood out to you during the weekend ?",
-	];
-
-	const getOtherOpeningQuestion = (e) => {
-		props.setOtherOpeningQuestion(e.target.value);
-	};
+	// const getOtherOpeningQuestion = (e) => {
+	// 	props.setOtherOpeningQuestion(e.target.value);
+	// };
 
 	const onHappyQuestion1Clicked = (e) => {
-		props.setOpeningEmotionQuestion(happyQuestions[0]);
-		props.setHappyAnswers((happyAnswers) => !happyAnswers);
-		// alert("answer created")
-	};
-	const onHappyQuestion2Clicked = (e) => {
-		props.setOpeningEmotionQuestion(happyQuestions[1]);
-		props.setHappyAnswers((happyAnswers) => !happyAnswers);
-	};
-	const onHappyQuestion3Clicked = (e) => {
-		props.setOpeningEmotionQuestion(happyQuestions[2]);
-		props.setHappyAnswers((happyAnswers) => !happyAnswers);
-	};
-	const onHappyQuestion4Clicked = (e) => {
-		props.setOpeningEmotionQuestion(happyQuestions[3]);
-		props.setHappyAnswers((happyAnswers) => !happyAnswers);
-	};
-
-	const onAngryQuestion1Clicked = (e) => {
-		props.setOpeningEmotionQuestion(angryQuestions[0]);
-		props.setAngryAnswers((angryAnswers) => !angryAnswers);
-	};
-	const onAngryQuestion2Clicked = (e) => {
-		props.setAngryAnswers((angryAnswers) => !angryAnswers);
-		props.setOpeningEmotionQuestion(angryQuestions[1]);
-	};
-	const onAngryQuestion3Clicked = (e) => {
-		props.setAngryAnswers((angryAnswers) => !angryAnswers);
-		props.setOpeningEmotionQuestion(angryQuestions[2]);
-	};
-	const onAngryQuestion4Clicked = (e) => {
-		props.setAngryAnswers((angryAnswers) => !angryAnswers);
-		props.setOpeningEmotionQuestion(angryQuestions[3]);
-	};
-
-	const onConfusedQuestion1Clicked = (e) => {
-		props.setOpeningEmotionQuestion(confusedQuestions[0]);
-		props.setConfusedAnswers((confusedAnswers) => !confusedAnswers);
-	};
-	const onConfusedQuestion2Clicked = (e) => {
-		props.setOpeningEmotionQuestion(confusedQuestions[1]);
-		props.setConfusedAnswers((confusedAnswers) => !confusedAnswers);
-	};
-	const onConfusedQuestion3Clicked = (e) => {
-		props.setOpeningEmotionQuestion(confusedQuestions[2]);
-		props.setConfusedAnswers((confusedAnswers) => !confusedAnswers);
-	};
-	const onConfusedQuestion4Clicked = (e) => {
-		props.setOpeningEmotionQuestion(confusedQuestions[3]);
-		props.setConfusedAnswers((confusedAnswers) => !confusedAnswers);
-		// alert("answer created")
-	};
-
-	const onAnxiousQuestion1Clicked = (e) => {
-		props.setOpeningEmotionQuestion(anxiousQuestions[0]);
-		props.setAnxiousAnswers((anxiousAnswers) => !anxiousAnswers);
-	};
-	const onAnxiousQuestion2Clicked = (e) => {
-		props.setOpeningEmotionQuestion(anxiousQuestions[1]);
-		props.setAnxiousAnswers((anxiousAnswers) => !anxiousAnswers);
-	};
-	const onAnxiousQuestion3Clicked = (e) => {
-		props.setOpeningEmotionQuestion(anxiousQuestions[2]);
-		props.setAnxiousAnswers((anxiousAnswers) => !anxiousAnswers);
-	};
-	const onAnxiousQuestion4Clicked = (e) => {
-		props.setOpeningEmotionQuestion(anxiousQuestions[3]);
-		props.setAnxiousAnswers((anxiousAnswers) => !anxiousAnswers);
-		// alert("answer created")
-	};
-
-	const onSadQuestion1Clicked = (e) => {
-		props.setOpeningEmotionQuestion(sadQuestions[0]);
-		props.setSadAnswers((sadAnswers) => !sadAnswers);
-	};
-	const onSadQuestion2Clicked = (e) => {
-		props.setOpeningEmotionQuestion(sadQuestions[1]);
-		props.setSadAnswers((sadAnswers) => !sadAnswers);
-	};
-	const onSadQuestion3Clicked = (e) => {
-		props.setOpeningEmotionQuestion(sadQuestions[2]);
-		props.setSadAnswers((sadAnswers) => !sadAnswers);
-	};
-	const onSadQuestion4Clicked = (e) => {
-		props.setOpeningEmotionQuestion(sadQuestions[3]);
-		props.setSadAnswers((sadAnswers) => !sadAnswers);
-	};
-
-	const onYouthReflectionQ1Clicked = (e) => {
-		props.setYouthQuestions(youthReflectionQuestions[0]);
-	};
-	const onYouthReflectionQ2Clicked = (e) => {
-		props.setYouthQuestions(youthReflectionQuestions[1]);
-	};
-	const onYouthReflectionQ3Clicked = (e) => {
-		props.setYouthQuestions(youthReflectionQuestions[2]);
-	};
-	const onYouthReflectionQ4Clicked = (e) => {
-		props.setYouthQuestions(youthReflectionQuestions[3]);
-	};
-
-	const onAgentReflectionQ1Clicked = (e) => {
-		props.setAgentQuestions(agentReflectionQuestions[0]);
-	};
-	const onAgentReflectionQ2Clicked = (e) => {
-		props.setAgentQuestions(agentReflectionQuestions[1]);
-	};
-	const onAgentReflectionQ3Clicked = (e) => {
-		props.setAgentQuestions(agentReflectionQuestions[2]);
-	};
-	const onAgentReflectionQ4Clicked = (e) => {
-		props.setAgentQuestions(agentReflectionQuestions[3]);
-	};
-
-	const createPromptOpeningQuestions = (e) => {
-		props.setOpeningPromptQuestions(
-			(openingPromptQuestions) => !openingPromptQuestions,
+		props.setOpeningEmotionQuestion(
+			HappyStateQuestions.map((happyQuestion) => {
+				return <p>{happyQuestion.happyQuestion1}</p>;
+			}),
 		);
-		props.setOpeningQuestion(openingPromptQuestions[0]);
+		props.setHappyAnswers((happyAnswers) => !happyAnswers);
+	};
+	// const onHappyQuestion2Clicked = (e) => {
+	// 	// props.setOpeningEmotionQuestion(happyQuestions[1]);
+	// 	props.setHappyAnswers((happyAnswers) => !happyAnswers);
+	// };
+	// const onHappyQuestion3Clicked = (e) => {
+	// 	// props.setOpeningEmotionQuestion(happyQuestions[2]);
+	// 	props.setHappyAnswers((happyAnswers) => !happyAnswers);
+	// };
+	// const onHappyQuestion4Clicked = (e) => {
+	// 	// props.setOpeningEmotionQuestion(happyQuestions[3]);
+	// 	props.setHappyAnswers((happyAnswers) => !happyAnswers);
+	// };
+
+	// const onAngryQuestion1Clicked = (e) => {
+	// 	// props.setOpeningEmotionQuestion(angryQuestions[0]);
+	// 	props.setAngryAnswers((angryAnswers) => !angryAnswers);
+	// };
+	// const onAngryQuestion2Clicked = (e) => {
+	// 	props.setAngryAnswers((angryAnswers) => !angryAnswers);
+	// 	// props.setOpeningEmotionQuestion(angryQuestions[1]);
+	// };
+	// const onAngryQuestion3Clicked = (e) => {
+	// 	props.setAngryAnswers((angryAnswers) => !angryAnswers);
+	// 	// props.setOpeningEmotionQuestion(angryQuestions[2]);
+	// };
+	// const onAngryQuestion4Clicked = (e) => {
+	// 	props.setAngryAnswers((angryAnswers) => !angryAnswers);
+	// 	// props.setOpeningEmotionQuestion(angryQuestions[3]);
+	// };
+
+	// const onConfusedQuestion1Clicked = (e) => {
+	// 	// props.setOpeningEmotionQuestion(confusedQuestions[0]);
+	// 	props.setConfusedAnswers((confusedAnswers) => !confusedAnswers);
+	// };
+	// const onConfusedQuestion2Clicked = (e) => {
+	// 	// props.setOpeningEmotionQuestion(confusedQuestions[1]);
+	// 	props.setConfusedAnswers((confusedAnswers) => !confusedAnswers);
+	// };
+	// const onConfusedQuestion3Clicked = (e) => {
+	// 	// props.setOpeningEmotionQuestion(confusedQuestions[2]);
+	// 	props.setConfusedAnswers((confusedAnswers) => !confusedAnswers);
+	// };
+	// const onConfusedQuestion4Clicked = (e) => {
+	// 	// props.setOpeningEmotionQuestion(confusedQuestions[3]);
+	// 	props.setConfusedAnswers((confusedAnswers) => !confusedAnswers);
+	// 	// alert("answer created")
+	// };
+
+	// const onAnxiousQuestion1Clicked = (e) => {
+	// 	// props.setOpeningEmotionQuestion(anxiousQuestions[0]);
+	// 	props.setAnxiousAnswers((anxiousAnswers) => !anxiousAnswers);
+	// };
+	// const onAnxiousQuestion2Clicked = (e) => {
+	// 	// props.setOpeningEmotionQuestion(anxiousQuestions[1]);
+	// 	props.setAnxiousAnswers((anxiousAnswers) => !anxiousAnswers);
+	// };
+	// const onAnxiousQuestion3Clicked = (e) => {
+	// 	// props.setOpeningEmotionQuestion(anxiousQuestions[2]);
+	// 	props.setAnxiousAnswers((anxiousAnswers) => !anxiousAnswers);
+	// };
+	// const onAnxiousQuestion4Clicked = (e) => {
+	// 	// props.setOpeningEmotionQuestion(anxiousQuestions[3]);
+	// 	props.setAnxiousAnswers((anxiousAnswers) => !anxiousAnswers);
+	// 	// alert("answer created")
+	// };
+
+	// const onSadQuestion1Clicked = (e) => {
+	// 	props.setOpeningEmotionQuestion(sadQuestions[0]);
+	// 	props.setSadAnswers((sadAnswers) => !sadAnswers);
+	// };
+	// const onSadQuestion2Clicked = (e) => {
+	// 	props.setOpeningEmotionQuestion(sadQuestions[1]);
+	// 	props.setSadAnswers((sadAnswers) => !sadAnswers);
+	// };
+	// const onSadQuestion3Clicked = (e) => {
+	// 	props.setOpeningEmotionQuestion(sadQuestions[2]);
+	// 	props.setSadAnswers((sadAnswers) => !sadAnswers);
+	// };
+	// const onSadQuestion4Clicked = (e) => {
+	// 	props.setOpeningEmotionQuestion(sadQuestions[3]);
+	// 	props.setSadAnswers((sadAnswers) => !sadAnswers);
+	// };
+
+	const onYouthReflectionQ1Clicked = () => {
+		props.setYouthQuestions(
+			YouthReflectionStateQuestions.map((youthReflectionQuestion) => {
+				return <p>{youthReflectionQuestion.youthReflectionQuestion1}</p>;
+			}),
+		);
+	};
+	// const onYouthReflectionQ2Clicked = (e) => {
+	// 	props.setYouthQuestions(youthReflectionQuestions[1]);
+	// };
+	// const onYouthReflectionQ3Clicked = (e) => {
+	// 	props.setYouthQuestions(youthReflectionQuestions[2]);
+	// };
+	// const onYouthReflectionQ4Clicked = (e) => {
+	// 	props.setYouthQuestions(youthReflectionQuestions[3]);
+	// };
+
+	// const onAgentReflectionQ1Clicked = (e) => {
+	// 	props.setAgentQuestions(agentReflectionQuestions[0]);
+	// };
+	// const onAgentReflectionQ2Clicked = (e) => {
+	// 	props.setAgentQuestions(agentReflectionQuestions[1]);
+	// };
+	// const onAgentReflectionQ3Clicked = (e) => {
+	// 	props.setAgentQuestions(agentReflectionQuestions[2]);
+	// };
+	// const onAgentReflectionQ4Clicked = (e) => {
+	// 	props.setAgentQuestions(agentReflectionQuestions[3]);
+	// };
+
+	function HandleOpeningQuestion1() {
+		props.setOpeningQuestion(
+			OpeniningStateQuestions.map((openingQuestion) => {
+				return <p>{openingQuestion.openingQuestion1}</p>;
+			}),
+		);
+	}
+	function HandleOpeningQuestion2() {
+		props.setOpeningQuestion(
+			OpeniningStateQuestions.map((openingQuestion) => {
+				return <p>{openingQuestion.openingQuestion2}</p>;
+			}),
+		);
+	}
+	function HandleOpeningQuestion3() {
+		props.setOpeningQuestion(
+			OpeniningStateQuestions.map((openingQuestion) => {
+				return <p>{openingQuestion.openingQuestion3}</p>;
+			}),
+		);
+	}
+	function HandleOpeningQuestion4() {
+		props.setOpeningQuestion(
+			OpeniningStateQuestions.map((openingQuestion) => {
+				return <p>{openingQuestion.openingQuestion4}</p>;
+			}),
+		);
+	}
+
+	const renderResult = () => {
+		let result;
+		props.recommendedQuestions === ""
+			? (result = (
+					<div>
+						<div>
+							<p className='text-center fs-3 fw-semibold mt-4 mb-3'>
+								Opening Questions
+							</p>
+						</div>
+						<div>
+							{" "}
+							{OpeniningStateQuestions.map((openingQuestion) => {
+								return (
+									<div className='mt-4'>
+										<div className='d-flex flex-column'>
+											<button
+												className=' border-1 border-secondary rounded mb-2 p-1 fs-5'
+												onClick={HandleOpeningQuestion1}>
+												{openingQuestion.openingQuestion1}
+											</button>
+											<button
+												className=' border-1 border-secondary rounded mb-2 p-1 fs-5'
+												onClick={HandleOpeningQuestion2}>
+												{openingQuestion.openingQuestion2}
+											</button>
+											<button
+												className=' border-1 border-secondary rounded mb-2 p-1 fs-5'
+												onClick={HandleOpeningQuestion3}>
+												{openingQuestion.openingQuestion3}
+											</button>
+											<button
+												className=' border-1 border-secondary rounded mb-2 p-1 fs-5'
+												onClick={HandleOpeningQuestion4}>
+												{openingQuestion.openingQuestion4}
+											</button>
+										</div>
+									</div>
+								);
+							})}
+						</div>
+					</div>
+			  ))
+			: props.recommendedQuestions === "happy"
+			? (result = (
+					<div>
+						<div className='text-center'>Happy Questions</div>
+						<div>
+							{" "}
+							{HappyStateQuestions.map((happyQuestion) => {
+								return (
+									<div className='mt-4'>
+										<div className='d-flex flex-column'>
+											<button
+												className=' border-1 border-secondary rounded mb-2 p-1 fs-5'
+												onClick={onHappyQuestion1Clicked}>
+												{happyQuestion.happyQuestion1}
+											</button>
+											<button className=' border-1 border-secondary rounded mb-2 p-1 fs-5'>
+												{happyQuestion.happyQuestion2}
+											</button>
+											<button className=' border-1 border-secondary rounded mb-2 p-1 fs-5'>
+												{happyQuestion.happyQuestion3}
+											</button>
+											<button className=' border-1 border-secondary rounded mb-2 p-1 fs-5'>
+												{happyQuestion.happyQuestion4}
+											</button>
+										</div>
+									</div>
+								);
+							})}
+						</div>
+					</div>
+			  ))
+			: props.recommendedQuestions === "angry"
+			? (result = (
+					<div>
+						<div className='text-center'>Angry Questions</div>
+						<div>
+							{" "}
+							{AngryStateQuestions.map((angryQuestion) => {
+								return (
+									<div className='mt-4'>
+										<div className='d-flex flex-column'>
+											<button className=' border-1 border-secondary rounded mb-2 p-1 fs-5'>
+												{angryQuestion.angryQuestion1}
+											</button>
+											<button className=' border-1 border-secondary rounded mb-2 p-1 fs-5'>
+												{angryQuestion.angryQuestion2}
+											</button>
+											<button className=' border-1 border-secondary rounded mb-2 p-1 fs-5'>
+												{angryQuestion.angryQuestion3}
+											</button>
+											<button className=' border-1 border-secondary rounded mb-2 p-1 fs-5'>
+												{angryQuestion.angryQuestion4}
+											</button>
+										</div>
+									</div>
+								);
+							})}
+						</div>
+					</div>
+			  ))
+			: props.recommendedQuestions === "confused"
+			? (result = (
+					<div>
+						<div className='text-center'>Confused Questions</div>
+						<div>
+							{" "}
+							{ConfusedStateQuestions.map((confusedQuestion) => {
+								return (
+									<div className='mt-4'>
+										<div className='d-flex flex-column'>
+											<button className=' border-1 border-secondary rounded mb-2 p-1 fs-5'>
+												{confusedQuestion.confusedQuestion1}
+											</button>
+											<button className=' border-1 border-secondary rounded mb-2 p-1 fs-5'>
+												{confusedQuestion.confusedQuestion2}
+											</button>
+											<button className=' border-1 border-secondary rounded mb-2 p-1 fs-5'>
+												{confusedQuestion.confusedQuestion3}
+											</button>
+											<button className=' border-1 border-secondary rounded mb-2 p-1 fs-5'>
+												{confusedQuestion.confusedQuestion4}
+											</button>
+										</div>
+									</div>
+								);
+							})}
+						</div>
+					</div>
+			  ))
+			: props.recommendedQuestions === "anxious"
+			? (result = (
+					<div>
+						<div className='text-center'>Anxious Questions</div>
+						<div>
+							{" "}
+							{AnxiousStateQuestions.map((anxiousQuestion) => {
+								return (
+									<div className='mt-4'>
+										<div className='d-flex flex-column'>
+											<button className=' border-1 border-secondary rounded mb-2 p-1 fs-5'>
+												{anxiousQuestion.anxiousQuestion1}
+											</button>
+											<button className=' border-1 border-secondary rounded mb-2 p-1 fs-5'>
+												{anxiousQuestion.anxiousQuestion2}
+											</button>
+											<button className=' border-1 border-secondary rounded mb-2 p-1 fs-5'>
+												{anxiousQuestion.anxiousQuestion3}
+											</button>
+											<button className=' border-1 border-secondary rounded mb-2 p-1 fs-5'>
+												{anxiousQuestion.anxiousQuestion4}
+											</button>
+										</div>
+									</div>
+								);
+							})}
+						</div>
+					</div>
+			  ))
+			: props.recommendedQuestions === "sad"
+			? (result = (
+					<div>
+						<div className='text-center'>Sad Questions</div>
+						<div>
+							{" "}
+							{SadStateQuestions.map((sadQuestion) => {
+								return (
+									<div className='mt-4'>
+										<div className='d-flex flex-column'>
+											<button className=' border-1 border-secondary rounded mb-2 p-1 fs-5'>
+												{sadQuestion.sadQuestion1}
+											</button>
+											<button className=' border-1 border-secondary rounded mb-2 p-1 fs-5'>
+												{sadQuestion.sadQuestion2}
+											</button>
+											<button className=' border-1 border-secondary rounded mb-2 p-1 fs-5'>
+												{sadQuestion.sadQuestion3}
+											</button>
+											<button className=' border-1 border-secondary rounded mb-2 p-1 fs-5'>
+												{sadQuestion.sadQuestion4}
+											</button>
+										</div>
+									</div>
+								);
+							})}
+						</div>
+					</div>
+			  ))
+			: props.recommendedQuestions === "youthReflection"
+			? (result = (
+					<div>
+						<div className='text-center'>youthReflection Questions</div>
+						<div>
+							{" "}
+							{YouthReflectionStateQuestions.map((youthReflectionQuestion) => {
+								return (
+									<div className='mt-4'>
+										<div className='d-flex flex-column'>
+											<button
+												className=' border-1 border-secondary rounded mb-2 p-1 fs-5'
+												onClick={onYouthReflectionQ1Clicked}>
+												{youthReflectionQuestion.youthReflectionQuestion1}
+											</button>
+											<button className=' border-1 border-secondary rounded mb-2 p-1 fs-5'>
+												{youthReflectionQuestion.youthReflectionQuestion2}
+											</button>
+											<button className=' border-1 border-secondary rounded mb-2 p-1 fs-5'>
+												{youthReflectionQuestion.youthReflectionQuestion3}
+											</button>
+											<button className=' border-1 border-secondary rounded mb-2 p-1 fs-5'>
+												{youthReflectionQuestion.youthReflectionQuestion4}
+											</button>
+										</div>
+									</div>
+								);
+							})}
+						</div>
+					</div>
+			  ))
+			: props.recommendedQuestions === "agentReflection"
+			? (result = (
+					<div>
+						<div className='text-center'>AgentReflection Questions</div>
+						<div>
+							{" "}
+							{AgentReflectionStateQuestions.map((agentReflectionQuestion) => {
+								return (
+									<div className='mt-4'>
+										<div className='d-flex flex-column'>
+											<button className=' border-1 border-secondary rounded mb-2 p-1 fs-5'>
+												{agentReflectionQuestion.agentReflectionQuestion1}
+											</button>
+											<button className=' border-1 border-secondary rounded mb-2 p-1 fs-5'>
+												{agentReflectionQuestion.agentReflectionQuestion2}
+											</button>
+											<button className=' border-1 border-secondary rounded mb-2 p-1 fs-5'>
+												{agentReflectionQuestion.agentReflectionQuestion3}
+											</button>
+											<button className=' border-1 border-secondary rounded mb-2 p-1 fs-5'>
+												{agentReflectionQuestion.agentReflectionQuestion4}
+											</button>
+										</div>
+									</div>
+								);
+							})}
+						</div>
+					</div>
+			  ))
+			: (result = "");
+		return result;
 	};
 
 	return (
@@ -190,369 +426,7 @@ export default function RightContent(props) {
 				</h2>
 				<hr className='border border-2 border-secondary opacity-50 rounded' />
 			</div>
-			<div>
-				<section>
-					<p className='text-center fs-3 fw-semibold mt-4 mb-3'>
-						Opening Questions
-					</p>
-					{/* static opening questions  */}
-					<div className='d-flex flex-column mt-4'>
-						<button
-							className=' border-1 border-secondary rounded mb-2 p-1'
-							onClick={createPromptOpeningQuestions}>
-							{" "}
-							{openingQuestions[0]}
-						</button>
-						<button
-							className='border-1 border-secondary rounded mb-2 p-1 '
-							onClick={(e) => props.setOpeningQuestion(openingQuestions[1])}>
-							{openingQuestions[1]}
-						</button>
-						<button
-							className='border-1 border-secondary rounded mb-2 p-1'
-							onClick={(e) => props.setOpeningQuestion(openingQuestions[2])}>
-							{openingQuestions[2]}
-						</button>
-						<button
-							className='border-1 border-secondary rounded mb-2 p-1'
-							onClick={(e) => props.setOpeningQuestion(openingQuestions[3])}>
-							{openingQuestions[3]}
-						</button>
-						{/* other field input */}
-						<div className='text-center mt-3 d-flex align-items-center'>
-							<div className='input-group mb-3'>
-								<input
-									type='text'
-									className='otherInput form-control'
-									placeholder='Other'
-									onChange={getOtherOpeningQuestion}
-								/>
-							</div>
-							<button
-								className='otherBtn border-secondary border-2 text-dark rounded'
-								onClick={() => props.setPrintOtherOpeningQuestion(true)}>
-								save
-							</button>
-						</div>
-						{/*  */}
-					</div>
-
-					{props.happy && (
-						<div className='d-flex flex-column mt-4'>
-							{" "}
-							<h2 className='text-center'>Emotion questions</h2>
-							<button
-								className='border-1 border-secondary rounded mb-2 p-1'
-								onClick={onHappyQuestion1Clicked}>
-								{happyQuestions[0]}
-							</button>
-							<button
-								className='border-1 border-secondary rounded mb-2 p-1'
-								onClick={onHappyQuestion2Clicked}>
-								{happyQuestions[1]}
-							</button>
-							<button
-								className='border-1 border-secondary rounded mb-2 p-1'
-								onClick={onHappyQuestion3Clicked}>
-								{happyQuestions[2]}
-							</button>
-							<button
-								className='border-1 border-secondary rounded mb-2 p-1'
-								onClick={onHappyQuestion4Clicked}>
-								{happyQuestions[3]}
-							</button>
-							<div className='text-center mt-3 d-flex align-items-center'>
-								<div className='input-group mb-3'>
-									<input
-										type='text'
-										className='otherInput form-control'
-										placeholder='Other'
-										onChange={getOtherOpeningQuestion}
-									/>
-								</div>
-								<button
-									className='otherBtn border-secondary border-2 text-dark rounded'
-									onClick={() => props.setPrintOtherOpeningQuestion(true)}>
-									save
-								</button>
-							</div>
-						</div>
-					)}
-					{props.angry && (
-						<div className='d-flex flex-column mt-4'>
-							{" "}
-							<h2 className='text-center'>Emotion questions</h2>
-							<button
-								className='border-1 border-secondary rounded mb-2 p-1'
-								onClick={onAngryQuestion1Clicked}>
-								{angryQuestions[0]}
-							</button>
-							<button
-								className='border-1 border-secondary rounded mb-2 p-1'
-								onClick={onAngryQuestion2Clicked}>
-								{angryQuestions[1]}
-							</button>
-							<button
-								className='border-1 border-secondary rounded mb-2 p-1'
-								onClick={onAngryQuestion3Clicked}>
-								{angryQuestions[2]}
-							</button>
-							<button
-								className='border-1 border-secondary rounded mb-2 p-1'
-								onClick={onAngryQuestion4Clicked}>
-								{angryQuestions[3]}
-							</button>
-							<div className='text-center mt-3 d-flex align-items-center'>
-								<div className='input-group mb-3'>
-									<input
-										type='text'
-										className='otherInput form-control'
-										placeholder='Other'
-										onChange={getOtherOpeningQuestion}
-									/>
-								</div>
-								<button
-									className='otherBtn border-secondary border-2 text-dark rounded'
-									onClick={() => props.setPrintOtherOpeningQuestion(true)}>
-									save
-								</button>
-							</div>
-						</div>
-					)}
-					{props.confused && (
-						<div className='d-flex flex-column mt-4'>
-							{" "}
-							<h2 className='text-center'>Emotion questions</h2>
-							<button
-								className='border-1 border-secondary rounded mb-2 p-1'
-								onClick={onConfusedQuestion1Clicked}>
-								{confusedQuestions[0]}
-							</button>
-							<button
-								className='border-1 border-secondary rounded mb-2 p-1'
-								onClick={onConfusedQuestion2Clicked}>
-								{confusedQuestions[1]}
-							</button>
-							<button
-								className='border-1 border-secondary rounded mb-2 p-1'
-								onClick={onConfusedQuestion3Clicked}>
-								{confusedQuestions[2]}
-							</button>
-							<button
-								className='border-1 border-secondary rounded mb-2 p-1'
-								onClick={onConfusedQuestion4Clicked}>
-								{confusedQuestions[2]}
-							</button>
-							<div
-								className='text-center mt-3 d-flex align-items-center'
-								onChange={getOtherOpeningQuestion}>
-								<div className='input-group mb-3'>
-									<input
-										type='text'
-										className='otherInput form-control'
-										placeholder='Other'
-										onChange={getOtherOpeningQuestion}
-									/>
-								</div>
-								<button
-									className='otherBtn border-secondary border-2 text-dark rounded'
-									onClick={() => props.setPrintOtherOpeningQuestion(true)}>
-									save
-								</button>
-							</div>
-						</div>
-					)}
-					{props.anxious && (
-						<div className='d-flex flex-column mt-4'>
-							{" "}
-							<h2 className='text-center'>Emotion questions</h2>
-							<button
-								className='border-1 border-secondary rounded mb-2 p-1'
-								onClick={onAnxiousQuestion1Clicked}>
-								{anxiousQuestions[0]}
-							</button>
-							<button
-								className='border-1 border-secondary rounded mb-2 p-1'
-								onClick={onAnxiousQuestion2Clicked}>
-								{anxiousQuestions[1]}
-							</button>
-							<button
-								className='border-1 border-secondary rounded mb-2 p-1'
-								onClick={onAnxiousQuestion3Clicked}>
-								{anxiousQuestions[2]}
-							</button>
-							<button
-								className='border-1 border-secondary rounded mb-2 p-1'
-								onClick={onAnxiousQuestion4Clicked}>
-								{anxiousQuestions[3]}
-							</button>
-							<div className='text-center mt-3 d-flex align-items-center'>
-								<div className='input-group mb-3'>
-									<input
-										type='text'
-										className='otherInput form-control'
-										placeholder='Other'
-										onChange={getOtherOpeningQuestion}
-									/>
-								</div>
-								<button
-									className='otherBtn border-secondary border-2 text-dark rounded'
-									onClick={() => props.setPrintOtherOpeningQuestion(true)}>
-									save
-								</button>
-							</div>
-						</div>
-					)}
-					{props.sad && (
-						<div className='d-flex flex-column mt-4'>
-							{" "}
-							<h2 className='text-center'>Emotion questions</h2>
-							<button
-								className='border-1 border-secondary rounded mb-2 p-1'
-								onClick={onSadQuestion1Clicked}>
-								{sadQuestions[0]}
-							</button>
-							<button
-								className='border-1 border-secondary rounded mb-2 p-1'
-								onClick={onSadQuestion2Clicked}>
-								{sadQuestions[1]}
-							</button>
-							<button
-								className='border-1 border-secondary rounded mb-2 p-1'
-								onClick={onSadQuestion3Clicked}>
-								{sadQuestions[2]}
-							</button>
-							<button
-								className='border-1 border-secondary rounded mb-2 p-1'
-								onClick={onSadQuestion4Clicked}>
-								{sadQuestions[3]}
-							</button>
-							<div className='text-center mt-3 d-flex align-items-center'>
-								<div className='input-group mb-3'>
-									<input
-										type='text'
-										className='otherInput form-control'
-										placeholder='Other'
-										onChange={getOtherOpeningQuestion}
-									/>
-								</div>
-								<button
-									className='otherBtn border-secondary border-2 text-dark rounded'
-									onClick={() => props.setPrintOtherOpeningQuestion(true)}>
-									save
-								</button>
-							</div>
-						</div>
-					)}
-					<div className='d-flex flex-column mt-4'>
-						{props.youthQuestions ? (
-							<div className='mb-4 d-flex flex-column mt-4'>
-								<h2 className='text-center'>Youth questions</h2>
-								<button
-									className='border-1 border-secondary rounded mb-2 p-1'
-									onClick={onYouthReflectionQ1Clicked}>
-									{youthReflectionQuestions[0]}
-								</button>
-								<button
-									className='border-1 border-secondary rounded mb-2 p-1'
-									onClick={onYouthReflectionQ2Clicked}>
-									{youthReflectionQuestions[1]}
-								</button>
-								<button
-									className='border-1 border-secondary rounded mb-2 p-1'
-									onClick={onYouthReflectionQ3Clicked}>
-									{youthReflectionQuestions[2]}
-								</button>
-								<button
-									className='border-1 border-secondary rounded mb-2 p-1'
-									onClick={onYouthReflectionQ4Clicked}>
-									{youthReflectionQuestions[3]}
-								</button>
-								{/* other field input */}
-								<div className='text-center mt-3 d-flex align-items-center'>
-									<div className='input-group mb-3'>
-										<input
-											type='text'
-											className='otherInput form-control'
-											placeholder='Other'
-											onChange={getOtherOpeningQuestion}
-										/>
-									</div>
-									<button
-										className='otherBtn border-secondary border-2 text-dark rounded'
-										onClick={() => props.setPrintOtherOpeningQuestion(true)}>
-										save
-									</button>
-								</div>
-								{/*  */}
-							</div>
-						) : null}
-
-						{props.agentQuestions ? (
-							<div className='mb-5 d-flex flex-column mt-4'>
-								<h2 className='text-center'>Agent questions</h2>
-								<button
-									className='border-1 border-secondary rounded mb-2 p-1'
-									onClick={onAgentReflectionQ1Clicked}>
-									{agentReflectionQuestions[0]}
-								</button>
-								<button
-									className='border-1 border-secondary rounded mb-2 p-1'
-									onClick={onAgentReflectionQ2Clicked}>
-									{agentReflectionQuestions[1]}
-								</button>
-								<button
-									className='border-1 border-secondary rounded mb-2 p-1'
-									onClick={onAgentReflectionQ3Clicked}>
-									{agentReflectionQuestions[2]}
-								</button>
-								<button
-									className='border-1 border-secondary rounded mb-2 p-1'
-									onClick={onAgentReflectionQ4Clicked}>
-									{agentReflectionQuestions[3]}
-								</button>
-								{/* other field input */}
-								<div className='text-center mt-3 d-flex align-items-center'>
-									<div className='input-group mb-3'>
-										<input
-											type='text'
-											className='otherInput form-control'
-											placeholder='Other'
-											onChange={getOtherOpeningQuestion}
-										/>
-									</div>
-									<button
-										className='otherBtn border-secondary border-2 text-dark rounded'
-										onClick={() => props.setPrintOtherOpeningQuestion(true)}>
-										save
-									</button>
-								</div>
-								{/*  */}
-							</div>
-						) : null}
-					</div>
-				</section>
-
-				<div>
-					<h2 className='RecommendedQuestions text-center mt-4 fs-2 fw-bold'>
-						Prompted Questions
-					</h2>
-					<hr className='border border-2 border-secondary opacity-50 rounded' />
-
-					<div>
-						{props.openingPromptQuestions ? (
-							<div className='mb-5 d-flex flex-column mt-4'>
-								<button className='border-1 border-secondary rounded mb-2 p-1'>
-									{openingPromptQuestions[0]}
-								</button>
-								<button className='border-1 border-secondary rounded mb-2 p-1'>
-									{openingPromptQuestions[1]}
-								</button>
-							</div>
-						) : null}
-					</div>
-				</div>
-			</div>
+			<h1> {renderResult()}</h1>
 		</div>
 	);
 }

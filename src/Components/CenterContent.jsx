@@ -18,45 +18,31 @@ export default function CenterContent(props) {
 	}
 
 	useEffect(() => {
-		// props.openingQuestion === "openingQuestion" ? props.
-		// const id = props.emotion;
-		// switch (id) {
-		// 	case "happy" :
-		// 		props.setHappy(happy => !happy);
-		// 		// props.setHappy(false);
-		// 		break;
-		// 	case "angry":
-		// 		props.setAngry(angry => !angry);
-		// 		// props.setAngry(false)
-		// 		break;
-		// 	case "confused":
-		// 		props.setConfused(confused => !confused);
-		// 		// props.setConfused(false)
-		// 		break;
-		// 	case "anxious":
-		// 		props.setAnxious(anxious => !anxious);
-		// 		// props.setAnxious(false)
-		// 		break;
-		// 	case "sad":
-		// 		props.setSad(sad => !sad);
-		// 		// props.setSad(false);
-		// 		break;
-		// 	default:
-		// 		break;
-		// }
-		props.emotion === "happy" ? props.setHappy(true) : props.setHappy(false);
-		props.emotion === "angry" ? props.setAngry(true) : props.setAngry(false);
-		props.emotion === "confused"
-			? props.setConfused(true)
-			: props.setConfused(false);
-		props.emotion === "anxious"
-			? props.setAnxious(true)
-			: props.setAnxious(false);
-		props.emotion === "sad" ? props.setSad(true) : props.setSad(false);
-	}, [props.emotion, props, props.openingQuestion]);
+		props.recommendedQuestions === "happy"
+			? props.setHappyQuestions(true)
+			: props.setHappyQuestions(false);
+		props.recommendedQuestions === "angry"
+			? props.setAngryQuestions(true)
+			: props.setAngryQuestions(false);
+		props.recommendedQuestions === "confused"
+			? props.setConfusedQuestions(true)
+			: props.setConfusedQuestions(false);
+		props.recommendedQuestions === "anxious"
+			? props.setAnxiousQuestions(true)
+			: props.setAnxiousQuestions(false);
+		props.recommendedQuestions === "sad"
+			? props.setSadQuestions(true)
+			: props.setSadQuestions(false);
+		props.recommendedQuestions === "youthReflection"
+			? props.setYouthReflectionQuestions(true)
+			: props.setYouthReflectionQuestions(false);
+		props.recommendedQuestions === "agentReflection"
+			? props.setAgentReflectionQuestions(true)
+			: props.setAgentReflectionQuestions(false);
+	}, [props.recommendedQuestions, props]);
 
-	const handleOnEmotionChange = (e) => {
-		props.setEmotion(e.target.value); //reason for this having the setEmotion function cause its the only way i could get it to appear on the same spot as emotion questions
+	const handleOnChange = (e) => {
+		props.setRecommendedQuestions(e.target.value);
 	};
 
 	function handleEmotionAnswer1(e) {
@@ -72,28 +58,12 @@ export default function CenterContent(props) {
 		props.setHappyAnswersCapture4(happyAnswers[3]);
 	}
 
-	// useEffect(() => {
-	// 	props.closingQuestions1 === "youthQuestions"
-	// 		? props.setYouthQuestions(true)
-	// 		: props.setYouthQuestions(false);
-	// 	props.closingQuestions2 === "agentQuestions"
-	// 		? props.setAgentQuestions(true)
-	// 		: props.setAgentQuestions(false);
-	// }, [props, props.closingQuestions1, props.closingQuestions2]);
-
-	// function handleClosingQuestion1(e) {
-	// 	props.setClosingQuestions1(e.target.value);
+	// function getYouthQuestions(e) {
+	// 	props.setYouthQuestions((youthQuestions) => !youthQuestions);
 	// }
-	// function handleClosingQuestion2(e) {
-	// 	props.setClosingQuestions2(e.target.value);
+	// function getAgentQuestions(e) {
+	// 	props.setAgentQuestions((agentQuestions) => !agentQuestions);
 	// }
-
-	function getYouthQuestions(e) {
-		props.setYouthQuestions((youthQuestions) => !youthQuestions);
-	}
-	function getAgentQuestions(e) {
-		props.setAgentQuestions((agentQuestions) => !agentQuestions);
-	}
 
 	function getYouthReflection(val) {
 		props.setYouthData(val.target.value);
@@ -117,48 +87,44 @@ export default function CenterContent(props) {
 			{/* opening question section */}
 			<div className='header'>
 				<div className='openingQuestion text-center mt-5'>
-					{/* <p>{props.otherOpeningQuestion}</p>  */}
 					<p className='fs-2 fw-semibold'>{props.openingQuestion}</p>
 				</div>
-				{/* Clickable emojis to detec opening emotion of call */}
-				<div
-					value={props.emotion}
-					className='emotion-emojies d-flex justify-content-around mt-5 p-5'>
-					<button
-						value='happy'
-						className='border-0 fs-1 bg-transparent'
-						onClick={handleOnEmotionChange}>
-						😄
-						<span className='fs-4'>Happy</span>
-					</button>
-					<button
-						value='angry'
-						className='border-0 fs-1 bg-transparent'
-						onClick={handleOnEmotionChange}>
-						🤬
-						<span className='fs-4'>Angry</span>
-					</button>
-					<button
-						value='confused'
-						className='border-0 fs-1 bg-transparent'
-						onClick={handleOnEmotionChange}>
-						🤔
-						<span className='fs-4'>Confused</span>
-					</button>
-					<button
-						value='anxious'
-						className='border-0 fs-1 bg-transparent'
-						onClick={handleOnEmotionChange}>
-						😰
-						<span className='fs-4'>Anxious</span>
-					</button>
-					<button
-						value='sad'
-						className='border-0 fs-1 bg-transparent'
-						onClick={handleOnEmotionChange}>
-						🙁
-						<span className='fs-4'>Sad</span>
-					</button>
+				<div className=''>
+					<div
+						value={props.recommendedQuestions}
+						className='d-flex justify-content-evenly mt-5'>
+						<option value=''></option>
+						<button
+							value='happy'
+							className='border-0 bg-transparent fs-1'
+							onClick={handleOnChange}>
+							😄
+						</button>
+						<button
+							value='angry'
+							className='border-0 bg-transparent fs-1'
+							onClick={handleOnChange}>
+							😡
+						</button>
+						<button
+							value='confused'
+							className='border-0 bg-transparent fs-1'
+							onClick={handleOnChange}>
+							🤔
+						</button>
+						<button
+							value='anxious'
+							className='border-0 bg-transparent fs-1'
+							onClick={handleOnChange}>
+							😰
+						</button>
+						<button
+							value='sad'
+							className='border-0 bg-transparent fs-1'
+							onClick={handleOnChange}>
+							🙁
+						</button>
+					</div>
 				</div>
 			</div>
 			{/* Header section ends */}
@@ -167,7 +133,6 @@ export default function CenterContent(props) {
 			{/* section for triggerd an reason keyword answers */}
 			<div className='body mt-5' id='scrollable'>
 				<div className='emptyDivForEmotoinKeyWords  mb-5  text-center'>
-					{/* Happy question answers */}
 					{props.happyAnswers ? (
 						<div className='section d-flex flex-column justify-content-around'>
 							<div className='d-flex justify-content-between'>
@@ -206,7 +171,6 @@ export default function CenterContent(props) {
 									</div>
 								</div>
 							</div>
-							{/*  */}
 							<div className='otherAnswer mt-5 d-flex w-75'>
 								<div className='input-group mb-3'>
 									<input
@@ -222,15 +186,9 @@ export default function CenterContent(props) {
 									save
 								</button>
 							</div>
-							{/*  */}
 						</div>
 					) : null}
 
-					{/*      */}
-					{/* 
-					// 
-					
-					*/}
 					{props.angryAnswers ? (
 						<div className='section d-flex flex-column justify-content-around'>
 							<div className='d-flex justify-content-between'>
@@ -261,7 +219,6 @@ export default function CenterContent(props) {
 									</div>
 								</div>
 							</div>
-							{/*  */}
 							<div className='otherAnswer mt-5 d-flex w-75'>
 								<div className='input-group mb-3'>
 									<input
@@ -277,13 +234,9 @@ export default function CenterContent(props) {
 									save
 								</button>
 							</div>
-							{/*  */}
 						</div>
 					) : null}
-					{/*  */}
-					{/* 
-					// 
-					 */}
+
 					{props.confusedAnswers ? (
 						<div className='section d-flex flex-column justify-content-around'>
 							<div className='d-flex justify-content-between'>
@@ -314,7 +267,6 @@ export default function CenterContent(props) {
 									</div>
 								</div>
 							</div>
-							{/*  */}
 							<div className='otherAnswer mt-5 d-flex w-75'>
 								<div className='input-group mb-3'>
 									<input
@@ -330,14 +282,9 @@ export default function CenterContent(props) {
 									save
 								</button>
 							</div>
-							{/*  */}
 						</div>
 					) : null}
 
-					{/*  */}
-					{/*  */}
-
-					{/*  */}
 					{props.anxiousAnswers ? (
 						<div className='section d-flex flex-column justify-content-around'>
 							<div className='d-flex justify-content-between'>
@@ -368,7 +315,6 @@ export default function CenterContent(props) {
 									</div>
 								</div>
 							</div>
-							{/*  */}
 							<div className='otherAnswer mt-5 d-flex w-75'>
 								<div className='input-group mb-3'>
 									<input
@@ -384,13 +330,9 @@ export default function CenterContent(props) {
 									save
 								</button>
 							</div>
-							{/*  */}
 						</div>
 					) : null}
 
-					{/*  */}
-					{/*  */}
-					{/*  */}
 					{props.sadAnswers ? (
 						<div className='section d-flex flex-column justify-content-around'>
 							<div className='d-flex justify-content-between'>
@@ -421,7 +363,6 @@ export default function CenterContent(props) {
 									</div>
 								</div>
 							</div>
-							{/*  */}
 							<div className='otherAnswer mt-5 d-flex w-75'>
 								<div className='input-group mb-3'>
 									<input
@@ -437,7 +378,6 @@ export default function CenterContent(props) {
 									save
 								</button>
 							</div>
-							{/*  */}
 						</div>
 					) : null}
 				</div>
@@ -447,7 +387,7 @@ export default function CenterContent(props) {
 			{/* Footer section starst */}
 			{/* Youth reflection input */}
 			<div className='footer'>
-				<div className='mt-5'>
+				<div className='mt-5' value={props.recommendedQuestions}>
 					<div className='recommended question for youth reflection'>
 						<h2 className='recommendedQuestion mb-3 text-center fs-4 fw-semilight'>
 							{props.youthQuestions}
@@ -456,7 +396,8 @@ export default function CenterContent(props) {
 					<label className='fw-semibold fs-3 mb-3'>Youth Reflection</label>
 					<button
 						className='sm bg-transparent border border-2 rounded mx-2'
-						onClick={getYouthQuestions}>
+						value='youthReflection'
+						onClick={handleOnChange}>
 						Get recommended question
 					</button>
 					<textarea
@@ -472,7 +413,7 @@ export default function CenterContent(props) {
 				</div>
 
 				{/*       Agent Reflection Inputs                                  */}
-				<div className='mt-5 mb-5'>
+				<div className='mt-5 mb-5' value={props.recommendedQuestions}>
 					<div className='recommended question for agent reflection'>
 						<h2 className='recommendedQuestion mb-2 text-center fs-4 fw-semilight'>
 							{props.agentQuestions}
@@ -481,7 +422,8 @@ export default function CenterContent(props) {
 					<label className='fw-semibold fs-3 mb-2'>Agent Reflection</label>
 					<button
 						className='sm bg-transparent border border-2 rounded mx-2'
-						onClick={getAgentQuestions}>
+						value='agentReflection'
+						onClick={handleOnChange}>
 						Get recommended question
 					</button>
 					<textarea
