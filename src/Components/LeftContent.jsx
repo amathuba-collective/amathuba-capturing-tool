@@ -60,7 +60,7 @@ export default function LeftContent(props) {
 					<p className='fw-semilight fs-3 mt-2'>
 						{props.openingEmotionQuestion ? (
 							<div>
-								<h4>Opening Emotion question</h4>
+								<h4>Follow-up Questions</h4>
 								<p className='fs-4'>{props.openingEmotionQuestion}</p>
 
 								<div className='d-flex justify-content-between'>

@@ -210,7 +210,7 @@ export default function RightContent(props) {
 			: props.recommendedQuestions === "happy"
 			? (result = (
 					<div>
-						<div className='text-center'>Happy Questions</div>
+						<div className='text-center'>Follow-up Questions</div>
 						<div>
 							{" "}
 							{HappyStateQuestions.map((happyQuestion) => {
