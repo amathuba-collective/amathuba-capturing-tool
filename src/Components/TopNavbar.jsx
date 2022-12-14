@@ -1,22 +1,30 @@
 import React from "react";
-import { Navbar, Text, Avatar, Dropdown, Input } from "@nextui-org/react";
+import { Navbar, Text, Input } from "@nextui-org/react";
 import { Layout } from "../Components/TopNavbarExtensions/Layout";
 import { SearchIcon } from "../Components/TopNavbarExtensions/SearchIcon";
+import AmathubaLogo from "./AmathubaLogo";
+import "../Styles/TopNavbar.css";
+import { useNavigate } from "react-router-dom";
 
 export default function TopNavbar() {
+	const navigate = useNavigate();
+	const logOutUser = () => {
+		navigate("/Loginscreen");
+	};
 	return (
 		<Layout>
-			<Navbar isBordered variant='sticky'>
+			<Navbar isBordered variant='sticky' className='navbar'>
 				<Navbar.Brand css={{ mr: "$4" }}>
 					{/* spot for logo */}
-					<Text b color='inherit' css={{ mr: "$11" }} hideIn='xs'></Text>
+					<AmathubaLogo />
+					<Text b color='inherit' css={{ mr: "$1" }} hideIn='xs'></Text>
 					<Navbar.Content hideIn='xs' variant='highlight'>
-						<Navbar.Link isActive href='#'>
+						{/* <Navbar.Link isActive href='#'>
 							Dashboard
-						</Navbar.Link>
-						<Navbar.Link href='#'>Team</Navbar.Link>
+						</Navbar.Link> */}
+						{/* <Navbar.Link href='#'>Team</Navbar.Link>
 						<Navbar.Link href='#'>Activity</Navbar.Link>
-						<Navbar.Link href='#'>Settings</Navbar.Link>
+						<Navbar.Link href='#'>Settings</Navbar.Link> */}
 					</Navbar.Content>
 				</Navbar.Brand>
 				<Navbar.Content
@@ -40,9 +48,9 @@ export default function TopNavbar() {
 							}
 							contentLeftStyling={false}
 							css={{
-								w: "100%",
+								w: "40rem",
 								"@xsMax": {
-									mw: "300px",
+									mw: "700px",
 								},
 								"& .nextui-input-content--left": {
 									h: "100%",
@@ -51,11 +59,12 @@ export default function TopNavbar() {
 								},
 							}}
 							placeholder='Search...'
+							className='searchBar'
 						/>
 					</Navbar.Item>
-					<Dropdown placement='bottom-right'>
-						<Navbar.Item>
-							<Dropdown.Trigger>
+					{/* <Dropdown placement='bottom-right'> */}
+					<Navbar.Item>
+						{/* <Dropdown.Trigger>
 								<Avatar
 									bordered
 									as='button'
@@ -63,37 +72,22 @@ export default function TopNavbar() {
 									size='md'
 									src='https://i.pravatar.cc/150?u=a042581f4e29026704d'
 								/>
-							</Dropdown.Trigger>
-						</Navbar.Item>
-						<Dropdown.Menu
-							aria-label='User menu actions'
-							color='secondary'
-							onAction={(actionKey) => console.log({ actionKey })}>
-							<Dropdown.Item key='profile' css={{ height: "$18" }}>
-								<Text b color='inherit' css={{ d: "flex" }}>
-									Signed in as
-								</Text>
-								<Text b color='inherit' css={{ d: "flex" }}>
-									zoey@example.com
-								</Text>
-							</Dropdown.Item>
-							<Dropdown.Item key='settings' withDivider>
-								My Settings
-							</Dropdown.Item>
-							<Dropdown.Item key='team_settings'>Team Settings</Dropdown.Item>
-							<Dropdown.Item key='analytics' withDivider>
-								Analytics
-							</Dropdown.Item>
-							<Dropdown.Item key='system'>System</Dropdown.Item>
-							<Dropdown.Item key='configurations'>Configurations</Dropdown.Item>
-							<Dropdown.Item key='help_and_feedback' withDivider>
-								Help & Feedback
-							</Dropdown.Item>
-							<Dropdown.Item key='logout' withDivider color='error'>
-								Log Out
-							</Dropdown.Item>
-						</Dropdown.Menu>
-					</Dropdown>
+							</Dropdown.Trigger> */}
+						<button
+							className='logOutBtn border-0 rounded mt-1 text-light  '
+							onClick={logOutUser}>
+							Log out
+						</button>
+					</Navbar.Item>
+					{/* <Dropdown.Menu
+						aria-label='User menu actions'
+						color='secondary'
+						onAction={(actionKey) => console.log({ actionKey })}>
+						<Dropdown.Item key='logout' withDivider color='error'>
+							Log Out
+						</Dropdown.Item>
+					</Dropdown.Menu> */}
+					{/* </Dropdown> */}
 				</Navbar.Content>
 			</Navbar>
 		</Layout>

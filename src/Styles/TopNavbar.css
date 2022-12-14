@@ -1,0 +1,14 @@
+.searchBar{
+    position: relative !important;
+    left: -16rem
+}
+
+.logOutBtn{
+    background-color: #2B0076 !important;
+    padding: 0.6rem;
+    font-weight: 500 !important;
+}
+/* .navbar{
+    position: fixed;
+   
+} */

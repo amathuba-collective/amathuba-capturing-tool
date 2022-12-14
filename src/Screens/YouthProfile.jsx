@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import youthBasicInformation from "../Data/youthBasicInformation.json";
 import recentRecords from "../Data/recentRecords.json";
+import TopNavbar from "../Components/TopNavbar";
 import "../Styles/YouthProfile.css";
 
 export default function YouthProfile() {
@@ -19,6 +20,9 @@ export default function YouthProfile() {
 	};
 	return (
 		<div className='container-fluid'>
+			<>
+				<TopNavbar />
+			</>
 			<div className='row'>
 				<div className='left col-3'>
 					<div className='leftcontent d-flex flex-column justify-content-start'>

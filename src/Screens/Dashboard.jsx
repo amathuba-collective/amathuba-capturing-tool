@@ -19,17 +19,12 @@ export default function Dashboard() {
 	return (
 		<div className='container-fluid'>
 			<>
-				<TopNavbar />
+				<TopNavbar onLogOut={onLogOut} />
 			</>
 			<div className='row'>
 				{AgentData.map((agent) => {
 					return (
 						<div className='leftDashboard col-3' key={agent.id}>
-							<button
-								className='border border-1 border-secondary rounded mt-1 bg-secondary text-light'
-								onClick={onLogOut}>
-								Log out
-							</button>
 							<Grid.Container className='d-flex justify-content-center align-items-center'>
 								<Grid className='d-flex flex-column align-items-center'>
 									<Avatar
