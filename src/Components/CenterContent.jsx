@@ -18,32 +18,6 @@ export default function CenterContent(props) {
 	}
 
 	useEffect(() => {
-		// props.openingQuestion === "openingQuestion" ? props.
-		// const id = props.emotion;
-		// switch (id) {
-		// 	case "happy" :
-		// 		props.setHappy(happy => !happy);
-		// 		// props.setHappy(false);
-		// 		break;
-		// 	case "angry":
-		// 		props.setAngry(angry => !angry);
-		// 		// props.setAngry(false)
-		// 		break;
-		// 	case "confused":
-		// 		props.setConfused(confused => !confused);
-		// 		// props.setConfused(false)
-		// 		break;
-		// 	case "anxious":
-		// 		props.setAnxious(anxious => !anxious);
-		// 		// props.setAnxious(false)
-		// 		break;
-		// 	case "sad":
-		// 		props.setSad(sad => !sad);
-		// 		// props.setSad(false);
-		// 		break;
-		// 	default:
-		// 		break;
-		// }
 		props.emotion === "happy" ? props.setHappy(true) : props.setHappy(false);
 		props.emotion === "angry" ? props.setAngry(true) : props.setAngry(false);
 		props.emotion === "confused"
@@ -56,7 +30,7 @@ export default function CenterContent(props) {
 	}, [props.emotion, props, props.openingQuestion]);
 
 	const handleOnEmotionChange = (e) => {
-		props.setEmotion(e.target.value); //reason for this having the setEmotion function cause its the only way i could get it to appear on the same spot as emotion questions
+		props.setEmotion(e.target.value);
 	};
 
 	function handleEmotionAnswer1(e) {
@@ -71,22 +45,6 @@ export default function CenterContent(props) {
 	function handleEmotionAnswer4(e) {
 		props.setHappyAnswersCapture4(happyAnswers[3]);
 	}
-
-	// useEffect(() => {
-	// 	props.closingQuestions1 === "youthQuestions"
-	// 		? props.setYouthQuestions(true)
-	// 		: props.setYouthQuestions(false);
-	// 	props.closingQuestions2 === "agentQuestions"
-	// 		? props.setAgentQuestions(true)
-	// 		: props.setAgentQuestions(false);
-	// }, [props, props.closingQuestions1, props.closingQuestions2]);
-
-	// function handleClosingQuestion1(e) {
-	// 	props.setClosingQuestions1(e.target.value);
-	// }
-	// function handleClosingQuestion2(e) {
-	// 	props.setClosingQuestions2(e.target.value);
-	// }
 
 	function getYouthQuestions(e) {
 		props.setYouthQuestions((youthQuestions) => !youthQuestions);
