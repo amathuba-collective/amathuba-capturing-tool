@@ -30,6 +30,41 @@ export default function LeftContent(props) {
 							<div>
 								<h4>Opening Question</h4>
 								<p className='fs-5'>{props.openingQuestion}</p>
+								<div>
+									<div className='d-flex justify-content-between'>
+										<p>
+											{props.happyAnswersCapture1 ? (
+												<div>
+													<p className='fs-5'>{props.happyAnswersCapture1}</p>
+												</div>
+											) : null}
+										</p>
+										<p>
+											{props.happyAnswersCapture2 ? (
+												<div>
+													<p className='fs-5'>{props.happyAnswersCapture2}</p>
+												</div>
+											) : null}
+										</p>
+									</div>
+									{/*  */}
+									<div className='d-flex justify-content-between'>
+										<p>
+											{props.happyAnswersCapture3 ? (
+												<div>
+													<p className='fs-5'>{props.happyAnswersCapture3}</p>
+												</div>
+											) : null}
+										</p>
+										<p>
+											{props.happyAnswersCapture4 ? (
+												<div>
+													<p className='fs-5'>{props.happyAnswersCapture4}</p>
+												</div>
+											) : null}
+										</p>
+									</div>
+								</div>
 							</div>
 						) : null}
 						{props.printOtherOpeningQuestion ? (
@@ -50,7 +85,7 @@ export default function LeftContent(props) {
 						) : null} */}
 						{props.emotion ? (
 							<div>
-								<h4>Opening Emotion</h4>
+								<h4>Emotion of Call</h4>
 								<p className='fs-5'>{props.emotion}</p>
 							</div>
 						) : null}
@@ -60,7 +95,7 @@ export default function LeftContent(props) {
 					<p className='fw-semilight fs-3 mt-2'>
 						{props.openingEmotionQuestion ? (
 							<div>
-								<h4>Opening Emotion question</h4>
+								<h4>Possible Questions</h4>
 								<p className='fs-4'>{props.openingEmotionQuestion}</p>
 
 								<div className='d-flex justify-content-between'>
@@ -75,22 +110,6 @@ export default function LeftContent(props) {
 										{props.happyAnswersCapture2 ? (
 											<div>
 												<p className='fs-5'>{props.happyAnswersCapture2}</p>
-											</div>
-										) : null}
-									</p>
-								</div>
-								<div className='d-flex justify-content-between'>
-									<p>
-										{props.happyAnswersCapture3 ? (
-											<div>
-												<p className='fs-5'>{props.happyAnswersCapture3}</p>
-											</div>
-										) : null}
-									</p>
-									<p>
-										{props.happyAnswersCapture4 ? (
-											<div>
-												<p className='fs-5'>{props.happyAnswersCapture4}</p>
 											</div>
 										) : null}
 									</p>

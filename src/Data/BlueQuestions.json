@@ -1,0 +1,15 @@
+[
+	{
+		"id": 1,
+		"possibleResponse1": "That sounds like Your doing well",
+		"possibleResponse2": "That sounds like Your struggling",
+		"possibleResponse3": "That sounds like Your going throught a lot",
+		"followUpQuestion1": "Can you tell me abit more ?",
+		"followUpQuestion2": "What happend ?",
+		"followUpQuestion3": "How are you coping ?",
+		"promptQuestion1": "I am interested in what happened... ?",
+		"promptQuestion2": "Im really curious to find out more... ?",
+		"promptQuestion3": "I can relate, because... ?",
+		"promptQuestion4": "I have felt like that when... ?"
+	}
+]

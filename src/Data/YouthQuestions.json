@@ -1,0 +1,13 @@
+[
+	{
+		"id": 1,
+		"possibleResponses1": "I think you are very brave / smart / kind",
+		"possibleResponses2": "That is wonderful dont you think ?",
+		"followUpQuestion1": "Would you say you have gained/learnt something ?",
+		"followUpQuestion2": "How do you feel about the ?",
+		"promptQuestion1": "How are you feeling now ?",
+		"promptQuestion2": "What are you planning to do next ?",
+		"promptQuestion3": "How did you find this conversation ?",
+		"promptQuestion4": "Would you say you have gained / learnt something ?"
+	}
+]

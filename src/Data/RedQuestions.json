@@ -1,0 +1,13 @@
+[
+	{
+		"id": 1,
+		"possibleResponse1": "I am glad to hear that.",
+		"possibleResponse2": "I am sorry to hear that.",
+		"possibleResponse3": "That is great.",
+		"posibbleResponse4": "That is unfortunate.",
+		"followUpQuestion1": "Would you like to say more ?",
+		"followUpQuestion2": "What exactly do you mean when you say ...?",
+		"promptQuestion1": "What makes you feel that way ?",
+		"promptQuestion2": "Is there something that happend that makes you feel ...? "
+	}
+]
