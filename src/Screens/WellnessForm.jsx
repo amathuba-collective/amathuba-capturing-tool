@@ -49,7 +49,7 @@ export default function WellnessForm() {
 	const entireForm = [
 		{ openingQuestion: openingQuestion },
 		{ otherOpeningQuestion: otherOpeningQuestion },
-		// { emotion: emotion },
+		{ emotion: emotion },
 		{ openingEmotionQuestion: openingEmotionQuestion },
 		{ emotionAnswer1: happyAnswersCapture1 },
 		{ emotionAnswer2: happyAnswersCapture2 },

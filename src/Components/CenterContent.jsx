@@ -30,9 +30,9 @@ export default function CenterContent(props) {
 	const emotions = ["😄", "😡", "🤔", "😰", "🙁"];
 
 	const [nextSession, setNextSession] = useState("newAppoinment");
-	function getOtherAnswer(e) {
-		props.setOtherAnswer(e.target.value);
-	}
+	// function getOtherAnswer(e) {
+	// 	props.setOtherAnswer(e.target.value);
+	// }
 
 	useEffect(() => {
 		props.recommendedQuestions === "agentReflection"
