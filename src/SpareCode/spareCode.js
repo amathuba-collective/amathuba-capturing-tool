@@ -659,10 +659,10 @@
         </section> : null} */
 }
 
-<div>
+{
+	/* <div>
 	<section>
 		<p className='text-center fs-3 fw-semibold mt-4 mb-3'>Opening Questions</p>
-		{/* static opening questions  */}
 		<div className='d-flex flex-column mt-4'>
 			<button
 				className=' border-1 border-secondary rounded mb-2 p-1'
@@ -685,7 +685,6 @@
 				onClick={(e) => props.setOpeningQuestion(openingQuestions[3])}>
 				{openingQuestions[3]}
 			</button>
-			{/* other field input */}
 			<div className='text-center mt-3 d-flex align-items-center'>
 				<div className='input-group mb-3'>
 					<input
@@ -701,7 +700,6 @@
 					save
 				</button>
 			</div>
-			{/*  */}
 		</div>
 
 		{props.happy && (
@@ -935,7 +933,6 @@
 						onClick={onYouthReflectionQ4Clicked}>
 						{youthReflectionQuestions[3]}
 					</button>
-					{/* other field input */}
 					<div className='text-center mt-3 d-flex align-items-center'>
 						<div className='input-group mb-3'>
 							<input
@@ -951,7 +948,6 @@
 							save
 						</button>
 					</div>
-					{/*  */}
 				</div>
 			) : null}
 
@@ -978,7 +974,6 @@
 						onClick={onAgentReflectionQ4Clicked}>
 						{agentReflectionQuestions[3]}
 					</button>
-					{/* other field input */}
 					<div className='text-center mt-3 d-flex align-items-center'>
 						<div className='input-group mb-3'>
 							<input
@@ -994,8 +989,8 @@
 							save
 						</button>
 					</div>
-					{/*  */}
-				</div>
+
+					</div>
 			) : null}
 		</div>
 	</section>
@@ -1064,4 +1059,34 @@
 						<span className='fs-4'>Sad</span>
 					</button>
 				</div>
-			</div>
+			</div> */
+}
+
+
+
+
+
+
+/* <select
+					className='form-select dropDown'
+					value={props.openingQuestion}
+					onChange={handleOnChange}>
+					<option value=''>Select Opening Question</option>
+					<a
+						href='/#'
+						value='redOpeningQuestion1'
+						onClick={(e) => {
+							alert("works");
+						}}>
+						How are you doing today ?
+					</a>
+					<a value='redOpeningQuestion2'>How are you feeling Today</a>
+					<option value='blueOpeningQuestion1'>
+						How are things going at work/home
+					</option>
+					<option value='blueOpeningQuestion2'>
+						How is your relation ship with your family
+					</option>
+					<option value='youthQuestion1'>Earlier you said you...?</option>
+					<option value='youthQuestion2'>What im hearing is...?</option>
+				</select> */}
