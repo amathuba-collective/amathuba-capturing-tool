@@ -1,15 +1,21 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "../Styles/RightContent.css";
-import OpeniningStateQuestions from "../Data/OpeningQuestion";
+// import OpeniningStateQuestions from "../Data/OpeningQuestion";
 import RedOpeningQuestions from "../Data/RedQuestions.json";
 import BlueOpeningQuestions from "../Data/BlueQuestions.json";
 import YouthQuestions from "../Data/YouthQuestions.json";
-import AgentReflectionStateQuestions from "../Data/AgentReflectionQuestions.json";
+// import AgentReflectionStateQuestions from "../Data/AgentReflectionQuestions.json";
 
 export default function RightContent(props) {
 	// const getOtherOpeningQuestion = (e) => {
 	// 	props.setOtherOpeningQuestion(e.target.value);
 	// };
+
+	const [dropDownActive, setDropDownActive] = useState("");
+
+	function myFunction() {
+		setDropDownActive(true);
+	}
 
 	// const onHappyQuestion1Clicked = (e) => {
 	// 	props.setOpeningEmotionQuestion(
@@ -185,10 +191,102 @@ export default function RightContent(props) {
 			: props.setYouthQuestion2(false);
 	}, [props.openingQuestion, props]);
 
-	const handleOnChange = (e) => {
+	function toggleDropDown(e) {
+		e.preventDefault();
 		props.setOpeningQuestion(e.target.value);
-	};
-	// ////////////////////////
+		setDropDownActive(false);
+		props.setHappyAnswers((happyAnswers) => !happyAnswers);
+	}
+	function toggleDropDown2(e) {
+		e.preventDefault();
+		props.setRedOpeningQuestion2(true);
+		props.setOpeningQuestion(e.target.value);
+		setDropDownActive(false);
+	}
+	function toggleDropDown3(e) {
+		e.preventDefault();
+		props.setBlueOpeningQuestion1(true);
+		props.setOpeningQuestion(e.target.value);
+		setDropDownActive(false);
+	}
+	function toggleDropDown4(e) {
+		e.preventDefault();
+		props.setBlueOpeningQuestion2(true);
+		props.setOpeningQuestion(e.target.value);
+		setDropDownActive(false);
+	}
+	function toggleDropDown5(e) {
+		e.preventDefault();
+		props.setYouthQuestion1(true);
+		props.setOpeningQuestion(e.target.value);
+		setDropDownActive(false);
+	}
+	function toggleDropDown6(e) {
+		e.preventDefault();
+		props.setYouthQuestion2(true);
+		props.setOpeningQuestion(e.target.value);
+		setDropDownActive(false);
+	}
+
+	function toggleRedPossibleResponse() {
+		props.setRedPossibleResponses(
+			RedOpeningQuestions.map((redResponses) => {
+				return <p>{redResponses.possibleResponse1}</p>;
+			}),
+		);
+	}
+	function toggleRedPossibleResponse2() {
+		props.setRedPossibleResponses(
+			RedOpeningQuestions.map((redResponses) => {
+				return <p>{redResponses.possibleResponse2}</p>;
+			}),
+		);
+	}
+	function toggleRedPossibleResponse3() {
+		props.setRedPossibleResponses(
+			RedOpeningQuestions.map((redResponses) => {
+				return <p>{redResponses.possibleResponse3}</p>;
+			}),
+		);
+	}
+	function toggleRedPossibleResponse4() {
+		props.setRedPossibleResponses(
+			RedOpeningQuestions.map((redResponses) => {
+				return <p>{redResponses.posibbleResponse4}</p>;
+			}),
+		);
+	}
+
+	function toggleRedFollowUpQuestion1() {
+		props.setRedFollowUpQuestions(
+			RedOpeningQuestions.map((redFQ) => {
+				return <p>{redFQ.followUpQuestion1}</p>;
+			}),
+		);
+	}
+	function toggleRedFollowUpQuestion2() {
+		props.setRedFollowUpQuestions(
+			RedOpeningQuestions.map((redFQ) => {
+				return <p>{redFQ.followUpQuestion2}</p>;
+			}),
+		);
+	}
+
+	function toggleRedPromptQuestion1() {
+		props.setRedPromptQuestions(
+			RedOpeningQuestions.map((redPQ) => {
+				return <p>{redPQ.promptQuestion1}</p>;
+			}),
+		);
+	}
+	function toggleRedPromptQuestion2() {
+		props.setRedPromptQuestions(
+			RedOpeningQuestions.map((redPQ) => {
+				return <p>{redPQ.promptQuestion2}</p>;
+			}),
+		);
+	}
+
 	const renderResult = () => {
 		let result;
 		props.openingQuestion === ""
@@ -208,46 +306,62 @@ export default function RightContent(props) {
 								<div key={redQuestions.id}>
 									<div className='d-flex flex-column justify-content-center mt-3'>
 										<div>
-											<h2 className='text-center text-light fs-3 fw-bold'>
+											<h2 className='text-center text-dark fs-3 fw-bold'>
 												Possible Responses
 											</h2>
 										</div>
-										<button className='border border-2 border-light rounded bg-transparent text-light m-2 fs-5'>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleRedPossibleResponse}>
 											{redQuestions.possibleResponse1}
 										</button>
-										<button className='border border-2 border-light rounded bg-transparent text-light m-2 fs-5'>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleRedPossibleResponse2}>
 											{redQuestions.possibleResponse2}
 										</button>
-										<button className='border border-2 border-light rounded bg-transparent text-light m-2 fs-5'>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleRedPossibleResponse3}>
 											{redQuestions.possibleResponse3}
 										</button>
-										<button className='border border-2 border-light rounded bg-transparent text-light m-2 fs-5'>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleRedPossibleResponse4}>
 											{redQuestions.posibbleResponse4}
 										</button>
 									</div>
 									<div className='d-flex flex-column justify-content-center mt-3'>
 										<div>
-											<h2 className='text-center text-light fs-3 fw-bold'>
+											<h2 className='text-center text-dark fs-3 fw-bold'>
 												Follow-up Questions
 											</h2>
 										</div>
-										<button className='border border-2 border-light rounded bg-transparent text-light m-2 fs-5'>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleRedFollowUpQuestion1}>
 											{redQuestions.followUpQuestion1}
 										</button>
-										<button className='border border-2 border-light rounded bg-transparent text-light m-2 fs-5'>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleRedFollowUpQuestion2}>
 											{redQuestions.followUpQuestion2}
 										</button>
 									</div>
 									<div className='d-flex flex-column justify-content-center mt-3 mb-4'>
 										<div>
-											<h2 className='text-center text-light fs-3 fw-bold'>
+											<h2 className='text-center text-dark fs-3 fw-bold'>
 												Prompt Questions
 											</h2>
 										</div>
-										<button className='border border-2 border-light rounded bg-transparent text-light m-2 fs-5'>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleRedPromptQuestion1}>
 											{redQuestions.promptQuestion1}
 										</button>
-										<button className='border border-2 border-light rounded bg-transparent text-light m-2 fs-5'>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleRedPromptQuestion2}>
 											{redQuestions.promptQuestion2}
 										</button>
 									</div>
@@ -264,46 +378,46 @@ export default function RightContent(props) {
 								<div key={redQuestions.id}>
 									<div className='d-flex flex-column justify-content-center mt-3'>
 										<div>
-											<h2 className='text-center text-light fs-3 fw-bold'>
+											<h2 className='text-center text-dark fs-3 fw-bold'>
 												Possible Responses
 											</h2>
 										</div>
-										<button className='border border-2 border-light rounded bg-transparent text-light m-2 fs-5'>
+										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
 											{redQuestions.possibleResponse1}
 										</button>
-										<button className='border border-2 border-light rounded bg-transparent text-light m-2 fs-5'>
+										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
 											{redQuestions.possibleResponse2}
 										</button>
-										<button className='border border-2 border-light rounded bg-transparent text-light m-2 fs-5'>
+										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
 											{redQuestions.possibleResponse3}
 										</button>
-										<button className='border border-2 border-light rounded bg-transparent text-light m-2 fs-5'>
+										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
 											{redQuestions.posibbleResponse4}
 										</button>
 									</div>
 									<div className='d-flex flex-column justify-content-center mt-3'>
 										<div>
-											<h2 className='text-center text-light fs-3 fw-bold'>
+											<h2 className='text-center text-dark fs-3 fw-bold'>
 												Follow-up Questions
 											</h2>
 										</div>
-										<button className='border border-2 border-light rounded bg-transparent text-light m-2 fs-5'>
+										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
 											{redQuestions.followUpQuestion1}
 										</button>
-										<button className='border border-2 border-light rounded bg-transparent text-light m-2 fs-5'>
+										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
 											{redQuestions.followUpQuestion2}
 										</button>
 									</div>
 									<div className='d-flex flex-column justify-content-center mt-3 mb-4'>
 										<div>
-											<h2 className='text-center text-light fs-3 fw-bold'>
+											<h2 className='text-center text-dark fs-3 fw-bold'>
 												Prompt Questions
 											</h2>
 										</div>
-										<button className='border border-2 border-light rounded bg-transparent text-light m-2 fs-5'>
+										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
 											{redQuestions.promptQuestion1}
 										</button>
-										<button className='border border-2 border-light rounded bg-transparent text-light m-2 fs-5'>
+										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
 											{redQuestions.promptQuestion2}
 										</button>
 									</div>
@@ -320,52 +434,52 @@ export default function RightContent(props) {
 								<div key={blueQuestions.id}>
 									<div className='d-flex flex-column justify-content-center mt-3'>
 										<div>
-											<h2 className='text-center text-light fs-3 fw-bold'>
+											<h2 className='text-center text-dark fs-3 fw-bold'>
 												Possible Responses
 											</h2>
 										</div>
-										<button className='border border-2 border-light rounded bg-transparent text-light m-2 fs-5'>
+										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
 											{blueQuestions.possibleResponse1}
 										</button>
-										<button className='border border-2 border-light rounded bg-transparent text-light m-2 fs-5'>
+										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
 											{blueQuestions.possibleResponse2}
 										</button>
-										<button className='border border-2 border-light rounded bg-transparent text-light m-2 fs-5'>
+										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
 											{blueQuestions.possibleResponse3}
 										</button>
 									</div>
 									<div className='d-flex flex-column justify-content-center mt-3'>
 										<div>
-											<h2 className='text-center text-light fs-3 fw-bold'>
+											<h2 className='text-center text-dark fs-3 fw-bold'>
 												Follow-up Questions
 											</h2>
 										</div>
-										<button className='border border-2 border-light rounded bg-transparent text-light m-2 fs-5'>
+										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
 											{blueQuestions.followUpQuestion1}
 										</button>
-										<button className='border border-2 border-light rounded bg-transparent text-light m-2 fs-5'>
+										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
 											{blueQuestions.followUpQuestion2}
 										</button>
-										<button className='border border-2 border-light rounded bg-transparent text-light m-2 fs-5'>
+										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
 											{blueQuestions.followUpQuestion3}
 										</button>
 									</div>
 									<div className='d-flex flex-column justify-content-center mt-3 mb-4'>
 										<div>
-											<h2 className='text-center text-light fs-3 fw-bold'>
+											<h2 className='text-center text-dark fs-3 fw-bold'>
 												Prompt Questions
 											</h2>
 										</div>
-										<button className='border border-2 border-light rounded bg-transparent text-light m-2 fs-5'>
+										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
 											{blueQuestions.promptQuestion1}
 										</button>
-										<button className='border border-2 border-light rounded bg-transparent text-light m-2 fs-5'>
+										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
 											{blueQuestions.promptQuestion2}
 										</button>
-										<button className='border border-2 border-light rounded bg-transparent text-light m-2 fs-5'>
+										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
 											{blueQuestions.promptQuestion3}
 										</button>
-										<button className='border border-2 border-light rounded bg-transparent text-light m-2 fs-5'>
+										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
 											{blueQuestions.promptQuestion4}
 										</button>
 									</div>
@@ -382,52 +496,52 @@ export default function RightContent(props) {
 								<div key={blueQuestions.id}>
 									<div className='d-flex flex-column justify-content-center mt-3'>
 										<div>
-											<h2 className='text-center text-light fs-3 fw-bold'>
+											<h2 className='text-center text-dark fs-3 fw-bold'>
 												Possible Responses
 											</h2>
 										</div>
-										<button className='border border-2 border-light rounded bg-transparent text-light m-2 fs-5'>
+										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
 											{blueQuestions.possibleResponse1}
 										</button>
-										<button className='border border-2 border-light rounded bg-transparent text-light m-2 fs-5'>
+										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
 											{blueQuestions.possibleResponse2}
 										</button>
-										<button className='border border-2 border-light rounded bg-transparent text-light m-2 fs-5'>
+										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
 											{blueQuestions.possibleResponse3}
 										</button>
 									</div>
 									<div className='d-flex flex-column justify-content-center mt-3'>
 										<div>
-											<h2 className='text-center text-light fs-3 fw-bold'>
+											<h2 className='text-center text-dark fs-3 fw-bold'>
 												Follow-up Questions
 											</h2>
 										</div>
-										<button className='border border-2 border-light rounded bg-transparent text-light m-2 fs-5'>
+										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
 											{blueQuestions.followUpQuestion1}
 										</button>
-										<button className='border border-2 border-light rounded bg-transparent text-light m-2 fs-5'>
+										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
 											{blueQuestions.followUpQuestion2}
 										</button>
-										<button className='border border-2 border-light rounded bg-transparent text-light m-2 fs-5'>
+										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
 											{blueQuestions.followUpQuestion3}
 										</button>
 									</div>
 									<div className='d-flex flex-column justify-content-center mt-3 mb-4'>
 										<div>
-											<h2 className='text-center text-light fs-3 fw-bold'>
+											<h2 className='text-center text-dark fs-3 fw-bold'>
 												Prompt Questions
 											</h2>
 										</div>
-										<button className='border border-2 border-light rounded bg-transparent text-light m-2 fs-5'>
+										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
 											{blueQuestions.promptQuestion1}
 										</button>
-										<button className='border border-2 border-light rounded bg-transparent text-light m-2 fs-5'>
+										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
 											{blueQuestions.promptQuestion2}
 										</button>
-										<button className='border border-2 border-light rounded bg-transparent text-light m-2 fs-5'>
+										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
 											{blueQuestions.promptQuestion3}
 										</button>
-										<button className='border border-2 border-light rounded bg-transparent text-light m-2 fs-5'>
+										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
 											{blueQuestions.promptQuestion4}
 										</button>
 									</div>
@@ -444,46 +558,46 @@ export default function RightContent(props) {
 								<div key={youthQuestions.id}>
 									<div className='d-flex flex-column justify-content-center mt-3'>
 										<div>
-											<h2 className='text-center text-light fs-3 fw-bold'>
+											<h2 className='text-center text-dark fs-3 fw-bold'>
 												Possible Responses
 											</h2>
 										</div>
-										<button className='border border-2 border-light rounded bg-transparent text-light m-2 fs-5'>
+										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
 											{youthQuestions.possibleResponses1}
 										</button>
-										<button className='border border-2 border-light rounded bg-transparent text-light m-2 fs-5'>
+										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
 											{youthQuestions.possibleResponses2}
 										</button>
 									</div>
 									<div className='d-flex flex-column justify-content-center mt-3'>
 										<div>
-											<h2 className='text-center text-light fs-3 fw-bold'>
+											<h2 className='text-center text-dark fs-3 fw-bold'>
 												Follow-up Questions
 											</h2>
 										</div>
-										<button className='border border-2 border-light rounded bg-transparent text-light m-2 fs-5'>
+										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
 											{youthQuestions.followUpQuestion1}
 										</button>
-										<button className='border border-2 border-light rounded bg-transparent text-light m-2 fs-5'>
+										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
 											{youthQuestions.followUpQuestion2}
 										</button>
 									</div>
 									<div className='d-flex flex-column justify-content-center mt-3 mb-4'>
 										<div>
-											<h2 className='text-center text-light fs-3 fw-bold'>
+											<h2 className='text-center text-dark fs-3 fw-bold'>
 												Prompt Questions
 											</h2>
 										</div>
-										<button className='border border-2 border-light rounded bg-transparent text-light m-2 fs-5'>
+										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
 											{youthQuestions.promptQuestion1}
 										</button>
-										<button className='border border-2 border-light rounded bg-transparent text-light m-2 fs-5'>
+										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
 											{youthQuestions.promptQuestion2}
 										</button>
-										<button className='border border-2 border-light rounded bg-transparent text-light m-2 fs-5'>
+										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
 											{youthQuestions.promptQuestion3}
 										</button>
-										<button className='border border-2 border-light rounded bg-transparent text-light m-2 fs-5'>
+										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
 											{youthQuestions.promptQuestion4}
 										</button>
 									</div>
@@ -500,46 +614,46 @@ export default function RightContent(props) {
 								<div key={youthQuestions.id}>
 									<div className='d-flex flex-column justify-content-center mt-3'>
 										<div>
-											<h2 className='text-center text-light fs-3 fw-bold'>
+											<h2 className='text-center text-dark fs-3 fw-bold'>
 												Possible Responses
 											</h2>
 										</div>
-										<button className='border border-2 border-light rounded bg-transparent text-light m-2 fs-5'>
+										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
 											{youthQuestions.possibleResponses1}
 										</button>
-										<button className='border border-2 border-light rounded bg-transparent text-light m-2 fs-5'>
+										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
 											{youthQuestions.possibleResponses2}
 										</button>
 									</div>
 									<div className='d-flex flex-column justify-content-center mt-3'>
 										<div>
-											<h2 className='text-center text-light fs-3 fw-bold'>
+											<h2 className='text-center text-dark fs-3 fw-bold'>
 												Follow-up Questions
 											</h2>
 										</div>
-										<button className='border border-2 border-light rounded bg-transparent text-light m-2 fs-5'>
+										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
 											{youthQuestions.followUpQuestion1}
 										</button>
-										<button className='border border-2 border-light rounded bg-transparent text-light m-2 fs-5'>
+										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
 											{youthQuestions.followUpQuestion2}
 										</button>
 									</div>
 									<div className='d-flex flex-column justify-content-center mt-3 mb-4'>
 										<div>
-											<h2 className='text-center text-light fs-3 fw-bold'>
+											<h2 className='text-center text-dark fs-3 fw-bold'>
 												Prompt Questions
 											</h2>
 										</div>
-										<button className='border border-2 border-light rounded bg-transparent text-light m-2 fs-5'>
+										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
 											{youthQuestions.promptQuestion1}
 										</button>
-										<button className='border border-2 border-light rounded bg-transparent text-light m-2 fs-5'>
+										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
 											{youthQuestions.promptQuestion2}
 										</button>
-										<button className='border border-2 border-light rounded bg-transparent text-light m-2 fs-5'>
+										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
 											{youthQuestions.promptQuestion3}
 										</button>
-										<button className='border border-2 border-light rounded bg-transparent text-light m-2 fs-5'>
+										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
 											{youthQuestions.promptQuestion4}
 										</button>
 									</div>
@@ -553,33 +667,59 @@ export default function RightContent(props) {
 	};
 
 	return (
-		// <div className='container-fluid'>
-		// 	<div>
-		// 		<h2 className='RecommendedQuestions text-center mt-4 fs-2 fw-bold'>
-		// 			Recommended Questions
-		// 		</h2>
-		// 		<hr className='border border-2 border-secondary opacity-50 rounded' />
-		// 	</div>
-		// 	<h1> {renderResult()}</h1>
-		// </div>
 		<div className='container-fluid rightContent'>
-			<div className='mt-4 d-flex flex-column'>
-				<select
-					className='form-select dropDown'
-					value={props.openingQuestion}
-					onChange={handleOnChange}>
-					<option value=''>Select Opening Question</option>
-					<option value='redOpeningQuestion1'>How are you doing today ?</option>
-					<option value='redOpeningQuestion2'>How are you feeling Today</option>
-					<option value='blueOpeningQuestion1'>
-						How are things going at work/home
-					</option>
-					<option value='blueOpeningQuestion2'>
-						How is your relation ship with your family
-					</option>
-					<option value='youthQuestion1'>Earlier you said you...?</option>
-					<option value='youthQuestion2'>What im hearing is...?</option>
-				</select>
+			<div className='w-100 border-0' value={props.openingQuestion}>
+				<p
+					onClick={myFunction}
+					className='Selector mt-5 text-center border border-2 p-1 border-dark rounded'>
+					Select Opening Question
+				</p>
+				{dropDownActive ? (
+					<div id='myDropdown' className='d-flex flex-column'>
+						<button
+							href='#about'
+							className='m-2 rounded bg-transparent border border-2 border-danger'
+							value='redOpeningQuestion1'
+							onClick={toggleDropDown}>
+							How are you doing today ?
+						</button>
+						<button
+							href='#about'
+							className='m-2 rounded bg-transparent border border-2 border-danger'
+							value='redOpeningQuestion2'
+							onClick={toggleDropDown2}>
+							How are you feeling Today ?
+						</button>
+						<button
+							href='#about'
+							className='m-2 rounded bg-transparent border border-2 border-success'
+							value='blueOpeningQuestion1'
+							onClick={toggleDropDown3}>
+							How are things going at work/home ?
+						</button>
+						<button
+							href='#about'
+							className='m-2 rounded bg-transparent border border-2 border-success'
+							value='blueOpeningQuestion2'
+							onClick={toggleDropDown4}>
+							How is your relationship with your family ?
+						</button>
+						<button
+							href='#about'
+							className='m-2 rounded bg-transparent border border-2 border-primary'
+							value='youthQuestion1'
+							onClick={toggleDropDown5}>
+							Earlier you said you...?
+						</button>
+						<button
+							href='#about'
+							className='m-2 rounded bg-transparent border border-2 border-primary'
+							value='youthQuestion2'
+							onClick={toggleDropDown6}>
+							What im hearing is...?
+						</button>
+					</div>
+				) : null}
 			</div>
 			<div>{renderResult()}</div>
 		</div>

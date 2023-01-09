@@ -20,6 +20,23 @@ export default function WellnessForm() {
 		useState(false);
 
 	//
+	const [redPossibleResponses, setRedPossibleResponses] = useState("");
+	const [redFollowUpQuestions, setRedFollowUpQuestions] = useState("");
+	const [redPromptQuestions, setRedPromptQuestions] = useState("");
+	//
+
+	//
+	// const [bluePossibleResponses, setBlueluePossibleResponses] = useState("");
+	// const [blueFollowUpQuestions, setBlueFollowUpQuestions] = useState("");
+	// const [bluePromptQuestions, setluePromptQuestions] = useState("");
+	// //
+
+	// //
+	// const [youthPossibleResponses, setYouthPossibleResponses] = useState("");
+	// const [youthFollowUpQuestions, setYouthFollowUpQuestions] = useState("");
+	// const [youthPromptQuestions, setYouthPromptQuestions] = useState("");
+	//
+
 	const [openingEmotionQuestion, setOpeningEmotionQuestion] = useState("");
 	const [youthData, setYouthData] = useState("");
 	const [printYouthData, setPrintYouthData] = useState("");
@@ -77,6 +94,12 @@ export default function WellnessForm() {
 						otherOpeningQuestion={otherOpeningQuestion}
 						printOtherOpeningQuestion={printOtherOpeningQuestion}
 						openingEmotionQuestion={openingEmotionQuestion}
+						redOpeningQuestion1={redOpeningQuestion1}
+						redOpeningQuestion2={redOpeningQuestion2}
+						blueOpeningQuestion1={blueOpeningQuestion1}
+						blueOpeningQuestion2={blueOpeningQuestion2}
+						youthQuestion1={youthQuestion1}
+						youthQuestion2={youthQuestion2}
 						youthData={youthData}
 						printYouthData={printYouthData}
 						agentData={agentData}
@@ -101,6 +124,9 @@ export default function WellnessForm() {
 						value={value}
 						openingPromptQuestions={openingPromptQuestions}
 						emotion={emotion}
+						redPossibleResponses={redPossibleResponses}
+						redFollowUpQuestions={redFollowUpQuestions}
+						redPromptQuestions={redPromptQuestions}
 					/>
 				</div>
 				<div className='bg-2 col-6 text-dark'>
@@ -109,6 +135,12 @@ export default function WellnessForm() {
 						setRecommendedQuestions={setRecommendedQuestions}
 						setPrintOtherOpeningQuestion={setPrintOtherOpeningQuestion}
 						otherOpeningQuestion={otherOpeningQuestion}
+						redOpeningQuestion1={redOpeningQuestion1}
+						redOpeningQuestion2={redOpeningQuestion2}
+						blueOpeningQuestion1={blueOpeningQuestion1}
+						blueOpeningQuestion2={blueOpeningQuestion2}
+						youthQuestion1={youthQuestion1}
+						youthQuestion2={youthQuestion2}
 						setYouthData={setYouthData}
 						setPrintYouthData={setPrintYouthData}
 						setAgentReflectionQuestions={setAgentReflectionQuestions}
@@ -174,6 +206,9 @@ export default function WellnessForm() {
 						agentQuestions={agentReflectionQuestions}
 						setOpeningPromptQuestions={setOpeningPromptQuestions}
 						openingPromptQuestions={openingPromptQuestions}
+						setRedPossibleResponses={setRedPossibleResponses}
+						setRedFollowUpQuestions={setRedFollowUpQuestions}
+						setRedPromptQuestions={setRedPromptQuestions}
 					/>
 				</div>
 			</div>

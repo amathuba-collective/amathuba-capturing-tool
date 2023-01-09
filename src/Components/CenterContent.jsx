@@ -55,9 +55,7 @@ export default function CenterContent(props) {
 	const handleOnChange5 = (e) => {
 		props.setEmotion(emotions[4]);
 	};
-	// const handleOnChange6 = (e) => {
-	// 	props.setRecommendedQuestions(e.target.value);
-	// };
+
 	const handleOnChange7 = (e) => {
 		props.setRecommendedQuestions(e.target.value);
 	};
@@ -75,9 +73,9 @@ export default function CenterContent(props) {
 		props.setHappyAnswersCapture4(keyWordAnswers[3]);
 	}
 
-	function getOtherAnswer(e) {
-		props.setOtherAnswer(e.target.value);
-	}
+	// function getOtherAnswer(e) {
+	// 	props.setOtherAnswer(e.target.value);
+	// }
 
 	// function getYouthQuestions(e) {
 	// 	props.setYouthQuestions((youthQuestions) => !youthQuestions);
@@ -108,7 +106,19 @@ export default function CenterContent(props) {
 			{/* opening question section */}
 			<div className='header'>
 				<div className='openingQuestion text-center mt-5'>
-					<p className='fs-2 fw-semibold'>{props.openingQuestion}</p>
+					<p className='fs-2 fw-semibold'>
+						{props.redOpeningQuestion1 ? (
+							<p className='fs-2'>how are you doing today ?</p>
+						) : props.redOpeningQuestion2 ? (
+							<p className='fs-2'>how are you feeling today ?</p>
+						) : props.blueOpeningQuestion1 ? (
+							<p className='fs-2'>How are things going at work/home ?</p>
+						) : props.blueOpeningQuestion2 ? (
+							<p className='fs-2'>
+								How is your relationship with your family ?
+							</p>
+						) : null}
+					</p>
 				</div>
 				<div className=''>
 					<div
@@ -411,13 +421,14 @@ export default function CenterContent(props) {
 				<div className='mt-5' value={props.recommendedQuestions}>
 					<div className='recommended question for youth reflection'>
 						<h2 className='recommendedQuestion mb-3 text-center fs-4 fw-semilight'>
-							{props.youthQuestions}
+							{props.youthQuestion1 ? <p>Earlier you said you..?</p> : null}
 						</h2>
 					</div>
 					<label className='fw-semibold fs-3 mb-3'>Youth Reflection</label>
 					{/* <button
 						className='sm bg-transparent border border-2 rounded mx-2'
-						value='youthReflection'>
+						value='youthReflection'
+						onClick={handleOnChange6}>
 						Get recommended question
 					</button> */}
 					<textarea
