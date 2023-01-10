@@ -146,14 +146,14 @@ export default function RightContent(props) {
 	// 	props.setAgentQuestions(agentReflectionQuestions[3]);
 	// };
 
-	function HandleOpeningQuestion1(e) {
-		e.preventDefault();
-		props.setOpeningQuestion(
-			RedOpeningQuestions.map((redQuestions) => {
-				return <p>{redQuestions.possibleResponse1}</p>;
-			}),
-		);
-	}
+	// function HandleOpeningQuestion1(e) {
+	// 	e.preventDefault();
+	// 	props.setOpeningQuestion(
+	// 		RedOpeningQuestions.map((redQuestions) => {
+	// 			return <p>{redQuestions.possibleResponse1}</p>;
+	// 		}),
+	// 	);
+	// }
 	// function HandleOpeningQuestion3() {
 	// 	props.setOpeningQuestion(
 	// 		OpeniningStateQuestions.map((openingQuestion) => {
@@ -677,7 +677,7 @@ export default function RightContent(props) {
 	return (
 		<div className='container-fluid rightContent'>
 			<div className='mt-4 d-flex flex-column'>
-				<select className='form-select dropDown' value={props.openingQuestion}>
+				{/* <select className='form-select dropDown' value={props.openingQuestion}>
 					<option value='' onClick={handleOnChange}>
 						Select Opening Question
 					</option>
@@ -691,7 +691,7 @@ export default function RightContent(props) {
 					</option>
 					<option value='youthQuestion1'>Earlier you said you...?</option>
 					<option value='youthQuestion2'>What im hearing is...?</option>
-				</select>
+				</select> */}
 				<div className='w-100 border-0' value={props.openingQuestion}>
 					<p
 						onClick={myFunction}

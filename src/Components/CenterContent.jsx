@@ -4,28 +4,10 @@ import Calendar from "react-calendar";
 import "../Styles/ReactCalender.css";
 import "react-calendar/dist/Calendar.css";
 import "../Styles/CenterContent.css";
-// import WordCloud from "../Modules/WordCloud";
-// import WordCloudData from "../Assets/Data/data.json"
+import KeyWordAnswers from "../Data/keyWordAnswers.json";
 
 export default function CenterContent(props) {
 	const navigate = useNavigate();
-
-	const keyWordAnswers = [
-		"Amazing",
-		"Joyful",
-		"Excited",
-		"Awsome",
-		"Lost",
-		"Depressed",
-		"Dissapointed",
-		"Regret",
-		"OverWhelmed",
-		"OverJoyed",
-		"Proud",
-		"Motivated",
-		"Weak",
-		"great",
-	];
 
 	const emotions = ["😄", "😡", "🤔", "😰", "🙁"];
 
@@ -61,21 +43,67 @@ export default function CenterContent(props) {
 	};
 
 	function handleEmotionAnswer1(e) {
-		props.setHappyAnswersCapture1(keyWordAnswers[0]);
+		props.setHappyAnswersCapture1(
+			KeyWordAnswers.map((keyAnswers) => {
+				return <p>{keyAnswers.keyAnswer1}</p>;
+			}),
+		);
 	}
 	function handleEmotionAnswer2(e) {
-		props.setHappyAnswersCapture2(keyWordAnswers[1]);
+		props.setHappyAnswersCapture2(
+			KeyWordAnswers.map((keyAnswers) => {
+				return <p>{keyAnswers.keyAnswer2}</p>;
+			}),
+		);
 	}
 	function handleEmotionAnswer3(e) {
-		props.setHappyAnswersCapture3(keyWordAnswers[2]);
+		props.setHappyAnswersCapture3(
+			KeyWordAnswers.map((keyAnswers) => {
+				return <p>{keyAnswers.keyAnswer3}</p>;
+			}),
+		);
 	}
 	function handleEmotionAnswer4(e) {
-		props.setHappyAnswersCapture4(keyWordAnswers[3]);
+		props.setHappyAnswersCapture4(
+			KeyWordAnswers.map((keyAnswers) => {
+				return <p>{keyAnswers.keyAnswer4}</p>;
+			}),
+		);
 	}
-
-	// function getOtherAnswer(e) {
-	// 	props.setOtherAnswer(e.target.value);
+	// function handleEmotionAnswer4(e) {
+	// 	props.setHappyAnswersCapture4(keyWordAnswers[4]);
 	// }
+	// function handleEmotionAnswer4(e) {
+	// 	props.setHappyAnswersCapture4(keyWordAnswers[5]);
+	// }
+	// function handleEmotionAnswer4(e) {
+	// 	props.setHappyAnswersCapture4(keyWordAnswers[6]);
+	// }
+	// function handleEmotionAnswer4(e) {
+	// 	props.setHappyAnswersCapture4(keyWordAnswers[7]);
+	// }
+	// function handleEmotionAnswer4(e) {
+	// 	props.setHappyAnswersCapture4(keyWordAnswers[8]);
+	// }
+	// function handleEmotionAnswer4(e) {
+	// 	props.setHappyAnswersCapture4(keyWordAnswers[9]);
+	// }
+	// function handleEmotionAnswer4(e) {
+	// 	props.setHappyAnswersCapture4(keyWordAnswers[10]);
+	// }
+	// function handleEmotionAnswer4(e) {
+	// 	props.setHappyAnswersCapture4(keyWordAnswers[11]);
+	// }
+	// function handleEmotionAnswer4(e) {
+	// 	props.setHappyAnswersCapture4(keyWordAnswers[12]);
+	// }
+	// function handleEmotionAnswer4(e) {
+	// 	props.setHappyAnswersCapture4(keyWordAnswers[13]);
+	// }
+
+	function getOtherAnswer(e) {
+		props.setOtherAnswer(e.target.value);
+	}
 
 	// function getYouthQuestions(e) {
 	// 	props.setYouthQuestions((youthQuestions) => !youthQuestions);
@@ -170,35 +198,83 @@ export default function CenterContent(props) {
 								<div className='TriggersAnswers'>
 									<div className='d-flex flex-column justify-content-around mb-2'>
 										<button className='btn-sm' onClick={handleEmotionAnswer1}>
-											{keyWordAnswers[0]}
+											{KeyWordAnswers.map((keyAnswers) => {
+												return <p className='pt-2'>{keyAnswers.keyAnswer1}</p>;
+											})}
 										</button>
 										<button className='btn-sm' onClick={handleEmotionAnswer2}>
-											{keyWordAnswers[1]}
+											{KeyWordAnswers.map((keyAnswers) => {
+												return <p className='pt-2'>{keyAnswers.keyAnswer2}</p>;
+											})}
 										</button>
 										<button className='btn-sm' onClick={handleEmotionAnswer3}>
-											{keyWordAnswers[2]}
+											{KeyWordAnswers.map((keyAnswers) => {
+												return <p className='pt-2'>{keyAnswers.keyAnswer3}</p>;
+											})}
 										</button>
 										<button className='btn-sm' onClick={handleEmotionAnswer4}>
-											{keyWordAnswers[3]}
+											{KeyWordAnswers.map((keyAnswers) => {
+												return <p className='pt-2'>{keyAnswers.keyAnswer4}</p>;
+											})}
 										</button>
 
-										<button className='btn-sm'>{keyWordAnswers[4]}</button>
+										<button className='btn-sm'>
+											{KeyWordAnswers.map((keyAnswers) => {
+												return <p className='pt-2'>{keyAnswers.keyAnswer5}</p>;
+											})}
+										</button>
 									</div>
 								</div>
 								<div className='d-flex flex-column justify-content-around mb-2'>
-									<button className='btn-sm'>{keyWordAnswers[5]}</button>
-									<button className='btn-sm'>{keyWordAnswers[6]}</button>
-									<button className='btn-sm'>{keyWordAnswers[7]}</button>
+									<button className='btn-sm'>
+										{KeyWordAnswers.map((keyAnswers) => {
+											return <p className='pt-2'>{keyAnswers.keyAnswer6}</p>;
+										})}
+									</button>
+									<button className='btn-sm'>
+										{KeyWordAnswers.map((keyAnswers) => {
+											return <p className='pt-2'>{keyAnswers.keyAnswer7}</p>;
+										})}
+									</button>
+									<button className='btn-sm'>
+										{KeyWordAnswers.map((keyAnswers) => {
+											return <p className='pt-2'>{keyAnswers.keyAnswer8}</p>;
+										})}
+									</button>
 
-									<button className='btn-sm'>{keyWordAnswers[8]}</button>
+									<button className='btn-sm'>
+										{KeyWordAnswers.map((keyAnswers) => {
+											return <p className='pt-2'>{keyAnswers.keyAnswer9}</p>;
+										})}
+									</button>
 								</div>
 								<div className='ReasonAnswers'>
 									<div className='d-flex flex-column mb-2'>
-										<button className='btn-sm'>{keyWordAnswers[9]}</button>
-										<button className='btn-sm'>{keyWordAnswers[10]}</button>
-										<button className='btn-sm'>{keyWordAnswers[11]}</button>
-										<button className='btn-sm'>{keyWordAnswers[12]}</button>
-										<button className='btn-sm'>{keyWordAnswers[13]}</button>
+										<button className='btn-sm'>
+											{KeyWordAnswers.map((keyAnswers) => {
+												return <p className='pt-2'>{keyAnswers.keyAnswer10}</p>;
+											})}
+										</button>
+										<button className='btn-sm'>
+											{KeyWordAnswers.map((keyAnswers) => {
+												return <p className='pt-2'>{keyAnswers.keyAnswer11}</p>;
+											})}
+										</button>
+										<button className='btn-sm'>
+											{KeyWordAnswers.map((keyAnswers) => {
+												return <p className='pt-2'>{keyAnswers.keyAnswer12}</p>;
+											})}
+										</button>
+										<button className='btn-sm'>
+											{KeyWordAnswers.map((keyAnswers) => {
+												return <p className='pt-2'>{keyAnswers.keyAnswer13}</p>;
+											})}
+										</button>
+										<button className='btn-sm'>
+											{KeyWordAnswers.map((keyAnswers) => {
+												return <p className='pt-2'>{keyAnswers.keyAnswer14}</p>;
+											})}
+										</button>
 									</div>
 								</div>
 							</div>
