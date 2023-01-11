@@ -42,64 +42,104 @@ export default function CenterContent(props) {
 		props.setRecommendedQuestions(e.target.value);
 	};
 
-	function handleEmotionAnswer1(e) {
-		props.setHappyAnswersCapture1(
+	function handleEmotionAnswer1() {
+		props.setKeyAnswerCapture1(
 			KeyWordAnswers.map((keyAnswers) => {
 				return <p>{keyAnswers.keyAnswer1}</p>;
 			}),
 		);
 	}
 	function handleEmotionAnswer2(e) {
-		props.setHappyAnswersCapture2(
+		props.setKeyAnswerCapture2(
 			KeyWordAnswers.map((keyAnswers) => {
 				return <p>{keyAnswers.keyAnswer2}</p>;
 			}),
 		);
 	}
 	function handleEmotionAnswer3(e) {
-		props.setHappyAnswersCapture3(
+		props.setKeyAnswerCapture3(
 			KeyWordAnswers.map((keyAnswers) => {
 				return <p>{keyAnswers.keyAnswer3}</p>;
 			}),
 		);
 	}
 	function handleEmotionAnswer4(e) {
-		props.setHappyAnswersCapture4(
+		props.setKeyAnswerCapture4(
 			KeyWordAnswers.map((keyAnswers) => {
 				return <p>{keyAnswers.keyAnswer4}</p>;
 			}),
 		);
 	}
-	// function handleEmotionAnswer4(e) {
-	// 	props.setHappyAnswersCapture4(keyWordAnswers[4]);
-	// }
-	// function handleEmotionAnswer4(e) {
-	// 	props.setHappyAnswersCapture4(keyWordAnswers[5]);
-	// }
-	// function handleEmotionAnswer4(e) {
-	// 	props.setHappyAnswersCapture4(keyWordAnswers[6]);
-	// }
-	// function handleEmotionAnswer4(e) {
-	// 	props.setHappyAnswersCapture4(keyWordAnswers[7]);
-	// }
-	// function handleEmotionAnswer4(e) {
-	// 	props.setHappyAnswersCapture4(keyWordAnswers[8]);
-	// }
-	// function handleEmotionAnswer4(e) {
-	// 	props.setHappyAnswersCapture4(keyWordAnswers[9]);
-	// }
-	// function handleEmotionAnswer4(e) {
-	// 	props.setHappyAnswersCapture4(keyWordAnswers[10]);
-	// }
-	// function handleEmotionAnswer4(e) {
-	// 	props.setHappyAnswersCapture4(keyWordAnswers[11]);
-	// }
-	// function handleEmotionAnswer4(e) {
-	// 	props.setHappyAnswersCapture4(keyWordAnswers[12]);
-	// }
-	// function handleEmotionAnswer4(e) {
-	// 	props.setHappyAnswersCapture4(keyWordAnswers[13]);
-	// }
+	function handleEmotionAnswer5(e) {
+		props.setKeyAnswerCapture5(
+			KeyWordAnswers.map((keyAnswers) => {
+				return <p>{keyAnswers.keyAnswer5}</p>;
+			}),
+		);
+	}
+	function handleEmotionAnswer6(e) {
+		props.setKeyAnswerCapture6(
+			KeyWordAnswers.map((keyAnswers) => {
+				return <p>{keyAnswers.keyAnswer6}</p>;
+			}),
+		);
+	}
+	function handleEmotionAnswer7(e) {
+		props.setKeyAnswerCapture7(
+			KeyWordAnswers.map((keyAnswers) => {
+				return <p>{keyAnswers.keyAnswer7}</p>;
+			}),
+		);
+	}
+	function handleEmotionAnswer8(e) {
+		props.setKeyAnswerCapture8(
+			KeyWordAnswers.map((keyAnswers) => {
+				return <p>{keyAnswers.keyAnswer8}</p>;
+			}),
+		);
+	}
+	function handleEmotionAnswer9(e) {
+		props.setKeyAnswerCapture9(
+			KeyWordAnswers.map((keyAnswers) => {
+				return <p>{keyAnswers.keyAnswer9}</p>;
+			}),
+		);
+	}
+	function handleEmotionAnswer10(e) {
+		props.setKeyAnswerCapture10(
+			KeyWordAnswers.map((keyAnswers) => {
+				return <p>{keyAnswers.keyAnswer10}</p>;
+			}),
+		);
+	}
+	function handleEmotionAnswer11(e) {
+		props.setKeyAnswerCapture11(
+			KeyWordAnswers.map((keyAnswers) => {
+				return <p>{keyAnswers.keyAnswer11}</p>;
+			}),
+		);
+	}
+	function handleEmotionAnswer12(e) {
+		props.setKeyAnswerCapture12(
+			KeyWordAnswers.map((keyAnswers) => {
+				return <p>{keyAnswers.keyAnswer12}</p>;
+			}),
+		);
+	}
+	function handleEmotionAnswer13(e) {
+		props.setKeyAnswerCapture13(
+			KeyWordAnswers.map((keyAnswers) => {
+				return <p>{keyAnswers.keyAnswer13}</p>;
+			}),
+		);
+	}
+	function handleEmotionAnswer14(e) {
+		props.setKeyAnswerCapture14(
+			KeyWordAnswers.map((keyAnswers) => {
+				return <p>{keyAnswers.keyAnswer14}</p>;
+			}),
+		);
+	}
 
 	function getOtherAnswer(e) {
 		props.setOtherAnswer(e.target.value);
@@ -192,7 +232,7 @@ export default function CenterContent(props) {
 			{/* section for triggerd an reason keyword answers */}
 			<div className='body mt-5' id='scrollable'>
 				<div className='emptyDivForEmotoinKeyWords  mb-5  text-center'>
-					{props.happyAnswers ? (
+					{props.keyAnswers ? (
 						<div className='section d-flex flex-column justify-content-around'>
 							<div className='d-flex justify-content-between'>
 								<div className='TriggersAnswers'>
@@ -218,7 +258,7 @@ export default function CenterContent(props) {
 											})}
 										</button>
 
-										<button className='btn-sm'>
+										<button className='btn-sm' onClick={handleEmotionAnswer5}>
 											{KeyWordAnswers.map((keyAnswers) => {
 												return <p className='pt-2'>{keyAnswers.keyAnswer5}</p>;
 											})}
@@ -226,23 +266,23 @@ export default function CenterContent(props) {
 									</div>
 								</div>
 								<div className='d-flex flex-column justify-content-around mb-2'>
-									<button className='btn-sm'>
+									<button className='btn-sm' onClick={handleEmotionAnswer6}>
 										{KeyWordAnswers.map((keyAnswers) => {
 											return <p className='pt-2'>{keyAnswers.keyAnswer6}</p>;
 										})}
 									</button>
-									<button className='btn-sm'>
+									<button className='btn-sm' onClick={handleEmotionAnswer7}>
 										{KeyWordAnswers.map((keyAnswers) => {
 											return <p className='pt-2'>{keyAnswers.keyAnswer7}</p>;
 										})}
 									</button>
-									<button className='btn-sm'>
+									<button className='btn-sm' onClick={handleEmotionAnswer8}>
 										{KeyWordAnswers.map((keyAnswers) => {
 											return <p className='pt-2'>{keyAnswers.keyAnswer8}</p>;
 										})}
 									</button>
 
-									<button className='btn-sm'>
+									<button className='btn-sm' onClick={handleEmotionAnswer9}>
 										{KeyWordAnswers.map((keyAnswers) => {
 											return <p className='pt-2'>{keyAnswers.keyAnswer9}</p>;
 										})}
@@ -250,27 +290,27 @@ export default function CenterContent(props) {
 								</div>
 								<div className='ReasonAnswers'>
 									<div className='d-flex flex-column mb-2'>
-										<button className='btn-sm'>
+										<button className='btn-sm' onClick={handleEmotionAnswer10}>
 											{KeyWordAnswers.map((keyAnswers) => {
 												return <p className='pt-2'>{keyAnswers.keyAnswer10}</p>;
 											})}
 										</button>
-										<button className='btn-sm'>
+										<button className='btn-sm' onClick={handleEmotionAnswer11}>
 											{KeyWordAnswers.map((keyAnswers) => {
 												return <p className='pt-2'>{keyAnswers.keyAnswer11}</p>;
 											})}
 										</button>
-										<button className='btn-sm'>
+										<button className='btn-sm' onClick={handleEmotionAnswer12}>
 											{KeyWordAnswers.map((keyAnswers) => {
 												return <p className='pt-2'>{keyAnswers.keyAnswer12}</p>;
 											})}
 										</button>
-										<button className='btn-sm'>
+										<button className='btn-sm' onClick={handleEmotionAnswer13}>
 											{KeyWordAnswers.map((keyAnswers) => {
 												return <p className='pt-2'>{keyAnswers.keyAnswer13}</p>;
 											})}
 										</button>
-										<button className='btn-sm'>
+										<button className='btn-sm' onClick={handleEmotionAnswer14}>
 											{KeyWordAnswers.map((keyAnswers) => {
 												return <p className='pt-2'>{keyAnswers.keyAnswer14}</p>;
 											})}
@@ -296,7 +336,7 @@ export default function CenterContent(props) {
 						</div>
 					) : null}
 
-					{props.angryAnswers ? (
+					{/* {props.angryAnswers ? (
 						<div className='section d-flex flex-column justify-content-around'>
 							<div className='d-flex justify-content-between'>
 								<div className='TriggersAnswers'>
@@ -342,9 +382,9 @@ export default function CenterContent(props) {
 								</button>
 							</div>
 						</div>
-					) : null}
+					) : null} */}
 
-					{props.confusedAnswers ? (
+					{/* {props.confusedAnswers ? (
 						<div className='section d-flex flex-column justify-content-around'>
 							<div className='d-flex justify-content-between'>
 								<div className='TriggersAnswers'>
@@ -390,9 +430,9 @@ export default function CenterContent(props) {
 								</button>
 							</div>
 						</div>
-					) : null}
+					) : null} */}
 
-					{props.anxiousAnswers ? (
+					{/* {props.anxiousAnswers ? (
 						<div className='section d-flex flex-column justify-content-around'>
 							<div className='d-flex justify-content-between'>
 								<div className='TriggersAnswers'>
@@ -438,9 +478,9 @@ export default function CenterContent(props) {
 								</button>
 							</div>
 						</div>
-					) : null}
+					) : null} */}
 
-					{props.sadAnswers ? (
+					{/* {props.sadAnswers ? (
 						<div className='section d-flex flex-column justify-content-around'>
 							<div className='d-flex justify-content-between'>
 								<div className='TriggersAnswers'>
@@ -486,7 +526,7 @@ export default function CenterContent(props) {
 								</button>
 							</div>
 						</div>
-					) : null}
+					) : null} */}
 				</div>
 			</div>
 			{/* body section ends */}

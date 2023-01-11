@@ -26,15 +26,14 @@ export default function WellnessForm() {
 	//
 
 	//
-	// const [bluePossibleResponses, setBlueluePossibleResponses] = useState("");
-	// const [blueFollowUpQuestions, setBlueFollowUpQuestions] = useState("");
-	// const [bluePromptQuestions, setluePromptQuestions] = useState("");
-	// //
+	const [bluePossibleResponses, setBluePossibleResponses] = useState("");
+	const [blueFollowUpQuestions, setBlueFollowUpQuestions] = useState("");
+	const [bluePromptQuestions, setBluePromptQuestions] = useState("");
 
 	// //
-	// const [youthPossibleResponses, setYouthPossibleResponses] = useState("");
-	// const [youthFollowUpQuestions, setYouthFollowUpQuestions] = useState("");
-	// const [youthPromptQuestions, setYouthPromptQuestions] = useState("");
+	const [youthPossibleResponses, setYouthPossibleResponses] = useState("");
+	const [youthFollowUpQuestions, setYouthFollowUpQuestions] = useState("");
+	const [youthPromptQuestions, setYouthPromptQuestions] = useState("");
 	//
 
 	const [openingEmotionQuestion, setOpeningEmotionQuestion] = useState("");
@@ -44,20 +43,32 @@ export default function WellnessForm() {
 	const [agentData, setAgentData] = useState("");
 	const [printAgentData, setPrintAgentData] = useState("");
 	const [agentQuestions, setAgentQuestions] = useState("");
-	const [happyAnswers, setHappyAnswers] = useState("");
+
 	const [openingPromptQuestions, setOpeningPromptQuestions] = useState("");
-	const [angryAnswers, setAngryAnswers] = useState("");
-	const [confusedAnswers, setConfusedAnswers] = useState("");
-	const [anxiousAnswers, setAnxiousAnswers] = useState("");
-	const [sadAnswers, setSadAnswers] = useState("");
-	const [happyAnswersCapture1, setHappyAnswersCapture1] = useState("");
-	const [happyAnswersCapture2, setHappyAnswersCapture2] = useState("");
-	const [happyAnswersCapture3, setHappyAnswersCapture3] = useState("");
-	const [happyAnswersCapture4, setHappyAnswersCapture4] = useState("");
-	const [angryAnswersCapture, setAngryAnswersCapture] = useState("");
-	const [confusedAnswersCapture, setConfusedAnswersCapture] = useState("");
-	const [anxiousAnswersCapture, setAnxiousAnswersCapture] = useState("");
-	const [sadAnswersCapture, setSadAnswersCapture] = useState("");
+
+	// const [angryAnswers, setAngryAnswers] = useState("");
+	// const [confusedAnswers, setConfusedAnswers] = useState("");
+	// const [anxiousAnswers, setAnxiousAnswers] = useState("");
+	// const [sadAnswers, setSadAnswers] = useState("");
+	const [keyAnswers, setKeyAnswers] = useState("");
+	const [keyAnswerCapture1, setKeyAnswerCapture1] = useState("");
+	const [keyAnswerCapture2, setKeyAnswerCapture2] = useState("");
+	const [keyAnswerCapture3, setKeyAnswerCapture3] = useState("");
+	const [keyAnswerCapture4, setKeyAnswerCapture4] = useState("");
+	const [keyAnswerCapture5, setKeyAnswerCapture5] = useState("");
+	const [keyAnswerCapture6, setKeyAnswerCapture6] = useState("");
+	const [keyAnswerCapture7, setKeyAnswerCapture7] = useState("");
+	const [keyAnswerCapture8, setKeyAnswerCapture8] = useState("");
+	const [keyAnswerCapture9, setKeyAnswerCapture9] = useState("");
+	const [keyAnswerCapture10, setKeyAnswerCapture10] = useState("");
+	const [keyAnswerCapture11, setKeyAnswerCapture11] = useState("");
+	const [keyAnswerCapture12, setKeyAnswerCapture12] = useState("");
+	const [keyAnswerCapture13, setKeyAnswerCapture13] = useState("");
+	const [keyAnswerCapture14, setKeyAnswerCapture14] = useState("");
+	// const [angryAnswersCapture, setAngryAnswersCapture] = useState("");
+	// const [confusedAnswersCapture, setConfusedAnswersCapture] = useState("");
+	// const [anxiousAnswersCapture, setAnxiousAnswersCapture] = useState("");
+	// const [sadAnswersCapture, setSadAnswersCapture] = useState("");
 	const [otherAnswer, setOtherAnswer] = useState("");
 	const [printOtherAnswer, setPrintOtherAnswer] = useState("");
 	const [value, onValueChange] = useState(false);
@@ -68,10 +79,10 @@ export default function WellnessForm() {
 		{ otherOpeningQuestion: otherOpeningQuestion },
 		{ emotion: emotion },
 		{ openingEmotionQuestion: openingEmotionQuestion },
-		{ emotionAnswer1: happyAnswersCapture1 },
-		{ emotionAnswer2: happyAnswersCapture2 },
-		{ emotionAnswer3: happyAnswersCapture3 },
-		{ emotionAnswer4: happyAnswersCapture4 },
+		{ emotionAnswer1: keyAnswerCapture1 },
+		{ emotionAnswer2: keyAnswerCapture2 },
+		{ emotionAnswer3: keyAnswerCapture3 },
+		{ emotionAnswer4: keyAnswerCapture4 },
 		{ youthQuestions: youthQuestions },
 		{ youthData: youthData },
 		{ agentQuestions: agentQuestions },
@@ -104,19 +115,29 @@ export default function WellnessForm() {
 						printYouthData={printYouthData}
 						agentData={agentData}
 						printAgentData={printAgentData}
-						happyAnswers={happyAnswers}
-						angryAnswers={angryAnswers}
-						confusedAnswers={confusedAnswers}
-						anxiousAnswers={anxiousAnswers}
-						sadAnswers={sadAnswers}
-						happyAnswersCapture1={happyAnswersCapture1}
-						happyAnswersCapture2={happyAnswersCapture2}
-						happyAnswersCapture3={happyAnswersCapture3}
-						happyAnswersCapture4={happyAnswersCapture4}
-						angryAnswersCapture={angryAnswersCapture}
-						confusedAnswersCapture={confusedAnswersCapture}
-						anxiousAnswersCapture={anxiousAnswersCapture}
-						sadAnswersCapture={sadAnswersCapture}
+						keyAnswers={keyAnswers}
+						// angryAnswers={angryAnswers}
+						// confusedAnswers={confusedAnswers}
+						// anxiousAnswers={anxiousAnswers}
+						// sadAnswers={sadAnswers}
+						keyAnswerCapture1={keyAnswerCapture1}
+						keyAnswerCapture2={keyAnswerCapture2}
+						keyAnswerCapture3={keyAnswerCapture3}
+						keyAnswerCapture4={keyAnswerCapture4}
+						keyAnswerCapture5={keyAnswerCapture5}
+						keyAnswerCapture6={keyAnswerCapture6}
+						keyAnswerCapture7={keyAnswerCapture7}
+						keyAnswerCapture8={keyAnswerCapture8}
+						keyAnswerCapture9={keyAnswerCapture9}
+						keyAnswerCapture10={keyAnswerCapture10}
+						keyAnswerCapture11={keyAnswerCapture11}
+						keyAnswerCapture12={keyAnswerCapture12}
+						keyAnswerCapture13={keyAnswerCapture13}
+						keyAnswerCapture14={keyAnswerCapture14}
+						// angryAnswersCapture={angryAnswersCapture}
+						// confusedAnswersCapture={confusedAnswersCapture}
+						// anxiousAnswersCapture={anxiousAnswersCapture}
+						// sadAnswersCapture={sadAnswersCapture}
 						otherAnswer={otherAnswer}
 						printOtherAnswer={printOtherAnswer}
 						youthQuestions={youthQuestions}
@@ -125,8 +146,14 @@ export default function WellnessForm() {
 						openingPromptQuestions={openingPromptQuestions}
 						emotion={emotion}
 						redPossibleResponses={redPossibleResponses}
+						bluePossibleResponses={bluePossibleResponses}
 						redFollowUpQuestions={redFollowUpQuestions}
+						blueFollowUpQuestions={blueFollowUpQuestions}
+						bluePromptQuestions={bluePromptQuestions}
 						redPromptQuestions={redPromptQuestions}
+						youthPossibleResponses={youthPossibleResponses}
+						youthFollowUpQuestions={youthFollowUpQuestions}
+						youthPromptQuestions={youthPromptQuestions}
 					/>
 				</div>
 				<div className='bg-2 col-6 text-dark'>
@@ -148,21 +175,31 @@ export default function WellnessForm() {
 						agentQuestions={agentQuestions}
 						setAgentData={setAgentData}
 						setPrintAgentData={setPrintAgentData}
-						happyAnswers={happyAnswers}
-						angryAnswers={angryAnswers}
-						confusedAnswers={confusedAnswers}
-						anxiousAnswers={anxiousAnswers}
-						sadAnswers={sadAnswers}
+						keyAnswers={keyAnswers}
+						// angryAnswers={angryAnswers}
+						// confusedAnswers={confusedAnswers}
+						// anxiousAnswers={anxiousAnswers}
+						// sadAnswers={sadAnswers}
 						emotion={emotion}
 						setEmotion={setEmotion}
-						setHappyAnswersCapture1={setHappyAnswersCapture1}
-						setHappyAnswersCapture2={setHappyAnswersCapture2}
-						setHappyAnswersCapture3={setHappyAnswersCapture3}
-						setHappyAnswersCapture4={setHappyAnswersCapture4}
-						setAngryAnswersCapture={setAngryAnswersCapture}
-						setConfusedAnswersCapture={setConfusedAnswersCapture}
-						setAnxiousAnswersCapture={setAnxiousAnswersCapture}
-						setSadAnswersCapture={setSadAnswersCapture}
+						setKeyAnswerCapture1={setKeyAnswerCapture1}
+						setKeyAnswerCapture2={setKeyAnswerCapture2}
+						setKeyAnswerCapture3={setKeyAnswerCapture3}
+						setKeyAnswerCapture4={setKeyAnswerCapture4}
+						setKeyAnswerCapture5={setKeyAnswerCapture5}
+						setKeyAnswerCapture6={setKeyAnswerCapture6}
+						setKeyAnswerCapture7={setKeyAnswerCapture7}
+						setKeyAnswerCapture8={setKeyAnswerCapture8}
+						setKeyAnswerCapture9={setKeyAnswerCapture9}
+						setKeyAnswerCapture10={setKeyAnswerCapture10}
+						setKeyAnswerCapture11={setKeyAnswerCapture11}
+						setKeyAnswerCapture12={setKeyAnswerCapture12}
+						setKeyAnswerCapture13={setKeyAnswerCapture13}
+						setKeyAnswerCapture14={setKeyAnswerCapture14}
+						// setAngryAnswersCapture={setAngryAnswersCapture}
+						// setConfusedAnswersCapture={setConfusedAnswersCapture}
+						// setAnxiousAnswersCapture={setAnxiousAnswersCapture}
+						// setSadAnswersCapture={setSadAnswersCapture}
 						setOtherAnswer={setOtherAnswer}
 						setPrintOtherAnswer={setPrintOtherAnswer}
 						value={value}
@@ -191,24 +228,30 @@ export default function WellnessForm() {
 						setPrintOtherOpeningQuestion={setPrintOtherOpeningQuestion}
 						setOpeningEmotionQuestion={setOpeningEmotionQuestion}
 						openingEmotionQuestion={openingEmotionQuestion}
-						setHappyAnswers={setHappyAnswers}
-						setAngryAnswers={setAngryAnswers}
-						setConfusedAnswers={setConfusedAnswers}
-						setanxiousAnswers={setAnxiousAnswers}
-						setSadAnswers={setSadAnswers}
-						happyAnswers={happyAnswers}
-						angryAnswers={angryAnswers}
-						confusedAnswers={confusedAnswers}
-						anxiousAnswers={anxiousAnswers}
-						sadAnswers={sadAnswers}
+						setKeyAnswers={setKeyAnswers}
+						// setAngryAnswers={setAngryAnswers}
+						// setConfusedAnswers={setConfusedAnswers}
+						// setanxiousAnswers={setAnxiousAnswers}
+						// setSadAnswers={setSadAnswers}
+						// keyAnswers={keyAnswers}
+						// angryAnswers={angryAnswers}
+						// confusedAnswers={confusedAnswers}
+						// anxiousAnswers={anxiousAnswers}
+						// sadAnswers={sadAnswers}
 						setYouthQuestions={setYouthQuestions}
 						setAgentQuestions={setAgentQuestions}
 						agentQuestions={agentReflectionQuestions}
 						setOpeningPromptQuestions={setOpeningPromptQuestions}
 						openingPromptQuestions={openingPromptQuestions}
 						setRedPossibleResponses={setRedPossibleResponses}
+						setBluePossibleResponses={setBluePossibleResponses}
+						setYouthPossibleResponses={setYouthPossibleResponses}
 						setRedFollowUpQuestions={setRedFollowUpQuestions}
+						setBlueFollowUpQuestions={setBlueFollowUpQuestions}
 						setRedPromptQuestions={setRedPromptQuestions}
+						setBluePromptQuestions={setBluePromptQuestions}
+						setYouthFollowUpQuestions={setYouthFollowUpQuestions}
+						setYouthPromptQuestions={setYouthPromptQuestions}
 					/>
 				</div>
 			</div>

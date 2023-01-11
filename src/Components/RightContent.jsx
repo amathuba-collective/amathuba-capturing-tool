@@ -4,6 +4,7 @@ import "../Styles/RightContent.css";
 import RedOpeningQuestions from "../Data/RedQuestions.json";
 import BlueOpeningQuestions from "../Data/BlueQuestions.json";
 import YouthQuestions from "../Data/YouthQuestions.json";
+import StartCallGif from "../Assets/Start Your Call (2).gif";
 // import AgentReflectionStateQuestions from "../Data/AgentReflectionQuestions.json";
 
 export default function RightContent(props) {
@@ -16,105 +17,6 @@ export default function RightContent(props) {
 	function myFunction() {
 		setDropDownActive(true);
 	}
-
-	// const onHappyQuestion1Clicked = (e) => {
-	// 	props.setOpeningEmotionQuestion(
-	// 		HappyStateQuestions.map((happyQuestion) => {
-	// 			return <p>{happyQuestion.happyQuestion1}</p>;
-	// 		}),
-	// 	);
-	// 	// props.setHappyAnswers((happyAnswers) => !happyAnswers);
-	// };
-	// function HandleOpeningQuestion1() {
-	// 	props.setOpeningQuestion(
-	// 		OpeniningStateQuestions.map((openingQuestion) => {
-	// 			return <p>{openingQuestion.openingQuestion1}</p>;
-	// 		}),
-	// 		props.setHappyAnswers((happyAnswers) => !happyAnswers),
-	// 	);
-	// }
-	// const onHappyQuestion2Clicked = (e) => {
-	// 	// props.setOpeningEmotionQuestion(happyQuestions[1]);
-	// 	props.setHappyAnswers((happyAnswers) => !happyAnswers);
-	// };
-	// const onHappyQuestion3Clicked = (e) => {
-	// 	// props.setOpeningEmotionQuestion(happyQuestions[2]);
-	// 	props.setHappyAnswers((happyAnswers) => !happyAnswers);
-	// };
-	// const onHappyQuestion4Clicked = (e) => {
-	// 	// props.setOpeningEmotionQuestion(happyQuestions[3]);
-	// 	props.setHappyAnswers((happyAnswers) => !happyAnswers);
-	// };
-
-	// const onAngryQuestion1Clicked = (e) => {
-	// 	// props.setOpeningEmotionQuestion(angryQuestions[0]);
-	// 	props.setAngryAnswers((angryAnswers) => !angryAnswers);
-	// };
-	// const onAngryQuestion2Clicked = (e) => {
-	// 	props.setAngryAnswers((angryAnswers) => !angryAnswers);
-	// 	// props.setOpeningEmotionQuestion(angryQuestions[1]);
-	// };
-	// const onAngryQuestion3Clicked = (e) => {
-	// 	props.setAngryAnswers((angryAnswers) => !angryAnswers);
-	// 	// props.setOpeningEmotionQuestion(angryQuestions[2]);
-	// };
-	// const onAngryQuestion4Clicked = (e) => {
-	// 	props.setAngryAnswers((angryAnswers) => !angryAnswers);
-	// 	// props.setOpeningEmotionQuestion(angryQuestions[3]);
-	// };
-
-	// const onConfusedQuestion1Clicked = (e) => {
-	// 	// props.setOpeningEmotionQuestion(confusedQuestions[0]);
-	// 	props.setConfusedAnswers((confusedAnswers) => !confusedAnswers);
-	// };
-	// const onConfusedQuestion2Clicked = (e) => {
-	// 	// props.setOpeningEmotionQuestion(confusedQuestions[1]);
-	// 	props.setConfusedAnswers((confusedAnswers) => !confusedAnswers);
-	// };
-	// const onConfusedQuestion3Clicked = (e) => {
-	// 	// props.setOpeningEmotionQuestion(confusedQuestions[2]);
-	// 	props.setConfusedAnswers((confusedAnswers) => !confusedAnswers);
-	// };
-	// const onConfusedQuestion4Clicked = (e) => {
-	// 	// props.setOpeningEmotionQuestion(confusedQuestions[3]);
-	// 	props.setConfusedAnswers((confusedAnswers) => !confusedAnswers);
-	// 	// alert("answer created")
-	// };
-
-	// const onAnxiousQuestion1Clicked = (e) => {
-	// 	// props.setOpeningEmotionQuestion(anxiousQuestions[0]);
-	// 	props.setAnxiousAnswers((anxiousAnswers) => !anxiousAnswers);
-	// };
-	// const onAnxiousQuestion2Clicked = (e) => {
-	// 	// props.setOpeningEmotionQuestion(anxiousQuestions[1]);
-	// 	props.setAnxiousAnswers((anxiousAnswers) => !anxiousAnswers);
-	// };
-	// const onAnxiousQuestion3Clicked = (e) => {
-	// 	// props.setOpeningEmotionQuestion(anxiousQuestions[2]);
-	// 	props.setAnxiousAnswers((anxiousAnswers) => !anxiousAnswers);
-	// };
-	// const onAnxiousQuestion4Clicked = (e) => {
-	// 	// props.setOpeningEmotionQuestion(anxiousQuestions[3]);
-	// 	props.setAnxiousAnswers((anxiousAnswers) => !anxiousAnswers);
-	// 	// alert("answer created")
-	// };
-
-	// const onSadQuestion1Clicked = (e) => {
-	// 	props.setOpeningEmotionQuestion(sadQuestions[0]);
-	// 	props.setSadAnswers((sadAnswers) => !sadAnswers);
-	// };
-	// const onSadQuestion2Clicked = (e) => {
-	// 	props.setOpeningEmotionQuestion(sadQuestions[1]);
-	// 	props.setSadAnswers((sadAnswers) => !sadAnswers);
-	// };
-	// const onSadQuestion3Clicked = (e) => {
-	// 	props.setOpeningEmotionQuestion(sadQuestions[2]);
-	// 	props.setSadAnswers((sadAnswers) => !sadAnswers);
-	// };
-	// const onSadQuestion4Clicked = (e) => {
-	// 	props.setOpeningEmotionQuestion(sadQuestions[3]);
-	// 	props.setSadAnswers((sadAnswers) => !sadAnswers);
-	// };
 
 	// const onYouthReflectionQ1Clicked = () => {
 	// 	props.setYouthQuestions(
@@ -146,29 +48,6 @@ export default function RightContent(props) {
 	// 	props.setAgentQuestions(agentReflectionQuestions[3]);
 	// };
 
-	// function HandleOpeningQuestion1(e) {
-	// 	e.preventDefault();
-	// 	props.setOpeningQuestion(
-	// 		RedOpeningQuestions.map((redQuestions) => {
-	// 			return <p>{redQuestions.possibleResponse1}</p>;
-	// 		}),
-	// 	);
-	// }
-	// function HandleOpeningQuestion3() {
-	// 	props.setOpeningQuestion(
-	// 		OpeniningStateQuestions.map((openingQuestion) => {
-	// 			return <p>{openingQuestion.openingQuestion3}</p>;
-	// 		}),
-	// 	);
-	// }
-	// function HandleOpeningQuestion4() {
-	// 	props.setOpeningQuestion(
-	// 		OpeniningStateQuestions.map((openingQuestion) => {
-	// 			return <p>{openingQuestion.openingQuestion4}</p>;
-	// 		}),
-	// 	);
-	// }
-
 	// /////////////////////////
 
 	useEffect(() => {
@@ -192,28 +71,33 @@ export default function RightContent(props) {
 			: props.setYouthQuestion2(false);
 	}, [props.openingQuestion, props]);
 
+	/// dropdown toggle for opening questions
+
 	function toggleDropDown(e) {
 		e.preventDefault();
 		props.setOpeningQuestion(e.target.value);
 		setDropDownActive(false);
-		props.setHappyAnswers((happyAnswers) => !happyAnswers);
+		props.setKeyAnswers((keyAnswers) => !keyAnswers);
 	}
 	function toggleDropDown2(e) {
 		e.preventDefault();
 		props.setRedOpeningQuestion2(true);
 		props.setOpeningQuestion(e.target.value);
+		// props.setKeyAnswers((keyAnswers) => !keyAnswers);
 		setDropDownActive(false);
 	}
 	function toggleDropDown3(e) {
 		e.preventDefault();
 		props.setBlueOpeningQuestion1(true);
 		props.setOpeningQuestion(e.target.value);
+		props.setKeyAnswers((keyAnswers) => !keyAnswers);
 		setDropDownActive(false);
 	}
 	function toggleDropDown4(e) {
 		e.preventDefault();
 		props.setBlueOpeningQuestion2(true);
 		props.setOpeningQuestion(e.target.value);
+		// props.setKeyAnswers((keyAnswers) => !keyAnswers);
 		setDropDownActive(false);
 	}
 	function toggleDropDown5(e) {
@@ -228,6 +112,8 @@ export default function RightContent(props) {
 		props.setOpeningQuestion(e.target.value);
 		setDropDownActive(false);
 	}
+
+	///toggle red dropdown content
 
 	function toggleRedPossibleResponse() {
 		props.setRedPossibleResponses(
@@ -288,15 +174,149 @@ export default function RightContent(props) {
 		);
 	}
 
+	///////////// toggle blue dropdown content
+	function toggleBluePossibleResponse() {
+		props.setBluePossibleResponses(
+			BlueOpeningQuestions.map((blueResponses) => {
+				return <p>{blueResponses.possibleResponse1}</p>;
+			}),
+		);
+	}
+	function toggleBluePossibleResponse2() {
+		props.setBluePossibleResponses(
+			BlueOpeningQuestions.map((blueResponses) => {
+				return <p>{blueResponses.possibleResponse2}</p>;
+			}),
+		);
+	}
+	function toggleBluePossibleResponse3() {
+		props.setBluePossibleResponses(
+			BlueOpeningQuestions.map((blueResponses) => {
+				return <p>{blueResponses.possibleResponse3}</p>;
+			}),
+		);
+	}
+	/////
+	function toggleBluefollowUpQuestion() {
+		props.setBlueFollowUpQuestions(
+			BlueOpeningQuestions.map((blueFQ) => {
+				return <p>{blueFQ.followUpQuestion1}</p>;
+			}),
+		);
+	}
+	function toggleBluefollowUpQuestion2() {
+		props.setBlueFollowUpQuestions(
+			BlueOpeningQuestions.map((blueFQ) => {
+				return <p>{blueFQ.followUpQuestion2}</p>;
+			}),
+		);
+	}
+	function toggleBluefollowUpQuestion3() {
+		props.setBlueFollowUpQuestions(
+			BlueOpeningQuestions.map((blueFQ) => {
+				return <p>{blueFQ.followUpQuestion3}</p>;
+			}),
+		);
+	}
+	/////
+
+	function toggleBluePromptQuestion() {
+		props.setBluePromptQuestions(
+			BlueOpeningQuestions.map((bluePQ) => {
+				return <p>{bluePQ.promptQuestion1}</p>;
+			}),
+		);
+	}
+	function toggleBluePromptQuestion2() {
+		props.setBluePromptQuestions(
+			BlueOpeningQuestions.map((bluePQ) => {
+				return <p>{bluePQ.promptQuestion2}</p>;
+			}),
+		);
+	}
+	function toggleBluePromptQuestion3() {
+		props.setBluePromptQuestions(
+			BlueOpeningQuestions.map((bluePQ) => {
+				return <p>{bluePQ.promptQuestion3}</p>;
+			}),
+		);
+	}
+	function toggleBluePromptQuestion4() {
+		props.setBluePromptQuestions(
+			BlueOpeningQuestions.map((bluePQ) => {
+				return <p>{bluePQ.promptQuestion4}</p>;
+			}),
+		);
+	}
+	//////
+	/////Toggle Youth Question Contents
+	function toggleYouthPossibleResponse() {
+		props.setYouthPossibleResponses(
+			YouthQuestions.map((youthPR) => {
+				return <p>{youthPR.possibleResponses1}</p>;
+			}),
+		);
+	}
+	function toggleYouthPossibleResponse2() {
+		props.setYouthPossibleResponses(
+			YouthQuestions.map((youthPR) => {
+				return <p>{youthPR.possibleResponses2}</p>;
+			}),
+		);
+	}
+	//////
+	function toggleYouthFollowUpQuestion() {
+		props.setYouthFollowUpQuestions(
+			YouthQuestions.map((youthFQ) => {
+				return <p>{youthFQ.followUpQuestion1}</p>;
+			}),
+		);
+	}
+	function toggleYouthFollowUpQuestion2() {
+		props.setYouthFollowUpQuestions(
+			YouthQuestions.map((youthFQ) => {
+				return <p>{youthFQ.followUpQuestion2}</p>;
+			}),
+		);
+	}
+	//////
+	function toggleYouthPromptQuestion() {
+		props.setYouthPromptQuestions(
+			YouthQuestions.map((youthPQ) => {
+				return <p>{youthPQ.promptQuestion1}</p>;
+			}),
+		);
+	}
+	function toggleYouthPromptQuestion2() {
+		props.setYouthPromptQuestions(
+			YouthQuestions.map((youthPQ) => {
+				return <p>{youthPQ.promptQuestion2}</p>;
+			}),
+		);
+	}
+	function toggleYouthPromptQuestion3() {
+		props.setYouthPromptQuestions(
+			YouthQuestions.map((youthPQ) => {
+				return <p>{youthPQ.promptQuestion3}</p>;
+			}),
+		);
+	}
+	function toggleYouthPromptQuestion4() {
+		props.setYouthPromptQuestions(
+			YouthQuestions.map((youthPQ) => {
+				return <p>{youthPQ.promptQuestion4}</p>;
+			}),
+		);
+	}
+
 	const renderResult = () => {
 		let result;
 		props.openingQuestion === ""
 			? (result = (
 					<div>
-						{/* <p>
-							Start your Call <br />
-							with selected opening Question
-						</p> */}
+						<p>
+							<img src={StartCallGif} alt='callGif' className='w-100' />
+						</p>
 					</div>
 			  ))
 			: props.openingQuestion === "redOpeningQuestion1"
@@ -357,15 +377,12 @@ export default function RightContent(props) {
 													Prompt Questions
 												</h2>
 											</div>
-											<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
-												{redQuestions.promptQuestion1}
-											</button>
-
 											<button
 												className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
 												onClick={toggleRedPromptQuestion1}>
 												{redQuestions.promptQuestion1}
 											</button>
+
 											<button
 												className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
 												onClick={toggleRedPromptQuestion2}>
@@ -390,16 +407,24 @@ export default function RightContent(props) {
 												Possible Responses
 											</h2>
 										</div>
-										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleRedPossibleResponse}>
 											{redQuestions.possibleResponse1}
 										</button>
-										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleRedPossibleResponse2}>
 											{redQuestions.possibleResponse2}
 										</button>
-										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleRedPossibleResponse3}>
 											{redQuestions.possibleResponse3}
 										</button>
-										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleRedPossibleResponse4}>
 											{redQuestions.posibbleResponse4}
 										</button>
 									</div>
@@ -409,10 +434,14 @@ export default function RightContent(props) {
 												Follow-up Questions
 											</h2>
 										</div>
-										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleRedFollowUpQuestion1}>
 											{redQuestions.followUpQuestion1}
 										</button>
-										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleRedFollowUpQuestion2}>
 											{redQuestions.followUpQuestion2}
 										</button>
 									</div>
@@ -422,10 +451,14 @@ export default function RightContent(props) {
 												Prompt Questions
 											</h2>
 										</div>
-										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleRedPromptQuestion1}>
 											{redQuestions.promptQuestion1}
 										</button>
-										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleRedPromptQuestion2}>
 											{redQuestions.promptQuestion2}
 										</button>
 									</div>
@@ -446,13 +479,19 @@ export default function RightContent(props) {
 												Possible Responses
 											</h2>
 										</div>
-										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleBluePossibleResponse}>
 											{blueQuestions.possibleResponse1}
 										</button>
-										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleBluePossibleResponse2}>
 											{blueQuestions.possibleResponse2}
 										</button>
-										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleBluePossibleResponse3}>
 											{blueQuestions.possibleResponse3}
 										</button>
 									</div>
@@ -462,13 +501,19 @@ export default function RightContent(props) {
 												Follow-up Questions
 											</h2>
 										</div>
-										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleBluefollowUpQuestion}>
 											{blueQuestions.followUpQuestion1}
 										</button>
-										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleBluefollowUpQuestion2}>
 											{blueQuestions.followUpQuestion2}
 										</button>
-										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleBluefollowUpQuestion3}>
 											{blueQuestions.followUpQuestion3}
 										</button>
 									</div>
@@ -478,16 +523,24 @@ export default function RightContent(props) {
 												Prompt Questions
 											</h2>
 										</div>
-										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleBluePromptQuestion}>
 											{blueQuestions.promptQuestion1}
 										</button>
-										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleBluePromptQuestion2}>
 											{blueQuestions.promptQuestion2}
 										</button>
-										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleBluePromptQuestion3}>
 											{blueQuestions.promptQuestion3}
 										</button>
-										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleBluePromptQuestion4}>
 											{blueQuestions.promptQuestion4}
 										</button>
 									</div>
@@ -570,10 +623,14 @@ export default function RightContent(props) {
 												Possible Responses
 											</h2>
 										</div>
-										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleYouthPossibleResponse}>
 											{youthQuestions.possibleResponses1}
 										</button>
-										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleYouthPossibleResponse2}>
 											{youthQuestions.possibleResponses2}
 										</button>
 									</div>
@@ -583,10 +640,14 @@ export default function RightContent(props) {
 												Follow-up Questions
 											</h2>
 										</div>
-										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleYouthFollowUpQuestion}>
 											{youthQuestions.followUpQuestion1}
 										</button>
-										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleYouthFollowUpQuestion2}>
 											{youthQuestions.followUpQuestion2}
 										</button>
 									</div>
@@ -596,16 +657,24 @@ export default function RightContent(props) {
 												Prompt Questions
 											</h2>
 										</div>
-										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleYouthPromptQuestion}>
 											{youthQuestions.promptQuestion1}
 										</button>
-										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleYouthPromptQuestion2}>
 											{youthQuestions.promptQuestion2}
 										</button>
-										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleYouthPromptQuestion3}>
 											{youthQuestions.promptQuestion3}
 										</button>
-										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleYouthPromptQuestion4}>
 											{youthQuestions.promptQuestion4}
 										</button>
 									</div>
