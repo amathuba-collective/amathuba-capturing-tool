@@ -5,7 +5,7 @@ import RedOpeningQuestions from "../Data/RedQuestions.json";
 import BlueOpeningQuestions from "../Data/BlueQuestions.json";
 import YouthQuestions from "../Data/YouthQuestions.json";
 import StartCallGif from "../Assets/Start Your Call (2).gif";
-// import AgentReflectionStateQuestions from "../Data/AgentReflectionQuestions.json";
+import AgentReflectionStateQuestions from "../Data/AgentReflectionQuestions.json";
 
 export default function RightContent(props) {
 	// const getOtherOpeningQuestion = (e) => {
@@ -35,18 +35,34 @@ export default function RightContent(props) {
 	// 	props.setYouthQuestions(youthReflectionQuestions[3]);
 	// };
 
-	// const onAgentReflectionQ1Clicked = (e) => {
-	// 	props.setAgentQuestions(agentReflectionQuestions[0]);
-	// };
-	// const onAgentReflectionQ2Clicked = (e) => {
-	// 	props.setAgentQuestions(agentReflectionQuestions[1]);
-	// };
-	// const onAgentReflectionQ3Clicked = (e) => {
-	// 	props.setAgentQuestions(agentReflectionQuestions[2]);
-	// };
-	// const onAgentReflectionQ4Clicked = (e) => {
-	// 	props.setAgentQuestions(agentReflectionQuestions[3]);
-	// };
+	const onAgentReflectionQ1Clicked = (e) => {
+		props.setAgentQuestions(
+			AgentReflectionStateQuestions.map((agentRSQ) => {
+				return <p>{agentRSQ.agentReflectionQuestion1}</p>;
+			}),
+		);
+	};
+	const onAgentReflectionQ2Clicked = (e) => {
+		props.setAgentQuestions(
+			AgentReflectionStateQuestions.map((agentRSQ) => {
+				return <p>{agentRSQ.agentReflectionQuestion2}</p>;
+			}),
+		);
+	};
+	const onAgentReflectionQ3Clicked = (e) => {
+		props.setAgentQuestions(
+			AgentReflectionStateQuestions.map((agentRSQ) => {
+				return <p>{agentRSQ.agentReflectionQuestion3}</p>;
+			}),
+		);
+	};
+	const onAgentReflectionQ4Clicked = (e) => {
+		props.setAgentQuestions(
+			AgentReflectionStateQuestions.map((agentRSQ) => {
+				return <p>{agentRSQ.agentReflectionQuestion4}</p>;
+			}),
+		);
+	};
 
 	// /////////////////////////
 
@@ -743,6 +759,48 @@ export default function RightContent(props) {
 		return result;
 	};
 
+	const renderAgentQuestions = () => {
+		let agentResult;
+		props.recommendedQuestions === "agentReflection"
+			? (agentResult = (
+					<div>
+						{AgentReflectionStateQuestions.map((agentRSQ) => {
+							return (
+								<div className='d-flex flex-column mb-5'>
+									<div>
+										<h4 className='fs-4 fw-bold mb-3'>
+											Agent Reflection Questions
+										</h4>
+									</div>
+									<button
+										className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+										onClick={onAgentReflectionQ1Clicked}>
+										{agentRSQ.agentReflectionQuestion1}
+									</button>
+									<button
+										className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+										onClick={onAgentReflectionQ2Clicked}>
+										{agentRSQ.agentReflectionQuestion2}
+									</button>
+									<button
+										className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+										onClick={onAgentReflectionQ3Clicked}>
+										{agentRSQ.agentReflectionQuestion3}
+									</button>
+									<button
+										className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+										onClick={onAgentReflectionQ4Clicked}>
+										{agentRSQ.agentReflectionQuestion4}
+									</button>
+								</div>
+							);
+						})}
+					</div>
+			  ))
+			: (agentResult = "");
+		return agentResult;
+	};
+
 	return (
 		<div className='container-fluid rightContent'>
 			<div className='mt-4 d-flex flex-column'>
@@ -815,6 +873,7 @@ export default function RightContent(props) {
 					) : null}
 				</div>
 				<div>{renderResult()}</div>
+				<div>{renderAgentQuestions()}</div>
 			</div>
 		</div>
 	);

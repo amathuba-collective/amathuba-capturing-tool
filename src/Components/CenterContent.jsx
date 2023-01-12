@@ -5,11 +5,17 @@ import "../Styles/ReactCalender.css";
 import "react-calendar/dist/Calendar.css";
 import "../Styles/CenterContent.css";
 import KeyWordAnswers from "../Data/keyWordAnswers.json";
+import HappyEmoji from "../Assets/happyEmotion.png";
+import AngryEmoji from "../Assets/angryEmotion.png";
+import ConfusedEmoji from "../Assets/confusedEmotion.png";
+import AnxiousEmoji from "../Assets/anxiousEmotion.png";
+import SadEmoji from "../Assets/sadEmoji.png";
 
 export default function CenterContent(props) {
+	const [formKey, setFormKey] = useState(1);
 	const navigate = useNavigate();
 
-	const emotions = ["😄", "😡", "🤔", "😰", "🙁"];
+	const emotions = ["Happy", "Angry", "Confused", "Anxious", "Sad"];
 
 	const [nextSession, setNextSession] = useState("newAppoinment");
 	// function getOtherAnswer(e) {
@@ -141,8 +147,16 @@ export default function CenterContent(props) {
 		);
 	}
 
+	// code for text input for alternative keyword answer
+
 	function getOtherAnswer(e) {
-		props.setOtherAnswer(e.target.value);
+		props.setOtherAnswerInput(e.target.value);
+	}
+
+	function saveOtherAnswer(e) {
+		e.preventDefault();
+		props.setOtherAnswer(true);
+		setFormKey(formKey + 1);
 	}
 
 	// function getYouthQuestions(e) {
@@ -188,7 +202,7 @@ export default function CenterContent(props) {
 						) : null}
 					</p>
 				</div>
-				<div className=''>
+				<div className='emojis'>
 					<div
 						value={props.recommendedQuestions}
 						className='d-flex justify-content-evenly mt-5'>
@@ -197,31 +211,31 @@ export default function CenterContent(props) {
 							value='happy'
 							className='border-0 bg-transparent fs-1'
 							onClick={handleOnChange1}>
-							😄
+							<img src={HappyEmoji} alt='sadEmoji' className='sadEmo' />
 						</button>
 						<button
 							value='angry'
 							className='border-0 bg-transparent fs-1'
 							onClick={handleOnChange2}>
-							😡
+							<img src={AngryEmoji} alt='sadEmoji' className='sadEmo' />
 						</button>
 						<button
 							value='confused'
 							className='border-0 bg-transparent fs-1'
 							onClick={handleOnChange3}>
-							🤔
+							<img src={ConfusedEmoji} alt='sadEmoji' className='sadEmo' />
 						</button>
 						<button
 							value='anxious'
 							className='border-0 bg-transparent fs-1'
 							onClick={handleOnChange4}>
-							😰
+							<img src={AnxiousEmoji} alt='sadEmoji' className='sadEmo' />
 						</button>
 						<button
 							value='sad'
 							className='border-0 bg-transparent fs-1'
 							onClick={handleOnChange5}>
-							🙁
+							<img src={SadEmoji} alt='sadEmoji' className='sadEmo' />
 						</button>
 					</div>
 				</div>
@@ -319,19 +333,19 @@ export default function CenterContent(props) {
 								</div>
 							</div>
 							<div className='otherAnswer mt-5 d-flex w-75'>
-								<div className='input-group mb-3'>
-									<input
-										type='text'
-										className='otherInput form-control'
-										placeholder='Other'
-										onChange={getOtherAnswer}
-									/>
-								</div>
-								<button
-									className='otherAnswerBtn border-secondary border-2 text-dark rounded'
-									onClick={() => props.setPrintOtherAnswer(true)}>
-									save
-								</button>
+								<form onSubmit={saveOtherAnswer} key={formKey}>
+									<div className='input-group mb-3'>
+										<input
+											type='text'
+											className='otherInput form-control'
+											placeholder='Other'
+											onChange={getOtherAnswer}
+										/>
+									</div>
+									<button className='otherAnswerBtn border-secondary border-2 text-dark rounded'>
+										save
+									</button>
+								</form>
 							</div>
 						</div>
 					) : null}
@@ -534,7 +548,7 @@ export default function CenterContent(props) {
 			{/* Footer section starst */}
 			{/* Youth reflection input */}
 			<div className='footer'>
-				<div className='mt-5' value={props.recommendedQuestions}>
+				<div className='mt-5'>
 					<div className='recommended question for youth reflection'>
 						<h2 className='recommendedQuestion mb-3 text-center fs-4 fw-semilight'>
 							{props.youthQuestion1 ? <p>Earlier you said you..?</p> : null}
@@ -555,7 +569,7 @@ export default function CenterContent(props) {
 					<button
 						onClick={() => props.setPrintYouthData(true)}
 						className='sm bg-transparent border border-2 rounded '>
-						Store
+						Save
 					</button>
 				</div>
 
@@ -581,7 +595,7 @@ export default function CenterContent(props) {
 					<button
 						onClick={() => props.setPrintAgentData(true)}
 						className='sm bg-transparent border border-2 rounded'>
-						Store
+						Save
 					</button>
 				</div>
 				{/*                                            */}

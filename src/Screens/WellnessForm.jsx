@@ -69,8 +69,8 @@ export default function WellnessForm() {
 	// const [confusedAnswersCapture, setConfusedAnswersCapture] = useState("");
 	// const [anxiousAnswersCapture, setAnxiousAnswersCapture] = useState("");
 	// const [sadAnswersCapture, setSadAnswersCapture] = useState("");
+	const [otherAnswerInput, setOtherAnswerInput] = useState("");
 	const [otherAnswer, setOtherAnswer] = useState("");
-	const [printOtherAnswer, setPrintOtherAnswer] = useState("");
 	const [value, onValueChange] = useState(false);
 	const [emotion, setEmotion] = useState("");
 
@@ -138,9 +138,10 @@ export default function WellnessForm() {
 						// confusedAnswersCapture={confusedAnswersCapture}
 						// anxiousAnswersCapture={anxiousAnswersCapture}
 						// sadAnswersCapture={sadAnswersCapture}
+						otherAnswerInput={otherAnswerInput}
 						otherAnswer={otherAnswer}
-						printOtherAnswer={printOtherAnswer}
 						youthQuestions={youthQuestions}
+						agentReflectionQuestions={agentReflectionQuestions}
 						agentQuestions={agentQuestions}
 						value={value}
 						openingPromptQuestions={openingPromptQuestions}
@@ -176,6 +177,7 @@ export default function WellnessForm() {
 						setAgentData={setAgentData}
 						setPrintAgentData={setPrintAgentData}
 						keyAnswers={keyAnswers}
+						otherAnswer={otherAnswer}
 						// angryAnswers={angryAnswers}
 						// confusedAnswers={confusedAnswers}
 						// anxiousAnswers={anxiousAnswers}
@@ -200,8 +202,8 @@ export default function WellnessForm() {
 						// setConfusedAnswersCapture={setConfusedAnswersCapture}
 						// setAnxiousAnswersCapture={setAnxiousAnswersCapture}
 						// setSadAnswersCapture={setSadAnswersCapture}
+						setOtherAnswerInput={setOtherAnswerInput}
 						setOtherAnswer={setOtherAnswer}
-						setPrintOtherAnswer={setPrintOtherAnswer}
 						value={value}
 						onValueChange={onValueChange}
 						submitContent={submitContent}
@@ -240,7 +242,7 @@ export default function WellnessForm() {
 						// sadAnswers={sadAnswers}
 						setYouthQuestions={setYouthQuestions}
 						setAgentQuestions={setAgentQuestions}
-						agentQuestions={agentReflectionQuestions}
+						agentReflectionQuestions={agentReflectionQuestions}
 						setOpeningPromptQuestions={setOpeningPromptQuestions}
 						openingPromptQuestions={openingPromptQuestions}
 						setRedPossibleResponses={setRedPossibleResponses}

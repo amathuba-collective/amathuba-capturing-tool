@@ -132,6 +132,13 @@ export default function LeftContent(props) {
 														<p className='fs-5'>{props.keyAnswerCapture13}</p>
 													) : null}
 												</p>
+												{/* text input answer below */}
+												<p>
+													{props.otherAnswer ? (
+														<p>{props.otherAnswerInput}</p>
+													) : null}
+												</p>
+												{/* text input answer above */}
 												<p>
 													{props.keyAnswerCapture14 ? (
 														<p className='fs-5'>{props.keyAnswerCapture14}</p>
@@ -141,13 +148,15 @@ export default function LeftContent(props) {
 										</div>
 									</div>
 								) : null}
-								{props.printOtherOpeningQuestion ? (
+								{/* {props.printOtherOpeningQuestion ? (
 									<div>
 										<h4>Opening Question</h4>
 										<p>{props.otherOpeningQuestion}</p>
 									</div>
-								) : null}
+								) : null} */}
 							</div>
+							{/* summary column divider */}
+							<hr className='w-100 ng-secondary border border-1 border-secondary ' />
 						</div>
 						<div>
 							<p className='fw-semilight fs-3 '>
@@ -155,6 +164,8 @@ export default function LeftContent(props) {
 									<div>
 										<h4 className='fw-bold fs-4'>Emotion of Call</h4>
 										<p className='fs-5'>{props.emotion}</p>
+										{/* summary column divider */}
+										<hr className='w-100 ng-secondary border border-1 border-secondary ' />
 									</div>
 								) : null}
 							</p>
@@ -167,6 +178,9 @@ export default function LeftContent(props) {
 										<p className='fs-5 fw-semibold'>
 											{props.redPossibleResponses}
 										</p>
+
+										{/* summary column divider */}
+										<hr className='w-100 ng-secondary border border-1 border-secondary ' />
 									</div>
 								) : props.bluePossibleResponses ? (
 									<div>
@@ -174,6 +188,9 @@ export default function LeftContent(props) {
 										<p className='fs-5 fw-semibold'>
 											{props.bluePossibleResponses}
 										</p>
+
+										{/* summary column divider */}
+										<hr className='w-100 ng-secondary border border-1 border-secondary ' />
 									</div>
 								) : null}
 							</div>
@@ -267,13 +284,25 @@ export default function LeftContent(props) {
 														<p className='fs-5'>{props.keyAnswerCapture13}</p>
 													) : null}
 												</p>
+												{/* text input answer below */}
+												<p>
+													{props.printOtherAnswer ? (
+														<p>{props.otherAnswer}</p>
+													) : null}
+												</p>
+												{/* text input answer above */}
 												<p>
 													{props.keyAnswerCapture14 ? (
-														<p className='fs-5'>{props.keyAnswerCapture14}</p>
+														<div>
+															<p className='fs-5'>{props.keyAnswerCapture14}</p>
+														</div>
 													) : null}
 												</p>
 											</div>
 										</div>
+
+										{/* summary column divider */}
+										<hr className='w-100 ng-secondary border border-1 border-secondary ' />
 									</div>
 								) : props.blueFollowUpQuestions ? (
 									<div>
@@ -363,6 +392,13 @@ export default function LeftContent(props) {
 														<p className='fs-5'>{props.keyAnswerCapture13}</p>
 													) : null}
 												</p>
+												{/* text input answer below */}
+												<p>
+													{props.printOtherAnswer ? (
+														<p>{props.otherAnswer}</p>
+													) : null}
+												</p>
+												{/* text input answer above */}
 												<p>
 													{props.keyAnswerCapture14 ? (
 														<p className='fs-5'>{props.keyAnswerCapture14}</p>
@@ -370,6 +406,9 @@ export default function LeftContent(props) {
 												</p>
 											</div>
 										</div>
+
+										{/* summary column divider */}
+										<hr className='w-100 bg-secondary border border-2 border-secondary rounded' />
 									</div>
 								) : null}
 							</div>
@@ -460,6 +499,13 @@ export default function LeftContent(props) {
 														<p className='fs-5'>{props.keyAnswerCapture13}</p>
 													) : null}
 												</p>
+												{/* text input answer below */}
+												<p>
+													{props.printOtherAnswer ? (
+														<p>{props.otherAnswer}</p>
+													) : null}
+												</p>
+												{/* text input answer above */}
 												<p>
 													{props.keyAnswerCapture14 ? (
 														<p className='fs-5'>{props.keyAnswerCapture14}</p>
@@ -467,6 +513,9 @@ export default function LeftContent(props) {
 												</p>
 											</div>
 										</div>
+
+										{/* summary column divider */}
+										<hr className='w-100 bg-dark border border-3 border-dark rounded' />
 									</div>
 								) : props.bluePromptQuestions ? (
 									<div>
@@ -554,6 +603,13 @@ export default function LeftContent(props) {
 														<p className='fs-5'>{props.keyAnswerCapture13}</p>
 													) : null}
 												</p>
+												{/* text input answer below */}
+												<p>
+													{props.otherAnswer ? (
+														<p>{props.otherAnswerInput}</p>
+													) : null}
+												</p>
+												{/* text input answer above */}
 												<p>
 													{props.keyAnswerCapture14 ? (
 														<p className='fs-5'>{props.keyAnswerCapture14}</p>
@@ -561,46 +617,21 @@ export default function LeftContent(props) {
 												</p>
 											</div>
 										</div>
-									</div>
-								) : null}
-							</div>
-							{/* <div className='agentReflection fw-semilight fs-4 mt-4'>
-								{props.youthQuestions ? (
-									<div>
-										<h4>{props.youthQuestions}</h4>
-										{props.printYouthData ? (
-											<div className='mt-2'>
-												<h5>Youth Reflection</h5>
-												<p className='fs-5'>{props.youthData}</p>
-											</div>
-										) : null}
-									</div>
-								) : null}
-							</div>
-							<div>
-								<p className='agentReflection fw-semilight fs-4 mt-3'>
-									{props.agentQuestions ? (
-										<div>
-											<h4>{props.agentQuestions}</h4>
-											{props.printAgentData ? (
-												<div>
-													<h5>Agent Reflection</h5>
-													<p className='fs-5'>{props.agentData}</p>
-												</div>
-											) : null}
-										</div>
-									) : null}
-								</p>
-							</div> */}
 
-							<p className='agentReflection fw-semilight fs-4 mt-2'>
+										{/* summary column divider */}
+										<hr className='w-100 bg-dark border border-1 border-dark ' />
+									</div>
+								) : null}
+							</div>
+
+							{/* <p className='agentReflection fw-semilight fs-4 mt-2'>
 								{props.value ? (
 									<div>
 										<h4>New appointment</h4>
 										<p className='fs-5'> {props.value.toDateString()} </p>
 									</div>
 								) : null}
-							</p>
+							</p> */}
 						</div>
 					</div>
 					<div className='agentReflection fw-semilight fs-4 mt-4'>
@@ -615,6 +646,9 @@ export default function LeftContent(props) {
 									<div>
 										<h5>Youth Reflection</h5>
 										<p className='fs-5'>{props.youthData}</p>
+
+										{/* summary column divider */}
+										<hr className='w-100 ng-secondary border border-1 border-secondary ' />
 									</div>
 								) : null}
 							</div>
@@ -624,6 +658,9 @@ export default function LeftContent(props) {
 								<div>
 									<h5 className='fw-semibold fs-4'>Possible Reponse</h5>
 									<p className='fs-5'>{props.youthPossibleResponses}</p>
+
+									{/* summary column divider */}
+									<hr className='w-100 ng-secondary border border-1 border-secondary ' />
 								</div>
 							) : null}
 						</div>
@@ -633,6 +670,9 @@ export default function LeftContent(props) {
 								<div>
 									<h5 className='fw-semibold fs-4'>Follow-up question</h5>
 									<p className='fs-5'>{props.youthFollowUpQuestions}</p>
+
+									{/* summary column divider */}
+									<hr className='w-100 ng-secondary border border-1 border-secondary ' />
 								</div>
 							) : null}
 						</div>
@@ -642,23 +682,34 @@ export default function LeftContent(props) {
 								<div>
 									<h5 className='fw-semibold fs-4'>Prompt question</h5>
 									<p className='fs-5'>{props.youthPromptQuestions}</p>
+
+									{/* summary column divider */}
+									<hr className='w-100 ng-secondary border border-1 border-secondary ' />
 								</div>
 							) : null}
 						</div>
 					</div>
 					<div>
-						<p className='agentReflection fw-semilight fs-4 mt-3'>
-							{props.agentReflectionQuestions ? (
+						<p className='agentReflection fw-semilight fs-5 mt-4'>
+							{props.agentQuestions ? (
 								<div>
-									<h4>{props.agentReflectionQuestions}</h4>
-									{props.printAgentData ? (
+									<h4 className='fw-semibold'>Agent Reflection Question</h4>
+									<p>{props.agentQuestions}</p>
+								</div>
+							) : null}
+							<div>
+								{props.printAgentData ? (
+									<div>
 										<div>
 											<h5>Agent Reflection</h5>
 											<p className='fs-5'>{props.agentData}</p>
 										</div>
-									) : null}
-								</div>
-							) : null}
+
+										{/* summary column divider */}
+										<hr className='w-100 ng-secondary border border-1 border-secondary ' />
+									</div>
+								) : null}
+							</div>
 						</p>
 					</div>
 					<p className='agentReflection fw-semilight fs-4 mt-2'>
