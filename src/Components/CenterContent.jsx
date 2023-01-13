@@ -12,7 +12,7 @@ import AnxiousEmoji from "../Assets/anxiousEmotion.png";
 import SadEmoji from "../Assets/sadEmoji.png";
 
 export default function CenterContent(props) {
-	const [formKey, setFormKey] = useState(1);
+	// const [formKey, setFormKey] = useState(1);
 	const navigate = useNavigate();
 
 	const emotions = ["Happy", "Angry", "Confused", "Anxious", "Sad"];
@@ -150,13 +150,17 @@ export default function CenterContent(props) {
 	// code for text input for alternative keyword answer
 
 	function getOtherAnswer(e) {
-		props.setOtherAnswerInput(e.target.value);
+		props.setAnswerTextInput({
+			...props.answerTextInput,
+			[e.target.name]: e.target.value,
+		});
 	}
 
-	function saveOtherAnswer(e) {
-		e.preventDefault();
-		props.setOtherAnswer(true);
-		setFormKey(formKey + 1);
+	let { keyAnswer } = props.answerTextInput;
+	function addOtherAnswer(e) {
+		props.setInputArr([...props.inputArr, keyAnswer]);
+		console.log(props.inputArr);
+		props.setAnswerTextInput({ keyAnswer: "" });
 	}
 
 	// function getYouthQuestions(e) {
@@ -166,10 +170,22 @@ export default function CenterContent(props) {
 	// 	props.setAgentQuestions((agentQuestions) => !agentQuestions);
 	// }
 
-	function getYouthReflection(val) {
-		props.setYouthData(val.target.value);
-		// props.setYouthData("");
-		// props.setPrintYouthData(false)
+	function getYouthReflection(e) {
+		props.setYouthTextInput({
+			...props.youthTextInput,
+			[e.target.name]: e.target.value,
+		});
+	}
+
+	let { youthOQ, youthFQ, youthPQ } = props.youthTextInput;
+	function addYouthReflection() {
+		props.setYouthInputArr([
+			...props.youthInputArr,
+			{ youthOQ, youthFQ, youthPQ },
+		]);
+		console.log(props.youthInputArr);
+
+		props.setYouthTextInput({ youthOQ: "", youthFQ: "", youthPQ: "" });
 	}
 
 	function getAgentReflection(val) {
@@ -333,19 +349,21 @@ export default function CenterContent(props) {
 								</div>
 							</div>
 							<div className='otherAnswer mt-5 d-flex w-75'>
-								<form onSubmit={saveOtherAnswer} key={formKey}>
-									<div className='input-group mb-3'>
-										<input
-											type='text'
-											className='otherInput form-control'
-											placeholder='Other'
-											onChange={getOtherAnswer}
-										/>
-									</div>
-									<button className='otherAnswerBtn border-secondary border-2 text-dark rounded'>
-										save
-									</button>
-								</form>
+								<div className='input-group mb-3'>
+									<input
+										type='text'
+										className='otherInput form-control'
+										placeholder='OtherAnswer'
+										name='keyAnswer'
+										value={props.answerTextInput.keyAnswer}
+										onChange={getOtherAnswer}
+									/>
+								</div>
+								<button
+									className='otherAnswerBtn border-secondary border-2 text-dark rounded'
+									onClick={addOtherAnswer}>
+									save
+								</button>
 							</div>
 						</div>
 					) : null}
@@ -562,15 +580,52 @@ export default function CenterContent(props) {
 						Get recommended question
 					</button> */}
 					<textarea
-						className='textArea form-control'
+						className='textArea form-control h-50'
+						type='text'
 						onChange={getYouthReflection}
-						placeholder='Type Reflection'
+						value={props.youthTextInput.youthOQ}
+						placeholder='Youth Question'
+						name='youthOQ'
 						id='#'></textarea>
-					<button
-						onClick={() => props.setPrintYouthData(true)}
-						className='sm bg-transparent border border-2 rounded '>
-						Save
-					</button>
+					<div className='d-grid mt-2 mb-4'>
+						<button
+							onClick={addYouthReflection}
+							className='sm bg-transparent border border-2 rounded '>
+							Save
+						</button>
+					</div>
+
+					<textarea
+						className='textArea form-control mt-2 h-50'
+						type='text'
+						onChange={getYouthReflection}
+						value={props.youthTextInput.youthFQ}
+						placeholder='Youth follow-up'
+						name='youthFQ'
+						id='#'></textarea>
+					<div className='d-grid mt-2 mb-4'>
+						<button
+							onClick={addYouthReflection}
+							className='sm bg-transparent border border-2 rounded '>
+							Save
+						</button>
+					</div>
+
+					<textarea
+						className='textArea form-control mt-2 h-50'
+						type='text'
+						onChange={getYouthReflection}
+						value={props.youthTextInput.youthPQ}
+						placeholder='Youth Prompt'
+						name='youthPQ'
+						id='#'></textarea>
+					<div className='d-grid mt-2'>
+						<button
+							onClick={addYouthReflection}
+							className='sm bg-transparent border border-2 rounded '>
+							Save
+						</button>
+					</div>
 				</div>
 
 				{/*       Agent Reflection Inputs                                  */}
@@ -592,11 +647,13 @@ export default function CenterContent(props) {
 						onChange={getAgentReflection}
 						placeholder='Type Reflection'
 						id='#'></textarea>
-					<button
-						onClick={() => props.setPrintAgentData(true)}
-						className='sm bg-transparent border border-2 rounded'>
-						Save
-					</button>
+					<div className='d-grid mt-2'>
+						<button
+							onClick={() => props.setPrintAgentData(true)}
+							className='sm bg-transparent border border-2 rounded'>
+							Save
+						</button>
+					</div>
 				</div>
 				{/*                                            */}
 

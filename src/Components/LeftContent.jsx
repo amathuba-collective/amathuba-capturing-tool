@@ -134,9 +134,13 @@ export default function LeftContent(props) {
 												</p>
 												{/* text input answer below */}
 												<p>
-													{props.otherAnswer ? (
-														<p>{props.otherAnswerInput}</p>
-													) : null}
+													{props.inputArr.map((keyAnswer, ind) => {
+														return (
+															<div key={ind}>
+																<p>{keyAnswer}</p>
+															</div>
+														);
+													})}
 												</p>
 												{/* text input answer above */}
 												<p>
@@ -286,9 +290,13 @@ export default function LeftContent(props) {
 												</p>
 												{/* text input answer below */}
 												<p>
-													{props.printOtherAnswer ? (
-														<p>{props.otherAnswer}</p>
-													) : null}
+													{props.inputArr.map((keyAnswer, ind) => {
+														return (
+															<div key={ind}>
+																<p>{keyAnswer}</p>
+															</div>
+														);
+													})}
 												</p>
 												{/* text input answer above */}
 												<p>
@@ -394,9 +402,13 @@ export default function LeftContent(props) {
 												</p>
 												{/* text input answer below */}
 												<p>
-													{props.printOtherAnswer ? (
-														<p>{props.otherAnswer}</p>
-													) : null}
+													{props.inputArr.map((keyAnswer, ind) => {
+														return (
+															<div key={ind}>
+																<p>{keyAnswer}</p>
+															</div>
+														);
+													})}
 												</p>
 												{/* text input answer above */}
 												<p>
@@ -501,9 +513,13 @@ export default function LeftContent(props) {
 												</p>
 												{/* text input answer below */}
 												<p>
-													{props.printOtherAnswer ? (
-														<p>{props.otherAnswer}</p>
-													) : null}
+													{props.inputArr.map((keyAnswer, ind) => {
+														return (
+															<div key={ind}>
+																<p>{keyAnswer}</p>
+															</div>
+														);
+													})}
 												</p>
 												{/* text input answer above */}
 												<p>
@@ -605,9 +621,13 @@ export default function LeftContent(props) {
 												</p>
 												{/* text input answer below */}
 												<p>
-													{props.otherAnswer ? (
-														<p>{props.otherAnswerInput}</p>
-													) : null}
+													{props.inputArr.map((keyAnswer, ind) => {
+														return (
+															<div key={ind}>
+																<p>{keyAnswer}</p>
+															</div>
+														);
+													})}
 												</p>
 												{/* text input answer above */}
 												<p>
@@ -642,15 +662,15 @@ export default function LeftContent(props) {
 									{props.youthQuestion1 ? <p>Earlier you said you..?</p> : null}
 								</p>
 
-								{props.printYouthData ? (
-									<div>
-										<h5>Youth Reflection</h5>
-										<p className='fs-5'>{props.youthData}</p>
-
-										{/* summary column divider */}
-										<hr className='w-100 ng-secondary border border-1 border-secondary ' />
-									</div>
-								) : null}
+								<p>
+									{props.youthInputArr.map((youthAnswer, ind) => {
+										return (
+											<div key={ind}>
+												<p>{youthAnswer.youthOQ}</p>
+											</div>
+										);
+									})}
+								</p>
 							</div>
 						) : null}
 						<div>
@@ -670,6 +690,15 @@ export default function LeftContent(props) {
 								<div>
 									<h5 className='fw-semibold fs-4'>Follow-up question</h5>
 									<p className='fs-5'>{props.youthFollowUpQuestions}</p>
+									<p>
+										{props.youthInputArr.map((youthAnswer, ind) => {
+											return (
+												<div key={ind}>
+													<p>{youthAnswer.youthFQ}</p>
+												</div>
+											);
+										})}
+									</p>
 
 									{/* summary column divider */}
 									<hr className='w-100 ng-secondary border border-1 border-secondary ' />
@@ -682,6 +711,15 @@ export default function LeftContent(props) {
 								<div>
 									<h5 className='fw-semibold fs-4'>Prompt question</h5>
 									<p className='fs-5'>{props.youthPromptQuestions}</p>
+									<p>
+										{props.youthInputArr.map((youthAnswer, ind) => {
+											return (
+												<div key={ind}>
+													<p>{youthAnswer.youthPQ}</p>
+												</div>
+											);
+										})}
+									</p>
 
 									{/* summary column divider */}
 									<hr className='w-100 ng-secondary border border-1 border-secondary ' />

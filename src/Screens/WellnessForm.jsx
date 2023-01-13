@@ -69,8 +69,17 @@ export default function WellnessForm() {
 	// const [confusedAnswersCapture, setConfusedAnswersCapture] = useState("");
 	// const [anxiousAnswersCapture, setAnxiousAnswersCapture] = useState("");
 	// const [sadAnswersCapture, setSadAnswersCapture] = useState("");
-	const [otherAnswerInput, setOtherAnswerInput] = useState("");
-	const [otherAnswer, setOtherAnswer] = useState("");
+	const [answerTextInput, setAnswerTextInput] = useState({
+		keyAnswer: "",
+	});
+	const [inputArr, setInputArr] = useState([]);
+	const [youthTextInput, setYouthTextInput] = useState({
+		youthOQ: "",
+		youthFQ: "",
+		youthPQ: "",
+	});
+
+	const [youthInputArr, setYouthInputArr] = useState([]);
 	const [value, onValueChange] = useState(false);
 	const [emotion, setEmotion] = useState("");
 
@@ -138,8 +147,10 @@ export default function WellnessForm() {
 						// confusedAnswersCapture={confusedAnswersCapture}
 						// anxiousAnswersCapture={anxiousAnswersCapture}
 						// sadAnswersCapture={sadAnswersCapture}
-						otherAnswerInput={otherAnswerInput}
-						otherAnswer={otherAnswer}
+						// otherAnswerInput={otherAnswerInput}
+						// otherAnswer={otherAnswer}
+						youthInputArr={youthInputArr}
+						inputArr={inputArr}
 						youthQuestions={youthQuestions}
 						agentReflectionQuestions={agentReflectionQuestions}
 						agentQuestions={agentQuestions}
@@ -177,7 +188,7 @@ export default function WellnessForm() {
 						setAgentData={setAgentData}
 						setPrintAgentData={setPrintAgentData}
 						keyAnswers={keyAnswers}
-						otherAnswer={otherAnswer}
+						// otherAnswer={otherAnswer}
 						// angryAnswers={angryAnswers}
 						// confusedAnswers={confusedAnswers}
 						// anxiousAnswers={anxiousAnswers}
@@ -202,8 +213,15 @@ export default function WellnessForm() {
 						// setConfusedAnswersCapture={setConfusedAnswersCapture}
 						// setAnxiousAnswersCapture={setAnxiousAnswersCapture}
 						// setSadAnswersCapture={setSadAnswersCapture}
-						setOtherAnswerInput={setOtherAnswerInput}
-						setOtherAnswer={setOtherAnswer}
+						answerTextInput={answerTextInput}
+						setAnswerTextInput={setAnswerTextInput}
+						inputArr={inputArr}
+						setInputArr={setInputArr}
+						// setOtherAnswer={setOtherAnswer}
+						youthTextInput={youthTextInput}
+						setYouthTextInput={setYouthTextInput}
+						youthInputArr={youthInputArr}
+						setYouthInputArr={setYouthInputArr}
 						value={value}
 						onValueChange={onValueChange}
 						submitContent={submitContent}
