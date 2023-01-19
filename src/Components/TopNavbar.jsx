@@ -1,7 +1,7 @@
 import React from "react";
-import { Navbar, Text, Input } from "@nextui-org/react";
+import { Navbar, Text } from "@nextui-org/react";
 import { Layout } from "../Components/TopNavbarExtensions/Layout";
-import { SearchIcon } from "../Components/TopNavbarExtensions/SearchIcon";
+// import { SearchIcon } from "../Components/TopNavbarExtensions/SearchIcon";
 import AmathubaLogo from "./AmathubaLogo";
 import "../Styles/TopNavbar.css";
 import { useNavigate } from "react-router-dom";
@@ -31,10 +31,10 @@ export default function TopNavbar() {
 					css={{
 						"@xsMax": {
 							w: "100%",
-							jc: "space-between",
+							jc: "space-evenly",
 						},
 					}}>
-					<Navbar.Item
+					{/* <Navbar.Item
 						css={{
 							"@xsMax": {
 								w: "100%",
@@ -61,7 +61,7 @@ export default function TopNavbar() {
 							placeholder='Search...'
 							className='searchBar'
 						/>
-					</Navbar.Item>
+					</Navbar.Item> */}
 					{/* <Dropdown placement='bottom-right'> */}
 					<Navbar.Item>
 						{/* <Dropdown.Trigger>

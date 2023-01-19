@@ -655,7 +655,6 @@ export default function CenterContent(props) {
 						</button>
 					</div>
 				</div>
-				{/*                                            */}
 
 				{/* calender section                       */}
 				<div className='nextCall'>
