@@ -6,16 +6,22 @@ import BlueOpeningQuestions from "../Data/BlueQuestions.json";
 import YouthQuestions from "../Data/YouthQuestions.json";
 import StartCallGif from "../Assets/Start Your Call (2).gif";
 import AgentReflectionStateQuestions from "../Data/AgentReflectionQuestions.json";
+import OpeningQuestions from "../Data/OpeningQuestion.json";
 
 export default function RightContent(props) {
 	// const getOtherOpeningQuestion = (e) => {
 	// 	props.setOtherOpeningQuestion(e.target.value);
 	// };
 
-	const [dropDownActive, setDropDownActive] = useState("");
+	const [dropDownActive, setDropDownActive] = useState(false);
+	const [dropDownActive2, setDropDownActive2] = useState(false);
 
 	function myFunction() {
 		setDropDownActive(true);
+	}
+
+	function dropDown2() {
+		setDropDownActive2(true);
 	}
 
 	// const onYouthReflectionQ1Clicked = () => {
@@ -79,13 +85,16 @@ export default function RightContent(props) {
 		props.openingQuestion === "blueOpeningQuestion2"
 			? props.setBlueOpeningQuestion2(true)
 			: props.setBlueOpeningQuestion2(false);
-		props.openingQuestion === "youthQuestion1"
+	}, [props.openingQuestion, props]);
+
+	useEffect(() => {
+		props.youthOpeningQuestions === "youthQuestion1"
 			? props.setYouthQuestion1(true)
 			: props.setYouthQuestion1(false);
-		props.openingQuestion === "youthQuestion2"
+		props.youthOpeningQuestions === "youthQuestion2"
 			? props.setYouthQuestion2(true)
 			: props.setYouthQuestion2(false);
-	}, [props.openingQuestion, props]);
+	}, [props, props.youthOpeningQuestions]);
 
 	/// dropdown toggle for opening questions
 
@@ -119,14 +128,23 @@ export default function RightContent(props) {
 	function toggleDropDown5(e) {
 		e.preventDefault();
 		props.setYouthQuestion1(true);
-		props.setOpeningQuestion(e.target.value);
-		setDropDownActive(false);
+		// props.setYouthQuestion1(
+		// 	OpeningQuestions.map((YOQ) => {
+		// 		return <p>{YOQ.youthOpeningQuestion1}</p>;
+		// 	}),
+		// );
+		props.youthOpeningQuestions(e.target.value);
+		setDropDownActive2(false);
 	}
 	function toggleDropDown6(e) {
 		e.preventDefault();
-		props.setYouthQuestion2(true);
-		props.setOpeningQuestion(e.target.value);
-		setDropDownActive(false);
+		props.setYouthQuestion2(
+			OpeningQuestions.map((YOQ) => {
+				return <p>{YOQ.youthOpeningQuestion2}</p>;
+			}),
+		);
+		props.youthOpeningQuestions(e.target.value);
+		setDropDownActive2(false);
 	}
 
 	///toggle red dropdown content
@@ -627,8 +645,15 @@ export default function RightContent(props) {
 						})}
 					</div>
 			  ))
-			: props.openingQuestion === "youthQuestion1"
-			? (result = (
+			: (result = "");
+		return result;
+	};
+
+	const renderResult2 = () => {
+		let youthResult;
+
+		props.youthOpeningQuestions === "youthQuestion1"
+			? (youthResult = (
 					<div className='mt-4'>
 						{YouthQuestions.map((youthQuestions) => {
 							return (
@@ -699,8 +724,8 @@ export default function RightContent(props) {
 						})}
 					</div>
 			  ))
-			: props.openingQuestion === "youthQuestion2"
-			? (result = (
+			: props.youthOpeningQuestions === "youthQuestion2"
+			? (youthResult = (
 					<div className='mt-4'>
 						{YouthQuestions.map((youthQuestions) => {
 							return (
@@ -755,8 +780,8 @@ export default function RightContent(props) {
 						})}
 					</div>
 			  ))
-			: (result = "");
-		return result;
+			: (youthResult = "");
+		return youthResult;
 	};
 
 	const renderAgentQuestions = () => {
@@ -855,6 +880,19 @@ export default function RightContent(props) {
 								onClick={toggleDropDown4}>
 								How is your relationship with your family ?
 							</button>
+						</div>
+					) : null}
+				</div>
+				{/*  */}
+
+				<div className='w-100 border-0' value={props.youthOpeningQuestions}>
+					<p
+						onClick={dropDown2}
+						className='Selector  text-center border border-2 p-1 border-dark rounded'>
+						Select Youth Opening Question
+					</p>
+					{dropDownActive2 ? (
+						<div id='myDropdown' className='d-flex flex-column'>
 							<button
 								href='#about'
 								className='m-2 rounded bg-transparent border border-2 border-primary'
@@ -872,7 +910,10 @@ export default function RightContent(props) {
 						</div>
 					) : null}
 				</div>
+				{/*  */}
 				<div>{renderResult()}</div>
+				<div>{renderResult2()}</div>
+
 				<div>{renderAgentQuestions()}</div>
 			</div>
 		</div>

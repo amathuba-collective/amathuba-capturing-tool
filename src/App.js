@@ -17,8 +17,8 @@ export default function App() {
 				<Route path='/Loginscreen' element={<Loginscreen />} />
 				<Route path='/WelcomeScreen' element={<WelcomeScreen />} />
 				<Route path='/Dashboard' element={<Dashboard />} />
-				<Route path='/YouthProfile' element={<YouthProfile />} />
-				<Route path='/WellnessForm' element={<WellnessForm />} />
+				<Route path='/YouthProfile/:id' element={<YouthProfile />} />
+				<Route path='/WellnessForm/:id' element={<WellnessForm />} />
 			</Routes>
 		</BrowserRouter>
 	);

@@ -2,26 +2,40 @@ import React from "react";
 import { Grid, Avatar, Text } from "@nextui-org/react";
 import { useNavigate } from "react-router-dom";
 import "../Styles/Dashboard.css";
-import differentYouth from "../Data/dashBoard.json";
+// import differentYouth from "../Data/dashBoard.json";
 import AgentData from "../Data/agentProfile.json";
 import TopNavbar from "../Components/TopNavbar";
+import Youth from "../Components/Youth";
+import useFetch from "../Hooks/useFetch";
 
 export default function Dashboard() {
+	// navigation
 	const navigate = useNavigate();
-	function openYouthProfile(e) {
-		e.preventDefault();
-		navigate("/YouthProfile");
-	}
+	// function openYouthProfile(e) {
+	// 	e.preventDefault();
+	// 	navigate("/YouthProfile");
+	// }
+
+	const {
+		data: youth,
+		loading,
+		error,
+	} = useFetch("http://localhost:8001/Youth");
 
 	function onLogOut() {
 		navigate("/Loginscreen");
 	}
+
+	//
 	return (
-		<div className='container-fluid'>
+		<div className='dashB container-fluid'>
+			{/* navbar component inside dashboard */}
 			<>
 				<TopNavbar onLogOut={onLogOut} />
 			</>
+			{/* navbar component ends here */}
 			<div className='row'>
+				{/* left Content of dashboard is agents info */}
 				{AgentData.map((agent) => {
 					return (
 						<div className='leftDashboard col-3' key={agent.id}>
@@ -48,40 +62,17 @@ export default function Dashboard() {
 						</div>
 					);
 				})}
+				{/* agents left content of dashboard ends here */}
 
-				<div className='rightDashboard col-9 d-flex justify-content-evenly'>
-					<div className='row mt-5'>
-						{differentYouth.map((youth) => {
-							return (
-								<div className='col-sm-3 mb-5' key={youth.id}>
-									<div class='cutOff-text card text-center'>
-										<img
-											src={youth.imgUrl}
-											class='card-img-top d-flex align-items-center'
-											alt='...'
-										/>
-										<div class='card-body cutOff-text'>
-											<h5 class='card-title mt-2 mb-1 fw-bold fs-3'>
-												{youth.youthName}
-											</h5>
-											<p class='card-text fw-semibold fs-4'>{youth.callDate}</p>
-											<p class='card-text fw-bold fs-5 callTypeColor'>
-												{youth.callType}
-											</p>
-											<div className='d-grid'>
-												<button
-													class='callBtn fs-5 rounded border border-1 border-transparent p-1'
-													onClick={openYouthProfile}>
-													View Profile
-												</button>
-											</div>
-										</div>
-									</div>
-								</div>
-							);
-						})}
+				{/* Youths profiles on dashboard starts here */}
+				<div className='rightDashboard col-9 d-flex justify-content-evenly mb-5'>
+					<div className='row mb-5'>
+						{loading && <div>content is loading....</div>}
+						{error}
+						{youth && <Youth youth={youth} />}
 					</div>
 				</div>
+				{/* Youths profiles of dashboard ends here */}
 			</div>
 		</div>
 	);

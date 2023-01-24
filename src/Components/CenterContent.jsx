@@ -10,6 +10,7 @@ import AngryEmoji from "../Assets/angryEmotion.png";
 import ConfusedEmoji from "../Assets/confusedEmotion.png";
 import AnxiousEmoji from "../Assets/anxiousEmotion.png";
 import SadEmoji from "../Assets/sadEmoji.png";
+import OpeningQuestions from "../Data/OpeningQuestion.json";
 
 export default function CenterContent(props) {
 	// const [formKey, setFormKey] = useState(1);
@@ -206,14 +207,29 @@ export default function CenterContent(props) {
 				<div className='openingQuestion text-center mt-5'>
 					<p className='fs-2 fw-semibold'>
 						{props.redOpeningQuestion1 ? (
-							<p className='fs-2'>how are you doing today ?</p>
+							<p className='fs-2'>
+								{OpeningQuestions.map((redOQ1) => {
+									return <p>{redOQ1.redOpeningQuestion1}</p>;
+								})}
+							</p>
 						) : props.redOpeningQuestion2 ? (
-							<p className='fs-2'>how are you feeling today ?</p>
+							<p className='fs-2'>
+								{" "}
+								{OpeningQuestions.map((redOQ2) => {
+									return <p>{redOQ2.redOpeningQuestion2}</p>;
+								})}
+							</p>
 						) : props.blueOpeningQuestion1 ? (
-							<p className='fs-2'>How are things going at work/home ?</p>
+							<p className='fs-2'>
+								{OpeningQuestions.map((blueOQ1) => {
+									return <p>{blueOQ1.blueOpeningQuestion1}</p>;
+								})}
+							</p>
 						) : props.blueOpeningQuestion2 ? (
 							<p className='fs-2'>
-								How is your relationship with your family ?
+								{OpeningQuestions.map((blueOQ2) => {
+									return <p>{blueOQ2.blueOpeningQuestion2}</p>;
+								})}
 							</p>
 						) : null}
 					</p>
@@ -569,7 +585,7 @@ export default function CenterContent(props) {
 				<div className='mt-5'>
 					<div className='recommended question for youth reflection'>
 						<h2 className='recommendedQuestion mb-3 text-center fs-4 fw-semilight'>
-							{props.youthQuestion1 ? <p>Earlier you said you..?</p> : null}
+							<p>{props.youthQuestion1}</p>
 						</h2>
 					</div>
 					<label className='fw-semibold fs-3 mb-3'>Youth Reflection</label>
@@ -579,6 +595,7 @@ export default function CenterContent(props) {
 						onClick={handleOnChange6}>
 						Get recommended question
 					</button> */}
+					<p>{props.youthQuestion1}</p>
 					<textarea
 						className='textArea form-control h-50'
 						type='text'
@@ -594,7 +611,7 @@ export default function CenterContent(props) {
 							Save
 						</button>
 					</div>
-
+					<p>{props.youthFollowUpQuestions}</p>
 					<textarea
 						className='textArea form-control mt-2 h-50'
 						type='text'
@@ -611,6 +628,7 @@ export default function CenterContent(props) {
 						</button>
 					</div>
 
+					<p>{props.youthPromptQuestions}</p>
 					<textarea
 						className='textArea form-control mt-2 h-50'
 						type='text'

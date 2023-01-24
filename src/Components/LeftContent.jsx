@@ -1,26 +1,30 @@
 import React from "react";
 import { Avatar, Grid, Text } from "@nextui-org/react";
-import ProfileImage from "../Assets/png-clipart-iphone-world-emoji-day-man-iphone-electronics-face.png";
+// import ProfileImage from "../Assets/png-clipart-iphone-world-emoji-day-man-iphone-electronics-face.png";
 import "../Styles/LeftContent.css";
 
 export default function LeftContent(props) {
+	const youth = props.youth;
 	return (
 		<div className='leftContent container'>
-			<Grid.Container className='d-flex justify-content-center align-items-center'>
-				<Grid className='d-flex flex-column align-items-center'>
-					<Avatar
-						src={ProfileImage}
-						css={{ size: "7rem" }}
-						className='mt-4'
-						bordered
-					/>
-					<Text className='mt-2 mb-1 fw-bold fs-3'>Ronnnie Hand</Text>
-					<Text className='mb-2 fw-semibold fs-4'>18/10/2022</Text>
-					<Text className='fw-bold fs-5' color='primary' size='$md'>
-						Well-being
-					</Text>
-				</Grid>
-			</Grid.Container>
+			{youth && (
+				<Grid.Container className='d-flex justify-content-center align-items-center'>
+					<Grid className='d-flex flex-column align-items-center'>
+						<Avatar
+							src={youth.imgUrl}
+							css={{ size: "7rem" }}
+							className='mt-4'
+							bordered
+						/>
+						<Text className='mt-2 mb-1 fw-bold fs-3'>{youth.fullName}</Text>
+						<Text className='mb-2 fw-semibold fs-4'>{youth.callDate}</Text>
+						<Text className='fw-bold fs-5' color='primary' size='$md'>
+							{youth.callType}
+						</Text>
+					</Grid>
+				</Grid.Container>
+			)}
+
 			<hr className='border border-2 border-secondary opacity-50 rounded mt-1' />
 
 			<div className='summaryData d-flex flex-column justify-content-start align-items-start'>
@@ -654,15 +658,8 @@ export default function LeftContent(props) {
 							</p> */}
 						</div>
 					</div>
-					<div className='agentReflection fw-semilight fs-4 mt-4'>
-						{props.youthQuestion1 ? (
-							<div>
-								<h4 className='fw-bold fs-4'>Youth Reflection Question</h4>
-								<p className='fs-5'>
-									{props.youthQuestion1 ? <p>Earlier you said you..?</p> : null}
-								</p>
 
-								<p>
+					{/* <p>
 									{props.youthInputArr.map((youthAnswer, ind) => {
 										return (
 											<div key={ind}>
@@ -670,95 +667,116 @@ export default function LeftContent(props) {
 											</div>
 										);
 									})}
+								</p> */}
+
+					<div className='agentReflection fw-semilight fs-4 mt-4'>
+						{props.openingQuestion ? (
+							<div>
+								<h4 className='fw-bold fs-4'>Opening Question</h4>
+								<p className='fs-2 fw-semibold'>
+									{props.redOpeningQuestion1 ? (
+										<p className='fs-5 fw-normal'>how are you doing today ?</p>
+									) : props.redOpeningQuestion2 ? (
+										<p className='fs-5 fw-normal'>
+											how are you feeling today ?
+										</p>
+									) : props.blueOpeningQuestion1 ? (
+										<p className='fs-5 fw-normal'>
+											How are things going at work/home ?
+										</p>
+									) : props.blueOpeningQuestion2 ? (
+										<p className='fs-5 fw-normal'>
+											How is your relationship with your family ?
+										</p>
+									) : null}
 								</p>
 							</div>
 						) : null}
-						<div>
-							{props.youthPossibleResponses ? (
-								<div>
-									<h5 className='fw-semibold fs-4'>Possible Reponse</h5>
-									<p className='fs-5'>{props.youthPossibleResponses}</p>
 
-									{/* summary column divider */}
-									<hr className='w-100 ng-secondary border border-1 border-secondary ' />
-								</div>
-							) : null}
-						</div>
-						{/*  */}
-						<div>
-							{props.youthFollowUpQuestions ? (
-								<div>
-									<h5 className='fw-semibold fs-4'>Follow-up question</h5>
-									<p className='fs-5'>{props.youthFollowUpQuestions}</p>
-									<p>
-										{props.youthInputArr.map((youthAnswer, ind) => {
-											return (
-												<div key={ind}>
-													<p>{youthAnswer.youthFQ}</p>
-												</div>
-											);
-										})}
-									</p>
-
-									{/* summary column divider */}
-									<hr className='w-100 ng-secondary border border-1 border-secondary ' />
-								</div>
-							) : null}
-						</div>
-						{/*  */}
-						<div>
-							{props.youthPromptQuestions ? (
-								<div>
-									<h5 className='fw-semibold fs-4'>Prompt question</h5>
-									<p className='fs-5'>{props.youthPromptQuestions}</p>
-									<p>
-										{props.youthInputArr.map((youthAnswer, ind) => {
-											return (
-												<div key={ind}>
-													<p>{youthAnswer.youthPQ}</p>
-												</div>
-											);
-										})}
-									</p>
-
-									{/* summary column divider */}
-									<hr className='w-100 ng-secondary border border-1 border-secondary ' />
-								</div>
-							) : null}
-						</div>
-					</div>
-					<div>
-						<p className='agentReflection fw-semilight fs-5 mt-4'>
-							{props.agentQuestions ? (
-								<div>
-									<h4 className='fw-semibold'>Agent Reflection Question</h4>
-									<p>{props.agentQuestions}</p>
-								</div>
-							) : null}
+						{props.youthPossibleResponses ? (
 							<div>
-								{props.printAgentData ? (
-									<div>
-										<div>
-											<h5>Agent Reflection</h5>
-											<p className='fs-5'>{props.agentData}</p>
-										</div>
+								<h5 className='fw-semibold fs-4'>Possible Reponse</h5>
+								<p className='fs-5'>{props.youthPossibleResponses}</p>
 
-										{/* summary column divider */}
-										<hr className='w-100 ng-secondary border border-1 border-secondary ' />
-									</div>
-								) : null}
-							</div>
-						</p>
-					</div>
-					<p className='agentReflection fw-semilight fs-4 mt-2'>
-						{props.value ? (
-							<div>
-								<h4>New appointment</h4>
-								<p className='fs-5'> {props.value.toDateString()} </p>
+								{/* summary column divider */}
+								<hr className='w-100 ng-secondary border border-1 border-secondary ' />
 							</div>
 						) : null}
+					</div>
+					{/*  */}
+					<div>
+						{props.youthFollowUpQuestions ? (
+							<div>
+								<h5 className='fw-semibold fs-4'>Follow-up question</h5>
+								<p className='fs-5'>{props.youthFollowUpQuestions}</p>
+								<p>
+									{props.youthInputArr.map((youthAnswer, ind) => {
+										return (
+											<div key={ind}>
+												<p>{youthAnswer.youthFQ}</p>
+											</div>
+										);
+									})}
+								</p>
+
+								{/* summary column divider */}
+								<hr className='w-100 ng-secondary border border-1 border-secondary ' />
+							</div>
+						) : null}
+					</div>
+					{/*  */}
+					<div>
+						{props.youthPromptQuestions ? (
+							<div>
+								<h5 className='fw-semibold fs-4'>Prompt question</h5>
+								<p className='fs-5'>{props.youthPromptQuestions}</p>
+								<p>
+									{props.youthInputArr.map((youthAnswer, ind) => {
+										return (
+											<div key={ind}>
+												<p>{youthAnswer.youthPQ}</p>
+											</div>
+										);
+									})}
+								</p>
+
+								{/* summary column divider */}
+								<hr className='w-100 ng-secondary border border-1 border-secondary ' />
+							</div>
+						) : null}
+					</div>
+				</div>
+				<div>
+					<p className='agentReflection fw-semilight fs-5 mt-4'>
+						{props.agentQuestions ? (
+							<div>
+								<h4 className='fw-semibold'>Agent Reflection Question</h4>
+								<p>{props.agentQuestions}</p>
+							</div>
+						) : null}
+						<div>
+							{props.printAgentData ? (
+								<div>
+									<div>
+										<h5>Agent Reflection</h5>
+										<p className='fs-5'>{props.agentData}</p>
+									</div>
+
+									{/* summary column divider */}
+									<hr className='w-100 ng-secondary border border-1 border-secondary ' />
+								</div>
+							) : null}
+						</div>
 					</p>
 				</div>
+				<p className='agentReflection fw-semilight fs-4 mt-2'>
+					{props.value ? (
+						<div>
+							<h4>New appointment</h4>
+							<p className='fs-5'> {props.value.toDateString()} </p>
+						</div>
+					) : null}
+				</p>
 			</div>
 		</div>
 	);

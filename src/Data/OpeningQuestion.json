@@ -1,9 +1,11 @@
 [
 	{
 		"id": 1,
-		"openingQuestion1": "So how was your weekend ?",
-		"openingQuestion2": "How have You been since our last call",
-		"openingQuestion3": "why are you opening",
-		"openingQuestion4": "why are you so opening"
+		"redOpeningQuestion1": "How are you doing today ?",
+		"redOpeningQuestion2": "How are you feeling today ?",
+		"blueOpeningQuestion1": "How are things going at work/home ?",
+		"blueOpeningQuestion2": "How is you relationship with your family ?",
+		"youthOpeningQuestion1": "Earlier you said you..?",
+		"youthOpeningQuestion2": "What im hearing is...?"
 	}
 ]

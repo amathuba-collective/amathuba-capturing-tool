@@ -2,11 +2,20 @@ import React, { useState } from "react";
 import LeftContent from "../Components/LeftContent";
 import CenterContent from "../Components/CenterContent";
 import RightContent from "../Components/RightContent";
+import useFetch from "../Hooks/useFetch";
+import { useParams } from "react-router-dom";
 
 export default function WellnessForm() {
+	const { id } = useParams();
+
+	const { data: youth, loading } = useFetch(
+		"http://localhost:8001/Youth/" + id,
+	);
+
 	const [otherOpeningQuestion, setOtherOpeningQuestion] = useState("");
 	const [printOtherOpeningQuestion, setPrintOtherOpeningQuestion] =
 		useState("");
+	const [youthOpeningQuestions, setYouthOpeningQuestions] = useState(false);
 	const [recommendedQuestions, setRecommendedQuestions] = useState("");
 	const [openingQuestion, setOpeningQuestion] = useState("");
 	const [redOpeningQuestion1, setRedOpeningQuestion1] = useState(false);
@@ -83,6 +92,42 @@ export default function WellnessForm() {
 	const [value, onValueChange] = useState(false);
 	const [emotion, setEmotion] = useState("");
 
+	////!WHAT NEEDS TO BE SAVED
+	// 1 opening emotion emoji
+	///
+	// 2 red opening questions
+	//-> key word answers
+	///--> Possible responses
+	///--->follow-up questions
+	//---->key word answers
+	///--->prompt questions
+	//---->key word answers
+	///
+
+	////
+	// 2 blue opening questions
+	//-> key word answers
+	///--> possible responses
+	///---> follow-up questions
+	//---->key word answers
+	///--->Prompt questions
+	//---->keyword answers
+	////
+
+	/////
+	// 2 youth questions
+	//-> youth textinput question answer
+	///--> youth possible responeses
+	///---> youth follow-up questions
+	//---->youth follow-up textinput answer
+	///---> youth prompt questions
+	//---->youthh prompt question text input answer
+
+	// 4 agent questions
+	//-> agent question textinput answer
+	// new call appoinment
+	//-> the chosen date
+
 	const entireForm = [
 		{ openingQuestion: openingQuestion },
 		{ otherOpeningQuestion: otherOpeningQuestion },
@@ -107,9 +152,12 @@ export default function WellnessForm() {
 
 	return (
 		<div className='container-fluid bg-light'>
+			{loading && <div>...content is loading</div>}
 			<div className='row'>
 				<div className='bg-1 col '>
 					<LeftContent
+						youth={youth}
+						youthOpeningQuestions={youthOpeningQuestions}
 						openingQuestion={openingQuestion}
 						otherOpeningQuestion={otherOpeningQuestion}
 						printOtherOpeningQuestion={printOtherOpeningQuestion}
@@ -170,6 +218,7 @@ export default function WellnessForm() {
 				</div>
 				<div className='bg-2 col-6 text-dark'>
 					<CenterContent
+						youthOpeningQuestions={youthOpeningQuestions}
 						openingQuestion={openingQuestion}
 						setRecommendedQuestions={setRecommendedQuestions}
 						setPrintOtherOpeningQuestion={setPrintOtherOpeningQuestion}
@@ -225,12 +274,15 @@ export default function WellnessForm() {
 						value={value}
 						onValueChange={onValueChange}
 						submitContent={submitContent}
+						youthFollowUpQuestions={youthFollowUpQuestions}
+						youthPromptQuestions={youthPromptQuestions}
 					/>
 				</div>
 				<div className='bg-3 col'>
 					<RightContent
 						recommendedQuestions={recommendedQuestions}
 						setOpeningQuestion={setOpeningQuestion}
+						setYouthOpeningQuestions={setYouthOpeningQuestions}
 						setRedOpeningQuestion1={setRedOpeningQuestion1}
 						setRedOpeningQuestion2={setRedOpeningQuestion2}
 						setBlueOpeningQuestion1={setBlueOpeningQuestion1}
@@ -238,6 +290,7 @@ export default function WellnessForm() {
 						setYouthQuestion1={setYouthQuestion1}
 						setYouthQuestion2={setYouthQuestion2}
 						openingQuestion={openingQuestion}
+						youthOpeningQuestions={youthOpeningQuestions}
 						redOpeningQuestion1={redOpeningQuestion1}
 						redOpeningQuestion2={redOpeningQuestion2}
 						blueOpeningQuestion1={blueOpeningQuestion1}

@@ -1,3 +1,8 @@
+.dashB{
+    height: 100vh !important;
+    overflow-y:hidden;
+}
+
 .leftDashboard{
     background-color: #EFE5FF !important;
     height: 100vh !important;
