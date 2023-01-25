@@ -6,12 +6,36 @@ import BlueOpeningQuestions from "../Data/BlueQuestions.json";
 import YouthQuestions from "../Data/YouthQuestions.json";
 import StartCallGif from "../Assets/Start Your Call (2).gif";
 import AgentReflectionStateQuestions from "../Data/AgentReflectionQuestions.json";
-import OpeningQuestions from "../Data/OpeningQuestion.json";
+import OpenerQuestion from "../Data/OpeningQuestion.json";
 
 export default function RightContent(props) {
 	// const getOtherOpeningQuestion = (e) => {
 	// 	props.setOtherOpeningQuestion(e.target.value);
 	// };
+
+	const [data, setData] = useState(null);
+
+	useEffect(() => {
+		fetch("http://localhost:8001/openingQuestions")
+			.then((res) => {
+				if (!res.ok) {
+					throw Error("cant fetch youth data");
+				}
+				return res.json();
+			})
+			.then((data) => {
+				setData(data);
+				// setLoading(false);
+				// setError(null);
+			})
+			.catch((err) => {
+				console.log(err);
+				// setLoading(false);
+				// setError(err.message);
+			});
+
+		// return () => abortCont.abort();
+	}, [setData]); // useEffect will only run the function if it is in the dependency array
 
 	const [dropDownActive, setDropDownActive] = useState(false);
 	const [dropDownActive2, setDropDownActive2] = useState(false);
@@ -23,23 +47,6 @@ export default function RightContent(props) {
 	function dropDown2() {
 		setDropDownActive2(true);
 	}
-
-	// const onYouthReflectionQ1Clicked = () => {
-	// 	props.setYouthQuestions(
-	// 		YouthReflectionStateQuestions.map((youthReflectionQuestion) => {
-	// 			return <p>{youthReflectionQuestion.youthReflectionQuestion1}</p>;
-	// 		}),
-	// 	);
-	// };
-	// const onYouthReflectionQ2Clicked = (e) => {
-	// 	props.setYouthQuestions(youthReflectionQuestions[1]);
-	// };
-	// const onYouthReflectionQ3Clicked = (e) => {
-	// 	props.setYouthQuestions(youthReflectionQuestions[2]);
-	// };
-	// const onYouthReflectionQ4Clicked = (e) => {
-	// 	props.setYouthQuestions(youthReflectionQuestions[3]);
-	// };
 
 	const onAgentReflectionQ1Clicked = (e) => {
 		props.setAgentQuestions(
@@ -71,21 +78,28 @@ export default function RightContent(props) {
 	};
 
 	// /////////////////////////
+	// const toggleTheDropDown = () => {
+	// 	if (props.openingQuestion === "redOpeningQuestion1") {
+	// 		props.setRedOpeningQuestion1().push(
+	// 			OpenerQuestion.openingQuestions.map((ROQ) => {
+	// 				return <p>{ROQ.redOpeningQuestion1}</p>;
+	// 			}),
+	// 		);
+	// 	}
 
-	useEffect(() => {
-		props.openingQuestion === "redOpeningQuestion1"
-			? props.setRedOpeningQuestion1(true)
-			: props.setRedOpeningQuestion1(false);
-		props.openingQuestion === "redOpeningQuestion2"
-			? props.setRedOpeningQuestion2(true)
-			: props.setRedOpeningQuestion2(false);
-		props.openingQuestion === "blueOpeningQuestion1"
-			? props.setBlueOpeningQuestion1(true)
-			: props.setBlueOpeningQuestion1(false);
-		props.openingQuestion === "blueOpeningQuestion2"
-			? props.setBlueOpeningQuestion2(true)
-			: props.setBlueOpeningQuestion2(false);
-	}, [props.openingQuestion, props]);
+	// 	console.log(props.openingQuestion);
+	// 	console.log(props.redOpeningQuestion1);
+	// };
+
+	// props.openingQuestion === "redOpeningQuestion2"
+	// 	? props.setRedOpeningQuestion2(true): props.setRedOpeningQuestion1(false);
+	// 	: props.setRedOpeningQuestion2(false);
+	// props.openingQuestion === "blueOpeningQuestion1"
+	// 	? props.setBlueOpeningQuestion1(true)
+	// 	: props.setBlueOpeningQuestion1(false);
+	// props.openingQuestion === "blueOpeningQuestion2"
+	// 	? props.setBlueOpeningQuestion2(true)
+	// 	: props.setBlueOpeningQuestion2(false);
 
 	useEffect(() => {
 		props.youthOpeningQuestions === "youthQuestion1"
@@ -100,13 +114,25 @@ export default function RightContent(props) {
 
 	function toggleDropDown(e) {
 		e.preventDefault();
-		props.setOpeningQuestion(e.target.value);
+		props.setRedOpeningQuestion1(
+			OpenerQuestion.openingQuestions.map((ROQ) => {
+				return <p>{ROQ.redOpeningQuestion1}</p>;
+			}),
+		);
+		// props.setOpeningQuestion(e.target.value);
 		setDropDownActive(false);
 		props.setKeyAnswers((keyAnswers) => !keyAnswers);
+		console.log(OpenerQuestion);
+		console.log(props.redOpeningQuestion1);
 	}
 	function toggleDropDown2(e) {
 		e.preventDefault();
-		props.setRedOpeningQuestion2(true);
+		props.setRedOpeningQuestion1(false);
+		props.setRedOpeningQuestion2(
+			OpenerQuestion.openingQuestions.map((ROQ) => {
+				return <p>{ROQ.redOpeningQuestion2}</p>;
+			}),
+		);
 		props.setOpeningQuestion(e.target.value);
 		// props.setKeyAnswers((keyAnswers) => !keyAnswers);
 		setDropDownActive(false);
@@ -125,25 +151,21 @@ export default function RightContent(props) {
 		// props.setKeyAnswers((keyAnswers) => !keyAnswers);
 		setDropDownActive(false);
 	}
-	function toggleDropDown5(e) {
-		e.preventDefault();
+	const toggleDropDown5 = (e) => {
 		props.setYouthQuestion1(true);
 		// props.setYouthQuestion1(
 		// 	OpeningQuestions.map((YOQ) => {
 		// 		return <p>{YOQ.youthOpeningQuestion1}</p>;
 		// 	}),
 		// );
-		props.youthOpeningQuestions(e.target.value);
+		props.setYouthOpeningQuestions(e.target.value);
 		setDropDownActive2(false);
-	}
+	};
+
 	function toggleDropDown6(e) {
 		e.preventDefault();
-		props.setYouthQuestion2(
-			OpeningQuestions.map((YOQ) => {
-				return <p>{YOQ.youthOpeningQuestion2}</p>;
-			}),
-		);
-		props.youthOpeningQuestions(e.target.value);
+		props.setYouthQuestion2(true);
+		props.setYouthOpeningQuestions(e.target.value);
 		setDropDownActive2(false);
 	}
 
@@ -651,7 +673,6 @@ export default function RightContent(props) {
 
 	const renderResult2 = () => {
 		let youthResult;
-
 		props.youthOpeningQuestions === "youthQuestion1"
 			? (youthResult = (
 					<div className='mt-4'>
@@ -912,8 +933,14 @@ export default function RightContent(props) {
 				</div>
 				{/*  */}
 				<div>{renderResult()}</div>
+				<p>{data.redOpeningQuestion1}</p>
+				<hr />
+				<h5 className='text-center fs-3'>Youth reflection below</h5>
+				<hr />
 				<div>{renderResult2()}</div>
-
+				<hr />
+				<h5 className='text-center fs-3'>Agent reflection below</h5>
+				<hr />
 				<div>{renderAgentQuestions()}</div>
 			</div>
 		</div>

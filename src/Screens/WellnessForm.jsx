@@ -9,16 +9,16 @@ export default function WellnessForm() {
 	const { id } = useParams();
 
 	const { data: youth, loading } = useFetch(
-		"http://localhost:8001/Youth/" + id,
+		"http://localhost:8000/Youth/" + id,
 	);
 
 	const [otherOpeningQuestion, setOtherOpeningQuestion] = useState("");
 	const [printOtherOpeningQuestion, setPrintOtherOpeningQuestion] =
 		useState("");
-	const [youthOpeningQuestions, setYouthOpeningQuestions] = useState(false);
+	const [youthOpeningQuestions, setYouthOpeningQuestions] = useState("");
 	const [recommendedQuestions, setRecommendedQuestions] = useState("");
 	const [openingQuestion, setOpeningQuestion] = useState("");
-	const [redOpeningQuestion1, setRedOpeningQuestion1] = useState(false);
+	const [redOpeningQuestion1, setRedOpeningQuestion1] = useState("");
 	const [redOpeningQuestion2, setRedOpeningQuestion2] = useState(false);
 	const [blueOpeningQuestion1, setBlueOpeningQuestion1] = useState(false);
 	const [blueOpeningQuestion2, setBlueOpeningQuestion2] = useState(false);

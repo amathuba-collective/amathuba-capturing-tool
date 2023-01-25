@@ -38,7 +38,7 @@ export default function LeftContent(props) {
 										<p className='fs-2 fw-semibold'>
 											{props.redOpeningQuestion1 ? (
 												<p className='fs-5 fw-normal'>
-													how are you doing today ?
+													{props.redOpeningQuestion1}
 												</p>
 											) : props.redOpeningQuestion2 ? (
 												<p className='fs-5 fw-normal'>
@@ -670,23 +670,15 @@ export default function LeftContent(props) {
 								</p> */}
 
 					<div className='agentReflection fw-semilight fs-4 mt-4'>
-						{props.openingQuestion ? (
+						{props.youthOpeningQuestions ? (
 							<div>
 								<h4 className='fw-bold fs-4'>Opening Question</h4>
 								<p className='fs-2 fw-semibold'>
-									{props.redOpeningQuestion1 ? (
-										<p className='fs-5 fw-normal'>how are you doing today ?</p>
-									) : props.redOpeningQuestion2 ? (
+									{props.youthQuestion1 ? (
+										<p className='fs-5 fw-normal'>{props.youthQuestion1}</p>
+									) : props.youthQuestion2 ? (
 										<p className='fs-5 fw-normal'>
 											how are you feeling today ?
-										</p>
-									) : props.blueOpeningQuestion1 ? (
-										<p className='fs-5 fw-normal'>
-											How are things going at work/home ?
-										</p>
-									) : props.blueOpeningQuestion2 ? (
-										<p className='fs-5 fw-normal'>
-											How is your relationship with your family ?
 										</p>
 									) : null}
 								</p>

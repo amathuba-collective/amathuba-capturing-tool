@@ -207,18 +207,9 @@ export default function CenterContent(props) {
 				<div className='openingQuestion text-center mt-5'>
 					<p className='fs-2 fw-semibold'>
 						{props.redOpeningQuestion1 ? (
-							<p className='fs-2'>
-								{OpeningQuestions.map((redOQ1) => {
-									return <p>{redOQ1.redOpeningQuestion1}</p>;
-								})}
-							</p>
+							<p className='fs-2'>{props.redOpeningQuestion1}</p>
 						) : props.redOpeningQuestion2 ? (
-							<p className='fs-2'>
-								{" "}
-								{OpeningQuestions.map((redOQ2) => {
-									return <p>{redOQ2.redOpeningQuestion2}</p>;
-								})}
-							</p>
+							<p className='fs-2'> {props.redOpeningQuestion1}</p>
 						) : props.blueOpeningQuestion1 ? (
 							<p className='fs-2'>
 								{OpeningQuestions.map((blueOQ1) => {
