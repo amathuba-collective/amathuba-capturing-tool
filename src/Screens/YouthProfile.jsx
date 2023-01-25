@@ -11,7 +11,7 @@ export default function YouthProfile() {
 
 	const { id } = useParams();
 	const { data: youth, loading } = useFetch(
-		"http://localhost:8000/Youth/" + id,
+		"http://localhost:8002/Youth/" + id,
 	);
 
 	// const navigate = useNavigate();
@@ -130,24 +130,7 @@ export default function YouthProfile() {
 															<input
 																type='text'
 																class='form-control p-2 bg-light'
-																placeholder={youth.callType}
-																disabled
-																readonly
-															/>
-														</div>
-													</div>
-												</div>
-
-												<div className='col-12 d-flex align-items-center mb-4'>
-													<div className='col-5'>
-														<p className='mt-3 fw-bold'>Code Number</p>
-													</div>
-													<div className='col-7 mx-1'>
-														<div class='col-12'>
-															<input
-																type='text'
-																class='form-control p-2 bg-light'
-																placeholder={youth.callDate}
+																placeholder={youth.gender}
 																disabled
 																readonly
 															/>
@@ -183,7 +166,7 @@ export default function YouthProfile() {
 																type='text'
 																class='form-control p-2 bg-light'
 																id='inputAddress'
-																placeholder={youth.email}
+																placeholder={youth.city}
 																disabled
 																readonly
 															/>

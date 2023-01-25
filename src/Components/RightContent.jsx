@@ -15,27 +15,27 @@ export default function RightContent(props) {
 
 	const [data, setData] = useState(null);
 
-	useEffect(() => {
-		fetch("http://localhost:8001/openingQuestions")
-			.then((res) => {
-				if (!res.ok) {
-					throw Error("cant fetch youth data");
-				}
-				return res.json();
-			})
-			.then((data) => {
-				setData(data);
-				// setLoading(false);
-				// setError(null);
-			})
-			.catch((err) => {
-				console.log(err);
-				// setLoading(false);
-				// setError(err.message);
-			});
+	// useEffect(() => {
+	// 	fetch("http://localhost:8001/openingQuestions")
+	// 		.then((res) => {
+	// 			if (!res.ok) {
+	// 				throw Error("cant fetch youth data");
+	// 			}
+	// 			return res.json();
+	// 		})
+	// 		.then((data) => {
+	// 			setData(data);
+	// 			// setLoading(false);
+	// 			// setError(null);
+	// 		})
+	// 		.catch((err) => {
+	// 			console.log(err);
+	// 			// setLoading(false);
+	// 			// setError(err.message);
+	// 		});
 
-		// return () => abortCont.abort();
-	}, [setData]); // useEffect will only run the function if it is in the dependency array
+	// 	// return () => abortCont.abort();
+	// }, [setData]); // useEffect will only run the function if it is in the dependency array
 
 	const [dropDownActive, setDropDownActive] = useState(false);
 	const [dropDownActive2, setDropDownActive2] = useState(false);
@@ -449,6 +449,9 @@ export default function RightContent(props) {
 								</div>
 							);
 						})}
+						<hr />
+						<h5 className='text-center fs-3'>Opening Questions above</h5>
+						<hr />
 					</div>
 			  ))
 			: props.openingQuestion === "redOpeningQuestion2"
@@ -521,6 +524,9 @@ export default function RightContent(props) {
 								</div>
 							);
 						})}
+						<hr />
+						<h5 className='text-center fs-3'>Opening Questions above</h5>
+						<hr />
 					</div>
 			  ))
 			: props.openingQuestion === "blueOpeningQuestion1"
@@ -603,6 +609,9 @@ export default function RightContent(props) {
 								</div>
 							);
 						})}
+						<hr />
+						<h5 className='text-center fs-3'>Opening Questions above</h5>
+						<hr />
 					</div>
 			  ))
 			: props.openingQuestion === "blueOpeningQuestion2"
@@ -665,6 +674,9 @@ export default function RightContent(props) {
 								</div>
 							);
 						})}
+						<hr />
+						<h5 className='text-center fs-3'>Opening Questions above</h5>
+						<hr />
 					</div>
 			  ))
 			: (result = "");
@@ -743,6 +755,9 @@ export default function RightContent(props) {
 								</div>
 							);
 						})}
+						<hr />
+						<h5 className='text-center fs-3'>Youth reflection above</h5>
+						<hr />
 					</div>
 			  ))
 			: props.youthOpeningQuestions === "youthQuestion2"
@@ -799,6 +814,9 @@ export default function RightContent(props) {
 								</div>
 							);
 						})}
+						<hr />
+						<h5 className='text-center fs-3'>Youth reflection above</h5>
+						<hr />
 					</div>
 			  ))
 			: (youthResult = "");
@@ -841,6 +859,9 @@ export default function RightContent(props) {
 								</div>
 							);
 						})}
+						<hr />
+						<h5 className='text-center fs-3'>Agent reflection above</h5>
+						<hr />
 					</div>
 			  ))
 			: (agentResult = "");
@@ -933,14 +954,9 @@ export default function RightContent(props) {
 				</div>
 				{/*  */}
 				<div>{renderResult()}</div>
-				<p>{data.redOpeningQuestion1}</p>
-				<hr />
-				<h5 className='text-center fs-3'>Youth reflection below</h5>
-				<hr />
+
 				<div>{renderResult2()}</div>
-				<hr />
-				<h5 className='text-center fs-3'>Agent reflection below</h5>
-				<hr />
+
 				<div>{renderAgentQuestions()}</div>
 			</div>
 		</div>
