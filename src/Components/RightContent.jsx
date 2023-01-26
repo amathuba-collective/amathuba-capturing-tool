@@ -6,7 +6,7 @@ import BlueOpeningQuestions from "../Data/BlueQuestions.json";
 import YouthQuestions from "../Data/YouthQuestions.json";
 // import StartCallGif from "../Assets/Start Your Call (2).gif";
 import AgentReflectionStateQuestions from "../Data/AgentReflectionQuestions.json";
-import OpenerQuestion from "../Data/OpeningQuestion.json";
+// import OpenerQuestion from "../Data/OpeningQuestion.json";
 import { Icon } from "@iconify/react";
 
 export default function RightContent(props) {

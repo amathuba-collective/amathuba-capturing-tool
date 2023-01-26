@@ -152,21 +152,21 @@ export default function WellnessForm() {
 			newKeyAnswer2: inputArr[1],
 			newKeyAnswer3: inputArr[2],
 			//
-		},
+		}, ///// opening questions and key word an keyword input answers are being stored
+
 		// call emotion
-		{ emotionOCall: emotion },
+		{ emotionOfCall: emotion }, /// emotion of call is stored
 		//
 		// possible responses to opening questions
 		{
 			ROQpossibleResponse: redPossibleResponses,
 			BOQpossibleResponse: bluePossibleResponses,
+			///opening question possible responses are being stored
 		},
-		//
-		//
+
 		{
 			roqFollowUpQuestion: redFollowUpQuestions,
 			boqFollowUpQuestion: blueFollowUpQuestions,
-			////answers to follow up opening questions are below
 			keyAnswer1: keyAnswerCapture1,
 			keyAnswer2: keyAnswerCapture2,
 			keyAnswer3: keyAnswerCapture3,
@@ -184,12 +184,11 @@ export default function WellnessForm() {
 			newKeyAnswer1: inputArr[0],
 			newKeyAnswer2: inputArr[1],
 			newKeyAnswer3: inputArr[2],
-			//
-		},
+		}, // 	/// opening question follow-up question an key word answers are being saved
 		{
 			roqPromptQuestion: redPromptQuestions,
 			boqPromptQuestion: bluePromptQuestions,
-			////answers to prompt opening questions are below
+			// answers to prompt opening questions are below
 			keyAnswer1: keyAnswerCapture1,
 			keyAnswer2: keyAnswerCapture2,
 			keyAnswer3: keyAnswerCapture3,
@@ -207,25 +206,29 @@ export default function WellnessForm() {
 			newKeyAnswer1: inputArr[0],
 			newKeyAnswer2: inputArr[1],
 			newKeyAnswer3: inputArr[2],
-			//
-		}, // the above is saving data correctly for now
+		}, /// opening question prompt question an key word answers are being saved
 
-		{ youthOQ1: youthQuestion1, youthOqReflectionData: youthInputArr },
-		{ youthOQ2: youthQuestion2, youthOqReflectionData: youthInputArr[0] },
+		{
+			youthOQ1: youthQuestion1,
+			youthOqReflectionData: youthInputArr[0],
+			//
+			youthOQ2: youthQuestion2,
+			youthOqReflectionData2: youthInputArr[0],
+		},
 		//
 		{ youthResponses: youthPossibleResponses },
 		//
-		{ youthFollow_UpQuestions: youthFollowUpQuestions },
-		{ youthqFReflectionData: youthInputArr[1] },
+		{ youthFollow_UpQuestions: youthPromptQuestions },
+		{ youthqFReflectionData: youthInputArr[2] },
 		//
 		{ youthPrompt_Questions: youthPromptQuestions },
-		{ youthPqReflectionData: youthInputArr[2] },
+		{ youthPqReflectionData: youthInputArr[3] },
 		// need to sort out youth correctly
 		//
 
 		{ agentQuestions: agentQuestions },
-		{ agentData: agentDataArr[0] },
-		{ newAppointment: value },
+		{ agentData: agentDataArr[0] }, ///// youth question an data is being captured
+		{ newAppointment: value }, // date is being captured
 	];
 	//
 	const submitContent = () => {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import Calendar from "react-calendar";
 import "../Styles/ReactCalender.css";
 import "react-calendar/dist/Calendar.css";
@@ -13,7 +13,7 @@ import SadEmoji from "../Assets/sadEmoji.png";
 
 export default function CenterContent(props) {
 	// const [formKey, setFormKey] = useState(1);
-	const navigate = useNavigate();
+	// const navigate = useNavigate();
 
 	const emotions = ["Happy", "Angry", "Confused", "Anxious", "Sad"];
 	// ////storinh keyWord answers here for form to work for the moment
