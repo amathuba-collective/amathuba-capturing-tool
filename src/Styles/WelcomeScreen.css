@@ -11,9 +11,30 @@
 .LeftText{
     position: relative;
     left: 2rem;
+    animation-name: rightAni;
+    animation-duration: 1s;
 }
-
 .welcomeBtn{
  background-color:  #2B0076 !important;
  color: #F8F8FF !important;   
+}
+
+@keyframes rightAni {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+
+    }
+
+    80% {
+        transform: translateX(10px);
+
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+
+    }
+    
 }
