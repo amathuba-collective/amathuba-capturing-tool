@@ -9,7 +9,7 @@ export default function WellnessForm() {
 	const { id } = useParams();
 
 	const { data: youth, loading } = useFetch(
-		"http://localhost:8002/Youth/" + id,
+		"http://localhost:2001/Youth/" + id,
 	);
 
 	const [otherOpeningQuestion, setOtherOpeningQuestion] = useState("");
@@ -19,12 +19,11 @@ export default function WellnessForm() {
 	const [recommendedQuestions, setRecommendedQuestions] = useState("");
 	const [openingQuestion, setOpeningQuestion] = useState("");
 	const [redOpeningQuestion1, setRedOpeningQuestion1] = useState("");
-	const [redOpeningQuestion2, setRedOpeningQuestion2] = useState(false);
-	const [blueOpeningQuestion1, setBlueOpeningQuestion1] = useState(false);
-	const [blueOpeningQuestion2, setBlueOpeningQuestion2] = useState(false);
+	const [redOpeningQuestion2, setRedOpeningQuestion2] = useState("");
+	const [blueOpeningQuestion1, setBlueOpeningQuestion1] = useState("");
+	const [blueOpeningQuestion2, setBlueOpeningQuestion2] = useState("");
 	const [youthQuestion1, setYouthQuestion1] = useState(false);
 	const [youthQuestion2, setYouthQuestion2] = useState(false);
-	useState(false);
 	const [agentReflectionQuestions, setAgentReflectionQuestions] =
 		useState(false);
 
@@ -49,16 +48,10 @@ export default function WellnessForm() {
 	const [youthData, setYouthData] = useState("");
 	const [printYouthData, setPrintYouthData] = useState("");
 	const [youthQuestions, setYouthQuestions] = useState("");
-	const [agentData, setAgentData] = useState("");
-	const [printAgentData, setPrintAgentData] = useState("");
+
 	const [agentQuestions, setAgentQuestions] = useState("");
 
 	const [openingPromptQuestions, setOpeningPromptQuestions] = useState("");
-
-	// const [angryAnswers, setAngryAnswers] = useState("");
-	// const [confusedAnswers, setConfusedAnswers] = useState("");
-	// const [anxiousAnswers, setAnxiousAnswers] = useState("");
-	// const [sadAnswers, setSadAnswers] = useState("");
 	const [keyAnswers, setKeyAnswers] = useState("");
 	const [keyAnswerCapture1, setKeyAnswerCapture1] = useState("");
 	const [keyAnswerCapture2, setKeyAnswerCapture2] = useState("");
@@ -74,14 +67,13 @@ export default function WellnessForm() {
 	const [keyAnswerCapture12, setKeyAnswerCapture12] = useState("");
 	const [keyAnswerCapture13, setKeyAnswerCapture13] = useState("");
 	const [keyAnswerCapture14, setKeyAnswerCapture14] = useState("");
-	// const [angryAnswersCapture, setAngryAnswersCapture] = useState("");
-	// const [confusedAnswersCapture, setConfusedAnswersCapture] = useState("");
-	// const [anxiousAnswersCapture, setAnxiousAnswersCapture] = useState("");
-	// const [sadAnswersCapture, setSadAnswersCapture] = useState("");
+
+	//
 	const [answerTextInput, setAnswerTextInput] = useState({
 		keyAnswer: "",
 	});
 	const [inputArr, setInputArr] = useState([]);
+	//
 	const [youthTextInput, setYouthTextInput] = useState({
 		youthOQ: "",
 		youthFQ: "",
@@ -89,6 +81,12 @@ export default function WellnessForm() {
 	});
 
 	const [youthInputArr, setYouthInputArr] = useState([]);
+	//
+	const [agentData, setAgentData] = useState({
+		agentOQ: "",
+	});
+	const [agentDataArr, setAgentDataArr] = useState([]);
+	//
 	const [value, onValueChange] = useState(false);
 	const [emotion, setEmotion] = useState("");
 
@@ -129,25 +127,111 @@ export default function WellnessForm() {
 	//-> the chosen date
 
 	const entireForm = [
-		{ openingQuestion: openingQuestion },
-		{ otherOpeningQuestion: otherOpeningQuestion },
-		{ emotion: emotion },
-		{ openingEmotionQuestion: openingEmotionQuestion },
-		{ emotionAnswer1: keyAnswerCapture1 },
-		{ emotionAnswer2: keyAnswerCapture2 },
-		{ emotionAnswer3: keyAnswerCapture3 },
-		{ emotionAnswer4: keyAnswerCapture4 },
-		{ youthQuestions: youthQuestions },
-		{ youthData: youthData },
+		{
+			//red and blue opening questions
+			openingQuestion1Red: redOpeningQuestion1,
+			openingQuestion2Red: redOpeningQuestion2,
+			openingQuestion1Blue: blueOpeningQuestion1,
+			openingQuestion2Blue: blueOpeningQuestion2,
+			////answers to opening questions are below
+			keyAnswer1: keyAnswerCapture1,
+			keyAnswer2: keyAnswerCapture2,
+			keyAnswer3: keyAnswerCapture3,
+			keyAnswer4: keyAnswerCapture4,
+			keyAnswer5: keyAnswerCapture5,
+			keyAnswer6: keyAnswerCapture6,
+			keyAnswer7: keyAnswerCapture7,
+			keyAnswer8: keyAnswerCapture8,
+			keyAnswer9: keyAnswerCapture9,
+			keyAnswer10: keyAnswerCapture10,
+			keyAnswer11: keyAnswerCapture11,
+			keyAnswer12: keyAnswerCapture12,
+			keyAnswer13: keyAnswerCapture13,
+			keyAnswer14: keyAnswerCapture14,
+			newKeyAnswer1: inputArr[0],
+			newKeyAnswer2: inputArr[1],
+			newKeyAnswer3: inputArr[2],
+			//
+		},
+		// call emotion
+		{ emotionOCall: emotion },
+		//
+		// possible responses to opening questions
+		{
+			ROQpossibleResponse: redPossibleResponses,
+			BOQpossibleResponse: bluePossibleResponses,
+		},
+		//
+		//
+		{
+			roqFollowUpQuestion: redFollowUpQuestions,
+			boqFollowUpQuestion: blueFollowUpQuestions,
+			////answers to follow up opening questions are below
+			keyAnswer1: keyAnswerCapture1,
+			keyAnswer2: keyAnswerCapture2,
+			keyAnswer3: keyAnswerCapture3,
+			keyAnswer4: keyAnswerCapture4,
+			keyAnswer5: keyAnswerCapture5,
+			keyAnswer6: keyAnswerCapture6,
+			keyAnswer7: keyAnswerCapture7,
+			keyAnswer8: keyAnswerCapture8,
+			keyAnswer9: keyAnswerCapture9,
+			keyAnswer10: keyAnswerCapture10,
+			keyAnswer11: keyAnswerCapture11,
+			keyAnswer12: keyAnswerCapture12,
+			keyAnswer13: keyAnswerCapture13,
+			keyAnswer14: keyAnswerCapture14,
+			newKeyAnswer1: inputArr[0],
+			newKeyAnswer2: inputArr[1],
+			newKeyAnswer3: inputArr[2],
+			//
+		},
+		{
+			roqPromptQuestion: redPromptQuestions,
+			boqPromptQuestion: bluePromptQuestions,
+			////answers to prompt opening questions are below
+			keyAnswer1: keyAnswerCapture1,
+			keyAnswer2: keyAnswerCapture2,
+			keyAnswer3: keyAnswerCapture3,
+			keyAnswer4: keyAnswerCapture4,
+			keyAnswer5: keyAnswerCapture5,
+			keyAnswer6: keyAnswerCapture6,
+			keyAnswer7: keyAnswerCapture7,
+			keyAnswer8: keyAnswerCapture8,
+			keyAnswer9: keyAnswerCapture9,
+			keyAnswer10: keyAnswerCapture10,
+			keyAnswer11: keyAnswerCapture11,
+			keyAnswer12: keyAnswerCapture12,
+			keyAnswer13: keyAnswerCapture13,
+			keyAnswer14: keyAnswerCapture14,
+			newKeyAnswer1: inputArr[0],
+			newKeyAnswer2: inputArr[1],
+			newKeyAnswer3: inputArr[2],
+			//
+		}, // the above is saving data correctly for now
+
+		{ youthOQ1: youthQuestion1, youthOqReflectionData: youthInputArr },
+		{ youthOQ2: youthQuestion2, youthOqReflectionData: youthInputArr[0] },
+		//
+		{ youthResponses: youthPossibleResponses },
+		//
+		{ youthFollow_UpQuestions: youthFollowUpQuestions },
+		{ youthqFReflectionData: youthInputArr[1] },
+		//
+		{ youthPrompt_Questions: youthPromptQuestions },
+		{ youthPqReflectionData: youthInputArr[2] },
+		// need to sort out youth correctly
+		//
+
 		{ agentQuestions: agentQuestions },
-		{ agentData: agentData },
+		{ agentData: agentDataArr[0] },
 		{ newAppointment: value },
 	];
 	//
 	const submitContent = () => {
 		// document.write(JSON.stringify(entireForm));
 		localStorage.setItem("WellnessForm", JSON.stringify(entireForm));
-		alert(JSON.stringify(entireForm));
+		document.write(JSON.stringify(entireForm));
 	};
 
 	return (
@@ -171,7 +255,7 @@ export default function WellnessForm() {
 						youthData={youthData}
 						printYouthData={printYouthData}
 						agentData={agentData}
-						printAgentData={printAgentData}
+						agentDataArr={agentDataArr}
 						keyAnswers={keyAnswers}
 						// angryAnswers={angryAnswers}
 						// confusedAnswers={confusedAnswers}
@@ -235,7 +319,9 @@ export default function WellnessForm() {
 						youthQuestions={youthQuestions}
 						agentQuestions={agentQuestions}
 						setAgentData={setAgentData}
-						setPrintAgentData={setPrintAgentData}
+						agentData={agentData}
+						setAgentDataArr={setAgentDataArr}
+						agentDataArr={agentDataArr}
 						keyAnswers={keyAnswers}
 						// otherAnswer={otherAnswer}
 						// angryAnswers={angryAnswers}

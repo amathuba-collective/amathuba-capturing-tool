@@ -20,7 +20,7 @@ export default function Dashboard() {
 		data: youth,
 		loading,
 		error,
-	} = useFetch("http://localhost:8002/Youth");
+	} = useFetch("http://localhost:2001/Youth");
 
 	function onLogOut() {
 		navigate("/Loginscreen");

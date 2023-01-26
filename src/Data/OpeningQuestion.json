@@ -1,13 +1,11 @@
-{
-	"openingQuestions": [
-		{
-			"id": 1,
-			"redOpeningQuestion1": "How are you doing today ?",
-			"redOpeningQuestion2": "How are you feeling today ?",
-			"blueOpeningQuestion1": "How are things going at work/home ?",
-			"blueOpeningQuestion2": "How is you relationship with your family ?",
-			"youthOpeningQuestion1": "Earlier you said you..?",
-			"youthOpeningQuestion2": "What im hearing is...?"
-		}
-	]
-}
+[
+	{
+		"id": 1,
+		"redOpeningQuestion1": "How are you doing today ?",
+		"redOpeningQuestion2": "How are you feeling today ?",
+		"blueOpeningQuestion1": "How are things going at work/home ?",
+		"blueOpeningQuestion2": "How is you relationship with your family ?",
+		"youthOpeningQuestion1": "Earlier you said you..?",
+		"youthOpeningQuestion2": "What im hearing is...?"
+	}
+]

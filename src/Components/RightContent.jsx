@@ -1,41 +1,74 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "../Styles/RightContent.css";
 // import OpeniningStateQuestions from "../Data/OpeningQuestion";
 import RedOpeningQuestions from "../Data/RedQuestions.json";
 import BlueOpeningQuestions from "../Data/BlueQuestions.json";
 import YouthQuestions from "../Data/YouthQuestions.json";
-import StartCallGif from "../Assets/Start Your Call (2).gif";
+// import StartCallGif from "../Assets/Start Your Call (2).gif";
 import AgentReflectionStateQuestions from "../Data/AgentReflectionQuestions.json";
 import OpenerQuestion from "../Data/OpeningQuestion.json";
+import { Icon } from "@iconify/react";
 
 export default function RightContent(props) {
 	// const getOtherOpeningQuestion = (e) => {
 	// 	props.setOtherOpeningQuestion(e.target.value);
 	// };
 
-	const [data, setData] = useState(null);
+	// ///////////////
+	//reason for me storing the data is because if i tried to pass the data through map function from the jason files i needed to extract the children element from the data to get the data an was not sure how to do that just yet
+	// //////////////
+	const openingQuestions = [
+		"How are you doing today ?",
+		"How are you feeling today ?",
+		"How are things going at work/home ?",
+		"How is you relationship with your family ?",
+		"Earlier you said you..?",
+		"What im hearing is...?",
+	];
+	///
+	const redFurtherQuestions = [
+		"I am glad to hear that.",
+		"I am sorry to hear that.",
+		"That is great.",
+		"That is unfortunate.", //possible responses
+		"Would you like to say more ?",
+		"What exactly do you mean when you say ...?", //follow-up questions
+		"What makes you feel that way ?",
+		"Is there something that happend that makes you feel ...? ", //prompt questions
+	];
 
-	// useEffect(() => {
-	// 	fetch("http://localhost:8001/openingQuestions")
-	// 		.then((res) => {
-	// 			if (!res.ok) {
-	// 				throw Error("cant fetch youth data");
-	// 			}
-	// 			return res.json();
-	// 		})
-	// 		.then((data) => {
-	// 			setData(data);
-	// 			// setLoading(false);
-	// 			// setError(null);
-	// 		})
-	// 		.catch((err) => {
-	// 			console.log(err);
-	// 			// setLoading(false);
-	// 			// setError(err.message);
-	// 		});
-
-	// 	// return () => abortCont.abort();
-	// }, [setData]); // useEffect will only run the function if it is in the dependency array
+	//
+	const blueFurtherQuestions = [
+		"That sounds like Your doing well",
+		"That sounds like Your struggling",
+		"That sounds like Your going throught a lot", //possible responses
+		"Can you tell me abit more ?",
+		"What happend ?",
+		"How are you coping ?", // follow up questions
+		"I am interested in what happened... ?",
+		"Im really curious to find out more... ?",
+		"I can relate, because... ?",
+		"I have felt like that when... ?", //prompt questions
+	];
+	//
+	const youthFurtherQuestions = [
+		"I think you are very brave / smart / kind",
+		"That is wonderful dont you think ?", // possible responses
+		"Would you say you have gained/learnt something ?",
+		"How do you feel about the ?", // follow up questions
+		"How are you feeling now ?",
+		"What are you planning to do next ?",
+		"How did you find this conversation ?",
+		"Would you say you have gained / learnt something ?", // prompt questions
+	];
+	//
+	const agentReflectionQuestions = [
+		"So tell me about Your youth ? ",
+		"What made them feel the way they feel ?",
+		"How was the call today ?",
+		"Do you feel he/she is improving ?",
+	];
+	// ///////////////////////////////
 
 	const [dropDownActive, setDropDownActive] = useState(false);
 	const [dropDownActive2, setDropDownActive2] = useState(false);
@@ -48,334 +81,172 @@ export default function RightContent(props) {
 		setDropDownActive2(true);
 	}
 
-	const onAgentReflectionQ1Clicked = (e) => {
-		props.setAgentQuestions(
-			AgentReflectionStateQuestions.map((agentRSQ) => {
-				return <p>{agentRSQ.agentReflectionQuestion1}</p>;
-			}),
-		);
+	const onAgentReflectionQ1Clicked = () => {
+		props.setAgentQuestions(agentReflectionQuestions[0]);
 	};
-	const onAgentReflectionQ2Clicked = (e) => {
-		props.setAgentQuestions(
-			AgentReflectionStateQuestions.map((agentRSQ) => {
-				return <p>{agentRSQ.agentReflectionQuestion2}</p>;
-			}),
-		);
+	const onAgentReflectionQ2Clicked = () => {
+		props.setAgentQuestions(agentReflectionQuestions[1]);
 	};
-	const onAgentReflectionQ3Clicked = (e) => {
-		props.setAgentQuestions(
-			AgentReflectionStateQuestions.map((agentRSQ) => {
-				return <p>{agentRSQ.agentReflectionQuestion3}</p>;
-			}),
-		);
+	const onAgentReflectionQ3Clicked = () => {
+		props.setAgentQuestions(agentReflectionQuestions[2]);
 	};
-	const onAgentReflectionQ4Clicked = (e) => {
-		props.setAgentQuestions(
-			AgentReflectionStateQuestions.map((agentRSQ) => {
-				return <p>{agentRSQ.agentReflectionQuestion4}</p>;
-			}),
-		);
+	const onAgentReflectionQ4Clicked = () => {
+		props.setAgentQuestions(agentReflectionQuestions[3]);
 	};
-
-	// /////////////////////////
-	// const toggleTheDropDown = () => {
-	// 	if (props.openingQuestion === "redOpeningQuestion1") {
-	// 		props.setRedOpeningQuestion1().push(
-	// 			OpenerQuestion.openingQuestions.map((ROQ) => {
-	// 				return <p>{ROQ.redOpeningQuestion1}</p>;
-	// 			}),
-	// 		);
-	// 	}
-
-	// 	console.log(props.openingQuestion);
-	// 	console.log(props.redOpeningQuestion1);
-	// };
-
-	// props.openingQuestion === "redOpeningQuestion2"
-	// 	? props.setRedOpeningQuestion2(true): props.setRedOpeningQuestion1(false);
-	// 	: props.setRedOpeningQuestion2(false);
-	// props.openingQuestion === "blueOpeningQuestion1"
-	// 	? props.setBlueOpeningQuestion1(true)
-	// 	: props.setBlueOpeningQuestion1(false);
-	// props.openingQuestion === "blueOpeningQuestion2"
-	// 	? props.setBlueOpeningQuestion2(true)
-	// 	: props.setBlueOpeningQuestion2(false);
-
-	useEffect(() => {
-		props.youthOpeningQuestions === "youthQuestion1"
-			? props.setYouthQuestion1(true)
-			: props.setYouthQuestion1(false);
-		props.youthOpeningQuestions === "youthQuestion2"
-			? props.setYouthQuestion2(true)
-			: props.setYouthQuestion2(false);
-	}, [props, props.youthOpeningQuestions]);
 
 	/// dropdown toggle for opening questions
 
-	function toggleDropDown(e) {
+	function toggleRedOpeningQuestion1(e) {
 		e.preventDefault();
-		props.setRedOpeningQuestion1(
-			OpenerQuestion.openingQuestions.map((ROQ) => {
-				return <p>{ROQ.redOpeningQuestion1}</p>;
-			}),
-		);
+		props.setRedOpeningQuestion1(openingQuestions[0]);
 		// props.setOpeningQuestion(e.target.value);
 		setDropDownActive(false);
-		props.setKeyAnswers((keyAnswers) => !keyAnswers);
-		console.log(OpenerQuestion);
-		console.log(props.redOpeningQuestion1);
+		props.setKeyAnswers(true);
 	}
-	function toggleDropDown2(e) {
+	//
+	function toggleRedOpeningQuestion2(e) {
 		e.preventDefault();
 		props.setRedOpeningQuestion1(false);
-		props.setRedOpeningQuestion2(
-			OpenerQuestion.openingQuestions.map((ROQ) => {
-				return <p>{ROQ.redOpeningQuestion2}</p>;
-			}),
-		);
-		props.setOpeningQuestion(e.target.value);
-		// props.setKeyAnswers((keyAnswers) => !keyAnswers);
+		props.setRedOpeningQuestion2(openingQuestions[1]);
+		// props.setOpeningQuestion(e.target.value);
+		props.setKeyAnswers(false);
+		props.setKeyAnswers(true);
 		setDropDownActive(false);
 	}
+	//
 	function toggleDropDown3(e) {
 		e.preventDefault();
-		props.setBlueOpeningQuestion1(true);
-		props.setOpeningQuestion(e.target.value);
-		props.setKeyAnswers((keyAnswers) => !keyAnswers);
+		props.setRedOpeningQuestion2(false);
+		props.setBlueOpeningQuestion1(openingQuestions[2]);
+		// props.setOpeningQuestion(e.target.value);
+		props.setKeyAnswers(false);
+		props.setKeyAnswers(true);
 		setDropDownActive(false);
 	}
+	//
 	function toggleDropDown4(e) {
 		e.preventDefault();
-		props.setBlueOpeningQuestion2(true);
-		props.setOpeningQuestion(e.target.value);
-		// props.setKeyAnswers((keyAnswers) => !keyAnswers);
+		props.setBlueOpeningQuestion1(false);
+		props.setBlueOpeningQuestion2(openingQuestions[3]);
+		// props.setOpeningQuestion(e.target.value);
+		props.setKeyAnswers(false);
+		props.setKeyAnswers(true);
 		setDropDownActive(false);
 	}
+	//
+	// toggle youthOpening Questions
+	//
 	const toggleDropDown5 = (e) => {
-		props.setYouthQuestion1(true);
-		// props.setYouthQuestion1(
-		// 	OpeningQuestions.map((YOQ) => {
-		// 		return <p>{YOQ.youthOpeningQuestion1}</p>;
-		// 	}),
-		// );
-		props.setYouthOpeningQuestions(e.target.value);
+		// props.setYouthQuestion1(true);
+		props.setYouthQuestion1(openingQuestions[4]);
+		// props.setYouthOpeningQuestions(e.target.value);
 		setDropDownActive2(false);
 	};
 
 	function toggleDropDown6(e) {
 		e.preventDefault();
-		props.setYouthQuestion2(true);
-		props.setYouthOpeningQuestions(e.target.value);
+		props.setYouthQuestion1(false);
+		props.setYouthQuestion2(openingQuestions[5]);
+		// props.setYouthOpeningQuestions(e.target.value);
 		setDropDownActive2(false);
 	}
 
 	///toggle red dropdown content
 
 	function toggleRedPossibleResponse() {
-		props.setRedPossibleResponses(
-			RedOpeningQuestions.map((redResponses) => {
-				return <p>{redResponses.possibleResponse1}</p>;
-			}),
-		);
+		props.setRedPossibleResponses(redFurtherQuestions[0]);
 	}
 	function toggleRedPossibleResponse2() {
-		props.setRedPossibleResponses(
-			RedOpeningQuestions.map((redResponses) => {
-				return <p>{redResponses.possibleResponse2}</p>;
-			}),
-		);
+		props.setRedPossibleResponses(redFurtherQuestions[1]);
 	}
 	function toggleRedPossibleResponse3() {
-		props.setRedPossibleResponses(
-			RedOpeningQuestions.map((redResponses) => {
-				return <p>{redResponses.possibleResponse3}</p>;
-			}),
-		);
+		props.setRedPossibleResponses(redFurtherQuestions[2]);
 	}
 	function toggleRedPossibleResponse4() {
-		props.setRedPossibleResponses(
-			RedOpeningQuestions.map((redResponses) => {
-				return <p>{redResponses.posibbleResponse4}</p>;
-			}),
-		);
+		props.setRedPossibleResponses(redFurtherQuestions[3]);
 	}
-
+	//red followup questions
 	function toggleRedFollowUpQuestion1() {
-		props.setRedFollowUpQuestions(
-			RedOpeningQuestions.map((redFQ) => {
-				return <p>{redFQ.followUpQuestion1}</p>;
-			}),
-		);
+		props.setRedFollowUpQuestions(redFurtherQuestions[4]);
 	}
 	function toggleRedFollowUpQuestion2() {
-		props.setRedFollowUpQuestions(
-			RedOpeningQuestions.map((redFQ) => {
-				return <p>{redFQ.followUpQuestion2}</p>;
-			}),
-		);
+		props.setRedFollowUpQuestions(redFurtherQuestions[5]);
 	}
-
+	//red prompt questions
 	function toggleRedPromptQuestion1() {
-		props.setRedPromptQuestions(
-			RedOpeningQuestions.map((redPQ) => {
-				return <p>{redPQ.promptQuestion1}</p>;
-			}),
-		);
+		props.setRedPromptQuestions(redFurtherQuestions[6]);
 	}
 	function toggleRedPromptQuestion2() {
-		props.setRedPromptQuestions(
-			RedOpeningQuestions.map((redPQ) => {
-				return <p>{redPQ.promptQuestion2}</p>;
-			}),
-		);
+		props.setRedPromptQuestions(redFurtherQuestions[7]);
 	}
 
 	///////////// toggle blue dropdown content
 	function toggleBluePossibleResponse() {
-		props.setBluePossibleResponses(
-			BlueOpeningQuestions.map((blueResponses) => {
-				return <p>{blueResponses.possibleResponse1}</p>;
-			}),
-		);
+		props.setBluePossibleResponses(blueFurtherQuestions[0]);
 	}
 	function toggleBluePossibleResponse2() {
-		props.setBluePossibleResponses(
-			BlueOpeningQuestions.map((blueResponses) => {
-				return <p>{blueResponses.possibleResponse2}</p>;
-			}),
-		);
+		props.setBluePossibleResponses(blueFurtherQuestions[1]);
 	}
 	function toggleBluePossibleResponse3() {
-		props.setBluePossibleResponses(
-			BlueOpeningQuestions.map((blueResponses) => {
-				return <p>{blueResponses.possibleResponse3}</p>;
-			}),
-		);
+		props.setBluePossibleResponses(blueFurtherQuestions[2]);
 	}
-	/////
+	///// blue followup questions
 	function toggleBluefollowUpQuestion() {
-		props.setBlueFollowUpQuestions(
-			BlueOpeningQuestions.map((blueFQ) => {
-				return <p>{blueFQ.followUpQuestion1}</p>;
-			}),
-		);
+		props.setBlueFollowUpQuestions(blueFurtherQuestions[3]);
 	}
 	function toggleBluefollowUpQuestion2() {
-		props.setBlueFollowUpQuestions(
-			BlueOpeningQuestions.map((blueFQ) => {
-				return <p>{blueFQ.followUpQuestion2}</p>;
-			}),
-		);
+		props.setBlueFollowUpQuestions(blueFurtherQuestions[4]);
 	}
 	function toggleBluefollowUpQuestion3() {
-		props.setBlueFollowUpQuestions(
-			BlueOpeningQuestions.map((blueFQ) => {
-				return <p>{blueFQ.followUpQuestion3}</p>;
-			}),
-		);
+		props.setBlueFollowUpQuestions(blueFurtherQuestions[5]);
 	}
-	/////
+	/////blue prompt questions
 
 	function toggleBluePromptQuestion() {
-		props.setBluePromptQuestions(
-			BlueOpeningQuestions.map((bluePQ) => {
-				return <p>{bluePQ.promptQuestion1}</p>;
-			}),
-		);
+		props.setBluePromptQuestions(blueFurtherQuestions[6]);
 	}
 	function toggleBluePromptQuestion2() {
-		props.setBluePromptQuestions(
-			BlueOpeningQuestions.map((bluePQ) => {
-				return <p>{bluePQ.promptQuestion2}</p>;
-			}),
-		);
+		props.setBluePromptQuestios(blueFurtherQuestions[7]);
 	}
 	function toggleBluePromptQuestion3() {
-		props.setBluePromptQuestions(
-			BlueOpeningQuestions.map((bluePQ) => {
-				return <p>{bluePQ.promptQuestion3}</p>;
-			}),
-		);
+		props.setBluePromptQuestions(blueFurtherQuestions[8]);
 	}
 	function toggleBluePromptQuestion4() {
-		props.setBluePromptQuestions(
-			BlueOpeningQuestions.map((bluePQ) => {
-				return <p>{bluePQ.promptQuestion4}</p>;
-			}),
-		);
+		props.setBluePromptQuestions(blueFurtherQuestions[9]);
 	}
 	//////
 	/////Toggle Youth Question Contents
 	function toggleYouthPossibleResponse() {
-		props.setYouthPossibleResponses(
-			YouthQuestions.map((youthPR) => {
-				return <p>{youthPR.possibleResponses1}</p>;
-			}),
-		);
+		props.setYouthPossibleResponses(youthFurtherQuestions[0]);
 	}
 	function toggleYouthPossibleResponse2() {
-		props.setYouthPossibleResponses(
-			YouthQuestions.map((youthPR) => {
-				return <p>{youthPR.possibleResponses2}</p>;
-			}),
-		);
+		props.setYouthPossibleResponses(youthFurtherQuestions[1]);
 	}
-	//////
+	////// 2 possibble responses above
 	function toggleYouthFollowUpQuestion() {
-		props.setYouthFollowUpQuestions(
-			YouthQuestions.map((youthFQ) => {
-				return <p>{youthFQ.followUpQuestion1}</p>;
-			}),
-		);
+		props.setYouthFollowUpQuestions(youthFurtherQuestions[2]);
 	}
 	function toggleYouthFollowUpQuestion2() {
-		props.setYouthFollowUpQuestions(
-			YouthQuestions.map((youthFQ) => {
-				return <p>{youthFQ.followUpQuestion2}</p>;
-			}),
-		);
+		props.setYouthFollowUpQuestions(youthFurtherQuestions[3]);
 	}
-	//////
+	////// 2 follow up questions above
 	function toggleYouthPromptQuestion() {
-		props.setYouthPromptQuestions(
-			YouthQuestions.map((youthPQ) => {
-				return <p>{youthPQ.promptQuestion1}</p>;
-			}),
-		);
+		props.setYouthPromptQuestions(youthFurtherQuestions[4]);
 	}
 	function toggleYouthPromptQuestion2() {
-		props.setYouthPromptQuestions(
-			YouthQuestions.map((youthPQ) => {
-				return <p>{youthPQ.promptQuestion2}</p>;
-			}),
-		);
+		props.setYouthPromptQuestions(youthFurtherQuestions[5]);
 	}
 	function toggleYouthPromptQuestion3() {
-		props.setYouthPromptQuestions(
-			YouthQuestions.map((youthPQ) => {
-				return <p>{youthPQ.promptQuestion3}</p>;
-			}),
-		);
+		props.setYouthPromptQuestions(youthFurtherQuestions[6]);
 	}
 	function toggleYouthPromptQuestion4() {
-		props.setYouthPromptQuestions(
-			YouthQuestions.map((youthPQ) => {
-				return <p>{youthPQ.promptQuestion4}</p>;
-			}),
-		);
+		props.setYouthPromptQuestions(youthFurtherQuestions[7]);
 	}
+	/// 4 follow up questions above
 
 	const renderResult = () => {
 		let result;
-		props.openingQuestion === ""
-			? (result = (
-					<div>
-						<p>
-							<img src={StartCallGif} alt='callGif' className='w-100' />
-						</p>
-					</div>
-			  ))
-			: props.openingQuestion === "redOpeningQuestion1"
+		props.redOpeningQuestion1
 			? (result = (
 					<div className='mt-4'>
 						{RedOpeningQuestions.map((redQuestions) => {
@@ -415,36 +286,34 @@ export default function RightContent(props) {
 												Follow-up Questions
 											</h2>
 										</div>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleRedFollowUpQuestion1}>
+											{redQuestions.followUpQuestion1}
+										</button>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleRedFollowUpQuestion2}>
+											{redQuestions.followUpQuestion2}
+										</button>
+									</div>
+									<div className='d-flex flex-column justify-content-center mt-3 mb-4'>
 										<div>
-											<button
-												className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-												onClick={toggleRedFollowUpQuestion1}>
-												{redQuestions.followUpQuestion1}
-											</button>
-											<button
-												className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-												onClick={toggleRedFollowUpQuestion2}>
-												{redQuestions.followUpQuestion2}
-											</button>
+											<h2 className='text-center text-dark fs-3 fw-bold'>
+												Prompt Questions
+											</h2>
 										</div>
-										<div className='d-flex flex-column justify-content-center mt-3 mb-4'>
-											<div>
-												<h2 className='text-center text-dark fs-3 fw-bold'>
-													Prompt Questions
-												</h2>
-											</div>
-											<button
-												className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-												onClick={toggleRedPromptQuestion1}>
-												{redQuestions.promptQuestion1}
-											</button>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleRedPromptQuestion1}>
+											{redQuestions.promptQuestion1}
+										</button>
 
-											<button
-												className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-												onClick={toggleRedPromptQuestion2}>
-												{redQuestions.promptQuestion2}
-											</button>
-										</div>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleRedPromptQuestion2}>
+											{redQuestions.promptQuestion2}
+										</button>
 									</div>
 								</div>
 							);
@@ -454,7 +323,7 @@ export default function RightContent(props) {
 						<hr />
 					</div>
 			  ))
-			: props.openingQuestion === "redOpeningQuestion2"
+			: props.redOpeningQuestion2
 			? (result = (
 					<div className='mt-4'>
 						{RedOpeningQuestions.map((redQuestions) => {
@@ -529,7 +398,7 @@ export default function RightContent(props) {
 						<hr />
 					</div>
 			  ))
-			: props.openingQuestion === "blueOpeningQuestion1"
+			: props.blueOpeningQuestion1
 			? (result = (
 					<div className='mt-4'>
 						{BlueOpeningQuestions.map((blueQuestions) => {
@@ -614,7 +483,7 @@ export default function RightContent(props) {
 						<hr />
 					</div>
 			  ))
-			: props.openingQuestion === "blueOpeningQuestion2"
+			: props.blueOpeningQuestion2
 			? (result = (
 					<div className='mt-4'>
 						{BlueOpeningQuestions.map((blueQuestions) => {
@@ -685,7 +554,7 @@ export default function RightContent(props) {
 
 	const renderResult2 = () => {
 		let youthResult;
-		props.youthOpeningQuestions === "youthQuestion1"
+		props.youthQuestion1
 			? (youthResult = (
 					<div className='mt-4'>
 						{YouthQuestions.map((youthQuestions) => {
@@ -760,7 +629,7 @@ export default function RightContent(props) {
 						<hr />
 					</div>
 			  ))
-			: props.youthOpeningQuestions === "youthQuestion2"
+			: props.youthQuestion2
 			? (youthResult = (
 					<div className='mt-4'>
 						{YouthQuestions.map((youthQuestions) => {
@@ -891,6 +760,10 @@ export default function RightContent(props) {
 						onClick={myFunction}
 						className='Selector mt-5 text-center border border-2 p-1 border-dark rounded'>
 						Select Opening Question
+						<Icon
+							icon='icon-park-outline:drop-down-list'
+							className='dropDownIcon'
+						/>
 					</p>
 					{dropDownActive ? (
 						<div id='myDropdown' className='d-flex flex-column'>
@@ -898,14 +771,14 @@ export default function RightContent(props) {
 								href='#about'
 								className='m-2 rounded bg-transparent border border-2 border-danger'
 								value='redOpeningQuestion1'
-								onClick={toggleDropDown}>
+								onClick={toggleRedOpeningQuestion1}>
 								How are you doing today ?
 							</button>
 							<button
 								href='#about'
 								className='m-2 rounded bg-transparent border border-2 border-danger'
 								value='redOpeningQuestion2'
-								onClick={toggleDropDown2}>
+								onClick={toggleRedOpeningQuestion2}>
 								How are you feeling Today ?
 							</button>
 							<button
@@ -932,6 +805,10 @@ export default function RightContent(props) {
 						onClick={dropDown2}
 						className='Selector  text-center border border-2 p-1 border-dark rounded'>
 						Select Youth Opening Question
+						<Icon
+							icon='icon-park-outline:drop-down-list'
+							className='dropDownIcon'
+						/>
 					</p>
 					{dropDownActive2 ? (
 						<div id='myDropdown' className='d-flex flex-column'>

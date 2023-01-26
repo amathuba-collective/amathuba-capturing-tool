@@ -104,3 +104,8 @@
   .Selector{
     cursor: pointer !important;
   }
+
+  .dropDownIcon{
+    position: relative !important;
+    left:2rem !important;
+  }

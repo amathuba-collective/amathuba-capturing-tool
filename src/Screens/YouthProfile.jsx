@@ -11,7 +11,7 @@ export default function YouthProfile() {
 
 	const { id } = useParams();
 	const { data: youth, loading } = useFetch(
-		"http://localhost:8002/Youth/" + id,
+		"http://localhost:2001/Youth/" + id,
 	);
 
 	// const navigate = useNavigate();

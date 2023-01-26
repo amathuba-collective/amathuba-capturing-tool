@@ -1062,11 +1062,6 @@
 			</div> */
 }
 
-
-
-
-
-
 /* <select
 					className='form-select dropDown'
 					value={props.openingQuestion}
@@ -1089,4 +1084,37 @@
 					</option>
 					<option value='youthQuestion1'>Earlier you said you...?</option>
 					<option value='youthQuestion2'>What im hearing is...?</option>
-				</select> */}
+				</select> */
+
+// /////////////////////////
+// const toggleTheDropDown = () => {
+// 	if (props.openingQuestion === "redOpeningQuestion1") {
+// 		props.setRedOpeningQuestion1().push(
+// 			OpenerQuestion.openingQuestions.map((ROQ) => {
+// 				return <p>{ROQ.redOpeningQuestion1}</p>;
+// 			}),
+// 		);
+// 	}
+
+// 	console.log(props.openingQuestion);
+// 	console.log(props.redOpeningQuestion1);
+// };
+
+// props.openingQuestion === "redOpeningQuestion2"
+// 	? props.setRedOpeningQuestion2(true): props.setRedOpeningQuestion1(false);
+// 	: props.setRedOpeningQuestion2(false);
+// props.openingQuestion === "blueOpeningQuestion1"
+// 	? props.setBlueOpeningQuestion1(true)
+// 	: props.setBlueOpeningQuestion1(false);
+// props.openingQuestion === "blueOpeningQuestion2"
+// 	? props.setBlueOpeningQuestion2(true)
+// 	: props.setBlueOpeningQuestion2(false);
+
+// useEffect(() => {
+// 	props.youthOpeningQuestions === "youthQuestion1"
+// 		? props.setYouthQuestion1(true)
+// 		: props.setYouthQuestion1(false);
+// 	props.youthOpeningQuestions === "youthQuestion2"
+// 		? props.setYouthQuestion2(true)
+// 		: props.setYouthQuestion2(false);
+// }, [props, props.youthOpeningQuestions]);

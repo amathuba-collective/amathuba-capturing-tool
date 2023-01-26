@@ -32,130 +32,139 @@ export default function LeftContent(props) {
 					<div className='summaryData d-flex flex-column justify-content-start align-items-start'>
 						<div>
 							<div className='fw-semilight fs-5'>
-								{props.openingQuestion ? (
-									<div>
-										<h4 className='fw-bold fs-4'>Opening Question</h4>
-										<p className='fs-2 fw-semibold'>
-											{props.redOpeningQuestion1 ? (
+								<div>
+									<div className='fs-2 fw-semibold'>
+										{props.redOpeningQuestion1 ? (
+											<div>
+												<h4 className='fw-bold fs-4'>Opening Question</h4>
 												<p className='fs-5 fw-normal'>
 													{props.redOpeningQuestion1}
 												</p>
-											) : props.redOpeningQuestion2 ? (
+											</div>
+										) : props.redOpeningQuestion2 ? (
+											<div>
+												<h4 className='fw-bold fs-4'>Opening Question</h4>
 												<p className='fs-5 fw-normal'>
-													how are you feeling today ?
+													{props.redOpeningQuestion2}
 												</p>
-											) : props.blueOpeningQuestion1 ? (
+											</div>
+										) : props.blueOpeningQuestion1 ? (
+											<div>
+												<h4 className='fw-bold fs-4'>Opening Question</h4>
 												<p className='fs-5 fw-normal'>
-													How are things going at work/home ?
+													{props.blueOpeningQuestion1}
 												</p>
-											) : props.blueOpeningQuestion2 ? (
+											</div>
+										) : props.blueOpeningQuestion2 ? (
+											<div>
+												<h4 className='fw-bold fs-4'>Opening Question</h4>
 												<p className='fs-5 fw-normal'>
-													How is your relationship with your family ?
-												</p>
-											) : null}
-										</p>
-										<div className='d-flex flex-column'>
-											<div className='d-flex justify-content-between'>
-												<p>
-													{props.keyAnswerCapture1 ? (
-														<p className='fs-5'>{props.keyAnswerCapture1}</p>
-													) : null}
-												</p>
-												<p>
-													{props.keyAnswerCapture2 ? (
-														<p className='fs-5'>{props.keyAnswerCapture2}</p>
-													) : null}
-												</p>
-												<p>
-													{props.keyAnswerCapture3 ? (
-														<p className='fs-5'>{props.keyAnswerCapture3}</p>
-													) : null}
+													{props.blueOpeningQuestion2}
 												</p>
 											</div>
+										) : null}
+									</div>
+									<div className='d-flex flex-column'>
+										<div className='d-flex justify-content-between'>
+											<p>
+												{props.keyAnswerCapture1 ? (
+													<p className='fs-5'>{props.keyAnswerCapture1}</p>
+												) : null}
+											</p>
+											<p>
+												{props.keyAnswerCapture2 ? (
+													<p className='fs-5'>{props.keyAnswerCapture2}</p>
+												) : null}
+											</p>
+											<p>
+												{props.keyAnswerCapture3 ? (
+													<p className='fs-5'>{props.keyAnswerCapture3}</p>
+												) : null}
+											</p>
+										</div>
 
-											<div className='d-flex justify-content-between'>
-												<p>
-													{props.keyAnswerCapture4 ? (
-														<p className='fs-5'>{props.keyAnswerCapture4}</p>
-													) : null}
-												</p>
-												<p>
-													{props.keyAnswerCapture5 ? (
-														<p className='fs-5'>{props.keyAnswerCapture5}</p>
-													) : null}
-												</p>
-												<p>
-													{props.keyAnswerCapture6 ? (
-														<p className='fs-5'>{props.keyAnswerCapture6}</p>
-													) : null}
-												</p>
-											</div>
+										<div className='d-flex justify-content-between'>
+											<p>
+												{props.keyAnswerCapture4 ? (
+													<p className='fs-5'>{props.keyAnswerCapture4}</p>
+												) : null}
+											</p>
+											<p>
+												{props.keyAnswerCapture5 ? (
+													<p className='fs-5'>{props.keyAnswerCapture5}</p>
+												) : null}
+											</p>
+											<p>
+												{props.keyAnswerCapture6 ? (
+													<p className='fs-5'>{props.keyAnswerCapture6}</p>
+												) : null}
+											</p>
+										</div>
 
-											<div className='d-flex justify-content-between'>
-												<p>
-													{props.keyAnswerCapture7 ? (
-														<p className='fs-5'>{props.keyAnswerCapture7}</p>
-													) : null}
-												</p>
-												<p>
-													{props.keyAnswerCapture8 ? (
-														<p className='fs-5'>{props.keyAnswerCapture8}</p>
-													) : null}
-												</p>
-											</div>
+										<div className='d-flex justify-content-between'>
+											<p>
+												{props.keyAnswerCapture7 ? (
+													<p className='fs-5'>{props.keyAnswerCapture7}</p>
+												) : null}
+											</p>
+											<p>
+												{props.keyAnswerCapture8 ? (
+													<p className='fs-5'>{props.keyAnswerCapture8}</p>
+												) : null}
+											</p>
+										</div>
 
-											<div className='d-flex justify-content-between'>
-												<p>
-													{props.keyAnswerCapture9 ? (
-														<p className='fs-5'>{props.keyAnswerCapture9}</p>
-													) : null}
-												</p>
-												<p>
-													{props.keyAnswerCapture10 ? (
-														<p className='fs-5'>{props.keyAnswerCapture10}</p>
-													) : null}
-												</p>
-											</div>
+										<div className='d-flex justify-content-between'>
+											<p>
+												{props.keyAnswerCapture9 ? (
+													<p className='fs-5'>{props.keyAnswerCapture9}</p>
+												) : null}
+											</p>
+											<p>
+												{props.keyAnswerCapture10 ? (
+													<p className='fs-5'>{props.keyAnswerCapture10}</p>
+												) : null}
+											</p>
+										</div>
 
-											<div className='d-flex justify-content-between'>
-												<p>
-													{props.keyAnswerCapture11 ? (
-														<p className='fs-5'>{props.keyAnswerCapture11}</p>
-													) : null}
-												</p>
-												<p>
-													{props.keyAnswerCapture12 ? (
-														<p className='fs-5'>{props.keyAnswerCapture12}</p>
-													) : null}
-												</p>
-											</div>
+										<div className='d-flex justify-content-between'>
+											<p>
+												{props.keyAnswerCapture11 ? (
+													<p className='fs-5'>{props.keyAnswerCapture11}</p>
+												) : null}
+											</p>
+											<p>
+												{props.keyAnswerCapture12 ? (
+													<p className='fs-5'>{props.keyAnswerCapture12}</p>
+												) : null}
+											</p>
+										</div>
 
-											<div className='d-flex justify-content-between'>
-												<p>
-													{props.keyAnswerCapture13 ? (
-														<p className='fs-5'>{props.keyAnswerCapture13}</p>
-													) : null}
-												</p>
-												{/* text input answer below */}
-												<p>
-													{props.inputArr.map((keyAnswer, ind) => {
-														return (
-															<div key={ind}>
-																<p>{keyAnswer}</p>
-															</div>
-														);
-													})}
-												</p>
-												{/* text input answer above */}
-												<p>
-													{props.keyAnswerCapture14 ? (
-														<p className='fs-5'>{props.keyAnswerCapture14}</p>
-													) : null}
-												</p>
-											</div>
+										<div className='d-flex justify-content-between'>
+											<p>
+												{props.keyAnswerCapture13 ? (
+													<p className='fs-5'>{props.keyAnswerCapture13}</p>
+												) : null}
+											</p>
+											{/* text input answer below */}
+											<p>
+												{props.inputArr.map((keyAnswer, ind) => {
+													return (
+														<div key={ind}>
+															<p>{keyAnswer}</p>
+														</div>
+													);
+												})}
+											</p>
+											{/* text input answer above */}
+											<p>
+												{props.keyAnswerCapture14 ? (
+													<p className='fs-5'>{props.keyAnswerCapture14}</p>
+												) : null}
+											</p>
 										</div>
 									</div>
-								) : null}
+								</div>
 								{/* {props.printOtherOpeningQuestion ? (
 									<div>
 										<h4>Opening Question</h4>
@@ -659,41 +668,56 @@ export default function LeftContent(props) {
 						</div>
 					</div>
 
-					{/* <p>
-									{props.youthInputArr.map((youthAnswer, ind) => {
-										return (
-											<div key={ind}>
-												<p>{youthAnswer.youthOQ}</p>
-											</div>
-										);
-									})}
-								</p> */}
-
 					<div className='agentReflection fw-semilight fs-4 mt-4'>
-						{props.youthOpeningQuestions ? (
-							<div>
-								<h4 className='fw-bold fs-4'>Opening Question</h4>
-								<p className='fs-2 fw-semibold'>
-									{props.youthQuestion1 ? (
+						<div>
+							<p className='fs-2 fw-semibold'>
+								{props.youthQuestion1 ? (
+									<div>
+										<h4 className='fw-bold fs-4'>Youth Reflection Question</h4>
 										<p className='fs-5 fw-normal'>{props.youthQuestion1}</p>
-									) : props.youthQuestion2 ? (
-										<p className='fs-5 fw-normal'>
-											how are you feeling today ?
+										<p>
+											{props.youthInputArr.map((youthAnswer, ind) => {
+												return (
+													<div key={ind}>
+														<p className='fs-5'>{youthAnswer.youthOQ}</p>
+													</div>
+												);
+											})}
 										</p>
-									) : null}
-								</p>
-							</div>
-						) : null}
+									</div>
+								) : null}
+							</p>
+						</div>
+						<div>
+							<p className='fs-2 fw-semibold'>
+								{props.youthQuestion2 ? (
+									<div>
+										<h4 className='fw-bold fs-4'>Youth Reflection Question</h4>
+										<p className='fs-5 fw-normal'>{props.youthQuestion2}</p>
+										<p>
+											{props.youthInputArr.map((youthAnswer, ind) => {
+												return (
+													<div key={ind}>
+														<p className='fs-5'>{youthAnswer.youthOQ}</p>
+													</div>
+												);
+											})}
+										</p>
+									</div>
+								) : null}
+							</p>
+						</div>
+						<div>
+							{props.youthPossibleResponses ? (
+								<div>
+									<h5 className='fw-semibold fs-4'>Possible Reponse</h5>
+									<p className='fs-5'>{props.youthPossibleResponses}</p>
 
-						{props.youthPossibleResponses ? (
-							<div>
-								<h5 className='fw-semibold fs-4'>Possible Reponse</h5>
-								<p className='fs-5'>{props.youthPossibleResponses}</p>
-
-								{/* summary column divider */}
-								<hr className='w-100 ng-secondary border border-1 border-secondary ' />
-							</div>
-						) : null}
+									{/* summary column divider */}
+									<hr className='w-100 ng-secondary border border-1 border-secondary ' />
+								</div>
+							) : null}
+						</div>
 					</div>
 					{/*  */}
 					<div>
@@ -744,6 +768,15 @@ export default function LeftContent(props) {
 							<div>
 								<h4 className='fw-semibold'>Agent Reflection Question</h4>
 								<p>{props.agentQuestions}</p>
+								<p>
+									{props.agentDataArr.map((agentAnswer, ind) => {
+										return (
+											<div key={ind}>
+												<p className='fs-5'>{agentAnswer.agentOQ}</p>
+											</div>
+										);
+									})}
+								</p>
 							</div>
 						) : null}
 						<div>

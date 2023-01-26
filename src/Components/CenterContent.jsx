@@ -10,13 +10,31 @@ import AngryEmoji from "../Assets/angryEmotion.png";
 import ConfusedEmoji from "../Assets/confusedEmotion.png";
 import AnxiousEmoji from "../Assets/anxiousEmotion.png";
 import SadEmoji from "../Assets/sadEmoji.png";
-import OpeningQuestions from "../Data/OpeningQuestion.json";
 
 export default function CenterContent(props) {
 	// const [formKey, setFormKey] = useState(1);
 	const navigate = useNavigate();
 
 	const emotions = ["Happy", "Angry", "Confused", "Anxious", "Sad"];
+	// ////storinh keyWord answers here for form to work for the moment
+	//
+	const keyAnswers = [
+		"Amazing",
+		"Joyful",
+		"Excited",
+		"Awsome",
+		"Lost",
+		"Depressed",
+		"Dissapointed",
+		"Regret",
+		"OverWhelmed",
+		"OverJoyed",
+		"Proud",
+		"Motivated",
+		"Weak",
+		"great",
+	];
+	//
 
 	const [nextSession, setNextSession] = useState("newAppoinment");
 	// function getOtherAnswer(e) {
@@ -50,102 +68,46 @@ export default function CenterContent(props) {
 	};
 
 	function handleEmotionAnswer1() {
-		props.setKeyAnswerCapture1(
-			KeyWordAnswers.map((keyAnswers) => {
-				return <p>{keyAnswers.keyAnswer1}</p>;
-			}),
-		);
+		props.setKeyAnswerCapture1(keyAnswers[0]);
 	}
 	function handleEmotionAnswer2(e) {
-		props.setKeyAnswerCapture2(
-			KeyWordAnswers.map((keyAnswers) => {
-				return <p>{keyAnswers.keyAnswer2}</p>;
-			}),
-		);
+		props.setKeyAnswerCapture2(keyAnswers[1]);
 	}
 	function handleEmotionAnswer3(e) {
-		props.setKeyAnswerCapture3(
-			KeyWordAnswers.map((keyAnswers) => {
-				return <p>{keyAnswers.keyAnswer3}</p>;
-			}),
-		);
+		props.setKeyAnswerCapture3(keyAnswers[2]);
 	}
 	function handleEmotionAnswer4(e) {
-		props.setKeyAnswerCapture4(
-			KeyWordAnswers.map((keyAnswers) => {
-				return <p>{keyAnswers.keyAnswer4}</p>;
-			}),
-		);
+		props.setKeyAnswerCapture4(keyAnswers[3]);
 	}
 	function handleEmotionAnswer5(e) {
-		props.setKeyAnswerCapture5(
-			KeyWordAnswers.map((keyAnswers) => {
-				return <p>{keyAnswers.keyAnswer5}</p>;
-			}),
-		);
+		props.setKeyAnswerCapture5(keyAnswers[4]);
 	}
 	function handleEmotionAnswer6(e) {
-		props.setKeyAnswerCapture6(
-			KeyWordAnswers.map((keyAnswers) => {
-				return <p>{keyAnswers.keyAnswer6}</p>;
-			}),
-		);
+		props.setKeyAnswerCapture6(keyAnswers[5]);
 	}
 	function handleEmotionAnswer7(e) {
-		props.setKeyAnswerCapture7(
-			KeyWordAnswers.map((keyAnswers) => {
-				return <p>{keyAnswers.keyAnswer7}</p>;
-			}),
-		);
+		props.setKeyAnswerCapture7(keyAnswers[6]);
 	}
 	function handleEmotionAnswer8(e) {
-		props.setKeyAnswerCapture8(
-			KeyWordAnswers.map((keyAnswers) => {
-				return <p>{keyAnswers.keyAnswer8}</p>;
-			}),
-		);
+		props.setKeyAnswerCapture8(keyAnswers[7]);
 	}
 	function handleEmotionAnswer9(e) {
-		props.setKeyAnswerCapture9(
-			KeyWordAnswers.map((keyAnswers) => {
-				return <p>{keyAnswers.keyAnswer9}</p>;
-			}),
-		);
+		props.setKeyAnswerCapture9(keyAnswers[8]);
 	}
 	function handleEmotionAnswer10(e) {
-		props.setKeyAnswerCapture10(
-			KeyWordAnswers.map((keyAnswers) => {
-				return <p>{keyAnswers.keyAnswer10}</p>;
-			}),
-		);
+		props.setKeyAnswerCapture10(keyAnswers[9]);
 	}
 	function handleEmotionAnswer11(e) {
-		props.setKeyAnswerCapture11(
-			KeyWordAnswers.map((keyAnswers) => {
-				return <p>{keyAnswers.keyAnswer11}</p>;
-			}),
-		);
+		props.setKeyAnswerCapture11(keyAnswers[10]);
 	}
 	function handleEmotionAnswer12(e) {
-		props.setKeyAnswerCapture12(
-			KeyWordAnswers.map((keyAnswers) => {
-				return <p>{keyAnswers.keyAnswer12}</p>;
-			}),
-		);
+		props.setKeyAnswerCapture12(keyAnswers[11]);
 	}
 	function handleEmotionAnswer13(e) {
-		props.setKeyAnswerCapture13(
-			KeyWordAnswers.map((keyAnswers) => {
-				return <p>{keyAnswers.keyAnswer13}</p>;
-			}),
-		);
+		props.setKeyAnswerCapture13(keyAnswers[12]);
 	}
 	function handleEmotionAnswer14(e) {
-		props.setKeyAnswerCapture14(
-			KeyWordAnswers.map((keyAnswers) => {
-				return <p>{keyAnswers.keyAnswer14}</p>;
-			}),
-		);
+		props.setKeyAnswerCapture14(keyAnswers[13]);
 	}
 
 	// code for text input for alternative keyword answer
@@ -184,19 +146,25 @@ export default function CenterContent(props) {
 			...props.youthInputArr,
 			{ youthOQ, youthFQ, youthPQ },
 		]);
-		console.log(props.youthInputArr);
+		// console.log(props.youthInputArr);
 
 		props.setYouthTextInput({ youthOQ: "", youthFQ: "", youthPQ: "" });
 	}
 
-	function getAgentReflection(val) {
-		props.setAgentData(val.target.value);
-		// props.setPrintData(false)
+	function getAgentReflection(e) {
+		props.setAgentData({ ...props.agentData, [e.target.name]: e.target.value });
+	}
+	//
+	let { agentOQ } = props.agentData;
+	function addAgentReflection() {
+		props.setAgentDataArr([...props.agentDataArr, { agentOQ }]);
+
+		props.setAgentData({ agentOQ: "" });
 	}
 
 	function submitForm() {
 		props.submitContent();
-		navigate("/Dashboard");
+		// navigate("/Dashboard");
 	}
 
 	return (
@@ -209,19 +177,11 @@ export default function CenterContent(props) {
 						{props.redOpeningQuestion1 ? (
 							<p className='fs-2'>{props.redOpeningQuestion1}</p>
 						) : props.redOpeningQuestion2 ? (
-							<p className='fs-2'> {props.redOpeningQuestion1}</p>
+							<p className='fs-2'> {props.redOpeningQuestion2}</p>
 						) : props.blueOpeningQuestion1 ? (
-							<p className='fs-2'>
-								{OpeningQuestions.map((blueOQ1) => {
-									return <p>{blueOQ1.blueOpeningQuestion1}</p>;
-								})}
-							</p>
+							<p className='fs-2'>{props.blueOpeningQuestion1}</p>
 						) : props.blueOpeningQuestion2 ? (
-							<p className='fs-2'>
-								{OpeningQuestions.map((blueOQ2) => {
-									return <p>{blueOQ2.blueOpeningQuestion2}</p>;
-								})}
-							</p>
+							<p className='fs-2'>{props.blueOpeningQuestion2}</p>
 						) : null}
 					</p>
 				</div>
@@ -574,11 +534,7 @@ export default function CenterContent(props) {
 			{/* Youth reflection input */}
 			<div className='footer'>
 				<div className='mt-5'>
-					<div className='recommended question for youth reflection'>
-						<h2 className='recommendedQuestion mb-3 text-center fs-4 fw-semilight'>
-							<p>{props.youthQuestion1}</p>
-						</h2>
-					</div>
+					{/* <div className='recommended question for youth reflection'></div> */}
 					<label className='fw-semibold fs-3 mb-3'>Youth Reflection</label>
 					{/* <button
 						className='sm bg-transparent border border-2 rounded mx-2'
@@ -586,7 +542,13 @@ export default function CenterContent(props) {
 						onClick={handleOnChange6}>
 						Get recommended question
 					</button> */}
-					<p>{props.youthQuestion1}</p>
+					<p>
+						{props.youthQuestion1 ? (
+							<p>{props.youthQuestion1}</p>
+						) : props.youthQuestion2 ? (
+							<p>{props.youthQuestion2}</p>
+						) : null}
+					</p>
 					<textarea
 						className='textArea form-control h-50'
 						type='text'
@@ -639,26 +601,27 @@ export default function CenterContent(props) {
 
 				{/*       Agent Reflection Inputs                                  */}
 				<div className='mt-5 mb-5' value={props.recommendedQuestions}>
-					<div className='recommended question for agent reflection'>
-						<h2 className='recommendedQuestion mb-2 text-center fs-4 fw-semilight'>
-							{props.agentQuestions}
-						</h2>
+					<div>
+						<label className='fw-semibold fs-3 mb-2'>Agent Reflection</label>
+						{/* <p>{props.agentQuestions}</p> */}
+						<button
+							className='sm bg-transparent border border-2 rounded mx-2'
+							value='agentReflection'
+							onClick={handleOnChange7}>
+							Get recommended question
+						</button>
 					</div>
-					<label className='fw-semibold fs-3 mb-2'>Agent Reflection</label>
-					<button
-						className='sm bg-transparent border border-2 rounded mx-2'
-						value='agentReflection'
-						onClick={handleOnChange7}>
-						Get recommended question
-					</button>
+					<p>{props.agentQuestions}</p>
 					<textarea
 						className='textArea form-control'
 						onChange={getAgentReflection}
+						value={props.agentData.agentOQ}
+						name='agentOQ'
 						placeholder='Type Reflection'
 						id='#'></textarea>
 					<div className='d-grid mt-2'>
 						<button
-							onClick={() => props.setPrintAgentData(true)}
+							onClick={addAgentReflection}
 							className='sm bg-transparent border border-2 rounded'>
 							Save
 						</button>
