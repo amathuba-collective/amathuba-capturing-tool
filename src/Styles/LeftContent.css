@@ -18,3 +18,8 @@
 .leftContent::-webkit-scrollbar{
 	display: none;
 }
+
+.redFlag{
+    position: relative;
+    top: 9rem
+}

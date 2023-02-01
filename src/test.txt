@@ -1,0 +1,74 @@
+0
+: 
+{openingQuestion1Red: '', openingQuestion2Red: '', openingQuestion1Blue: '', openingQuestion2Blue: '', keyAnswer1: '', keyAnswer1
+: 
+""
+keyAnswer2
+: 
+""
+keyAnswer3
+: 
+""
+keyAnswer4
+: 
+""
+keyAnswer5
+: 
+""
+keyAnswer6
+: 
+""
+keyAnswer7
+: 
+""
+keyAnswer8
+: 
+""
+keyAnswer9
+: 
+""
+keyAnswer10
+: 
+""
+keyAnswer11
+: 
+""
+keyAnswer12
+: 
+""
+keyAnswer13
+: 
+""
+keyAnswer14
+: 
+""…}
+1
+: 
+{emotionOfCall: ''}
+2
+: 
+{ROQpossibleResponse: '', BOQpossibleResponse: ''}
+3
+: 
+{roqFollowUpQuestion: '', boqFollowUpQuestion: '', keyAnswer1: '', keyAnswer2: '', keyAnswer3: '', …}
+4
+: 
+{roqPromptQuestion: '', boqPromptQuestion: '', keyAnswer1: '', keyAnswer2: '', keyAnswer3: '', …}
+5
+: 
+{youthOQ1: false, youthOqReflectionData: undefined, youthOQ2: false, youthOqReflectionData2: undefined}
+6
+: 
+{youthResponses: ''}
+7
+: 
+{youthFollow_UpQuestions: '', youthFqReflectionData: undefined}
+8
+: 
+{youthPrompt_Questions: '', youthPqReflectionData: undefined}
+9
+: 
+{agentQuestions: '', agentData: undefined}
+10
+: 
+{newAppointment: false}

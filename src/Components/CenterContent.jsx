@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Calendar from "react-calendar";
 import "../Styles/ReactCalender.css";
 import "react-calendar/dist/Calendar.css";
@@ -12,8 +12,8 @@ import AnxiousEmoji from "../Assets/anxiousEmotion.png";
 import SadEmoji from "../Assets/sadEmoji.png";
 
 export default function CenterContent(props) {
-	// const [formKey, setFormKey] = useState(1);
-	// const navigate = useNavigate();
+	const submitContent = props.submitContent;
+	const navigate = useNavigate();
 
 	const emotions = ["Happy", "Angry", "Confused", "Anxious", "Sad"];
 	// ////storinh keyWord answers here for form to work for the moment
@@ -120,7 +120,7 @@ export default function CenterContent(props) {
 	}
 
 	let { keyAnswer } = props.answerTextInput;
-	function addOtherAnswer(e) {
+	function addOtherAnswer() {
 		props.setInputArr([...props.inputArr, keyAnswer]);
 		console.log(props.inputArr);
 		props.setAnswerTextInput({ keyAnswer: "" });
@@ -163,8 +163,8 @@ export default function CenterContent(props) {
 	}
 
 	function submitForm() {
-		props.submitContent();
-		// navigate("/Dashboard");
+		submitContent();
+		navigate("/Dashboard");
 	}
 
 	return (
@@ -175,50 +175,62 @@ export default function CenterContent(props) {
 				<div className='openingQuestion text-center mt-5'>
 					<p className='fs-2 fw-semibold'>
 						{props.redOpeningQuestion1 ? (
-							<p className='fs-2'>{props.redOpeningQuestion1}</p>
+							<p className='fw-normal'>{props.redOpeningQuestion1}</p>
 						) : props.redOpeningQuestion2 ? (
-							<p className='fs-2'> {props.redOpeningQuestion2}</p>
+							<p className='fw-normal'> {props.redOpeningQuestion2}</p>
 						) : props.blueOpeningQuestion1 ? (
-							<p className='fs-2'>{props.blueOpeningQuestion1}</p>
+							<p className='fw-normal'>{props.blueOpeningQuestion1}</p>
 						) : props.blueOpeningQuestion2 ? (
-							<p className='fs-2'>{props.blueOpeningQuestion2}</p>
+							<p className='fw-normal'>{props.blueOpeningQuestion2}</p>
 						) : null}
+						{props.printOtherOpeningQuestion.map((otherOQ, ind) => {
+							return (
+								<div key={ind}>
+									<p className='fw-normal'>{otherOQ}</p>
+								</div>
+							);
+						})}
 					</p>
 				</div>
 				<div className='emojis'>
 					<div
 						value={props.recommendedQuestions}
-						className='d-flex justify-content-evenly mt-5'>
+						className='d-flex justify-content-evenly mt-5 px-5'>
 						<option value=''></option>
 						<button
 							value='happy'
 							className='border-0 bg-transparent fs-1'
 							onClick={handleOnChange1}>
 							<img src={HappyEmoji} alt='sadEmoji' className='sadEmo' />
+							<span className='fs-5'>{emotions[0]}</span>
 						</button>
 						<button
 							value='angry'
 							className='border-0 bg-transparent fs-1'
 							onClick={handleOnChange2}>
 							<img src={AngryEmoji} alt='sadEmoji' className='sadEmo' />
+							<span className='fs-5'>{emotions[1]}</span>
 						</button>
 						<button
 							value='confused'
 							className='border-0 bg-transparent fs-1'
 							onClick={handleOnChange3}>
 							<img src={ConfusedEmoji} alt='sadEmoji' className='sadEmo' />
+							<span className='fs-5'>{emotions[2]}</span>
 						</button>
 						<button
 							value='anxious'
 							className='border-0 bg-transparent fs-1'
 							onClick={handleOnChange4}>
 							<img src={AnxiousEmoji} alt='sadEmoji' className='sadEmo' />
+							<span className='fs-5'>{emotions[3]}</span>
 						</button>
 						<button
 							value='sad'
 							className='border-0 bg-transparent fs-1'
 							onClick={handleOnChange5}>
 							<img src={SadEmoji} alt='sadEmoji' className='sadEmo' />
+							<span className='fs-5'>{emotions[4]}</span>
 						</button>
 					</div>
 				</div>
@@ -334,198 +346,6 @@ export default function CenterContent(props) {
 							</div>
 						</div>
 					) : null}
-
-					{/* {props.angryAnswers ? (
-						<div className='section d-flex flex-column justify-content-around'>
-							<div className='d-flex justify-content-between'>
-								<div className='TriggersAnswers'>
-									<div className='d-flex flex-column justify-content-around mb-2'>
-										<button className='btn-sm'>angryAnswers</button>
-										<button className='btn-sm'>angryAnswers</button>
-										<button className='btn-sm'>angryAnswers</button>
-										<button className='btn-sm'>angryAnswers</button>
-
-										<button className='btn-sm'>angryAnswers</button>
-									</div>
-								</div>
-								<div className='d-flex flex-column justify-content-around mb-2'>
-									<button className='btn-sm'>angryAnswers</button>
-									<button className='btn-sm'>angryAnswers</button>
-									<button className='btn-sm'>angryAnswers</button>
-
-									<button className='btn-sm'>angryAnswers</button>
-								</div>
-								<div className='ReasonAnswers'>
-									<div className='d-flex flex-column mb-2'>
-										<button className='btn-sm'>angryAnswers</button>
-										<button className='btn-sm'>angryAnswers</button>
-										<button className='btn-sm'>angryAnswers</button>
-										<button className='btn-sm'>angryAnswers</button>
-										<button className='btn-sm'>angryAnswers</button>
-									</div>
-								</div>
-							</div>
-							<div className='otherAnswer mt-5 d-flex w-75'>
-								<div className='input-group mb-3'>
-									<input
-										type='text'
-										className='otherInput form-control'
-										placeholder='Other'
-										onChange={getOtherAnswer}
-									/>
-								</div>
-								<button
-									className='otherAnswerBtn border-secondary border-2 text-dark rounded'
-									onClick={(e) => props.setPrintOtherAnswer(true)}>
-									save
-								</button>
-							</div>
-						</div>
-					) : null} */}
-
-					{/* {props.confusedAnswers ? (
-						<div className='section d-flex flex-column justify-content-around'>
-							<div className='d-flex justify-content-between'>
-								<div className='TriggersAnswers'>
-									<div className='d-flex flex-column justify-content-around mb-2'>
-										<button className='btn-sm'>confusedAnswers</button>
-										<button className='btn-sm'>confusedAnswers</button>
-										<button className='btn-sm'>confusedAnswers</button>
-										<button className='btn-sm'>confusedAnswers</button>
-
-										<button className='btn-sm'>confusedAnswers</button>
-									</div>
-								</div>
-								<div className='d-flex flex-column justify-content-around mb-2'>
-									<button className='btn-sm'>confusedAnswers</button>
-									<button className='btn-sm'>confusedAnswers</button>
-									<button className='btn-sm'>confusedAnswers</button>
-
-									<button className='btn-sm'>confusedAnswers</button>
-								</div>
-								<div className='ReasonAnswers'>
-									<div className='d-flex flex-column mb-2'>
-										<button className='btn-sm'>confusedAnswers</button>
-										<button className='btn-sm'>confusedAnswers</button>
-										<button className='btn-sm'>confusedAnswers</button>
-										<button className='btn-sm'>confusedAnswers</button>
-										<button className='btn-sm'>confusedAnswers</button>
-									</div>
-								</div>
-							</div>
-							<div className='otherAnswer mt-5 d-flex w-75'>
-								<div className='input-group mb-3'>
-									<input
-										type='text'
-										className='otherInput form-control'
-										placeholder='Other'
-										onChange={getOtherAnswer}
-									/>
-								</div>
-								<button
-									className='otherAnswerBtn border-secondary border-2 text-dark rounded'
-									onClick={(e) => props.setPrintOtherAnswer(true)}>
-									save
-								</button>
-							</div>
-						</div>
-					) : null} */}
-
-					{/* {props.anxiousAnswers ? (
-						<div className='section d-flex flex-column justify-content-around'>
-							<div className='d-flex justify-content-between'>
-								<div className='TriggersAnswers'>
-									<div className='d-flex flex-column justify-content-around mb-2'>
-										<button className='btn-sm'>anxiousAnswers</button>
-										<button className='btn-sm'>anxiousAnswers</button>
-										<button className='btn-sm'>anxiousAnswers</button>
-										<button className='btn-sm'>anxiousAnswers</button>
-
-										<button className='btn-sm'>anxiousAnswers</button>
-									</div>
-								</div>
-								<div className='d-flex flex-column justify-content-around mb-2'>
-									<button className='btn-sm'>anxiousAnswers</button>
-									<button className='btn-sm'>anxiousAnswers</button>
-									<button className='btn-sm'>anxiousAnswers</button>
-
-									<button className='btn-sm'>anxiousAnswers</button>
-								</div>
-								<div className='ReasonAnswers'>
-									<div className='d-flex flex-column mb-2'>
-										<button className='btn-sm'>anxiousAnswers</button>
-										<button className='btn-sm'>anxiousAnswers</button>
-										<button className='btn-sm'>anxiousAnswers</button>
-										<button className='btn-sm'>anxiousAnswers</button>
-										<button className='btn-sm'>anxiousAnswers</button>
-									</div>
-								</div>
-							</div>
-							<div className='otherAnswer mt-5 d-flex w-75'>
-								<div className='input-group mb-3'>
-									<input
-										type='text'
-										className='otherInput form-control'
-										placeholder='Other'
-										onChange={getOtherAnswer}
-									/>
-								</div>
-								<button
-									className='otherAnswerBtn border-secondary border-2 text-dark rounded'
-									onClick={(e) => props.setPrintOtherAnswer(true)}>
-									save
-								</button>
-							</div>
-						</div>
-					) : null} */}
-
-					{/* {props.sadAnswers ? (
-						<div className='section d-flex flex-column justify-content-around'>
-							<div className='d-flex justify-content-between'>
-								<div className='TriggersAnswers'>
-									<div className='d-flex flex-column justify-content-around mb-2'>
-										<button className='btn-sm'>sadAnswers</button>
-										<button className='btn-sm'>sadAnswers</button>
-										<button className='btn-sm'>sadAnswers</button>
-										<button className='btn-sm'>sadAnswers</button>
-
-										<button className='btn-sm'>sadAnswers</button>
-									</div>
-								</div>
-								<div className='d-flex flex-column justify-content-around mb-2'>
-									<button className='btn-sm'>sadAnswers</button>
-									<button className='btn-sm'>sadAnswers</button>
-									<button className='btn-sm'>sadAnswers</button>
-
-									<button className='btn-sm'>sadAnswers</button>
-								</div>
-								<div className='ReasonAnswers'>
-									<div className='d-flex flex-column mb-2'>
-										<button className='btn-sm'>sadAnswers</button>
-										<button className='btn-sm'>sadAnswers</button>
-										<button className='btn-sm'>sadAnswers</button>
-										<button className='btn-sm'>sadAnswers</button>
-										<button className='btn-sm'>sadAnswers</button>
-									</div>
-								</div>
-							</div>
-							<div className='otherAnswer mt-5 d-flex w-75'>
-								<div className='input-group mb-3'>
-									<input
-										type='text'
-										className='otherInput form-control'
-										placeholder='Other'
-										onChange={getOtherAnswer}
-									/>
-								</div>
-								<button
-									className='otherAnswerBtn border-secondary border-2 text-dark rounded'
-									onClick={(e) => props.setPrintOtherAnswer(true)}>
-									save
-								</button>
-							</div>
-						</div>
-					) : null} */}
 				</div>
 			</div>
 			{/* body section ends */}
@@ -534,14 +354,7 @@ export default function CenterContent(props) {
 			{/* Youth reflection input */}
 			<div className='footer'>
 				<div className='mt-5'>
-					{/* <div className='recommended question for youth reflection'></div> */}
 					<label className='fw-semibold fs-3 mb-3'>Youth Reflection</label>
-					{/* <button
-						className='sm bg-transparent border border-2 rounded mx-2'
-						value='youthReflection'
-						onClick={handleOnChange6}>
-						Get recommended question
-					</button> */}
 					<p>
 						{props.youthQuestion1 ? (
 							<p>{props.youthQuestion1}</p>

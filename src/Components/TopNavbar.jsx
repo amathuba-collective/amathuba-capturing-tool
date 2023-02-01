@@ -4,6 +4,7 @@ import { Layout } from "../Components/TopNavbarExtensions/Layout";
 // import { SearchIcon } from "../Components/TopNavbarExtensions/SearchIcon";
 import AmathubaLogo from "./AmathubaLogo";
 import "../Styles/TopNavbar.css";
+// import LogoutButton from "./LogOutBtn";
 import { useNavigate } from "react-router-dom";
 
 export default function TopNavbar() {
@@ -13,7 +14,7 @@ export default function TopNavbar() {
 	};
 	return (
 		<Layout>
-			<Navbar isBordered variant='sticky' className='navbar'>
+			<Navbar isBordered variant='sticky'  className='navbar fixed'>
 				<Navbar.Brand css={{ mr: "$4" }}>
 					{/* spot for logo */}
 					<AmathubaLogo />
@@ -73,11 +74,8 @@ export default function TopNavbar() {
 									src='https://i.pravatar.cc/150?u=a042581f4e29026704d'
 								/>
 							</Dropdown.Trigger> */}
-						<button
-							className='logOutBtn border-0 rounded mt-1 text-light  '
-							onClick={logOutUser}>
-							Log out
-						</button>
+						{/* <LogoutButton /> */}
+						<button onClick={logOutUser}></button>
 					</Navbar.Item>
 					{/* <Dropdown.Menu
 						aria-label='User menu actions'

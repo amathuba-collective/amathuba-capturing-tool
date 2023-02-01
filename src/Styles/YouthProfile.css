@@ -51,3 +51,7 @@
 .recordCard{
     width: 20rem;
 }
+
+.overviewRecordCard{
+    width: 30rem !important;
+}

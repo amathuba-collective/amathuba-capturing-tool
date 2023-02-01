@@ -2,8 +2,13 @@ import React from "react";
 import { Avatar, Grid, Text } from "@nextui-org/react";
 // import ProfileImage from "../Assets/png-clipart-iphone-world-emoji-day-man-iphone-electronics-face.png";
 import "../Styles/LeftContent.css";
+import callRedFlag from "../Assets/callRedFlag.gif";
 
 export default function LeftContent(props) {
+	const toggleRedFlag = () => {
+		props.setRedFlag(true);
+	};
+
 	const youth = props.youth;
 	return (
 		<div className='leftContent container'>
@@ -63,6 +68,24 @@ export default function LeftContent(props) {
 												</p>
 											</div>
 										) : null}
+										<div>
+											{props.otherOpeningQuestion && (
+												<div>
+													{props.printOtherOpeningQuestion.map(
+														(otherOQ, ind) => {
+															return (
+																<div key={ind}>
+																	<h4 className='fw-bold fs-4'>
+																		Opening Question
+																	</h4>
+																	<p className='fs-5 fw-normal'>{otherOQ}</p>
+																</div>
+															);
+														},
+													)}
+												</div>
+											)}
+										</div>
 									</div>
 									<div className='d-flex flex-column'>
 										<div className='d-flex justify-content-between'>
@@ -794,14 +817,34 @@ export default function LeftContent(props) {
 						</div>
 					</p>
 				</div>
-				<p className='agentReflection fw-semilight fs-4 mt-2'>
-					{props.value ? (
+				<div className='mt-2 '>
+					{props.value && (
 						<div>
 							<h4>New appointment</h4>
-							<p className='fs-5'> {props.value.toDateString()} </p>
+							<div className='alert alert-success w-100'>
+								<p className='fs-5 text-center fw-normal'>
+									{" "}
+									{props.value.toDateString()}
+									{/* {props.value.getUTCDate()} */}
+								</p>
+							</div>
 						</div>
-					) : null}
-				</p>
+					)}
+				</div>
+			</div>
+			<div>
+				<button
+					className='rounded w-25  bg-transparent border-0'
+					onClick={toggleRedFlag}>
+					<img src={callRedFlag} alt='callredFlag' className='w-100 redFlag' />
+				</button>
+				<div>
+					{props.redFlag && (
+						<div className='alert alert-danger mt-3 w-100 p-2 text-dark fs-5 fw-normal'>
+							Call has been red flagged!
+						</div>
+					)}
+				</div>
 			</div>
 		</div>
 	);

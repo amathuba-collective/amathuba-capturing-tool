@@ -179,7 +179,7 @@ export default function Signupscreen() {
 								<div className='col-12'>
 									<p className='fs-5 text'>
 										Already have an account ?
-										<Link to='Loginscreen' className='links'>
+										<Link to='/' className='links'>
 											Log in
 										</Link>
 									</p>

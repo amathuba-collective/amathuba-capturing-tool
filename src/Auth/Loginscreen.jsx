@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import LoginImage from "../Assets/Chat 1.png";
 import { Link, useNavigate } from "react-router-dom";
 import "../Styles/Loginscreen.css";
+import AgentProfile from "../Components/AgentProfile";
+// import LoginButton from "../Components/LoginBtn";
+// import LogoutButton from "../Components/LogOutBtn";
 
 export default function Loginscreen() {
 	const [loginFormData, setLoginFormData] = useState({
@@ -63,17 +66,15 @@ export default function Loginscreen() {
 									required
 								/>
 							</div>
-							{/*  */}
 
 							<div className='col-12 d-grid mt-4'>
-								<button type='submit' className='loginBtn  fs-4 p-3'>
-									Login
-								</button>
+								{/* <LoginButton /> */}
+								<button className='btn text-light'>Login</button>
 							</div>
 							<div className='col-12'>
 								<p className='fs-5 text'>
 									Dont have an account ?
-									<Link to='/' className='links'>
+									<Link to='/Signupscreen' className='links'>
 										Sign up
 									</Link>
 								</p>
@@ -92,6 +93,7 @@ export default function Loginscreen() {
 				<div className='rightSide col-6'>
 					<div className='d-flex justify-content-center mt-5'>
 						<img src={LoginImage} alt='loginImage' className='mt-5 loginImg' />
+						<AgentProfile />
 					</div>
 				</div>
 			</div>

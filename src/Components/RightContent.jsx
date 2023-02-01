@@ -10,10 +10,6 @@ import AgentReflectionStateQuestions from "../Data/AgentReflectionQuestions.json
 import { Icon } from "@iconify/react";
 
 export default function RightContent(props) {
-	// const getOtherOpeningQuestion = (e) => {
-	// 	props.setOtherOpeningQuestion(e.target.value);
-	// };
-
 	// ///////////////
 	//reason for me storing the data is because if i tried to pass the data through map function from the jason files i needed to extract the children element from the data to get the data an was not sure how to do that just yet
 	// //////////////
@@ -74,11 +70,11 @@ export default function RightContent(props) {
 	const [dropDownActive2, setDropDownActive2] = useState(false);
 
 	function myFunction() {
-		setDropDownActive(true);
+		setDropDownActive((dropDownActive) => !dropDownActive);
 	}
 
 	function dropDown2() {
-		setDropDownActive2(true);
+		setDropDownActive2((dropDownActive2) => !dropDownActive2);
 	}
 
 	const onAgentReflectionQ1Clicked = () => {
@@ -94,14 +90,34 @@ export default function RightContent(props) {
 		props.setAgentQuestions(agentReflectionQuestions[3]);
 	};
 
-	/// dropdown toggle for opening questions
+	const getOtherOpeningQuestion = (e) => {
+		props.setOtherOpeningQuestion({
+			...props.otherOpeningQuestion,
+			[e.target.name]: e.target.value,
+		});
+	};
 
+	//
+	const { newOpeningQuestion } = props.otherOpeningQuestion;
+	const saveOtherOpeningQuestion = () => {
+		props.setPrintOtherOpeningQuestion([
+			...props.printOtherOpeningQuestion,
+			newOpeningQuestion,
+		]);
+		props.setOtherOpeningQuestion({ newOpeningQuestion: "" });
+		setDropDownActive(false);
+		props.setKeyAnswers(true);
+		props.setOtherOpeningQuestion({ newOpeningQuestion: true });
+	};
+	//
+
+	/// dropdown toggle for opening questions
 	function toggleRedOpeningQuestion1(e) {
 		e.preventDefault();
 		props.setRedOpeningQuestion1(openingQuestions[0]);
 		// props.setOpeningQuestion(e.target.value);
-		setDropDownActive(false);
 		props.setKeyAnswers(true);
+		setDropDownActive(false);
 	}
 	//
 	function toggleRedOpeningQuestion2(e) {
@@ -495,13 +511,19 @@ export default function RightContent(props) {
 												Possible Responses
 											</h2>
 										</div>
-										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleBluePossibleResponse}>
 											{blueQuestions.possibleResponse1}
 										</button>
-										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleBluePossibleResponse2}>
 											{blueQuestions.possibleResponse2}
 										</button>
-										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleBluePossibleResponse3}>
 											{blueQuestions.possibleResponse3}
 										</button>
 									</div>
@@ -511,13 +533,19 @@ export default function RightContent(props) {
 												Follow-up Questions
 											</h2>
 										</div>
-										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleBluefollowUpQuestion}>
 											{blueQuestions.followUpQuestion1}
 										</button>
-										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleBluefollowUpQuestion2}>
 											{blueQuestions.followUpQuestion2}
 										</button>
-										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleBluefollowUpQuestion3}>
 											{blueQuestions.followUpQuestion3}
 										</button>
 									</div>
@@ -527,17 +555,102 @@ export default function RightContent(props) {
 												Prompt Questions
 											</h2>
 										</div>
-										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleBluePromptQuestion}>
 											{blueQuestions.promptQuestion1}
 										</button>
-										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleBluePromptQuestion2}>
 											{blueQuestions.promptQuestion2}
 										</button>
-										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleBluePromptQuestion3}>
 											{blueQuestions.promptQuestion3}
 										</button>
-										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleBluePromptQuestion4}>
 											{blueQuestions.promptQuestion4}
+										</button>
+									</div>
+								</div>
+							);
+						})}
+						<hr />
+						<h5 className='text-center fs-3'>Opening Questions above</h5>
+						<hr />
+					</div>
+			  ))
+			: props.otherOpeningQuestion.newOpeningQuestion
+			? (result = (
+					<div>
+						{RedOpeningQuestions.map((redQuestions) => {
+							return (
+								<div key={redQuestions.id}>
+									<div className='d-flex flex-column justify-content-center mt-3'>
+										<div>
+											<h2 className='text-center text-dark fs-3 fw-bold'>
+												Possible Responses
+											</h2>
+										</div>
+
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleRedPossibleResponse}>
+											{redQuestions.possibleResponse1}
+										</button>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleRedPossibleResponse2}>
+											{redQuestions.possibleResponse2}
+										</button>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleRedPossibleResponse3}>
+											{redQuestions.possibleResponse3}
+										</button>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleRedPossibleResponse4}>
+											{redQuestions.posibbleResponse4}
+										</button>
+									</div>
+									<div className='d-flex flex-column justify-content-center mt-3'>
+										<div>
+											<h2 className='text-center text-dark fs-3 fw-bold'>
+												Follow-up Questions
+											</h2>
+										</div>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleRedFollowUpQuestion1}>
+											{redQuestions.followUpQuestion1}
+										</button>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleRedFollowUpQuestion2}>
+											{redQuestions.followUpQuestion2}
+										</button>
+									</div>
+									<div className='d-flex flex-column justify-content-center mt-3 mb-4'>
+										<div>
+											<h2 className='text-center text-dark fs-3 fw-bold'>
+												Prompt Questions
+											</h2>
+										</div>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleRedPromptQuestion1}>
+											{redQuestions.promptQuestion1}
+										</button>
+
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleRedPromptQuestion2}>
+											{redQuestions.promptQuestion2}
 										</button>
 									</div>
 								</div>
@@ -641,10 +754,14 @@ export default function RightContent(props) {
 												Possible Responses
 											</h2>
 										</div>
-										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleYouthPossibleResponse}>
 											{youthQuestions.possibleResponses1}
 										</button>
-										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleYouthPossibleResponse2}>
 											{youthQuestions.possibleResponses2}
 										</button>
 									</div>
@@ -654,10 +771,14 @@ export default function RightContent(props) {
 												Follow-up Questions
 											</h2>
 										</div>
-										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleYouthFollowUpQuestion}>
 											{youthQuestions.followUpQuestion1}
 										</button>
-										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleYouthFollowUpQuestion2}>
 											{youthQuestions.followUpQuestion2}
 										</button>
 									</div>
@@ -667,16 +788,24 @@ export default function RightContent(props) {
 												Prompt Questions
 											</h2>
 										</div>
-										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleYouthPromptQuestion}>
 											{youthQuestions.promptQuestion1}
 										</button>
-										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleYouthPromptQuestion2}>
 											{youthQuestions.promptQuestion2}
 										</button>
-										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleYouthPromptQuestion3}>
 											{youthQuestions.promptQuestion3}
 										</button>
-										<button className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleYouthPromptQuestion4}>
 											{youthQuestions.promptQuestion4}
 										</button>
 									</div>
@@ -740,21 +869,6 @@ export default function RightContent(props) {
 	return (
 		<div className='container-fluid rightContent'>
 			<div className='mt-4 d-flex flex-column'>
-				{/* <select className='form-select dropDown' value={props.openingQuestion}>
-					<option value='' onClick={handleOnChange}>
-						Select Opening Question
-					</option>
-					<option value='redOpeningQuestion1'>How are you doing today ?</option>
-					<option value='redOpeningQuestion2'>How are you feeling Today</option>
-					<option value='blueOpeningQuestion1'>
-						How are things going at work/home
-					</option>
-					<option value='blueOpeningQuestion2'>
-						How is your relation ship with your family
-					</option>
-					<option value='youthQuestion1'>Earlier you said you...?</option>
-					<option value='youthQuestion2'>What im hearing is...?</option>
-				</select> */}
 				<div className='w-100 border-0' value={props.openingQuestion}>
 					<p
 						onClick={myFunction}
@@ -795,6 +909,23 @@ export default function RightContent(props) {
 								onClick={toggleDropDown4}>
 								How is your relationship with your family ?
 							</button>
+							<div className='otherAnswer mt-1 d-flex w-75'>
+								<div className='input-group mb-3'>
+									<input
+										type='text'
+										className='otherInput form-control'
+										placeholder='enter...'
+										name='newOpeningQuestion'
+										value={props.otherOpeningQuestion.newOpeningQuestion}
+										onChange={getOtherOpeningQuestion}
+									/>
+								</div>
+								<button
+									className='otherAnswerBtn border-secondary border-2 text-dark rounded'
+									onClick={saveOtherOpeningQuestion}>
+									save
+								</button>
+							</div>
 						</div>
 					) : null}
 				</div>

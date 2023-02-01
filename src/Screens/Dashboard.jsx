@@ -53,7 +53,7 @@ export default function Dashboard() {
 									<Text className='mb-2 fw-semibold fs-4'>
 										{agent.jobDescription}
 									</Text>
-									<Text className='agentCompany fw-bold fs-5' size='$md'>
+									<Text className='agentCompany fw-semibold fs-5' size='$md'>
 										{agent.Company}
 									</Text>
 								</Grid>

@@ -12,9 +12,12 @@ export default function WellnessForm() {
 		"http://localhost:2001/Youth/" + id,
 	);
 
-	const [otherOpeningQuestion, setOtherOpeningQuestion] = useState("");
-	const [printOtherOpeningQuestion, setPrintOtherOpeningQuestion] =
-		useState("");
+	const [otherOpeningQuestion, setOtherOpeningQuestion] = useState({
+		newOpeningQuestion: "",
+	});
+	const [printOtherOpeningQuestion, setPrintOtherOpeningQuestion] = useState(
+		[],
+	);
 	const [youthOpeningQuestions, setYouthOpeningQuestions] = useState("");
 	const [recommendedQuestions, setRecommendedQuestions] = useState("");
 	const [openingQuestion, setOpeningQuestion] = useState("");
@@ -89,6 +92,7 @@ export default function WellnessForm() {
 	//
 	const [value, onValueChange] = useState(false);
 	const [emotion, setEmotion] = useState("");
+	const [redFlag, setRedFlag] = useState(false);
 
 	////!WHAT NEEDS TO BE SAVED
 	// 1 opening emotion emoji
@@ -218,23 +222,40 @@ export default function WellnessForm() {
 		//
 		{ youthResponses: youthPossibleResponses },
 		//
-		{ youthFollow_UpQuestions: youthPromptQuestions },
-		{ youthqFReflectionData: youthInputArr[2] },
+		{
+			youthFollow_UpQuestions: youthFollowUpQuestions,
+			youthFqReflectionData: youthInputArr[1],
+		},
 		//
-		{ youthPrompt_Questions: youthPromptQuestions },
-		{ youthPqReflectionData: youthInputArr[3] },
+		{
+			youthPrompt_Questions: youthPromptQuestions,
+			youthPqReflectionData: youthInputArr[2],
+		},
+
 		// need to sort out youth correctly
 		//
 
-		{ agentQuestions: agentQuestions },
-		{ agentData: agentDataArr[0] }, ///// youth question an data is being captured
+		{ agentQuestions: agentQuestions, agentData: agentDataArr[0] }, ///// youth question an data is being captured
 		{ newAppointment: value }, // date is being captured
+		{ redFlag: redFlag },
 	];
 	//
-	const submitContent = () => {
+
+	let allFormData = [];
+	const submitContent = (e) => {
+		// localStorage.setItem("WellnessForm", JSON.stringify(entireForm));
 		// document.write(JSON.stringify(entireForm));
-		localStorage.setItem("WellnessForm", JSON.stringify(entireForm));
-		document.write(JSON.stringify(entireForm));
+
+		// fetch("http://localhost:2001/Youth?_embed=formData" + id, {
+		// 	method: "POST",
+		// 	headers: { "Content-Type": "Application/json" },
+		// 	body: JSON.stringify(allFormData.push(entireForm)),
+		// }).then(() => {
+		// 	console.log("form data has been stored");
+		// });
+		allFormData.push(entireForm);
+
+		console.log(allFormData);
 	};
 
 	return (
@@ -301,6 +322,8 @@ export default function WellnessForm() {
 						youthPossibleResponses={youthPossibleResponses}
 						youthFollowUpQuestions={youthFollowUpQuestions}
 						youthPromptQuestions={youthPromptQuestions}
+						setRedFlag={setRedFlag}
+						redFlag={redFlag}
 					/>
 				</div>
 				<div className='bg-2 col-6 text-dark'>
@@ -308,7 +331,7 @@ export default function WellnessForm() {
 						youthOpeningQuestions={youthOpeningQuestions}
 						openingQuestion={openingQuestion}
 						setRecommendedQuestions={setRecommendedQuestions}
-						setPrintOtherOpeningQuestion={setPrintOtherOpeningQuestion}
+						printOtherOpeningQuestion={printOtherOpeningQuestion}
 						otherOpeningQuestion={otherOpeningQuestion}
 						redOpeningQuestion1={redOpeningQuestion1}
 						redOpeningQuestion2={redOpeningQuestion2}
@@ -387,9 +410,11 @@ export default function WellnessForm() {
 						youthQuestion1={youthQuestion1}
 						youthQuestion2={youthQuestion2}
 						setOtherOpeningQuestion={setOtherOpeningQuestion}
+						otherOpeningQuestion={otherOpeningQuestion}
 						setPrintOtherOpeningQuestion={setPrintOtherOpeningQuestion}
 						setOpeningEmotionQuestion={setOpeningEmotionQuestion}
 						openingEmotionQuestion={openingEmotionQuestion}
+						printOtherOpeningQuestion={printOtherOpeningQuestion}
 						setKeyAnswers={setKeyAnswers}
 						// setAngryAnswers={setAngryAnswers}
 						// setConfusedAnswers={setConfusedAnswers}
