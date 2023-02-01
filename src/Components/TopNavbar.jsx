@@ -14,7 +14,7 @@ export default function TopNavbar() {
 	};
 	return (
 		<Layout>
-			<Navbar isBordered variant='sticky'  className='navbar fixed'>
+			<Navbar isBordered variant='sticky' className='navbar'>
 				<Navbar.Brand css={{ mr: "$4" }}>
 					{/* spot for logo */}
 					<AmathubaLogo />
@@ -75,7 +75,9 @@ export default function TopNavbar() {
 								/>
 							</Dropdown.Trigger> */}
 						{/* <LogoutButton /> */}
-						<button onClick={logOutUser}></button>
+						<button onClick={logOutUser} className='btn text-light'>
+							Logout
+						</button>
 					</Navbar.Item>
 					{/* <Dropdown.Menu
 						aria-label='User menu actions'
