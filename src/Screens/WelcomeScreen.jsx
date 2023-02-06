@@ -1,8 +1,10 @@
 import React from "react";
 import "../Styles/WelcomeScreen.css";
 import { useNavigate } from "react-router-dom";
+import {getLocalStorageForObjects} from "../Utils/localStorageUtils";
 
 export default function WelcomeScreen() {
+	const user = getLocalStorageForObjects("user");
 	const navigate = useNavigate();
 	function getStarted() {
 		navigate("/Dashboard");
@@ -13,7 +15,7 @@ export default function WelcomeScreen() {
 				<div className='leftWelcomeScreen col-9 d-flex align-items-center'>
 					<div className='LeftText'>
 						<p className='fs-1 fw-semibold'>
-							Welcome Tristan 👋
+							Welcome {user.firstName} 👋
 							<br />
 							Go and change the world !<br />
 							And Dont forget to have fun

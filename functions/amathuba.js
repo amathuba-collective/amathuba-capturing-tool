@@ -7,7 +7,6 @@ exports.handler = async (event, context) => {
     data: { name: "imiss" },
   })
     .then((response) => {
-      console.log(response);
 
       return {
         statusCode: 200,

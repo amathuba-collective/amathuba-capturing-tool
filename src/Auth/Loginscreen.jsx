@@ -3,8 +3,8 @@ import LoginImage from "../Assets/Chat 1.png";
 import { Link, useNavigate } from "react-router-dom";
 import "../Styles/Loginscreen.css";
 import AgentProfile from "../Components/AgentProfile";
-// import LoginButton from "../Components/LoginBtn";
-// import LogoutButton from "../Components/LogOutBtn";
+import {login} from "../Services/Auth";
+import {setLocalStorageAsString, setLocalStorageForObjects} from "../Utils/localStorageUtils";
 
 export default function Loginscreen() {
 	const [loginFormData, setLoginFormData] = useState({
@@ -25,8 +25,16 @@ export default function Loginscreen() {
 
 	function onLogin(e) {
 		e.preventDefault();
-		navigate("/WelcomeScreen");
-		alert(JSON.stringify(loginFormData));
+
+		login(loginFormData).then((response)=>{
+			if (response.error) return alert("Invalid credentials");
+			console.log(response.data.user);
+			setLocalStorageAsString("token",response.token);
+			setLocalStorageForObjects("user",response.data.user);
+			navigate("/WelcomeScreen");
+		}).catch(()=>{
+			alert("Invalid credentials");
+		})
 	}
 	return (
 		<div className='container-fluid'>

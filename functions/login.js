@@ -1,7 +1,6 @@
 // const {Agents,validateAgent} = require("./models/agentModel")
 
 exports.handler = async (event, context) => {
-  console.log("BODY EB ELIKE", event.body);
   return {
     method: "GET",
     statusCode: 201,

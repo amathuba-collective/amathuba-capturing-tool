@@ -1,16 +1,17 @@
 import React from "react";
 import { Navbar, Text } from "@nextui-org/react";
 import { Layout } from "../Components/TopNavbarExtensions/Layout";
-// import { SearchIcon } from "../Components/TopNavbarExtensions/SearchIcon";
 import AmathubaLogo from "./AmathubaLogo";
 import "../Styles/TopNavbar.css";
-// import LogoutButton from "./LogOutBtn";
 import { useNavigate } from "react-router-dom";
+import {setLocalStorageAsString, setLocalStorageForObjects} from "../Utils/localStorageUtils";
 
 export default function TopNavbar() {
 	const navigate = useNavigate();
 	const logOutUser = () => {
-		navigate("/Loginscreen");
+		setLocalStorageAsString("token","");
+		setLocalStorageForObjects("user",{});
+		navigate("/");
 	};
 	return (
 		<Layout>
@@ -35,59 +36,11 @@ export default function TopNavbar() {
 							jc: "space-evenly",
 						},
 					}}>
-					{/* <Navbar.Item
-						css={{
-							"@xsMax": {
-								w: "100%",
-								jc: "center",
-							},
-						}}>
-						<Input
-							clearable
-							contentLeft={
-								<SearchIcon fill='var(--nextui-colors-accents6)' size={16} />
-							}
-							contentLeftStyling={false}
-							css={{
-								w: "40rem",
-								"@xsMax": {
-									mw: "700px",
-								},
-								"& .nextui-input-content--left": {
-									h: "100%",
-									ml: "$4",
-									dflex: "center",
-								},
-							}}
-							placeholder='Search...'
-							className='searchBar'
-						/>
-					</Navbar.Item> */}
-					{/* <Dropdown placement='bottom-right'> */}
 					<Navbar.Item>
-						{/* <Dropdown.Trigger>
-								<Avatar
-									bordered
-									as='button'
-									color='primary'
-									size='md'
-									src='https://i.pravatar.cc/150?u=a042581f4e29026704d'
-								/>
-							</Dropdown.Trigger> */}
-						{/* <LogoutButton /> */}
 						<button onClick={logOutUser} className='btn text-light'>
 							Logout
 						</button>
 					</Navbar.Item>
-					{/* <Dropdown.Menu
-						aria-label='User menu actions'
-						color='secondary'
-						onAction={(actionKey) => console.log({ actionKey })}>
-						<Dropdown.Item key='logout' withDivider color='error'>
-							Log Out
-						</Dropdown.Item>
-					</Dropdown.Menu> */}
-					{/* </Dropdown> */}
 				</Navbar.Content>
 			</Navbar>
 		</Layout>
