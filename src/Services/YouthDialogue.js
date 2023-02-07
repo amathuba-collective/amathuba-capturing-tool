@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const saveYouthDialogue = (data) => {
     return new Promise((resolve => {
-        axios.post('http://localhost:1998/chatYouth', data)
+        axios.post('http://amabe-env.eba-5iepkthj.us-east-1.elasticbeanstalk.com/chatYouth', data)
             .then(response => {
                 resolve(response)
             })
@@ -14,7 +14,7 @@ export const saveYouthDialogue = (data) => {
 
 export const getRecentYouthDialogueData = () => {
     return new Promise((resolve => {
-        axios.get('http://localhost:1998/chatYouth')
+        axios.get('http://amabe-env.eba-5iepkthj.us-east-1.elasticbeanstalk.com/chatYouth')
             .then(response => {
                 resolve(response)
             })
