@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const login = (data) => {
     return new Promise((resolve => {
-        axios.post('http://amabe-env.eba-5iepkthj.us-east-1.elasticbeanstalk.com/login', data)
+        axios.post('https://amabe-env.eba-5iepkthj.us-east-1.elasticbeanstalk.com/login', data)
             .then(response => {
                 resolve(response)
             })
@@ -14,7 +14,7 @@ export const login = (data) => {
 
 export const signUp = (data) => {
     return new Promise((resolve => {
-        axios.post('http://amabe-env.eba-5iepkthj.us-east-1.elasticbeanstalk.com/signup', data)
+        axios.post('https://amabe-env.eba-5iepkthj.us-east-1.elasticbeanstalk.com/signup', data)
             .then(response => {
                 resolve(response)
             })
