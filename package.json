@@ -28,6 +28,7 @@
 		"web-vitals": "^2.1.4"
 	},
 	"scripts": {
+		"start": "react-scripts start",
 		"develop": "react-scripts start",
 		"build": "react-scripts build",
 		"prod": "npm run build; npm run build:lambda",
