@@ -30,8 +30,8 @@ export default function Signupscreen() {
         const reqBody = {firstName, lastName, email: workEmail, password, role: "AGENT", passwordConfirm: password2}
 
         signUp(reqBody).then((res) => {
-            if (res.error) return alert("Unable to sign up, please try again later.");
-            if (password !== password2) return alert("Passwords do not match");
+            // if (res.error) return alert("Unable to sign up, please try again later.");
+            // if (password !== password2) return alert("Passwords do not match");
             setLocalStorageAsString("token", "");
             setLocalStorageForObjects("user", {});
             navigate("/");
