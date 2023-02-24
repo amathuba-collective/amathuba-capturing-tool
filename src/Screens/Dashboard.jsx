@@ -1,10 +1,12 @@
-import React, {useEffect, useState} from "react";
-import {Grid, Avatar, Text} from "@nextui-org/react";
-import {useNavigate} from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Grid, Avatar, Text } from "@nextui-org/react";
+import { useNavigate } from "react-router-dom";
 import "../Styles/Dashboard.css";
 import TopNavbar from "../Components/TopNavbar";
+
 import Youth from "../Components/Youth";
-import {getAllYouth} from "../Services/Youth";
+import { getAllYouth } from "../Services/Youth";
+
 import {
     getLocalStorageForObjects,
     setLocalStorageAsString,
@@ -19,8 +21,8 @@ export default function Dashboard() {
     const [error, setError] = useState(null);
 
     function onLogOut() {
-        setLocalStorageAsString("token","");
-        setLocalStorageForObjects("user",{});
+        setLocalStorageAsString("token", "");
+        setLocalStorageForObjects("user", {});
         navigate("/");
     }
 
@@ -41,7 +43,7 @@ export default function Dashboard() {
         <div className='dashB container-fluid'>
             {/* navbar component inside dashboard */}
             <>
-                <TopNavbar onLogOut={onLogOut}/>
+                <TopNavbar onLogOut={onLogOut} />
             </>
             {/* navbar component ends here */}
             <div className='row'>
@@ -52,7 +54,7 @@ export default function Dashboard() {
                         <Grid className='d-flex flex-column align-items-center'>
                             <Avatar
                                 src={agent.imgUrl}
-                                css={{size: "8rem"}}
+                                css={{ size: "8rem" }}
                                 className='mt-4'
                                 bordered
                             />
@@ -67,7 +69,7 @@ export default function Dashboard() {
                             </Text>
                         </Grid>
                     </Grid.Container>
-                    <hr className='border border-2 border-secondary opacity-50 rounded mt-1'/>
+                    <hr className='border border-2 border-secondary opacity-50 rounded mt-1' />
                 </div>}
 
                 {/* agents left content of dashboard ends here */}
@@ -77,7 +79,7 @@ export default function Dashboard() {
                     <div className='row mb-5'>
                         {loading && <div>content is loading....</div>}
                         {error}
-                        {youth && <Youth youth={youth}/>}
+                        {youth && <Youth youth={youth} />}
                     </div>
                 </div>
                 {/* Youths profiles of dashboard ends here */}

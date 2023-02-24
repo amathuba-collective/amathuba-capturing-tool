@@ -1,13 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../Styles/Youth.css";
+import { AiOutlineSearch } from 'react-icons/ai';
+
+export const SearchBar = (props) => {
+	return <input className="searchBar" type={"search"} placeholder="Type to search" onChange={(e) => props.setSearch(e.target.value)} />
+}
 
 const Youth = (props) => {
+	const [search, setSearch] = useState('');
 	const youth = props.youth;
 	return (
 		<div>
+
+			<AiOutlineSearch className="searchIcon" /><SearchBar setSearch={setSearch} />
 			<div className='row mt-5 mb-5 d-flex'>
-				{youth.map((eachYouth) => {
+				{youth.filter((eachYouth) => {
+					return search.toLowerCase() === '' ? eachYouth : eachYouth.firstName.toLowerCase().includes(search)
+				}).map((eachYouth) => {
 					return (
 						<div className='col-3 mb-5 ' key={eachYouth._id.toString()}>
 							<div className='cutOff-text card mb-5'>
@@ -38,5 +48,6 @@ const Youth = (props) => {
 		</div>
 	);
 };
-
 export default Youth;
+
+

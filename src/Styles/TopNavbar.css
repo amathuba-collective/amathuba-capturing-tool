@@ -1,13 +1,41 @@
-.searchBar{
+.searchBar {
     position: relative !important;
-    left: -16rem
+    left: -0.1rem;
+    height: 40px;
+    width: 500px;
+    top: 13px;
+    border-radius: 0px 5px 5px 0px;
+    border-color: rgb(187, 185, 185);
+    border-style: solid;
+    border-left: none;
+    border-width: 3px;
+    outline: none;
 }
 
-.logOutBtn{
+.searchIcon {
+    border-style: solid;
+    border-width: 3px;
+    border-color: rgb(187, 185, 185);
+    top: 10px;
+    height: 40px;
+    width: 30px;
+    left: -0.1rem;
+    border-radius: 5px 0px 0px 5px;
+    border-right: none;
+    position: relative;
+    color: rgb(187, 185, 185);
+}
+
+.homeBtn {
+    text-decoration-line: none;
+}
+
+.logOutBtn {
     background-color: #2B0076 !important;
     padding: 0.6rem;
     font-weight: 500 !important;
 }
+
 /* .navbar{
     position: fixed;
    

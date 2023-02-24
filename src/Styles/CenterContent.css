@@ -1,36 +1,41 @@
-
-.container{
+.container {
 	height: 100vh;
 	overflow-y: scroll;
 }
-.container::-webkit-scrollbar{
+
+#centerContent {
+	opacity: 0%;
 	display: none;
 }
 
-.body{
+.container::-webkit-scrollbar {
+	display: none;
+}
+
+.body {
 	width: 100%;
 	/* height: 30rem; */
 	overflow: scroll;
 
 }
 
-.body::-webkit-scrollbar{
-    display: none;
+.body::-webkit-scrollbar {
+	display: none;
 }
 
-.textArea{
-    height: 7rem;
+.textArea {
+	height: 7rem;
 }
 
-.btn{
-    background-color: 
-    #2B3542 !important;
+.btn {
+	background-color:
+		#2B3542 !important;
 	/* position: relative; */
 	/* top: 9rem; */
 	/* margin-bottom: 8rem !important; */
 }
 
-.btn-secondary{
+.btn-secondary {
 	padding: 0.5rem;
 	background-color: #2B3542;
 	border: transparent;
@@ -40,13 +45,13 @@
 	top:5rem; */
 }
 
-.navBtns{
+.navBtns {
 	position: relative;
 	top: 3rem;
 }
 
 
-.title{
+.title {
 	position: relative;
 	top: 3rem;
 }
@@ -59,25 +64,398 @@
 	
 } */
 
-.btn-sm{
+.btn-sm {
 	width: 8rem !important;
 	border: 2px solid #2B3542;
-	border-radius: 50%; 
+	border-radius: 50%;
 	padding: 0.8rem;
- margin-bottom: 0.8rem !important;
+	margin-bottom: 0.8rem !important;
 }
 
-.otherAnswerBtn{
+.otherAnswerBtn {
 	height: 2.4rem;
 	width: 11.2rem;
 	position: relative;
 	left: 0.4rem;
 }
 
-.otherAnswer{
+.otherAnswer {
 	width: 99% !important;
 }
 
-.sadEmo{
+.sadEmo {
 	width: 3.2rem !important;
 }
+
+/* February Edits */
+
+.happyEmoji {
+	background-color: #F8F8FF;
+	border: none;
+	border-radius: 10px 10px 0px 0px;
+}
+
+.angryEmoji {
+	background-color: #F8F8FF;
+	border: none;
+	border-radius: 10px 10px 0px 0px;
+}
+
+.confusedEmoji {
+	background-color: #F8F8FF;
+	border: none;
+	border-radius: 10px 10px 0px 0px;
+}
+
+.anxiousEmoji {
+	background-color: #F8F8FF;
+	border: none;
+	border-radius: 10px 10px 0px 0px;
+}
+
+.sadEmoji {
+	background-color: #F8F8FF;
+	border: none;
+	border-radius: 10px 10px 0px 0px;
+	padding: 0px 20px 0px 20px;
+}
+
+.emojis {
+	position: relative;
+	top: 50px;
+}
+
+.emptyDivForEmotoinKeyWords {
+	top: -20px;
+	position: relative;
+	padding: 50px;
+	background-color: #F8F8FF;
+	display: none;
+}
+
+.EKW {
+	height: 100px;
+	width: 150px;
+	margin: 10px;
+	border-radius: 5px;
+	border-color: transparent;
+	background-color: #D3D3D3;
+}
+
+.readEmotions {
+	background-color: white;
+	width: 280px;
+	height: 0px;
+	border-radius: 5px;
+	overflow-y: scroll;
+	transition: 0.3s;
+	display: none;
+}
+
+.readEmoBtn {
+	width: 280px;
+	border-color: #2B3542;
+	border-radius: 5px;
+	display: none;
+}
+
+.callSummary {
+	font-size: 30px;
+	font-weight: bold;
+	text-align: center;
+	width: 100%;
+	/* border-left: transparent;
+	border-right: transparent;
+	border-top: transparent;
+	border-style: solid;
+	border-radius: 5px; */
+	margin-bottom: 10px;
+}
+
+.openingQuestions {
+	position: relative;
+	top: -25px;
+}
+
+#openingQuestionsBtn {
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #fde23000;
+	animation: flash 2s ease-in-out infinite;
+}
+
+@keyframes flash {
+	from {
+		background-color: #fde23000;
+	}
+
+	To {
+		background-color: #FDE030;
+	}
+}
+
+#agentReflection {
+	position: relative;
+	top: -80px;
+	display: none;
+}
+
+#bookings {
+	display: none;
+}
+
+#finalSubmit {
+	display: none;
+}
+
+.readPossibleResponse {
+	position: relative;
+	top: -10px;
+}
+
+/* #possibleResponsesBtn {
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	top: -70px;
+} */
+
+#possibleResponsesBtn {
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	top: -70px;
+	display: none;
+	animation: flash2 2s ease-in-out infinite;
+}
+
+@keyframes flash2 {
+	from {
+		background-color: #fde23000;
+	}
+
+	To {
+		background-color: #FDE030;
+	}
+}
+
+#possibleResponseContent {
+	position: relative;
+	top: -80px;
+}
+
+#followUpQuestionsBtn {
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	top: -115px;
+	display: none;
+	animation: flash3 2s ease-in-out infinite;
+}
+
+@keyframes flash3 {
+	from {
+		background-color: #fde23000;
+	}
+
+	To {
+		background-color: #FDE030;
+	}
+}
+
+#followUpQuestionContent {
+	position: relative;
+	top: -130px;
+}
+
+#promptQuestionsBtn {
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	top: -160px;
+	display: none;
+	animation: flash4 2s ease-in-out infinite;
+}
+
+@keyframes flash4 {
+	from {
+		background-color: #fde23000;
+	}
+
+	To {
+		background-color: #FDE030;
+	}
+}
+
+#promptQuestionsContent {
+	position: relative;
+	top: -180px;
+}
+
+#youthQuestionInput {
+	height: 500px;
+	display: none;
+}
+
+#youthPromptInput {
+	height: 500px;
+	display: none;
+}
+
+#youthPromptInput1 {
+	height: 500px;
+	display: none;
+}
+
+
+
+/* Youth Opening Questions */
+#youthQuestionsBtn {
+	top: -160px;
+	position: relative;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	display: none;
+	animation: flash5 2s ease-in-out infinite;
+}
+
+@keyframes flash5 {
+	from {
+		background-color: #fde23000;
+	}
+
+	To {
+		background-color: #FDE030;
+	}
+}
+
+#youthOpenQuestions {
+	position: relative;
+	top: -180px;
+}
+
+#youthReflection {
+	top: -90px;
+	position: relative;
+	display: none;
+}
+
+#possibleResponsesBtn1 {
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	top: -205px;
+	display: none;
+	animation: flash8 2s ease-in-out infinite;
+}
+
+@keyframes flash8 {
+	from {
+		background-color: #fde23000;
+	}
+
+	To {
+		background-color: #FDE030;
+	}
+}
+
+#possibleResponsesContent1 {
+	position: relative;
+	top: -225px;
+}
+
+#followUpQuestionsBtn1 {
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	top: -250px;
+	display: none;
+	animation: flash6 2s ease-in-out infinite;
+}
+
+@keyframes flash6 {
+	from {
+		background-color: #fde23000;
+	}
+	To {
+		background-color: #FDE030;
+	}
+}
+
+#followUpQuestionsContent1 {
+	position: relative;
+	top: -270px;
+}
+
+#followUpQuestionInput {
+	height: 500px;
+}
+
+#followUpQuestionInput1 {
+	height: 500px;
+	display: none;
+}
+
+#promptQuestionsBtn1 {
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	top: -295px;
+	display: none;
+	animation: flash7 2s ease-in-out infinite;
+}
+
+@keyframes flash7 {
+	from {
+		background-color: #fde23000;
+	}
+
+	To {
+		background-color: #FDE030;
+	}
+}
+
+
+#promptQuestionsContent1 {
+	position: relative;
+	top: -310px;
+}
+
+/*  */
+
+#youthReflectionHead {
+	position: relative;
+	top: -150px;
+	display: none;
+}
+
+#agentReflectionInput {
+	height: 500px;
+}
+
+#agentRecommendedQuestions {
+	position: relative;
+	top: -290px;
+	text-align: center;
+}
+
+
+/*  */
