@@ -30,8 +30,8 @@ export default function Signupscreen() {
         const reqBody = {firstName, lastName, email: workEmail, password, role: "AGENT", passwordConfirm: password2}
 
         signUp(reqBody).then((res) => {
-            // if (res.error) return alert("Unable to sign up, please try again later.");
-            // if (password !== password2) return alert("Passwords do not match");
+            if (res.error) return alert("Unable to sign up, please try again later.");
+            if (password !== password2) return alert("Passwords do not match");
             setLocalStorageAsString("token", "");
             setLocalStorageForObjects("user", {});
             navigate("/");
@@ -97,7 +97,7 @@ return (
                             </div>
                             <div className='col-md-6'>
                                 <label
-                                    for='inputPassword4'
+                                    // for='inputPassword4'
                                     className='form-label fw-semibold fs-5'>
                                     Last Name
                                 </label>
@@ -107,7 +107,7 @@ return (
                                     value={lastName}
                                     onChange={onChange}
                                     className='form-control border border-1 border-secondary p-3'
-                                    id='inputPassword4'
+                                    // id='inputPassword4'
                                     placeholder='Surname'
                                     required
                                 />
@@ -125,7 +125,7 @@ return (
                                     value={password}
                                     onChange={onChange}
                                     className='form-control border border-1 border-secondary p-3'
-                                    id='inputAddress2'
+                                    // id='inputAddress2'
                                     placeholder='Password'
                                     required
                                 />
@@ -142,7 +142,7 @@ return (
                                     value={password2}
                                     onChange={onChange}
                                     className='form-control border border-1 border-secondary p-3'
-                                    id='inputAddress2'
+                                    // id='inputAddress2'
                                     placeholder='Password'
                                     required
                                 />

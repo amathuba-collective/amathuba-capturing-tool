@@ -6,6 +6,7 @@ import TopNavbar from "../Components/TopNavbar";
 
 import Youth from "../Components/Youth";
 import { getAllYouth } from "../Services/Youth";
+import AddYouth from "../Components/AddYouth";
 
 import {
     getLocalStorageForObjects,
@@ -38,6 +39,15 @@ export default function Dashboard() {
         getAllYouthData();
     }, []);
 
+    // ADD YOUTH BTN
+    function AddNewYouth() {
+        const x = document.getElementById("modalBox")
+        if (x.style.display === "none") {
+            x.style.display = "block"
+        } else {
+            x.style.display = "none"
+        }
+    }
 
     return (
         <div className='dashB container-fluid'>
@@ -48,7 +58,6 @@ export default function Dashboard() {
             {/* navbar component ends here */}
             <div className='row'>
                 {/* left Content of dashboard is agents info */}
-
                 {agent && <div className='leftDashboard col-3' key={agent.id}>
                     <Grid.Container className='d-flex justify-content-center align-items-center'>
                         <Grid className='d-flex flex-column align-items-center'>
@@ -70,6 +79,7 @@ export default function Dashboard() {
                         </Grid>
                     </Grid.Container>
                     <hr className='border border-2 border-secondary opacity-50 rounded mt-1' />
+                    <button onClick={AddNewYouth} >ADD YOUTH</button>
                 </div>}
 
                 {/* agents left content of dashboard ends here */}
@@ -80,6 +90,9 @@ export default function Dashboard() {
                         {loading && <div>content is loading....</div>}
                         {error}
                         {youth && <Youth youth={youth} />}
+                        <div id="modalBox" className="modalBox" >
+                            <AddYouth />
+                        </div>
                     </div>
                 </div>
                 {/* Youths profiles of dashboard ends here */}

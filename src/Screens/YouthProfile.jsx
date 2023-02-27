@@ -1,20 +1,31 @@
-import React, {useEffect, useState} from "react";
-import {Link, useParams} from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import TopNavbar from "../Components/TopNavbar";
 import "../Styles/YouthProfile.css";
-import {Icon} from "@iconify/react";
-import {getYouthById} from "../Services/Youth";
-import {getRecentYouthDialogueData} from "../Services/YouthDialogue";
+import { Icon } from "@iconify/react";
+import { getYouthById } from "../Services/Youth";
+import { getRecentYouthDialogueData } from "../Services/YouthDialogue";
+import formatDistanceToNow from 'date-fns/formatDistanceToNow'
+import { TiHome } from "react-icons/ti"
+// import { el } from "date-fns/locale";
+// import { SearchBar } from "../Components/Youth";
+// import { AiOutlineSearch } from 'react-icons/ai';
 
-export default function YouthProfile() {
+export default function YouthProfile(props) {
     const [recentRecords, setRecentRecords] = useState(null);
-    const [selectedYouth,setselectedYouth] = useState(null);
+    const [selectedYouth, setselectedYouth] = useState(null);
     const [youth, setYouth] = useState({});
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [section, setSection] = useState("profile");
-    const [youthCallHistorySections, setYouthCallHistorySections] =
-        useState("Overview");
+    const [selectedButton, setSelectedButton] = useState("profile");
+    const [youthCallHistorySections, setYouthCallHistorySections] = useState("Overview");
+
+    // Search Bar fliterd by youth ID
+    // const [search, setSearch] = useState('');
+    // 
+
+
 
     const getYouthData = async (id) => {
         const youthData = await getYouthById(id);
@@ -31,14 +42,14 @@ export default function YouthProfile() {
         setRecentRecords(recentData.data.data.all);
     }
 
-    const {id} = useParams();
+    const { id } = useParams();
 
     useEffect(() => {
         getYouthData(id);
         getRecentYouthDialogueDataForView();
     }, [])
 
-    const openYouthMenu = (e,id) => {
+    const openYouthMenu = (e, id) => {
         e.preventDefault();
         const filtered = recentRecords.filter(record => {
             return record._id === id;
@@ -46,37 +57,63 @@ export default function YouthProfile() {
         setselectedYouth(filtered[0]);
         setSection("YouthCallHistory");
     };
-
+    // if (setSection === "profile") {
+    //     document.getElementById("profileBtn").style.color = "blue"
+    // } else {
+    //     document.getElementById("profileBtn").style.color = ""
+    // }
     return (
         <div className='container-fluid'>
             <>
-                <TopNavbar/>
+                <TopNavbar />
             </>
             <div className='row'>
                 <div className='left col-3'>
                     <div className='leftcontent d-flex flex-column justify-content-start'>
-                        <div>
+                        <div id="dashBtn">
+                            <Link to={"/Dashboard"}
+                                className={`m-1 border-0 bg-transparent fw-semibold ${selectedButton === "dashboard" ? "selected" : ""}`}
+                                id="dashBtn"
+                                onClick={() => setSelectedButton("dashboard")}
+                            >
+                                <span>
+                                    {/* <i className='fa-regular fa-folder mx-3'></i> */}
+                                    <TiHome className="mx-3" />
+                                </span>
+                                Dashboard
+                            </Link>
+                        </div>
+
+                        <div id="profileBtn">
                             <button
-                                className='m-1 border-0 bg-transparent fw-semibold'
-                                onClick={(e) => setSection("profile")}>
-								<span>
-									<i className='fa-regular fa-user mx-3'></i>
-								</span>
+                                className={`m-1 border-0 bg-transparent fw-semibold ${selectedButton === "profile" ? "selected" : ""} `}
+                                onClick={() => {
+                                    setSelectedButton("profile");
+                                    setSection("profile")
+                                }}>
+                                <span>
+                                    <i className='fa-regular fa-user mx-3'></i>
+                                </span>
                                 Profile
                             </button>
                         </div>
-                        <div>
+
+                        <div id="sessionsBtn">
                             <button
-                                className='m-1 border-0 bg-transparent fw-semibold                                                                                                                                        '
-                                onClick={(e) => setSection("sessions")}>
-								<span>
-									<i className='fa-regular fa-folder mx-3'></i>
-								</span>
+                                className={`m-1 border-0 bg-transparent fw-semibold ${selectedButton === "sessions" ? "selected" : ""} `}
+                                onClick={() => {
+                                    setSelectedButton("sessions");
+                                    setSection("sessions");
+                                }}>
+                                <span>
+                                    <i className='fa-regular fa-folder mx-3'></i>
+                                </span>
                                 Sessions
                             </button>
                         </div>
                     </div>
                 </div>
+
                 <div className='right col-9'>
                     {loading && <div>Content is loading....</div>}
                     {section === "profile" && (
@@ -85,28 +122,31 @@ export default function YouthProfile() {
                                 <>
                                     <p className='fs-3 fw-bold mt-5'>{youth.firstName}</p>
 
-                                    <div className='mt-4'>
-                                        <Link to={`/WellnessForm/${youth._id}`}>
-                                            <button className='wellBeingBtn fs-5'>
-												<span>
-													<i className='fa-solid fa-phone fs-5'></i>
-												</span>{" "}
-                                                Call Friend
-                                            </button>
-                                        </Link>
+                                    <div className="d-flex align-items-center" >
+                                        <div id="profilePhoto"></div>
+                                        <div className='mt-4'>
+                                            <Link to={`/WellnessForm/${youth._id}`}>
+                                                <button className='wellBeingBtn fs-5'>
+                                                    <span>
+                                                        <i className='fa-solid fa-phone fs-5'></i>
+                                                    </span>{" "}
+                                                    Call Friend
+                                                </button>
+                                            </Link>
+                                        </div>
                                     </div>
 
                                     <div className=' mt-4 fs-5 d-flex align-items-center'>
                                         <p className='statusTitle opacity-75'>Current Status :</p>
                                         <span className='alert alert-success mx-3'>
-											<span>
-												<img
+                                            <span>
+                                                <img
                                                     src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAABVUlEQVRIie3Vv0sCYRzH8fdzDXpT2h9QEm4iLW1G0K8h/4kEhaYW6d+IIgokdAhpci8wawq3oEGbFKT+Ahs0jOe+DR0NgXfec7bdZzw+9319n2e4gyhRoswpKkh5tV3IiuiSQu0gpNwJA6ClkGo/V+/MFU7fHsWcxeEpcAhYU2oaURU7OSp3M41JaNhF74CtWZYEHu3EeN8Pn7b9b5zEx1kAFGD7c2if+JU8T7zaLmQR54UZFvwTbYla621cd6cVPAeK6JIBCrDgWE7Rq+A5VClr1wD9iag9YxiRZWMYVsxhkBCw57vesFLvIeA3c1jkPgTcNIYVUgW0AaotrWvGcD9X7yCqElQV5LK3efNqDAPYyVEZeAigtpZi9rFfzRfuZhoTOzHOK8UF3teuBTlPxuP55/WrL7+5gX6L6aeDjGM5RffjkHIfD4CmpXXN73qjRInyL/kGAZRroZ6LN6IAAAAASUVORK5CYII='
                                                     alt='___'
                                                 />
-											</span>
-											Well Being
-										</span>
+                                            </span>
+                                            Well Being
+                                        </span>
                                     </div>
 
                                     <div className='informationContent mt-4'>
@@ -209,50 +249,61 @@ export default function YouthProfile() {
                         <div className='container-fluid'>
                             {youth && <p className='fs-3 fw-bold mt-5'>{youth.firstName}</p>}
 
-                            <div className='mt-4'>
-                                <Link to={`/WellnessForm/${youth._id}`}>
-                                    <button className='wellBeingBtn fs-5'>
-										<span>
-											<i className='fa-solid fa-phone fs-5'></i>
-										</span>{" "}
-                                        Call Friend
-                                    </button>
-                                </Link>
+                            <div className="d-flex align-items-center" >
+                                <div id="profilePhoto"></div>
+                                <div className='mt-4'>
+                                    <Link to={`/WellnessForm/${youth._id}`}>
+                                        <button className='wellBeingBtn fs-5'>
+                                            <span>
+                                                <i className='fa-solid fa-phone fs-5'></i>
+                                            </span>{" "}
+                                            Call Friend
+                                        </button>
+                                    </Link>
+                                </div>
                             </div>
 
                             <div className=' mt-4 fs-5 d-flex align-items-center'>
                                 <p className='statusTitle opacity-75'>Current Status :</p>
                                 <span className='alert alert-success mx-3'>
-									<span>
-										<img
+                                    <span>
+                                        <img
                                             src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAABVUlEQVRIie3Vv0sCYRzH8fdzDXpT2h9QEm4iLW1G0K8h/4kEhaYW6d+IIgokdAhpci8wawq3oEGbFKT+Ahs0jOe+DR0NgXfec7bdZzw+9319n2e4gyhRoswpKkh5tV3IiuiSQu0gpNwJA6ClkGo/V+/MFU7fHsWcxeEpcAhYU2oaURU7OSp3M41JaNhF74CtWZYEHu3EeN8Pn7b9b5zEx1kAFGD7c2if+JU8T7zaLmQR54UZFvwTbYla621cd6cVPAeK6JIBCrDgWE7Rq+A5VClr1wD9iag9YxiRZWMYVsxhkBCw57vesFLvIeA3c1jkPgTcNIYVUgW0AaotrWvGcD9X7yCqElQV5LK3efNqDAPYyVEZeAigtpZi9rFfzRfuZhoTOzHOK8UF3teuBTlPxuP55/WrL7+5gX6L6aeDjGM5RffjkHIfD4CmpXXN73qjRInyL/kGAZRroZ6LN6IAAAAASUVORK5CYII='
                                             alt='---'
                                         />
-									</span>
-									Well Being
-								</span>
+                                    </span>
+                                    Well Being
+                                </span>
                             </div>
+
                             {/* current status section end */}
                             <div className='informationContent'>
-                                <h3 className='fs-4 mt-4'>Recent Records</h3>
-                                <div className='d-flex justify-content-around'>
+                                <div className="d-flex justify-content-between">
+                                    <h3 className='fs-4 mt-4'>Recent Records</h3>
+                                    {/* <div><AiOutlineSearch className="searchIcon" /><SearchBar  onChange={(e) => setSearch(e.target.value)}/></div> */}
+                                </div>
+                                <div className='' id="gridContainer"  >
                                     {recentRecords.map((pastRecords) => {
                                         return (
-                                            <div className='mt-5'>
+                                            <div key={pastRecords._id} className='' id="gridItem">
                                                 {/* row starts */}
                                                 {/* col */}
-                                                <div className='card recordCard'>
+                                                <div className='card recordCard'  >
                                                     <div className='card-body'>
-                                                        <div className='d-flex justify-content-between'>
+
+                                                        <div className='d-flex justify-content-between' >
+
                                                             <div>
                                                                 <h5 className='card-title'>
-                                                                    {pastRecords.dialogue.date}
+                                                                    {/* {pastRecords.dialogue.date} */}
+                                                                    {formatDistanceToNow(new Date(pastRecords.dialogue.date), { addSuffix: true })}
                                                                 </h5>
                                                             </div>
+
                                                             <div>
                                                                 <button
-                                                                    className='border-0 bg-transparent'
-                                                                    onClick={(e)=>openYouthMenu(e,pastRecords._id)}>
+                                                                    className='border-0 bg-transparent d-flex'
+                                                                    onClick={(e) => openYouthMenu(e, pastRecords._id)}>
                                                                     <img
                                                                         src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAAf0lEQVRIie2Qyw3CMBAFZ+2IZlxToAvgFKRQSmpyM0jmcYklYnFyyG3ntm9H2g84jnM4lnM+SfEJjICAxaxMKaVXlfY4gxRn4Po19CZFgHsN9jgBOP+47NLU3U5Yz9lgRmmibicAS9uQ1GbdzmBWpvWfYxXN3o/tJv9xHMc5iA94q1TJhrSZEwAAAABJRU5ErkJggg=='
                                                                         alt='---'
@@ -260,14 +311,15 @@ export default function YouthProfile() {
                                                                 </button>
                                                             </div>
                                                         </div>
+
                                                         <div>
-                                                            <div className='d-flex justify-content-between mt-4'>
+                                                            <div className='d-flex justify-content-between mt-4' id="sessionContent1">
                                                                 <p className='card-text'>Opening emotion :</p>
                                                                 <p className='card-text fw-bold'>
                                                                     {pastRecords.emotionOfCall}
                                                                 </p>
                                                             </div>
-                                                            <div className='d-flex justify-content-between'>
+                                                            <div className='d-flex justify-content-between' id="sessionContent2">
                                                                 <p className='card-text'>Closing emotion :</p>
                                                                 <p className='card-text fw-bold'>
                                                                     {pastRecords.emotionOfCall}
@@ -295,9 +347,9 @@ export default function YouthProfile() {
                                             <p className='fs-5 fw-bold '>{youth.firstName}</p>
                                             <p>{youth.email}</p>
                                             <div className='d-flex '>
-												<span>
-													<Icon icon='mdi:telephone'/>
-												</span>
+                                                <span>
+                                                    <Icon icon='mdi:telephone' />
+                                                </span>
                                                 <p className='mx-2'>{youth.firstName}</p>
                                             </div>
                                             <p>{youth.callDate}</p>{" "}
@@ -306,15 +358,15 @@ export default function YouthProfile() {
                                     {/*  */}
                                 </div>
                                 <div className='col-6'>
-									<span className='alert alert-success p-1 mt-5'>
-										<span>
-											<img
+                                    <span className='alert alert-success p-1 mt-5'>
+                                        <span>
+                                            <img
                                                 src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAABVUlEQVRIie3Vv0sCYRzH8fdzDXpT2h9QEm4iLW1G0K8h/4kEhaYW6d+IIgokdAhpci8wawq3oEGbFKT+Ahs0jOe+DR0NgXfec7bdZzw+9319n2e4gyhRoswpKkh5tV3IiuiSQu0gpNwJA6ClkGo/V+/MFU7fHsWcxeEpcAhYU2oaURU7OSp3M41JaNhF74CtWZYEHu3EeN8Pn7b9b5zEx1kAFGD7c2if+JU8T7zaLmQR54UZFvwTbYla621cd6cVPAeK6JIBCrDgWE7Rq+A5VClr1wD9iag9YxiRZWMYVsxhkBCw57vesFLvIeA3c1jkPgTcNIYVUgW0AaotrWvGcD9X7yCqElQV5LK3efNqDAPYyVEZeAigtpZi9rFfzRfuZhoTOzHOK8UF3teuBTlPxuP55/WrL7+5gX6L6aeDjGM5RffjkHIfD4CmpXXN73qjRInyL/kGAZRroZ6LN6IAAAAASUVORK5CYII='
                                                 alt='---'
                                             />
-										</span>
-										Well Being
-									</span>
+                                        </span>
+                                        Well Being
+                                    </span>
                                 </div>
                                 {/* <audio controls className='w-75'>
 									<source src='horse.ogg' type='audio/ogg' />
@@ -340,6 +392,7 @@ export default function YouthProfile() {
                                         QA Assessment
                                     </button>
                                 </div>
+                                <button>Download Conversation</button>
                             </div>
                             <div>
                                 {youthCallHistorySections === "Overview" && (
@@ -353,7 +406,7 @@ export default function YouthProfile() {
                                                         <h5 className='card-title'>Origination</h5>
                                                     </div>
                                                 </div>
-                                                <hr className='border border-1 border-secondary rounded'/>
+                                                <hr className='border border-1 border-secondary rounded' />
                                                 <div>
                                                     <div className='d-flex justify-content-between mt-4'>
                                                         <p className='card-text'>Opening Question :</p>
@@ -379,7 +432,7 @@ export default function YouthProfile() {
                                                             {selectedYouth.youthFollow_UpQuestions}
                                                         </p>
                                                     </div>
-                                                    <hr/>
+                                                    <hr />
                                                     <div className='d-flex justify-content-between'>
                                                         <p className='card-text'>Name Of Agent :</p>
                                                         <p className='card-text fw-bold'>{selectedYouth.dialogue.nameOfAgent}</p>
@@ -396,7 +449,7 @@ export default function YouthProfile() {
                                                         <h5 className='card-title'>Outcome</h5>
                                                     </div>
                                                 </div>
-                                                <hr className='border border-1 border-secondary rounded'/>
+                                                <hr className='border border-1 border-secondary rounded' />
                                                 <div>
                                                     <div className='d-flex justify-content-between mt-4'>
                                                         <p className='card-text'>Youth Question :</p>
@@ -443,6 +496,6 @@ export default function YouthProfile() {
                     )}
                 </div>
             </div>
-        </div>
+        </div >
     );
 }

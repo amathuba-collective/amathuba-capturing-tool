@@ -1,35 +1,35 @@
-.left{
+.left {
     background-color: #F8F8FF !important;
     height: 100vh !important;
 }
 
-.right{
+.right {
     background-color: #EFE5FF !important;
     height: 100vh !important;
 }
 
-.leftcontent{
+.leftcontent {
     position: relative;
     top: 6rem;
     left: 2rem;
 }
 
-.wellBeingBtn{
+.wellBeingBtn {
     padding: 0.4rem;
-    border : 1px solid transparent;
+    border: 1px solid transparent;
     border-radius: 5px;
     background-color: #2B0076 !important;
     color: #F8F8FF;
     width: 12rem;
 }
 
-.fa-phone{
+.fa-phone {
     color: #F8F8FF;
     padding: 0.2rem;
     margin-right: 1rem;
 }
 
-.alert{
+.alert {
     padding: 0.2rem;
     font-size: 0.9rem;
     font-weight: 600;
@@ -38,20 +38,59 @@
     color: #14532D
 }
 
-.fa-period{
+.fa-period {
     font-size: 10rem !important;
     color: red !important;
 }
 
-.statusTitle{
+.statusTitle {
     font-size: 1.2rem !important;
     font-weight: 500 !important;
 }
 
-.recordCard{
+.recordCard {
     width: 20rem;
 }
 
-.overviewRecordCard{
+.overviewRecordCard {
     width: 30rem !important;
 }
+
+/*  */
+
+#gridContainer {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+#gridItem {
+    margin: 5px;
+    font-size: 30px;
+    text-align: center;
+}
+
+#sessionContent1 {
+    font-size: 12px;
+}
+
+#sessionContent2 {
+    font-size: 12px;
+}
+
+#dashBtn {
+    text-decoration-line: none;
+    color: black;
+}
+
+#profilePhoto {
+    background-color: #F8F8FF;
+    height: 150px;
+    width: 150px;
+    margin-right: 20px;
+    border-radius: 100%;
+}
+
+.selected {
+    background-color: yellow;
+    color: blue;
+  }

@@ -38,3 +38,20 @@
     line-height: var(--line-height); */
     max-height: 70vh !important;
 }
+
+
+/* February Edits */
+.modalBox {
+    height: 40vw;
+    width: 70vw;
+    background-color: #2B3542;
+    position: absolute;
+    margin: 10px;
+    border-radius: 10px;
+    display: none;
+}
+
+.addYouthFormHead {
+    display: flex;
+    justify-content: space-around;
+}
