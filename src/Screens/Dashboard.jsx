@@ -40,14 +40,14 @@ export default function Dashboard() {
     }, []);
 
     // ADD YOUTH BTN
-    function AddNewYouth() {
-        const x = document.getElementById("modalBox")
-        if (x.style.display === "none") {
-            x.style.display = "block"
-        } else {
-            x.style.display = "none"
-        }
-    }
+    // function AddNewYouth() {
+    //     const x = document.getElementById("modalBox")
+    //     if (x.style.display === "none") {
+    //         x.style.display = "block"
+    //     } else {
+    //         x.style.display = "none"
+    //     }
+    // }
 
     return (
         <div className='dashB container-fluid'>
@@ -79,7 +79,7 @@ export default function Dashboard() {
                         </Grid>
                     </Grid.Container>
                     <hr className='border border-2 border-secondary opacity-50 rounded mt-1' />
-                    <button onClick={AddNewYouth} >ADD YOUTH</button>
+                    {/* <button onClick={AddNewYouth} >ADD YOUTH</button> */}
                 </div>}
 
                 {/* agents left content of dashboard ends here */}

@@ -138,7 +138,7 @@ export default function CenterContent(props) {
 	}, [props.recommendedQuestions, props]);
 
 	const handleOnChange1 = (e) => {
-		// props.setEmotion(emotions[0]);
+		props.setEmotion(emotions[0]);
 		const x = document.getElementById("happyEmoji");
 		if (x.style.backgroundColor === '') {
 			x.style.backgroundColor = '#EFE5FF';
@@ -176,7 +176,7 @@ export default function CenterContent(props) {
 	};
 
 	const handleOnChange2 = (e) => {
-		// props.setEmotion(emotions[1]);
+		props.setEmotion(emotions[1]);
 		const x = document.getElementById("angryEmoji");
 		if (x.style.backgroundColor === '') {
 			x.style.backgroundColor = '#EFE5FF';
@@ -214,7 +214,7 @@ export default function CenterContent(props) {
 	};
 
 	const handleOnChange3 = (e) => {
-		// props.setEmotion(emotions[2]);
+		props.setEmotion(emotions[2]);
 		const x = document.getElementById("confusedEmoji");
 		if (x.style.backgroundColor === '') {
 			x.style.backgroundColor = '#EFE5FF';
@@ -252,7 +252,7 @@ export default function CenterContent(props) {
 	};
 
 	const handleOnChange4 = (e) => {
-		// props.setEmotion(emotions[3]);
+		props.setEmotion(emotions[3]);
 		const x = document.getElementById("anxiousEmoji");
 		if (x.style.backgroundColor === '') {
 			x.style.backgroundColor = '#EFE5FF';
@@ -290,7 +290,7 @@ export default function CenterContent(props) {
 	};
 
 	const handleOnChange5 = (e) => {
-		// props.setEmotion(emotions[4]);
+		props.setEmotion(emotions[4]);
 		const x = document.getElementById("sadEmoji");
 		if (x.style.backgroundColor === '') {
 			x.style.backgroundColor = '#EFE5FF';
@@ -994,13 +994,13 @@ export default function CenterContent(props) {
 				<div className='openingQuestion text-center mt-5'>
 					<p className='fs-2 fw-semibold'>
 						{props.redOpeningQuestion1 ? (
-							<div className='fw-normal'></div>
+							<div className='fw-normal'>{props.redOpeningQuestion1}</div>
 						) : props.redOpeningQuestion2 ? (
-							<p className='fw-normal'></p>
+							<p className='fw-normal'>{props.redOpeningQuestion2}</p>
 						) : props.blueOpeningQuestion1 ? (
-							<p className='fw-normal'></p>
+							<p className='fw-normal'>{props.blueOpeningQuestion1}</p>
 						) : props.blueOpeningQuestion2 ? (
-							<p className='fw-normal'></p>
+							<p className='fw-normal'>{props.blueOpeningQuestion2}</p>
 						) : null}
 						{props.printOtherOpeningQuestion.map((otherOQ, ind) => {
 							return (

@@ -49,6 +49,18 @@ export default function LeftContent(props) {
                 <div>
                     <div className='summaryData d-flex flex-column justify-content-start align-items-start'>
                         <div>
+                            <div>
+                                <p className='fw-semilight fs-3 '>
+                                    {props.emotion ? (
+                                        <div>
+                                            <h4 className='fw-bold fs-4'>Emotion of Call</h4>
+                                            <p className='fs-5'>{props.emotion}</p>
+                                            {/* summary column divider */}
+                                            <hr className='w-100 ng-secondary border border-1 border-secondary ' />
+                                        </div>
+                                    ) : null}
+                                </p>
+                            </div>
                             <div className='fw-semilight fs-5'>
                                 <div>
                                     <div className='fs-2 fw-semibold'>
@@ -92,7 +104,7 @@ export default function LeftContent(props) {
                                                                     <h4 className='fw-bold fs-4'>
                                                                         Opening Question
                                                                     </h4>
-                                                                    <p className='fs-5 fw-normal'>Agent:{otherOQ}</p>
+                                                                    <p className='fs-5 fw-normal'>{otherOQ}</p>
                                                                 </div>
                                                             );
                                                         },
@@ -523,18 +535,7 @@ export default function LeftContent(props) {
                             {/* summary column divider */}
                             <hr className='w-100 ng-secondary border border-1 border-secondary ' />
                         </div>
-                        <div>
-                            <p className='fw-semilight fs-3 '>
-                                {props.emotion ? (
-                                    <div>
-                                        <h4 className='fw-bold fs-4'>Emotion of Call</h4>
-                                        <p className='fs-5'>{props.emotion}</p>
-                                        {/* summary column divider */}
-                                        <hr className='w-100 ng-secondary border border-1 border-secondary ' />
-                                    </div>
-                                ) : null}
-                            </p>
-                        </div>
+
                         <div>
                             <div className='readPossibleResponse'>
                                 {props.redPossibleResponses ? (
