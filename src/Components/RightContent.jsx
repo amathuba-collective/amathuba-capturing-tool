@@ -240,7 +240,7 @@ export default function RightContent(props) {
 	function toggleRedPossibleResponse() {
 		props.setRedPossibleResponses(redFurtherQuestions[0]);
 		document.getElementById("followUpQuestionsBtn").style.display = "block"
-		document.getElementById("emojis").style.display = "none"
+		// document.getElementById("emojis").style.display = "none"
 		document.getElementById("youthReflection").style.display = "block"
 		document.getElementById("openingQuestionsBtn").style.animation = false
 		document.getElementById("openingQuestionsBtn").style.backgroundColor = "#789E46"

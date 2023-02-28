@@ -50,13 +50,10 @@
 	top: 3rem;
 }
 
-
 .title {
 	position: relative;
 	top: 3rem;
 }
-
-
 
 /* .Calender{
 	position: relative;
@@ -93,6 +90,7 @@
 
 .happyEmoji {
 	background-color: #F8F8FF;
+	/* background-color: #EFE5FF; */
 	border: none;
 	border-radius: 10px 10px 0px 0px;
 }
@@ -132,7 +130,8 @@
 	position: relative;
 	padding: 50px;
 	background-color: #F8F8FF;
-	/* display: none; */
+	/* background-color: #EFE5FF; */
+	/* display: block; */
 }
 
 .EKW {
@@ -311,6 +310,8 @@
 
 #youthPromptInput {
 	height: 500px;
+	position: relative;
+	top: -270px;
 	/* display: none; */
 }
 
@@ -349,7 +350,7 @@
 }
 
 #youthReflection {
-	top: -0px;
+	top: -50px;
 	position: relative;
 	/* display: none; */
 }
@@ -395,6 +396,7 @@
 	from {
 		background-color: #fde23000;
 	}
+
 	To {
 		background-color: #FDE030;
 	}

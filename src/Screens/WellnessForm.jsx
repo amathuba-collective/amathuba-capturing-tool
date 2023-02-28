@@ -74,6 +74,13 @@ export default function WellnessForm() {
 
     const [openingPromptQuestions, setOpeningPromptQuestions] = useState("");
     const [keyAnswers, setKeyAnswers] = useState("");
+
+
+    useEffect(() => {
+        setKeyAnswers(true);
+    }, []);
+
+
     const [keyAnswersAngry, setKeyAnswersAngry] = useState("");
     const [keyAnswersConfused, setKeyAnswersConfused] = useState("");
     const [keyAnswersAnxious, setKeyAnswersAnxious] = useState("");

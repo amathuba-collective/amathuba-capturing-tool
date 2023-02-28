@@ -137,6 +137,12 @@ export default function CenterContent(props) {
 			: props.setAgentReflectionQuestions(false);
 	}, [props.recommendedQuestions, props]);
 
+	// function handleAppStart() {
+	// 	handleOnChange1();
+	// }
+
+	// handleAppStart();
+
 	const handleOnChange1 = (e) => {
 		props.setEmotion(emotions[0]);
 		const x = document.getElementById("happyEmoji");
@@ -340,7 +346,7 @@ export default function CenterContent(props) {
 		document.getElementById("readEmotions").style.display = "block"
 		document.getElementById("possibleResponsesBtn").style.display = "block"
 	}
-	
+
 	function handleEmotionAnswer2(e) {
 		props.setKeyAnswerCapture2(keyAnswers[1]);
 		document.getElementById("readEmoBtn").style.display = "block"
@@ -1652,7 +1658,7 @@ export default function CenterContent(props) {
 					</div>
 					{/* <p>{props.youthFollowUpQuestions}</p> */}
 					<div className="followUpQuestionInput" id="followUpQuestionInput">
-						<div className='d-flex flex-row justify-content-around mb-2'>
+						{/* <div className='d-flex flex-row justify-content-around mb-2'>
 							<button className='EKW' onClick={handleEmotionAnswerFollowUp1}>
 								{KeyWordAnswersFollowUp.map((keyAnswers) => {
 									return <p className='pt-2'>{keyAnswers.keyAnswerFollowUp1}</p>;
@@ -1678,7 +1684,7 @@ export default function CenterContent(props) {
 									return <p className='pt-2'>{keyAnswers.keyAnswerFollowUp5}</p>;
 								})}
 							</button>
-						</div>
+						</div> */}
 						<textarea
 							className='textArea form-control mt-2 h-50'
 							type='text'
@@ -1696,7 +1702,7 @@ export default function CenterContent(props) {
 						</div>
 					</div>
 
-					<div className="followUpQuestionInput1" id="followUpQuestionInput1">
+					{/* <div className="followUpQuestionInput1" id="followUpQuestionInput1">
 						<div className='d-flex flex-row justify-content-around mb-2'>
 							<button className='EKW' onClick={handleEmotionAnswerFollowUp1}>
 								{KeyWordAnswersFollowUp.map((keyAnswers) => {
@@ -1739,7 +1745,7 @@ export default function CenterContent(props) {
 								Save
 							</button>
 						</div>
-					</div>
+					</div> */}
 
 					{/* <p>{props.youthPromptQuestions}</p> */}
 					<div id="youthPromptInput">
@@ -1760,7 +1766,7 @@ export default function CenterContent(props) {
 						</div>
 					</div>
 
-					<div id="youthPromptInput1">
+					{/* <div id="youthPromptInput1">
 						<textarea
 							className='textArea form-control mt-2 h-50'
 							type='text'
@@ -1776,7 +1782,7 @@ export default function CenterContent(props) {
 								Save
 							</button>
 						</div>
-					</div>
+					</div> */}
 				</div>
 
 				{/*       Agent Reflection Inputs                                  */}
