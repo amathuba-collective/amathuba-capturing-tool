@@ -4,8 +4,8 @@
 }
 
 #centerContent {
-	opacity: 0%;
-	display: none;
+	opacity: 100%;
+	/* display: none; */
 }
 
 .container::-webkit-scrollbar {
@@ -132,7 +132,7 @@
 	position: relative;
 	padding: 50px;
 	background-color: #F8F8FF;
-	display: none;
+	/* display: none; */
 }
 
 .EKW {
@@ -151,14 +151,14 @@
 	border-radius: 5px;
 	overflow-y: scroll;
 	transition: 0.3s;
-	display: none;
+	/* display: none; */
 }
 
 .readEmoBtn {
 	width: 280px;
 	border-color: #2B3542;
 	border-radius: 5px;
-	display: none;
+	/* display: none; */
 }
 
 .callSummary {
@@ -201,16 +201,16 @@
 #agentReflection {
 	position: relative;
 	top: -80px;
-	display: none;
+	/* display: none; */
 }
 
-#bookings {
+/* #bookings {
 	display: none;
-}
+} */
 
-#finalSubmit {
+/* #finalSubmit {
 	display: none;
-}
+} */
 
 .readPossibleResponse {
 	position: relative;
@@ -233,7 +233,7 @@
 	align-items: center;
 	position: relative;
 	top: -70px;
-	display: none;
+	/* display: none; */
 	animation: flash2 2s ease-in-out infinite;
 }
 
@@ -259,7 +259,7 @@
 	align-items: center;
 	position: relative;
 	top: -115px;
-	display: none;
+	/* display: none; */
 	animation: flash3 2s ease-in-out infinite;
 }
 
@@ -285,7 +285,7 @@
 	align-items: center;
 	position: relative;
 	top: -160px;
-	display: none;
+	/* display: none; */
 	animation: flash4 2s ease-in-out infinite;
 }
 
@@ -306,17 +306,17 @@
 
 #youthQuestionInput {
 	height: 500px;
-	display: none;
+	/* display: none; */
 }
 
 #youthPromptInput {
 	height: 500px;
-	display: none;
+	/* display: none; */
 }
 
 #youthPromptInput1 {
 	height: 500px;
-	display: none;
+	/* display: none; */
 }
 
 
@@ -349,9 +349,9 @@
 }
 
 #youthReflection {
-	top: -90px;
+	top: -0px;
 	position: relative;
-	display: none;
+	/* display: none; */
 }
 
 #possibleResponsesBtn1 {
@@ -387,7 +387,7 @@
 	align-items: center;
 	position: relative;
 	top: -250px;
-	display: none;
+	/* display: none; */
 	animation: flash6 2s ease-in-out infinite;
 }
 
@@ -406,12 +406,16 @@
 }
 
 #followUpQuestionInput {
+	position: relative;
+	top: -150px;
 	height: 500px;
 }
 
 #followUpQuestionInput1 {
+	position: relative;
+	top: -50px;
 	height: 500px;
-	display: none;
+	/* display: none; */
 }
 
 #promptQuestionsBtn1 {
@@ -421,7 +425,7 @@
 	align-items: center;
 	position: relative;
 	top: -295px;
-	display: none;
+	/* display: none; */
 	animation: flash7 2s ease-in-out infinite;
 }
 

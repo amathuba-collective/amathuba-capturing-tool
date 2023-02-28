@@ -5,7 +5,9 @@ import "../Styles/YouthProfile.css";
 import { Icon } from "@iconify/react";
 import { getYouthById } from "../Services/Youth";
 import { getRecentYouthDialogueData } from "../Services/YouthDialogue";
-import formatDistanceToNow from 'date-fns/formatDistanceToNow'
+// import formatDistanceToNow from 'date-fns/formatDistanceToNow'
+// import formatRelative from "date-fns/formatRelative";
+import { format, formatDistance, formatRelative, subDays } from 'date-fns'
 import { TiHome } from "react-icons/ti"
 // import { el } from "date-fns/locale";
 // import { SearchBar } from "../Components/Youth";
@@ -296,7 +298,8 @@ export default function YouthProfile(props) {
                                                             <div>
                                                                 <h5 className='card-title'>
                                                                     {/* {pastRecords.dialogue.date} */}
-                                                                    {formatDistanceToNow(new Date(pastRecords.dialogue.date), { addSuffix: true })}
+                                                                    {/* {formatRelative(new Date(pastRecords.dialogue.date), { addSuffix: true })} */}
+                                                                    {formatRelative(subDays(new Date(), 3), new Date(pastRecords.dialogue.date), { addSuffix: true })}
                                                                 </h5>
                                                             </div>
 

@@ -142,6 +142,7 @@ export default function CenterContent(props) {
 		const x = document.getElementById("happyEmoji");
 		if (x.style.backgroundColor === '') {
 			x.style.backgroundColor = '#EFE5FF';
+			// Happy
 			document.getElementById("happWords").style.backgroundColor = "#EFE5FF"
 			document.getElementById("happWords").style.display = "block"
 			// Angry
@@ -339,6 +340,7 @@ export default function CenterContent(props) {
 		document.getElementById("readEmotions").style.display = "block"
 		document.getElementById("possibleResponsesBtn").style.display = "block"
 	}
+	
 	function handleEmotionAnswer2(e) {
 		props.setKeyAnswerCapture2(keyAnswers[1]);
 		document.getElementById("readEmoBtn").style.display = "block"
