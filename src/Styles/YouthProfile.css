@@ -50,10 +50,11 @@
 
 .recordCard {
     width: 20rem;
+    height: 10rem;
 }
 
 .overviewRecordCard {
-    width: 30rem !important;
+    width: 40rem !important;
 }
 
 /*  */
@@ -93,4 +94,26 @@
 .selected {
     background-color: yellow;
     color: blue;
-  }
+}
+
+#sessionAgentName {
+    position: relative;
+    right: -20px;
+    display: flex;
+}
+
+#sessionHistoryTop {
+    width: 30rem;
+}
+
+/* #sessionHistoryOpeningQuestion {
+    background-color: aquamarine;
+} */
+
+/* #sessionHistoryFollowUpQuestion {
+    background-color: aquamarine;
+} */
+
+/* #sessionHistoryPromptQuestion {
+    background-color: cadetblue;
+} */

@@ -12,6 +12,13 @@ import { TiHome } from "react-icons/ti"
 // import { el } from "date-fns/locale";
 // import { SearchBar } from "../Components/Youth";
 // import { AiOutlineSearch } from 'react-icons/ai';
+import {
+    getLocalStorageForObjects,
+    // setLocalStorageAsString,
+    // setLocalStorageForObjects
+} from "../Utils/localStorageUtils";
+import { Grid, Avatar, Text } from "@nextui-org/react";
+
 
 export default function YouthProfile(props) {
     const [recentRecords, setRecentRecords] = useState(null);
@@ -22,6 +29,7 @@ export default function YouthProfile(props) {
     const [section, setSection] = useState("profile");
     const [selectedButton, setSelectedButton] = useState("profile");
     const [youthCallHistorySections, setYouthCallHistorySections] = useState("Overview");
+    const agent = getLocalStorageForObjects("user");
 
     // Search Bar fliterd by youth ID
     // const [search, setSearch] = useState('');
@@ -287,14 +295,13 @@ export default function YouthProfile(props) {
                                 <div className='' id="gridContainer"  >
                                     {recentRecords.map((pastRecords) => {
                                         return (
-                                            <div key={pastRecords._id} className='' id="gridItem">
+                                            <div key={pastRecords._id} id="gridItem">
                                                 {/* row starts */}
                                                 {/* col */}
                                                 <div className='card recordCard'  >
                                                     <div className='card-body'>
 
                                                         <div className='d-flex justify-content-between' >
-
                                                             <div>
                                                                 <h5 className='card-title'>
                                                                     {/* {pastRecords.dialogue.date} */}
@@ -302,7 +309,6 @@ export default function YouthProfile(props) {
                                                                     {formatRelative(subDays(new Date(), 3), new Date(pastRecords.dialogue.date), { addSuffix: true })}
                                                                 </h5>
                                                             </div>
-
                                                             <div>
                                                                 <button
                                                                     className='border-0 bg-transparent d-flex'
@@ -314,14 +320,37 @@ export default function YouthProfile(props) {
                                                                 </button>
                                                             </div>
                                                         </div>
-
                                                         <div>
-                                                            <div className='d-flex justify-content-between mt-4' id="sessionContent1">
+                                                            {/* <div className='d-flex justify-content-between mt-4' id="sessionContent1">
                                                                 <p className='card-text'>Opening emotion :</p>
                                                                 <p className='card-text fw-bold'>
                                                                     {pastRecords.emotionOfCall}
                                                                 </p>
-                                                            </div>
+                                                            </div> */}
+                                                            {agent && <div className='' key={agent.id}>
+                                                                <Grid.Container className=''>
+                                                                    <Grid className='d-flex justify-content-between mt-3'>
+                                                                        {/* <Avatar
+                                                                            src={agent.imgUrl}
+                                                                            css={{ size: "8rem" }}
+                                                                            className='mt-4'
+                                                                            bordered
+                                                                        /> */}
+                                                                        <Text className='fs-6'>
+                                                                            {agent.role}:
+                                                                        </Text>
+                                                                        <Text className='fs-6 justify-content-between' id="sessionAgentName">
+                                                                            {agent.firstName}
+                                                                            {agent.lastName}
+                                                                        </Text>
+                                                                        {/* <Text className='' size='$md'>
+                                                                            {agent.email}
+                                                                        </Text> */}
+                                                                    </Grid>
+                                                                </Grid.Container>
+                                                                {/* <hr className='border border-2 border-secondary opacity-50 rounded mt-1' /> */}
+                                                                {/* <button onClick={AddNewYouth} >ADD YOUTH</button> */}
+                                                            </div>}
                                                             <div className='d-flex justify-content-between' id="sessionContent2">
                                                                 <p className='card-text'>Closing emotion :</p>
                                                                 <p className='card-text fw-bold'>
@@ -348,6 +377,18 @@ export default function YouthProfile(props) {
                                     {youth && (
                                         <div>
                                             <p className='fs-5 fw-bold '>{youth.firstName}</p>
+                                            <div className="d-flex align-items-center" id="sessionHistoryTop">
+                                                <div id="profilePhoto"></div>
+                                                <Link to={`/WellnessForm/${youth._id}`}>
+                                                    <button className='wellBeingBtn fs-5'>
+                                                        <span>
+                                                            <i className='fa-solid fa-phone fs-5'></i>
+                                                        </span>{" "}
+                                                        Call Friend
+                                                    </button>
+                                                </Link>
+                                            </div>
+
                                             <p>{youth.email}</p>
                                             <div className='d-flex '>
                                                 <span>
@@ -411,41 +452,126 @@ export default function YouthProfile(props) {
                                                 </div>
                                                 <hr className='border border-1 border-secondary rounded' />
                                                 <div>
-                                                    <div className='d-flex justify-content-between mt-4'>
-                                                        <p className='card-text'>Opening Question :</p>
-                                                        <p className='card-text fw-bold'>
-                                                            {selectedYouth.convo_data.openingQuestion1Red}
-                                                        </p>
+                                                    <div id="sessionHistoryOpeningQuestion">
+                                                        <div className='d-flex justify-content-between mt-4'>
+                                                            <p className='card-text'>Opening Question :</p>
+                                                            <p className='card-text fw-bold'>
+                                                                {selectedYouth.convo_data.openingQuestion1Red}
+                                                            </p>
+                                                        </div>
+                                                        <div className="d-flex justify-content-between">
+                                                            <p className='card-text fw-normal'>
+                                                                Answer:
+                                                            </p>
+                                                            <p className='card-text fw-bold'>
+                                                                This will be the answer!
+                                                            </p>
+                                                        </div>
                                                     </div>
                                                     <div className='d-flex justify-content-between'>
-                                                        <p className='card-text'>response :</p>
-                                                        <p className='card-text fw-bold'>
+                                                        <p className='card-text'>Response :</p>
+                                                        <p className='card-text fw-normal'>
                                                             {selectedYouth.ROQpossibleResponse}
                                                         </p>
                                                     </div>
-                                                    <div className='d-flex justify-content-between'>
-                                                        <p className='card-text'>follow-up question :</p>
+                                                    <div id="sessionHistoryFollowUpQuestion">
+                                                        <div className='d-flex justify-content-between'>
+                                                            <p className='card-text'>Follow-Up Question :</p>
+                                                            <p className='card-text fw-bold'>
+                                                                {selectedYouth.followUpQuestions.roqPromptQuestion}
+                                                            </p>
+                                                        </div>
+                                                        <div>
+                                                            <div className="d-flex justify-content-between">
+                                                                <p className='card-text fw-normal'>
+                                                                    Answer:
+                                                                </p>
+                                                                <p className='card-text fw-bold'>
+                                                                    This will be the answer!
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="sessionHistoryPromptQuestion">
+                                                        <div className='d-flex justify-content-between'>
+                                                            <p className='card-text'>Prompt Question :</p>
+                                                            <p className='card-text fw-bold'>
+                                                                {selectedYouth.youthFollow_UpQuestions}
+                                                            </p>
+                                                        </div>
+                                                        <div>
+                                                            <div className="d-flex justify-content-between">
+                                                                <p className='card-text fw-normal'>
+                                                                    Answer:
+                                                                </p>
+                                                                <p className='card-text fw-bold'>
+                                                                    This will be the answer!
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr className='border border-1 border-secondary rounded' />
+                                                <div className='d-flex justify-content-between'>
+                                                    {/*  */}
+                                                    <div>
+                                                        <h5 className='card-title'>Youth Reflection</h5>
+                                                    </div>
+                                                </div>
+                                                <hr className='border border-1 border-secondary rounded' />
+                                                <div>
+                                                    <div>
+                                                        <div className='d-flex justify-content-between mt-4'>
+                                                            <p className='card-text'>Youth Question :</p>
+                                                            <p className='card-text fw-bold'>
+                                                                {selectedYouth.youthOQ2}
+                                                            </p>
+                                                        </div>
+                                                        <div>
+                                                            <div className="d-flex justify-content-between">
+                                                                <p className='card-text fw-normal'>
+                                                                    Answer:
+                                                                </p>
+                                                                <p className='card-text fw-bold'>
+                                                                    This will be the answer!
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div className='d-flex justify-content-between '>
+                                                        <p className='card-text'>Youth reflection :</p>
                                                         <p className='card-text fw-bold'>
-                                                            {selectedYouth.followUpQuestions.roqPromptQuestion}
+                                                            {selectedYouth.youthResponses}
                                                         </p>
                                                     </div>
-                                                    <div className='d-flex justify-content-between'>
-                                                        <p className='card-text'>prompt question :</p>
+                                                    <div className='d-flex justify-content-between '>
+                                                        <p className='card-text'>Youth Response :</p>
+                                                        <p className='card-text fw-bold'>
+                                                            {selectedYouth.youthResponses}
+                                                        </p>
+                                                    </div>
+                                                    <div className='d-flex justify-content-between '>
+                                                        <p className='card-text'>
+                                                            Youth follow-up question :
+                                                        </p>
                                                         <p className='card-text fw-bold'>
                                                             {selectedYouth.youthFollow_UpQuestions}
                                                         </p>
                                                     </div>
-                                                    <hr />
                                                     <div className='d-flex justify-content-between'>
-                                                        <p className='card-text'>Name Of Agent :</p>
-                                                        <p className='card-text fw-bold'>{selectedYouth.dialogue.nameOfAgent}</p>
+                                                        <p className='card-text'>next call :</p>
+                                                        <p className='card-text fw-bold'>{selectedYouth.newAppointment}</p>
                                                     </div>
+                                                </div>
+                                                <div className='d-flex justify-content-between'>
+                                                    <p className='card-text'>Name Of Agent :</p>
+                                                    <p className='card-text fw-bold'>{selectedYouth.dialogue.nameOfAgent}</p>
                                                 </div>
                                             </div>
                                         </div>
                                         {/* card 1 ends */}
                                         {/* card 1 starts */}
-                                        <div className='card overviewRecordCard'>
+                                        {/* <div className='card overviewRecordCard'>
                                             <div className='card-body'>
                                                 <div className='d-flex justify-content-between'>
                                                     <div>
@@ -486,7 +612,7 @@ export default function YouthProfile(props) {
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> */}
                                         {/* card 1 ends */}
                                     </div>
                                 )}
