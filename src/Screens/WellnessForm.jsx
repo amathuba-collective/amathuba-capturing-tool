@@ -5,6 +5,7 @@ import RightContent from "../Components/RightContent";
 import { useParams } from "react-router-dom";
 import { saveYouthDialogue } from "../Services/YouthDialogue";
 import { getYouthById } from "../Services/Youth";
+import YouthProfile from "./YouthProfile";
 
 export default function WellnessForm() {
     const [youth, setYouth] = useState({});
@@ -208,7 +209,9 @@ export default function WellnessForm() {
     const [agentDataArr, setAgentDataArr] = useState([]);
     //
     const [value, onValueChange] = useState(false);
+
     const [emotion, setEmotion] = useState("");
+
     const [redFlag, setRedFlag] = useState(false);
 
     const getYouthData = async (id) => {
@@ -740,7 +743,6 @@ export default function WellnessForm() {
                         setYouthPromptQuestions={setYouthPromptQuestions}
                     />
                 </div>
-
             </div>
         </div>
     );

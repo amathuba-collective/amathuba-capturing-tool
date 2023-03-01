@@ -362,7 +362,7 @@
 	align-items: center;
 	position: relative;
 	top: -205px;
-	display: none;
+	display: block;
 	animation: flash8 2s ease-in-out infinite;
 }
 

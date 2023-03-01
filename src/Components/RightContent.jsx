@@ -529,7 +529,6 @@ export default function RightContent(props) {
 											<hr className='border border-2 border-secondary opacity-50 rounded mt-1' />
 										</div>
 									) : null}
-
 									<p
 										id="followUpQuestionsBtn"
 										onClick={dropDown4}

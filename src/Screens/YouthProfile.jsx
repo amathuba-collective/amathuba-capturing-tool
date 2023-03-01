@@ -33,9 +33,7 @@ export default function YouthProfile(props) {
 
     // Search Bar fliterd by youth ID
     // const [search, setSearch] = useState('');
-    // 
-
-
+    //
 
     const getYouthData = async (id) => {
         const youthData = await getYouthById(id);
@@ -464,7 +462,18 @@ export default function YouthProfile(props) {
                                                                 Answer:
                                                             </p>
                                                             <p className='card-text fw-bold'>
-                                                                This will be the answer!
+                                                                <div>
+                                                                    <p className='fw-semilight fs-3 '>
+                                                                        {props.emotion ? (
+                                                                            <div>
+                                                                                <h4 className='fw-bold fs-5'>Emotion of Call</h4>
+                                                                                <p className='fs-5 fw-normal'>{props.emotion}</p>
+                                                                                {/* summary column divider */}
+                                                                                {/* <hr className='w-100 ng-secondary border border-1 border-secondary ' /> */}
+                                                                            </div>
+                                                                        ) : null}
+                                                                    </p>
+                                                                </div>
                                                             </p>
                                                         </div>
                                                     </div>
@@ -558,9 +567,11 @@ export default function YouthProfile(props) {
                                                             {selectedYouth.youthFollow_UpQuestions}
                                                         </p>
                                                     </div>
+                                                    <hr />
                                                     <div className='d-flex justify-content-between'>
-                                                        <p className='card-text'>next call :</p>
+                                                        <p className='card-text'>Next Call :</p>
                                                         <p className='card-text fw-bold'>{selectedYouth.newAppointment}</p>
+                                                        {/* {formatRelative(subDays(new Date(), 3), new Date(pastRecords.dialogue.date), { addSuffix: true })}                                                         */}
                                                     </div>
                                                 </div>
                                                 <div className='d-flex justify-content-between'>
