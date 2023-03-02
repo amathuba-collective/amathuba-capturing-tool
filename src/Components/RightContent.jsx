@@ -281,9 +281,8 @@ export default function RightContent(props) {
 	//red prompt questions
 	function toggleRedPromptQuestion1() {
 		props.setRedPromptQuestions(redFurtherQuestions[6]);
-		document.getElementById("youthPromptInput").style.display = "block"
+		// document.getElementById("youthPromptInput").style.display = "block"
 	}
-
 	function toggleRedPromptQuestion2() {
 		props.setRedPromptQuestions(redFurtherQuestions[7]);
 	}
@@ -466,7 +465,7 @@ export default function RightContent(props) {
 											onClick={toggleRedPromptQuestion1}>
 											{redQuestions.promptQuestion1}
 										</button>
-
+										
 										<button
 											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
 											onClick={toggleRedPromptQuestion2}>
@@ -505,7 +504,7 @@ export default function RightContent(props) {
 											<h2 className='text-center text-dark fs-3 fw-bold'>
 												Possible Responses
 											</h2>
-										</div> */}
+											</div> */}
 											<button
 												className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
 												onClick={toggleRedPossibleResponse}>
@@ -574,10 +573,10 @@ export default function RightContent(props) {
 									{dropDownActive5 ? (
 										<div className='d-flex flex-column justify-content-center mt-3 mb-4' id="promptQuestionsContent" >
 											{/* <div>
-											<h2 className='text-center text-dark fs-3 fw-bold'>
-												Prompt Questions
-											</h2>
-										</div> */}
+												<h2 className='text-center text-dark fs-3 fw-bold'>
+													Prompt Questions
+												</h2>
+											</div> */}
 											<button
 												className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
 												onClick={toggleRedPromptQuestion1}>
