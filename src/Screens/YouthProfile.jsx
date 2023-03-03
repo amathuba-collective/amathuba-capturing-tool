@@ -19,7 +19,6 @@ import {
 } from "../Utils/localStorageUtils";
 import { Grid, Avatar, Text } from "@nextui-org/react";
 
-
 export default function YouthProfile(props) {
     const [recentRecords, setRecentRecords] = useState(null);
     const [selectedYouth, setselectedYouth] = useState(null);
@@ -31,10 +30,6 @@ export default function YouthProfile(props) {
     const [youthCallHistorySections, setYouthCallHistorySections] = useState("Overview");
     const agent = getLocalStorageForObjects("user");
 
-    // Search Bar fliterd by youth ID
-    // const [search, setSearch] = useState('');
-    //
-
     const getYouthData = async (id) => {
         const youthData = await getYouthById(id);
         setLoading(false);
@@ -43,8 +38,6 @@ export default function YouthProfile(props) {
         setYouth(youthData.data.data.youth);
         getRecentYouthDialogueDataForView(youthData.data.data.youth.firstName);
     }
-
-
 
     const getRecentYouthDialogueDataForView = async (youthName) => {
         const recentData = await getRecentYouthDialogueData();
@@ -531,7 +524,7 @@ export default function YouthProfile(props) {
                                                     <div>
                                                         <div className='d-flex justify-content-between mt-4'>
                                                             <p className='card-text'>Youth Question :</p>
-                                                            <p className='card-text fw-bold'>
+                                                            <p className='card-text fw-light'>
                                                                 {selectedYouth.youthOQ1}
                                                             </p>
                                                         </div>
@@ -541,7 +534,7 @@ export default function YouthProfile(props) {
                                                                     Answer:
                                                                 </p>
                                                                 <p className='card-text fw-bold'>
-                                                                    Here is your answer!
+                                                                    Test
                                                                 </p>
                                                             </div>
                                                         </div>
@@ -549,7 +542,7 @@ export default function YouthProfile(props) {
                                                     <div className='d-flex justify-content-between '>
                                                         <p className='card-text'>Youth reflection :</p>
                                                         <p className='card-text fw-bold'>
-                                                            {selectedYouth.youthResponses}
+                                                            {/* {selectedYouth.youthResponses} */}
                                                         </p>
                                                     </div>
                                                     <div className='d-flex justify-content-between '>

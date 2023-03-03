@@ -560,7 +560,7 @@ export default function LeftContent(props) {
                                     </div>
                                 ) : null}
                             </div>
-                            
+
                             <div className='fw-semilight fs-3 mt-4'>
                                 {props.redFollowUpQuestions ? (
                                     <div>
@@ -568,6 +568,410 @@ export default function LeftContent(props) {
                                         <p className='fs-5 fw-normal'>
                                             {props.redFollowUpQuestions}
                                         </p>
+                                        <div id="" className=''>
+                                            <div className=''>
+                                                <p>
+                                                    {props.keyAnswerCapture1 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCapture1}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureAngry1 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureAngry1}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureConfused1 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureConfused1}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureAnxious1 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureAnxious1}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureSad1 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureSad1}</p>
+                                                    ) : null}
+                                                </p>
+
+                                                {/*  */}
+
+                                                <p>
+                                                    {props.keyAnswerCapture2 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCapture2}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureAngry2 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureAngry2}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureConfused2 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureConfused2}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureAnxious2 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureAnxious2}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureSad2 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureSad2}</p>
+                                                    ) : null}
+                                                </p>
+
+                                                {/*  */}
+
+                                                <p>
+                                                    {props.keyAnswerCapture3 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCapture3}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureAngry3 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureAngry3}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureConfused3 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureConfused3}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureAnxious3 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureAnxious3}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureSad3 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureSad3}</p>
+                                                    ) : null}
+                                                </p>
+                                            </div>
+
+                                            <div className=''>
+                                                <p>
+                                                    {props.keyAnswerCapture4 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCapture4}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureAngry4 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureAngry4}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureConfused4 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureConfused4}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureAnxious4 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureAnxious4}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureSad4 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureSad4}</p>
+                                                    ) : null}
+                                                </p>
+
+                                                {/*  */}
+
+                                                <p>
+                                                    {props.keyAnswerCapture5 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCapture5}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureAngry5 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureAngry5}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureConfused5 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureConfused5}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureAnxious5 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureAnxious5}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureSad5 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureSad5}</p>
+                                                    ) : null}
+                                                </p>
+
+                                                {/*  */}
+
+                                                <p>
+                                                    {props.keyAnswerCapture6 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCapture6}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureAngry6 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureAngry6}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureConfused6 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureConfused6}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureAnxious6 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureAnxious6}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureSad6 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureSad6}</p>
+                                                    ) : null}
+                                                </p>
+                                            </div>
+
+                                            <div className=''>
+                                                <p>
+                                                    {props.keyAnswerCapture7 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCapture7}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureAngry7 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureAngry7}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureConfused7 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureConfused7}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureAnxious7 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureAnxious7}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureSad7 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureSad7}</p>
+                                                    ) : null}
+                                                </p>
+
+                                                {/*  */}
+
+                                                <p>
+                                                    {props.keyAnswerCapture8 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCapture8}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureAngry8 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureAngry8}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureConfused8 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureConfused8}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureAnxious8 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureAnxious8}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureSad8 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureSad8}</p>
+                                                    ) : null}
+                                                </p>
+                                            </div>
+
+                                            <div className=''>
+                                                <p>
+                                                    {props.keyAnswerCapture9 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCapture9}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureAngry9 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureAngry9}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureConfused9 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureConfused9}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureAnxious9 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureAnxious9}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureSad9 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureSad9}</p>
+                                                    ) : null}
+                                                </p>
+
+                                                {/*  */}
+
+                                                <p>
+                                                    {props.keyAnswerCapture10 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCapture10}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureAngry10 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureAngry10}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureConfused10 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureConfused10}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureAnxious10 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureAnxious10}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureSad10 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureSad10}</p>
+                                                    ) : null}
+                                                </p>
+                                            </div>
+
+                                            <div className=''>
+                                                <p>
+                                                    {props.keyAnswerCapture11 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCapture11}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureAngry11 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureAngry11}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureConfused11 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureConfused11}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureAnxious11 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureAnxious11}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureSad11 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureSad11}</p>
+                                                    ) : null}
+                                                </p>
+
+                                                {/*  */}
+
+                                                <p>
+                                                    {props.keyAnswerCapture12 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCapture12}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureAngry12 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureAngry12}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureConfused12 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureConfused12}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureAnxious12 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureAnxious12}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureSad12 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureSad12}</p>
+                                                    ) : null}
+                                                </p>
+                                            </div>
+
+                                            <div className=''>
+                                                <p>
+                                                    {props.keyAnswerCapture13 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCapture13}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureAngry13 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureAngry13}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureConfused13 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureConfused13}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureAnxious13 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureAnxious13}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureSad13 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureSad13}</p>
+                                                    ) : null}
+                                                </p>
+                                                {/* text input answer below */}
+                                                <p>
+                                                    {props.inputArr.map((keyAnswer, ind) => {
+                                                        return (
+                                                            <div key={ind}>
+                                                                <p>{keyAnswer}</p>
+                                                            </div>
+                                                        );
+                                                    })}
+                                                </p>
+                                                {/* text input answer above */}
+                                                <p>
+                                                    {props.keyAnswerCapture14 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCapture14}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureAngry14 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureAngry14}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureConfused14 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureConfused14}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureAnxious14 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureAnxious14}</p>
+                                                    ) : null}
+                                                </p>
+                                                <p>
+                                                    {props.keyAnswerCaptureSad14 ? (
+                                                        <p className='fs-5'>{props.keyAnswerCaptureSad14}</p>
+                                                    ) : null}
+                                                </p>
+                                            </div>
+                                        </div>
+
+
+
 
                                         {/* text input answer below */}
                                         <p>

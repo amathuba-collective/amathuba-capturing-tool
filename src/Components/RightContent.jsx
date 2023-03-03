@@ -364,8 +364,8 @@ export default function RightContent(props) {
 	function toggleYouthPromptQuestion4() {
 		props.setYouthPromptQuestions(youthFurtherQuestions[7]);
 	}
+	
 	// 4 follow up questions above
-
 	const renderResult = () => {
 		let result;
 		props.redOpeningQuestion1

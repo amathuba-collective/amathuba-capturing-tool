@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import React, { useEffect, useState } from "react";
 import LeftContent from "../Components/LeftContent";
 import CenterContent from "../Components/CenterContent";
@@ -324,16 +325,16 @@ export default function WellnessForm() {
             newKeyAnswer2: inputArr[1],
             newKeyAnswer3: inputArr[2],
 
-           
+
         },
-        
+
         emotionOfCall: emotion,
         ROQpossibleResponse: redPossibleResponses,
         BOQpossibleResponse: bluePossibleResponses,
         followUpQuestions: {
             roqPromptQuestion: redFollowUpQuestions,
             boqPromptQuestion: blueFollowUpQuestions,
-            
+
             keyAnswer1: keyAnswerCapture1,
             keyAnswer2: keyAnswerCapture2,
             keyAnswer3: keyAnswerCapture3,
