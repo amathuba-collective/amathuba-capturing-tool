@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import TopNavbar from "../Components/TopNavbar";
 import "../Styles/YouthProfile.css";
@@ -41,20 +41,27 @@ export default function YouthProfile(props) {
 
         if (youthData.error) return setError(youthData.error);
         setYouth(youthData.data.data.youth);
+        getRecentYouthDialogueDataForView(youthData.data.data.youth.firstName);
     }
 
-    const getRecentYouthDialogueDataForView = async () => {
+
+
+    const getRecentYouthDialogueDataForView = async (youthName) => {
         const recentData = await getRecentYouthDialogueData();
 
         if (recentData.error) return setError(recentData.error);
-        setRecentRecords(recentData.data.data.all);
+
+        const data = recentData?.data?.data?.all;
+
+        const filterByYouthName = data.filter(record => record.dialogue.nameOfYouth === youthName);
+
+        setRecentRecords(filterByYouthName);
     }
 
     const { id } = useParams();
 
     useEffect(() => {
         getYouthData(id);
-        getRecentYouthDialogueDataForView();
     }, [])
 
     const openYouthMenu = (e, id) => {
@@ -129,7 +136,6 @@ export default function YouthProfile(props) {
                             {youth && (
                                 <>
                                     <p className='fs-3 fw-bold mt-5'>{youth.firstName}</p>
-
                                     <div className="d-flex align-items-center" >
                                         <div id="profilePhoto"></div>
                                         <div className='mt-4'>
@@ -458,23 +464,10 @@ export default function YouthProfile(props) {
                                                             </p>
                                                         </div>
                                                         <div className="d-flex justify-content-between">
-                                                            <p className='card-text fw-normal'>
+                                                            <p className='card-text fw-normal d-flex justify-content-between'>
                                                                 Answer:
                                                             </p>
-                                                            <p className='card-text fw-bold'>
-                                                                <div>
-                                                                    <p className='fw-semilight fs-3 '>
-                                                                        {props.emotion ? (
-                                                                            <div>
-                                                                                <h4 className='fw-bold fs-5'>Emotion of Call</h4>
-                                                                                <p className='fs-5 fw-normal'>{props.emotion}</p>
-                                                                                {/* summary column divider */}
-                                                                                {/* <hr className='w-100 ng-secondary border border-1 border-secondary ' /> */}
-                                                                            </div>
-                                                                        ) : null}
-                                                                    </p>
-                                                                </div>
-                                                            </p>
+                                                            <p>{selectedYouth.emotionOfCall}</p>
                                                         </div>
                                                     </div>
                                                     <div className='d-flex justify-content-between'>
@@ -483,6 +476,7 @@ export default function YouthProfile(props) {
                                                             {selectedYouth.ROQpossibleResponse}
                                                         </p>
                                                     </div>
+
                                                     <div id="sessionHistoryFollowUpQuestion">
                                                         <div className='d-flex justify-content-between'>
                                                             <p className='card-text'>Follow-Up Question :</p>
@@ -495,17 +489,19 @@ export default function YouthProfile(props) {
                                                                 <p className='card-text fw-normal'>
                                                                     Answer:
                                                                 </p>
-                                                                <p className='card-text fw-bold'>
-                                                                    This will be the answer!
+                                                                <p className='card-text fw-normal'>
+                                                                    {selectedYouth.followUpQuestions.newKeyAnswer1}
                                                                 </p>
                                                             </div>
                                                         </div>
                                                     </div>
+
                                                     <div id="sessionHistoryPromptQuestion">
                                                         <div className='d-flex justify-content-between'>
                                                             <p className='card-text'>Prompt Question :</p>
                                                             <p className='card-text fw-bold'>
-                                                                {selectedYouth.youthFollow_UpQuestions}
+                                                                {selectedYouth.promptQuestions}
+                                                                {/* {selectedYouth.redPromptQuestions} */}
                                                             </p>
                                                         </div>
                                                         <div>
@@ -576,7 +572,19 @@ export default function YouthProfile(props) {
                                                 </div>
                                                 <div className='d-flex justify-content-between'>
                                                     <p className='card-text'>Name Of Agent :</p>
-                                                    <p className='card-text fw-bold'>{selectedYouth.dialogue.nameOfAgent}</p>
+                                                    {/* <p className='card-text fw-bold'>{selectedYouth.dialogue.nameOfAgent}</p> */}
+                                                    {agent && <div key={agent.id}>
+                                                        <Text className=''>
+                                                            {agent.firstName}
+                                                        </Text>
+                                                        {/* <Text className='mb-2 fw-semibold fs-4'>
+                                                            {agent.role}
+                                                        </Text> */}
+                                                        {/* <Text className='agentCompany fw-semibold fs-5' size='$md'>
+                                                            {agent.email}
+                                                        </Text> */}
+                                                        {/* <button onClick={AddNewYouth} >ADD YOUTH</button> */}
+                                                    </div>}
                                                 </div>
                                             </div>
                                         </div>
@@ -634,6 +642,7 @@ export default function YouthProfile(props) {
                             {/* overview & QA section end */}
                         </div>
                     )}
+
                 </div>
             </div>
         </div >

@@ -5,7 +5,6 @@ import RightContent from "../Components/RightContent";
 import { useParams } from "react-router-dom";
 import { saveYouthDialogue } from "../Services/YouthDialogue";
 import { getYouthById } from "../Services/Youth";
-import YouthProfile from "./YouthProfile";
 
 export default function WellnessForm() {
     const [youth, setYouth] = useState({});
@@ -17,6 +16,7 @@ export default function WellnessForm() {
     useEffect(() => {
         getYouthData(id);
     })
+
 
     // Add new opening questions
     const [otherOpeningQuestion, setOtherOpeningQuestion] = useState({
@@ -52,6 +52,7 @@ export default function WellnessForm() {
     //
     const [redPossibleResponses, setRedPossibleResponses] = useState("");
     const [redFollowUpQuestions, setRedFollowUpQuestions] = useState("");
+
     const [redPromptQuestions, setRedPromptQuestions] = useState("");
     //
 
@@ -62,6 +63,7 @@ export default function WellnessForm() {
 
     // //
     const [youthPossibleResponses, setYouthPossibleResponses] = useState("");
+
     const [youthFollowUpQuestions, setYouthFollowUpQuestions] = useState("");
     const [youthPromptQuestions, setYouthPromptQuestions] = useState("");
     //
@@ -74,6 +76,7 @@ export default function WellnessForm() {
     const [agentQuestions, setAgentQuestions] = useState("");
 
     const [openingPromptQuestions, setOpeningPromptQuestions] = useState("");
+
     const [keyAnswers, setKeyAnswers] = useState("");
 
 
@@ -202,7 +205,7 @@ export default function WellnessForm() {
     });
 
     const [youthInputArr, setYouthInputArr] = useState([]);
-    //
+    // 
     const [agentData, setAgentData] = useState({
         agentOQ: "",
     });
@@ -363,6 +366,7 @@ export default function WellnessForm() {
             newKeyAnswer2: inputArr[1],
             newKeyAnswer3: inputArr[2]
         },
+        promptQuestions: redPromptQuestions,
         youthOQ1: youthQuestion1,
         youthOqReflectionData: youthInputArr[0],
         youthOQ2: youthQuestion2,
@@ -743,6 +747,7 @@ export default function WellnessForm() {
                         setYouthPromptQuestions={setYouthPromptQuestions}
                     />
                 </div>
+
             </div>
         </div>
     );

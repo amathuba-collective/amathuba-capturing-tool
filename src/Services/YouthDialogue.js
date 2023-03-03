@@ -16,7 +16,7 @@ export const saveYouthDialogue = (data) => {
 export const getRecentYouthDialogueData = () => {
   return new Promise((resolve) => {
     axios
-      .get("https://api.amathuba-collective.live/chatYouth")
+      .get("https://api.amathuba-collective.live/chatYouth",)
       .then((response) => {
         resolve(response);
       })
