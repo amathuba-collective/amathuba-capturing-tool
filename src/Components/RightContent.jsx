@@ -215,8 +215,6 @@ export default function RightContent(props) {
 	//
 
 	// toggle youthOpening Questions
-
-	//
 	const toggleDropDown5 = (e) => {
 		// props.setYouthQuestion1(true);
 		props.setYouthQuestion1(openingQuestions[4]);
@@ -279,7 +277,7 @@ export default function RightContent(props) {
 	}
 
 	//red prompt questions
-	function toggleRedPromptQuestion1() {
+	function toggleRedPromptQuestion1() { 
 		props.setRedPromptQuestions(redFurtherQuestions[6]);
 		// document.getElementById("youthPromptInput").style.display = "block"
 	}
