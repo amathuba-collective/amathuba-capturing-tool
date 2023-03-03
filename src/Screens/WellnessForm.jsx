@@ -317,34 +317,20 @@ export default function WellnessForm() {
             keyAnswerSad14: keyAnswerCaptureSad14,
             //
 
-            // For Follow Up Key Words
-            keyAnswerFollowUp1: keyAnswerCaptureFollowUp1,
-            keyAnswerFollowUp2: keyAnswerCaptureFollowUp2,
-            keyAnswerFollowUp3: keyAnswerCaptureFollowUp3,
-            keyAnswerFollowUp4: keyAnswerCaptureFollowUp4,
-            keyAnswerFollowUp5: keyAnswerCaptureFollowUp5,
-            keyAnswerFollowUp6: keyAnswerCaptureFollowUp6,
-            keyAnswerFollowUp7: keyAnswerCaptureFollowUp7,
-            keyAnswerFollowUp8: keyAnswerCaptureFollowUp8,
-            keyAnswerFollowUp9: keyAnswerCaptureFollowUp9,
-            keyAnswerFollowUp10: keyAnswerCaptureFollowUp10,
-            keyAnswerFollowUp11: keyAnswerCaptureFollowUp11,
-            keyAnswerFollowUp12: keyAnswerCaptureFollowUp12,
-            keyAnswerFollowUp13: keyAnswerCaptureFollowUp13,
-            keyAnswerFollowUp14: keyAnswerCaptureFollowUp14,
-            // 
-
             newKeyAnswer1: inputArr[0],
             newKeyAnswer2: inputArr[1],
-            newKeyAnswer3: inputArr[2]
+            newKeyAnswer3: inputArr[2],
+
+           
         },
+        
         emotionOfCall: emotion,
         ROQpossibleResponse: redPossibleResponses,
         BOQpossibleResponse: bluePossibleResponses,
         followUpQuestions: {
             roqPromptQuestion: redFollowUpQuestions,
             boqPromptQuestion: blueFollowUpQuestions,
-
+            
             keyAnswer1: keyAnswerCapture1,
             keyAnswer2: keyAnswerCapture2,
             keyAnswer3: keyAnswerCapture3,
@@ -368,7 +354,7 @@ export default function WellnessForm() {
         youthOQ2: youthQuestion2,
         youthOqReflectionData2: youthInputArr[0],
         youthResponses: youthPossibleResponses,
-        youthFollow_UpQuestions: youthFollowUpQuestions,
+        youthFollow_UpQuestions: redPromptQuestions,
         youthFqReflectionData: youthInputArr[1],
         youthPrompt_Questions: youthPromptQuestions,
         youthPqReflectionData: youthInputArr[2],

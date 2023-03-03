@@ -560,6 +560,7 @@ export default function LeftContent(props) {
                                     </div>
                                 ) : null}
                             </div>
+                            
                             <div className='fw-semilight fs-3 mt-4'>
                                 {props.redFollowUpQuestions ? (
                                     <div>

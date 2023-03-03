@@ -453,28 +453,19 @@ export default function YouthProfile(props) {
                                                     <div id="sessionHistoryOpeningQuestion">
                                                         <div className='d-flex justify-content-between mt-4'>
                                                             <p className='card-text'>Opening Question :</p>
-                                                            <p className='card-text fw-bold'>
+                                                            <p className='card-text fw-light'>
                                                                 {selectedYouth.convo_data.openingQuestion1Red}
                                                             </p>
                                                         </div>
-                                                        <div className="d-flex justify-content-between">
-                                                            <p className='card-text fw-normal'>
-                                                                Answer:
-                                                            </p>
-                                                            <p className='card-text fw-bold'>
-                                                                <div>
-                                                                    <p className='fw-semilight fs-3 '>
-                                                                        {props.emotion ? (
-                                                                            <div>
-                                                                                <h4 className='fw-bold fs-5'>Emotion of Call</h4>
-                                                                                <p className='fs-5 fw-normal'>{props.emotion}</p>
-                                                                                {/* summary column divider */}
-                                                                                {/* <hr className='w-100 ng-secondary border border-1 border-secondary ' /> */}
-                                                                            </div>
-                                                                        ) : null}
-                                                                    </p>
-                                                                </div>
-                                                            </p>
+                                                        <div className="">
+                                                            <div className="d-flex justify-content-between">
+                                                                <p className=''>
+                                                                    Answer:
+                                                                </p>
+                                                                <p className='fw-bold'>
+                                                                    {selectedYouth.emotionOfCall}
+                                                                </p>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div className='d-flex justify-content-between'>
@@ -486,7 +477,7 @@ export default function YouthProfile(props) {
                                                     <div id="sessionHistoryFollowUpQuestion">
                                                         <div className='d-flex justify-content-between'>
                                                             <p className='card-text'>Follow-Up Question :</p>
-                                                            <p className='card-text fw-bold'>
+                                                            <p className='card-text fw-light'>
                                                                 {selectedYouth.followUpQuestions.roqPromptQuestion}
                                                             </p>
                                                         </div>
@@ -496,7 +487,7 @@ export default function YouthProfile(props) {
                                                                     Answer:
                                                                 </p>
                                                                 <p className='card-text fw-bold'>
-                                                                    This will be the answer!
+                                                                    {selectedYouth.convo_data.newKeyAnswer1}
                                                                 </p>
                                                             </div>
                                                         </div>
@@ -504,7 +495,7 @@ export default function YouthProfile(props) {
                                                     <div id="sessionHistoryPromptQuestion">
                                                         <div className='d-flex justify-content-between'>
                                                             <p className='card-text'>Prompt Question :</p>
-                                                            <p className='card-text fw-bold'>
+                                                            <p className='card-text fw-light'>
                                                                 {selectedYouth.youthFollow_UpQuestions}
                                                             </p>
                                                         </div>
@@ -514,7 +505,7 @@ export default function YouthProfile(props) {
                                                                     Answer:
                                                                 </p>
                                                                 <p className='card-text fw-bold'>
-                                                                    This will be the answer!
+                                                                    {selectedYouth.convo_data.newKeyAnswer2}
                                                                 </p>
                                                             </div>
                                                         </div>
@@ -533,7 +524,7 @@ export default function YouthProfile(props) {
                                                         <div className='d-flex justify-content-between mt-4'>
                                                             <p className='card-text'>Youth Question :</p>
                                                             <p className='card-text fw-bold'>
-                                                                {selectedYouth.youthOQ2}
+                                                                {selectedYouth.youthOQ1}
                                                             </p>
                                                         </div>
                                                         <div>
@@ -542,7 +533,7 @@ export default function YouthProfile(props) {
                                                                     Answer:
                                                                 </p>
                                                                 <p className='card-text fw-bold'>
-                                                                    This will be the answer!
+                                                                    Here is your answer!
                                                                 </p>
                                                             </div>
                                                         </div>
