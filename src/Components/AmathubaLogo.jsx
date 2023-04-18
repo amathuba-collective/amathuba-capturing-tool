@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../Assets/Original.png";
+import Logo from "../Assets/images/Original.png";
 import "../Styles/AmathubaLogo.css";
 
 export default function AmathubaLogo() {

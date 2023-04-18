@@ -10,11 +10,11 @@ import KeyWordAnswersConfused from "../Data/keyWordAnswersConfused.json";
 import KeyWordAnswersAnxious from "../Data/keyWordAnswersAnxious.json";
 import KeyWordAnswersSad from "../Data/keyWordAnswersSad.json";
 import KeyWordAnswersFollowUp from "../Data/keyWordAnswersFollowUp.json";
-import HappyEmoji from "../Assets/happyEmotion.png";
-import AngryEmoji from "../Assets/angryEmotion.png";
-import ConfusedEmoji from "../Assets/confusedEmotion.png";
-import AnxiousEmoji from "../Assets/anxiousEmotion.png";
-import SadEmoji from "../Assets/sadEmoji.png";
+import HappyEmoji from "../Assets/images/happyEmotion.png";
+import AngryEmoji from "../Assets/images/angryEmotion.png";
+import ConfusedEmoji from "../Assets/images/confusedEmotion.png";
+import AnxiousEmoji from "../Assets/images/anxiousEmotion.png";
+import SadEmoji from "../Assets/images/sadEmoji.png";
 
 export default function CenterContent(props) {
 	const submitContent = props.submitContent;

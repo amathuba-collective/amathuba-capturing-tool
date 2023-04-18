@@ -202,14 +202,14 @@ export default function YouthProfile(props) {
 
 												<div className='col-12 d-flex align-items-center mb-4'>
 													<div className='col-5'>
-														<p className='mt-3 fw-bold'>Gender</p>
+														<p className='mt-3 fw-bold'>Email</p>
 													</div>
 													<div className='col-7 mx-1'>
 														<div className='col-12'>
 															<input
 																type='text'
 																className='form-control p-2 bg-light'
-																placeholder={youth.gender}
+																placeholder={youth.email}
 																disabled
 																readOnly
 															/>
@@ -237,7 +237,7 @@ export default function YouthProfile(props) {
 												{/*  */}
 												<div className='col-12 d-flex align-items-center mb-4'>
 													<div className='col-5'>
-														<p className='mt-3 fw-bold'>City</p>
+														<p className='mt-3 fw-bold'>Host Company</p>
 													</div>
 													<div className='col-7 mx-1'>
 														<div className='col-12'>
@@ -245,7 +245,7 @@ export default function YouthProfile(props) {
 																type='text'
 																className='form-control p-2 bg-light'
 																id='inputAddress'
-																placeholder={youth.city}
+																placeholder={youth.hostedAt}
 																disabled
 																readOnly
 															/>

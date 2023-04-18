@@ -50,4 +50,10 @@ input:checked{
     height: 100vh !important;
 }
 
+.errToaster{
+    position: absolute;
+    top : 2rem;
+    right: 2rem;
+    
+}
 

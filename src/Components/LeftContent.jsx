@@ -27,7 +27,7 @@ export default function LeftContent(props) {
 				<Grid.Container className='d-flex justify-content-center align-items-center'>
 					<Grid className='d-flex flex-column align-items-center'>
 						<Avatar
-							src={youth.imgUrl || require("./../Assets/AgentProfile.png")}
+							src={youth.imgUrl || require("./../Assets/images/AgentProfile.png")}
 							css={{ size: "7rem" }}
 							className='mt-4'
 							bordered
