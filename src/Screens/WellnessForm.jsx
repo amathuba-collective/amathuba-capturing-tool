@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 import { saveYouthDialogue } from "../Services/YouthDialogue";
 import { getYouthById } from "../Services/Youth";
 import { Grid, Avatar, Text, Loading } from "@nextui-org/react";
-import { Icon } from '@iconify/react';
+import { Icon } from "@iconify/react";
 
 export default function WellnessForm() {
 	const [youth, setYouth] = useState({});
@@ -84,12 +84,13 @@ export default function WellnessForm() {
 		setKeyAnswers(true);
 	}, []);
 
+	const [keyAnswersHappy, setKeyAnswersHappy] = useState("");
 	const [keyAnswersAngry, setKeyAnswersAngry] = useState("");
 	const [keyAnswersConfused, setKeyAnswersConfused] = useState("");
 	const [keyAnswersAnxious, setKeyAnswersAnxious] = useState("");
 	const [keyAnswersSad, setKeyAnswersSad] = useState("");
 	const [keyAnswersFollowUp, setKeyAnswersFollowUp] = useState("");
-	// These captures are for the happy emoji
+	// These captures are for the  Emotion Decider
 	const [keyAnswerCapture1, setKeyAnswerCapture1] = useState("");
 	const [keyAnswerCapture2, setKeyAnswerCapture2] = useState("");
 	const [keyAnswerCapture3, setKeyAnswerCapture3] = useState("");
@@ -104,6 +105,22 @@ export default function WellnessForm() {
 	const [keyAnswerCapture12, setKeyAnswerCapture12] = useState("");
 	const [keyAnswerCapture13, setKeyAnswerCapture13] = useState("");
 	const [keyAnswerCapture14, setKeyAnswerCapture14] = useState("");
+	//
+	// These captures are for the happy emoji
+	const [keyAnswerCaptureHappy1, setKeyAnswerCaptureHappy1] = useState("");
+	const [keyAnswerCaptureHappy2, setKeyAnswerCaptureHappy2] = useState("");
+	const [keyAnswerCaptureHappy3, setKeyAnswerCaptureHappy3] = useState("");
+	const [keyAnswerCaptureHappy4, setKeyAnswerCaptureHappy4] = useState("");
+	const [keyAnswerCaptureHappy5, setKeyAnswerCaptureHappy5] = useState("");
+	const [keyAnswerCaptureHappy6, setKeyAnswerCaptureHappy6] = useState("");
+	const [keyAnswerCaptureHappy7, setKeyAnswerCaptureHappy7] = useState("");
+	const [keyAnswerCaptureHappy8, setKeyAnswerCaptureHappy8] = useState("");
+	const [keyAnswerCaptureHappy9, setKeyAnswerCaptureHappy9] = useState("");
+	const [keyAnswerCaptureHappy10, setKeyAnswerCaptureHappy10] = useState("");
+	const [keyAnswerCaptureHappy11, setKeyAnswerCaptureHappy11] = useState("");
+	const [keyAnswerCaptureHappy12, setKeyAnswerCaptureHappy12] = useState("");
+	const [keyAnswerCaptureHappy13, setKeyAnswerCaptureHappy13] = useState("");
+	const [keyAnswerCaptureHappy14, setKeyAnswerCaptureHappy14] = useState("");
 	//
 
 	// These captures are for the angry emoji
@@ -269,7 +286,7 @@ export default function WellnessForm() {
 			openingQuestion2Red: redOpeningQuestion2,
 			openingQuestion1Blue: blueOpeningQuestion1,
 			openingQuestion2Blue: blueOpeningQuestion2,
-			// For Happy Emoji
+			// For Emotion Decider
 			keyAnswer1: keyAnswerCapture1,
 			keyAnswer2: keyAnswerCapture2,
 			keyAnswer3: keyAnswerCapture3,
@@ -284,6 +301,22 @@ export default function WellnessForm() {
 			keyAnswer12: keyAnswerCapture12,
 			keyAnswer13: keyAnswerCapture13,
 			keyAnswer14: keyAnswerCapture14,
+			//
+			// For Happy Emoji
+			keyAnswerHappy1: keyAnswerCaptureHappy1,
+			keyAnswerHappy2: keyAnswerCaptureHappy2,
+			keyAnswerHappy3: keyAnswerCaptureHappy3,
+			keyAnswerHappy4: keyAnswerCaptureHappy4,
+			keyAnswerHappy5: keyAnswerCaptureHappy5,
+			keyAnswerHappy6: keyAnswerCaptureHappy6,
+			keyAnswerHappy7: keyAnswerCaptureHappy7,
+			keyAnswerHappy8: keyAnswerCaptureHappy8,
+			keyAnswerHappy9: keyAnswerCaptureHappy9,
+			keyAnswerHappy10: keyAnswerCaptureHappy10,
+			keyAnswerHappy11: keyAnswerCaptureHappy11,
+			keyAnswerHappy12: keyAnswerCaptureHappy12,
+			keyAnswerHappy13: keyAnswerCaptureHappy13,
+			keyAnswerHappy14: keyAnswerCaptureHappy14,
 			//
 
 			// For Angry Emoji
@@ -437,12 +470,13 @@ export default function WellnessForm() {
 						agentData={agentData}
 						agentDataArr={agentDataArr}
 						keyAnswers={keyAnswers}
+						keyAnswersHappy={keyAnswersHappy}
 						keyAnswersAngry={keyAnswersAngry}
 						keyAnswersConfused={keyAnswersConfused}
 						keyAnswersAnxious={keyAnswersAnxious}
 						keyAnswersSad={keyAnswersSad}
 						keyAnswersFollowUp={keyAnswersFollowUp}
-						// Happy Emoji
+						// Emoji Decider
 						keyAnswerCapture1={keyAnswerCapture1}
 						keyAnswerCapture2={keyAnswerCapture2}
 						keyAnswerCapture3={keyAnswerCapture3}
@@ -457,6 +491,22 @@ export default function WellnessForm() {
 						keyAnswerCapture12={keyAnswerCapture12}
 						keyAnswerCapture13={keyAnswerCapture13}
 						keyAnswerCapture14={keyAnswerCapture14}
+						//
+						// Happy Emoji
+						keyAnswerCaptureHappy1={keyAnswerCaptureHappy1}
+						keyAnswerCaptureHappy2={keyAnswerCaptureHappy2}
+						keyAnswerCaptureHappy3={keyAnswerCaptureHappy3}
+						keyAnswerCaptureHappy4={keyAnswerCaptureHappy4}
+						keyAnswerCaptureHappy5={keyAnswerCaptureHappy5}
+						keyAnswerCaptureHappy6={keyAnswerCaptureHappy6}
+						keyAnswerCaptureHappy7={keyAnswerCaptureHappy7}
+						keyAnswerCaptureHappy8={keyAnswerCaptureHappy8}
+						keyAnswerCaptureHappy9={keyAnswerCaptureHappy9}
+						keyAnswerCaptureHappy10={keyAnswerCaptureHappy10}
+						keyAnswerCaptureHappy11={keyAnswerCaptureHappy11}
+						keyAnswerCaptureHappy12={keyAnswerCaptureHappy12}
+						keyAnswerCaptureHappy13={keyAnswerCaptureHappy13}
+						keyAnswerCaptureHappy14={keyAnswerCaptureHappy14}
 						//
 
 						// Angry Emoji
@@ -592,12 +642,14 @@ export default function WellnessForm() {
 						setAgentDataArr={setAgentDataArr}
 						agentDataArr={agentDataArr}
 						keyAnswers={keyAnswers}
+						keyAnswersHappy={keyAnswersHappy}
 						keyAnswersAngry={keyAnswersAngry}
 						keyAnswersConfused={keyAnswersConfused}
 						keyAnswersAnxious={keyAnswersAnxious}
 						keyAnswersSad={keyAnswersSad}
 						keyAnswersFollowUp={keyAnswersFollowUp}
 						setKeyAnswers={setKeyAnswers}
+						setKeyAnswersHappy={setKeyAnswersHappy}
 						setKeyAnswersAngry={setKeyAnswersAngry}
 						setKeyAnswersConfused={setKeyAnswersConfused}
 						setKeyAnswersAnxious={setKeyAnswersAnxious}
@@ -605,7 +657,7 @@ export default function WellnessForm() {
 						setKeyAnswersFollowUp={setKeyAnswersFollowUp}
 						emotion={emotion}
 						setEmotion={setEmotion}
-						// Happy Emoji
+						// Emoji Decider
 						setKeyAnswerCapture1={setKeyAnswerCapture1}
 						setKeyAnswerCapture2={setKeyAnswerCapture2}
 						setKeyAnswerCapture3={setKeyAnswerCapture3}
@@ -620,6 +672,22 @@ export default function WellnessForm() {
 						setKeyAnswerCapture12={setKeyAnswerCapture12}
 						setKeyAnswerCapture13={setKeyAnswerCapture13}
 						setKeyAnswerCapture14={setKeyAnswerCapture14}
+						//
+						// Happy Emoji
+						setKeyAnswerCaptureHappy1={setKeyAnswerCaptureHappy1}
+						setKeyAnswerCaptureHappy2={setKeyAnswerCaptureHappy2}
+						setKeyAnswerCaptureHappy3={setKeyAnswerCaptureHappy3}
+						setKeyAnswerCaptureHappy4={setKeyAnswerCaptureHappy4}
+						setKeyAnswerCaptureHappy5={setKeyAnswerCaptureHappy5}
+						setKeyAnswerCaptureHappy6={setKeyAnswerCaptureHappy6}
+						setKeyAnswerCaptureHappy7={setKeyAnswerCaptureHappy7}
+						setKeyAnswerCaptureHappy8={setKeyAnswerCaptureHappy8}
+						setKeyAnswerCaptureHappy9={setKeyAnswerCaptureHappy9}
+						setKeyAnswerCaptureHappy10={setKeyAnswerCaptureHappy10}
+						setKeyAnswerCaptureHappy11={setKeyAnswerCaptureHappy11}
+						setKeyAnswerCaptureHappy12={setKeyAnswerCaptureHappy12}
+						setKeyAnswerCaptureHappy13={setKeyAnswerCaptureHappy13}
+						setKeyAnswerCaptureHappy14={setKeyAnswerCaptureHappy14}
 						//
 						// Angry Emoji
 						setKeyAnswerCaptureAngry1={setKeyAnswerCaptureAngry1}

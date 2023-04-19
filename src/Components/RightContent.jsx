@@ -319,7 +319,7 @@ export default function RightContent(props) {
 	}
 
 	function toggleBluePromptQuestion2() {
-		props.setBluePromptQuestios(blueFurtherQuestions[7]);
+		props.setBluePromptQuestions(blueFurtherQuestions[7]);
 	}
 
 	function toggleBluePromptQuestion3() {
@@ -376,7 +376,7 @@ export default function RightContent(props) {
 					<div className='mt-5'>
 						{RedOpeningQuestions.map((redQuestions) => {
 							return (
-								<div key={redQuestions.id} >
+								<div key={redQuestions.id}>
 									<p
 										onClick={dropDown3}
 										className=' possibleResponsesBtn Selector mt-5 text-center border border-2  border-dark rounded'>
@@ -387,9 +387,7 @@ export default function RightContent(props) {
 										/>
 									</p>
 									{dropDownActive3 ? (
-										<div
-											className='possibleResponseContent d-flex flex-column justify-content-center mt-3'
-											>
+										<div className='possibleResponseContent d-flex flex-column justify-content-center mt-3'>
 											<button
 												className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
 												onClick={toggleRedPossibleResponse}>
@@ -424,9 +422,7 @@ export default function RightContent(props) {
 										/>
 									</p>
 									{dropDownActive4 ? (
-										<div
-											className='followUpQuestionContent d-flex flex-column justify-content-center mt-3'
-											>
+										<div className='followUpQuestionContent d-flex flex-column justify-content-center mt-3'>
 											<button
 												className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
 												onClick={toggleRedFollowUpQuestion1}>
@@ -451,9 +447,7 @@ export default function RightContent(props) {
 										/>
 									</p>
 									{dropDownActive5 ? (
-										<div
-											className='promptQuestionsContent d-flex flex-column justify-content-center mt-3 '
-											>
+										<div className='promptQuestionsContent d-flex flex-column justify-content-center mt-3 '>
 											<button
 												className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
 												onClick={toggleRedPromptQuestion1}>
@@ -489,9 +483,7 @@ export default function RightContent(props) {
 										/>
 									</p>
 									{dropDownActive3 ? (
-										<div
-											className=' possibleResponseContent d-flex flex-column justify-content-center mt-3'
-											>
+										<div className=' possibleResponseContent d-flex flex-column justify-content-center mt-3'>
 											{/* <div>
 											<h2 className='text-center text-dark fs-3 fw-bold'>
 												Possible Responses
@@ -535,7 +527,7 @@ export default function RightContent(props) {
 										<div
 											className='followUpQuestionContent d-flex flex-column justify-content-center mt-3'
 											// id='followUpQuestionContent'
-											>
+										>
 											<button
 												className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
 												onClick={toggleRedFollowUpQuestion1}>
@@ -564,7 +556,7 @@ export default function RightContent(props) {
 										<div
 											className='promptQuestionsContent d-flex flex-column justify-content-center mt-3 '
 											// id='promptQuestionsContent'
-											>
+										>
 											<button
 												className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
 												onClick={toggleRedPromptQuestion1}>
@@ -1046,7 +1038,7 @@ export default function RightContent(props) {
 								<div
 									className='reflectionQuestions d-flex flex-column mb-5'
 									// id='agentRecommendedQuestions'
-									>
+								>
 									<div>
 										<h4 className='fs-4 fw-bold mb-3'>
 											Agent Reflection Questions

@@ -27,7 +27,9 @@ export default function LeftContent(props) {
 				<Grid.Container className='d-flex justify-content-center align-items-center'>
 					<Grid className='d-flex flex-column align-items-center'>
 						<Avatar
-							src={youth.imgUrl || require("./../Assets/images/AgentProfile.png")}
+							src={
+								youth.imgUrl || require("./../Assets/images/AgentProfile.png")
+							}
 							css={{ size: "7rem" }}
 							className='mt-4'
 							bordered
@@ -100,6 +102,42 @@ export default function LeftContent(props) {
 											)}
 											<div>
 												<p className='fw-semilight fs-3 '>
+													{props.keyAnswerCapture1 ? (
+														<div>
+															<h4 className='fw-bold fs-5'>
+																Reason for emotion of call
+															</h4>
+															<p className='fs-5 fw-normal'>
+																{props.keyAnswerCapture1}
+															</p>
+															{/* summary column divider */}
+															{/* <hr className='w-100 ng-secondary border border-1 border-secondary ' /> */}
+														</div>
+													) : props.keyAnswerCapture2 ? (
+														<div>
+															<h4 className='fw-bold fs-5'>
+																Reason for emotion of call
+															</h4>
+															<p className='fs-5 fw-normal'>
+																{props.keyAnswerCapture2}
+															</p>
+															{/* summary column divider */}
+															{/* <hr className='w-100 ng-secondary border border-1 border-secondary ' /> */}
+														</div>
+													) : props.keyAnswerCapture3 ? (
+														<div>
+															<h4 className='fw-bold fs-5'>
+																Reason for emotion of call
+															</h4>
+															<p className='fs-5 fw-normal'>
+																{props.keyAnswerCapture3}
+															</p>
+															{/* summary column divider */}
+															{/* <hr className='w-100 ng-secondary border border-1 border-secondary ' /> */}
+														</div>
+													) : null}
+												</p>
+												<p className='fw-semilight fs-3 '>
 													{props.emotion ? (
 														<div>
 															<h4 className='fw-bold fs-5'>Emotion of Call</h4>
@@ -124,8 +162,8 @@ export default function LeftContent(props) {
 									<div id='readEmotions' className='readEmotions'>
 										<div className=''>
 											<p>
-												{props.keyAnswerCapture1 ? (
-													<p className='fs-5'>{props.keyAnswerCapture1}</p>
+												{props.keyAnswerCaptureHappy1 ? (
+													<p className='fs-5'>{props.keyAnswerCaptureHappy1}</p>
 												) : null}
 											</p>
 											<p>
@@ -156,8 +194,8 @@ export default function LeftContent(props) {
 											{/*  */}
 
 											<p>
-												{props.keyAnswerCapture2 ? (
-													<p className='fs-5'>{props.keyAnswerCapture2}</p>
+												{props.keyAnswerCaptureHappy2 ? (
+													<p className='fs-5'>{props.keyAnswerCaptureHappy2}</p>
 												) : null}
 											</p>
 											<p>
@@ -188,8 +226,8 @@ export default function LeftContent(props) {
 											{/*  */}
 
 											<p>
-												{props.keyAnswerCapture3 ? (
-													<p className='fs-5'>{props.keyAnswerCapture3}</p>
+												{props.keyAnswerCaptureHappy3 ? (
+													<p className='fs-5'>{props.keyAnswerCaptureHappy3}</p>
 												) : null}
 											</p>
 											<p>
@@ -220,8 +258,8 @@ export default function LeftContent(props) {
 
 										<div className=''>
 											<p>
-												{props.keyAnswerCapture4 ? (
-													<p className='fs-5'>{props.keyAnswerCapture4}</p>
+												{props.keyAnswerCaptureHappy4 ? (
+													<p className='fs-5'>{props.keyAnswerCaptureHappy4}</p>
 												) : null}
 											</p>
 											<p>
@@ -252,8 +290,8 @@ export default function LeftContent(props) {
 											{/*  */}
 
 											<p>
-												{props.keyAnswerCapture5 ? (
-													<p className='fs-5'>{props.keyAnswerCapture5}</p>
+												{props.keyAnswerCaptureHappy5 ? (
+													<p className='fs-5'>{props.keyAnswerCaptureHappy5}</p>
 												) : null}
 											</p>
 											<p>
@@ -284,8 +322,8 @@ export default function LeftContent(props) {
 											{/*  */}
 
 											<p>
-												{props.keyAnswerCapture6 ? (
-													<p className='fs-5'>{props.keyAnswerCapture6}</p>
+												{props.keyAnswerCaptureHappy6 ? (
+													<p className='fs-5'>{props.keyAnswerCaptureHappy6}</p>
 												) : null}
 											</p>
 											<p>
@@ -316,8 +354,8 @@ export default function LeftContent(props) {
 
 										<div className=''>
 											<p>
-												{props.keyAnswerCapture7 ? (
-													<p className='fs-5'>{props.keyAnswerCapture7}</p>
+												{props.keyAnswerCaptureHappy7 ? (
+													<p className='fs-5'>{props.keyAnswerCaptureHappy7}</p>
 												) : null}
 											</p>
 											<p>
@@ -348,8 +386,8 @@ export default function LeftContent(props) {
 											{/*  */}
 
 											<p>
-												{props.keyAnswerCapture8 ? (
-													<p className='fs-5'>{props.keyAnswerCapture8}</p>
+												{props.keyAnswerHappy8 ? (
+													<p className='fs-5'>{props.keyAnswerHappy8}</p>
 												) : null}
 											</p>
 											<p>
@@ -380,8 +418,8 @@ export default function LeftContent(props) {
 
 										<div className=''>
 											<p>
-												{props.keyAnswerCapture9 ? (
-													<p className='fs-5'>{props.keyAnswerCapture9}</p>
+												{props.keyAnswerCaptureHappy9 ? (
+													<p className='fs-5'>{props.keyAnswerCaptureHappy9}</p>
 												) : null}
 											</p>
 											<p>
@@ -412,8 +450,8 @@ export default function LeftContent(props) {
 											{/*  */}
 
 											<p>
-												{props.keyAnswerCapture10 ? (
-													<p className='fs-5'>{props.keyAnswerCapture10}</p>
+												{props.keyAnswerHappy10 ? (
+													<p className='fs-5'>{props.keyAnswerHappy10}</p>
 												) : null}
 											</p>
 											<p>
@@ -446,8 +484,10 @@ export default function LeftContent(props) {
 
 										<div className=''>
 											<p>
-												{props.keyAnswerCapture11 ? (
-													<p className='fs-5'>{props.keyAnswerCapture11}</p>
+												{props.keyAnswerCaptureHappy11 ? (
+													<p className='fs-5'>
+														{props.keyAnswerCaptureHappy11}
+													</p>
 												) : null}
 											</p>
 											<p>
@@ -480,8 +520,10 @@ export default function LeftContent(props) {
 											{/*  */}
 
 											<p>
-												{props.keyAnswerCapture12 ? (
-													<p className='fs-5'>{props.keyAnswerCapture12}</p>
+												{props.keyAnswerCaptureHappy12 ? (
+													<p className='fs-5'>
+														{props.keyAnswerCaptureHappy12}
+													</p>
 												) : null}
 											</p>
 											<p>
@@ -514,8 +556,10 @@ export default function LeftContent(props) {
 
 										<div className=''>
 											<p>
-												{props.keyAnswerCapture13 ? (
-													<p className='fs-5'>{props.keyAnswerCapture13}</p>
+												{props.keyAnswerCaptureHappy13 ? (
+													<p className='fs-5'>
+														{props.keyAnswerCaptureHappy13}
+													</p>
 												) : null}
 											</p>
 											<p>
@@ -556,8 +600,10 @@ export default function LeftContent(props) {
 											</p>
 											{/* text input answer above */}
 											<p>
-												{props.keyAnswerCapture14 ? (
-													<p className='fs-5'>{props.keyAnswerCapture14}</p>
+												{props.keyAnswerCaptureHappy14 ? (
+													<p className='fs-5'>
+														{props.keyAnswerCaptureHappy14}
+													</p>
 												) : null}
 											</p>
 											<p>
