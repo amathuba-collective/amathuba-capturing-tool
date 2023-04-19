@@ -331,42 +331,42 @@ export default function RightContent(props) {
 	}
 
 	//Toggle Youth Question Contents
-	function toggleYouthPossibleResponse() {
-		props.setYouthPossibleResponses(youthFurtherQuestions[0]);
-		document.getElementById("possibleResponsesBtn1").style.backgroundColor =
-			"#789E46";
-		document.getElementById("possibleResponsesBtn1").style.animation = false;
-		document.getElementById("followUpQuestionsBtn1").style.display = "block";
-		document.getElementById("youthQuestionInput").style.display = "none";
-		document.getElementById("followUpQuestionInput1").style.display = "block";
-	}
+	// function toggleYouthPossibleResponse() {
+	// 	props.setYouthPossibleResponses(youthFurtherQuestions[0]);
+	// 	document.getElementById("possibleResponsesBtn1").style.backgroundColor =
+	// 		"#789E46";
+	// 	document.getElementById("possibleResponsesBtn1").style.animation = false;
+	// 	document.getElementById("followUpQuestionsBtn1").style.display = "block";
+	// 	document.getElementById("youthQuestionInput").style.display = "none";
+	// 	document.getElementById("followUpQuestionInput1").style.display = "block";
+	// }
 
-	function toggleYouthPossibleResponse2() {
-		props.setYouthPossibleResponses(youthFurtherQuestions[1]);
-	}
+	// function toggleYouthPossibleResponse2() {
+	// 	props.setYouthPossibleResponses(youthFurtherQuestions[1]);
+	// }
 
-	// 2 Possible responses above
-	function toggleYouthFollowUpQuestion() {
-		props.setYouthFollowUpQuestions(youthFurtherQuestions[2]);
-	}
+	// // 2 Possible responses above
+	// function toggleYouthFollowUpQuestion() {
+	// 	props.setYouthFollowUpQuestions(youthFurtherQuestions[2]);
+	// }
 
-	function toggleYouthFollowUpQuestion2() {
-		props.setYouthFollowUpQuestions(youthFurtherQuestions[3]);
-	}
+	// function toggleYouthFollowUpQuestion2() {
+	// 	props.setYouthFollowUpQuestions(youthFurtherQuestions[3]);
+	// }
 
-	// 2 follow up questions above
-	function toggleYouthPromptQuestion() {
-		props.setYouthPromptQuestions(youthFurtherQuestions[4]);
-	}
-	function toggleYouthPromptQuestion2() {
-		props.setYouthPromptQuestions(youthFurtherQuestions[5]);
-	}
-	function toggleYouthPromptQuestion3() {
-		props.setYouthPromptQuestions(youthFurtherQuestions[6]);
-	}
-	function toggleYouthPromptQuestion4() {
-		props.setYouthPromptQuestions(youthFurtherQuestions[7]);
-	}
+	// // 2 follow up questions above
+	// function toggleYouthPromptQuestion() {
+	// 	props.setYouthPromptQuestions(youthFurtherQuestions[4]);
+	// }
+	// function toggleYouthPromptQuestion2() {
+	// 	props.setYouthPromptQuestions(youthFurtherQuestions[5]);
+	// }
+	// function toggleYouthPromptQuestion3() {
+	// 	props.setYouthPromptQuestions(youthFurtherQuestions[6]);
+	// }
+	// function toggleYouthPromptQuestion4() {
+	// 	props.setYouthPromptQuestions(youthFurtherQuestions[7]);
+	// }
 
 	// 4 follow up questions above
 	const renderResult = () => {
@@ -1091,9 +1091,8 @@ export default function RightContent(props) {
 				<hr />
 				<div className='openingQuestions' value={props.openingQuestion}>
 					<p
-						id='openingQuestionsBtn'
 						onClick={myFunction}
-						className='Selector mt-5 text-center border border-2 p-1 border-dark rounded'>
+						className=' openingQuestionsBtn Selector mt-5 text-center border border-2 p-1 border-dark rounded'>
 						Select Opening Question
 						<Icon
 							icon='icon-park-outline:drop-down-list'

@@ -121,7 +121,7 @@
     justify-content: center;
     align-items: center;
     background-color: #fde23000;
-    animation: flash 2s ease-in-out infinite;
+    animation: flash 1s ease-in infinite;
   }
   
   @keyframes flash {
@@ -130,7 +130,8 @@
     }
   
     To {
-      background-color: #FDE030;
+      background-color: #2B0076;
+      color: #fff;
     }
   }
   
@@ -167,7 +168,7 @@
     align-items: center;
     position: relative;
     bottom: 70px;
-    animation: flash2 3s ease-in-out infinite;
+    animation: flash2 1s ease-in infinite;
   }
   
   @keyframes flash2 {
@@ -176,7 +177,8 @@
     }
   
     To {
-      background-color: #FDE030;
+      background-color: #2B0076;
+      color: #fff;
     }
   }
   
@@ -193,7 +195,7 @@
     position: relative;
     top: -115px;
     /* display: none; */
-    animation: flash3 2s ease-in-out infinite;
+    animation: flash3 1s ease-in infinite;
   }
   
   @keyframes flash3 {
@@ -202,7 +204,8 @@
     }
   
     To {
-      background-color: #FDE030;
+      background-color: #2B0076;
+      color: #fff;
     }
   }
   
@@ -219,7 +222,7 @@
     position: relative;
     top: -160px;
     /* display: none; */
-    animation: flash4 2s ease-in-out infinite;
+    animation: flash4 1s ease-in infinite;
   }
   
   @keyframes flash4 {
@@ -228,7 +231,8 @@
     }
   
     To {
-      background-color: #FDE030;
+      background-color: #2B0076;
+      color: #fff;
     }
   }
   
