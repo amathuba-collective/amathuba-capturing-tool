@@ -34,7 +34,7 @@ export default function LeftContent(props) {
 						/>
 						<Text className='mt-2 mb-1 fw-bold fs-3'>{youth.firstName}</Text>
 						<Text className='mb-2 fw-semibold fs-4'>{youth.hostedAt}</Text>
-						<Text className='fw-bold fs-5' color='primary' size='$md'>
+						<Text className='youthEmail fw-bold' color='primary'>
 							{youth.email}
 						</Text>
 					</Grid>

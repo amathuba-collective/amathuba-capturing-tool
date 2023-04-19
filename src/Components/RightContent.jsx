@@ -212,57 +212,60 @@ export default function RightContent(props) {
 	//
 
 	// toggle youthOpening Questions
-	const toggleDropDown5 = (e) => {
-		// props.setYouthQuestion1(true);
-		props.setYouthQuestion1(openingQuestions[4]);
-		document.getElementById("centerContent").style.opacity = "100%";
-		document.getElementById("centerContent").style.display = "block";
-		// props.setYouthOpeningQuestions(e.target.value);
-		setDropDownActive2(false);
-	};
+	// const toggleDropDown5 = (e) => {
+	// 	// props.setYouthQuestion1(true);
+	// 	props.setYouthQuestion1(openingQuestions[4]);
+	// 	document.getElementById("centerContent").style.opacity = "100%";
+	// 	document.getElementById("centerContent").style.display = "block";
+	// 	// props.setYouthOpeningQuestions(e.target.value);
+	// 	setDropDownActive2(false);
+	// };
 
-	function toggleDropDown6(e) {
-		e.preventDefault();
-		props.setYouthQuestion1(false);
-		props.setYouthQuestion2(openingQuestions[5]);
-		document.getElementById("centerContent").style.opacity = "100%";
-		document.getElementById("centerContent").style.display = "block";
-		// props.setYouthOpeningQuestions(e.target.value);
-		setDropDownActive2(false);
-	}
+	// function toggleDropDown6(e) {
+	// 	e.preventDefault();
+	// 	props.setYouthQuestion1(false);
+	// 	props.setYouthQuestion2(openingQuestions[5]);
+	// 	document.getElementById("centerContent").style.opacity = "100%";
+	// 	document.getElementById("centerContent").style.display = "block";
+	// 	// props.setYouthOpeningQuestions(e.target.value);
+	// 	setDropDownActive2(false);
+	// }
 
 	///toggle red dropdown content
 	function toggleRedPossibleResponse() {
 		props.setRedPossibleResponses(redFurtherQuestions[0]);
-		document.getElementById("followUpQuestionsBtn").style.display = "block";
-		// document.getElementById("emojis").style.display = "none"
-		document.getElementById("youthReflection").style.display = "block";
-		document.getElementById("openingQuestionsBtn").style.animation = false;
-		document.getElementById("openingQuestionsBtn").style.backgroundColor =
-			"#789E46";
-		document.getElementById("possibleResponsesBtn").style.backgroundColor =
-			"#789E46";
-		document.getElementById("possibleResponsesBtn").style.animation = false;
+		// document.getElementById("followUpQuestionsBtn").style.display = "block";
+		// // document.getElementById("emojis").style.display = "none"
+		// document.getElementById("youthReflection").style.display = "block";
+		// document.getElementById("openingQuestionsBtn").style.animation = false;
+		// document.getElementById("openingQuestionsBtn").style.backgroundColor =
+		// 	"#789E46";
+		// document.getElementById("possibleResponsesBtn").style.backgroundColor =
+		// 	"#789E46";
+		// document.getElementById("possibleResponsesBtn").style.animation = false;
 		dropDown3(false);
 	}
 
 	function toggleRedPossibleResponse2() {
 		props.setRedPossibleResponses(redFurtherQuestions[1]);
-		document.getElementById("followUpQuestionsBtn").style.display = "block";
-		document.getElementById("emojis").style.display = "none";
-		document.getElementById("youthReflection").style.display = "block";
+		// document.getElementById("followUpQuestionsBtn").style.display = "block";
+		// document.getElementById("emojis").style.display = "none";
+		// document.getElementById("youthReflection").style.display = "block";
+		dropDown3(false);
 	}
 	function toggleRedPossibleResponse3() {
 		props.setRedPossibleResponses(redFurtherQuestions[2]);
-		document.getElementById("followUpQuestionsBtn").style.display = "block";
-		document.getElementById("emojis").style.display = "none";
-		document.getElementById("youthReflection").style.display = "block";
+		// document.getElementById("followUpQuestionsBtn").style.display = "block";
+		// document.getElementById("emojis").style.display = "none";
+		// document.getElementById("youthReflection").style.display = "block";
+		dropDown3(false);
 	}
 	function toggleRedPossibleResponse4() {
 		props.setRedPossibleResponses(redFurtherQuestions[3]);
 		document.getElementById("followUpQuestionsBtn").style.display = "block";
 		document.getElementById("emojis").style.display = "none";
 		document.getElementById("youthReflection").style.display = "block";
+		dropDown3(false);
 	}
 
 	//red followup questions
@@ -370,14 +373,13 @@ export default function RightContent(props) {
 		let result;
 		props.redOpeningQuestion1
 			? (result = (
-					<div className='mt-4'>
+					<div className='mt-5'>
 						{RedOpeningQuestions.map((redQuestions) => {
 							return (
-								<div key={redQuestions.id}>
+								<div key={redQuestions.id} >
 									<p
-										id='possibleResponsesBtn'
 										onClick={dropDown3}
-										className='Selector mt-5 text-center border border-2 p-1 border-dark rounded'>
+										className=' possibleResponsesBtn Selector mt-5 text-center border border-2  border-dark rounded'>
 										Possible Responses
 										<Icon
 											icon='icon-park-outline:drop-down-list'
@@ -386,8 +388,8 @@ export default function RightContent(props) {
 									</p>
 									{dropDownActive3 ? (
 										<div
-											className='d-flex flex-column justify-content-center mt-3'
-											id='possibleResponseContent'>
+											className='possibleResponseContent d-flex flex-column justify-content-center mt-3'
+											>
 											<button
 												className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
 												onClick={toggleRedPossibleResponse}>
@@ -413,9 +415,8 @@ export default function RightContent(props) {
 									) : null}
 
 									<p
-										id='followUpQuestionsBtn'
 										onClick={dropDown4}
-										className='Selector mt-5 text-center border border-2 p-1 border-dark rounded'>
+										className='followUpQuestionsBtn Selector mt-5 text-center border border-2 p-1 border-dark rounded'>
 										Follow-Up Questions
 										<Icon
 											icon='icon-park-outline:drop-down-list'
@@ -424,13 +425,8 @@ export default function RightContent(props) {
 									</p>
 									{dropDownActive4 ? (
 										<div
-											className='d-flex flex-column justify-content-center mt-3'
-											id='followUpQuestionContent'>
-											{/* <div>
-										<h2 className='text-center text-dark fs-3 fw-bold'>
-											Follow-up Questions
-										</h2>
-									</div> */}
+											className='followUpQuestionContent d-flex flex-column justify-content-center mt-3'
+											>
 											<button
 												className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
 												onClick={toggleRedFollowUpQuestion1}>
@@ -446,9 +442,8 @@ export default function RightContent(props) {
 									) : null}
 
 									<p
-										id='promptQuestionsBtn'
 										onClick={dropDown5}
-										className='Selector mt-5 text-center border border-2 p-1 border-dark rounded'>
+										className='promptQuestionsBtn Selector mt-5 text-center border border-2 p-1 border-dark rounded'>
 										Prompt Questions
 										<Icon
 											icon='icon-park-outline:drop-down-list'
@@ -457,13 +452,8 @@ export default function RightContent(props) {
 									</p>
 									{dropDownActive5 ? (
 										<div
-											className='d-flex flex-column justify-content-center mt-3 mb-4'
-											id='promptQuestionsContent'>
-											{/* <div>
-										<h2 className='text-center text-dark fs-3 fw-bold'>
-											Prompt Questions
-										</h2>
-									</div> */}
+											className='promptQuestionsContent d-flex flex-column justify-content-center mt-3 '
+											>
 											<button
 												className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
 												onClick={toggleRedPromptQuestion1}>
@@ -481,9 +471,6 @@ export default function RightContent(props) {
 								</div>
 							);
 						})}
-						{/* <hr />
-					<h5 className='text-center fs-3'>Opening Questions above</h5>
-					<hr /> */}
 					</div>
 			  ))
 			: props.redOpeningQuestion2
@@ -493,9 +480,8 @@ export default function RightContent(props) {
 							return (
 								<div key={redQuestions.id}>
 									<p
-										id='possibleResponsesBtn'
 										onClick={dropDown3}
-										className='Selector mt-5 text-center border border-2 p-1 border-dark rounded'>
+										className='possibleResponsesBtn Selector mt-5 text-center border border-2 p-1 border-dark rounded'>
 										Possible Responses
 										<Icon
 											icon='icon-park-outline:drop-down-list'
@@ -504,8 +490,8 @@ export default function RightContent(props) {
 									</p>
 									{dropDownActive3 ? (
 										<div
-											className='d-flex flex-column justify-content-center mt-3'
-											id='possibleResponseContent'>
+											className=' possibleResponseContent d-flex flex-column justify-content-center mt-3'
+											>
 											{/* <div>
 											<h2 className='text-center text-dark fs-3 fw-bold'>
 												Possible Responses
@@ -535,9 +521,9 @@ export default function RightContent(props) {
 										</div>
 									) : null}
 									<p
-										id='followUpQuestionsBtn'
+										// id='followUpQuestionsBtn'
 										onClick={dropDown4}
-										className='Selector mt-5 text-center border border-2 p-1 border-dark rounded'>
+										className='followUpQuestionsBtn Selector mt-5 text-center border border-2 p-1 border-dark rounded'>
 										Follow-Up Questions
 										<Icon
 											icon='icon-park-outline:drop-down-list'
@@ -547,13 +533,9 @@ export default function RightContent(props) {
 
 									{dropDownActive4 ? (
 										<div
-											className='d-flex flex-column justify-content-center mt-3'
-											id='followUpQuestionContent'>
-											{/* <div>
-											<h2 className='text-center text-dark fs-3 fw-bold'>
-												Follow-up Questions
-											</h2>
-										</div> */}
+											className='followUpQuestionContent d-flex flex-column justify-content-center mt-3'
+											// id='followUpQuestionContent'
+											>
 											<button
 												className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
 												onClick={toggleRedFollowUpQuestion1}>
@@ -569,9 +551,9 @@ export default function RightContent(props) {
 									) : null}
 
 									<p
-										id='promptQuestionsBtn'
+										// id='promptQuestionsBtn'
 										onClick={dropDown5}
-										className='Selector mt-5 text-center border border-2 p-1 border-dark rounded'>
+										className='promptQuestionsBtn Selector mt-5 text-center border border-2 p-1 border-dark rounded'>
 										Prompt Questions
 										<Icon
 											icon='icon-park-outline:drop-down-list'
@@ -580,13 +562,9 @@ export default function RightContent(props) {
 									</p>
 									{dropDownActive5 ? (
 										<div
-											className='d-flex flex-column justify-content-center mt-3 mb-4'
-											id='promptQuestionsContent'>
-											{/* <div>
-												<h2 className='text-center text-dark fs-3 fw-bold'>
-													Prompt Questions
-												</h2>
-											</div> */}
+											className='promptQuestionsContent d-flex flex-column justify-content-center mt-3 '
+											// id='promptQuestionsContent'
+											>
 											<button
 												className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
 												onClick={toggleRedPromptQuestion1}>
@@ -791,7 +769,7 @@ export default function RightContent(props) {
 														</h2>
 													</div> */}
 										<button
-											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											className='border border-2 border-dark rounded bg-transparent text-dark  fs-5'
 											onClick={toggleRedPossibleResponse}>
 											{redQuestions.possibleResponse1}
 										</button>
@@ -849,9 +827,6 @@ export default function RightContent(props) {
 								</div>
 							);
 						})}
-						<hr />
-						<h5 className='text-center fs-3'>Opening Questions above</h5>
-						<hr />
 					</div>
 			  ))
 			: (result = "");
@@ -859,207 +834,207 @@ export default function RightContent(props) {
 	};
 
 	// youth opening question
-	const renderResult2 = () => {
-		let youthResult;
-		props.youthQuestion1
-			? (youthResult = (
-					<div className='mt-4'>
-						{YouthQuestions.map((youthQuestions) => {
-							return (
-								<div key={youthQuestions.id}>
-									<p
-										id='possibleResponsesBtn1'
-										onClick={dropDown6}
-										className='Selector mt-5 text-center border border-2 p-1 border-dark rounded'>
-										Possible Responses
-										<Icon
-											icon='icon-park-outline:drop-down-list'
-											className='dropDownIcon'
-										/>
-									</p>
-									{dropDownActive6 ? (
-										<div
-											className='d-flex flex-column justify-content-center mt-3'
-											id='possibleResponsesContent1'>
-											<div>
-												{/* <h2 className='text-center text-dark fs-3 fw-bold'>
-											Possible Responses
-										</h2> */}
-											</div>
-											<button
-												className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-												onClick={toggleYouthPossibleResponse}>
-												{youthQuestions.possibleResponses1}
-											</button>
-											<button
-												className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-												onClick={toggleYouthPossibleResponse2}>
-												{youthQuestions.possibleResponses2}
-											</button>
-										</div>
-									) : null}
+	// const renderResult2 = () => {
+	// 	let youthResult;
+	// 	props.youthQuestion1
+	// 		? (youthResult = (
+	// 				<div className='mt-4'>
+	// 					{YouthQuestions.map((youthQuestions) => {
+	// 						return (
+	// 							<div key={youthQuestions.id}>
+	// 								<p
+	// 									id='possibleResponsesBtn1'
+	// 									onClick={dropDown6}
+	// 									className='Selector mt-5 text-center border border-2 p-1 border-dark rounded'>
+	// 									Possible Responses
+	// 									<Icon
+	// 										icon='icon-park-outline:drop-down-list'
+	// 										className='dropDownIcon'
+	// 									/>
+	// 								</p>
+	// 								{dropDownActive6 ? (
+	// 									<div
+	// 										className='d-flex flex-column justify-content-center mt-3'
+	// 										id='possibleResponsesContent1'>
+	// 										<div>
+	// 											{/* <h2 className='text-center text-dark fs-3 fw-bold'>
+	// 										Possible Responses
+	// 									</h2> */}
+	// 										</div>
+	// 										<button
+	// 											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+	// 											onClick={toggleYouthPossibleResponse}>
+	// 											{youthQuestions.possibleResponses1}
+	// 										</button>
+	// 										<button
+	// 											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+	// 											onClick={toggleYouthPossibleResponse2}>
+	// 											{youthQuestions.possibleResponses2}
+	// 										</button>
+	// 									</div>
+	// 								) : null}
 
-									<p
-										id='followUpQuestionsBtn1'
-										onClick={dropDown7}
-										className='Selector mt-5 text-center border border-2 p-1 border-dark rounded'>
-										Follow Up Questions
-										<Icon
-											icon='icon-park-outline:drop-down-list'
-											className='dropDownIcon'
-										/>
-									</p>
-									{dropDownActive7 ? (
-										<div
-											className='d-flex flex-column justify-content-center mt-3'
-											id='followUpQuestionsContent1'>
-											{/* <div>
-										<h2 className='text-center text-dark fs-3 fw-bold'>
-											Follow-up Questions
-										</h2>
-									</div> */}
-											<button
-												className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-												onClick={toggleYouthFollowUpQuestion}>
-												{youthQuestions.followUpQuestion1}
-											</button>
-											<button
-												className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-												onClick={toggleYouthFollowUpQuestion2}>
-												{youthQuestions.followUpQuestion2}
-											</button>
-										</div>
-									) : null}
+	// 								<p
+	// 									id='followUpQuestionsBtn1'
+	// 									onClick={dropDown7}
+	// 									className='Selector mt-5 text-center border border-2 p-1 border-dark rounded'>
+	// 									Follow Up Questions
+	// 									<Icon
+	// 										icon='icon-park-outline:drop-down-list'
+	// 										className='dropDownIcon'
+	// 									/>
+	// 								</p>
+	// 								{dropDownActive7 ? (
+	// 									<div
+	// 										className='d-flex flex-column justify-content-center mt-3'
+	// 										id='followUpQuestionsContent1'>
+	// 										{/* <div>
+	// 									<h2 className='text-center text-dark fs-3 fw-bold'>
+	// 										Follow-up Questions
+	// 									</h2>
+	// 								</div> */}
+	// 										<button
+	// 											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+	// 											onClick={toggleYouthFollowUpQuestion}>
+	// 											{youthQuestions.followUpQuestion1}
+	// 										</button>
+	// 										<button
+	// 											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+	// 											onClick={toggleYouthFollowUpQuestion2}>
+	// 											{youthQuestions.followUpQuestion2}
+	// 										</button>
+	// 									</div>
+	// 								) : null}
 
-									<p
-										id='promptQuestionsBtn1'
-										onClick={dropDown8}
-										className='Selector mt-5 text-center border border-2 p-1 border-dark rounded'>
-										Prompt Questions
-										<Icon
-											icon='icon-park-outline:drop-down-list'
-											className='dropDownIcon'
-										/>
-									</p>
+	// 								<p
+	// 									id='promptQuestionsBtn1'
+	// 									onClick={dropDown8}
+	// 									className='Selector mt-5 text-center border border-2 p-1 border-dark rounded'>
+	// 									Prompt Questions
+	// 									<Icon
+	// 										icon='icon-park-outline:drop-down-list'
+	// 										className='dropDownIcon'
+	// 									/>
+	// 								</p>
 
-									{dropDownActive8 ? (
-										<div
-											className='d-flex flex-column justify-content-center mt-3 mb-4'
-											id='promptQuestionsContent1'>
-											{/* <div>
-										<h2 className='text-center text-dark fs-3 fw-bold'>
-											Prompt Questions
-										</h2>
-									</div> */}
-											<button
-												className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-												onClick={toggleYouthPromptQuestion}>
-												{youthQuestions.promptQuestion1}
-											</button>
-											<button
-												className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-												onClick={toggleYouthPromptQuestion2}>
-												{youthQuestions.promptQuestion2}
-											</button>
-											<button
-												className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-												onClick={toggleYouthPromptQuestion3}>
-												{youthQuestions.promptQuestion3}
-											</button>
-											<button
-												className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-												onClick={toggleYouthPromptQuestion4}>
-												{youthQuestions.promptQuestion4}
-											</button>
-										</div>
-									) : null}
-								</div>
-							);
-						})}
-						{/* <hr />
-					<h5 className='text-center fs-3'>Youth reflection above</h5>
-					<hr /> */}
-					</div>
-			  ))
-			: props.youthQuestion2
-			? (youthResult = (
-					<div className='mt-4'>
-						{YouthQuestions.map((youthQuestions) => {
-							return (
-								<div key={youthQuestions.id}>
-									<div className='d-flex flex-column justify-content-center mt-3'>
-										{/* <div>
-											<h2 className='text-center text-dark fs-3 fw-bold'>
-												Possible Responses
-											</h2>
-										</div> */}
-										<button
-											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-											onClick={toggleYouthPossibleResponse}>
-											{youthQuestions.possibleResponses1}
-										</button>
-										<button
-											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-											onClick={toggleYouthPossibleResponse2}>
-											{youthQuestions.possibleResponses2}
-										</button>
-									</div>
+	// 								{dropDownActive8 ? (
+	// 									<div
+	// 										className='d-flex flex-column justify-content-center mt-3 mb-4'
+	// 										id='promptQuestionsContent1'>
+	// 										{/* <div>
+	// 									<h2 className='text-center text-dark fs-3 fw-bold'>
+	// 										Prompt Questions
+	// 									</h2>
+	// 								</div> */}
+	// 										<button
+	// 											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+	// 											onClick={toggleYouthPromptQuestion}>
+	// 											{youthQuestions.promptQuestion1}
+	// 										</button>
+	// 										<button
+	// 											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+	// 											onClick={toggleYouthPromptQuestion2}>
+	// 											{youthQuestions.promptQuestion2}
+	// 										</button>
+	// 										<button
+	// 											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+	// 											onClick={toggleYouthPromptQuestion3}>
+	// 											{youthQuestions.promptQuestion3}
+	// 										</button>
+	// 										<button
+	// 											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+	// 											onClick={toggleYouthPromptQuestion4}>
+	// 											{youthQuestions.promptQuestion4}
+	// 										</button>
+	// 									</div>
+	// 								) : null}
+	// 							</div>
+	// 						);
+	// 					})}
+	// 					{/* <hr />
+	// 				<h5 className='text-center fs-3'>Youth reflection above</h5>
+	// 				<hr /> */}
+	// 				</div>
+	// 		  ))
+	// 		: props.youthQuestion2
+	// 		? (youthResult = (
+	// 				<div className='mt-4'>
+	// 					{YouthQuestions.map((youthQuestions) => {
+	// 						return (
+	// 							<div key={youthQuestions.id}>
+	// 								<div className='d-flex flex-column justify-content-center mt-3'>
+	// 									{/* <div>
+	// 										<h2 className='text-center text-dark fs-3 fw-bold'>
+	// 											Possible Responses
+	// 										</h2>
+	// 									</div> */}
+	// 									<button
+	// 										className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+	// 										onClick={toggleYouthPossibleResponse}>
+	// 										{youthQuestions.possibleResponses1}
+	// 									</button>
+	// 									<button
+	// 										className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+	// 										onClick={toggleYouthPossibleResponse2}>
+	// 										{youthQuestions.possibleResponses2}
+	// 									</button>
+	// 								</div>
 
-									<div className='d-flex flex-column justify-content-center mt-3'>
-										<div>
-											<h2 className='text-center text-dark fs-3 fw-bold'>
-												Follow-up Questions
-											</h2>
-										</div>
-										<button
-											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-											onClick={toggleYouthFollowUpQuestion}>
-											{youthQuestions.followUpQuestion1}
-										</button>
-										<button
-											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-											onClick={toggleYouthFollowUpQuestion2}>
-											{youthQuestions.followUpQuestion2}
-										</button>
-									</div>
-									<div className='d-flex flex-column justify-content-center mt-3 mb-4'>
-										<div>
-											<h2 className='text-center text-dark fs-3 fw-bold'>
-												Prompt Questions
-											</h2>
-										</div>
-										<button
-											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-											onClick={toggleYouthPromptQuestion}>
-											{youthQuestions.promptQuestion1}
-										</button>
-										<button
-											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-											onClick={toggleYouthPromptQuestion2}>
-											{youthQuestions.promptQuestion2}
-										</button>
-										<button
-											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-											onClick={toggleYouthPromptQuestion3}>
-											{youthQuestions.promptQuestion3}
-										</button>
-										<button
-											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-											onClick={toggleYouthPromptQuestion4}>
-											{youthQuestions.promptQuestion4}
-										</button>
-									</div>
-								</div>
-							);
-						})}
-						<hr />
-						<h5 className='text-center fs-3'>Youth reflection above</h5>
-						<hr />
-					</div>
-			  ))
-			: (youthResult = "");
-		return youthResult;
-	};
+	// 								<div className='d-flex flex-column justify-content-center mt-3'>
+	// 									<div>
+	// 										<h2 className='text-center text-dark fs-3 fw-bold'>
+	// 											Follow-up Questions
+	// 										</h2>
+	// 									</div>
+	// 									<button
+	// 										className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+	// 										onClick={toggleYouthFollowUpQuestion}>
+	// 										{youthQuestions.followUpQuestion1}
+	// 									</button>
+	// 									<button
+	// 										className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+	// 										onClick={toggleYouthFollowUpQuestion2}>
+	// 										{youthQuestions.followUpQuestion2}
+	// 									</button>
+	// 								</div>
+	// 								<div className='d-flex flex-column justify-content-center mt-3 mb-4'>
+	// 									<div>
+	// 										<h2 className='text-center text-dark fs-3 fw-bold'>
+	// 											Prompt Questions
+	// 										</h2>
+	// 									</div>
+	// 									<button
+	// 										className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+	// 										onClick={toggleYouthPromptQuestion}>
+	// 										{youthQuestions.promptQuestion1}
+	// 									</button>
+	// 									<button
+	// 										className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+	// 										onClick={toggleYouthPromptQuestion2}>
+	// 										{youthQuestions.promptQuestion2}
+	// 									</button>
+	// 									<button
+	// 										className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+	// 										onClick={toggleYouthPromptQuestion3}>
+	// 										{youthQuestions.promptQuestion3}
+	// 									</button>
+	// 									<button
+	// 										className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+	// 										onClick={toggleYouthPromptQuestion4}>
+	// 										{youthQuestions.promptQuestion4}
+	// 									</button>
+	// 								</div>
+	// 							</div>
+	// 						);
+	// 					})}
+	// 					<hr />
+	// 					<h5 className='text-center fs-3'>Youth reflection above</h5>
+	// 					<hr />
+	// 				</div>
+	// 		  ))
+	// 		: (youthResult = "");
+	// 	return youthResult;
+	// };
 
 	const renderAgentQuestions = () => {
 		let agentResult;
@@ -1069,8 +1044,9 @@ export default function RightContent(props) {
 						{AgentReflectionStateQuestions.map((agentRSQ) => {
 							return (
 								<div
-									className='d-flex flex-column mb-5'
-									id='agentRecommendedQuestions'>
+									className='reflectionQuestions d-flex flex-column mb-5'
+									// id='agentRecommendedQuestions'
+									>
 									<div>
 										<h4 className='fs-4 fw-bold mb-3'>
 											Agent Reflection Questions
@@ -1109,9 +1085,9 @@ export default function RightContent(props) {
 	};
 
 	return (
-		<div className=''>
+		<div className='container-fluid'>
 			<div className=''>
-				<h5 className='text-center fs-5'>Opening Questions</h5>
+				<h5 className='text-center fs-3 mt-5'>Opening Questions</h5>
 				<hr />
 				<div className='openingQuestions' value={props.openingQuestion}>
 					<p
@@ -1180,7 +1156,7 @@ export default function RightContent(props) {
 				<div>{renderResult()}</div>
 
 				{/*  */}
-				<div>{renderResult2()}</div>
+				{/* <div>{renderResult2()}</div> */}
 				<div>{renderAgentQuestions()}</div>
 				{/* <div><CenterContent dropDown4={dropDown4} /></div> */}
 			</div>

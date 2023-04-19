@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 import { saveYouthDialogue } from "../Services/YouthDialogue";
 import { getYouthById } from "../Services/Youth";
 import { Grid, Avatar, Text, Loading } from "@nextui-org/react";
+import { Icon } from '@iconify/react';
 
 export default function WellnessForm() {
 	const [youth, setYouth] = useState({});
@@ -242,7 +243,7 @@ export default function WellnessForm() {
 	});
 	const [agentDataArr, setAgentDataArr] = useState([]);
 	//
-	const [value, onValueChange] = useState(new Date());
+	const [value, onValueChange] = useState("");
 	// const [dateOfCurrentcall, setDateOfCurrentCall] = useState(new Date())
 	const [dateOfNextcall, setDateOfNextCall] = useState("");
 
@@ -401,9 +402,7 @@ export default function WellnessForm() {
 
 	const submitContent = (e) => {
 		saveYouthDialogue(data)
-			.then(() => {
-				alert("Saved");
-			})
+			.then((res) => res && alert("saved"))
 			.catch(() => {
 				alert("Failed to save dialogue");
 			});

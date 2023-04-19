@@ -151,6 +151,8 @@ export default function CenterContent(props) {
 			// Happy
 			document.getElementById("happWords").style.backgroundColor = "#EFE5FF";
 			document.getElementById("happWords").style.display = "block";
+			document.getElementById("happWords").style.borderRadius = "10px";
+			document.getElementById("happWords").style.padding = "40px";
 			// Angry
 			document.getElementById("angryEmoji").style.backgroundColor = "";
 			document.getElementById("angryWords").style.backgroundColor = "";
@@ -189,6 +191,8 @@ export default function CenterContent(props) {
 			x.style.backgroundColor = "#EFE5FF";
 			document.getElementById("angryWords").style.backgroundColor = "#EFE5FF";
 			document.getElementById("angryWords").style.display = "block";
+			document.getElementById("angryWords").style.borderRadius = "10px";
+			document.getElementById("angryWords").style.padding = "40px";
 
 			// Happy
 			document.getElementById("happyEmoji").style.backgroundColor = "";
@@ -228,6 +232,8 @@ export default function CenterContent(props) {
 			document.getElementById("confusedWords").style.backgroundColor =
 				"#EFE5FF";
 			document.getElementById("confusedWords").style.display = "block";
+			document.getElementById("confusedWords").style.borderRadius = "10px";
+			document.getElementById("confusedWords").style.padding = "40px";
 
 			// Angry
 			document.getElementById("angryEmoji").style.backgroundColor = "";
@@ -267,6 +273,8 @@ export default function CenterContent(props) {
 			x.style.backgroundColor = "#EFE5FF";
 			document.getElementById("anxiousWords").style.backgroundColor = "#EFE5FF";
 			document.getElementById("anxiousWords").style.display = "block";
+			document.getElementById("anxiousWords").style.borderRadius = "10px";
+			document.getElementById("anxiousWords").style.padding = "40px";
 
 			// Angry
 			document.getElementById("angryEmoji").style.backgroundColor = "";
@@ -305,6 +313,8 @@ export default function CenterContent(props) {
 			x.style.backgroundColor = "#EFE5FF";
 			document.getElementById("sadWords").style.backgroundColor = "#EFE5FF";
 			document.getElementById("sadWords").style.display = "block";
+			document.getElementById("sadWords").style.borderRadius = "10px";
+			document.getElementById("sadWords").style.padding = "40px";
 
 			// Angry
 			document.getElementById("angryEmoji").style.backgroundColor = "";
@@ -342,26 +352,26 @@ export default function CenterContent(props) {
 
 	// These functions Reads emotions on left panel and are for the happy Emoji
 	function handleEmotionAnswer1(e) {
-		props.setKeyAnswerCapture1(keyAnswers[0]);
+		// props.setKeyAnswerCapture1(keyAnswers[0]);
 		document.getElementById("readEmoBtn").style.display = "block";
 		document.getElementById("readEmotions").style.display = "block";
 		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 
 	function handleEmotionAnswer2(e) {
-		props.setKeyAnswerCapture2(keyAnswers[1]);
+		// props.setKeyAnswerCapture2(keyAnswers[1]);
 		document.getElementById("readEmoBtn").style.display = "block";
 		document.getElementById("readEmotions").style.display = "block";
 		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswer3(e) {
-		props.setKeyAnswerCapture3(keyAnswers[2]);
+		// props.setKeyAnswerCapture3(keyAnswers[2]);
 		document.getElementById("readEmoBtn").style.display = "block";
 		document.getElementById("readEmotions").style.display = "block";
 		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswer4(e) {
-		props.setKeyAnswerCapture4(keyAnswers[3]);
+		// props.setKeyAnswerCapture4(keyAnswers[3]);
 		document.getElementById("readEmoBtn").style.display = "block";
 		document.getElementById("readEmotions").style.display = "block";
 		document.getElementById("possibleResponsesBtn").style.display = "block";
@@ -777,91 +787,91 @@ export default function CenterContent(props) {
 	//
 
 	// These are for the Follow Up Key Words
-	function handleEmotionAnswerFollowUp1(e) {
-		props.setKeyAnswerCaptureFollowUp1(keyAnswersFollowUp[0]);
-		// document.getElementById("readEmoBtn").style.display = "block"
-		// document.getElementById("readEmotions").style.display = "block"
-		// document.getElementById("possibleResponsesBtn").style.display = "block"
-	}
-	function handleEmotionAnswerFollowUp2(e) {
-		props.setKeyAnswerCaptureFollowUp2(keyAnswersFollowUp[1]);
-		// document.getElementById("readEmoBtn").style.display = "block"
-		// document.getElementById("readEmotions").style.display = "block"
-		// document.getElementById("possibleResponsesBtn").style.display = "block"
-	}
-	function handleEmotionAnswerFollowUp3(e) {
-		props.setKeyAnswerCaptureFollowUp3(keyAnswersFollowUp[2]);
-		// document.getElementById("readEmoBtn").style.display = "block"
-		// document.getElementById("readEmotions").style.display = "block"
-		// document.getElementById("possibleResponsesBtn").style.display = "block"
-	}
-	function handleEmotionAnswerFollowUp4(e) {
-		props.setKeyAnswerCaptureFollowUp4(keyAnswersFollowUp[3]);
-		// document.getElementById("readEmoBtn").style.display = "block"
-		// document.getElementById("readEmotions").style.display = "block"
-		// document.getElementById("possibleResponsesBtn").style.display = "block"
-	}
-	function handleEmotionAnswerFollowUp5(e) {
-		props.setKeyAnswerCaptureFollowUp5(keyAnswersFollowUp[4]);
-		// document.getElementById("readEmoBtn").style.display = "block"
-		// document.getElementById("readEmotions").style.display = "block"
-		// document.getElementById("possibleResponsesBtn").style.display = "block"
-	}
-	function handleEmotionAnswerFollowUp6(e) {
-		props.setKeyAnswerCaptureFollowUp6(keyAnswersFollowUp[5]);
-		// document.getElementById("readEmoBtn").style.display = "block"
-		// document.getElementById("readEmotions").style.display = "block"
-		// document.getElementById("possibleResponsesBtn").style.display = "block"
-	}
-	function handleEmotionAnswerFollowUp7(e) {
-		props.setKeyAnswerCaptureFollowUp7(keyAnswersFollowUp[6]);
-		// document.getElementById("readEmoBtn").style.display = "block"
-		// document.getElementById("readEmotions").style.display = "block"
-		// document.getElementById("possibleResponsesBtn").style.display = "block"
-	}
-	function handleEmotionAnswerFollowUp8(e) {
-		props.setKeyAnswerCaptureFollowUp8(keyAnswersFollowUp[7]);
-		// document.getElementById("readEmoBtn").style.display = "block"
-		// document.getElementById("readEmotions").style.display = "block"
-		// document.getElementById("possibleResponsesBtn").style.display = "block"
-	}
-	function handleEmotionAnswerFollowUp9(e) {
-		props.setKeyAnswerCaptureFollowUp9(keyAnswersFollowUp[8]);
-		// document.getElementById("readEmoBtn").style.display = "block"
-		// document.getElementById("readEmotions").style.display = "block"
-		// document.getElementById("possibleResponsesBtn").style.display = "block"
-	}
-	function handleEmotionAnswerFollowUp10(e) {
-		props.setKeyAnswerCaptureFollowUp10(keyAnswersFollowUp[9]);
-		// document.getElementById("readEmoBtn").style.display = "block"
-		// document.getElementById("readEmotions").style.display = "block"
-		// document.getElementById("possibleResponsesBtn").style.display = "block"
-	}
-	function handleEmotionAnswerFollowUp11(e) {
-		props.setKeyAnswerCaptureFollowUp11(keyAnswersFollowUp[10]);
-		// document.getElementById("readEmoBtn").style.display = "block"
-		// document.getElementById("readEmotions").style.display = "block"
-		// document.getElementById("possibleResponsesBtn").style.display = "block"
-	}
-	function handleEmotionAnswerFollowUp12(e) {
-		props.setKeyAnswerCaptureFollowUp12(keyAnswersFollowUp[11]);
-		// document.getElementById("readEmoBtn").style.display = "block"
-		// document.getElementById("readEmotions").style.display = "block"
-		// document.getElementById("possibleResponsesBtn").style.display = "block"
-	}
-	function handleEmotionAnswerFollowUp13(e) {
-		props.setKeyAnswerCaptureFollowUp13(keyAnswersFollowUp[12]);
-		// document.getElementById("readEmoBtn").style.display = "block"
-		// document.getElementById("readEmotions").style.display = "block"
-		// document.getElementById("possibleResponsesBtn").style.display = "block"
-	}
-	function handleEmotionAnswerFollowUp14(e) {
-		props.setKeyAnswerCaptureFollowUp14(keyAnswersFollowUp[13]);
-		// document.getElementById("readEmoBtn").style.display = "block"
-		// document.getElementById("readEmotions").style.display = "block"
-		// document.getElementById("possibleResponsesBtn").style.display = "block"
-	}
-	//
+	// function handleEmotionAnswerFollowUp1(e) {
+	// 	props.setKeyAnswerCaptureFollowUp1(keyAnswersFollowUp[0]);
+	// 	// document.getElementById("readEmoBtn").style.display = "block"
+	// 	// document.getElementById("readEmotions").style.display = "block"
+	// 	// document.getElementById("possibleResponsesBtn").style.display = "block"
+	// }
+	// function handleEmotionAnswerFollowUp2(e) {
+	// 	props.setKeyAnswerCaptureFollowUp2(keyAnswersFollowUp[1]);
+	// 	// document.getElementById("readEmoBtn").style.display = "block"
+	// 	// document.getElementById("readEmotions").style.display = "block"
+	// 	// document.getElementById("possibleResponsesBtn").style.display = "block"
+	// }
+	// function handleEmotionAnswerFollowUp3(e) {
+	// 	props.setKeyAnswerCaptureFollowUp3(keyAnswersFollowUp[2]);
+	// 	// document.getElementById("readEmoBtn").style.display = "block"
+	// 	// document.getElementById("readEmotions").style.display = "block"
+	// 	// document.getElementById("possibleResponsesBtn").style.display = "block"
+	// }
+	// function handleEmotionAnswerFollowUp4(e) {
+	// 	props.setKeyAnswerCaptureFollowUp4(keyAnswersFollowUp[3]);
+	// 	// document.getElementById("readEmoBtn").style.display = "block"
+	// 	// document.getElementById("readEmotions").style.display = "block"
+	// 	// document.getElementById("possibleResponsesBtn").style.display = "block"
+	// }
+	// function handleEmotionAnswerFollowUp5(e) {
+	// 	props.setKeyAnswerCaptureFollowUp5(keyAnswersFollowUp[4]);
+	// 	// document.getElementById("readEmoBtn").style.display = "block"
+	// 	// document.getElementById("readEmotions").style.display = "block"
+	// 	// document.getElementById("possibleResponsesBtn").style.display = "block"
+	// }
+	// function handleEmotionAnswerFollowUp6(e) {
+	// 	props.setKeyAnswerCaptureFollowUp6(keyAnswersFollowUp[5]);
+	// 	// document.getElementById("readEmoBtn").style.display = "block"
+	// 	// document.getElementById("readEmotions").style.display = "block"
+	// 	// document.getElementById("possibleResponsesBtn").style.display = "block"
+	// }
+	// function handleEmotionAnswerFollowUp7(e) {
+	// 	props.setKeyAnswerCaptureFollowUp7(keyAnswersFollowUp[6]);
+	// 	// document.getElementById("readEmoBtn").style.display = "block"
+	// 	// document.getElementById("readEmotions").style.display = "block"
+	// 	// document.getElementById("possibleResponsesBtn").style.display = "block"
+	// }
+	// function handleEmotionAnswerFollowUp8(e) {
+	// 	props.setKeyAnswerCaptureFollowUp8(keyAnswersFollowUp[7]);
+	// 	// document.getElementById("readEmoBtn").style.display = "block"
+	// 	// document.getElementById("readEmotions").style.display = "block"
+	// 	// document.getElementById("possibleResponsesBtn").style.display = "block"
+	// }
+	// function handleEmotionAnswerFollowUp9(e) {
+	// 	props.setKeyAnswerCaptureFollowUp9(keyAnswersFollowUp[8]);
+	// 	// document.getElementById("readEmoBtn").style.display = "block"
+	// 	// document.getElementById("readEmotions").style.display = "block"
+	// 	// document.getElementById("possibleResponsesBtn").style.display = "block"
+	// }
+	// function handleEmotionAnswerFollowUp10(e) {
+	// 	props.setKeyAnswerCaptureFollowUp10(keyAnswersFollowUp[9]);
+	// 	// document.getElementById("readEmoBtn").style.display = "block"
+	// 	// document.getElementById("readEmotions").style.display = "block"
+	// 	// document.getElementById("possibleResponsesBtn").style.display = "block"
+	// }
+	// function handleEmotionAnswerFollowUp11(e) {
+	// 	props.setKeyAnswerCaptureFollowUp11(keyAnswersFollowUp[10]);
+	// 	// document.getElementById("readEmoBtn").style.display = "block"
+	// 	// document.getElementById("readEmotions").style.display = "block"
+	// 	// document.getElementById("possibleResponsesBtn").style.display = "block"
+	// }
+	// function handleEmotionAnswerFollowUp12(e) {
+	// 	props.setKeyAnswerCaptureFollowUp12(keyAnswersFollowUp[11]);
+	// 	// document.getElementById("readEmoBtn").style.display = "block"
+	// 	// document.getElementById("readEmotions").style.display = "block"
+	// 	// document.getElementById("possibleResponsesBtn").style.display = "block"
+	// }
+	// function handleEmotionAnswerFollowUp13(e) {
+	// 	props.setKeyAnswerCaptureFollowUp13(keyAnswersFollowUp[12]);
+	// 	// document.getElementById("readEmoBtn").style.display = "block"
+	// 	// document.getElementById("readEmotions").style.display = "block"
+	// 	// document.getElementById("possibleResponsesBtn").style.display = "block"
+	// }
+	// function handleEmotionAnswerFollowUp14(e) {
+	// 	props.setKeyAnswerCaptureFollowUp14(keyAnswersFollowUp[13]);
+	// 	// document.getElementById("readEmoBtn").style.display = "block"
+	// 	// document.getElementById("readEmotions").style.display = "block"
+	// 	// document.getElementById("possibleResponsesBtn").style.display = "block"
+	// }
+	// //
 
 	// code for text input for alternative keyword answer
 
@@ -879,131 +889,6 @@ export default function CenterContent(props) {
 		props.setAnswerTextInput({ keyAnswer: "" });
 	}
 
-	// function getYouthQuestions(e) {
-	// 	props.setYouthQuestions((youthQuestions) => !youthQuestions);
-	// }
-	// function getAgentQuestions(e) {
-	// 	props.setAgentQuestions((agentQuestions) => !agentQuestions);
-	// }
-
-	// function getYouthReflection(e) {
-	// 	props.setYouthTextInput({
-	// 		...props.youthTextInput,
-	// 		[e.target.name]: e.target.value,
-	// 	});
-	// }
-
-	// let { youthOQ, youthFQ, youthFQQ, youthPQ } = props.youthTextInput;
-	// function addYouthReflection(e) {
-	// 	props.setYouthInputArr([
-	// 		...props.youthInputArr,
-	// 		{ youthOQ, youthFQ, youthFQQ, youthPQ },
-	// 	]);
-	// 	// console.log(props.youthInputArr);
-	// 	props.setYouthTextInput({
-	// 		youthOQ: "",
-	// 		youthFQ: "",
-	// 		youthFQQ: "",
-	// 		youthPQ: "",
-	// 	});
-	// 	document.getElementById("followUpQuestionsBtn").style.backgroundColor =
-	// 		"#789E46";
-	// 	document.getElementById("followUpQuestionsBtn").style.animation = false;
-	// 	document.getElementById("promptQuestionsBtn").style.display = "block";
-	// 	document.getElementById("followUpQuestionInput").style.display = "none";
-	// 	document.getElementById("youthPromptInput").style.display = "block";
-	// }
-
-	// function addYouthReflection1(e) {
-	// 	props.setYouthInputArr([
-	// 		...props.youthInputArr,
-	// 		{ youthOQ, youthFQ, youthFQQ, youthPQ },
-	// 	]);
-	// 	// console.log(props.youthInputArr);
-	// 	props.setYouthTextInput({
-	// 		youthOQ: "",
-	// 		youthFQ: "",
-	// 		youthFQQ: "",
-	// 		youthPQ: "",
-	// 	});
-	// 	// document.getElementById("followUpQuestionsBtn").style.backgroundColor = "#789E46"
-	// 	// document.getElementById("promptQuestionsBtn").style.display = "block"
-	// 	document.getElementById("promptQuestionsBtn").style.backgroundColor =
-	// 		"#789E46";
-	// 	document.getElementById("promptQuestionsBtn").style.animation = false;
-	// 	// document.getElementById("followUpQuestionInput").style.display = "none"
-	// 	document.getElementById("youthPromptInput").style.display = "none";
-	// 	document.getElementById("youthQuestionsBtn").style.display = "block";
-	// 	document.getElementById("youthQuestionInput").style.display = "block";
-	// 	document.getElementById("youthReflectionHead").style.display = "block";
-	// }
-
-	// function addYouthReflection2(e) {
-	// 	props.setYouthInputArr([
-	// 		...props.youthInputArr,
-	// 		{ youthOQ, youthFQ, youthFQQ, youthPQ },
-	// 	]);
-	// 	// console.log(props.youthInputArr);
-	// 	props.setYouthTextInput({
-	// 		youthOQ: "",
-	// 		youthFQ: "",
-	// 		youthFQQ: "",
-	// 		youthPQ: "",
-	// 	});
-	// 	document.getElementById("possibleResponsesBtn1").style.display = "block";
-	// 	// document.getElementById("promptQuestionsBtn").style.display = "block"
-	// 	// document.getElementById("promptQuestionsBtn").style.backgroundColor = "#789E46"
-	// 	// document.getElementById("promptQuestionsBtn").style.animation = false
-	// 	// document.getElementById("followUpQuestionInput").style.display = "none"
-	// 	// document.getElementById("youthPromptInput").style.display = "none"
-	// 	document.getElementById("youthQuestionsBtn").style.backgroundColor =
-	// 		"#789E46";
-	// 	document.getElementById("youthQuestionsBtn").style.animation = false;
-	// 	// document.getElementById("youthQuestionInput").style.display = "block"
-	// }
-
-	// function addYouthReflection4(e) {
-	// 	props.setYouthInputArr([
-	// 		...props.youthInputArr,
-	// 		{ youthOQ, youthFQ, youthFQQ, youthPQ },
-	// 	]);
-	// 	// console.log(props.youthInputArr);
-	// 	props.setYouthTextInput({
-	// 		youthOQ: "",
-	// 		youthFQ: "",
-	// 		youthFQQ: "",
-	// 		youthPQ: "",
-	// 	});
-	// 	document.getElementById("followUpQuestionsBtn1").style.backgroundColor =
-	// 		"#789E46";
-	// 	document.getElementById("followUpQuestionsBtn1").style.animation = false;
-	// 	document.getElementById("promptQuestionsBtn1").style.display = "block";
-	// 	document.getElementById("followUpQuestionInput1").style.display = "none";
-	// 	document.getElementById("youthPromptInput1").style.display = "block";
-	// }
-
-	// function addYouthReflection5(e) {
-	// 	props.setYouthInputArr([
-	// 		...props.youthInputArr,
-	// 		{ youthOQ, youthFQ, youthFQQ, youthPQ },
-	// 	]);
-	// 	// console.log(props.youthInputArr);
-	// 	props.setYouthTextInput({
-	// 		youthOQ: "",
-	// 		youthFQ: "",
-	// 		youthFQQ: "",
-	// 		youthPQ: "",
-	// 	});
-	// 	// document.getElementById("followUpQuestionsBtn").style.backgroundColor = "#789E46"
-	// 	// document.getElementById("promptQuestionsBtn").style.display = "block"
-	// 	document.getElementById("promptQuestionsBtn1").style.backgroundColor =
-	// 		"#789E46";
-	// 	document.getElementById("promptQuestionsBtn1").style.animation = false;
-	// 	// document.getElementById("followUpQuestionInput").style.display = "none"
-	// 	document.getElementById("youthPromptInput1").style.display = "none";
-	// 	document.getElementById("youthReflection").style.display = "none";
-	// 	document.getElementById("agentReflection").style.display = "block";
-	// }
 
 	function getAgentReflection(e) {
 		props.setAgentData({ ...props.agentData, [e.target.name]: e.target.value });
@@ -1104,7 +989,7 @@ export default function CenterContent(props) {
 			{/* need out this scroll */}
 			<div className='body mt-5' id='scrollable'>
 				{/* These are your happy words */}
-				<div id='happWords' className='emptyDivForEmotoinKeyWords'>
+				<div id='happWords' >
 					{props.keyAnswers ? (
 						<div className=''>
 							<div className='d-flex justify-content-between'>
@@ -1215,7 +1100,7 @@ export default function CenterContent(props) {
 				</div>
 
 				{/* These are your angry words */}
-				<div id='angryWords' className='emptyDivForEmotoinKeyWords'>
+				<div id='angryWords'>
 					{props.keyAnswersAngry ? (
 						<div className=''>
 							<div className='d-flex justify-content-between'>
@@ -1363,7 +1248,7 @@ export default function CenterContent(props) {
 				</div>
 
 				{/* These are your confused words */}
-				<div id='confusedWords' className='emptyDivForEmotoinKeyWords'>
+				<div id='confusedWords' >
 					{props.keyAnswersConfused ? (
 						<div className=''>
 							<div className='d-flex justify-content-between'>
@@ -1549,7 +1434,7 @@ export default function CenterContent(props) {
 				</div>
 
 				{/* These are your anxious words */}
-				<div id='anxiousWords' className='emptyDivForEmotoinKeyWords'>
+				<div id='anxiousWords' >
 					{props.keyAnswersAnxious ? (
 						<div className=''>
 							<div className='d-flex justify-content-between'>
@@ -1717,7 +1602,7 @@ export default function CenterContent(props) {
 				</div>
 
 				{/* These are your sad word */}
-				<div id='sadWords' className='emptyDivForEmotoinKeyWords'>
+				<div id='sadWords' >
 					{props.keyAnswersSad ? (
 						<div className=''>
 							<div className='d-flex justify-content-between'>
