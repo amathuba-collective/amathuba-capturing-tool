@@ -85,8 +85,6 @@ export default function RightContent(props) {
 	// Prompt Questions
 	const [dropDownActive8, setDropDownActive8] = useState(false);
 
-
-
 	function myFunction() {
 		setDropDownActive((dropDownActive) => !dropDownActive);
 	}
@@ -126,7 +124,6 @@ export default function RightContent(props) {
 		setDropDownActive8((dropDownActive8) => !dropDownActive8);
 	}
 
-
 	const onAgentReflectionQ1Clicked = () => {
 		props.setAgentQuestions(agentReflectionQuestions[0]);
 	};
@@ -155,8 +152,8 @@ export default function RightContent(props) {
 			newOpeningQuestion,
 		]);
 		props.setOtherOpeningQuestion({ newOpeningQuestion: "" });
-		document.getElementById("centerContent").style.opacity = "100%"
-		document.getElementById("centerContent").style.display = "block"
+		document.getElementById("centerContent").style.opacity = "100%";
+		document.getElementById("centerContent").style.display = "block";
 		setDropDownActive(false);
 		// props.setKeyAnswers(true);
 		// props.setOtherOpeningQuestion({ newOpeningQuestion: true });
@@ -167,8 +164,8 @@ export default function RightContent(props) {
 	function toggleRedOpeningQuestion1(e) {
 		e.preventDefault();
 		props.setRedOpeningQuestion1(openingQuestions[0]);
-		document.getElementById("centerContent").style.opacity = "100%"
-		document.getElementById("centerContent").style.display = "block"
+		document.getElementById("centerContent").style.opacity = "100%";
+		document.getElementById("centerContent").style.display = "block";
 		// props.setOpeningQuestion(e.target.value);
 		// props.setKeyAnswers(true);
 		setDropDownActive(false);
@@ -179,8 +176,8 @@ export default function RightContent(props) {
 		e.preventDefault();
 		props.setRedOpeningQuestion1(false);
 		props.setRedOpeningQuestion2(openingQuestions[1]);
-		document.getElementById("centerContent").style.opacity = "100%"
-		document.getElementById("centerContent").style.display = "block"
+		document.getElementById("centerContent").style.opacity = "100%";
+		document.getElementById("centerContent").style.display = "block";
 		// props.setOpeningQuestion(e.target.value);
 		// props.setKeyAnswers(false);
 		// props.setKeyAnswers(true);
@@ -192,8 +189,8 @@ export default function RightContent(props) {
 		e.preventDefault();
 		props.setRedOpeningQuestion2(false);
 		props.setBlueOpeningQuestion1(openingQuestions[2]);
-		document.getElementById("centerContent").style.opacity = "100%"
-		document.getElementById("centerContent").style.display = "block"
+		document.getElementById("centerContent").style.opacity = "100%";
+		document.getElementById("centerContent").style.display = "block";
 		// props.setOpeningQuestion(e.target.value);
 		// props.setKeyAnswers(false);
 		// props.setKeyAnswers(true);
@@ -205,8 +202,8 @@ export default function RightContent(props) {
 		e.preventDefault();
 		props.setBlueOpeningQuestion1(false);
 		props.setBlueOpeningQuestion2(openingQuestions[3]);
-		document.getElementById("centerContent").style.opacity = "100%"
-		document.getElementById("centerContent").style.display = "block"
+		document.getElementById("centerContent").style.opacity = "100%";
+		document.getElementById("centerContent").style.display = "block";
 		// props.setOpeningQuestion(e.target.value);
 		// props.setKeyAnswers(false);
 		// props.setKeyAnswers(true);
@@ -218,8 +215,8 @@ export default function RightContent(props) {
 	const toggleDropDown5 = (e) => {
 		// props.setYouthQuestion1(true);
 		props.setYouthQuestion1(openingQuestions[4]);
-		document.getElementById("centerContent").style.opacity = "100%"
-		document.getElementById("centerContent").style.display = "block"
+		document.getElementById("centerContent").style.opacity = "100%";
+		document.getElementById("centerContent").style.display = "block";
 		// props.setYouthOpeningQuestions(e.target.value);
 		setDropDownActive2(false);
 	};
@@ -228,8 +225,8 @@ export default function RightContent(props) {
 		e.preventDefault();
 		props.setYouthQuestion1(false);
 		props.setYouthQuestion2(openingQuestions[5]);
-		document.getElementById("centerContent").style.opacity = "100%"
-		document.getElementById("centerContent").style.display = "block"
+		document.getElementById("centerContent").style.opacity = "100%";
+		document.getElementById("centerContent").style.display = "block";
 		// props.setYouthOpeningQuestions(e.target.value);
 		setDropDownActive2(false);
 	}
@@ -237,47 +234,49 @@ export default function RightContent(props) {
 	///toggle red dropdown content
 	function toggleRedPossibleResponse() {
 		props.setRedPossibleResponses(redFurtherQuestions[0]);
-		document.getElementById("followUpQuestionsBtn").style.display = "block"
+		document.getElementById("followUpQuestionsBtn").style.display = "block";
 		// document.getElementById("emojis").style.display = "none"
-		document.getElementById("youthReflection").style.display = "block"
-		document.getElementById("openingQuestionsBtn").style.animation = false
-		document.getElementById("openingQuestionsBtn").style.backgroundColor = "#789E46"
-		document.getElementById("possibleResponsesBtn").style.backgroundColor = "#789E46"
-		document.getElementById("possibleResponsesBtn").style.animation = false
-		dropDown3(false)
+		document.getElementById("youthReflection").style.display = "block";
+		document.getElementById("openingQuestionsBtn").style.animation = false;
+		document.getElementById("openingQuestionsBtn").style.backgroundColor =
+			"#789E46";
+		document.getElementById("possibleResponsesBtn").style.backgroundColor =
+			"#789E46";
+		document.getElementById("possibleResponsesBtn").style.animation = false;
+		dropDown3(false);
 	}
 
 	function toggleRedPossibleResponse2() {
 		props.setRedPossibleResponses(redFurtherQuestions[1]);
-		document.getElementById("followUpQuestionsBtn").style.display = "block"
-		document.getElementById("emojis").style.display = "none"
-		document.getElementById("youthReflection").style.display = "block"
+		document.getElementById("followUpQuestionsBtn").style.display = "block";
+		document.getElementById("emojis").style.display = "none";
+		document.getElementById("youthReflection").style.display = "block";
 	}
 	function toggleRedPossibleResponse3() {
 		props.setRedPossibleResponses(redFurtherQuestions[2]);
-		document.getElementById("followUpQuestionsBtn").style.display = "block"
-		document.getElementById("emojis").style.display = "none"
-		document.getElementById("youthReflection").style.display = "block"
+		document.getElementById("followUpQuestionsBtn").style.display = "block";
+		document.getElementById("emojis").style.display = "none";
+		document.getElementById("youthReflection").style.display = "block";
 	}
 	function toggleRedPossibleResponse4() {
 		props.setRedPossibleResponses(redFurtherQuestions[3]);
-		document.getElementById("followUpQuestionsBtn").style.display = "block"
-		document.getElementById("emojis").style.display = "none"
-		document.getElementById("youthReflection").style.display = "block"
+		document.getElementById("followUpQuestionsBtn").style.display = "block";
+		document.getElementById("emojis").style.display = "none";
+		document.getElementById("youthReflection").style.display = "block";
 	}
 
 	//red followup questions
 	function toggleRedFollowUpQuestion1() {
 		props.setRedFollowUpQuestions(redFurtherQuestions[4]);
-		document.getElementById("followUpQuestionsBtn").style.display = "block"
+		document.getElementById("followUpQuestionsBtn").style.display = "block";
 	}
 	function toggleRedFollowUpQuestion2() {
 		props.setRedFollowUpQuestions(redFurtherQuestions[5]);
-		document.getElementById("followUpQuestionsBtn").style.display = "block"
+		document.getElementById("followUpQuestionsBtn").style.display = "block";
 	}
 
 	//red prompt questions
-	function toggleRedPromptQuestion1() { 
+	function toggleRedPromptQuestion1() {
 		props.setRedPromptQuestions(redFurtherQuestions[6]);
 		// document.getElementById("youthPromptInput").style.display = "block"
 	}
@@ -331,11 +330,12 @@ export default function RightContent(props) {
 	//Toggle Youth Question Contents
 	function toggleYouthPossibleResponse() {
 		props.setYouthPossibleResponses(youthFurtherQuestions[0]);
-		document.getElementById("possibleResponsesBtn1").style.backgroundColor = "#789E46"
-		document.getElementById("possibleResponsesBtn1").style.animation = false
-		document.getElementById("followUpQuestionsBtn1").style.display = "block"
-		document.getElementById("youthQuestionInput").style.display = "none"
-		document.getElementById("followUpQuestionInput1").style.display = "block"
+		document.getElementById("possibleResponsesBtn1").style.backgroundColor =
+			"#789E46";
+		document.getElementById("possibleResponsesBtn1").style.animation = false;
+		document.getElementById("followUpQuestionsBtn1").style.display = "block";
+		document.getElementById("youthQuestionInput").style.display = "none";
+		document.getElementById("followUpQuestionInput1").style.display = "block";
 	}
 
 	function toggleYouthPossibleResponse2() {
@@ -364,130 +364,18 @@ export default function RightContent(props) {
 	function toggleYouthPromptQuestion4() {
 		props.setYouthPromptQuestions(youthFurtherQuestions[7]);
 	}
-	
+
 	// 4 follow up questions above
 	const renderResult = () => {
 		let result;
 		props.redOpeningQuestion1
 			? (result = (
-				<div className='mt-4'>
-					{RedOpeningQuestions.map((redQuestions) => {
-						return (
-							<div key={redQuestions.id}>
-								<p
-									id="possibleResponsesBtn"
-									onClick={dropDown3}
-									className='Selector mt-5 text-center border border-2 p-1 border-dark rounded'>
-									Possible Responses
-									<Icon
-										icon='icon-park-outline:drop-down-list'
-										className='dropDownIcon'
-									/>
-								</p>
-								{dropDownActive3 ? (
-									<div className='d-flex flex-column justify-content-center mt-3' id="possibleResponseContent">
-										<button
-											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-											onClick={toggleRedPossibleResponse}>
-											{redQuestions.possibleResponse1}
-										</button>
-										<button
-											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-											onClick={toggleRedPossibleResponse2}>
-											{redQuestions.possibleResponse2}
-										</button>
-										<button
-											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-											onClick={toggleRedPossibleResponse3}>
-											{redQuestions.possibleResponse3}
-										</button>
-										<button
-											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-											onClick={toggleRedPossibleResponse4}>
-											{redQuestions.posibbleResponse4}
-										</button>
-										<hr className='border border-2 border-secondary opacity-50 rounded mt-1' />
-									</div>
-								) : null}
-
-								<p
-									id="followUpQuestionsBtn"
-									onClick={dropDown4}
-									className='Selector mt-5 text-center border border-2 p-1 border-dark rounded'>
-									Follow-Up Questions
-									<Icon
-										icon='icon-park-outline:drop-down-list'
-										className='dropDownIcon'
-									/>
-								</p>
-								{dropDownActive4 ? (
-									<div className='d-flex flex-column justify-content-center mt-3' id="followUpQuestionContent">
-										{/* <div>
-										<h2 className='text-center text-dark fs-3 fw-bold'>
-											Follow-up Questions
-										</h2>
-									</div> */}
-										<button
-											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-											onClick={toggleRedFollowUpQuestion1}>
-											{redQuestions.followUpQuestion1}
-										</button>
-										<button
-											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-											onClick={toggleRedFollowUpQuestion2}>
-											{redQuestions.followUpQuestion2}
-										</button>
-										<hr className='border border-2 border-secondary opacity-50 rounded mt-1' />
-									</div>
-								) : null}
-
-								<p
-									id="promptQuestionsBtn"
-									onClick={dropDown5}
-									className='Selector mt-5 text-center border border-2 p-1 border-dark rounded' >
-									Prompt Questions
-									<Icon
-										icon='icon-park-outline:drop-down-list'
-										className='dropDownIcon'
-									/>
-								</p>
-								{dropDownActive5 ? (
-									<div className='d-flex flex-column justify-content-center mt-3 mb-4' id="promptQuestionsContent">
-										{/* <div>
-										<h2 className='text-center text-dark fs-3 fw-bold'>
-											Prompt Questions
-										</h2>
-									</div> */}
-										<button
-											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-											onClick={toggleRedPromptQuestion1}>
-											{redQuestions.promptQuestion1}
-										</button>
-										
-										<button
-											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-											onClick={toggleRedPromptQuestion2}>
-											{redQuestions.promptQuestion2}
-										</button>
-										<hr className='border border-2 border-secondary opacity-50 rounded mt-1' />
-									</div>
-								) : null}
-							</div>
-						);
-					})}
-					{/* <hr />
-					<h5 className='text-center fs-3'>Opening Questions above</h5>
-					<hr /> */}
-				</div>
-			))
-			: props.redOpeningQuestion2
-				? (result = (
 					<div className='mt-4'>
 						{RedOpeningQuestions.map((redQuestions) => {
 							return (
 								<div key={redQuestions.id}>
 									<p
-										id="possibleResponsesBtn"
+										id='possibleResponsesBtn'
 										onClick={dropDown3}
 										className='Selector mt-5 text-center border border-2 p-1 border-dark rounded'>
 										Possible Responses
@@ -497,7 +385,127 @@ export default function RightContent(props) {
 										/>
 									</p>
 									{dropDownActive3 ? (
-										<div className='d-flex flex-column justify-content-center mt-3' id="possibleResponseContent">
+										<div
+											className='d-flex flex-column justify-content-center mt-3'
+											id='possibleResponseContent'>
+											<button
+												className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+												onClick={toggleRedPossibleResponse}>
+												{redQuestions.possibleResponse1}
+											</button>
+											<button
+												className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+												onClick={toggleRedPossibleResponse2}>
+												{redQuestions.possibleResponse2}
+											</button>
+											<button
+												className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+												onClick={toggleRedPossibleResponse3}>
+												{redQuestions.possibleResponse3}
+											</button>
+											<button
+												className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+												onClick={toggleRedPossibleResponse4}>
+												{redQuestions.posibbleResponse4}
+											</button>
+											<hr className='border border-2 border-secondary opacity-50 rounded mt-1' />
+										</div>
+									) : null}
+
+									<p
+										id='followUpQuestionsBtn'
+										onClick={dropDown4}
+										className='Selector mt-5 text-center border border-2 p-1 border-dark rounded'>
+										Follow-Up Questions
+										<Icon
+											icon='icon-park-outline:drop-down-list'
+											className='dropDownIcon'
+										/>
+									</p>
+									{dropDownActive4 ? (
+										<div
+											className='d-flex flex-column justify-content-center mt-3'
+											id='followUpQuestionContent'>
+											{/* <div>
+										<h2 className='text-center text-dark fs-3 fw-bold'>
+											Follow-up Questions
+										</h2>
+									</div> */}
+											<button
+												className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+												onClick={toggleRedFollowUpQuestion1}>
+												{redQuestions.followUpQuestion1}
+											</button>
+											<button
+												className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+												onClick={toggleRedFollowUpQuestion2}>
+												{redQuestions.followUpQuestion2}
+											</button>
+											<hr className='border border-2 border-secondary opacity-50 rounded mt-1' />
+										</div>
+									) : null}
+
+									<p
+										id='promptQuestionsBtn'
+										onClick={dropDown5}
+										className='Selector mt-5 text-center border border-2 p-1 border-dark rounded'>
+										Prompt Questions
+										<Icon
+											icon='icon-park-outline:drop-down-list'
+											className='dropDownIcon'
+										/>
+									</p>
+									{dropDownActive5 ? (
+										<div
+											className='d-flex flex-column justify-content-center mt-3 mb-4'
+											id='promptQuestionsContent'>
+											{/* <div>
+										<h2 className='text-center text-dark fs-3 fw-bold'>
+											Prompt Questions
+										</h2>
+									</div> */}
+											<button
+												className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+												onClick={toggleRedPromptQuestion1}>
+												{redQuestions.promptQuestion1}
+											</button>
+
+											<button
+												className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+												onClick={toggleRedPromptQuestion2}>
+												{redQuestions.promptQuestion2}
+											</button>
+											<hr className='border border-2 border-secondary opacity-50 rounded mt-1' />
+										</div>
+									) : null}
+								</div>
+							);
+						})}
+						{/* <hr />
+					<h5 className='text-center fs-3'>Opening Questions above</h5>
+					<hr /> */}
+					</div>
+			  ))
+			: props.redOpeningQuestion2
+			? (result = (
+					<div className='mt-4'>
+						{RedOpeningQuestions.map((redQuestions) => {
+							return (
+								<div key={redQuestions.id}>
+									<p
+										id='possibleResponsesBtn'
+										onClick={dropDown3}
+										className='Selector mt-5 text-center border border-2 p-1 border-dark rounded'>
+										Possible Responses
+										<Icon
+											icon='icon-park-outline:drop-down-list'
+											className='dropDownIcon'
+										/>
+									</p>
+									{dropDownActive3 ? (
+										<div
+											className='d-flex flex-column justify-content-center mt-3'
+											id='possibleResponseContent'>
 											{/* <div>
 											<h2 className='text-center text-dark fs-3 fw-bold'>
 												Possible Responses
@@ -527,7 +535,7 @@ export default function RightContent(props) {
 										</div>
 									) : null}
 									<p
-										id="followUpQuestionsBtn"
+										id='followUpQuestionsBtn'
 										onClick={dropDown4}
 										className='Selector mt-5 text-center border border-2 p-1 border-dark rounded'>
 										Follow-Up Questions
@@ -538,7 +546,9 @@ export default function RightContent(props) {
 									</p>
 
 									{dropDownActive4 ? (
-										<div className='d-flex flex-column justify-content-center mt-3' id="followUpQuestionContent">
+										<div
+											className='d-flex flex-column justify-content-center mt-3'
+											id='followUpQuestionContent'>
 											{/* <div>
 											<h2 className='text-center text-dark fs-3 fw-bold'>
 												Follow-up Questions
@@ -559,7 +569,7 @@ export default function RightContent(props) {
 									) : null}
 
 									<p
-										id="promptQuestionsBtn"
+										id='promptQuestionsBtn'
 										onClick={dropDown5}
 										className='Selector mt-5 text-center border border-2 p-1 border-dark rounded'>
 										Prompt Questions
@@ -569,7 +579,9 @@ export default function RightContent(props) {
 										/>
 									</p>
 									{dropDownActive5 ? (
-										<div className='d-flex flex-column justify-content-center mt-3 mb-4' id="promptQuestionsContent" >
+										<div
+											className='d-flex flex-column justify-content-center mt-3 mb-4'
+											id='promptQuestionsContent'>
 											{/* <div>
 												<h2 className='text-center text-dark fs-3 fw-bold'>
 													Prompt Questions
@@ -595,254 +607,254 @@ export default function RightContent(props) {
 						<h5 className='text-center fs-3'>Opening Questions above</h5>
 						<hr /> */}
 					</div>
-				))
-				: props.blueOpeningQuestion1
-					? (result = (
-						<div className='mt-4'>
-							{BlueOpeningQuestions.map((blueQuestions) => {
-								return (
-									<div key={blueQuestions.id}>
-										<div className='d-flex flex-column justify-content-center mt-3'>
-											<div>
-												<h2 className='text-center text-dark fs-3 fw-bold'>
-													Possible Responses
-												</h2>
-											</div>
-											<button
-												className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-												onClick={toggleBluePossibleResponse}>
-												{blueQuestions.possibleResponse1}
-											</button>
-											<button
-												className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-												onClick={toggleBluePossibleResponse2}>
-												{blueQuestions.possibleResponse2}
-											</button>
-											<button
-												className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-												onClick={toggleBluePossibleResponse3}>
-												{blueQuestions.possibleResponse3}
-											</button>
+			  ))
+			: props.blueOpeningQuestion1
+			? (result = (
+					<div className='mt-4'>
+						{BlueOpeningQuestions.map((blueQuestions) => {
+							return (
+								<div key={blueQuestions.id}>
+									<div className='d-flex flex-column justify-content-center mt-3'>
+										<div>
+											<h2 className='text-center text-dark fs-3 fw-bold'>
+												Possible Responses
+											</h2>
 										</div>
-										<div className='d-flex flex-column justify-content-center mt-3'>
-											<div>
-												<h2 className='text-center text-dark fs-3 fw-bold'>
-													Follow-up Questions
-												</h2>
-											</div>
-											<button
-												className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-												onClick={toggleBluefollowUpQuestion}>
-												{blueQuestions.followUpQuestion1}
-											</button>
-											<button
-												className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-												onClick={toggleBluefollowUpQuestion2}>
-												{blueQuestions.followUpQuestion2}
-											</button>
-											<button
-												className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-												onClick={toggleBluefollowUpQuestion3}>
-												{blueQuestions.followUpQuestion3}
-											</button>
-										</div>
-										<div className='d-flex flex-column justify-content-center mt-3 mb-4'>
-											<div>
-												<h2 className='text-center text-dark fs-3 fw-bold'>
-													Prompt Questions
-												</h2>
-											</div>
-											<button
-												className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-												onClick={toggleBluePromptQuestion}>
-												{blueQuestions.promptQuestion1}
-											</button>
-											<button
-												className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-												onClick={toggleBluePromptQuestion2}>
-												{blueQuestions.promptQuestion2}
-											</button>
-											<button
-												className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-												onClick={toggleBluePromptQuestion3}>
-												{blueQuestions.promptQuestion3}
-											</button>
-											<button
-												className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-												onClick={toggleBluePromptQuestion4}>
-												{blueQuestions.promptQuestion4}
-											</button>
-										</div>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleBluePossibleResponse}>
+											{blueQuestions.possibleResponse1}
+										</button>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleBluePossibleResponse2}>
+											{blueQuestions.possibleResponse2}
+										</button>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleBluePossibleResponse3}>
+											{blueQuestions.possibleResponse3}
+										</button>
 									</div>
-								);
-							})}
-							<hr />
-							<h5 className='text-center fs-3'>Opening Questions above</h5>
-							<hr />
-						</div>
-					))
-					: props.blueOpeningQuestion2
-						? (result = (
-							<div className='mt-4'>
-								{BlueOpeningQuestions.map((blueQuestions) => {
-									return (
-										<div key={blueQuestions.id}>
-											<div className='d-flex flex-column justify-content-center mt-3'>
-												<div>
-													<h2 className='text-center text-dark fs-3 fw-bold'>
-														Possible Responses
-													</h2>
-												</div>
-												<button
-													className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-													onClick={toggleBluePossibleResponse}>
-													{blueQuestions.possibleResponse1}
-												</button>
-												<button
-													className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-													onClick={toggleBluePossibleResponse2}>
-													{blueQuestions.possibleResponse2}
-												</button>
-												<button
-													className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-													onClick={toggleBluePossibleResponse3}>
-													{blueQuestions.possibleResponse3}
-												</button>
-											</div>
-											<div className='d-flex flex-column justify-content-center mt-3'>
-												<div>
-													<h2 className='text-center text-dark fs-3 fw-bold'>
-														Follow-up Questions
-													</h2>
-												</div>
-												<button
-													className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-													onClick={toggleBluefollowUpQuestion}>
-													{blueQuestions.followUpQuestion1}
-												</button>
-												<button
-													className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-													onClick={toggleBluefollowUpQuestion2}>
-													{blueQuestions.followUpQuestion2}
-												</button>
-												<button
-													className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-													onClick={toggleBluefollowUpQuestion3}>
-													{blueQuestions.followUpQuestion3}
-												</button>
-											</div>
-											<div className='d-flex flex-column justify-content-center mt-3 mb-4'>
-												<div>
-													<h2 className='text-center text-dark fs-3 fw-bold'>
-														Prompt Questions
-													</h2>
-												</div>
-												<button
-													className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-													onClick={toggleBluePromptQuestion}>
-													{blueQuestions.promptQuestion1}
-												</button>
-												<button
-													className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-													onClick={toggleBluePromptQuestion2}>
-													{blueQuestions.promptQuestion2}
-												</button>
-												<button
-													className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-													onClick={toggleBluePromptQuestion3}>
-													{blueQuestions.promptQuestion3}
-												</button>
-												<button
-													className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-													onClick={toggleBluePromptQuestion4}>
-													{blueQuestions.promptQuestion4}
-												</button>
-											</div>
+									<div className='d-flex flex-column justify-content-center mt-3'>
+										<div>
+											<h2 className='text-center text-dark fs-3 fw-bold'>
+												Follow-up Questions
+											</h2>
 										</div>
-									);
-								})}
-								<hr />
-								<h5 className='text-center fs-3'>Opening Questions above</h5>
-								<hr />
-							</div>
-						))
-						: props.otherOpeningQuestion.newOpeningQuestion
-							? (result = (
-								<div>
-									{RedOpeningQuestions.map((redQuestions) => {
-										return (
-											<div key={redQuestions.id}>
-												<div className='d-flex flex-column justify-content-center mt-3'>
-													{/* <div>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleBluefollowUpQuestion}>
+											{blueQuestions.followUpQuestion1}
+										</button>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleBluefollowUpQuestion2}>
+											{blueQuestions.followUpQuestion2}
+										</button>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleBluefollowUpQuestion3}>
+											{blueQuestions.followUpQuestion3}
+										</button>
+									</div>
+									<div className='d-flex flex-column justify-content-center mt-3 mb-4'>
+										<div>
+											<h2 className='text-center text-dark fs-3 fw-bold'>
+												Prompt Questions
+											</h2>
+										</div>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleBluePromptQuestion}>
+											{blueQuestions.promptQuestion1}
+										</button>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleBluePromptQuestion2}>
+											{blueQuestions.promptQuestion2}
+										</button>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleBluePromptQuestion3}>
+											{blueQuestions.promptQuestion3}
+										</button>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleBluePromptQuestion4}>
+											{blueQuestions.promptQuestion4}
+										</button>
+									</div>
+								</div>
+							);
+						})}
+						<hr />
+						<h5 className='text-center fs-3'>Opening Questions above</h5>
+						<hr />
+					</div>
+			  ))
+			: props.blueOpeningQuestion2
+			? (result = (
+					<div className='mt-4'>
+						{BlueOpeningQuestions.map((blueQuestions) => {
+							return (
+								<div key={blueQuestions.id}>
+									<div className='d-flex flex-column justify-content-center mt-3'>
+										<div>
+											<h2 className='text-center text-dark fs-3 fw-bold'>
+												Possible Responses
+											</h2>
+										</div>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleBluePossibleResponse}>
+											{blueQuestions.possibleResponse1}
+										</button>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleBluePossibleResponse2}>
+											{blueQuestions.possibleResponse2}
+										</button>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleBluePossibleResponse3}>
+											{blueQuestions.possibleResponse3}
+										</button>
+									</div>
+									<div className='d-flex flex-column justify-content-center mt-3'>
+										<div>
+											<h2 className='text-center text-dark fs-3 fw-bold'>
+												Follow-up Questions
+											</h2>
+										</div>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleBluefollowUpQuestion}>
+											{blueQuestions.followUpQuestion1}
+										</button>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleBluefollowUpQuestion2}>
+											{blueQuestions.followUpQuestion2}
+										</button>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleBluefollowUpQuestion3}>
+											{blueQuestions.followUpQuestion3}
+										</button>
+									</div>
+									<div className='d-flex flex-column justify-content-center mt-3 mb-4'>
+										<div>
+											<h2 className='text-center text-dark fs-3 fw-bold'>
+												Prompt Questions
+											</h2>
+										</div>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleBluePromptQuestion}>
+											{blueQuestions.promptQuestion1}
+										</button>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleBluePromptQuestion2}>
+											{blueQuestions.promptQuestion2}
+										</button>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleBluePromptQuestion3}>
+											{blueQuestions.promptQuestion3}
+										</button>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleBluePromptQuestion4}>
+											{blueQuestions.promptQuestion4}
+										</button>
+									</div>
+								</div>
+							);
+						})}
+						<hr />
+						<h5 className='text-center fs-3'>Opening Questions above</h5>
+						<hr />
+					</div>
+			  ))
+			: props.otherOpeningQuestion.newOpeningQuestion
+			? (result = (
+					<div>
+						{RedOpeningQuestions.map((redQuestions) => {
+							return (
+								<div key={redQuestions.id}>
+									<div className='d-flex flex-column justify-content-center mt-3'>
+										{/* <div>
 														<h2 className='text-center text-dark fs-3 fw-bold'>
 															Possible Responses
 														</h2>
 													</div> */}
-													<button
-														className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-														onClick={toggleRedPossibleResponse}>
-														{redQuestions.possibleResponse1}
-													</button>
-													<button
-														className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-														onClick={toggleRedPossibleResponse2}>
-														{redQuestions.possibleResponse2}
-													</button>
-													<button
-														className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-														onClick={toggleRedPossibleResponse3}>
-														{redQuestions.possibleResponse3}
-													</button>
-													<button
-														className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-														onClick={toggleRedPossibleResponse4}>
-														{redQuestions.posibbleResponse4}
-													</button>
-												</div>
-												<div className='d-flex flex-column justify-content-center mt-3'>
-													<div>
-														<h2 className='text-center text-dark fs-3 fw-bold'>
-															Follow-up Questions
-														</h2>
-													</div>
-													<button
-														className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-														onClick={toggleRedFollowUpQuestion1}>
-														{redQuestions.followUpQuestion1}
-													</button>
-													<button
-														className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-														onClick={toggleRedFollowUpQuestion2}>
-														{redQuestions.followUpQuestion2}
-													</button>
-												</div>
-												<div className='d-flex flex-column justify-content-center mt-3 mb-4'>
-													<div>
-														<h2 className='text-center text-dark fs-3 fw-bold'>
-															Prompt Questions
-														</h2>
-													</div>
-													<button
-														className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-														onClick={toggleRedPromptQuestion1}>
-														{redQuestions.promptQuestion1}
-													</button>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleRedPossibleResponse}>
+											{redQuestions.possibleResponse1}
+										</button>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleRedPossibleResponse2}>
+											{redQuestions.possibleResponse2}
+										</button>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleRedPossibleResponse3}>
+											{redQuestions.possibleResponse3}
+										</button>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleRedPossibleResponse4}>
+											{redQuestions.posibbleResponse4}
+										</button>
+									</div>
+									<div className='d-flex flex-column justify-content-center mt-3'>
+										<div>
+											<h2 className='text-center text-dark fs-3 fw-bold'>
+												Follow-up Questions
+											</h2>
+										</div>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleRedFollowUpQuestion1}>
+											{redQuestions.followUpQuestion1}
+										</button>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleRedFollowUpQuestion2}>
+											{redQuestions.followUpQuestion2}
+										</button>
+									</div>
+									<div className='d-flex flex-column justify-content-center mt-3 mb-4'>
+										<div>
+											<h2 className='text-center text-dark fs-3 fw-bold'>
+												Prompt Questions
+											</h2>
+										</div>
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleRedPromptQuestion1}>
+											{redQuestions.promptQuestion1}
+										</button>
 
-													<button
-														className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-														onClick={toggleRedPromptQuestion2}>
-														{redQuestions.promptQuestion2}
-													</button>
-												</div>
-											</div>
-										);
-									})}
-									<hr />
-									<h5 className='text-center fs-3'>Opening Questions above</h5>
-									<hr />
+										<button
+											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+											onClick={toggleRedPromptQuestion2}>
+											{redQuestions.promptQuestion2}
+										</button>
+									</div>
 								</div>
-							))
-							: (result = "");
+							);
+						})}
+						<hr />
+						<h5 className='text-center fs-3'>Opening Questions above</h5>
+						<hr />
+					</div>
+			  ))
+			: (result = "");
 		return result;
 	};
 
@@ -851,121 +863,126 @@ export default function RightContent(props) {
 		let youthResult;
 		props.youthQuestion1
 			? (youthResult = (
-				<div className='mt-4'>
-					{YouthQuestions.map((youthQuestions) => {
-						return (
-							<div key={youthQuestions.id}>
-								<p
-									id="possibleResponsesBtn1"
-									onClick={dropDown6}
-									className='Selector mt-5 text-center border border-2 p-1 border-dark rounded'>
-									Possible Responses
-									<Icon
-										icon='icon-park-outline:drop-down-list'
-										className='dropDownIcon'
-									/>
-								</p>
-								{dropDownActive6 ? (
-									<div className='d-flex flex-column justify-content-center mt-3' id="possibleResponsesContent1" >
-										<div>
-											{/* <h2 className='text-center text-dark fs-3 fw-bold'>
+					<div className='mt-4'>
+						{YouthQuestions.map((youthQuestions) => {
+							return (
+								<div key={youthQuestions.id}>
+									<p
+										id='possibleResponsesBtn1'
+										onClick={dropDown6}
+										className='Selector mt-5 text-center border border-2 p-1 border-dark rounded'>
+										Possible Responses
+										<Icon
+											icon='icon-park-outline:drop-down-list'
+											className='dropDownIcon'
+										/>
+									</p>
+									{dropDownActive6 ? (
+										<div
+											className='d-flex flex-column justify-content-center mt-3'
+											id='possibleResponsesContent1'>
+											<div>
+												{/* <h2 className='text-center text-dark fs-3 fw-bold'>
 											Possible Responses
 										</h2> */}
+											</div>
+											<button
+												className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+												onClick={toggleYouthPossibleResponse}>
+												{youthQuestions.possibleResponses1}
+											</button>
+											<button
+												className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+												onClick={toggleYouthPossibleResponse2}>
+												{youthQuestions.possibleResponses2}
+											</button>
 										</div>
-										<button
-											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-											onClick={toggleYouthPossibleResponse}>
-											{youthQuestions.possibleResponses1}
-										</button>
-										<button
-											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-											onClick={toggleYouthPossibleResponse2}>
-											{youthQuestions.possibleResponses2}
-										</button>
-									</div>
-								) : null}
+									) : null}
 
-
-								<p
-									id="followUpQuestionsBtn1"
-									onClick={dropDown7}
-									className='Selector mt-5 text-center border border-2 p-1 border-dark rounded'>
-									Follow Up Questions
-									<Icon
-										icon='icon-park-outline:drop-down-list'
-										className='dropDownIcon'
-									/>
-								</p>
-								{dropDownActive7 ? (
-									<div className='d-flex flex-column justify-content-center mt-3' id="followUpQuestionsContent1" >
-										{/* <div>
+									<p
+										id='followUpQuestionsBtn1'
+										onClick={dropDown7}
+										className='Selector mt-5 text-center border border-2 p-1 border-dark rounded'>
+										Follow Up Questions
+										<Icon
+											icon='icon-park-outline:drop-down-list'
+											className='dropDownIcon'
+										/>
+									</p>
+									{dropDownActive7 ? (
+										<div
+											className='d-flex flex-column justify-content-center mt-3'
+											id='followUpQuestionsContent1'>
+											{/* <div>
 										<h2 className='text-center text-dark fs-3 fw-bold'>
 											Follow-up Questions
 										</h2>
 									</div> */}
-										<button
-											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-											onClick={toggleYouthFollowUpQuestion}>
-											{youthQuestions.followUpQuestion1}
-										</button>
-										<button
-											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-											onClick={toggleYouthFollowUpQuestion2}>
-											{youthQuestions.followUpQuestion2}
-										</button>
-									</div>
-								) : null}
+											<button
+												className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+												onClick={toggleYouthFollowUpQuestion}>
+												{youthQuestions.followUpQuestion1}
+											</button>
+											<button
+												className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+												onClick={toggleYouthFollowUpQuestion2}>
+												{youthQuestions.followUpQuestion2}
+											</button>
+										</div>
+									) : null}
 
-								<p
-									id="promptQuestionsBtn1"
-									onClick={dropDown8}
-									className='Selector mt-5 text-center border border-2 p-1 border-dark rounded'>
-									Prompt Questions
-									<Icon
-										icon='icon-park-outline:drop-down-list'
-										className='dropDownIcon'
-									/>
-								</p>
+									<p
+										id='promptQuestionsBtn1'
+										onClick={dropDown8}
+										className='Selector mt-5 text-center border border-2 p-1 border-dark rounded'>
+										Prompt Questions
+										<Icon
+											icon='icon-park-outline:drop-down-list'
+											className='dropDownIcon'
+										/>
+									</p>
 
-								{dropDownActive8 ? (
-									<div className='d-flex flex-column justify-content-center mt-3 mb-4' id="promptQuestionsContent1" >
-										{/* <div>
+									{dropDownActive8 ? (
+										<div
+											className='d-flex flex-column justify-content-center mt-3 mb-4'
+											id='promptQuestionsContent1'>
+											{/* <div>
 										<h2 className='text-center text-dark fs-3 fw-bold'>
 											Prompt Questions
 										</h2>
 									</div> */}
-										<button
-											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-											onClick={toggleYouthPromptQuestion}>
-											{youthQuestions.promptQuestion1}
-										</button>
-										<button
-											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-											onClick={toggleYouthPromptQuestion2}>
-											{youthQuestions.promptQuestion2}
-										</button>
-										<button
-											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-											onClick={toggleYouthPromptQuestion3}>
-											{youthQuestions.promptQuestion3}
-										</button>
-										<button
-											className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-											onClick={toggleYouthPromptQuestion4}>
-											{youthQuestions.promptQuestion4}
-										</button>
-									</div>
-								) : null}
-							</div>
-						);
-					})}
-					{/* <hr />
+											<button
+												className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+												onClick={toggleYouthPromptQuestion}>
+												{youthQuestions.promptQuestion1}
+											</button>
+											<button
+												className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+												onClick={toggleYouthPromptQuestion2}>
+												{youthQuestions.promptQuestion2}
+											</button>
+											<button
+												className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+												onClick={toggleYouthPromptQuestion3}>
+												{youthQuestions.promptQuestion3}
+											</button>
+											<button
+												className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+												onClick={toggleYouthPromptQuestion4}>
+												{youthQuestions.promptQuestion4}
+											</button>
+										</div>
+									) : null}
+								</div>
+							);
+						})}
+						{/* <hr />
 					<h5 className='text-center fs-3'>Youth reflection above</h5>
 					<hr /> */}
-				</div>
-			))
+					</div>
+			  ))
 			: props.youthQuestion2
-				? (youthResult = (
+			? (youthResult = (
 					<div className='mt-4'>
 						{YouthQuestions.map((youthQuestions) => {
 							return (
@@ -1039,8 +1056,8 @@ export default function RightContent(props) {
 						<h5 className='text-center fs-3'>Youth reflection above</h5>
 						<hr />
 					</div>
-				))
-				: (youthResult = "");
+			  ))
+			: (youthResult = "");
 		return youthResult;
 	};
 
@@ -1048,43 +1065,45 @@ export default function RightContent(props) {
 		let agentResult;
 		props.recommendedQuestions === "agentReflection"
 			? (agentResult = (
-				<div>
-					{AgentReflectionStateQuestions.map((agentRSQ) => {
-						return (
-							<div className='d-flex flex-column mb-5' id="agentRecommendedQuestions">
-								<div>
-									<h4 className='fs-4 fw-bold mb-3'>
-										Agent Reflection Questions
-									</h4>
+					<div>
+						{AgentReflectionStateQuestions.map((agentRSQ) => {
+							return (
+								<div
+									className='d-flex flex-column mb-5'
+									id='agentRecommendedQuestions'>
+									<div>
+										<h4 className='fs-4 fw-bold mb-3'>
+											Agent Reflection Questions
+										</h4>
+									</div>
+									<button
+										className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+										onClick={onAgentReflectionQ1Clicked}>
+										{agentRSQ.agentReflectionQuestion1}
+									</button>
+									<button
+										className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+										onClick={onAgentReflectionQ2Clicked}>
+										{agentRSQ.agentReflectionQuestion2}
+									</button>
+									<button
+										className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+										onClick={onAgentReflectionQ3Clicked}>
+										{agentRSQ.agentReflectionQuestion3}
+									</button>
+									<button
+										className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
+										onClick={onAgentReflectionQ4Clicked}>
+										{agentRSQ.agentReflectionQuestion4}
+									</button>
 								</div>
-								<button
-									className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-									onClick={onAgentReflectionQ1Clicked}>
-									{agentRSQ.agentReflectionQuestion1}
-								</button>
-								<button
-									className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-									onClick={onAgentReflectionQ2Clicked}>
-									{agentRSQ.agentReflectionQuestion2}
-								</button>
-								<button
-									className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-									onClick={onAgentReflectionQ3Clicked}>
-									{agentRSQ.agentReflectionQuestion3}
-								</button>
-								<button
-									className='border border-2 border-dark rounded bg-transparent text-dark m-2 fs-5'
-									onClick={onAgentReflectionQ4Clicked}>
-									{agentRSQ.agentReflectionQuestion4}
-								</button>
-							</div>
-						);
-					})}
-					{/* <hr />
+							);
+						})}
+						{/* <hr />
 					<h5 className='text-center fs-3'>Agent reflection above</h5>
 					<hr /> */}
-				</div>
-			))
+					</div>
+			  ))
 			: (agentResult = "");
 		return agentResult;
 	};
@@ -1096,10 +1115,9 @@ export default function RightContent(props) {
 				<hr />
 				<div className='openingQuestions' value={props.openingQuestion}>
 					<p
-						id="openingQuestionsBtn"
+						id='openingQuestionsBtn'
 						onClick={myFunction}
 						className='Selector mt-5 text-center border border-2 p-1 border-dark rounded'>
-
 						Select Opening Question
 						<Icon
 							icon='icon-park-outline:drop-down-list'
@@ -1160,46 +1178,12 @@ export default function RightContent(props) {
 				{/*  */}
 				{/*  */}
 				<div>{renderResult()}</div>
-				<div id="youthReflectionHead" >
-					<h5 className='text-center fs-5'>Youth Reflection Questions</h5>
-					<hr />
-				</div>
-				{/*  */}
-				<div className='w-100 border-0' value={props.youthOpeningQuestions} >
-					<p
-						id="youthQuestionsBtn"
-						onClick={dropDown2}
-						className='Selector  text-center border border-2 p-1 border-dark rounded'>
-						Select Youth Opening Question
-						<Icon
-							icon='icon-park-outline:drop-down-list'
-							className='dropDownIcon'
-						/>
-					</p>
-					{dropDownActive2 ? (
-						<div id="youthOpenQuestions" className='d-flex flex-column'>
-							<button
-								href='#about'
-								className='m-2 rounded bg-transparent border border-2 border-primary'
-								value='youthQuestion1'
-								onClick={toggleDropDown5}>
-								Earlier you said you...?
-							</button>
-							<button
-								href='#about'
-								className='m-2 rounded bg-transparent border border-2 border-primary'
-								value='youthQuestion2'
-								onClick={toggleDropDown6}>
-								What im hearing is...?
-							</button>
-						</div>
-					) : null}
-				</div>
+
 				{/*  */}
 				<div>{renderResult2()}</div>
 				<div>{renderAgentQuestions()}</div>
 				{/* <div><CenterContent dropDown4={dropDown4} /></div> */}
 			</div>
 		</div>
-	)
+	);
 }

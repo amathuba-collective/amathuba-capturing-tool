@@ -146,27 +146,27 @@ export default function CenterContent(props) {
 	const handleOnChange1 = (e) => {
 		props.setEmotion(emotions[0]);
 		const x = document.getElementById("happyEmoji");
-		if (x.style.backgroundColor === '') {
-			x.style.backgroundColor = '#EFE5FF';
+		if (x.style.backgroundColor === "") {
+			x.style.backgroundColor = "#EFE5FF";
 			// Happy
-			document.getElementById("happWords").style.backgroundColor = "#EFE5FF"
-			document.getElementById("happWords").style.display = "block"
+			document.getElementById("happWords").style.backgroundColor = "#EFE5FF";
+			document.getElementById("happWords").style.display = "block";
 			// Angry
-			document.getElementById("angryEmoji").style.backgroundColor = ""
-			document.getElementById("angryWords").style.backgroundColor = ""
-			document.getElementById("angryWords").style.display = "none"
+			document.getElementById("angryEmoji").style.backgroundColor = "";
+			document.getElementById("angryWords").style.backgroundColor = "";
+			document.getElementById("angryWords").style.display = "none";
 			// Confused
-			document.getElementById("confusedEmoji").style.backgroundColor = ""
-			document.getElementById("confusedWords").style.backgroundColor = ""
-			document.getElementById("confusedWords").style.display = "none"
+			document.getElementById("confusedEmoji").style.backgroundColor = "";
+			document.getElementById("confusedWords").style.backgroundColor = "";
+			document.getElementById("confusedWords").style.display = "none";
 			// Anxious
-			document.getElementById("anxiousEmoji").style.backgroundColor = ""
-			document.getElementById("anxiousWords").style.backgroundColor = ""
-			document.getElementById("anxiousWords").style.display = "none"
+			document.getElementById("anxiousEmoji").style.backgroundColor = "";
+			document.getElementById("anxiousWords").style.backgroundColor = "";
+			document.getElementById("anxiousWords").style.display = "none";
 			// Sad
-			document.getElementById("sadEmoji").style.backgroundColor = ""
-			document.getElementById("sadWords").style.backgroundColor = ""
-			document.getElementById("sadWords").style.display = "none"
+			document.getElementById("sadEmoji").style.backgroundColor = "";
+			document.getElementById("sadWords").style.backgroundColor = "";
+			document.getElementById("sadWords").style.display = "none";
 
 			props.setKeyAnswers(true);
 			props.setKeyAnswersAngry(false);
@@ -174,9 +174,9 @@ export default function CenterContent(props) {
 			props.setKeyAnswersAnxious(false);
 			props.setKeyAnswersSad(false);
 		} else {
-			x.style.backgroundColor = ''
-			document.getElementById("happWords").style.backgroundColor = "#F8F8FF"
-			document.getElementById("happWords").style.display = "none"
+			x.style.backgroundColor = "";
+			document.getElementById("happWords").style.backgroundColor = "#F8F8FF";
+			document.getElementById("happWords").style.display = "none";
 			props.setKeyAnswers(false);
 			props.setKeyAnswersAngry(true);
 		}
@@ -185,27 +185,27 @@ export default function CenterContent(props) {
 	const handleOnChange2 = (e) => {
 		props.setEmotion(emotions[1]);
 		const x = document.getElementById("angryEmoji");
-		if (x.style.backgroundColor === '') {
-			x.style.backgroundColor = '#EFE5FF';
-			document.getElementById("angryWords").style.backgroundColor = "#EFE5FF"
-			document.getElementById("angryWords").style.display = "block"
+		if (x.style.backgroundColor === "") {
+			x.style.backgroundColor = "#EFE5FF";
+			document.getElementById("angryWords").style.backgroundColor = "#EFE5FF";
+			document.getElementById("angryWords").style.display = "block";
 
 			// Happy
-			document.getElementById("happyEmoji").style.backgroundColor = ""
-			document.getElementById("happWords").style.backgroundColor = ""
-			document.getElementById("happWords").style.display = "none"
+			document.getElementById("happyEmoji").style.backgroundColor = "";
+			document.getElementById("happWords").style.backgroundColor = "";
+			document.getElementById("happWords").style.display = "none";
 			// Confused
-			document.getElementById("confusedEmoji").style.backgroundColor = ""
-			document.getElementById("confusedWords").style.backgroundColor = ""
-			document.getElementById("confusedWords").style.display = "none"
+			document.getElementById("confusedEmoji").style.backgroundColor = "";
+			document.getElementById("confusedWords").style.backgroundColor = "";
+			document.getElementById("confusedWords").style.display = "none";
 			// Anxious
-			document.getElementById("anxiousEmoji").style.backgroundColor = ""
-			document.getElementById("anxiousWords").style.backgroundColor = ""
-			document.getElementById("anxiousWords").style.display = "none"
+			document.getElementById("anxiousEmoji").style.backgroundColor = "";
+			document.getElementById("anxiousWords").style.backgroundColor = "";
+			document.getElementById("anxiousWords").style.display = "none";
 			// Sad
-			document.getElementById("sadEmoji").style.backgroundColor = ""
-			document.getElementById("sadWords").style.backgroundColor = ""
-			document.getElementById("sadWords").style.display = "none"
+			document.getElementById("sadEmoji").style.backgroundColor = "";
+			document.getElementById("sadWords").style.backgroundColor = "";
+			document.getElementById("sadWords").style.display = "none";
 
 			props.setKeyAnswersAngry(true);
 			props.setKeyAnswers(false);
@@ -213,9 +213,9 @@ export default function CenterContent(props) {
 			props.setKeyAnswersAnxious(false);
 			props.setKeyAnswersSad(false);
 		} else {
-			x.style.backgroundColor = ''
-			document.getElementById("angryWords").style.backgroundColor = "#F8F8FF"
-			document.getElementById("angryWords").style.display = "none"
+			x.style.backgroundColor = "";
+			document.getElementById("angryWords").style.backgroundColor = "#F8F8FF";
+			document.getElementById("angryWords").style.display = "none";
 			props.setKeyAnswersAngry(false);
 		}
 	};
@@ -223,27 +223,28 @@ export default function CenterContent(props) {
 	const handleOnChange3 = (e) => {
 		props.setEmotion(emotions[2]);
 		const x = document.getElementById("confusedEmoji");
-		if (x.style.backgroundColor === '') {
-			x.style.backgroundColor = '#EFE5FF';
-			document.getElementById("confusedWords").style.backgroundColor = "#EFE5FF"
-			document.getElementById("confusedWords").style.display = "block"
+		if (x.style.backgroundColor === "") {
+			x.style.backgroundColor = "#EFE5FF";
+			document.getElementById("confusedWords").style.backgroundColor =
+				"#EFE5FF";
+			document.getElementById("confusedWords").style.display = "block";
 
 			// Angry
-			document.getElementById("angryEmoji").style.backgroundColor = ""
-			document.getElementById("angryWords").style.backgroundColor = ""
-			document.getElementById("angryWords").style.display = "none"
+			document.getElementById("angryEmoji").style.backgroundColor = "";
+			document.getElementById("angryWords").style.backgroundColor = "";
+			document.getElementById("angryWords").style.display = "none";
 			// Happy
-			document.getElementById("happyEmoji").style.backgroundColor = ""
-			document.getElementById("happWords").style.backgroundColor = ""
-			document.getElementById("happWords").style.display = "none"
+			document.getElementById("happyEmoji").style.backgroundColor = "";
+			document.getElementById("happWords").style.backgroundColor = "";
+			document.getElementById("happWords").style.display = "none";
 			// Anxious
-			document.getElementById("anxiousEmoji").style.backgroundColor = ""
-			document.getElementById("anxiousWords").style.backgroundColor = ""
-			document.getElementById("anxiousWords").style.display = "none"
+			document.getElementById("anxiousEmoji").style.backgroundColor = "";
+			document.getElementById("anxiousWords").style.backgroundColor = "";
+			document.getElementById("anxiousWords").style.display = "none";
 			// Sad
-			document.getElementById("sadEmoji").style.backgroundColor = ""
-			document.getElementById("sadWords").style.backgroundColor = ""
-			document.getElementById("sadWords").style.display = "none"
+			document.getElementById("sadEmoji").style.backgroundColor = "";
+			document.getElementById("sadWords").style.backgroundColor = "";
+			document.getElementById("sadWords").style.display = "none";
 
 			props.setKeyAnswersConfused(true);
 			props.setKeyAnswers(false);
@@ -251,9 +252,10 @@ export default function CenterContent(props) {
 			props.setKeyAnswersAnxious(false);
 			props.setKeyAnswersSad(false);
 		} else {
-			x.style.backgroundColor = ''
-			document.getElementById("confusedWords").style.backgroundColor = "#F8F8FF"
-			document.getElementById("confusedWords").style.display = "none"
+			x.style.backgroundColor = "";
+			document.getElementById("confusedWords").style.backgroundColor =
+				"#F8F8FF";
+			document.getElementById("confusedWords").style.display = "none";
 			props.setKeyAnswersConfused(false);
 		}
 	};
@@ -261,27 +263,27 @@ export default function CenterContent(props) {
 	const handleOnChange4 = (e) => {
 		props.setEmotion(emotions[3]);
 		const x = document.getElementById("anxiousEmoji");
-		if (x.style.backgroundColor === '') {
-			x.style.backgroundColor = '#EFE5FF';
-			document.getElementById("anxiousWords").style.backgroundColor = "#EFE5FF"
-			document.getElementById("anxiousWords").style.display = "block"
+		if (x.style.backgroundColor === "") {
+			x.style.backgroundColor = "#EFE5FF";
+			document.getElementById("anxiousWords").style.backgroundColor = "#EFE5FF";
+			document.getElementById("anxiousWords").style.display = "block";
 
 			// Angry
-			document.getElementById("angryEmoji").style.backgroundColor = ""
-			document.getElementById("angryWords").style.backgroundColor = ""
-			document.getElementById("angryWords").style.display = "none"
+			document.getElementById("angryEmoji").style.backgroundColor = "";
+			document.getElementById("angryWords").style.backgroundColor = "";
+			document.getElementById("angryWords").style.display = "none";
 			// Confused
-			document.getElementById("confusedEmoji").style.backgroundColor = ""
-			document.getElementById("confusedWords").style.backgroundColor = ""
-			document.getElementById("confusedWords").style.display = "none"
+			document.getElementById("confusedEmoji").style.backgroundColor = "";
+			document.getElementById("confusedWords").style.backgroundColor = "";
+			document.getElementById("confusedWords").style.display = "none";
 			// Happy
-			document.getElementById("happyEmoji").style.backgroundColor = ""
-			document.getElementById("happWords").style.backgroundColor = ""
-			document.getElementById("happWords").style.display = "none"
+			document.getElementById("happyEmoji").style.backgroundColor = "";
+			document.getElementById("happWords").style.backgroundColor = "";
+			document.getElementById("happWords").style.display = "none";
 			// Sad
-			document.getElementById("sadEmoji").style.backgroundColor = ""
-			document.getElementById("sadWords").style.backgroundColor = ""
-			document.getElementById("sadWords").style.display = "none"
+			document.getElementById("sadEmoji").style.backgroundColor = "";
+			document.getElementById("sadWords").style.backgroundColor = "";
+			document.getElementById("sadWords").style.display = "none";
 
 			props.setKeyAnswersAnxious(true);
 			props.setKeyAnswers(false);
@@ -289,9 +291,9 @@ export default function CenterContent(props) {
 			props.setKeyAnswersConfused(false);
 			props.setKeyAnswersSad(false);
 		} else {
-			x.style.backgroundColor = ''
-			document.getElementById("anxiousWords").style.backgroundColor = "#F8F8FF"
-			document.getElementById("anxiousWords").style.display = "none"
+			x.style.backgroundColor = "";
+			document.getElementById("anxiousWords").style.backgroundColor = "#F8F8FF";
+			document.getElementById("anxiousWords").style.display = "none";
 			props.setKeyAnswersAnxious(false);
 		}
 	};
@@ -299,28 +301,27 @@ export default function CenterContent(props) {
 	const handleOnChange5 = (e) => {
 		props.setEmotion(emotions[4]);
 		const x = document.getElementById("sadEmoji");
-		if (x.style.backgroundColor === '') {
-			x.style.backgroundColor = '#EFE5FF';
-			document.getElementById("sadWords").style.backgroundColor = "#EFE5FF"
-			document.getElementById("sadWords").style.display = "block"
+		if (x.style.backgroundColor === "") {
+			x.style.backgroundColor = "#EFE5FF";
+			document.getElementById("sadWords").style.backgroundColor = "#EFE5FF";
+			document.getElementById("sadWords").style.display = "block";
 
 			// Angry
-			document.getElementById("angryEmoji").style.backgroundColor = ""
-			document.getElementById("angryWords").style.backgroundColor = ""
-			document.getElementById("angryWords").style.display = "none"
+			document.getElementById("angryEmoji").style.backgroundColor = "";
+			document.getElementById("angryWords").style.backgroundColor = "";
+			document.getElementById("angryWords").style.display = "none";
 			// Confused
-			document.getElementById("confusedEmoji").style.backgroundColor = ""
-			document.getElementById("confusedWords").style.backgroundColor = ""
-			document.getElementById("confusedWords").style.display = "none"
+			document.getElementById("confusedEmoji").style.backgroundColor = "";
+			document.getElementById("confusedWords").style.backgroundColor = "";
+			document.getElementById("confusedWords").style.display = "none";
 			// Anxious
-			document.getElementById("anxiousEmoji").style.backgroundColor = ""
-			document.getElementById("anxiousWords").style.backgroundColor = ""
-			document.getElementById("anxiousWords").style.display = "none"
+			document.getElementById("anxiousEmoji").style.backgroundColor = "";
+			document.getElementById("anxiousWords").style.backgroundColor = "";
+			document.getElementById("anxiousWords").style.display = "none";
 			// Happy
-			document.getElementById("happyEmoji").style.backgroundColor = ""
-			document.getElementById("happWords").style.backgroundColor = ""
-			document.getElementById("happWords").style.display = "none"
-
+			document.getElementById("happyEmoji").style.backgroundColor = "";
+			document.getElementById("happWords").style.backgroundColor = "";
+			document.getElementById("happWords").style.display = "none";
 
 			props.setKeyAnswersSad(true);
 			props.setKeyAnswers(false);
@@ -328,9 +329,9 @@ export default function CenterContent(props) {
 			props.setKeyAnswersConfused(false);
 			props.setKeyAnswersAnxious(false);
 		} else {
-			x.style.backgroundColor = ''
-			document.getElementById("sadWords").style.backgroundColor = "#F8F8FF"
-			document.getElementById("sadWords").style.display = "none"
+			x.style.backgroundColor = "";
+			document.getElementById("sadWords").style.backgroundColor = "#F8F8FF";
+			document.getElementById("sadWords").style.display = "none";
 			props.setKeyAnswersSad(false);
 		}
 	};
@@ -341,443 +342,443 @@ export default function CenterContent(props) {
 
 	// These functions Reads emotions on left panel and are for the happy Emoji
 	function handleEmotionAnswer1(e) {
-		props.setKeyAnswerCapture1(keyAnswers[0])
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		props.setKeyAnswerCapture1(keyAnswers[0]);
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 
 	function handleEmotionAnswer2(e) {
 		props.setKeyAnswerCapture2(keyAnswers[1]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswer3(e) {
 		props.setKeyAnswerCapture3(keyAnswers[2]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswer4(e) {
 		props.setKeyAnswerCapture4(keyAnswers[3]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswer5(e) {
 		props.setKeyAnswerCapture5(keyAnswers[4]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswer6(e) {
 		props.setKeyAnswerCapture6(keyAnswers[5]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswer7(e) {
 		props.setKeyAnswerCapture7(keyAnswers[6]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswer8(e) {
 		props.setKeyAnswerCapture8(keyAnswers[7]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswer9(e) {
 		props.setKeyAnswerCapture9(keyAnswers[8]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswer10(e) {
 		props.setKeyAnswerCapture10(keyAnswers[9]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswer11(e) {
 		props.setKeyAnswerCapture11(keyAnswers[10]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswer12(e) {
 		props.setKeyAnswerCapture12(keyAnswers[11]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswer13(e) {
 		props.setKeyAnswerCapture13(keyAnswers[12]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswer14(e) {
 		props.setKeyAnswerCapture14(keyAnswers[13]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	//
 
 	// These are for the Angry Emoji
 	function handleEmotionAnswerAngry1(e) {
-		props.setKeyAnswerCaptureAngry1(keyAnswersAngry[0])
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		props.setKeyAnswerCaptureAngry1(keyAnswersAngry[0]);
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswerAngry2(e) {
 		props.setKeyAnswerCaptureAngry2(keyAnswersAngry[1]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswerAngry3(e) {
 		props.setKeyAnswerCaptureAngry3(keyAnswersAngry[2]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswerAngry4(e) {
 		props.setKeyAnswerCaptureAngry4(keyAnswersAngry[3]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswerAngry5(e) {
 		props.setKeyAnswerCaptureAngry5(keyAnswersAngry[4]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswerAngry6(e) {
 		props.setKeyAnswerCaptureAngry6(keyAnswersAngry[5]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswerAngry7(e) {
 		props.setKeyAnswerCaptureAngry7(keyAnswersAngry[6]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswerAngry8(e) {
 		props.setKeyAnswerCaptureAngry8(keyAnswersAngry[7]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswerAngry9(e) {
 		props.setKeyAnswerCaptureAngry9(keyAnswersAngry[8]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswerAngry10(e) {
 		props.setKeyAnswerCaptureAngry10(keyAnswersAngry[9]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswerAngry11(e) {
 		props.setKeyAnswerCaptureAngry11(keyAnswersAngry[10]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswerAngry12(e) {
 		props.setKeyAnswerCaptureAngry12(keyAnswersAngry[11]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswerAngry13(e) {
 		props.setKeyAnswerCaptureAngry13(keyAnswersAngry[12]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswerAngry14(e) {
 		props.setKeyAnswerCaptureAngry14(keyAnswersAngry[13]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	//
 
 	// These are for the Confused Emoji
 	function handleEmotionAnswerConfused1(e) {
-		props.setKeyAnswerCaptureConfused1(keyAnswersConfused[0])
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		props.setKeyAnswerCaptureConfused1(keyAnswersConfused[0]);
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswerConfused2(e) {
 		props.setKeyAnswerCaptureConfused2(keyAnswersConfused[1]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswerConfused3(e) {
 		props.setKeyAnswerCaptureConfused3(keyAnswersConfused[2]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswerConfused4(e) {
 		props.setKeyAnswerCaptureConfused4(keyAnswersConfused[3]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswerConfused5(e) {
 		props.setKeyAnswerCaptureConfused5(keyAnswersConfused[4]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswerConfused6(e) {
 		props.setKeyAnswerCaptureConfused6(keyAnswersConfused[5]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswerConfused7(e) {
 		props.setKeyAnswerCaptureConfused7(keyAnswersConfused[6]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswerConfused8(e) {
 		props.setKeyAnswerCaptureConfused8(keyAnswersConfused[7]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswerConfused9(e) {
 		props.setKeyAnswerCaptureConfused9(keyAnswersConfused[8]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswerConfused10(e) {
 		props.setKeyAnswerCaptureConfused10(keyAnswersConfused[9]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswerConfused11(e) {
 		props.setKeyAnswerCaptureConfused11(keyAnswersConfused[10]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswerConfused12(e) {
 		props.setKeyAnswerCaptureConfused12(keyAnswersConfused[11]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswerConfused13(e) {
 		props.setKeyAnswerCaptureConfused13(keyAnswersConfused[12]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswerConfused14(e) {
 		props.setKeyAnswerCaptureConfused14(keyAnswersConfused[13]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	//
 
 	// These are for the Anxious Emoji
 	function handleEmotionAnswerAnxious1(e) {
-		props.setKeyAnswerCaptureAnxious1(keyAnswersAnxious[0])
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		props.setKeyAnswerCaptureAnxious1(keyAnswersAnxious[0]);
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswerAnxious2(e) {
 		props.setKeyAnswerCaptureAnxious2(keyAnswersAnxious[1]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswerAnxious3(e) {
 		props.setKeyAnswerCaptureAnxious3(keyAnswersAnxious[2]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswerAnxious4(e) {
 		props.setKeyAnswerCaptureAnxious4(keyAnswersAnxious[3]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswerAnxious5(e) {
 		props.setKeyAnswerCaptureAnxious5(keyAnswersAnxious[4]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswerAnxious6(e) {
 		props.setKeyAnswerCaptureAnxious6(keyAnswersAnxious[5]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswerAnxious7(e) {
 		props.setKeyAnswerCaptureAnxious7(keyAnswersAnxious[6]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswerAnxious8(e) {
 		props.setKeyAnswerCaptureAnxious8(keyAnswersAnxious[7]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswerAnxious9(e) {
 		props.setKeyAnswerCaptureAnxious9(keyAnswersAnxious[8]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswerAnxious10(e) {
 		props.setKeyAnswerCaptureAnxious10(keyAnswersAnxious[9]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswerAnxious11(e) {
 		props.setKeyAnswerCaptureAnxious11(keyAnswersAnxious[10]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswerAnxious12(e) {
 		props.setKeyAnswerCaptureAnxious12(keyAnswersAnxious[11]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswerAnxious13(e) {
 		props.setKeyAnswerCaptureAnxious13(keyAnswersAnxious[12]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswerAnxious14(e) {
 		props.setKeyAnswerCaptureAnxious14(keyAnswersAnxious[13]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	//
 
 	// These are for the sad emoji
 	function handleEmotionAnswerSad1(e) {
-		props.setKeyAnswerCaptureSad1(keyAnswersSad[0])
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		props.setKeyAnswerCaptureSad1(keyAnswersSad[0]);
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswerSad2(e) {
 		props.setKeyAnswerCaptureSad2(keyAnswersSad[1]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswerSad3(e) {
 		props.setKeyAnswerCaptureSad3(keyAnswersSad[2]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswerSad4(e) {
 		props.setKeyAnswerCaptureSad4(keyAnswersSad[3]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswerSad5(e) {
 		props.setKeyAnswerCaptureSad5(keyAnswersSad[4]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswerSad6(e) {
 		props.setKeyAnswerCaptureSad6(keyAnswersSad[5]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswerSad7(e) {
 		props.setKeyAnswerCaptureSad7(keyAnswersSad[6]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswerSad8(e) {
 		props.setKeyAnswerCaptureSad8(keyAnswersSad[7]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswerSad9(e) {
 		props.setKeyAnswerCaptureSad9(keyAnswersSad[8]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswerSad10(e) {
 		props.setKeyAnswerCaptureSad10(keyAnswersSad[9]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswerSad11(e) {
 		props.setKeyAnswerCaptureSad11(keyAnswersSad[10]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswerSad12(e) {
 		props.setKeyAnswerCaptureSad12(keyAnswersSad[11]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswerSad13(e) {
 		props.setKeyAnswerCaptureSad13(keyAnswersSad[12]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	function handleEmotionAnswerSad14(e) {
 		props.setKeyAnswerCaptureSad14(keyAnswersSad[13]);
-		document.getElementById("readEmoBtn").style.display = "block"
-		document.getElementById("readEmotions").style.display = "block"
-		document.getElementById("possibleResponsesBtn").style.display = "block"
+		document.getElementById("readEmoBtn").style.display = "block";
+		document.getElementById("readEmotions").style.display = "block";
+		document.getElementById("possibleResponsesBtn").style.display = "block";
 	}
 	//
 
 	// These are for the Follow Up Key Words
 	function handleEmotionAnswerFollowUp1(e) {
-		props.setKeyAnswerCaptureFollowUp1(keyAnswersFollowUp[0])
+		props.setKeyAnswerCaptureFollowUp1(keyAnswersFollowUp[0]);
 		// document.getElementById("readEmoBtn").style.display = "block"
 		// document.getElementById("readEmotions").style.display = "block"
 		// document.getElementById("possibleResponsesBtn").style.display = "block"
@@ -860,7 +861,7 @@ export default function CenterContent(props) {
 		// document.getElementById("readEmotions").style.display = "block"
 		// document.getElementById("possibleResponsesBtn").style.display = "block"
 	}
-	// 
+	//
 
 	// code for text input for alternative keyword answer
 
@@ -885,94 +886,124 @@ export default function CenterContent(props) {
 	// 	props.setAgentQuestions((agentQuestions) => !agentQuestions);
 	// }
 
-	function getYouthReflection(e) {
-		props.setYouthTextInput({
-			...props.youthTextInput,
-			[e.target.name]: e.target.value,
-		});
-	}
+	// function getYouthReflection(e) {
+	// 	props.setYouthTextInput({
+	// 		...props.youthTextInput,
+	// 		[e.target.name]: e.target.value,
+	// 	});
+	// }
 
-	let { youthOQ, youthFQ, youthFQQ, youthPQ } = props.youthTextInput;
-	function addYouthReflection(e) {
-		props.setYouthInputArr([
-			...props.youthInputArr,
-			{ youthOQ, youthFQ, youthFQQ, youthPQ },
-		]);
-		// console.log(props.youthInputArr);
-		props.setYouthTextInput({ youthOQ: "", youthFQ: "", youthFQQ: "", youthPQ: "" });
-		document.getElementById("followUpQuestionsBtn").style.backgroundColor = "#789E46"
-		document.getElementById("followUpQuestionsBtn").style.animation = false
-		document.getElementById("promptQuestionsBtn").style.display = "block"
-		document.getElementById("followUpQuestionInput").style.display = "none"
-		document.getElementById("youthPromptInput").style.display = "block"
-	}
+	// let { youthOQ, youthFQ, youthFQQ, youthPQ } = props.youthTextInput;
+	// function addYouthReflection(e) {
+	// 	props.setYouthInputArr([
+	// 		...props.youthInputArr,
+	// 		{ youthOQ, youthFQ, youthFQQ, youthPQ },
+	// 	]);
+	// 	// console.log(props.youthInputArr);
+	// 	props.setYouthTextInput({
+	// 		youthOQ: "",
+	// 		youthFQ: "",
+	// 		youthFQQ: "",
+	// 		youthPQ: "",
+	// 	});
+	// 	document.getElementById("followUpQuestionsBtn").style.backgroundColor =
+	// 		"#789E46";
+	// 	document.getElementById("followUpQuestionsBtn").style.animation = false;
+	// 	document.getElementById("promptQuestionsBtn").style.display = "block";
+	// 	document.getElementById("followUpQuestionInput").style.display = "none";
+	// 	document.getElementById("youthPromptInput").style.display = "block";
+	// }
 
-	function addYouthReflection1(e) {
-		props.setYouthInputArr([
-			...props.youthInputArr,
-			{ youthOQ, youthFQ, youthFQQ, youthPQ },
-		]);
-		// console.log(props.youthInputArr);
-		props.setYouthTextInput({ youthOQ: "", youthFQ: "", youthFQQ: "", youthPQ: "" });
-		// document.getElementById("followUpQuestionsBtn").style.backgroundColor = "#789E46"
-		// document.getElementById("promptQuestionsBtn").style.display = "block"
-		document.getElementById("promptQuestionsBtn").style.backgroundColor = "#789E46"
-		document.getElementById("promptQuestionsBtn").style.animation = false
-		// document.getElementById("followUpQuestionInput").style.display = "none"
-		document.getElementById("youthPromptInput").style.display = "none"
-		document.getElementById("youthQuestionsBtn").style.display = "block"
-		document.getElementById("youthQuestionInput").style.display = "block"
-		document.getElementById("youthReflectionHead").style.display = "block"
-	}
+	// function addYouthReflection1(e) {
+	// 	props.setYouthInputArr([
+	// 		...props.youthInputArr,
+	// 		{ youthOQ, youthFQ, youthFQQ, youthPQ },
+	// 	]);
+	// 	// console.log(props.youthInputArr);
+	// 	props.setYouthTextInput({
+	// 		youthOQ: "",
+	// 		youthFQ: "",
+	// 		youthFQQ: "",
+	// 		youthPQ: "",
+	// 	});
+	// 	// document.getElementById("followUpQuestionsBtn").style.backgroundColor = "#789E46"
+	// 	// document.getElementById("promptQuestionsBtn").style.display = "block"
+	// 	document.getElementById("promptQuestionsBtn").style.backgroundColor =
+	// 		"#789E46";
+	// 	document.getElementById("promptQuestionsBtn").style.animation = false;
+	// 	// document.getElementById("followUpQuestionInput").style.display = "none"
+	// 	document.getElementById("youthPromptInput").style.display = "none";
+	// 	document.getElementById("youthQuestionsBtn").style.display = "block";
+	// 	document.getElementById("youthQuestionInput").style.display = "block";
+	// 	document.getElementById("youthReflectionHead").style.display = "block";
+	// }
 
-	function addYouthReflection2(e) {
-		props.setYouthInputArr([
-			...props.youthInputArr,
-			{ youthOQ, youthFQ, youthFQQ, youthPQ },
-		]);
-		// console.log(props.youthInputArr);
-		props.setYouthTextInput({ youthOQ: "", youthFQ: "", youthFQQ: "", youthPQ: "" });
-		document.getElementById("possibleResponsesBtn1").style.display = "block"
-		// document.getElementById("promptQuestionsBtn").style.display = "block"
-		// document.getElementById("promptQuestionsBtn").style.backgroundColor = "#789E46"
-		// document.getElementById("promptQuestionsBtn").style.animation = false
-		// document.getElementById("followUpQuestionInput").style.display = "none"
-		// document.getElementById("youthPromptInput").style.display = "none"
-		document.getElementById("youthQuestionsBtn").style.backgroundColor = "#789E46"
-		document.getElementById("youthQuestionsBtn").style.animation = false
-		// document.getElementById("youthQuestionInput").style.display = "block"
-	}
+	// function addYouthReflection2(e) {
+	// 	props.setYouthInputArr([
+	// 		...props.youthInputArr,
+	// 		{ youthOQ, youthFQ, youthFQQ, youthPQ },
+	// 	]);
+	// 	// console.log(props.youthInputArr);
+	// 	props.setYouthTextInput({
+	// 		youthOQ: "",
+	// 		youthFQ: "",
+	// 		youthFQQ: "",
+	// 		youthPQ: "",
+	// 	});
+	// 	document.getElementById("possibleResponsesBtn1").style.display = "block";
+	// 	// document.getElementById("promptQuestionsBtn").style.display = "block"
+	// 	// document.getElementById("promptQuestionsBtn").style.backgroundColor = "#789E46"
+	// 	// document.getElementById("promptQuestionsBtn").style.animation = false
+	// 	// document.getElementById("followUpQuestionInput").style.display = "none"
+	// 	// document.getElementById("youthPromptInput").style.display = "none"
+	// 	document.getElementById("youthQuestionsBtn").style.backgroundColor =
+	// 		"#789E46";
+	// 	document.getElementById("youthQuestionsBtn").style.animation = false;
+	// 	// document.getElementById("youthQuestionInput").style.display = "block"
+	// }
 
-	function addYouthReflection4(e) {
-		props.setYouthInputArr([
-			...props.youthInputArr,
-			{ youthOQ, youthFQ, youthFQQ, youthPQ },
-		]);
-		// console.log(props.youthInputArr);
-		props.setYouthTextInput({ youthOQ: "", youthFQ: "", youthFQQ: "", youthPQ: "" });
-		document.getElementById("followUpQuestionsBtn1").style.backgroundColor = "#789E46"
-		document.getElementById("followUpQuestionsBtn1").style.animation = false
-		document.getElementById("promptQuestionsBtn1").style.display = "block"
-		document.getElementById("followUpQuestionInput1").style.display = "none"
-		document.getElementById("youthPromptInput1").style.display = "block"
-	}
+	// function addYouthReflection4(e) {
+	// 	props.setYouthInputArr([
+	// 		...props.youthInputArr,
+	// 		{ youthOQ, youthFQ, youthFQQ, youthPQ },
+	// 	]);
+	// 	// console.log(props.youthInputArr);
+	// 	props.setYouthTextInput({
+	// 		youthOQ: "",
+	// 		youthFQ: "",
+	// 		youthFQQ: "",
+	// 		youthPQ: "",
+	// 	});
+	// 	document.getElementById("followUpQuestionsBtn1").style.backgroundColor =
+	// 		"#789E46";
+	// 	document.getElementById("followUpQuestionsBtn1").style.animation = false;
+	// 	document.getElementById("promptQuestionsBtn1").style.display = "block";
+	// 	document.getElementById("followUpQuestionInput1").style.display = "none";
+	// 	document.getElementById("youthPromptInput1").style.display = "block";
+	// }
 
-	function addYouthReflection5(e) {
-		props.setYouthInputArr([
-			...props.youthInputArr,
-			{ youthOQ, youthFQ, youthFQQ, youthPQ },
-		]);
-		// console.log(props.youthInputArr);
-		props.setYouthTextInput({ youthOQ: "", youthFQ: "", youthFQQ: "", youthPQ: "" });
-		// document.getElementById("followUpQuestionsBtn").style.backgroundColor = "#789E46"
-		// document.getElementById("promptQuestionsBtn").style.display = "block"
-		document.getElementById("promptQuestionsBtn1").style.backgroundColor = "#789E46"
-		document.getElementById("promptQuestionsBtn1").style.animation = false
-		// document.getElementById("followUpQuestionInput").style.display = "none"
-		document.getElementById("youthPromptInput1").style.display = "none"
-		document.getElementById("youthReflection").style.display = "none"
-		document.getElementById("agentReflection").style.display = "block"
-	}
+	// function addYouthReflection5(e) {
+	// 	props.setYouthInputArr([
+	// 		...props.youthInputArr,
+	// 		{ youthOQ, youthFQ, youthFQQ, youthPQ },
+	// 	]);
+	// 	// console.log(props.youthInputArr);
+	// 	props.setYouthTextInput({
+	// 		youthOQ: "",
+	// 		youthFQ: "",
+	// 		youthFQQ: "",
+	// 		youthPQ: "",
+	// 	});
+	// 	// document.getElementById("followUpQuestionsBtn").style.backgroundColor = "#789E46"
+	// 	// document.getElementById("promptQuestionsBtn").style.display = "block"
+	// 	document.getElementById("promptQuestionsBtn1").style.backgroundColor =
+	// 		"#789E46";
+	// 	document.getElementById("promptQuestionsBtn1").style.animation = false;
+	// 	// document.getElementById("followUpQuestionInput").style.display = "none"
+	// 	document.getElementById("youthPromptInput1").style.display = "none";
+	// 	document.getElementById("youthReflection").style.display = "none";
+	// 	document.getElementById("agentReflection").style.display = "block";
+	// }
 
 	function getAgentReflection(e) {
 		props.setAgentData({ ...props.agentData, [e.target.name]: e.target.value });
@@ -983,9 +1014,9 @@ export default function CenterContent(props) {
 	function addAgentReflection() {
 		props.setAgentDataArr([...props.agentDataArr, { agentOQ }]);
 		props.setAgentData({ agentOQ: "" });
-		document.getElementById("agentReflection").style.display = "none"
-		document.getElementById("bookings").style.display = "block"
-		document.getElementById("finalSubmit").style.display = "block"
+		// document.getElementById("agentReflection").style.display = "none";
+		// document.getElementById("bookings").style.display = "block";
+		// document.getElementById("finalSubmit").style.display = "block";
 	}
 
 	function submitForm() {
@@ -993,9 +1024,8 @@ export default function CenterContent(props) {
 		navigate("/Dashboard");
 	}
 
-
 	return (
-		<div className='container' id="centerContent" >
+		<div className='container' id='centerContent'>
 			{/* header section starts */}
 			{/* opening question section */}
 			<div className='header'>
@@ -1019,13 +1049,13 @@ export default function CenterContent(props) {
 						})}
 					</p>
 				</div>
-				<div id="emojis" className='emojis'>
+				<div id='emojis' className='emojis'>
 					<div
 						value={props.recommendedQuestions}
 						className='d-flex justify-content-evenly px-5'>
 						<option value=''></option>
 						<button
-							id="happyEmoji"
+							id='happyEmoji'
 							value='happy'
 							className='happyEmoji'
 							onClick={handleOnChange1}>
@@ -1033,7 +1063,7 @@ export default function CenterContent(props) {
 							<span className='fs-5'>{emotions[0]}</span>
 						</button>
 						<button
-							id="angryEmoji"
+							id='angryEmoji'
 							value='angry'
 							className='angryEmoji'
 							onClick={handleOnChange2}>
@@ -1041,7 +1071,7 @@ export default function CenterContent(props) {
 							<span className='fs-5'>{emotions[1]}</span>
 						</button>
 						<button
-							id="confusedEmoji"
+							id='confusedEmoji'
 							value='confused'
 							className='confusedEmoji'
 							onClick={handleOnChange3}>
@@ -1049,7 +1079,7 @@ export default function CenterContent(props) {
 							<span className='fs-5'>{emotions[2]}</span>
 						</button>
 						<button
-							id="anxiousEmoji"
+							id='anxiousEmoji'
 							value='anxious'
 							className='anxiousEmoji'
 							onClick={handleOnChange4}>
@@ -1057,7 +1087,7 @@ export default function CenterContent(props) {
 							<span className='fs-5'>{emotions[3]}</span>
 						</button>
 						<button
-							id="sadEmoji"
+							id='sadEmoji'
 							value='sad'
 							className='sadEmoji'
 							onClick={handleOnChange5}>
@@ -1071,10 +1101,10 @@ export default function CenterContent(props) {
 
 			{/* Body section starts */}
 			{/* section for triggerd an reason keyword answers */}
+			{/* need out this scroll */}
 			<div className='body mt-5' id='scrollable'>
-
 				{/* These are your happy words */}
-				<div id="happWords" className='emptyDivForEmotoinKeyWords'>
+				<div id='happWords' className='emptyDivForEmotoinKeyWords'>
 					{props.keyAnswers ? (
 						<div className=''>
 							<div className='d-flex justify-content-between'>
@@ -1185,7 +1215,7 @@ export default function CenterContent(props) {
 				</div>
 
 				{/* These are your angry words */}
-				<div id="angryWords" className='emptyDivForEmotoinKeyWords'>
+				<div id='angryWords' className='emptyDivForEmotoinKeyWords'>
 					{props.keyAnswersAngry ? (
 						<div className=''>
 							<div className='d-flex justify-content-between'>
@@ -1193,27 +1223,37 @@ export default function CenterContent(props) {
 									<div className='d-flex flex-column justify-content-around mb-2'>
 										<button className='EKW' onClick={handleEmotionAnswerAngry1}>
 											{KeyWordAnswersAngry.map((keyAnswers) => {
-												return <p className='pt-2'>{keyAnswers.keyAnswerAngry1}</p>;
+												return (
+													<p className='pt-2'>{keyAnswers.keyAnswerAngry1}</p>
+												);
 											})}
 										</button>
 										<button className='EKW' onClick={handleEmotionAnswerAngry2}>
 											{KeyWordAnswersAngry.map((keyAnswers) => {
-												return <p className='pt-2'>{keyAnswers.keyAnswerAngry2}</p>;
+												return (
+													<p className='pt-2'>{keyAnswers.keyAnswerAngry2}</p>
+												);
 											})}
 										</button>
 										<button className='EKW' onClick={handleEmotionAnswerAngry3}>
 											{KeyWordAnswersAngry.map((keyAnswers) => {
-												return <p className='pt-2'>{keyAnswers.keyAnswerAngry3}</p>;
+												return (
+													<p className='pt-2'>{keyAnswers.keyAnswerAngry3}</p>
+												);
 											})}
 										</button>
 										<button className='EKW' onClick={handleEmotionAnswerAngry4}>
 											{KeyWordAnswersAngry.map((keyAnswers) => {
-												return <p className='pt-2'>{keyAnswers.keyAnswerAngry4}</p>;
+												return (
+													<p className='pt-2'>{keyAnswers.keyAnswerAngry4}</p>
+												);
 											})}
 										</button>
 										<button className='EKW' onClick={handleEmotionAnswerAngry5}>
 											{KeyWordAnswersAngry.map((keyAnswers) => {
-												return <p className='pt-2'>{keyAnswers.keyAnswerAngry5}</p>;
+												return (
+													<p className='pt-2'>{keyAnswers.keyAnswerAngry5}</p>
+												);
 											})}
 										</button>
 									</div>
@@ -1222,52 +1262,80 @@ export default function CenterContent(props) {
 								<div className='d-flex flex-column justify-content-around mb-2'>
 									<button className='EKW' onClick={handleEmotionAnswerAngry6}>
 										{KeyWordAnswersAngry.map((keyAnswers) => {
-											return <p className='pt-2'>{keyAnswers.keyAnswerAngry6}</p>;
+											return (
+												<p className='pt-2'>{keyAnswers.keyAnswerAngry6}</p>
+											);
 										})}
 									</button>
 									<button className='EKW' onClick={handleEmotionAnswerAngry7}>
 										{KeyWordAnswersAngry.map((keyAnswers) => {
-											return <p className='pt-2'>{keyAnswers.keyAnswerAngry7}</p>;
+											return (
+												<p className='pt-2'>{keyAnswers.keyAnswerAngry7}</p>
+											);
 										})}
 									</button>
 									<button className='EKW' onClick={handleEmotionAnswerAngry8}>
 										{KeyWordAnswersAngry.map((keyAnswers) => {
-											return <p className='pt-2'>{keyAnswers.keyAnswerAngry8}</p>;
+											return (
+												<p className='pt-2'>{keyAnswers.keyAnswerAngry8}</p>
+											);
 										})}
 									</button>
 
 									<button className='EKW' onClick={handleEmotionAnswerAngry9}>
 										{KeyWordAnswersAngry.map((keyAnswers) => {
-											return <p className='pt-2'>{keyAnswers.keyAnswerAngry9}</p>;
+											return (
+												<p className='pt-2'>{keyAnswers.keyAnswerAngry9}</p>
+											);
 										})}
 									</button>
 								</div>
 
 								<div className='ReasonAnswers'>
 									<div className='d-flex flex-column mb-2'>
-										<button className='EKW' onClick={handleEmotionAnswerAngry10}>
+										<button
+											className='EKW'
+											onClick={handleEmotionAnswerAngry10}>
 											{KeyWordAnswersAngry.map((keyAnswers) => {
-												return <p className='pt-2'>{keyAnswers.keyAnswerAngry10}</p>;
+												return (
+													<p className='pt-2'>{keyAnswers.keyAnswerAngry10}</p>
+												);
 											})}
 										</button>
-										<button className='EKW' onClick={handleEmotionAnswerAngry11}>
+										<button
+											className='EKW'
+											onClick={handleEmotionAnswerAngry11}>
 											{KeyWordAnswersAngry.map((keyAnswers) => {
-												return <p className='pt-2'>{keyAnswers.keyAnswerAngry11}</p>;
+												return (
+													<p className='pt-2'>{keyAnswers.keyAnswerAngry11}</p>
+												);
 											})}
 										</button>
-										<button className='EKW' onClick={handleEmotionAnswerAngry12}>
+										<button
+											className='EKW'
+											onClick={handleEmotionAnswerAngry12}>
 											{KeyWordAnswersAngry.map((keyAnswers) => {
-												return <p className='pt-2'>{keyAnswers.keyAnswerAngry12}</p>;
+												return (
+													<p className='pt-2'>{keyAnswers.keyAnswerAngry12}</p>
+												);
 											})}
 										</button>
-										<button className='EKW' onClick={handleEmotionAnswerAngry13}>
+										<button
+											className='EKW'
+											onClick={handleEmotionAnswerAngry13}>
 											{KeyWordAnswersAngry.map((keyAnswers) => {
-												return <p className='pt-2'>{keyAnswers.keyAnswerAngry13}</p>;
+												return (
+													<p className='pt-2'>{keyAnswers.keyAnswerAngry13}</p>
+												);
 											})}
 										</button>
-										<button className='EKW' onClick={handleEmotionAnswerAngry14}>
+										<button
+											className='EKW'
+											onClick={handleEmotionAnswerAngry14}>
 											{KeyWordAnswersAngry.map((keyAnswers) => {
-												return <p className='pt-2'>{keyAnswers.keyAnswerAngry14}</p>;
+												return (
+													<p className='pt-2'>{keyAnswers.keyAnswerAngry14}</p>
+												);
 											})}
 										</button>
 									</div>
@@ -1295,89 +1363,165 @@ export default function CenterContent(props) {
 				</div>
 
 				{/* These are your confused words */}
-				<div id="confusedWords" className='emptyDivForEmotoinKeyWords'>
+				<div id='confusedWords' className='emptyDivForEmotoinKeyWords'>
 					{props.keyAnswersConfused ? (
 						<div className=''>
 							<div className='d-flex justify-content-between'>
 								<div className='TriggersAnswers'>
 									<div className='d-flex flex-column justify-content-around mb-2'>
-										<button className='EKW' onClick={handleEmotionAnswerConfused1}>
+										<button
+											className='EKW'
+											onClick={handleEmotionAnswerConfused1}>
 											{KeyWordAnswersConfused.map((keyAnswers) => {
-												return <p className='pt-2'>{keyAnswers.keyAnswerConfused1}</p>;
+												return (
+													<p className='pt-2'>
+														{keyAnswers.keyAnswerConfused1}
+													</p>
+												);
 											})}
 										</button>
-										<button className='EKW' onClick={handleEmotionAnswerConfused2}>
+										<button
+											className='EKW'
+											onClick={handleEmotionAnswerConfused2}>
 											{KeyWordAnswersConfused.map((keyAnswers) => {
-												return <p className='pt-2'>{keyAnswers.keyAnswerConfused2}</p>;
+												return (
+													<p className='pt-2'>
+														{keyAnswers.keyAnswerConfused2}
+													</p>
+												);
 											})}
 										</button>
-										<button className='EKW' onClick={handleEmotionAnswerConfused3}>
+										<button
+											className='EKW'
+											onClick={handleEmotionAnswerConfused3}>
 											{KeyWordAnswersConfused.map((keyAnswers) => {
-												return <p className='pt-2'>{keyAnswers.keyAnswerConfused3}</p>;
+												return (
+													<p className='pt-2'>
+														{keyAnswers.keyAnswerConfused3}
+													</p>
+												);
 											})}
 										</button>
-										<button className='EKW' onClick={handleEmotionAnswerConfused4}>
+										<button
+											className='EKW'
+											onClick={handleEmotionAnswerConfused4}>
 											{KeyWordAnswersConfused.map((keyAnswers) => {
-												return <p className='pt-2'>{keyAnswers.keyAnswerConfused4}</p>;
+												return (
+													<p className='pt-2'>
+														{keyAnswers.keyAnswerConfused4}
+													</p>
+												);
 											})}
 										</button>
-										<button className='EKW' onClick={handleEmotionAnswerConfused5}>
+										<button
+											className='EKW'
+											onClick={handleEmotionAnswerConfused5}>
 											{KeyWordAnswersConfused.map((keyAnswers) => {
-												return <p className='pt-2'>{keyAnswers.keyAnswerConfused5}</p>;
+												return (
+													<p className='pt-2'>
+														{keyAnswers.keyAnswerConfused5}
+													</p>
+												);
 											})}
 										</button>
 									</div>
 								</div>
 
 								<div className='d-flex flex-column justify-content-around mb-2'>
-									<button className='EKW' onClick={handleEmotionAnswerConfused6}>
+									<button
+										className='EKW'
+										onClick={handleEmotionAnswerConfused6}>
 										{KeyWordAnswersConfused.map((keyAnswers) => {
-											return <p className='pt-2'>{keyAnswers.keyAnswerConfused6}</p>;
+											return (
+												<p className='pt-2'>{keyAnswers.keyAnswerConfused6}</p>
+											);
 										})}
 									</button>
-									<button className='EKW' onClick={handleEmotionAnswerConfused7}>
+									<button
+										className='EKW'
+										onClick={handleEmotionAnswerConfused7}>
 										{KeyWordAnswersConfused.map((keyAnswers) => {
-											return <p className='pt-2'>{keyAnswers.keyAnswerConfused7}</p>;
+											return (
+												<p className='pt-2'>{keyAnswers.keyAnswerConfused7}</p>
+											);
 										})}
 									</button>
-									<button className='EKW' onClick={handleEmotionAnswerConfused8}>
+									<button
+										className='EKW'
+										onClick={handleEmotionAnswerConfused8}>
 										{KeyWordAnswersConfused.map((keyAnswers) => {
-											return <p className='pt-2'>{keyAnswers.keyAnswerConfused8}</p>;
+											return (
+												<p className='pt-2'>{keyAnswers.keyAnswerConfused8}</p>
+											);
 										})}
 									</button>
 
-									<button className='EKW' onClick={handleEmotionAnswerConfused9}>
+									<button
+										className='EKW'
+										onClick={handleEmotionAnswerConfused9}>
 										{KeyWordAnswersConfused.map((keyAnswers) => {
-											return <p className='pt-2'>{keyAnswers.keyAnswerConfused9}</p>;
+											return (
+												<p className='pt-2'>{keyAnswers.keyAnswerConfused9}</p>
+											);
 										})}
 									</button>
 								</div>
 
 								<div className='ReasonAnswers'>
 									<div className='d-flex flex-column mb-2'>
-										<button className='EKW' onClick={handleEmotionAnswerConfused10}>
+										<button
+											className='EKW'
+											onClick={handleEmotionAnswerConfused10}>
 											{KeyWordAnswersConfused.map((keyAnswers) => {
-												return <p className='pt-2'>{keyAnswers.keyAnswerConfused10}</p>;
+												return (
+													<p className='pt-2'>
+														{keyAnswers.keyAnswerConfused10}
+													</p>
+												);
 											})}
 										</button>
-										<button className='EKW' onClick={handleEmotionAnswerConfused11}>
+										<button
+											className='EKW'
+											onClick={handleEmotionAnswerConfused11}>
 											{KeyWordAnswersConfused.map((keyAnswers) => {
-												return <p className='pt-2'>{keyAnswers.keyAnswerConfused11}</p>;
+												return (
+													<p className='pt-2'>
+														{keyAnswers.keyAnswerConfused11}
+													</p>
+												);
 											})}
 										</button>
-										<button className='EKW' onClick={handleEmotionAnswerConfused12}>
+										<button
+											className='EKW'
+											onClick={handleEmotionAnswerConfused12}>
 											{KeyWordAnswersConfused.map((keyAnswers) => {
-												return <p className='pt-2'>{keyAnswers.keyAnswerConfused12}</p>;
+												return (
+													<p className='pt-2'>
+														{keyAnswers.keyAnswerConfused12}
+													</p>
+												);
 											})}
 										</button>
-										<button className='EKW' onClick={handleEmotionAnswerConfused13}>
+										<button
+											className='EKW'
+											onClick={handleEmotionAnswerConfused13}>
 											{KeyWordAnswersConfused.map((keyAnswers) => {
-												return <p className='pt-2'>{keyAnswers.keyAnswerConfused13}</p>;
+												return (
+													<p className='pt-2'>
+														{keyAnswers.keyAnswerConfused13}
+													</p>
+												);
 											})}
 										</button>
-										<button className='EKW' onClick={handleEmotionAnswerConfused14}>
+										<button
+											className='EKW'
+											onClick={handleEmotionAnswerConfused14}>
 											{KeyWordAnswersConfused.map((keyAnswers) => {
-												return <p className='pt-2'>{keyAnswers.keyAnswerConfused14}</p>;
+												return (
+													<p className='pt-2'>
+														{keyAnswers.keyAnswerConfused14}
+													</p>
+												);
 											})}
 										</button>
 									</div>
@@ -1405,35 +1549,55 @@ export default function CenterContent(props) {
 				</div>
 
 				{/* These are your anxious words */}
-				<div id="anxiousWords" className='emptyDivForEmotoinKeyWords'>
+				<div id='anxiousWords' className='emptyDivForEmotoinKeyWords'>
 					{props.keyAnswersAnxious ? (
 						<div className=''>
 							<div className='d-flex justify-content-between'>
 								<div className='TriggersAnswers'>
 									<div className='d-flex flex-column justify-content-around mb-2'>
-										<button className='EKW' onClick={handleEmotionAnswerAnxious1}>
+										<button
+											className='EKW'
+											onClick={handleEmotionAnswerAnxious1}>
 											{KeyWordAnswersAnxious.map((keyAnswers) => {
-												return <p className='pt-2'>{keyAnswers.keyAnswerAnxious1}</p>;
+												return (
+													<p className='pt-2'>{keyAnswers.keyAnswerAnxious1}</p>
+												);
 											})}
 										</button>
-										<button className='EKW' onClick={handleEmotionAnswerAnxious2}>
+										<button
+											className='EKW'
+											onClick={handleEmotionAnswerAnxious2}>
 											{KeyWordAnswersAnxious.map((keyAnswers) => {
-												return <p className='pt-2'>{keyAnswers.keyAnswerAnxious2}</p>;
+												return (
+													<p className='pt-2'>{keyAnswers.keyAnswerAnxious2}</p>
+												);
 											})}
 										</button>
-										<button className='EKW' onClick={handleEmotionAnswerAnxious3}>
+										<button
+											className='EKW'
+											onClick={handleEmotionAnswerAnxious3}>
 											{KeyWordAnswersAnxious.map((keyAnswers) => {
-												return <p className='pt-2'>{keyAnswers.keyAnswerAnxious3}</p>;
+												return (
+													<p className='pt-2'>{keyAnswers.keyAnswerAnxious3}</p>
+												);
 											})}
 										</button>
-										<button className='EKW' onClick={handleEmotionAnswerAnxious4}>
+										<button
+											className='EKW'
+											onClick={handleEmotionAnswerAnxious4}>
 											{KeyWordAnswersAnxious.map((keyAnswers) => {
-												return <p className='pt-2'>{keyAnswers.keyAnswerAnxious4}</p>;
+												return (
+													<p className='pt-2'>{keyAnswers.keyAnswerAnxious4}</p>
+												);
 											})}
 										</button>
-										<button className='EKW' onClick={handleEmotionAnswerAnxious5}>
+										<button
+											className='EKW'
+											onClick={handleEmotionAnswerAnxious5}>
 											{KeyWordAnswersAnxious.map((keyAnswers) => {
-												return <p className='pt-2'>{keyAnswers.keyAnswerAnxious5}</p>;
+												return (
+													<p className='pt-2'>{keyAnswers.keyAnswerAnxious5}</p>
+												);
 											})}
 										</button>
 									</div>
@@ -1442,52 +1606,90 @@ export default function CenterContent(props) {
 								<div className='d-flex flex-column justify-content-around mb-2'>
 									<button className='EKW' onClick={handleEmotionAnswerAnxious6}>
 										{KeyWordAnswersAnxious.map((keyAnswers) => {
-											return <p className='pt-2'>{keyAnswers.keyAnswerAnxious6}</p>;
+											return (
+												<p className='pt-2'>{keyAnswers.keyAnswerAnxious6}</p>
+											);
 										})}
 									</button>
 									<button className='EKW' onClick={handleEmotionAnswerAnxious7}>
 										{KeyWordAnswersAnxious.map((keyAnswers) => {
-											return <p className='pt-2'>{keyAnswers.keyAnswerAnxious7}</p>;
+											return (
+												<p className='pt-2'>{keyAnswers.keyAnswerAnxious7}</p>
+											);
 										})}
 									</button>
 									<button className='EKW' onClick={handleEmotionAnswerAnxious8}>
 										{KeyWordAnswersAnxious.map((keyAnswers) => {
-											return <p className='pt-2'>{keyAnswers.keyAnswerAnxious8}</p>;
+											return (
+												<p className='pt-2'>{keyAnswers.keyAnswerAnxious8}</p>
+											);
 										})}
 									</button>
 
 									<button className='EKW' onClick={handleEmotionAnswerAnxious9}>
 										{KeyWordAnswersAnxious.map((keyAnswers) => {
-											return <p className='pt-2'>{keyAnswers.keyAnswerAnxious9}</p>;
+											return (
+												<p className='pt-2'>{keyAnswers.keyAnswerAnxious9}</p>
+											);
 										})}
 									</button>
 								</div>
 
 								<div className='ReasonAnswers'>
 									<div className='d-flex flex-column mb-2'>
-										<button className='EKW' onClick={handleEmotionAnswerAnxious10}>
+										<button
+											className='EKW'
+											onClick={handleEmotionAnswerAnxious10}>
 											{KeyWordAnswersAnxious.map((keyAnswers) => {
-												return <p className='pt-2'>{keyAnswers.keyAnswerAnxious10}</p>;
+												return (
+													<p className='pt-2'>
+														{keyAnswers.keyAnswerAnxious10}
+													</p>
+												);
 											})}
 										</button>
-										<button className='EKW' onClick={handleEmotionAnswerAnxious11}>
+										<button
+											className='EKW'
+											onClick={handleEmotionAnswerAnxious11}>
 											{KeyWordAnswersAnxious.map((keyAnswers) => {
-												return <p className='pt-2'>{keyAnswers.keyAnswerAnxious11}</p>;
+												return (
+													<p className='pt-2'>
+														{keyAnswers.keyAnswerAnxious11}
+													</p>
+												);
 											})}
 										</button>
-										<button className='EKW' onClick={handleEmotionAnswerAnxious12}>
+										<button
+											className='EKW'
+											onClick={handleEmotionAnswerAnxious12}>
 											{KeyWordAnswersAnxious.map((keyAnswers) => {
-												return <p className='pt-2'>{keyAnswers.keyAnswerAnxious12}</p>;
+												return (
+													<p className='pt-2'>
+														{keyAnswers.keyAnswerAnxious12}
+													</p>
+												);
 											})}
 										</button>
-										<button className='EKW' onClick={handleEmotionAnswerAnxious13}>
+										<button
+											className='EKW'
+											onClick={handleEmotionAnswerAnxious13}>
 											{KeyWordAnswersAnxious.map((keyAnswers) => {
-												return <p className='pt-2'>{keyAnswers.keyAnswerAnxious13}</p>;
+												return (
+													<p className='pt-2'>
+														{keyAnswers.keyAnswerAnxious13}
+													</p>
+												);
 											})}
 										</button>
-										<button className='EKW' onClick={handleEmotionAnswerAnxious14}>
+										<button
+											className='EKW'
+											onClick={handleEmotionAnswerAnxious14}>
 											{KeyWordAnswersAnxious.map((keyAnswers) => {
-												return <p className='pt-2'>{keyAnswers.keyAnswerAnxious14}</p>;
+												return (
+													<p className='pt-2'>
+														{keyAnswers.keyAnswerAnxious14}
+													</p>
+												);
 											})}
 										</button>
 									</div>
@@ -1515,7 +1717,7 @@ export default function CenterContent(props) {
 				</div>
 
 				{/* These are your sad word */}
-				<div id="sadWords" className='emptyDivForEmotoinKeyWords'>
+				<div id='sadWords' className='emptyDivForEmotoinKeyWords'>
 					{props.keyAnswersSad ? (
 						<div className=''>
 							<div className='d-flex justify-content-between'>
@@ -1523,27 +1725,37 @@ export default function CenterContent(props) {
 									<div className='d-flex flex-column justify-content-around mb-2'>
 										<button className='EKW' onClick={handleEmotionAnswerSad1}>
 											{KeyWordAnswersSad.map((keyAnswers) => {
-												return <p className='pt-2'>{keyAnswers.keyAnswerSad1}</p>;
+												return (
+													<p className='pt-2'>{keyAnswers.keyAnswerSad1}</p>
+												);
 											})}
 										</button>
 										<button className='EKW' onClick={handleEmotionAnswerSad2}>
 											{KeyWordAnswersSad.map((keyAnswers) => {
-												return <p className='pt-2'>{keyAnswers.keyAnswerSad2}</p>;
+												return (
+													<p className='pt-2'>{keyAnswers.keyAnswerSad2}</p>
+												);
 											})}
 										</button>
 										<button className='EKW' onClick={handleEmotionAnswerSad3}>
 											{KeyWordAnswersSad.map((keyAnswers) => {
-												return <p className='pt-2'>{keyAnswers.keyAnswerSad3}</p>;
+												return (
+													<p className='pt-2'>{keyAnswers.keyAnswerSad3}</p>
+												);
 											})}
 										</button>
 										<button className='EKW' onClick={handleEmotionAnswerSad4}>
 											{KeyWordAnswersSad.map((keyAnswers) => {
-												return <p className='pt-2'>{keyAnswers.keyAnswerSad4}</p>;
+												return (
+													<p className='pt-2'>{keyAnswers.keyAnswerSad4}</p>
+												);
 											})}
 										</button>
 										<button className='EKW' onClick={handleEmotionAnswerSad5}>
 											{KeyWordAnswersSad.map((keyAnswers) => {
-												return <p className='pt-2'>{keyAnswers.keyAnswerSad5}</p>;
+												return (
+													<p className='pt-2'>{keyAnswers.keyAnswerSad5}</p>
+												);
 											})}
 										</button>
 									</div>
@@ -1577,27 +1789,37 @@ export default function CenterContent(props) {
 									<div className='d-flex flex-column mb-2'>
 										<button className='EKW' onClick={handleEmotionAnswerSad10}>
 											{KeyWordAnswersSad.map((keyAnswers) => {
-												return <p className='pt-2'>{keyAnswers.keyAnswerSad10}</p>;
+												return (
+													<p className='pt-2'>{keyAnswers.keyAnswerSad10}</p>
+												);
 											})}
 										</button>
 										<button className='EKW' onClick={handleEmotionAnswerSad11}>
 											{KeyWordAnswersSad.map((keyAnswers) => {
-												return <p className='pt-2'>{keyAnswers.keyAnswerSad11}</p>;
+												return (
+													<p className='pt-2'>{keyAnswers.keyAnswerSad11}</p>
+												);
 											})}
 										</button>
 										<button className='EKW' onClick={handleEmotionAnswerSad12}>
 											{KeyWordAnswersSad.map((keyAnswers) => {
-												return <p className='pt-2'>{keyAnswers.keyAnswerSad12}</p>;
+												return (
+													<p className='pt-2'>{keyAnswers.keyAnswerSad12}</p>
+												);
 											})}
 										</button>
 										<button className='EKW' onClick={handleEmotionAnswerSad13}>
 											{KeyWordAnswersSad.map((keyAnswers) => {
-												return <p className='pt-2'>{keyAnswers.keyAnswerSad13}</p>;
+												return (
+													<p className='pt-2'>{keyAnswers.keyAnswerSad13}</p>
+												);
 											})}
 										</button>
 										<button className='EKW' onClick={handleEmotionAnswerSad14}>
 											{KeyWordAnswersSad.map((keyAnswers) => {
-												return <p className='pt-2'>{keyAnswers.keyAnswerSad14}</p>;
+												return (
+													<p className='pt-2'>{keyAnswers.keyAnswerSad14}</p>
+												);
 											})}
 										</button>
 									</div>
@@ -1623,170 +1845,14 @@ export default function CenterContent(props) {
 						</div>
 					) : null}
 				</div>
-
 			</div>
 			{/* body section ends */}
-
 			{/* Footer section starst */}
-			{/* Youth reflection input */}
 			<div className='footer'>
-				<div className='mt-5' id="youthReflection">
-					<label className='fw-semibold fs-3 mb-3'>Youth Reflection</label>
-					{/* <p>
-						{props.youthQuestion1 ? (
-							<p>{props.youthQuestion1}</p>
-						) : props.youthQuestion2 ? (
-							<p>{props.youthQuestion2}</p>
-						) : null}
-					</p> */}
-					<div id="youthQuestionInput">
-						<textarea
-							className='textArea form-control h-50'
-							type='text'
-							onChange={getYouthReflection}
-							value={props.youthTextInput.youthOQ}
-							placeholder='Youth Question'
-							name='youthOQ'
-							id=''></textarea>
-						<div className='d-grid mt-2 mb-4'>
-							<button
-								onClick={addYouthReflection2}
-								className='sm bg-transparent border border-2 rounded '>
-								Save
-							</button>
-						</div>
-					</div>
-					{/* <p>{props.youthFollowUpQuestions}</p> */}
-					<div className="followUpQuestionInput" id="followUpQuestionInput">
-						{/* <div className='d-flex flex-row justify-content-around mb-2'>
-							<button className='EKW' onClick={handleEmotionAnswerFollowUp1}>
-								{KeyWordAnswersFollowUp.map((keyAnswers) => {
-									return <p className='pt-2'>{keyAnswers.keyAnswerFollowUp1}</p>;
-								})}
-							</button>
-							<button className='EKW' onClick={handleEmotionAnswerFollowUp2}>
-								{KeyWordAnswersFollowUp.map((keyAnswers) => {
-									return <p className='pt-2'>{keyAnswers.keyAnswerFollowUp2}</p>;
-								})}
-							</button>
-							<button className='EKW' onClick={handleEmotionAnswerFollowUp3}>
-								{KeyWordAnswersFollowUp.map((keyAnswers) => {
-									return <p className='pt-2'>{keyAnswers.keyAnswerFollowUp3}</p>;
-								})}
-							</button>
-							<button className='EKW' onClick={handleEmotionAnswerFollowUp4}>
-								{KeyWordAnswersFollowUp.map((keyAnswers) => {
-									return <p className='pt-2'>{keyAnswers.keyAnswerFollowUp4}</p>;
-								})}
-							</button>
-							<button className='EKW' onClick={handleEmotionAnswerFollowUp5}>
-								{KeyWordAnswersFollowUp.map((keyAnswers) => {
-									return <p className='pt-2'>{keyAnswers.keyAnswerFollowUp5}</p>;
-								})}
-							</button>
-						</div> */}
-						<textarea
-							className='textArea form-control mt-2 h-50'
-							type='text'
-							onChange={getYouthReflection}
-							value={props.youthTextInput.youthFQ}
-							placeholder='Youth follow-up'
-							name='youthFQ'
-							id='#'></textarea>
-						<div className='d-grid mt-2 mb-4'>
-							<button
-								onClick={addYouthReflection}
-								className='sm bg-transparent border border-2 rounded '>
-								Save
-							</button>
-						</div>
-					</div>
-
-					{/* <div className="followUpQuestionInput1" id="followUpQuestionInput1">
-						<div className='d-flex flex-row justify-content-around mb-2'>
-							<button className='EKW' onClick={handleEmotionAnswerFollowUp1}>
-								{KeyWordAnswersFollowUp.map((keyAnswers) => {
-									return <p className='pt-2'>{keyAnswers.keyAnswerFollowUp1}</p>;
-								})}
-							</button>
-							<button className='EKW' onClick={handleEmotionAnswerFollowUp2}>
-								{KeyWordAnswersFollowUp.map((keyAnswers) => {
-									return <p className='pt-2'>{keyAnswers.keyAnswerFollowUp2}</p>;
-								})}
-							</button>
-							<button className='EKW' onClick={handleEmotionAnswerFollowUp3}>
-								{KeyWordAnswersFollowUp.map((keyAnswers) => {
-									return <p className='pt-2'>{keyAnswers.keyAnswerFollowUp3}</p>;
-								})}
-							</button>
-							<button className='EKW' onClick={handleEmotionAnswerFollowUp4}>
-								{KeyWordAnswersFollowUp.map((keyAnswers) => {
-									return <p className='pt-2'>{keyAnswers.keyAnswerFollowUp4}</p>;
-								})}
-							</button>
-							<button className='EKW' onClick={handleEmotionAnswerFollowUp5}>
-								{KeyWordAnswersFollowUp.map((keyAnswers) => {
-									return <p className='pt-2'>{keyAnswers.keyAnswerFollowUp5}</p>;
-								})}
-							</button>
-						</div>
-						<textarea
-							className='textArea form-control mt-2 h-50'
-							type='text'
-							onChange={getYouthReflection}
-							value={props.youthTextInput.youthFQ}
-							placeholder='Youth follow-up'
-							name='youthFQ'
-							id='#'></textarea>
-						<div className='d-grid mt-2 mb-4'>
-							<button
-								onClick={addYouthReflection4}
-								className='sm bg-transparent border border-2 rounded '>
-								Save
-							</button>
-						</div>
-					</div> */}
-
-					{/* <p>{props.youthPromptQuestions}</p> */}
-					<div id="youthPromptInput">
-						<textarea
-							className='textArea form-control mt-2 h-50'
-							type='text'
-							onChange={getYouthReflection}
-							value={props.youthTextInput.youthPQ}
-							placeholder='Youth Prompt'
-							name='youthPQ'
-							id='#'></textarea>
-						<div className='d-grid mt-2'>
-							<button
-								onClick={addYouthReflection1}
-								className='sm bg-transparent border border-2 rounded '>
-								Save
-							</button>
-						</div>
-					</div>
-
-					{/* <div id="youthPromptInput1">
-						<textarea
-							className='textArea form-control mt-2 h-50'
-							type='text'
-							onChange={getYouthReflection}
-							value={props.youthTextInput.youthPQ}
-							placeholder='Youth Prompt'
-							name='youthPQ'
-							id='#'></textarea>
-						<div className='d-grid mt-2'>
-							<button
-								onClick={addYouthReflection5}
-								className='sm bg-transparent border border-2 rounded '>
-								Save
-							</button>
-						</div>
-					</div> */}
-				</div>
-
-				{/*       Agent Reflection Inputs                                  */}
-				<div className='mt-5 mb-5' value={props.recommendedQuestions} id="agentReflection">
+				<div
+					className='mt-5 mb-1'
+					value={props.recommendedQuestions}
+					id='agentReflection'>
 					<div>
 						<label className='fw-semibold fs-3 mb-2'>Agent Reflection</label>
 						{/* <p>{props.agentQuestions}</p> */}
@@ -1803,8 +1869,7 @@ export default function CenterContent(props) {
 						onChange={getAgentReflection}
 						value={props.agentData.agentOQ}
 						name='agentOQ'
-						placeholder='Type Reflection'
-						id='agentReflectionInput'></textarea>
+						placeholder='Type Reflection'></textarea>
 					<div className='d-grid mt-2'>
 						<button
 							onClick={addAgentReflection}
@@ -1815,7 +1880,7 @@ export default function CenterContent(props) {
 				</div>
 
 				{/* calender section                       */}
-				<div className='nextCall' id="bookings">
+				<div className='nextCall' id='bookings'>
 					<h2 className='title'>Session Bookings</h2>
 					<div>
 						<nav className='mt-5'>
@@ -1859,11 +1924,10 @@ export default function CenterContent(props) {
 					</div>
 				</div>
 
-
 				{/* button to submit capturing tool	*/}
-				<div className='d-grid mt-5' >
+				<div className='d-grid mt-5'>
 					<button
-						id="finalSubmit"
+						id='finalSubmit'
 						type='submit'
 						className='btn text-light fs-5 p-4 mb-5'
 						onClick={submitForm}>

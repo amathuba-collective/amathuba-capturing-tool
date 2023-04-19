@@ -12,16 +12,16 @@
 	display: none;
 }
 
-.body {
+/* .body {
 	width: 100%;
-	/* height: 30rem; */
+	height: 100vh;
 	overflow: scroll;
 
 }
 
 .body::-webkit-scrollbar {
 	display: none;
-}
+} */
 
 .textArea {
 	height: 7rem;
@@ -126,9 +126,9 @@
 }
 
 .emptyDivForEmotoinKeyWords {
-	top: -20px;
+	/* top: -20px; */
 	position: relative;
-	padding: 50px;
+	/* padding: 50px; */
 	background-color: #F8F8FF;
 	/* background-color: #EFE5FF; */
 	/* display: block; */
@@ -143,15 +143,14 @@
 	background-color: #D3D3D3;
 }
 
-.readEmotions {
+/* .readEmotions {
 	background-color: white;
 	width: 280px;
 	height: 0px;
 	border-radius: 5px;
 	overflow-y: scroll;
 	transition: 0.3s;
-	/* display: none; */
-}
+} */
 
 .readEmoBtn {
 	width: 280px;
@@ -165,11 +164,6 @@
 	font-weight: bold;
 	text-align: center;
 	width: 100%;
-	/* border-left: transparent;
-	border-right: transparent;
-	border-top: transparent;
-	border-style: solid;
-	border-radius: 5px; */
 	margin-bottom: 10px;
 }
 
@@ -199,7 +193,6 @@
 
 #agentReflection {
 	position: relative;
-	top: -80px;
 	/* display: none; */
 }
 
@@ -387,7 +380,7 @@
 	justify-content: center;
 	align-items: center;
 	position: relative;
-	top: -250px;
+	/* top: -250px; */
 	/* display: none; */
 	animation: flash6 2s ease-in-out infinite;
 }
@@ -426,7 +419,7 @@
 	justify-content: center;
 	align-items: center;
 	position: relative;
-	top: -295px;
+	/* top: -295px; */
 	/* display: none; */
 	animation: flash7 2s ease-in-out infinite;
 }
@@ -455,14 +448,14 @@
 	display: none;
 }
 
-#agentReflectionInput {
-	height: 500px;
+/* .textArea {
+	height: 400px;
 }
 
 #agentRecommendedQuestions {
 	position: relative;
 	top: -290px;
 	text-align: center;
-}
+} */
 
 /*  */

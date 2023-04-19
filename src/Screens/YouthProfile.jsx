@@ -17,7 +17,7 @@ import {
 	// setLocalStorageAsString,
 	// setLocalStorageForObjects
 } from "../Utils/localStorageUtils";
-import { Grid, Avatar, Text } from "@nextui-org/react";
+import { Grid, Avatar, Text, Loading } from "@nextui-org/react";
 
 export default function YouthProfile(props) {
 	const [recentRecords, setRecentRecords] = useState(null);
@@ -132,7 +132,13 @@ export default function YouthProfile(props) {
 				</div>
 
 				<div className='right col-9'>
-					{loading && <div>Content is loading....</div>}
+					{loading && (
+						<Grid.Container>
+							<Grid>
+								<Loading type='default' size='xl' color='secondary' />
+							</Grid>
+						</Grid.Container>
+					)}
 					{section === "profile" && (
 						<div className='container-fluid'>
 							{youth && (

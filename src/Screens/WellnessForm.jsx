@@ -6,6 +6,7 @@ import RightContent from "../Components/RightContent";
 import { useParams } from "react-router-dom";
 import { saveYouthDialogue } from "../Services/YouthDialogue";
 import { getYouthById } from "../Services/Youth";
+import { Grid, Avatar, Text, Loading } from "@nextui-org/react";
 
 export default function WellnessForm() {
 	const [youth, setYouth] = useState({});
@@ -242,6 +243,8 @@ export default function WellnessForm() {
 	const [agentDataArr, setAgentDataArr] = useState([]);
 	//
 	const [value, onValueChange] = useState(new Date());
+	// const [dateOfCurrentcall, setDateOfCurrentCall] = useState(new Date())
+	const [dateOfNextcall, setDateOfNextCall] = useState("");
 
 	const [emotion, setEmotion] = useState("");
 
@@ -408,8 +411,13 @@ export default function WellnessForm() {
 
 	return (
 		<div className='container-fluid bg-light'>
-			{loading && <div>...content is loading</div>}
-
+			{loading && (
+				<Grid.Container>
+					<Grid>
+						<Loading type='default' size='xl' color='secondary' />
+					</Grid>
+				</Grid.Container>
+			)}
 			<div className='row'>
 				<div className='bg-1 col '>
 					<LeftContent
