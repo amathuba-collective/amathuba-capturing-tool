@@ -7,7 +7,7 @@ import { getYouthById } from "../Services/Youth";
 import { getRecentYouthDialogueData } from "../Services/YouthDialogue";
 // import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 // import formatRelative from "date-fns/formatRelative";
-import { format, formatDistance, formatRelative, subDays } from "date-fns";
+import { format, formatRelative, subDays } from "date-fns";
 import { TiHome } from "react-icons/ti";
 // import { el } from "date-fns/locale";
 // import { SearchBar } from "../Components/Youth";
@@ -84,9 +84,8 @@ export default function YouthProfile(props) {
 						<div id='dashBtn'>
 							<Link
 								to={"/Dashboard"}
-								className={`m-1 border-0 bg-transparent fw-semibold ${
-									selectedButton === "dashboard" ? "selected" : ""
-								}`}
+								className={`m-1 border-0 bg-transparent fw-semibold ${selectedButton === "dashboard" ? "selected" : ""
+									}`}
 								id='dashBtn'
 								onClick={() => setSelectedButton("dashboard")}>
 								<span>
@@ -99,9 +98,8 @@ export default function YouthProfile(props) {
 
 						<div id='profileBtn'>
 							<button
-								className={`m-1 border-0 bg-transparent fw-semibold ${
-									selectedButton === "profile" ? "selected" : ""
-								} `}
+								className={`m-1 border-0 bg-transparent fw-semibold ${selectedButton === "profile" ? "selected" : ""
+									} `}
 								onClick={() => {
 									setSelectedButton("profile");
 									setSection("profile");
@@ -115,9 +113,8 @@ export default function YouthProfile(props) {
 
 						<div id='sessionsBtn'>
 							<button
-								className={`m-1 border-0 bg-transparent fw-semibold ${
-									selectedButton === "sessions" ? "selected" : ""
-								} `}
+								className={`m-1 border-0 bg-transparent fw-semibold ${selectedButton === "sessions" ? "selected" : ""
+									} `}
 								onClick={() => {
 									setSelectedButton("sessions");
 									setSection("sessions");
@@ -583,7 +580,8 @@ export default function YouthProfile(props) {
 													<div className='d-flex justify-content-between'>
 														<p className='card-text'>Next Call :</p>
 														<p className='card-text fw-bold'>
-															{selectedYouth.newAppointment}
+															{/* {selectedYouth.newAppointment} */}
+															{format(new Date(selectedYouth.newAppointment), 'yyy-MM-dd')}
 														</p>
 														{/* {formatRelative(subDays(new Date(), 3), new Date(pastRecords.dialogue.date), { addSuffix: true })}                                                         */}
 													</div>
