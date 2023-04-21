@@ -1,10 +1,13 @@
 .leftSide2{
-    background-color: #2B0076 !important;
+    /* background-color: #2B0076 !important; */
+    background-color: #fff;
     height: 100vh !important;
 }
 .signInImg{
     position: relative;
-    top: 10rem;
+    top: 4rem;
+    background-color: inherit !important;
+
 }
 .form-container{
     position: relative;

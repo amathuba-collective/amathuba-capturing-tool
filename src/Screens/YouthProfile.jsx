@@ -20,7 +20,7 @@ import {
 import { Grid, Avatar, Text, Loading } from "@nextui-org/react";
 
 export default function YouthProfile(props) {
-	const [recentRecords, setRecentRecords] = useState(null);
+	const [recentRecords, setRecentRecords] = useState("");
 	const [selectedYouth, setselectedYouth] = useState(null);
 	const [youth, setYouth] = useState({});
 	const [loading, setLoading] = useState(true);
@@ -417,7 +417,7 @@ export default function YouthProfile(props) {
 												</span>
 												<p className='mx-2'>{youth.firstName}</p>
 											</div>
-											<p>{youth.callDate}cd</p>{" "}
+											<p>{youth.Date}cd</p>{" "}
 										</div>
 									)}
 									{/*  */}

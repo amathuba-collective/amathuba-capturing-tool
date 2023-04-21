@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from "react";
 import SignInImage from "../Assets/images/Welcome 1.png";
+import AnimationImage from "../Assets/lottieFiles/9757-welcome (1).gif"
 import { Icon } from '@iconify/react';
 import { useNavigate } from "react-router-dom";
 import "../Styles/Signupscreen.css";
@@ -69,9 +70,9 @@ export default function Signupscreen() {
           <div className="leftSide2 col-6">
             <div className="d-flex justify-content-center mt-5">
               <img
-                src={SignInImage}
+                src={AnimationImage}
                 alt="loginImage"
-                className="signInImg mt-5"
+                className="signInImg"
               />
             </div>
           </div>
