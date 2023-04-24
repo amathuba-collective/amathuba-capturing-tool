@@ -3,32 +3,17 @@ import { Link } from "react-router-dom";
 import "../Styles/Youth.css";
 import { AiOutlineSearch } from "react-icons/ai";
 
-export const SearchBar = (props) => {
-	return (
-		<input
-			className='searchBar'
-			type={"search"}
-			placeholder='Type to search'
-			onChange={(e) => props.setSearch(e.target.value)}
-		/>
-	);
-};
 
 const Youth = (props) => {
-	// const [search, setSearch] = useState("");
 	const youth = props.youth;
-	const search = props.search;
-	const setSearch = props.setSearch;
 	return (
 		<div>
-			<AiOutlineSearch className='searchIcon' />
-			<SearchBar setSearch={setSearch} />
 			<div className='row mt-5 mb-5 d-flex'>
 				{youth
 					.filter((eachYouth) => {
-						return search.toLowerCase() === ""
+						return props.search.toLowerCase() === ""
 							? eachYouth
-							: eachYouth.firstName.toLowerCase().includes(search);
+							: eachYouth.firstName.toLowerCase().includes(props.search);
 					})
 					.map((eachYouth) => {
 						return (

@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import "./Styles/App.css";
 import "bootstrap/dist/css/bootstrap.css";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
@@ -11,6 +11,7 @@ import YouthProfile from "./Screens/YouthProfile";
 import { Auth0Provider } from "@auth0/auth0-react";
 
 export default function App() {
+	const [search, setSearch] = useState("")
 	return (
 		<Auth0Provider
 			domain='dev-2tm37do51xcnya0o.us.auth0.com'
@@ -21,7 +22,7 @@ export default function App() {
 					<Route path='/' element={<Loginscreen />} />
 					<Route path='/Signupscreen' element={<Signupscreen />} />
 					<Route path='/WelcomeScreen' element={<WelcomeScreen />} />
-					<Route path='/Dashboard' element={<Dashboard />} />
+					<Route path='/Dashboard' element={<Dashboard search={search} setSearch={setSearch}/>} />
 					<Route path='/YouthProfile/:id' element={<YouthProfile />} />
 					<Route path='/WellnessForm/:id' element={<WellnessForm />} />
 				</Routes>

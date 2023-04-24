@@ -127,6 +127,7 @@ export default function YouthProfile(props) {
 						</div>
 					</div>
 				</div>
+				{/* left side above */}
 
 				<div className='right col-9'>
 					{loading && (
@@ -263,6 +264,7 @@ export default function YouthProfile(props) {
 						</div>
 					)}
 					{/*               space between different sections                                   */}
+					{/* main bug thats needs to be fixed */}
 
 					{section === "sessions" && (
 						<div className='container-fluid'>
@@ -294,13 +296,15 @@ export default function YouthProfile(props) {
 									Well Being
 								</span>
 							</div>
-
 							{/* current status section end */}
+
+							{/*       /////////////////////////////     */}
 							<div className='informationContent'>
 								<div className='d-flex justify-content-between'>
 									<h3 className='fs-4 mt-4'>Recent Records</h3>
 									{/* <div><AiOutlineSearch className="searchIcon" /><SearchBar  onChange={(e) => setSearch(e.target.value)}/></div> */}
 								</div>
+								{/* need to fix loading bug , map function */}
 								<div className='' id='gridContainer'>
 									{recentRecords.map((pastRecords) => {
 										return (
@@ -384,6 +388,7 @@ export default function YouthProfile(props) {
 										);
 									})}
 								</div>
+								{/* need to fix loading bug */}
 							</div>
 						</div>
 					)}
@@ -417,6 +422,12 @@ export default function YouthProfile(props) {
 												</span>
 												<p className='mx-2'>{youth.firstName}</p>
 											</div>
+											{/* in progress */}
+											{formatRelative(
+																		subDays(new Date(), 3),
+																		new Date(),
+																		{ addSuffix: true },
+																	)}
 											<p>{youth.Date}cd</p>{" "}
 										</div>
 									)}

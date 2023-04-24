@@ -2,7 +2,7 @@
     position: relative !important;
     left: -0.1rem;
     height: 40px;
-    width: 500px;
+    width: 600px;
     top: 13px;
     border-radius: 0px 5px 5px 0px;
     border-color: rgb(187, 185, 185);
@@ -25,6 +25,19 @@
     position: relative;
     color: rgb(187, 185, 185);
 }
+.searchIcon2 {
+    border-style: solid;
+    border-width: 3px;
+    border-color: rgb(187, 185, 185);
+    top: 13px;
+    height: 40px;
+    width: 30px;
+    left: -0.1rem;
+    border-radius: 5px 0px 0px 5px;
+    border-right: none;
+    position: relative;
+    color: rgb(187, 185, 185);
+}
 
 .homeBtn {
     text-decoration-line: none;
@@ -38,5 +51,5 @@
 
 /* .navbar{
     position: fixed;
-   
+   background-color: #F8F8FF !important;
 } */

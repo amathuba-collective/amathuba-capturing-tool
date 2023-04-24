@@ -14,13 +14,13 @@ import {
 	setLocalStorageForObjects,
 } from "../Utils/localStorageUtils";
 
-export default function Dashboard() {
+export default function Dashboard(props) {
 	const agent = getLocalStorageForObjects("user");
 	const navigate = useNavigate();
 	const [youth, setYouth] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
-	const [search, setSearch] = useState("");
+	// const [search, setSearch] = useState("");
 
 	function onLogOut() {
 		setLocalStorageAsString("token", "");
@@ -54,7 +54,7 @@ export default function Dashboard() {
 		<div className='dashB container-fluid'>
 			{/* navbar component inside dashboard */}
 			<>
-				<TopNavbar onLogOut={onLogOut} />
+				<TopNavbar onLogOut={onLogOut} setSearch={props.setSearch}/>
 			</>
 			{/* navbar component ends here */}
 			<div className='row'>
@@ -97,7 +97,7 @@ export default function Dashboard() {
 						)}
 						{error}
 						{youth && (
-							<Youth youth={youth} search={search} setSearch={setSearch} />
+							<Youth youth={youth} search={props.search} />
 						)}
 						<div id='modalBox' className='modalBox'>
 							<AddYouth />
