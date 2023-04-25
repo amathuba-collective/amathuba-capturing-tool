@@ -1,11 +1,10 @@
 .leftSide2{
-    /* background-color: #2B0076 !important; */
-    background-color: #fff;
+    background-color: #2B0076 !important;
     height: 100vh !important;
 }
 .signInImg{
     position: relative;
-    top: 4rem;
+    top: 12rem;
     background-color: inherit !important;
 
 }

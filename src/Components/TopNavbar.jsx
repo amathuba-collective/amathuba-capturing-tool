@@ -19,7 +19,7 @@ export default function TopNavbar(props) {
   };
 
   return (
-    <nav className="d-flex justify-content-between border-1 rounded ">
+    <nav className="d-flex justify-content-between border-1 rounded sticky-top">
 		<Link className="homeBtn mt-3" to="/Dashboard"><AmathubaLogo /></Link>
       <form className="d-flex" role="search">
 		<AiOutlineSearch className="searchIcon2"/>
