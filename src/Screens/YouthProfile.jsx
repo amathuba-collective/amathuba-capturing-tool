@@ -13,14 +13,14 @@ import { TiHome } from "react-icons/ti";
 // import { SearchBar } from "../Components/Youth";
 // import { AiOutlineSearch } from 'react-icons/ai';
 import {
-  getLocalStorageForObjects,
-  // setLocalStorageAsString,
-  // setLocalStorageForObjects
+	getLocalStorageForObjects,
+	// setLocalStorageAsString,
+	// setLocalStorageForObjects
 } from "../Utils/localStorageUtils";
 import { Grid, Avatar, Text, Loading } from "@nextui-org/react";
 // const agent = getLocalStorageForObjects("user");
 
-export default function YouthProfile() {
+export default function YouthProfile(props) {
   const [recentRecords, setRecentRecords] = useState([]);
   const [selectedYouth, setselectedYouth] = useState(null);
   const [youth, setYouth] = useState({});
@@ -32,282 +32,279 @@ export default function YouthProfile() {
     useState("Overview");
   const agent = getLocalStorageForObjects("user");
 
-  const getYouthData = async (id) => {
-    const youthData = await getYouthById(id);
-    setLoading(false);
+	const getYouthData = async (id) => {
+		const youthData = await getYouthById(id);
+		setLoading(false);
 
-    if (youthData.error) return setError(youthData.error);
-    setYouth(youthData.data.data.youth);
-    getRecentYouthDialogueDataForView(youthData.data.data.youth.firstName);
-  };
+		if (youthData.error) return setError(youthData.error);
+		setYouth(youthData.data.data.youth);
+		getRecentYouthDialogueDataForView(youthData.data.data.youth.firstName);
+	};
 
-  const getRecentYouthDialogueDataForView = async (youthName) => {
-    const recentData = await getRecentYouthDialogueData();
+	const getRecentYouthDialogueDataForView = async (youthName) => {
+		const recentData = await getRecentYouthDialogueData();
 
-    if (recentData.error) return setError(recentData.error);
+		if (recentData.error) return setError(recentData.error);
 
-    const data = recentData?.data?.data?.all;
+		const data = recentData?.data?.data?.all;
 
-    const filterByYouthName = data.filter(
-      (record) => record.dialogue.nameOfYouth === youthName
-    );
+		const filterByYouthName = data.filter(
+			(record) => record.dialogue.nameOfYouth === youthName,
+		);
 
-    setRecentRecords(filterByYouthName);
-  };
+		setRecentRecords(filterByYouthName);
+	};
 
-  const { id } = useParams();
+	const { id } = useParams();
 
   useEffect(() => {
     getYouthData(id);
-    // console.log("recent", recentRecords);
+	console.log("recent",recentRecords)
   }, []);
 
-  const storedItems = localStorage.getItem("timeStamps");
-  const storedTimeStamp = JSON.parse(storedItems); /// this i added now
+    const storedItems = localStorage.getItem("timeStamps");
+    const storedTimeStamp = JSON.parse(storedItems); /// this i added now
 
-  const openYouthMenu = (e, id) => {
-    e.preventDefault();
-    const filtered = recentRecords.filter((record) => {
-      return record._id === id;
-    });
-    setselectedYouth(filtered[0]);
-    setSection("YouthCallHistory");
-  };
-  // if (setSection === "profile") {
-  //     document.getElementById("profileBtn").style.color = "blue"
-  // } else {
-  //     document.getElementById("profileBtn").style.color = ""
-  // }
-  return (
-    <div className="container-fluid">
-      <>
-        <TopNavbar />
-      </>
-      <div className="row">
-        <div className="left col-3">
-          <div className="leftcontent d-flex flex-column justify-content-start">
-            <div id="dashBtn">
-              <Link
-                to={"/Dashboard"}
-                className={`m-1 border-0 bg-transparent fw-semibold ${
-                  selectedButton === "dashboard" ? "selected" : ""
-                }`}
-                id="dashBtn"
-                onClick={() => setSelectedButton("dashboard")}
-              >
-                <span>
-                  {/* <i className='fa-regular fa-folder mx-3'></i> */}
-                  <TiHome className="mx-3" />
-                </span>
-                Dashboard
-              </Link>
-            </div>
+	const openYouthMenu = (e, id) => {
+		e.preventDefault();
+		const filtered = recentRecords.filter((record) => {
+			return record._id === id;
+		});
+		setselectedYouth(filtered[0]);
+		setSection("YouthCallHistory");
+	};
+	// if (setSection === "profile") {
+	//     document.getElementById("profileBtn").style.color = "blue"
+	// } else {
+	//     document.getElementById("profileBtn").style.color = ""
+	// }
+	return (
+		<div className='container-fluid'>
+			<>
+				<TopNavbar />
+			</>
+			<div className='row'>
+				<div className='left col-3'>
+					<div className='leftcontent d-flex flex-column justify-content-start'>
+						<div id='dashBtn'>
+							<Link
+								to={"/Dashboard"}
+								className={`m-1 border-0 bg-transparent fw-semibold ${
+									selectedButton === "dashboard" ? "selected" : ""
+								}`}
+								id='dashBtn'
+								onClick={() => setSelectedButton("dashboard")}>
+								<span>
+									{/* <i className='fa-regular fa-folder mx-3'></i> */}
+									<TiHome className='mx-3' />
+								</span>
+								Dashboard
+							</Link>
+						</div>
 
-            <div id="profileBtn">
-              <button
-                className={`m-1 border-0 bg-transparent fw-semibold ${
-                  selectedButton === "profile" ? "selected" : ""
-                } `}
-                onClick={() => {
-                  setSelectedButton("profile");
-                  setSection("profile");
-                }}
-              >
-                <span>
-                  <i className="fa-regular fa-user mx-3"></i>
-                </span>
-                Profile
-              </button>
-            </div>
+						<div id='profileBtn'>
+							<button
+								className={`m-1 border-0 bg-transparent fw-semibold ${
+									selectedButton === "profile" ? "selected" : ""
+								} `}
+								onClick={() => {
+									setSelectedButton("profile");
+									setSection("profile");
+								}}>
+								<span>
+									<i className='fa-regular fa-user mx-3'></i>
+								</span>
+								Profile
+							</button>
+						</div>
 
-            <div id="sessionsBtn">
-              <button
-                className={`m-1 border-0 bg-transparent fw-semibold ${
-                  selectedButton === "sessions" ? "selected" : ""
-                } `}
-                onClick={() => {
-                  setSelectedButton("sessions");
-                  setSection("sessions");
-                }}
-              >
-                <span>
-                  <i className="fa-regular fa-folder mx-3"></i>
-                </span>
-                Sessions
-              </button>
-            </div>
-          </div>
-        </div>
-        {/* left side above */}
+						<div id='sessionsBtn'>
+							<button
+								className={`m-1 border-0 bg-transparent fw-semibold ${
+									selectedButton === "sessions" ? "selected" : ""
+								} `}
+								onClick={() => {
+									setSelectedButton("sessions");
+									setSection("sessions");
+								}}>
+								<span>
+									<i className='fa-regular fa-folder mx-3'></i>
+								</span>
+								Sessions
+							</button>
+						</div>
+					</div>
+				</div>
+				{/* left side above */}
 
-        <div className="right col-9">
-          {loading && (
-            <Grid.Container>
-              <Grid>
-                <Loading type="default" size="xl" color="secondary" />
-              </Grid>
-            </Grid.Container>
-          )}
-          {section === "profile" && (
-            <div className="container-fluid">
-              {youth && (
-                <>
-                  <p className="fs-3 fw-bold mt-5">{youth.firstName}</p>
-                  <div className="d-flex align-items-center">
-                    <div id="profilePhoto"></div>
-                    <div className="mt-4">
-                      <Link to={`/WellnessForm/${youth._id}`}>
-                        <button className="wellBeingBtn fs-5">
-                          <span>
-                            <i className="fa-solid fa-phone fs-5"></i>
-                          </span>{" "}
-                          Call Friend
-                        </button>
-                      </Link>
-                    </div>
-                  </div>
+				<div className='right col-9'>
+					{loading && (
+						<Grid.Container>
+							<Grid>
+								<Loading type='default' size='xl' color='secondary' />
+							</Grid>
+						</Grid.Container>
+					)}
+					{section === "profile" && (
+						<div className='container-fluid'>
+							{youth && (
+								<>
+									<p className='fs-3 fw-bold mt-5'>{youth.firstName}</p>
+									<div className='d-flex align-items-center'>
+										<div id='profilePhoto'></div>
+										<div className='mt-4'>
+											<Link to={`/WellnessForm/${youth._id}`}>
+												<button className='wellBeingBtn fs-5'>
+													<span>
+														<i className='fa-solid fa-phone fs-5'></i>
+													</span>{" "}
+													Call Friend
+												</button>
+											</Link>
+										</div>
+									</div>
 
-                  <div className=" mt-4 fs-5 d-flex align-items-center">
-                    <p className="statusTitle opacity-75">Current Status :</p>
-                    <span className="alert alert-success mx-3">
-                      <span>
-                        <img
-                          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAABVUlEQVRIie3Vv0sCYRzH8fdzDXpT2h9QEm4iLW1G0K8h/4kEhaYW6d+IIgokdAhpci8wawq3oEGbFKT+Ahs0jOe+DR0NgXfec7bdZzw+9319n2e4gyhRoswpKkh5tV3IiuiSQu0gpNwJA6ClkGo/V+/MFU7fHsWcxeEpcAhYU2oaURU7OSp3M41JaNhF74CtWZYEHu3EeN8Pn7b9b5zEx1kAFGD7c2if+JU8T7zaLmQR54UZFvwTbYla621cd6cVPAeK6JIBCrDgWE7Rq+A5VClr1wD9iag9YxiRZWMYVsxhkBCw57vesFLvIeA3c1jkPgTcNIYVUgW0AaotrWvGcD9X7yCqElQV5LK3efNqDAPYyVEZeAigtpZi9rFfzRfuZhoTOzHOK8UF3teuBTlPxuP55/WrL7+5gX6L6aeDjGM5RffjkHIfD4CmpXXN73qjRInyL/kGAZRroZ6LN6IAAAAASUVORK5CYII="
-                          alt="___"
-                        />
-                      </span>
-                      Well Being
-                    </span>
-                  </div>
+									<div className=' mt-4 fs-5 d-flex align-items-center'>
+										<p className='statusTitle opacity-75'>Current Status :</p>
+										<span className='alert alert-success mx-3'>
+											<span>
+												<img
+													src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAABVUlEQVRIie3Vv0sCYRzH8fdzDXpT2h9QEm4iLW1G0K8h/4kEhaYW6d+IIgokdAhpci8wawq3oEGbFKT+Ahs0jOe+DR0NgXfec7bdZzw+9319n2e4gyhRoswpKkh5tV3IiuiSQu0gpNwJA6ClkGo/V+/MFU7fHsWcxeEpcAhYU2oaURU7OSp3M41JaNhF74CtWZYEHu3EeN8Pn7b9b5zEx1kAFGD7c2if+JU8T7zaLmQR54UZFvwTbYla621cd6cVPAeK6JIBCrDgWE7Rq+A5VClr1wD9iag9YxiRZWMYVsxhkBCw57vesFLvIeA3c1jkPgTcNIYVUgW0AaotrWvGcD9X7yCqElQV5LK3efNqDAPYyVEZeAigtpZi9rFfzRfuZhoTOzHOK8UF3teuBTlPxuP55/WrL7+5gX6L6aeDjGM5RffjkHIfD4CmpXXN73qjRInyL/kGAZRroZ6LN6IAAAAASUVORK5CYII='
+													alt='___'
+												/>
+											</span>
+											Well Being
+										</span>
+									</div>
 
-                  <div className="informationContent mt-4">
-                    <h3 className="fs-4">Basic Information</h3>
-                    <div className="row">
-                      <div className="col-12 w-75">
-                        {/*  */}
-                        <div className="col-12 d-flex align-items-center mb-4 mt-4">
-                          <div className="col-5">
-                            <div>
-                              <p className="mt-3 fw-bold">First & Last Name</p>
-                            </div>
-                          </div>
-                          <div className="col-7 mx-1">
-                            <div className="row">
-                              <div className="col">
-                                <input
-                                  type="text"
-                                  className="form-control p-2 bg-light"
-                                  placeholder={youth.firstName}
-                                  disabled
-                                  readOnly
-                                />
-                              </div>
-                              <div className="col">
-                                <input
-                                  type="text"
-                                  className="form-control p-2 bg-light"
-                                  placeholder={youth.lastName}
-                                  disabled
-                                  readOnly
-                                />
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+									<div className='informationContent mt-4'>
+										<h3 className='fs-4'>Basic Information</h3>
+										<div className='row'>
+											<div className='col-12 w-75'>
+												{/*  */}
+												<div className='col-12 d-flex align-items-center mb-4 mt-4'>
+													<div className='col-5'>
+														<div>
+															<p className='mt-3 fw-bold'>First & Last Name</p>
+														</div>
+													</div>
+													<div className='col-7 mx-1'>
+														<div className='row'>
+															<div className='col'>
+																<input
+																	type='text'
+																	className='form-control p-2 bg-light'
+																	placeholder={youth.firstName}
+																	disabled
+																	readOnly
+																/>
+															</div>
+															<div className='col'>
+																<input
+																	type='text'
+																	className='form-control p-2 bg-light'
+																	placeholder={youth.lastName}
+																	disabled
+																	readOnly
+																/>
+															</div>
+														</div>
+													</div>
+												</div>
 
-                        <div className="col-12 d-flex align-items-center mb-4">
-                          <div className="col-5">
-                            <p className="mt-3 fw-bold">Email</p>
-                          </div>
-                          <div className="col-7 mx-1">
-                            <div className="col-12">
-                              <input
-                                type="text"
-                                className="form-control p-2 bg-light"
-                                placeholder={youth.email}
-                                disabled
-                                readOnly
-                              />
-                            </div>
-                          </div>
-                        </div>
+												<div className='col-12 d-flex align-items-center mb-4'>
+													<div className='col-5'>
+														<p className='mt-3 fw-bold'>Email</p>
+													</div>
+													<div className='col-7 mx-1'>
+														<div className='col-12'>
+															<input
+																type='text'
+																className='form-control p-2 bg-light'
+																placeholder={youth.email}
+																disabled
+																readOnly
+															/>
+														</div>
+													</div>
+												</div>
 
-                        <div className="col-12 d-flex align-items-center mb-4">
-                          <div className="col-5">
-                            <p className="mt-3 fw-bold">Phone Number</p>
-                          </div>
-                          <div className="col-7 mx-1">
-                            <div className="col-12">
-                              <input
-                                type="text"
-                                className="form-control p-2 bg-light"
-                                placeholder={youth.cellNumber}
-                                disabled
-                                readOnly
-                              />
-                            </div>
-                          </div>
-                        </div>
-                        {/*  */}
-                        {/*  */}
-                        <div className="col-12 d-flex align-items-center mb-4">
-                          <div className="col-5">
-                            <p className="mt-3 fw-bold">Host Company</p>
-                          </div>
-                          <div className="col-7 mx-1">
-                            <div className="col-12">
-                              <input
-                                type="text"
-                                className="form-control p-2 bg-light"
-                                id="inputAddress"
-                                placeholder={youth.hostedAt}
-                                disabled
-                                readOnly
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </>
-              )}
-            </div>
-          )}
-          {/*               space between different sections                                   */}
-          {/* main bug thats needs to be fixed */}
+												<div className='col-12 d-flex align-items-center mb-4'>
+													<div className='col-5'>
+														<p className='mt-3 fw-bold'>Phone Number</p>
+													</div>
+													<div className='col-7 mx-1'>
+														<div className='col-12'>
+															<input
+																type='text'
+																className='form-control p-2 bg-light'
+																placeholder={youth.cellNumber}
+																disabled
+																readOnly
+															/>
+														</div>
+													</div>
+												</div>
+												{/*  */}
+												{/*  */}
+												<div className='col-12 d-flex align-items-center mb-4'>
+													<div className='col-5'>
+														<p className='mt-3 fw-bold'>Host Company</p>
+													</div>
+													<div className='col-7 mx-1'>
+														<div className='col-12'>
+															<input
+																type='text'
+																className='form-control p-2 bg-light'
+																id='inputAddress'
+																placeholder={youth.hostedAt}
+																disabled
+																readOnly
+															/>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</>
+							)}
+						</div>
+					)}
+					{/*               space between different sections                                   */}
+					{/* main bug thats needs to be fixed */}
 
-          {section === "sessions" && (
-            <div className="container-fluid">
-              {youth && <p className="fs-3 fw-bold mt-5">{youth.firstName}</p>}
+					{section === "sessions" && (
+						<div className='container-fluid'>
+							{youth && <p className='fs-3 fw-bold mt-5'>{youth.firstName}</p>}
 
-              <div className="d-flex align-items-center">
-                <div id="profilePhoto"></div>
-                <div className="mt-4">
-                  <Link to={`/WellnessForm/${youth._id}`}>
-                    <button className="wellBeingBtn fs-5">
-                      <span>
-                        <i className="fa-solid fa-phone fs-5"></i>
-                      </span>{" "}
-                      Call Friend
-                    </button>
-                  </Link>
-                </div>
-              </div>
+							<div className='d-flex align-items-center'>
+								<div id='profilePhoto'></div>
+								<div className='mt-4'>
+									<Link to={`/WellnessForm/${youth._id}`}>
+										<button className='wellBeingBtn fs-5'>
+											<span>
+												<i className='fa-solid fa-phone fs-5'></i>
+											</span>{" "}
+											Call Friend
+										</button>
+									</Link>
+								</div>
+							</div>
 
-              <div className=" mt-4 fs-5 d-flex align-items-center">
-                <p className="statusTitle opacity-75">Current Status :</p>
-                <span className="alert alert-success mx-3">
-                  <span>
-                    <img
-                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAABVUlEQVRIie3Vv0sCYRzH8fdzDXpT2h9QEm4iLW1G0K8h/4kEhaYW6d+IIgokdAhpci8wawq3oEGbFKT+Ahs0jOe+DR0NgXfec7bdZzw+9319n2e4gyhRoswpKkh5tV3IiuiSQu0gpNwJA6ClkGo/V+/MFU7fHsWcxeEpcAhYU2oaURU7OSp3M41JaNhF74CtWZYEHu3EeN8Pn7b9b5zEx1kAFGD7c2if+JU8T7zaLmQR54UZFvwTbYla621cd6cVPAeK6JIBCrDgWE7Rq+A5VClr1wD9iag9YxiRZWMYVsxhkBCw57vesFLvIeA3c1jkPgTcNIYVUgW0AaotrWvGcD9X7yCqElQV5LK3efNqDAPYyVEZeAigtpZi9rFfzRfuZhoTOzHOK8UF3teuBTlPxuP55/WrL7+5gX6L6aeDjGM5RffjkHIfD4CmpXXN73qjRInyL/kGAZRroZ6LN6IAAAAASUVORK5CYII="
-                      alt="---"
-                    />
-                  </span>
-                  Well Being
-                </span>
-              </div>
-              {/* current status section end */}
+							<div className=' mt-4 fs-5 d-flex align-items-center'>
+								<p className='statusTitle opacity-75'>Current Status :</p>
+								<span className='alert alert-success mx-3'>
+									<span>
+										<img
+											src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAABVUlEQVRIie3Vv0sCYRzH8fdzDXpT2h9QEm4iLW1G0K8h/4kEhaYW6d+IIgokdAhpci8wawq3oEGbFKT+Ahs0jOe+DR0NgXfec7bdZzw+9319n2e4gyhRoswpKkh5tV3IiuiSQu0gpNwJA6ClkGo/V+/MFU7fHsWcxeEpcAhYU2oaURU7OSp3M41JaNhF74CtWZYEHu3EeN8Pn7b9b5zEx1kAFGD7c2if+JU8T7zaLmQR54UZFvwTbYla621cd6cVPAeK6JIBCrDgWE7Rq+A5VClr1wD9iag9YxiRZWMYVsxhkBCw57vesFLvIeA3c1jkPgTcNIYVUgW0AaotrWvGcD9X7yCqElQV5LK3efNqDAPYyVEZeAigtpZi9rFfzRfuZhoTOzHOK8UF3teuBTlPxuP55/WrL7+5gX6L6aeDjGM5RffjkHIfD4CmpXXN73qjRInyL/kGAZRroZ6LN6IAAAAASUVORK5CYII='
+											alt='---'
+										/>
+									</span>
+									Well Being
+								</span>
+							</div>
+							{/* current status section end */}
 
               {/*       /////////////////////////////     */}
               <div className="informationContent">
@@ -383,7 +380,9 @@ export default function YouthProfile() {
                         <div id="profilePhoto"></div>
                         <Link to={`/WellnessForm/${youth._id}`}>
                           <button className="wellBeingBtn fs-5">
+                            <span>
                               <i className="fa-solid fa-phone fs-5"></i>
+                            </span>{" "}
                             Call Friend
                           </button>
                         </Link>
@@ -395,23 +394,24 @@ export default function YouthProfile() {
                         </span>
                         <p className="mx-2">{youth.firstName}</p>
                       </div>
-
-                      {/* {recentRecords.map((records) => {
-                    return (
-                            <div key={records._id} className="d-flex justify-content-between">
-                              <p className="fs-5">Date :</p>
-								  <p className="fs-5">{format(
-                                new Date(records.dialogue.date),
-                                "dd-MM-yyy"
-                              )}</p>
-                            </div> 
-                           
-                    );
-                  })} */}
-
-                      {/* call date of call is to go over here */}
-
-                      <p>{youth.Date}</p>
+                      {/* in progress */}
+                      {/* {formatRelative(
+																		subDays(new Date(), 3),
+																		new Date(),
+																		{ addSuffix: true },
+																	)} */}
+                      <p>{youth.Date}cd</p>{" "}
+                      <div className="border-5 border-primary bg-light">
+                        {storedTimeStamp.map((stored, index) => {
+                          return (
+                            <div key={index}>
+                              <p className="mt-2 bg-dark text-light">
+                                {stored}
+                              </p>
+                            </div>
+                          );
+                        })}
+                      </div>
                     </div>
                   )}
                   {/*  */}
@@ -431,66 +431,64 @@ export default function YouthProfile() {
 									<source src='horse.ogg' type='audio/ogg' />
 									<source src={callAudio} type='audio/mpeg' />
 								</audio> */}
-              </div>
+							</div>
 
-              {/* overview & QA section start */}
-              <div className=" d-flex justify-content-start mt-5">
-                <div>
-                  <button
-                    className="m-1 border-0 bg-transparent fw-semibold"
-                    onClick={(e) => setYouthCallHistorySections("Overview")}
-                  >
-                    Overview
-                  </button>
-                </div>
-                <div>
-                  <button
-                    className="m-1 border-0 bg-transparent fw-semibold                                                                                                                                        "
-                    onClick={(e) =>
-                      setYouthCallHistorySections("QA_Assessment")
-                    }
-                  >
-                    QA Assessment
-                  </button>
-                </div>
-                <button>Download Conversation</button>
-              </div>
-              <div>
-                {youthCallHistorySections === "Overview" && (
-                  <div className="p-2 d-flex justify-content-around mb-5">
-                    {/* card 1 starts */}
-                    <div className="card overviewRecordCard">
-                      <div className="card-body">
-                        <div className="d-flex justify-content-between">
-                          {/*  */}
-                          <div>
-                            <h5 className="card-title">Origination</h5>
-                          </div>
-                        </div>
-                        <hr className="border border-1 border-secondary rounded" />
-                        <div>
-                          <div id="sessionHistoryOpeningQuestion">
-                            <div className="d-flex justify-content-between mt-4">
-                              <p className="card-text">Opening Question :</p>
-                              <p className="card-text fw-light">
-                                {selectedYouth.convo_data.openingQuestion1Red}
-                              </p>
-                            </div>
-                            <div className="">
-                              <div className="d-flex justify-content-between">
-                                <p className="">Answer:</p>
-                                <p className="fw-bold">
-                                  {selectedYouth.emotionOfCall}
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="d-flex justify-content-between">
-                            <p className="card-text">Response :</p>
-                            <p className="card-text fw-normal">
-                              {selectedYouth.ROQpossibleResponse}
-                            </p>
-                          </div>
+							{/* overview & QA section start */}
+							<div className=' d-flex justify-content-start mt-5'>
+								<div>
+									<button
+										className='m-1 border-0 bg-transparent fw-semibold'
+										onClick={(e) => setYouthCallHistorySections("Overview")}>
+										Overview
+									</button>
+								</div>
+								<div>
+									<button
+										className='m-1 border-0 bg-transparent fw-semibold                                                                                                                                        '
+										onClick={(e) =>
+											setYouthCallHistorySections("QA_Assessment")
+										}>
+										QA Assessment
+									</button>
+								</div>
+								<button>Download Conversation</button>
+							</div>
+							<div>
+								{youthCallHistorySections === "Overview" && (
+									<div className='p-2 d-flex justify-content-around mb-5'>
+										{/* card 1 starts */}
+										<div className='card overviewRecordCard'>
+											<div className='card-body'>
+												<div className='d-flex justify-content-between'>
+													{/*  */}
+													<div>
+														<h5 className='card-title'>Origination</h5>
+													</div>
+												</div>
+												<hr className='border border-1 border-secondary rounded' />
+												<div>
+													<div id='sessionHistoryOpeningQuestion'>
+														<div className='d-flex justify-content-between mt-4'>
+															<p className='card-text'>Opening Question :</p>
+															<p className='card-text fw-light'>
+																{selectedYouth.convo_data.openingQuestion1Red}
+															</p>
+														</div>
+														<div className=''>
+															<div className='d-flex justify-content-between'>
+																<p className=''>Answer:</p>
+																<p className='fw-bold'>
+																	{selectedYouth.emotionOfCall}
+																</p>
+															</div>
+														</div>
+													</div>
+													<div className='d-flex justify-content-between'>
+														<p className='card-text'>Response :</p>
+														<p className='card-text fw-normal'>
+															{selectedYouth.ROQpossibleResponse}
+														</p>
+													</div>
 
                           <div id="sessionHistoryFollowUpQuestion">
                             <div className="d-flex justify-content-between">
@@ -507,18 +505,6 @@ export default function YouthProfile() {
                                 <p className="card-text fw-normal">Answer:</p>
                                 <p className="card-text fw-bold">
                                   {selectedYouth.convo_data.newKeyAnswer1}
-                                </p>
-                              </div>
-                              <div className="d-flex justify-content-between">
-                                <p className="card-text fw-normal">Answer 2:</p>
-                                <p className="card-text fw-bold">
-                                  {selectedYouth.convo_data.keyAnswer1}
-                                </p>
-                              </div>
-                              <div className="d-flex justify-content-between">
-                                <p className="card-text fw-normal">Answer 3:</p>
-                                <p className="card-text fw-bold">
-                                  {selectedYouth.convo_data.keyAnswer2}
                                 </p>
                               </div>
                             </div>
@@ -545,26 +531,44 @@ export default function YouthProfile() {
                         <div className="d-flex justify-content-between">
                           {/*  */}
                           <div>
-                            <h5 className="card-title"> Reflection</h5>
+                            <h5 className="card-title">Youth Reflection</h5>
                           </div>
                         </div>
                         <hr className="border border-1 border-secondary rounded" />
                         <div>
                           <div>
                             <div className="d-flex justify-content-between mt-4">
-                              <p className="card-text">Reflection Question :</p>
+                              <p className="card-text">Youth Question :</p>
                               <p className="card-text fw-light">
-                                {/* {selectedYouth.agentQuestions} */}
+                                {selectedYouth.youthOQ1}
                               </p>
                             </div>
                             <div>
                               <div className="d-flex justify-content-between">
-                                <p className="card-text fw-normal">
-                                  Reflection Answer:
-                                </p>
-                                {/* <p className="card-text fw-bold">{selectedYouth.agentData}</p> */}
+                                <p className="card-text fw-normal">Answer:</p>
+                                <p className="card-text fw-bold">Test</p>
                               </div>
                             </div>
+                          </div>
+                          <div className="d-flex justify-content-between ">
+                            <p className="card-text">Youth reflection :</p>
+                            <p className="card-text fw-bold">
+                              {/* {selectedYouth.youthResponses} */}
+                            </p>
+                          </div>
+                          <div className="d-flex justify-content-between ">
+                            <p className="card-text">Youth Response :</p>
+                            <p className="card-text fw-bold">
+                              {selectedYouth.youthResponses}
+                            </p>
+                          </div>
+                          <div className="d-flex justify-content-between ">
+                            <p className="card-text">
+                              Youth follow-up question :
+                            </p>
+                            <p className="card-text fw-bold">
+                              {selectedYouth.youthFollow_UpQuestions}
+                            </p>
                           </div>
                           <hr />
                           <div className="d-flex justify-content-between">
@@ -573,7 +577,7 @@ export default function YouthProfile() {
                               {/* {selectedYouth.newAppointment} */}
                               {format(
                                 new Date(selectedYouth.newAppointment),
-                                "dd-MM-yyy"
+                                "yyy-MM-dd"
                               )}
                             </p>
                             {/* {formatRelative(subDays(new Date(), 3), new Date(pastRecords.dialogue.date), { addSuffix: true })}                                                         */}
@@ -588,7 +592,7 @@ export default function YouthProfile() {
                               {/* <Text className='mb-2 fw-semibold fs-4'>
                                                             {agent.role}
                                                         </Text> */}
-                              {/* <Text className='agentCompany fw-semibold fs-5' size='$md'>
+															{/* <Text className='agentCompany fw-semibold fs-5' size='$md'>
                                                             {agent.email}
                                                         </Text> */}
                               {/* <button onClick={AddNewYouth} >ADD YOUTH</button> */}
@@ -597,6 +601,50 @@ export default function YouthProfile() {
                         </div>
                       </div>
                     </div>
+                    {/* card 1 ends */}
+                    {/* card 1 starts */}
+                    {/* <div className='card overviewRecordCard'>
+                                            <div className='card-body'>
+                                                <div className='d-flex justify-content-between'>
+                                                    <div>
+                                                        <h5 className='card-title'>Outcome</h5>
+                                                    </div>
+                                                </div>
+                                                <hr className='border border-1 border-secondary rounded' />
+                                                <div>
+                                                    <div className='d-flex justify-content-between mt-4'>
+                                                        <p className='card-text'>Youth Question :</p>
+                                                        <p className='card-text fw-bold'>
+                                                            {selectedYouth.youthOQ2}
+                                                        </p>
+                                                    </div>
+                                                    <div className='d-flex justify-content-between '>
+                                                        <p className='card-text'>Youth reflection :</p>
+                                                        <p className='card-text fw-bold'>
+                                                            {selectedYouth.youthResponses}
+                                                        </p>
+                                                    </div>
+                                                    <div className='d-flex justify-content-between '>
+                                                        <p className='card-text'>Youth Response :</p>
+                                                        <p className='card-text fw-bold'>
+                                                            {selectedYouth.youthResponses}
+                                                        </p>
+                                                    </div>
+                                                    <div className='d-flex justify-content-between '>
+                                                        <p className='card-text'>
+                                                            Youth follow-up question :
+                                                        </p>
+                                                        <p className='card-text fw-bold'>
+                                                            {selectedYouth.youthFollow_UpQuestions}
+                                                        </p>
+                                                    </div>
+                                                    <div className='d-flex justify-content-between'>
+                                                        <p className='card-text'>next call :</p>
+                                                        <p className='card-text fw-bold'>{selectedYouth.newAppointment}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> */}
                     {/* card 1 ends */}
                   </div>
                 )}
