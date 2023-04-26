@@ -531,44 +531,24 @@ export default function YouthProfile(props) {
                         <div className="d-flex justify-content-between">
                           {/*  */}
                           <div>
-                            <h5 className="card-title">Youth Reflection</h5>
+                            <h5 className="card-title">Reflection</h5>
                           </div>
                         </div>
                         <hr className="border border-1 border-secondary rounded" />
                         <div>
                           <div>
                             <div className="d-flex justify-content-between mt-4">
-                              <p className="card-text">Youth Question :</p>
+                              <p className="card-text">Reflection Question :</p>
                               <p className="card-text fw-light">
-                                {selectedYouth.youthOQ1}
+                                {selectedYouth.agentQuestions}
                               </p>
                             </div>
                             <div>
                               <div className="d-flex justify-content-between">
-                                <p className="card-text fw-normal">Answer:</p>
-                                <p className="card-text fw-bold">Test</p>
+                                <p className="card-text fw-normal"> Reflection Answer:</p>
+                                <p className="card-text fw-bold"> {selectedYouth.agentQAnswers}</p>
                               </div>
                             </div>
-                          </div>
-                          <div className="d-flex justify-content-between ">
-                            <p className="card-text">Youth reflection :</p>
-                            <p className="card-text fw-bold">
-                              {/* {selectedYouth.youthResponses} */}
-                            </p>
-                          </div>
-                          <div className="d-flex justify-content-between ">
-                            <p className="card-text">Youth Response :</p>
-                            <p className="card-text fw-bold">
-                              {selectedYouth.youthResponses}
-                            </p>
-                          </div>
-                          <div className="d-flex justify-content-between ">
-                            <p className="card-text">
-                              Youth follow-up question :
-                            </p>
-                            <p className="card-text fw-bold">
-                              {selectedYouth.youthFollow_UpQuestions}
-                            </p>
                           </div>
                           <hr />
                           <div className="d-flex justify-content-between">
