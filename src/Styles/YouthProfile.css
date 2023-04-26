@@ -59,15 +59,21 @@
 
 /*  */
 
-#gridContainer {
+.gridContainer {
     display: grid;
     grid-template-columns: auto auto auto;
 }
 
-#gridItem {
+.gridItem {
     margin: 5px;
     font-size: 30px;
     text-align: center;
+}
+
+.btn_Position{
+    position: absolute;
+    top: -0.7rem;
+    right: 0.7rem
 }
 
 #sessionContent1 {

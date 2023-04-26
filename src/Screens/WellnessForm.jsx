@@ -260,9 +260,8 @@ export default function WellnessForm() {
 	});
 	const [agentDataArr, setAgentDataArr] = useState([]);
 	//
-	const [value, onValueChange] = useState("");
-	// const [dateOfCurrentcall, setDateOfCurrentCall] = useState(new Date())
-	const [dateOfNextcall, setDateOfNextCall] = useState("");
+	const [dateOfNextcall, setDateOfNextCall] = useState();
+	const [dateOfCurrentcall, setDateOfCurrentCall] = useState(new Date())
 
 	const [emotion, setEmotion] = useState("");
 
@@ -278,8 +277,9 @@ export default function WellnessForm() {
 
 	const data = {
 		dialogue: {
-			nameOfAgent: "AGENTX",
+			nameOfAgent: "AGENTY",
 			nameOfYouth: youth.firstName,
+			date: dateOfCurrentcall
 		},
 		convo_data: {
 			openingQuestion1Red: redOpeningQuestion1,
@@ -427,9 +427,9 @@ export default function WellnessForm() {
 		youthFqReflectionData: youthInputArr[1],
 		youthPrompt_Questions: youthPromptQuestions,
 		youthPqReflectionData: youthInputArr[2],
-		agentQuestions: agentQuestions,
-		agentData: agentDataArr,
-		newAppointment: value,
+		agentQuestions: agentQuestions[0],
+		agentData: agentDataArr[0],
+		newAppointment: dateOfNextcall,
 		
 		redFlag: redFlag,
 	};
@@ -601,7 +601,7 @@ export default function WellnessForm() {
 						youthQuestions={youthQuestions}
 						agentReflectionQuestions={agentReflectionQuestions}
 						agentQuestions={agentQuestions}
-						value={value}
+						dateOfNextcall={dateOfNextcall}
 						openingPromptQuestions={openingPromptQuestions}
 						emotion={emotion}
 						redPossibleResponses={redPossibleResponses}
@@ -779,8 +779,9 @@ export default function WellnessForm() {
 						setYouthTextInput={setYouthTextInput}
 						youthInputArr={youthInputArr}
 						setYouthInputArr={setYouthInputArr}
-						value={value}
-						onValueChange={onValueChange}
+						dateOfNextcall={dateOfNextcall}
+						setDateOfNextCall={setDateOfNextCall}
+						setDateOfCurrentCall={setDateOfCurrentCall}
 						submitContent={submitContent}
 						youthFollowUpQuestions={youthFollowUpQuestions}
 						youthPromptQuestions={youthPromptQuestions}

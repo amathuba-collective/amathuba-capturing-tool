@@ -1799,13 +1799,13 @@ export default function LeftContent(props) {
 					</p>
 				</div>
 				<div className='mt-2 '>
-					{props.value && (
+					{props.dateOfNextcall && (
 						<div>
 							<h4>New appointment</h4>
 							<div className='alert alert-success w-100'>
 								<p className='fs-5 text-center fw-normal'>
 									{" "}
-									{props.value.toDateString()}
+									{props.dateOfNextcall.toDateString()}
 									{/* {props.value.getUTCDate()} */}
 								</p>
 							</div>

@@ -1040,9 +1040,9 @@ export default function CenterContent(props) {
 	
   }
 
-  useEffect(() =>{
-	localStorage.setItem("timeStamps", JSON.stringify(timeStamps))
-  },[timeStamps])
+  // useEffect(() =>{
+	// localStorage.setItem("timeStamps", JSON.stringify(timeStamps))
+  // },[timeStamps])
 
 //   useEffect(() =>{
 // 	const storedItems = localStorage.getItem("timeStamps");
@@ -1057,9 +1057,10 @@ export default function CenterContent(props) {
 
 
   function submitForm() {
+    props.setDateOfCurrentCall()
     submitContent();
     navigate("/Dashboard");
-	handleTimeStampSubmit()
+	
   }
 
   return (
@@ -2141,8 +2142,8 @@ export default function CenterContent(props) {
                     className="react-calendar"
                     minDetail="year"
                     // maxDate={new Date(2022, 10, 28)}
-                    value={props.value}
-                    onChange={props.onValueChange}
+                    value={props.dateOfNextcall}
+                    onChange={props.setDateOfNextCall}
                   />
                 </div>
               )}
