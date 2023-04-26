@@ -557,7 +557,7 @@ export default function YouthProfile(props) {
                               {/* {selectedYouth.newAppointment} */}
                               {format(
                                 new Date(selectedYouth.newAppointment),
-                                "yyy-MM-dd"
+                                "dd-MM-yyy"
                               )}
                             </p>
                             {/* {formatRelative(subDays(new Date(), 3), new Date(pastRecords.dialogue.date), { addSuffix: true })}                                                         */}
