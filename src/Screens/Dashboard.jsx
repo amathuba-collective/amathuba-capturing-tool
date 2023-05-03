@@ -16,7 +16,7 @@ import {
 
 export default function Dashboard(props) {
 	const agent = getLocalStorageForObjects("user");
-	const navigate = useNavigate();
+	// const navigate = useNavigate();
 	const [youth, setYouth] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
@@ -25,7 +25,7 @@ export default function Dashboard(props) {
 	function onLogOut() {
 		setLocalStorageAsString("token", "");
 		setLocalStorageForObjects("user", {});
-		navigate("/");
+		// navigate("/");
 	}
 
 	const getAllYouthData = async () => {
@@ -54,7 +54,7 @@ export default function Dashboard(props) {
 		<div className='dashB container-fluid'>
 			{/* navbar component inside dashboard */}
 			<>
-				<TopNavbar onLogOut={onLogOut} setSearch={props.setSearch}/>
+				<TopNavbar onLogOut={onLogOut} setSearch={props.setSearch} />
 			</>
 			{/* navbar component ends here */}
 			<div className='row'>
@@ -96,9 +96,7 @@ export default function Dashboard(props) {
 							</Grid.Container>
 						)}
 						{error}
-						{youth && (
-							<Youth youth={youth} search={props.search} />
-						)}
+						{youth && <Youth youth={youth} search={props.search} />}
 						<div id='modalBox' className='modalBox'>
 							<AddYouth />
 						</div>

@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "../Styles/Youth.css";
-import { AiOutlineSearch } from "react-icons/ai";
-
 
 const Youth = (props) => {
 	const youth = props.youth;

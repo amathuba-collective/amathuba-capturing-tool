@@ -135,6 +135,127 @@ export default function LeftContent(props) {
 															{/* summary column divider */}
 															{/* <hr className='w-100 ng-secondary border border-1 border-secondary ' /> */}
 														</div>
+													) : props.keyAnswerCapture4 ? (
+														<div>
+															<h4 className='fw-bold fs-5'>
+																Reason for emotion of call
+															</h4>
+															<p className='fs-5 fw-normal'>
+																{props.keyAnswerCapture4}
+															</p>
+															{/* summary column divider */}
+															{/* <hr className='w-100 ng-secondary border border-1 border-secondary ' /> */}
+														</div>
+													) : props.keyAnswerCapture5 ? (
+														<div>
+															<h4 className='fw-bold fs-5'>
+																Reason for emotion of call
+															</h4>
+															<p className='fs-5 fw-normal'>
+																{props.keyAnswerCapture5}
+															</p>
+															{/* summary column divider */}
+															{/* <hr className='w-100 ng-secondary border border-1 border-secondary ' /> */}
+														</div>
+													) : props.keyAnswerCapture6 ? (
+														<div>
+															<h4 className='fw-bold fs-5'>
+																Reason for emotion of call
+															</h4>
+															<p className='fs-5 fw-normal'>
+																{props.keyAnswerCapture6}
+															</p>
+															{/* summary column divider */}
+															{/* <hr className='w-100 ng-secondary border border-1 border-secondary ' /> */}
+														</div>
+													) : props.keyAnswerCapture7 ? (
+														<div>
+															<h4 className='fw-bold fs-5'>
+																Reason for emotion of call
+															</h4>
+															<p className='fs-5 fw-normal'>
+																{props.keyAnswerCapture7}
+															</p>
+															{/* summary column divider */}
+															{/* <hr className='w-100 ng-secondary border border-1 border-secondary ' /> */}
+														</div>
+													) : props.keyAnswerCapture8 ? (
+														<div>
+															<h4 className='fw-bold fs-5'>
+																Reason for emotion of call
+															</h4>
+															<p className='fs-5 fw-normal'>
+																{props.keyAnswerCapture8}
+															</p>
+															{/* summary column divider */}
+															{/* <hr className='w-100 ng-secondary border border-1 border-secondary ' /> */}
+														</div>
+													) : props.keyAnswerCapture9 ? (
+														<div>
+															<h4 className='fw-bold fs-5'>
+																Reason for emotion of call
+															</h4>
+															<p className='fs-5 fw-normal'>
+																{props.keyAnswerCapture9}
+															</p>
+															{/* summary column divider */}
+															{/* <hr className='w-100 ng-secondary border border-1 border-secondary ' /> */}
+														</div>
+													) : props.keyAnswerCapture10 ? (
+														<div>
+															<h4 className='fw-bold fs-5'>
+																Reason for emotion of call
+															</h4>
+															<p className='fs-5 fw-normal'>
+																{props.keyAnswerCapture10}
+															</p>
+															{/* summary column divider */}
+															{/* <hr className='w-100 ng-secondary border border-1 border-secondary ' /> */}
+														</div>
+													) : props.keyAnswerCapture11 ? (
+														<div>
+															<h4 className='fw-bold fs-5'>
+																Reason for emotion of call
+															</h4>
+															<p className='fs-5 fw-normal'>
+																{props.keyAnswerCapture11}
+															</p>
+															{/* summary column divider */}
+															{/* <hr className='w-100 ng-secondary border border-1 border-secondary ' /> */}
+														</div>
+													) : props.keyAnswerCapture12 ? (
+														<div>
+															<h4 className='fw-bold fs-5'>
+																Reason for emotion of call
+															</h4>
+															<p className='fs-5 fw-normal'>
+																{props.keyAnswerCapture12}
+															</p>
+															{/* summary column divider */}
+															{/* <hr className='w-100 ng-secondary border border-1 border-secondary ' /> */}
+														</div>
+													) : props.keyAnswerCapture13 ? (
+														<div>
+															<h4 className='fw-bold fs-5'>
+																Reason for emotion of call
+															</h4>
+															<p className='fs-5 fw-normal'>
+																{props.keyAnswerCapture13}
+															</p>
+															{/* summary column divider */}
+															{/* <hr className='w-100 ng-secondary border border-1 border-secondary ' /> */}
+														</div>
+													) : props.keyAnswerCapture14 ? (
+														<div>
+															<h4 className='fw-bold fs-5'>
+																Reason for emotion of call
+															</h4>
+															<p className='fs-5 fw-normal'>
+																{props.keyAnswerCapture14}
+															</p>
+															{/* summary column divider */}
+															{/* <hr className='w-100 ng-secondary border border-1 border-secondary ' /> */}
+														</div>
 													) : null}
 												</p>
 												<p className='fw-semilight fs-3 '>
@@ -628,7 +749,7 @@ export default function LeftContent(props) {
 											</p>
 										</div>
 									</div>*/}
-								</div> 
+								</div>
 								{/* {props.printOtherOpeningQuestion ? (
 									<div>
 										<h4>Opening Question</h4>
@@ -676,7 +797,9 @@ export default function LeftContent(props) {
 											<div className=''>
 												<p>
 													{props.keyAnswerCaptureHappy1 ? (
-														<p className='fs-5'>{props.keyAnswerCaptureHappy1}</p>
+														<p className='fs-5'>
+															{props.keyAnswerCaptureHappy1}
+														</p>
 													) : null}
 												</p>
 												<p>
@@ -710,7 +833,9 @@ export default function LeftContent(props) {
 
 												<p>
 													{props.keyAnswerCaptureHappy2 ? (
-														<p className='fs-5'>{props.keyAnswerCaptureHappy2}</p>
+														<p className='fs-5'>
+															{props.keyAnswerCaptureHappy2}
+														</p>
 													) : null}
 												</p>
 												<p>
@@ -744,7 +869,9 @@ export default function LeftContent(props) {
 
 												<p>
 													{props.keyAnswerCaptureHappy3 ? (
-														<p className='fs-5'>{props.keyAnswerCaptureHappy3}</p>
+														<p className='fs-5'>
+															{props.keyAnswerCaptureHappy3}
+														</p>
 													) : null}
 												</p>
 												<p>
@@ -778,7 +905,9 @@ export default function LeftContent(props) {
 											<div className=''>
 												<p>
 													{props.keyAnswerCaptureHappy4 ? (
-														<p className='fs-5'>{props.keyAnswerCaptureHappy4}</p>
+														<p className='fs-5'>
+															{props.keyAnswerCaptureHappy4}
+														</p>
 													) : null}
 												</p>
 												<p>
@@ -812,7 +941,9 @@ export default function LeftContent(props) {
 
 												<p>
 													{props.keyAnswerCaptureHappy5 ? (
-														<p className='fs-5'>{props.keyAnswerCaptureHappy5}</p>
+														<p className='fs-5'>
+															{props.keyAnswerCaptureHappy5}
+														</p>
 													) : null}
 												</p>
 												<p>
@@ -880,7 +1011,9 @@ export default function LeftContent(props) {
 											<div className=''>
 												<p>
 													{props.keyAnswerCaptureHappy7 ? (
-														<p className='fs-5'>{props.keyAnswerCaptureHappy7}</p>
+														<p className='fs-5'>
+															{props.keyAnswerCaptureHappy7}
+														</p>
 													) : null}
 												</p>
 												<p>
@@ -914,7 +1047,9 @@ export default function LeftContent(props) {
 
 												<p>
 													{props.keyAnswerCaptureHappy8 ? (
-														<p className='fs-5'>{props.keyAnswerCaptureHappy8}</p>
+														<p className='fs-5'>
+															{props.keyAnswerCaptureHappy8}
+														</p>
 													) : null}
 												</p>
 												<p>
@@ -948,7 +1083,9 @@ export default function LeftContent(props) {
 											<div className=''>
 												<p>
 													{props.keyAnswerCaptureHappy9 ? (
-														<p className='fs-5'>{props.keyAnswerCaptureHappy9}</p>
+														<p className='fs-5'>
+															{props.keyAnswerCaptureHappy9}
+														</p>
 													) : null}
 												</p>
 												<p>
@@ -982,7 +1119,9 @@ export default function LeftContent(props) {
 
 												<p>
 													{props.keyAnswerCaptureHappy10 ? (
-														<p className='fs-5'>{props.keyAnswerCaptureHappy10}</p>
+														<p className='fs-5'>
+															{props.keyAnswerCaptureHappy10}
+														</p>
 													) : null}
 												</p>
 												<p>
@@ -1018,7 +1157,9 @@ export default function LeftContent(props) {
 											<div className=''>
 												<p>
 													{props.keyAnswerCaptureHappy11 ? (
-														<p className='fs-5'>{props.keyAnswerCaptureHappy11}</p>
+														<p className='fs-5'>
+															{props.keyAnswerCaptureHappy11}
+														</p>
 													) : null}
 												</p>
 												<p>
@@ -1054,7 +1195,9 @@ export default function LeftContent(props) {
 
 												<p>
 													{props.keyAnswerCaptureHappy12 ? (
-														<p className='fs-5'>{props.keyAnswerCaptureHappy12}</p>
+														<p className='fs-5'>
+															{props.keyAnswerCaptureHappy12}
+														</p>
 													) : null}
 												</p>
 												<p>
@@ -1090,7 +1233,9 @@ export default function LeftContent(props) {
 											<div className=''>
 												<p>
 													{props.keyAnswerCaptureHappy13 ? (
-														<p className='fs-5'>{props.keyAnswerCaptureHappy13}</p>
+														<p className='fs-5'>
+															{props.keyAnswerCaptureHappy13}
+														</p>
 													) : null}
 												</p>
 												<p>
@@ -1134,7 +1279,9 @@ export default function LeftContent(props) {
 												{/* text input answer above */}
 												<p>
 													{props.keyAnswerCaptureHappy14 ? (
-														<p className='fs-5'>{props.keyAnswerCaptureHappy14}</p>
+														<p className='fs-5'>
+															{props.keyAnswerCaptureHappy14}
+														</p>
 													) : null}
 												</p>
 												<p>
@@ -1179,7 +1326,7 @@ export default function LeftContent(props) {
 											})}
 										</p>
 										{/* text input answer above */}
-{/* ///////////////////////////////////////////////////////////////////////////////////////////////////// */}
+										{/* ///////////////////////////////////////////////////////////////////////////////////////////////////// */}
 										{/* <div>
 											{props.youthTextInput && (
 												<div>
@@ -1214,7 +1361,7 @@ export default function LeftContent(props) {
                                                         <p className='fs-5'></p>
                                                     ) : null}
                                                 </p> */}
-												{/* <p>
+										{/* <p>
                                                     {props.keyAnswerCapture3 ? (
                                                         <p className='fs-5'></p>
                                                     ) : null}
@@ -1428,7 +1575,7 @@ export default function LeftContent(props) {
 											{props.inputArr.map((keyAnswer, ind) => {
 												return (
 													<div key={ind}>
-														<p className="fs-5">{keyAnswer}</p>
+														<p className='fs-5'>{keyAnswer}</p>
 													</div>
 												);
 											})}
@@ -1649,7 +1796,7 @@ export default function LeftContent(props) {
 													{props.inputArr.map((keyAnswer, ind) => {
 														return (
 															<div key={ind}>
-																<p className="fs-5 ">{keyAnswer}</p>
+																<p className='fs-5 '>{keyAnswer}</p>
 															</div>
 														);
 													})}
@@ -1772,7 +1919,7 @@ export default function LeftContent(props) {
 						{props.agentQuestions ? (
 							<div>
 								<h4 className='fw-semibold'>Agent Reflection Question</h4>
-								<p className="fs-5 ">{props.agentQuestions}</p>
+								<p className='fs-5 '>{props.agentQuestions}</p>
 								<p>
 									{props.agentDataArr.map((agentAnswer, ind) => {
 										return (

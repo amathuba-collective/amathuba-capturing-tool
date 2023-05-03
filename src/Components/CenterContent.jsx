@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Calendar from "react-calendar";
 import "../Styles/ReactCalender.css";
 import "react-calendar/dist/Calendar.css";
@@ -19,7 +19,7 @@ import SadEmoji from "../Assets/images/sadEmoji.png";
 
 export default function CenterContent(props) {
 	const submitContent = props.submitContent;
-	const navigate = useNavigate();
+	// const navigate = useNavigate();
 
 	const emotions = ["Happy", "Angry", "Confused", "Anxious", "Sad"];
 	// ////storing keyWord answers here for form to work for the moment
@@ -1032,36 +1032,36 @@ export default function CenterContent(props) {
 	//     // localStorage.setItem("timeStamp", timeStamp);
 	//   }
 
-	const handleTimeStampSubmit = () => {
-		const newTimeStamp = new Date().toLocaleString();
-		setTimeStamps((prevTimeStamps) => [...prevTimeStamps, newTimeStamp]);
-	};
+	// const handleTimeStampSubmit = () => {
+	// 	const newTimeStamp = new Date().toLocaleString();
+	// 	setTimeStamps((prevTimeStamps) => [...prevTimeStamps, newTimeStamp]);
+	// };
 
-	useEffect(() => {
-		localStorage.setItem("timeStamps", JSON.stringify(timeStamps));
-	}, [timeStamps]);
+	// useEffect(() => {
+	// 	localStorage.setItem("timeStamps", JSON.stringify(timeStamps));
+	// }, [timeStamps]);
 
-  // useEffect(() =>{
+	// useEffect(() =>{
 	// localStorage.setItem("timeStamps", JSON.stringify(timeStamps))
-  // },[timeStamps])
+	// },[timeStamps])
 
-//   useEffect(() =>{
-// 	const storedItems = localStorage.getItem("timeStamps");
-//   if(storedItems){
-// 	setTimeStamps(JSON.parse(storedItems))
-//   }
-// })
-//   const storedItems = localStorage.getItem("timeStamps");
-//   if(storedItems){
-// 	setTimeStamps(JSON.parse(storedItems))
-//   }
+	//   useEffect(() =>{
+	// 	const storedItems = localStorage.getItem("timeStamps");
+	//   if(storedItems){
+	// 	setTimeStamps(JSON.parse(storedItems))
+	//   }
+	// })
+	//   const storedItems = localStorage.getItem("timeStamps");
+	//   if(storedItems){
+	// 	setTimeStamps(JSON.parse(storedItems))
+	//   }
 
-
-  function submitForm() {
-    submitContent();
-    navigate("/Dashboard");
-	handleTimeStampSubmit()
-  }
+	function submitForm() {
+		submitContent();
+		// navigate("/Dashboard");
+		props.setDateOfCurrentCall();
+		// handleTimeStampSubmit();
+	}
 
 	return (
 		<div className='container' id='centerContent'>
@@ -2084,52 +2084,52 @@ export default function CenterContent(props) {
 								</button>
 							</div>
 
-              {nextSession === "newAppoinment" && (
-                <div>
-                  <Calendar
-                    className="react-calendar"
-                    minDetail="year"
-                    // maxDate={new Date(2022, 10, 28)}
-                    value={props.value}
-                    onChange={props.onValueChange}
-                  />
-                </div>
-              )}
-              {nextSession === "endReason" && (
-                <section className="mt-5">
-                  <label className="fw-semibold fs-3 mt-5">End reason</label>
-                  <textarea
-                    className="textArea form-control "
-                    placeholder="End Reason"
-                    id="#"
-                  ></textarea>
-                  <div className="d-grid mt-5">
-                    <button className="btn btn-secondary">Save</button>
-                  </div>
-                </section>
-              )}
-            </nav>
-          </div>
-        </div>
-        {/* button to submit capturing tool	*/}
-        <div className="d-grid mt-5">
-          <button
-            id="finalSubmit"
-            type="submit"
-            className="btn text-light fs-5 p-4 mb-5"
-            onClick={submitForm}
-          >
-            Submit
-          </button>
-        </div>
-		<ul>
-        {timeStamps.map((timeStamp, index) => (
-          <li key={index}>{timeStamp}</li>
-        ))}
-      </ul>
-	  {/* <p>stored{storedItems}</p> */}
-      </div>
-      {/* footer section ends */}
-    </div>
-  );
+							{nextSession === "newAppoinment" && (
+								<div>
+									<Calendar
+										className='react-calendar'
+										minDetail='year'
+										// maxDate={new Date(2022, 10, 28)}
+										value={props.value}
+										onChange={props.onValueChange}
+									/>
+								</div>
+							)}
+							{nextSession === "endReason" && (
+								<section className='mt-5'>
+									<label className='fw-semibold fs-3 mt-5'>End reason</label>
+									<textarea
+										className='textArea form-control '
+										placeholder='End Reason'
+										id='#'></textarea>
+									<div className='d-grid mt-5'>
+										<button className='btn btn-secondary'>Save</button>
+									</div>
+								</section>
+							)}
+						</nav>
+					</div>
+				</div>
+				{/* button to submit capturing tool	*/}
+				<div className='d-grid mt-5'>
+					<Link to='/Dashboard'>
+						<button
+							id='finalSubmit'
+							type='submit'
+							className='btn text-light fs-5 p-4 mb-5'
+							onClick={submitForm}>
+							Submit
+						</button>
+					</Link>
+				</div>
+				<ul>
+					{timeStamps.map((timeStamp, index) => (
+						<li key={index}>{timeStamp}</li>
+					))}
+				</ul>
+				{/* <p>stored{storedItems}</p> */}
+			</div>
+			{/* footer section ends */}
+		</div>
+	);
 }

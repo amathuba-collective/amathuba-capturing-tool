@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import TopNavbar from "../Components/TopNavbar";
 import "../Styles/YouthProfile.css";
@@ -7,7 +7,7 @@ import { getYouthById } from "../Services/Youth";
 import { getRecentYouthDialogueData } from "../Services/YouthDialogue";
 // import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 // import formatRelative from "date-fns/formatRelative";
-import { format, formatRelative, subDays } from "date-fns";
+import { format } from "date-fns";
 import { TiHome } from "react-icons/ti";
 // import { el } from "date-fns/locale";
 // import { SearchBar } from "../Components/Youth";
@@ -17,20 +17,20 @@ import {
 	// setLocalStorageAsString,
 	// setLocalStorageForObjects
 } from "../Utils/localStorageUtils";
-import { Grid, Avatar, Text, Loading } from "@nextui-org/react";
+import { Grid, Text, Loading } from "@nextui-org/react";
 // const agent = getLocalStorageForObjects("user");
 
 export default function YouthProfile(props) {
-  const [recentRecords, setRecentRecords] = useState([]);
-  const [selectedYouth, setselectedYouth] = useState(null);
-  const [youth, setYouth] = useState({});
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [section, setSection] = useState("profile");
-  const [selectedButton, setSelectedButton] = useState("profile");
-  const [youthCallHistorySections, setYouthCallHistorySections] =
-    useState("Overview");
-  const agent = getLocalStorageForObjects("user");
+	const [recentRecords, setRecentRecords] = useState([]);
+	const [selectedYouth, setselectedYouth] = useState(null);
+	const [youth, setYouth] = useState({});
+	const [loading, setLoading] = useState(true);
+	const [error, setError] = useState(null);
+	const [section, setSection] = useState("profile");
+	const [selectedButton, setSelectedButton] = useState("profile");
+	const [youthCallHistorySections, setYouthCallHistorySections] =
+		useState("Overview");
+	const agent = getLocalStorageForObjects("user");
 
 	const getYouthData = async (id) => {
 		const youthData = await getYouthById(id);
@@ -57,13 +57,9 @@ export default function YouthProfile(props) {
 
 	const { id } = useParams();
 
-  useEffect(() => {
-    getYouthData(id);
-	console.log("recent",recentRecords)
-  }, []);
-
-    const storedItems = localStorage.getItem("timeStamps");
-    const storedTimeStamp = JSON.parse(storedItems); /// this i added now
+	useEffect(() => {
+		getYouthData(id);
+	}, []);
 
 	const openYouthMenu = (e, id) => {
 		e.preventDefault();
@@ -306,128 +302,115 @@ export default function YouthProfile(props) {
 							</div>
 							{/* current status section end */}
 
-              {/*       /////////////////////////////     */}
-              <div className="informationContent">
-                <div className="d-flex justify-content-between">
-                  <h3 className="fs-4 mt-4">Recent Records</h3>
-                  {/* <div><AiOutlineSearch className="searchIcon" /><SearchBar  onChange={(e) => setSearch(e.target.value)}/></div> */}
-                </div>
-                {/* need to fix loading bug , map function */}
-                <div className="gridContainer">
-                  {recentRecords.map((records) => {
-                    return (
-                      <div key={records._id} className="gridItem">
-                        <div className="card recordCard">
-                          <div className="card-body">
-                            <div>
-                              <button
-                                className="border-0 bg-transparent btn_Position"
-                                onClick={(e) => openYouthMenu(e, records._id)}
-                              >
-                                <img
-                                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAAf0lEQVRIie2Qyw3CMBAFZ+2IZlxToAvgFKRQSmpyM0jmcYklYnFyyG3ntm9H2g84jnM4lnM+SfEJjICAxaxMKaVXlfY4gxRn4Po19CZFgHsN9jgBOP+47NLU3U5Yz9lgRmmibicAS9uQ1GbdzmBWpvWfYxXN3o/tJv9xHMc5iA94q1TJhrSZEwAAAABJRU5ErkJggg=="
-                                  alt="---"
-                                />
-                              </button>
-                            </div>
-                            <div className="mt-3">
-                              <div className="d-flex justify-content-between">
-                                <p className="fs-5">Emotion :</p>
-                                <p className="fs-5">{records.emotionOfCall}</p>
-                              </div>
+							{/*       /////////////////////////////     */}
+							<div className='informationContent'>
+								<div className='d-flex justify-content-between'>
+									<h3 className='fs-4 mt-4'>Recent Records</h3>
+									{/* <div><AiOutlineSearch className="searchIcon" /><SearchBar  onChange={(e) => setSearch(e.target.value)}/></div> */}
+								</div>
+								{/* need to fix loading bug , map function */}
+								<div className='gridContainer'>
+									{recentRecords.map((records) => {
+										return (
+											<div key={records._id} className='gridItem'>
+												<div className='card recordCard'>
+													<div className='card-body'>
+														<div>
+															<button
+																className='border-0 bg-transparent btn_Position'
+																onClick={(e) => openYouthMenu(e, records._id)}>
+																<img
+																	src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAAf0lEQVRIie2Qyw3CMBAFZ+2IZlxToAvgFKRQSmpyM0jmcYklYnFyyG3ntm9H2g84jnM4lnM+SfEJjICAxaxMKaVXlfY4gxRn4Po19CZFgHsN9jgBOP+47NLU3U5Yz9lgRmmibicAS9uQ1GbdzmBWpvWfYxXN3o/tJv9xHMc5iA94q1TJhrSZEwAAAABJRU5ErkJggg=='
+																	alt='---'
+																/>
+															</button>
+														</div>
+														<div className='mt-3'>
+															<div className='d-flex justify-content-between'>
+																<p className='fs-5'>Emotion :</p>
+																<p className='fs-5'>{records.emotionOfCall}</p>
+															</div>
 
-                              <div className="d-flex justify-content-between">
-                                <p className="fs-5">Agent :</p>
-                                {agent && (
-                                  <div className="" key={agent.id}>
-                                    <p className="fs-5">{agent.firstName}</p>
-                                  </div>
-                                )}
-                              </div>
-                              <div className="d-flex justify-content-between">
-                                <p className="fs-5">Date :</p>
-                                <p className="fs-5">
-                                  {format(
-                                    new Date(records.dialogue.date),
-                                    "dd-MM-yyy"
-                                  )}
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            </div>
-          )}
-          {/*               space between different sections                                   */}
+															<div className='d-flex justify-content-between'>
+																<p className='fs-5'>Agent :</p>
+																{agent && (
+																	<div className='' key={agent.id}>
+																		<p className='fs-5'>{agent.firstName}</p>
+																	</div>
+																)}
+															</div>
+															<div className='d-flex justify-content-between'>
+																<p className='fs-5'>Date :</p>
+																<p className='fs-5'>
+																	{format(
+																		new Date(records.dialogue.date),
+																		"dd-MM-yyy",
+																	)}
+																</p>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										);
+									})}
+								</div>
+							</div>
+						</div>
+					)}
+					{/*               space between different sections                                   */}
 
-          {section === "YouthCallHistory" && (
-            <div className="container-fluid">
-              <div className=" mt-5 fs-5 row">
-                <div className="d-flex flex-column col-3">
-                  {/* this could be for dialog */}
-                  {youth && (
-                    <div>
-                      <p className="fs-5 fw-bold ">{youth.firstName}</p>
-                      <div
-                        className="d-flex align-items-center"
-                        id="sessionHistoryTop"
-                      >
-                        <div id="profilePhoto"></div>
-                        <Link to={`/WellnessForm/${youth._id}`}>
-                          <button className="wellBeingBtn fs-5">
-                            <span>
-                              <i className="fa-solid fa-phone fs-5"></i>
-                            </span>{" "}
-                            Call Friend
-                          </button>
-                        </Link>
-                      </div>
-                      <p>{youth.email}</p>
-                      <div className="d-flex ">
-                        <span>
-                          <Icon icon="mdi:telephone" />
-                        </span>
-                        <p className="mx-2">{youth.firstName}</p>
-                      </div>
-                      {/* in progress */}
-                      {/* {formatRelative(
+					{section === "YouthCallHistory" && (
+						<div className='container-fluid'>
+							<div className=' mt-5 fs-5 row'>
+								<div className='d-flex flex-column col-3'>
+									{/* this could be for dialog */}
+									{youth && (
+										<div>
+											<p className='fs-5 fw-bold '>{youth.firstName}</p>
+											<div
+												className='d-flex align-items-center'
+												id='sessionHistoryTop'>
+												<div id='profilePhoto'></div>
+												<Link to={`/WellnessForm/${youth._id}`}>
+													<button className='wellBeingBtn fs-5'>
+														<span>
+															<i className='fa-solid fa-phone fs-5'></i>
+														</span>{" "}
+														Call Friend
+													</button>
+												</Link>
+											</div>
+											<p>{youth.email}</p>
+											<div className='d-flex '>
+												<span>
+													<Icon icon='mdi:telephone' />
+												</span>
+												<p className='mx-2'>{youth.firstName}</p>
+											</div>
+											{/* in progress */}
+											{/* {formatRelative(
 																		subDays(new Date(), 3),
 																		new Date(),
 																		{ addSuffix: true },
 																	)} */}
-                      <p>{youth.Date}cd</p>{" "}
-                      <div className="border-5 border-primary bg-light">
-                        {storedTimeStamp.map((stored, index) => {
-                          return (
-                            <div key={index}>
-                              <p className="mt-2 bg-dark text-light">
-                                {stored}
-                              </p>
-                            </div>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  )}
-                  {/*  */}
-                </div>
-                <div className="col-6">
-                  <span className="alert alert-success p-1 mt-5">
-                    <span>
-                      <img
-                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAABVUlEQVRIie3Vv0sCYRzH8fdzDXpT2h9QEm4iLW1G0K8h/4kEhaYW6d+IIgokdAhpci8wawq3oEGbFKT+Ahs0jOe+DR0NgXfec7bdZzw+9319n2e4gyhRoswpKkh5tV3IiuiSQu0gpNwJA6ClkGo/V+/MFU7fHsWcxeEpcAhYU2oaURU7OSp3M41JaNhF74CtWZYEHu3EeN8Pn7b9b5zEx1kAFGD7c2if+JU8T7zaLmQR54UZFvwTbYla621cd6cVPAeK6JIBCrDgWE7Rq+A5VClr1wD9iag9YxiRZWMYVsxhkBCw57vesFLvIeA3c1jkPgTcNIYVUgW0AaotrWvGcD9X7yCqElQV5LK3efNqDAPYyVEZeAigtpZi9rFfzRfuZhoTOzHOK8UF3teuBTlPxuP55/WrL7+5gX6L6aeDjGM5RffjkHIfD4CmpXXN73qjRInyL/kGAZRroZ6LN6IAAAAASUVORK5CYII="
-                        alt="---"
-                      />
-                    </span>
-                    Well Being
-                  </span>
-                </div>
-                {/* <audio controls className='w-75'>
+											{/* <p>{youth.Date}cd</p>{" "} */}
+										</div>
+									)}
+									{/*  */}
+								</div>
+								<div className='col-6'>
+									<span className='alert alert-success p-1 mt-5'>
+										<span>
+											<img
+												src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAABVUlEQVRIie3Vv0sCYRzH8fdzDXpT2h9QEm4iLW1G0K8h/4kEhaYW6d+IIgokdAhpci8wawq3oEGbFKT+Ahs0jOe+DR0NgXfec7bdZzw+9319n2e4gyhRoswpKkh5tV3IiuiSQu0gpNwJA6ClkGo/V+/MFU7fHsWcxeEpcAhYU2oaURU7OSp3M41JaNhF74CtWZYEHu3EeN8Pn7b9b5zEx1kAFGD7c2if+JU8T7zaLmQR54UZFvwTbYla621cd6cVPAeK6JIBCrDgWE7Rq+A5VClr1wD9iag9YxiRZWMYVsxhkBCw57vesFLvIeA3c1jkPgTcNIYVUgW0AaotrWvGcD9X7yCqElQV5LK3efNqDAPYyVEZeAigtpZi9rFfzRfuZhoTOzHOK8UF3teuBTlPxuP55/WrL7+5gX6L6aeDjGM5RffjkHIfD4CmpXXN73qjRInyL/kGAZRroZ6LN6IAAAAASUVORK5CYII='
+												alt='---'
+											/>
+										</span>
+										Well Being
+									</span>
+								</div>
+								{/* <audio controls className='w-75'>
 									<source src='horse.ogg' type='audio/ogg' />
 									<source src={callAudio} type='audio/mpeg' />
 								</audio> */}
@@ -490,100 +473,106 @@ export default function YouthProfile(props) {
 														</p>
 													</div>
 
-                          <div id="sessionHistoryFollowUpQuestion">
-                            <div className="d-flex justify-content-between">
-                              <p className="card-text">Follow-Up Question :</p>
-                              <p className="card-text fw-light">
-                                {
-                                  selectedYouth.followUpQuestions
-                                    .roqPromptQuestion
-                                }
-                              </p>
-                            </div>
-                            <div>
-                              <div className="d-flex justify-content-between">
-                                <p className="card-text fw-normal">Answer:</p>
-                                <p className="card-text fw-bold">
-                                  {selectedYouth.convo_data.newKeyAnswer1}
-                                </p>
-                              </div>
-                            </div>
-                          </div>
+													<div id='sessionHistoryFollowUpQuestion'>
+														<div className='d-flex justify-content-between'>
+															<p className='card-text'>Follow-Up Question :</p>
+															<p className='card-text fw-light'>
+																{
+																	selectedYouth.followUpQuestions
+																		.roqPromptQuestion
+																}
+															</p>
+														</div>
+														<div>
+															<div className='d-flex justify-content-between'>
+																<p className='card-text fw-normal'>Answer:</p>
+																<p className='card-text fw-bold'>
+																	{selectedYouth.convo_data.newKeyAnswer1}
+																</p>
+															</div>
+														</div>
+													</div>
 
-                          <div id="sessionHistoryPromptQuestion">
-                            <div className="d-flex justify-content-between">
-                              <p className="card-text">Prompt Question :</p>
-                              <p className="card-text fw-light">
-                                {selectedYouth.youthFollow_UpQuestions}
-                              </p>
-                            </div>
-                            <div>
-                              <div className="d-flex justify-content-between">
-                                <p className="card-text fw-normal">Answer:</p>
-                                <p className="card-text fw-bold">
-                                  {selectedYouth.convo_data.newKeyAnswer2}
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <hr className="border border-1 border-secondary rounded" />
-                        <div className="d-flex justify-content-between">
-                          {/*  */}
-                          <div>
-                            <h5 className="card-title">Reflection</h5>
-                          </div>
-                        </div>
-                        <hr className="border border-1 border-secondary rounded" />
-                        <div>
-                          <div>
-                            <div className="d-flex justify-content-between mt-4">
-                              <p className="card-text">Reflection Question :</p>
-                              <p className="card-text fw-light">
-                                {selectedYouth.agentQuestions}
-                              </p>
-                            </div>
-                            <div>
-                              <div className="d-flex justify-content-between">
-                                <p className="card-text fw-normal"> Reflection Answer:</p>
-                                <p className="card-text fw-bold"> {selectedYouth.agentQAnswers}</p>
-                              </div>
-                            </div>
-                          </div>
-                          <hr />
-                          <div className="d-flex justify-content-between">
-                            <p className="card-text">Next Call :</p>
-                            <p className="card-text fw-bold">
-                              {/* {selectedYouth.newAppointment} */}
-                              {format(
-                                new Date(selectedYouth.newAppointment),
-                                "dd-MM-yyy"
-                              )}
-                            </p>
-                            {/* {formatRelative(subDays(new Date(), 3), new Date(pastRecords.dialogue.date), { addSuffix: true })}                                                         */}
-                          </div>
-                        </div>
-                        <div className="d-flex justify-content-between">
-                          <p className="card-text">Name Of Agent :</p>
-                          {/* <p className='card-text fw-bold'>{selectedYouth.dialogue.nameOfAgent}</p> */}
-                          {agent && (
-                            <div key={agent.id}>
-                              <Text className="">{agent.firstName}</Text>
-                              {/* <Text className='mb-2 fw-semibold fs-4'>
+													<div id='sessionHistoryPromptQuestion'>
+														<div className='d-flex justify-content-between'>
+															<p className='card-text'>Prompt Question :</p>
+															<p className='card-text fw-light'>
+																{selectedYouth.youthFollow_UpQuestions}
+															</p>
+														</div>
+														<div>
+															<div className='d-flex justify-content-between'>
+																<p className='card-text fw-normal'>Answer:</p>
+																<p className='card-text fw-bold'>
+																	{selectedYouth.convo_data.newKeyAnswer2}
+																</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<hr className='border border-1 border-secondary rounded' />
+												<div className='d-flex justify-content-between'>
+													{/*  */}
+													<div>
+														<h5 className='card-title'>Reflection</h5>
+													</div>
+												</div>
+												<hr className='border border-1 border-secondary rounded' />
+												<div>
+													<div>
+														<div className='d-flex justify-content-between mt-4'>
+															<p className='card-text'>Reflection Question :</p>
+															<p className='card-text fw-light'>
+																{selectedYouth.agentQuestions}
+															</p>
+														</div>
+														<div>
+															<div className='d-flex justify-content-between'>
+																<p className='card-text fw-normal'>
+																	{" "}
+																	Reflection Answer:
+																</p>
+																<p className='card-text fw-bold'>
+																	{" "}
+																	{selectedYouth.agentQAnswers}
+																</p>
+															</div>
+														</div>
+													</div>
+													<hr />
+													<div className='d-flex justify-content-between'>
+														<p className='card-text'>Next Call :</p>
+														<p className='card-text fw-bold'>
+															{/* {selectedYouth.newAppointment} */}
+															{format(
+																new Date(selectedYouth.newAppointment),
+																"dd-MM-yyy",
+															)}
+														</p>
+														{/* {formatRelative(subDays(new Date(), 3), new Date(pastRecords.dialogue.date), { addSuffix: true })}                                                         */}
+													</div>
+												</div>
+												<div className='d-flex justify-content-between'>
+													<p className='card-text'>Name Of Agent :</p>
+													{/* <p className='card-text fw-bold'>{selectedYouth.dialogue.nameOfAgent}</p> */}
+													{agent && (
+														<div key={agent.id}>
+															<Text className=''>{agent.firstName}</Text>
+															{/* <Text className='mb-2 fw-semibold fs-4'>
                                                             {agent.role}
                                                         </Text> */}
 															{/* <Text className='agentCompany fw-semibold fs-5' size='$md'>
                                                             {agent.email}
                                                         </Text> */}
-                              {/* <button onClick={AddNewYouth} >ADD YOUTH</button> */}
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                    {/* card 1 ends */}
-                    {/* card 1 starts */}
-                    {/* <div className='card overviewRecordCard'>
+															{/* <button onClick={AddNewYouth} >ADD YOUTH</button> */}
+														</div>
+													)}
+												</div>
+											</div>
+										</div>
+										{/* card 1 ends */}
+										{/* card 1 starts */}
+										{/* <div className='card overviewRecordCard'>
                                             <div className='card-body'>
                                                 <div className='d-flex justify-content-between'>
                                                     <div>
@@ -625,18 +614,18 @@ export default function YouthProfile(props) {
                                                 </div>
                                             </div>
                                         </div> */}
-                    {/* card 1 ends */}
-                  </div>
-                )}
-                {youthCallHistorySections === "QA_Assessment" && (
-                  <div>QA Assessment content</div>
-                )}
-              </div>
-              {/* overview & QA section end */}
-            </div>
-          )}
-        </div>
-      </div>
-    </div>
-  );
+										{/* card 1 ends */}
+									</div>
+								)}
+								{youthCallHistorySections === "QA_Assessment" && (
+									<div>QA Assessment content</div>
+								)}
+							</div>
+							{/* overview & QA section end */}
+						</div>
+					)}
+				</div>
+			</div>
+		</div>
+	);
 }
